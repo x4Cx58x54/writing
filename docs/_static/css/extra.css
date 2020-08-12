@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+body, input {
+  font-family: -apple-system, Roboto, "Segoe UI", "Helvetica Neue", Helvetica, Arial, 微软雅黑, sans-serif;
+}
+
+body {
+  word-break: normal;
+  word-wrap: break-word;
+}
+
+pre, code, kbd {
+  font-family: Consolas, "SFMono-Regular", Monaco, Menlo, Courier, "Microsoft JhengHei UI", 微软雅黑, monospace;
+}
+
+.katex {
+  font-size: 1.1em !important;
+}
+
+/* Align all images at the center */
+.md-content img {
+  display: block;
+  margin: auto;
+}
+
+td {
+  vertical-align: middle !important;
+}
+
+.md-footer-nav {
+  display: none;
+}
+
+.md-footer {
+  background-color: #202020;
+}

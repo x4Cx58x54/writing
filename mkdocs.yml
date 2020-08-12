@@ -1,0 +1,138 @@
+site_name: 'Randomish Writing'
+site_description: ''
+site_author: 'x4Cx58x54'
+
+
+theme:
+  name: material
+  language: 'en'
+  palette:
+    primary: white
+    accent: light blue
+  font: false
+  favicon: none
+  icon:
+    logo: fontawesome/solid/terminal
+    repo: fontawesome/brands/git-alt
+  features:
+    - tabs
+    # - instant
+
+
+copyright: 'Copyright &copy; 2017 - 2020 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
+
+
+nav:
+  - Welcome: index.md
+  - Mathematics:
+    - Essence of Linear Algebra: maths/linear-algebra/essence-of-linear-algebra.md
+    - Linear Algebra: maths/linear-algebra/linear-algebra.md
+    - Probability Theory:
+      - Probability Theory: maths/probability-theory/probability-theory.md
+      - Problemsets:
+        - Events and Probability: maths/probability-theory/events-and-probability.md
+        - Random Variables: maths/probability-theory/random-variables.md
+    - Statistics: maths/statistics/statistics.md
+    - Discrete Maths: maths/discrete-maths/discrete-maths.md
+    - Calculus: maths/calculus/calculus.md
+    - Complex Analysis: maths/complex-analysis/complex-analysis.md
+    - Integral Transforms: maths/integral-transforms/integral-transforms.md
+    - 3Blue1Brown: maths/3b1b/3b1b.md
+    - Memos: maths/memos/memos.md
+  - Languages:
+    - C Primer Plus: c/c-primer-plus.md
+    - C++ Notes: cpp/cpp-notes.md
+    - Python 3 OOP: python/python-3-object-oriented-programming.md
+    - LaTeX:
+      - LaTeX Cheatsheet: latex/latex-cheatsheet.md
+      - LaTeX Maths Symbols: latex/latex-maths.md
+    - Regex:
+      - Introducing Regular Expressions: regex/introducing-regular-expressions.md
+      - Regular Expressions Cookbook: regex/regular-expressions-cookbook.md
+    - JavaScript the Definitive Guide: web/javascript-the-definitive-guide.md
+    - HTML Cheatsheet: web/html-cheatsheet.md
+    - CSS Cheatsheet: web/css-cheatsheet.md
+  - AI:
+    - Deep Learning: ai/deep-learning/deep-learning.md
+  - Competitive Programming:
+    - Mathematics:
+      - 素数: competitive-programming/prime.md
+      - 扩展欧几里得: competitive-programming/exgcd.md
+      - 组合数: competitive-programming/combination.md
+      - 快速幂: competitive-programming/binexp.md
+      - 类斐波那契数列: competitive-programming/fibonacci.md
+      - GCD Inverse: competitive-programming/gcd-inverse.md
+      - 拉格朗日插值: competitive-programming/lagrange-interpolation.md
+    - Data Structures:
+      - 树状数组: competitive-programming/fenwick.md
+      - 线段树: competitive-programming/segment-tree.md
+      - 堆: competitive-programming/heap.md
+      - ST 表: competitive-programming/sparse-table.md
+      - 并查集: competitive-programming/ufds.md
+    - Dynamic Programming:
+      - 直线交点数: competitive-programming/intersection-points.md
+      - 最长上升序列: competitive-programming/lis.md
+      - 公共子序列: competitive-programming/number-of-common-substrings.md
+    - Basics:
+      - 快速排序 / 第 k 小的数: competitive-programming/quicksort.md
+      - 平面最近点对: competitive-programming/nearest-point-pair.md
+    - Misc:
+      - Josephus Survivor: competitive-programming/josephus-survivor.md
+      - 找筷子: competitive-programming/chopsticks.md
+      - Double Cola: competitive-programming/double-cola.md
+      - 字母计数: competitive-programming/alphabetical-coding.md
+      - N! 末尾零数: competitive-programming/number-of-trailing-zeros-of-n!.md
+  - CS:
+    - Computer Organization: computer-organization/computer-organization.md
+    - The Practice of Programming: computer-programming/the-practice-of-programming.md
+  - Misc:
+    - Electromagnetics:
+      - Electromagnetics: electromagnetics/electromagnetics.md
+      - Problemsets:
+        - Electric Field: electromagnetics/electric-field.md
+        - Magnetic Field: electromagnetics/magnetic-field.md
+        - Induction: electromagnetics/induction.md
+        - EM Wave: electromagnetics/em-wave.md
+    - Classical Control Theory: control-theory/classical-control.md
+
+
+plugins: []
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/x4Cx58x54
+
+
+extra_css:
+  - './_static/css/extra.css'
+  - 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css'
+
+
+extra_javascript:
+  - './_static/js/extra.js'
+  - 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js'
+  - 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js'
+
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+      toc_depth: 2
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.extra
+  - pymdownx.superfences
+  - markdown.extensions.sane_lists
+  - attr_list
