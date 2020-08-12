@@ -1,0 +1,2093 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="x4Cx58x54">
+      
+      <link rel="shortcut icon" href="../../none">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.5">
+    
+    
+      
+        <title>Python 3 OOP - Randomish Writing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../_static/css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-3-object-oriented-programming" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Randomish Writing" class="md-header-nav__button md-logo" aria-label="Randomish Writing">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Randomish Writing
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Python 3 OOP
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../maths/linear-algebra/essence-of-linear-algebra/" class="md-tabs__link">
+          Mathematics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../c/c-primer-plus/" class="md-tabs__link md-tabs__link--active">
+          Languages
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../ai/deep-learning/deep-learning/" class="md-tabs__link">
+          AI
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../competitive-programming/prime/" class="md-tabs__link">
+          Competitive Programming
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../computer-organization/computer-organization/" class="md-tabs__link">
+          CS
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../electromagnetics/electromagnetics/" class="md-tabs__link">
+          Misc
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
+
+    </a>
+    Randomish Writing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Mathematics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Mathematics" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Mathematics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/linear-algebra/essence-of-linear-algebra/" title="Essence of Linear Algebra" class="md-nav__link">
+      Essence of Linear Algebra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/linear-algebra/linear-algebra/" title="Linear Algebra" class="md-nav__link">
+      Linear Algebra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Probability Theory
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Probability Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Probability Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/probability-theory/probability-theory/" title="Probability Theory" class="md-nav__link">
+      Probability Theory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3-2" type="checkbox" id="nav-2-3-2">
+    
+    <label class="md-nav__link" for="nav-2-3-2">
+      Problemsets
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Problemsets" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Problemsets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/probability-theory/events-and-probability/" title="Events and Probability" class="md-nav__link">
+      Events and Probability
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/probability-theory/random-variables/" title="Random Variables" class="md-nav__link">
+      Random Variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/statistics/statistics/" title="Statistics" class="md-nav__link">
+      Statistics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/discrete-maths/discrete-maths/" title="Discrete Maths" class="md-nav__link">
+      Discrete Maths
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/calculus/calculus/" title="Calculus" class="md-nav__link">
+      Calculus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/complex-analysis/complex-analysis/" title="Complex Analysis" class="md-nav__link">
+      Complex Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/integral-transforms/integral-transforms/" title="Integral Transforms" class="md-nav__link">
+      Integral Transforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/3b1b/3b1b/" title="3Blue1Brown" class="md-nav__link">
+      3Blue1Brown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/memos/memos/" title="Memos" class="md-nav__link">
+      Memos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c/c-primer-plus/" title="C Primer Plus" class="md-nav__link">
+      C Primer Plus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cpp/cpp-notes/" title="C++ Notes" class="md-nav__link">
+      C++ Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Python 3 OOP
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Python 3 OOP" class="md-nav__link md-nav__link--active">
+      Python 3 OOP
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-object-oriented-design" class="md-nav__link">
+    Chapter 1: Object-oriented Design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-objects-in-python" class="md-nav__link">
+    Chapter 2: Objects in Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-when-objects-are-alike" class="md-nav__link">
+    Chapter 3: When Objects Are Alike
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-expecting-the-unexpected" class="md-nav__link">
+    Chapter 4: Expecting the Unexpected
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-when-to-use-object-oriented-programming" class="md-nav__link">
+    Chapter 5: When to Use Object-oriented Programming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-python-data-structures" class="md-nav__link">
+    Chapter 6: Python Data Structures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-python-object-oriented-shortcuts" class="md-nav__link">
+    Chapter 7: Python Object-oriented Shortcuts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-strings-and-serialization" class="md-nav__link">
+    Chapter 8: Strings and Serialization
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      LaTeX
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="LaTeX" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        LaTeX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../latex/latex-cheatsheet/" title="LaTeX Cheatsheet" class="md-nav__link">
+      LaTeX Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../latex/latex-maths/" title="LaTeX Maths Symbols" class="md-nav__link">
+      LaTeX Maths Symbols
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Regex
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Regex" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Regex
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../regex/introducing-regular-expressions/" title="Introducing Regular Expressions" class="md-nav__link">
+      Introducing Regular Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../regex/regular-expressions-cookbook/" title="Regular Expressions Cookbook" class="md-nav__link">
+      Regular Expressions Cookbook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/javascript-the-definitive-guide/" title="JavaScript the Definitive Guide" class="md-nav__link">
+      JavaScript the Definitive Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/html-cheatsheet/" title="HTML Cheatsheet" class="md-nav__link">
+      HTML Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/css-cheatsheet/" title="CSS Cheatsheet" class="md-nav__link">
+      CSS Cheatsheet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      AI
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="AI" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        AI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/deep-learning/deep-learning/" title="Deep Learning" class="md-nav__link">
+      Deep Learning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Competitive Programming
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Competitive Programming" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Competitive Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Mathematics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Mathematics" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Mathematics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/prime/" title="素数" class="md-nav__link">
+      素数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/exgcd/" title="扩展欧几里得" class="md-nav__link">
+      扩展欧几里得
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/combination/" title="组合数" class="md-nav__link">
+      组合数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/binexp/" title="快速幂" class="md-nav__link">
+      快速幂
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/fibonacci/" title="类斐波那契数列" class="md-nav__link">
+      类斐波那契数列
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/gcd-inverse/" title="GCD Inverse" class="md-nav__link">
+      GCD Inverse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/lagrange-interpolation/" title="拉格朗日插值" class="md-nav__link">
+      拉格朗日插值
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Data Structures
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Data Structures" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Data Structures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/fenwick/" title="树状数组" class="md-nav__link">
+      树状数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/segment-tree/" title="线段树" class="md-nav__link">
+      线段树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/heap/" title="堆" class="md-nav__link">
+      堆
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/sparse-table/" title="ST 表" class="md-nav__link">
+      ST 表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/ufds/" title="并查集" class="md-nav__link">
+      并查集
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Dynamic Programming
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Dynamic Programming" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Dynamic Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/intersection-points/" title="直线交点数" class="md-nav__link">
+      直线交点数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/lis/" title="最长上升序列" class="md-nav__link">
+      最长上升序列
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/number-of-common-substrings/" title="公共子序列" class="md-nav__link">
+      公共子序列
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Basics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Basics" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Basics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/quicksort/" title="快速排序 / 第 k 小的数" class="md-nav__link">
+      快速排序 / 第 k 小的数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/nearest-point-pair/" title="平面最近点对" class="md-nav__link">
+      平面最近点对
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Misc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/josephus-survivor/" title="Josephus Survivor" class="md-nav__link">
+      Josephus Survivor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/chopsticks/" title="找筷子" class="md-nav__link">
+      找筷子
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/double-cola/" title="Double Cola" class="md-nav__link">
+      Double Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/alphabetical-coding/" title="字母计数" class="md-nav__link">
+      字母计数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/number-of-trailing-zeros-of-n%21/" title="N! 末尾零数" class="md-nav__link">
+      N! 末尾零数
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      CS
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="CS" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        CS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../computer-organization/computer-organization/" title="Computer Organization" class="md-nav__link">
+      Computer Organization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../computer-programming/the-practice-of-programming/" title="The Practice of Programming" class="md-nav__link">
+      The Practice of Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Misc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+    
+    <label class="md-nav__link" for="nav-7-1">
+      Electromagnetics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Electromagnetics" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Electromagnetics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../electromagnetics/electromagnetics/" title="Electromagnetics" class="md-nav__link">
+      Electromagnetics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-1-2" type="checkbox" id="nav-7-1-2">
+    
+    <label class="md-nav__link" for="nav-7-1-2">
+      Problemsets
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Problemsets" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Problemsets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../electromagnetics/electric-field/" title="Electric Field" class="md-nav__link">
+      Electric Field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../electromagnetics/magnetic-field/" title="Magnetic Field" class="md-nav__link">
+      Magnetic Field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../electromagnetics/induction/" title="Induction" class="md-nav__link">
+      Induction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../electromagnetics/em-wave/" title="EM Wave" class="md-nav__link">
+      EM Wave
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control-theory/classical-control/" title="Classical Control Theory" class="md-nav__link">
+      Classical Control Theory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-object-oriented-design" class="md-nav__link">
+    Chapter 1: Object-oriented Design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-objects-in-python" class="md-nav__link">
+    Chapter 2: Objects in Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-when-objects-are-alike" class="md-nav__link">
+    Chapter 3: When Objects Are Alike
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-expecting-the-unexpected" class="md-nav__link">
+    Chapter 4: Expecting the Unexpected
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-when-to-use-object-oriented-programming" class="md-nav__link">
+    Chapter 5: When to Use Object-oriented Programming
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-python-data-structures" class="md-nav__link">
+    Chapter 6: Python Data Structures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-7-python-object-oriented-shortcuts" class="md-nav__link">
+    Chapter 7: Python Object-oriented Shortcuts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8-strings-and-serialization" class="md-nav__link">
+    Chapter 8: Strings and Serialization
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="python-3-object-oriented-programming">Python 3 Object-oriented Programming<a class="headerlink" href="#python-3-object-oriented-programming" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><em>Second Edition</em><br />
+<em>Dusty Phillips</em><br />
+<em>Python 3 面向对象编程（第二版 影印版）</em><br />
+<em>2015, Packt Publishing Ltd., 2017, 东南大学出版社</em>  </p>
+</blockquote>
+<hr />
+<h2 id="chapter-1-object-oriented-design">Chapter 1: Object-oriented Design<a class="headerlink" href="#chapter-1-object-oriented-design" title="Permanent link">&para;</a></h2>
+<p>An <em>object</em> is a collection of <em>data</em> and associated <em>behaviours</em>.  </p>
+<h2 id="chapter-2-objects-in-python">Chapter 2: Objects in Python<a class="headerlink" href="#chapter-2-objects-in-python" title="Permanent link">&para;</a></h2>
+<h4>建立类</h4>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="err">&lt;</span><span class="nc">ClassName</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">declarations</span><span class="p">,</span> <span class="n">definitions</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<h4>成员函数</h4>
+<p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="o">&lt;</span><span class="n">FunctionName</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span> <span class="o">&lt;</span><span class="p">,</span> <span class="n">arglist</span><span class="o">&gt;</span><span class="p">):</span>
+    <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
+</code></pre></div>
+第一个参数是当前对象自身，相当于 C++ 的 <code>this</code>。<br />
+根据惯例，命名为 <code>self</code>。</p>
+<h4>Initializer</h4>
+<p>类的 Initializer 函数名为 <code>__init__</code>，可接受参数。</p>
+<p>还有一类构造函数 Constructor，函数名为 <code>__new__</code>，只接受一个参数，返回当前构造的对象。但是构造函数没有得到广泛使用。</p>
+<h4>模块 | Module</h4>
+<p>将一些相关的类放入一个单独的文件（称为模块）中。则在其它文件中可以使用 <code>import</code> 来引用其中的类。</p>
+<p>若 <code>database.py</code> 下有 <code>Database</code> 与 <code>Query</code> 类，则有以下引用方式：
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">database</span>
+<span class="n">db</span><span class="o">=</span><span class="n">database</span><span class="o">.</span><span class="n">Database</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">database</span> <span class="kn">import</span> <span class="n">Database</span><span class="p">,</span> <span class="n">Query</span>
+<span class="n">db</span><span class="o">=</span><span class="n">Database</span><span class="p">()</span>
+</code></pre></div></p>
+<p>在引入一个模块时，其中的一级语句也会被执行。为了只执行主模块的语句，应将被引入模块的一级语句加入
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</code></pre></div>
+之后。</p>
+<h4>Package</h4>
+<p>将一类模块放入文件夹，并加入一个空文件 <code>__init__.py</code>，则这个文件夹就被称为 package。</p>
+<p>假设将上述 <code>database.py</code> 放入 <code>ecommerce</code> 中，则可有以下引用：
+<div class="highlight"><pre><span></span><code><span class="c1"># Absolute imports</span>
+<span class="kn">import</span> <span class="nn">ecommerce.database</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">ecommerce</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">Database</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">ecommerce</span> <span class="kn">import</span> <span class="n">database</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">Database</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">ecommerce.database</span> <span class="kn">import</span> <span class="n">Database</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">Database</span><span class="p">()</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Relative imports</span>
+
+<span class="kn">from</span> <span class="nn">.database</span> <span class="kn">import</span> <span class="n">Database</span> <span class="c1"># 当前文件与被引部分在同文件夹</span>
+
+<span class="kn">from</span> <span class="nn">..database</span> <span class="kn">import</span> <span class="n">Database</span> <span class="c1"># 当前文件在被引部分的同级文件夹下</span>
+
+<span class="o">...</span>
+</code></pre></div>
+
+<p>在 <code>__init__.py</code> 中亦可引用。则在引用到此模块时自动可以执行其中的 <code>import</code>。</p>
+<h4>变量封装</h4>
+<p>Python 没有变量访问权限机制。</p>
+<p>按惯例，仅供内部使用的成员应加上 docstring 并且以下划线 <code>_</code> 开头。</p>
+<p>若需要更强的隐藏，则可以以双下划线开头。则在类外将隐藏此成员，但是仍可以用 <code>_&lt;classname&gt;(__)&lt;membername&gt;</code> 强制调用。</p>
+<h4>类变量和实例变量</h4>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">P</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</code></pre></div>
+其中 <code>a</code> 为类变量，为类与各实例所共有，可以通过类或者实例的点运算访问。<br />
+<code>b</code> 则为实例变量，为每个实例私有。<br />
+注意若改变一个实例中成员 <code>a</code> 的值，则相当于在此实例中添加一个同名成员。</p>
+<h2 id="chapter-3-when-objects-are-alike">Chapter 3: When Objects Are Alike<a class="headerlink" href="#chapter-3-when-objects-are-alike" title="Permanent link">&para;</a></h2>
+<h4>继承</h4>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">People</span><span class="p">):</span>
+    <span class="k">pass</span>
+</code></pre></div>
+
+<p>事实上所有的类斗继承自 <code>object</code> 类。</p>
+<h4>重载成员函数</h4>
+<p>子类对父类的重载不需要其他说明，直接在子类定义中重写即可。<br />
+为避免代码冗余，可以在子类定义中调用父类成员函数。
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">People</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">sid</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sid</span> <span class="o">=</span> <span class="n">sid</span>
+</code></pre></div></p>
+<h4>多继承</h4>
+<p>直接在父类表中表明多个父类即可。
+在调用父类成员函数时可以使用父类名：
+<div class="highlight"><pre><span></span><code><span class="o">...</span>
+        <span class="n">People</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</code></pre></div></p>
+<p>若一个多继承中父类都继承自一个类，则可能出现一个方法被调用多次的情况，这时只要在引用父类方法时使用 <code>super()</code> 即可。</p>
+<p>若多继承重载的方法中出现了参数不同的情况，较好的解决方法是统一在参数表后加上 <code>**kwargs</code>，将可能出现的多余参数存入该字典。</p>
+<h4>多态</h4>
+<h4>鸭子类型 | Duck Typing</h4>
+<p>使用鸭子类型可以巧妙地用另一种手段实现多态，也可避免多继承。即在不同的类中用不同的方式实现同名函数。</p>
+<h4>抽象类 | <strong>A</strong>bstract <strong>B</strong>ase <strong>C</strong>lass</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">abc</span>
+
+<span class="k">class</span> <span class="nc">Fruit</span><span class="p">:</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="o">...</span>
+
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractproperty</span>
+    <span class="k">def</span> <span class="o">...</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="n">def</span><span class="o">...</span>
+
+    <span class="k">return</span> <span class="bp">NotImplemented</span>
+</code></pre></div>
+
+<h2 id="chapter-4-expecting-the-unexpected">Chapter 4: Expecting the Unexpected<a class="headerlink" href="#chapter-4-expecting-the-unexpected" title="Permanent link">&para;</a></h2>
+<h4>Raise An Exception</h4>
+<div class="highlight"><pre><span></span><code><span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Msg&quot;</span><span class="p">)</span>
+<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Msg&quot;</span><span class="p">)</span>
+<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Msg&quot;</span><span class="p">)</span>
+<span class="k">raise</span> <span class="ne">ZeroDivisionError</span>
+<span class="k">raise</span> <span class="c1"># Re-raise the last exception</span>
+</code></pre></div>
+
+<h4>Try-Except</h4>
+<p><div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statements_called_on_exception</span><span class="o">&gt;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statements_called_without_exception</span><span class="o">&gt;</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">zde</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ade</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+    <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span> <span class="c1"># Other exceptions</span>
+    <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
+</code></pre></div></p>
+<p>所有的异常都继承自 <code>BaseException</code>，而其中绝大多数又都是 <code>Exception</code> 的子类。例外的两例是在程序退出时触发的 <code>SystemExit</code> 和 <code>KeyboardInterrupt</code>。</p>
+<h4>自定义异常</h4>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">)</span>
+    <span class="k">pass</span>
+</code></pre></div>
+<code>Exception</code> 类的构造函数将参数传入 <code>args</code> 的元组当中，一般不需重载。</p>
+<h4>异常处理原则</h4>
+<p>先执行完代码再处理异常，以免白白探测异常。</p>
+<h2 id="chapter-5-when-to-use-object-oriented-programming">Chapter 5: When to Use Object-oriented Programming<a class="headerlink" href="#chapter-5-when-to-use-object-oriented-programming" title="Permanent link">&para;</a></h2>
+<p>设计类的时候需要衡量它是否值得建模。</p>
+<p>DRY 原则：<em>Don't Repeat Yourself.</em></p>
+<h4>Property</h4>
+<p><code>Property</code> 将一个类的 getter, setter, deleter 化为属性。
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">People</span><span class="p">:</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="nd">@People</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@People</span><span class="o">.</span><span class="n">deleter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+</code></pre></div>
+等价于
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">People</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">_get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="k">def</span> <span class="nf">_set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">_del_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">_get_name</span><span class="p">,</span> <span class="n">_set_name</span><span class="p">,</span> <span class="n">_del_name</span><span class="p">,</span> <span class="s1">&#39;docstring&#39;</span><span class="p">)</span>
+</code></pre></div>
+则 <code>name</code> 返回其值，<code>name='abc'</code> 为其赋值，<code>del name</code> 删除之。</p>
+<p>由于成员函数一般使用动词，在以上操作时显得麻烦，故可以将其化作 property，变为名词，简化程序。</p>
+<h2 id="chapter-6-python-data-structures">Chapter 6: Python Data Structures<a class="headerlink" href="#chapter-6-python-data-structures" title="Permanent link">&para;</a></h2>
+<h4>空对象</h4>
+<p>可以建立最原始的对象实例
+<div class="highlight"><pre><span></span><code><span class="n">o</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+</code></pre></div></p>
+<p>但是不能为这个实例添加成员，因为 <code>object</code> 类收到了 <code>slots</code> 的限制</p>
+<h4>元组 | Tuple</h4>
+<p>元组一经创建，无法改变。元组可以同时存储不同的类型。
+<div class="highlight"><pre><span></span><code><span class="n">t1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;123&quot;</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;123&quot;</span><span class="p">)</span>
+</code></pre></div>
+元组可以直接解包至变量，也可按序号访问：
+<div class="highlight"><pre><span></span><code><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">v4</span> <span class="o">=</span> <span class="n">t1</span>
+<span class="n">t1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">t1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</code></pre></div></p>
+<h4>Named Tuples</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span> 
+<span class="n">Stock</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Stock&quot;</span><span class="p">,</span> <span class="s2">&quot;symbol current high low&quot;</span><span class="p">)</span> 
+<span class="n">stock</span> <span class="o">=</span> <span class="n">Stock</span><span class="p">(</span><span class="s2">&quot;FB&quot;</span><span class="p">,</span> <span class="mf">75.00</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">75.03</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mf">74.90</span><span class="p">)</span> 
+</code></pre></div>
+
+<p>相同地，namedtuple 也可以被解包，但它提供一种更方便的方式：
+<div class="highlight"><pre><span></span><code><span class="n">stock</span><span class="o">.</span><span class="n">current</span>
+</code></pre></div></p>
+<h4>字典 | Dictionary</h4>
+<p><div class="highlight"><pre><span></span><code><span class="n">emptydict1</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">emptydict2</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">stocks</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;GOOG&quot;</span><span class="p">:</span> <span class="mf">613.30</span><span class="p">,</span> <span class="s2">&quot;MSFT&quot;</span><span class="p">:</span> <span class="mf">30.25</span><span class="p">}</span>
+<span class="n">stocks</span><span class="p">[</span><span class="s2">&quot;GOOG&quot;</span><span class="p">]</span>
+</code></pre></div>
+若访问的键不存在，则会出现 <code>KeyError</code> 错误。可以使用 <code>get()</code> 方法
+<div class="highlight"><pre><span></span><code><span class="n">stocks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;GOOG&quot;</span><span class="p">)</span>
+<span class="n">stocks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;MSFT&quot;</span><span class="p">,</span> <span class="s2">&quot;No Result&quot;</span><span class="p">)</span>
+</code></pre></div>
+若键不存在，则返回 <code>None</code>，或者返回给定的默认值（第二个参数）。</p>
+<div class="highlight"><pre><span></span><code><span class="n">stocks</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;GOOG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+<p><code>setdefault</code> 也返回键对应的值，若键不存在，则以此键和默认值建立新项。</p>
+<p>除了列表和字典，字典可以有多种键类型，包括对象。甚至在同一字典中可以同时有多种键。</p>
+<p><code>keys() values() items()</code> 三个方法分别返回键、值和键值对元组的迭代器，可以将它们像列表一样使用，它们在 <code>for</code> 循环中尤其有用。
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">stock</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">pass</span>
+</code></pre></div></p>
+<h4>Defaultdict</h4>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="n">letter_frequency</span><span class="o">=</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</code></pre></div>
+<code>defaultdict</code> 的构造函数接受一个函数作为参数，如果字典内没有访问的键，则以这个函数的返回值作为默认值。这里的函数是 <code>int</code>，<code>int</code> 类无参数调用时返回的是 0。如果想创建一个空列表则可以用 <code>list</code>。当然可以自定义函数。</p>
+<h4>计数器 | Counter</h4>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span> 
+<span class="k">def</span> <span class="nf">letter_frequency</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Counter</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span> 
+</code></pre></div>
+<code>Counter</code> 是专门用于计数的字典子类。它的键为计数对象，值为计数结果。亦可将一个列表传入其中。</p>
+<p><code>most_common</code> 返回计数最高的列表
+<div class="highlight"><pre><span></span><code><span class="n">Counter</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></p>
+<h4>列表 | List</h4>
+<p>列表一样可以同时存储多种类型的数据，但是一般不这样做。
+下列为列表的方法：</p>
+<p><code>append(e)</code><br />
+<code>insert(index, e)</code><br />
+<code>count(e)</code><br />
+<code>index(e)</code> 返回元素的序号，若找不到则报错<br />
+<code>find(e)</code> 返回元素序号，找不到则返回 -1<br />
+<code>reverse()</code><br />
+<code>sort()</code>  </p>
+<p><code>sort()</code> 方法将字符串按 ASCII 顺序排序，将数字按升序排序，如果列表不能排序，则返回 <code>TypeError</code>。可以通过成员函数 <code>__lt__</code>（less than）定义序。如果 self 比传入参数小，则返回 True。</p>
+<p>如果需要更完整的序，则需要定义 <code>__lt__</code>、<code>__gt__</code>、<code>__eq__</code>、<code>__ne__</code>、<code>__le__</code>、<code>__ge__</code>。借助 <code>total_ordering</code> 可以简化定义，只需要 <code>__lt__</code> 和 <code>__eq__</code> 就可以自动生成其余比较函数。
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">total_ordering</span>
+<span class="nd">@total_ordering</span> 
+<span class="k">class</span> <span class="nc">SortList</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
+<code>sort()</code> 方法的 <code>key</code> 参数接受一个比较函数。</p>
+<h4>集合 | Set</h4>
+<p><div class="highlight"><pre><span></span><code><span class="n">s</span><span class="o">=</span><span class="nb">set</span><span class="p">()</span>
+<span class="n">s</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">}</span>
+<span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;this&quot;</span><span class="p">)</span>
+</code></pre></div>
+建立空集只有一种语法。<br />
+相同地，集合可以存储多种类型，除了列表和字典。它们成为“可哈希类型”。<br />
+集合是无序的，遍历使不一定以存入的顺序输出。若需要排序，可以将其转换为列表 <code>list(s)</code></p>
+<p>下列为集合操作方法：接受集合为参数，作为被操作集合<br />
+<code>union(s)</code><br />
+<code>intersection(s)</code><br />
+<code>symmetric_difference(s)</code><br />
+<code>issubset(s)</code><br />
+<code>issuperset(s)</code><br />
+<code>difference(s)</code> 集合差</p>
+<h4>内置方法</h4>
+<p>可以使用 <code>dir(obj)</code> 来查看其所有内置方法名。</p>
+<p>由此可以重载运算符</p>
+<h4>队列</h4>
+<p>队列有 FIFO，LIFO 和优先队列三种，它们有共同的 API
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span><span class="p">,</span> <span class="n">LifoQueue</span><span class="p">,</span> <span class="n">PriorityQueue</span>
+<span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="n">stack</span> <span class="o">=</span> <span class="n">LifoQueue</span><span class="p">()</span>
+<span class="n">pqueue</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>
+</code></pre></div>
+构造函数参数有 <code>maxsize</code>  </p>
+<p>方法有<br />
+<code>get()</code><br />
+<code>put()</code><br />
+对以上两个方法，若参数 <code>block=False</code>，则在操作失败时报错。
+<code>full()</code><br />
+<code>empty()</code>  </p>
+<p>优先队列的使用稍有不同，它首先弹出的数据是队列中优先级最高的数据。优先级最高被定义为升序排序的最前位。一般使用元组作为队列元素，元组的第一项表征优先级，第二项才是数据。另一种方法是定义队列的 <code>__lt__</code> 方法。</p>
+<h2 id="chapter-7-python-object-oriented-shortcuts">Chapter 7: Python Object-oriented Shortcuts<a class="headerlink" href="#chapter-7-python-object-oriented-shortcuts" title="Permanent link">&para;</a></h2>
+<h4>内置函数 | Built-ins</h4>
+<p><code>len(obj)</code> 相当于 <code>obj.__len__()</code>，返回对象的长度。<br />
+<code>reversed(obj)</code> 相当于 <code>obj.__reversed__()</code>，返回序列对象的逆序。在倒序 <code>for</code> 循环中有广泛应用。<br />
+<code>enumerate(obj)</code> 将序列转换为元组的序列，第一项为序号（0 开始），第二项为原项。在 <code>for</code> 循环中计数中有重要应用。</p>
+<p><code>all(obj)</code> 接受一个可迭代对象，如果其中所有项均为真（或为非零数/非空串、表/非 <code>None</code> 值）则返回 <code>True</code>。<br />
+<code>any(obj)</code> <code>all</code> 的“任一”形式。<br />
+<code>eval(str)</code>, <code>exec(str)</code>, <code>compile(str)</code> 执行字符串的语句内容。</p>
+<p>这些内置函数都在 <code>dir(__builtins__)</code> 中。</p>
+<h4>文件读写</h4>
+<p><code>open(filename, mode)</code></p>
+<p><code>read()</code> 不加参数则读入整个文件，加入则读入指定字节。<br />
+<code>readline()</code> 读入一行。<br />
+<code>readlines()</code> 返回每一行的列表。一般用 <code>while</code> 读入。</p>
+<p>相同地，有 <code>write()</code> 和 <code>writeline()</code>。</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
+<code>with</code> 语句执行前调用 <code>__enter__()</code> 方法，退出前调用 <code>__exit__()</code> 方法，不管是否发生异常。用此语句可以代替 <code>try-except</code> 语句。<br />
+在自定义类中使用 <code>with</code>：
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">StringJoiner</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">tb</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> 
+</code></pre></div></p>
+<h4>不定参数</h4>
+<p>参数表中使用 <code>*varargs</code> 将多参数存入列表 <code>varargs</code>中。<br />
+<code>**kwargs</code> 存入字典中。<br />
+相同地，可以在调用时使用列表或者字典来传递显示声明的参数。  </p>
+<h4>函数对象</h4>
+<p>函数也是对象。</p>
+<p><code>__name__</code> 属性返回函数名<br />
+<code>__description__</code> 属性返回说明<br />
+<code>__class__</code> 属性返回类型  </p>
+<p>函数可作为参数传入另一函数，可以以参数形式被调用。</p>
+<p>类的成员函数本身也可作为属性。可以将函数赋值给一个成员函数。</p>
+<h4>调用对象</h4>
+<p>定义类的 <code>__call__</code> 成员函数，可以使类的实例可被调用。</p>
+<h2 id="chapter-8-strings-and-serialization">Chapter 8: Strings and Serialization<a class="headerlink" href="#chapter-8-strings-and-serialization" title="Permanent link">&para;</a></h2>
+<h3>字符串操作</h3>
+<p><code>str</code> 类中有大量字符串操作。使用 <code>dir</code> 和 <code>help</code> 查看其中具体方法：</p>
+<p><code>isalpha</code><br />
+<code>isupper</code> / <code>islower</code> <br />
+<code>startswith</code> / <code>endswith</code><br />
+<code>isapace</code> 对所有空白字符返回真<br />
+<code>istitle</code> 若所有单词均首字母大写则返回真<br />
+<code>isnumeric</code> / <code>isdigit</code> / <code>isdecimal</code>  </p>
+<p><code>count</code><br />
+<code>find</code> / <code>rfind</code><br />
+<code>index</code> / <code>rindex</code>  </p>
+<p><code>upper</code> / <code>lower</code><br />
+<code>capitalize</code><br />
+<code>title</code>  </p>
+<p><code>translate</code> 使用字典逐词翻译</p>
+<p><code>split</code> / <code>rsplit</code> 将字符串按分隔符分为列表<br />
+<code>partition</code> / <code>rpartition</code> 在第一个出现的分隔符处分开，分为元组 <code>(前, 分隔符, 后)</code><br />
+<code>join</code><br />
+<code>replace</code>  </p>
+<h3>字符串格式化 <code>format</code> 方法</h3>
+<p>用双写表示花括号。</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{label}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0[1]}</span><span class="s2"> </span><span class="si">{0[2]}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">([</span><span class="s2">&quot;12&quot;</span><span class="p">,</span> <span class="s2">&quot;34&quot;</span><span class="p">]])</span>
+</code></pre></div>
+同理适用于多层数据结构和对象。</p>
+<h3>字符串编码</h3>
+<p>Python 3 使用 Unicode 字符。</p>
+<p><code>b</code> 表示字符串内容直接以字节存储。<br />
+使用 <code>decode</code> 和 <code>encode</code> 方法进行转换。
+<div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;字符串&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">characters</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">))</span>
+</code></pre></div></p>
+<p><code>bytearray</code> 类相当于一个存储字节的列表，可以被修改。
+<div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;abcdefgh&quot;</span><span class="p">)</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x15\xa3</span><span class="s2">&quot;</span>
+</code></pre></div></p>
+<h3>正则表达式</h3>
+<p>字符匹配的一般模式式将主字串 <code>string</code> 与模式 <code>pattern</code> 匹配。若匹配成功，则 <code>match</code> 返回一个 <code>re.match</code>，否则返回 <code>None</code>。主串是一般的字符串，模式的形式则用正则表达式。
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Regex matches.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<strong>一般匹配</strong>：若主串以模式串开头，则匹配成功。<br />
+<strong>首尾字符</strong>：<code>^</code> 代表字符串首，<code>$</code> 代表字符串尾。<br />
+<strong>通配符（wildcard）</strong>：<code>.</code> 代表任<strong>一个</strong>字符。<br />
+<strong>字符类</strong>：<code>[]</code> 方括号中的字符代表匹配其中的任<strong>一个</strong>。若要表示一个范围内的字符，可用 <code>[a-z]</code> 表示范围。如 <code>[b-x]</code>、<code>[a-zA-Z0-9]</code>。<br />
+<strong>转义字符</strong>：<code>\.</code> 匹配句点本身，以上特殊字符同理。<code>\n</code> 匹配换行符 <code>newline</code>，<code>\t</code> 匹配缩进符 <code>Tab</code>，<code>\d</code> 匹配单个数字，<code>\s</code> 匹配空白字符，<code>\w</code> 匹配字母+数字+下划线。<br />
+<strong>重复匹配</strong>：在一个模式后加上 <code>*</code> 代表匹配这个模式零或任意多次。<code>+</code> 代表匹配任意多次，<code>?</code> 代表匹配零或一次，<code>{n}</code> 代表匹配 n 次。可以将模式用圆括号分组，以重复多个模式。特别地，多次匹配 <code>[]</code> 是先匹配各次而不是先匹配再重复。  </p>
+<p><code>search()</code> 方法和 <code>match()</code> 方法类似，但是放宽了从主串开头开始匹配的要求，相当于在模式串前加上 <code>'^.*'</code>。<br />
+<code>findall()</code> 则是返回不重叠的所有满足子串，它的接口较为复杂。</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">groups</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div>
+<code>match</code> 方法返回的对象中有 <code>groups()</code> 方法，返回的是一个元组，按顺序包含了正则表达式中所有的分组即用小括号中所匹配的字符。若分组中又有分组，则返回顺序以左括号出现顺序为准。</p>
+<h3>序列化</h3>
+<p><code>pickle</code>模块将对象序列化，打包至文件中以便存储、传输。
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pickled_list&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">some_data</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;pickled_list&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">loaded_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</code></pre></div></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../cpp/cpp-notes/" title="C++ Notes" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                C++ Notes
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../latex/latex-cheatsheet/" title="LaTeX Cheatsheet" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                LaTeX Cheatsheet
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 - 2020 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/x4Cx58x54" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f9edbbd5.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../_static/js/extra.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

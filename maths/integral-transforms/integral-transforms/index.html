@@ -1,0 +1,1967 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="x4Cx58x54">
+      
+      <link rel="shortcut icon" href="../../../none">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.5">
+    
+    
+      
+        <title>Integral Transforms - Randomish Writing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.63b94e9e.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.7f672a1f.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../_static/css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Randomish Writing" class="md-header-nav__button md-logo" aria-label="Randomish Writing">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Randomish Writing
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Integral Transforms
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../linear-algebra/essence-of-linear-algebra/" class="md-tabs__link md-tabs__link--active">
+          Mathematics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../c/c-primer-plus/" class="md-tabs__link">
+          Languages
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../ai/deep-learning/deep-learning/" class="md-tabs__link">
+          AI
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../competitive-programming/prime/" class="md-tabs__link">
+          Competitive Programming
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../computer-organization/computer-organization/" class="md-tabs__link">
+          CS
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../electromagnetics/electromagnetics/" class="md-tabs__link">
+          Misc
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
+
+    </a>
+    Randomish Writing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Mathematics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Mathematics" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Mathematics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linear-algebra/essence-of-linear-algebra/" title="Essence of Linear Algebra" class="md-nav__link">
+      Essence of Linear Algebra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linear-algebra/linear-algebra/" title="Linear Algebra" class="md-nav__link">
+      Linear Algebra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Probability Theory
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Probability Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Probability Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../probability-theory/probability-theory/" title="Probability Theory" class="md-nav__link">
+      Probability Theory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3-2" type="checkbox" id="nav-2-3-2">
+    
+    <label class="md-nav__link" for="nav-2-3-2">
+      Problemsets
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Problemsets" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Problemsets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../probability-theory/events-and-probability/" title="Events and Probability" class="md-nav__link">
+      Events and Probability
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../probability-theory/random-variables/" title="Random Variables" class="md-nav__link">
+      Random Variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/statistics/" title="Statistics" class="md-nav__link">
+      Statistics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../discrete-maths/discrete-maths/" title="Discrete Maths" class="md-nav__link">
+      Discrete Maths
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../calculus/calculus/" title="Calculus" class="md-nav__link">
+      Calculus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complex-analysis/complex-analysis/" title="Complex Analysis" class="md-nav__link">
+      Complex Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Integral Transforms
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Integral Transforms" class="md-nav__link md-nav__link--active">
+      Integral Transforms
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fourier" class="md-nav__link">
+    Fourier 傅里叶变换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laplace" class="md-nav__link">
+    Laplace 拉普拉斯变换
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3b1b/3b1b/" title="3Blue1Brown" class="md-nav__link">
+      3Blue1Brown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../memos/memos/" title="Memos" class="md-nav__link">
+      Memos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../c/c-primer-plus/" title="C Primer Plus" class="md-nav__link">
+      C Primer Plus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cpp/cpp-notes/" title="C++ Notes" class="md-nav__link">
+      C++ Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python/python-3-object-oriented-programming/" title="Python 3 OOP" class="md-nav__link">
+      Python 3 OOP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      LaTeX
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="LaTeX" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        LaTeX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../latex/latex-cheatsheet/" title="LaTeX Cheatsheet" class="md-nav__link">
+      LaTeX Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../latex/latex-maths/" title="LaTeX Maths Symbols" class="md-nav__link">
+      LaTeX Maths Symbols
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Regex
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Regex" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Regex
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../regex/introducing-regular-expressions/" title="Introducing Regular Expressions" class="md-nav__link">
+      Introducing Regular Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../regex/regular-expressions-cookbook/" title="Regular Expressions Cookbook" class="md-nav__link">
+      Regular Expressions Cookbook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../web/javascript-the-definitive-guide/" title="JavaScript the Definitive Guide" class="md-nav__link">
+      JavaScript the Definitive Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../web/html-cheatsheet/" title="HTML Cheatsheet" class="md-nav__link">
+      HTML Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../web/css-cheatsheet/" title="CSS Cheatsheet" class="md-nav__link">
+      CSS Cheatsheet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      AI
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="AI" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        AI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ai/deep-learning/deep-learning/" title="Deep Learning" class="md-nav__link">
+      Deep Learning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Competitive Programming
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Competitive Programming" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Competitive Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Mathematics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Mathematics" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Mathematics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/prime/" title="素数" class="md-nav__link">
+      素数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/exgcd/" title="扩展欧几里得" class="md-nav__link">
+      扩展欧几里得
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/combination/" title="组合数" class="md-nav__link">
+      组合数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/binexp/" title="快速幂" class="md-nav__link">
+      快速幂
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/fibonacci/" title="类斐波那契数列" class="md-nav__link">
+      类斐波那契数列
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/gcd-inverse/" title="GCD Inverse" class="md-nav__link">
+      GCD Inverse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/lagrange-interpolation/" title="拉格朗日插值" class="md-nav__link">
+      拉格朗日插值
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Data Structures
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Data Structures" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Data Structures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/fenwick/" title="树状数组" class="md-nav__link">
+      树状数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/segment-tree/" title="线段树" class="md-nav__link">
+      线段树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/heap/" title="堆" class="md-nav__link">
+      堆
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/sparse-table/" title="ST 表" class="md-nav__link">
+      ST 表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/ufds/" title="并查集" class="md-nav__link">
+      并查集
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Dynamic Programming
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Dynamic Programming" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Dynamic Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/intersection-points/" title="直线交点数" class="md-nav__link">
+      直线交点数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/lis/" title="最长上升序列" class="md-nav__link">
+      最长上升序列
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/number-of-common-substrings/" title="公共子序列" class="md-nav__link">
+      公共子序列
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Basics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Basics" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Basics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/quicksort/" title="快速排序 / 第 k 小的数" class="md-nav__link">
+      快速排序 / 第 k 小的数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/nearest-point-pair/" title="平面最近点对" class="md-nav__link">
+      平面最近点对
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Misc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/josephus-survivor/" title="Josephus Survivor" class="md-nav__link">
+      Josephus Survivor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/chopsticks/" title="找筷子" class="md-nav__link">
+      找筷子
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/double-cola/" title="Double Cola" class="md-nav__link">
+      Double Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/alphabetical-coding/" title="字母计数" class="md-nav__link">
+      字母计数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/number-of-trailing-zeros-of-n%21/" title="N! 末尾零数" class="md-nav__link">
+      N! 末尾零数
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      CS
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="CS" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        CS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../computer-organization/computer-organization/" title="Computer Organization" class="md-nav__link">
+      Computer Organization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../computer-programming/the-practice-of-programming/" title="The Practice of Programming" class="md-nav__link">
+      The Practice of Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Misc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+    
+    <label class="md-nav__link" for="nav-7-1">
+      Electromagnetics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Electromagnetics" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Electromagnetics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/electromagnetics/" title="Electromagnetics" class="md-nav__link">
+      Electromagnetics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-1-2" type="checkbox" id="nav-7-1-2">
+    
+    <label class="md-nav__link" for="nav-7-1-2">
+      Problemsets
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Problemsets" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Problemsets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/electric-field/" title="Electric Field" class="md-nav__link">
+      Electric Field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/magnetic-field/" title="Magnetic Field" class="md-nav__link">
+      Magnetic Field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/induction/" title="Induction" class="md-nav__link">
+      Induction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/em-wave/" title="EM Wave" class="md-nav__link">
+      EM Wave
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../control-theory/classical-control/" title="Classical Control Theory" class="md-nav__link">
+      Classical Control Theory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fourier" class="md-nav__link">
+    Fourier 傅里叶变换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laplace" class="md-nav__link">
+    Laplace 拉普拉斯变换
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="_1">积分变换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="fourier">Fourier 傅里叶变换<a class="headerlink" href="#fourier" title="Permanent link">&para;</a></h2>
+<h3>Fourier 级数</h3>
+<p>在 <span class="arithmatex">\([-\frac{T}{2}, \frac{T}{2}]\)</span> 上满足 Dirichlet 条件的周期函数 <span class="arithmatex">\(f_T(t)\)</span> 在其连续点处的 <strong>Fourier 级数三角形式</strong>为</p>
+<div class="arithmatex">\[
+f_T(t) = \frac{a_0}{2} + \sum_{n=1}^\infty\left(a_n\cos n\omega t + b_n\sin n\omega t\right)\quad(n\in\mathbb{Z^+}),
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\omega&amp; = \frac{2\pi}{T},\\
+a_0 &amp;= \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)\mathrm{d}t,\\
+a_n &amp;= \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)\cos n\omega t\mathrm{d}t,\\
+b_n &amp;= \frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)\sin n\omega t\mathrm{d}t.
+\end{aligned}
+\]</div>
+<p>由欧拉公式，得</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f_T(t) &amp;= \frac{a_0}{2}+\sum_{n=1}^\infty\left(a_n\frac{\mathrm{e}^{in\omega t}+\mathrm{e}^{-in\omega t}}{2} + b_n\frac{\mathrm{e}^{in\omega t}-\mathrm{e}^{-in\omega t}}{2i}\right)\\
+&amp;=\frac{a_0}{2}+\sum_{n=1}^\infty\left(\frac{a_n-ib_n}{2}\mathrm{e}^{in\omega t}+\frac{a_n+ib_n}{2}\mathrm{e}^{-in\omega t}\right).
+\end{aligned}
+\]</div>
+<p>令</p>
+<div class="arithmatex">\[
+\begin{aligned}
+c_0 &amp;= \frac{a_0}{2} = \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)\mathrm{d}t,\\
+\\
+c_n &amp;= \frac{a_n-ib_n}{2}\\
+&amp;= \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)\left(\cos n\omega t-i\sin n\omega t\right)\mathrm{d}t\\
+&amp;=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)\mathrm{e}^{-in\omega t}\mathrm{d}t\quad(n\in\mathbb{Z^+}),\\
+\\
+c_{-n} &amp;= \frac{a_n+ib_n}{2}\\
+&amp;= \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)\left(\cos n\omega t+i\sin n\omega t\right)\mathrm{d}t\\
+&amp;=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)\mathrm{e}^{in\omega t}\mathrm{d}t\quad(n\in\mathbb{Z^+}),\\
+\end{aligned}
+\]</div>
+<p>则可合写为一个式子</p>
+<div class="arithmatex">\[
+c_n = \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(t)\mathrm{e}^{-in\omega t}\mathrm{d}t\quad(n\in \mathbb{Z}).
+\]</div>
+<p>故</p>
+<div class="arithmatex">\[
+f_T(t) = \sum_{n=-\infty}^{+\infty}c_n\mathrm{e}^{i\omega_n t},
+\]</div>
+<p>即 <strong>Fourier 级数的复指数形式</strong></p>
+<div class="arithmatex">\[
+f_T(t) = \frac{1}{T}\sum_{n=-\infty}^{+\infty}\left[\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(\tau)\mathrm{e}^{-i\omega_n\tau}\mathrm{d}\tau\right]\mathrm{e}^{i\omega_n t}.
+\]</div>
+<h3>Fourier 积分</h3>
+<p>下面讨论非周期函数的展开，令 <span class="arithmatex">\(T\rightarrow+\infty\)</span>，此时 <span class="arithmatex">\(\omega_n\)</span> 均匀分布在整个数轴上，且 <span class="arithmatex">\(\Delta\omega = \omega_n - \omega_{n-1} = \omega\)</span>，<span class="arithmatex">\(\Delta\omega\rightarrow 0\)</span>. 于是有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f(t) &amp;= \lim_{\Delta\omega\rightarrow 0}\frac{\Delta\omega}{2\pi}\sum_{n=-\infty}^{+\infty}\left[\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(\tau)\mathrm{e}^{-i\omega_n\tau}\mathrm{d}\tau\right]\mathrm{e}^{i\omega_n t}\\
+&amp;=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{-i\omega\tau}\mathrm{d}\tau\right]\mathrm{e}^{i\omega t}\mathrm{d}\omega,
+\end{aligned}
+\]</div>
+<p>这便是 <strong>Fourier 积分公式的复数形式</strong>，在任意有限区间满足 Dirichlet 条件且在 <span class="arithmatex">\(\mathbb{R}\)</span> 上绝对可积的函数，各间断点用左右极限之均值代替后满足上述公式.</p>
+<p>利用欧拉公式，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+f(t) &amp;= \frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{-i\omega\tau}\mathrm{d}\tau\right]\mathrm{e}^{i\omega t}\mathrm{d}\omega\\
+&amp;= \frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{i\omega(t-\tau)}\mathrm{d}\tau\right]\mathrm{d}\omega\\
+&amp;=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\bigg[\int_{-\infty}^{+\infty}f(t)\cos\omega(t-\tau)\mathrm{d}\tau\\&amp;\quad\quad+i\int_{-\infty}^{+\infty}f(t)\sin\omega(t-\tau)\mathrm{d}\tau\bigg]\mathrm{d}\omega.
+\end{aligned}
+\]</div>
+<p>由于 <span class="arithmatex">\(\int_{-\infty}^{+\infty}f(t)\sin\omega(t-\tau)\mathrm{d}\tau\)</span> 是 <span class="arithmatex">\(\omega\)</span> 的奇函数，<span class="arithmatex">\(\int_{-\infty}^{+\infty}f(t)\cos\omega(t-\tau)\mathrm{d}\tau\)</span> 是 <span class="arithmatex">\(\omega\)</span> 的偶函数，故</p>
+<div class="arithmatex">\[
+f(t)=\frac{1}{\pi}\int_0^{+\infty}\bigg[\int_{-\infty}^{+\infty}f(t)\cos\omega(t-\tau)\mathrm{d}\tau\bigg]\mathrm{d}\omega,
+\]</div>
+<p>即 <strong>Fourier 积分公式的三角形式</strong>.</p>
+<p>将三角函数展开，当 <span class="arithmatex">\(f(t)\)</span> 是奇函数时，得</p>
+<div class="arithmatex">\[
+f(t) = \frac{2}{\pi}\int_0^{+\infty}\left[\int_0^{+\infty}f(t)\sin\omega\tau\mathrm{d}\tau\right]\sin\omega t\mathrm{d}\omega,
+\]</div>
+<p>当 <span class="arithmatex">\(f(t)\)</span> 是偶函数时，得</p>
+<div class="arithmatex">\[
+f(t) = \frac{2}{\pi}\int_0^{+\infty}\left[\int_0^{+\infty}f(t)\cos\omega\tau\mathrm{d}\tau\right]\cos\omega t\mathrm{d}\omega,
+\]</div>
+<p>分别称为 <strong>Fourier 正弦积分公式</strong> 和 <strong>Fourier 余弦积分公式</strong>.</p>
+<h3>Fourier 变换</h3>
+<p>称函数</p>
+<div class="arithmatex">\[
+\mathscr{F}\left[f(t)\right] = F(\omega) = \int_{-\infty}^{+\infty}f(t)\mathrm{e}^{-i\omega t}\mathrm{d}t
+\]</div>
+<p>为 <span class="arithmatex">\(f(t)\)</span> 的 <strong>Fourier 变换</strong>，</p>
+<div class="arithmatex">\[
+\mathscr{F}^{-1}\left[f(t)\right] = f(t) = \frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega)\mathrm{e}^{i\omega t}\mathrm{d}\omega
+\]</div>
+<p>为 <span class="arithmatex">\(F(\omega)\)</span> 的 <strong>Fourier 逆变换</strong>.</p>
+<p>当 <span class="arithmatex">\(f(t)\)</span> 为奇函数时，</p>
+<div class="arithmatex">\[
+\mathscr{F}_s[f(t)] = F_s(\omega) = \int_0^{+\infty}f(t)\sin\omega t\mathrm{d}t
+\]</div>
+<p>称为 <span class="arithmatex">\(f(t)\)</span> 的 <strong>Fourier 正弦变换</strong>，</p>
+<div class="arithmatex">\[
+\mathscr{F}_s^{-1}[F_s(\omega)] = f(t) = \frac{2}{\pi}\int_0^{+\infty}F_s(\omega)\sin\omega t\mathrm{d}\omega
+\]</div>
+<p>称为 <span class="arithmatex">\(F(\omega)\)</span> 的 <strong>Fourier 正弦逆变换</strong>；</p>
+<p>当 <span class="arithmatex">\(f(t)\)</span> 为奇函数时，</p>
+<div class="arithmatex">\[
+\mathscr{F}_c[f(t)] = F_c(\omega) = \int_0^{+\infty}f(t)\cos\omega t\mathrm{d}t
+\]</div>
+<p>称为 <span class="arithmatex">\(f(t)\)</span> 的 <strong>Fourier 余弦变换</strong>，</p>
+<div class="arithmatex">\[
+\mathscr{F}_c^{-1}[F_c(\omega)] = f(t) = \frac{2}{\pi}\int_0^{+\infty}F_c(\omega)\cos\omega t\mathrm{d}\omega
+\]</div>
+<p>称为 <span class="arithmatex">\(F(\omega)\)</span> 的 <strong>Fourier 余弦逆变换</strong>.</p>
+<p>当满足条件时，<span class="arithmatex">\(F(\omega) = -2iF_s(\omega)\)</span>、<span class="arithmatex">\(F(\omega) = 2F_c(\omega)\)</span> 分别成立.</p>
+<h3>Fourier 变换的性质</h3>
+<h4>线性性质</h4>
+<div class="arithmatex">\[
+\mathscr{F}[\alpha f(t) + \beta g(t)] = \alpha\mathscr{F}[f(t)]+\beta\mathscr{F}[g(t)]
+\]</div>
+<div class="arithmatex">\[
+\mathscr{F}^{-1}[\alpha F(\omega) + \beta G(\omega)] = \alpha\mathscr{F}^{-1}[F(\omega)]+\beta\mathscr{F}^{-1}[G(\omega)]
+\]</div>
+<h4>位移性质</h4>
+<div class="arithmatex">\[
+\mathscr{F}[f(t\pm t_0)]=\mathrm{e}^{\pm i\omega t_0}\mathscr{F}[f(t)]
+\]</div>
+<div class="arithmatex">\[
+\mathscr{F}^{-1}[F(\omega\pm\omega_0)]=\mathrm{e}^{\mp i\omega_0t}\mathscr{F}^{-1}[F(\omega)]
+\]</div>
+<h4>微分性质</h4>
+<div class="arithmatex">\[
+\mathscr{F}[f'(t)] = i\omega\mathscr{F}[f(t)]\\
+\mathscr{F}[f^{(n)}(t)] = (i\omega)^n\mathscr{F}[f(t)]
+\]</div>
+<div class="arithmatex">\[
+\frac{\mathrm{d}}{\mathrm{d}\omega}F(\omega) = \mathscr{F}[-itf(t)]
+\]</div>
+<div class="arithmatex">\[
+\frac{\mathrm{d}^n}{\mathrm{d}\omega^n}F(\omega) = (-i)^n\mathscr{F}[t^nf(t)]
+\]</div>
+<h4>积分性质</h4>
+<div class="arithmatex">\[
+\mathscr{F}\left[\int_{-\infty}^tf(t)\mathrm{d}t\right]=\frac{1}{i\omega}\mathscr{F}[f(t)]
+\]</div>
+<h3>卷积</h3>
+<p><span class="arithmatex">\(f(t)\)</span> 与 <span class="arithmatex">\(g(t)\)</span> 的卷积定义为</p>
+<div class="arithmatex">\[
+f(t)*g(t)=\int_{-\infty}^{+\infty}f(\tau)g(t-\tau)\mathrm{d}\tau.
+\]</div>
+<p>卷积运算满足交换律、结合律、对加法的分配律、以及</p>
+<div class="arithmatex">\[
+a[f(t)*g(t)]=[af(t)]*g(t)=f(t)*[ag(t)],
+\]</div>
+<div class="arithmatex">\[
+\frac{\mathrm{d}}{\mathrm{d}t}[f(t)*g(t)]=\left[\frac{\mathrm{d}}{\mathrm{d}t}f(t)\right]*g(t)=f(t)*\left[\frac{\mathrm{d}}{\mathrm{d}t}g(t)\right],
+\]</div>
+<div class="arithmatex">\[
+\int_{-\infty}^t[f(t)*g(t)]\mathrm{d}t=\left[\int_{-\infty}^tf(t)\mathrm{d}t\right]*g(t)=f(t)*\left[\int_{-\infty}^tg(t)\mathrm{d}t\right].
+\]</div>
+<p>对满足 Fourier 积分定理的条件的函数有</p>
+<div class="arithmatex">\[
+\mathscr{F}[f(t)*g(t)]=F(\omega)\cdot G(\omega),
+\]</div>
+<p>称为<strong>卷积定理</strong>.</p>
+<p>相同地，有</p>
+<div class="arithmatex">\[
+\mathscr{F}[f(t)\cdot g(t)]=\frac{1}{2\pi}F(\omega)*G(\omega).
+\]</div>
+<h3>常用 Fourier 变换</h3>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">象原函数 <span class="arithmatex">\(f(t)\)</span></th>
+<th align="center">象函数 <span class="arithmatex">\(F(\omega)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">矩形脉冲</td>
+<td align="center"><span class="arithmatex">\(\begin{cases}E, &amp;\vert t\vert\le\dfrac{\tau}{2},\\\\ 0, &amp;\mathrm{otherwise}\end{cases}\)</span></td>
+<td align="center"><span class="arithmatex">\(2E\ \cfrac{\sin\dfrac{\omega\tau}{2}}{\omega}\)</span></td>
+</tr>
+<tr>
+<td align="center">指数衰减</td>
+<td align="center"><span class="arithmatex">\(\begin{cases}0, &amp;t&lt;0,\\\\ \mathrm{e}^{-\beta t}, &amp;t\ge0\ (\beta&gt;0)\end{cases}\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{1}{\beta+i\omega}\)</span></td>
+</tr>
+<tr>
+<td align="center">钟形脉冲</td>
+<td align="center"><span class="arithmatex">\(A\mathrm{e}^{-\beta t^2}\ (\beta&gt;0)\)</span></td>
+<td align="center"><span class="arithmatex">\(\sqrt{\dfrac{\pi}{\beta}}A\mathrm{e}^{-\frac{\omega^2}{4\beta}}\)</span></td>
+</tr>
+<tr>
+<td align="center">Fourier 核</td>
+<td align="center"><span class="arithmatex">\(\cfrac{\sin\omega_0t}{\pi t}\)</span></td>
+<td align="center"><span class="arithmatex">\(\begin{cases}1, &amp;\vert\omega\vert\le\omega_0,\\\\ 0, &amp;\mathrm{otherwise}\end{cases}\)</span></td>
+</tr>
+<tr>
+<td align="center">单位脉冲</td>
+<td align="center"><span class="arithmatex">\(\delta(t)\)</span></td>
+<td align="center"><span class="arithmatex">\(1\)</span></td>
+</tr>
+<tr>
+<td align="center">单位阶跃</td>
+<td align="center"><span class="arithmatex">\(u(t)\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{1}{i\omega}+\pi\delta(\omega)\)</span></td>
+</tr>
+<tr>
+<td align="center">复指数脉冲</td>
+<td align="center"><span class="arithmatex">\(\mathrm{e}^{a\vert t\vert},\ \Re(a)&lt;0\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{-2a}{\omega^2+a^2}\)</span></td>
+</tr>
+<tr>
+<td align="center">余弦函数</td>
+<td align="center"><span class="arithmatex">\(\cos\omega_0t\)</span></td>
+<td align="center"><span class="arithmatex">\(\pi[\delta(\omega+\omega_0)+\delta(\omega-\omega_0)]\)</span></td>
+</tr>
+<tr>
+<td align="center">正弦函数</td>
+<td align="center"><span class="arithmatex">\(\sin\omega_0t\)</span></td>
+<td align="center"><span class="arithmatex">\(i\pi[\delta(\omega+\omega_0)-\delta(\omega-\omega_0)]\)</span></td>
+</tr>
+<tr>
+<td align="center">常数函数</td>
+<td align="center"><span class="arithmatex">\(1\)</span></td>
+<td align="center"><span class="arithmatex">\(2\pi\delta(\omega)\)</span></td>
+</tr>
+<tr>
+<td align="center">符号函数</td>
+<td align="center"><span class="arithmatex">\(\operatorname{sgn}t\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{2}{i\omega}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="laplace">Laplace 拉普拉斯变换<a class="headerlink" href="#laplace" title="Permanent link">&para;</a></h2>
+<h3>Laplace 变换</h3>
+<p>对一个函数 <span class="arithmatex">\(\varphi(t)\)</span>，乘上 <span class="arithmatex">\(u(t)\mathrm{e}^{-\beta t}(\beta&gt;0)\)</span>，再取 Fourier 变换，就得到了 Laplace 变换，即</p>
+<div class="arithmatex">\[
+\varPhi(\omega) = \int_{-\infty}^{+\infty}\varphi(t)u(t)\mathrm{e}^{-\beta t}\mathrm{e}^{-i\omega t}\mathrm{d}t,
+\]</div>
+<p>令</p>
+<div class="arithmatex">\[
+s=\beta + i\omega,\quad f(t)=\varphi(t)u(t),\quad F(s)=\varPhi\left(\frac{s-\beta}{i}\right),
+\]</div>
+<p>则有</p>
+<div class="arithmatex">\[
+F(s) = \int_0^{+\infty}f(t)\mathrm{e}^{-st}\mathrm{d}t,
+\]</div>
+<p>若 <span class="arithmatex">\(f(t)\)</span> 在 <span class="arithmatex">\(t\ge0\)</span> 时有定义，且此式在复平面 <span class="arithmatex">\(s\)</span> 的某一区域内收敛，则此式称为 <span class="arithmatex">\(f(t)\)</span> 的 <strong>Laplace 变换</strong>，记作</p>
+<div class="arithmatex">\[
+F(s) = \mathscr{L}[f(t)].
+\]</div>
+<table>
+<thead>
+<tr>
+<th align="center">象原函数 <span class="arithmatex">\(f(t)\)</span></th>
+<th align="center">象函数 <span class="arithmatex">\(F(s)\)</span></th>
+<th align="center">象原函数 <span class="arithmatex">\(f(t)\)</span></th>
+<th align="center">象函数 <span class="arithmatex">\(F(s)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><span class="arithmatex">\(\delta(t)\)</span></td>
+<td align="center"><span class="arithmatex">\(1\)</span></td>
+<td align="center"><span class="arithmatex">\(\delta^{(n)}(t)\)</span></td>
+<td align="center"><span class="arithmatex">\(s^n\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(1\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{1}{s}\)</span></td>
+<td align="center"><span class="arithmatex">\(t\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{1}{s^2}\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\dfrac{t^2}{2!}\)</span></td>
+<td align="center"><span class="arithmatex">\(\dfrac{1}{s^3}\)</span></td>
+<td align="center"><span class="arithmatex">\(\dfrac{t^{n-1}}{(n-1)!}\)</span></td>
+<td align="center"><span class="arithmatex">\(\dfrac{1}{s^n}\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\sin \omega t\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{\omega}{s^2+\omega^2}\)</span></td>
+<td align="center"><span class="arithmatex">\(\cos \omega t\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{s}{s^2+\omega^2}\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\sinh \omega t\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{\omega}{s^2-\omega^2}\)</span></td>
+<td align="center"><span class="arithmatex">\(\cosh \omega t\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{s}{s^2-\omega^2}\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(t\sin \omega t\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{2\omega s}{(s^2+\omega^2)^2}\)</span></td>
+<td align="center"><span class="arithmatex">\(t\cos \omega t\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{s^2-\omega^2}{(s^2+\omega^2)^2}\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\(\mathrm{e}^{-at}\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{1}{s+a}\)</span></td>
+<td align="center"><span class="arithmatex">\(t\mathrm{e}^{-at}\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{1}{(s+a)^2}\)</span></td>
+</tr>
+<tr>
+<td align="center"><span class="arithmatex">\((1-at)\mathrm{e}^{-at}\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{s}{(s+a)^2}\)</span></td>
+<td align="center"><span class="arithmatex">\(1-\mathrm{e}^{-at}\)</span></td>
+<td align="center"><span class="arithmatex">\(\cfrac{a}{s(s+a)}\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3>Laplace 变换的性质</h3>
+<h4>线性性质</h4>
+<p>Laplace 正逆变换均具有线性性质.</p>
+<h4>微分性质</h4>
+<p>在时域微分：</p>
+<div class="arithmatex">\[
+\mathscr{L}\big[f'(t)\big] = sF(s)-f(0).
+\]</div>
+<p>在频域微分：</p>
+<div class="arithmatex">\[
+\frac{\mathrm{d}}{\mathrm{d}s}F(s) = -\mathscr{L}\big[tf(t)\big].
+\]</div>
+<h4>积分性质</h4>
+<p>在时域积分：</p>
+<div class="arithmatex">\[
+\mathscr{L}\left[\int_0^tf(t)\mathrm{d}t\right]=\frac{1}{s}F(s).
+\]</div>
+<p>在频域积分：</p>
+<div class="arithmatex">\[
+\int_s^\infty F(s)\mathrm{d}s =  \mathscr{L}\left[\frac{f(t)}{t}\right].
+\]</div>
+<h4>位移性质（频移）</h4>
+<div class="arithmatex">\[
+\mathscr{L}\big[\mathrm{e}^{at}f(t)\big]=F(s-a),
+\]</div>
+<p>含 <span class="arithmatex">\(a\)</span> 项在两边异号.</p>
+<h4>延迟性质（时移）</h4>
+<p>若 <span class="arithmatex">\(t&lt;0\)</span> 时 <span class="arithmatex">\(f(t)=0\)</span>，且 <span class="arithmatex">\(\tau\ge0\)</span>，</p>
+<div class="arithmatex">\[
+\mathscr{L}\big[f(t-\tau)\big]=\mathrm{e}^{-s\tau}F(s),
+\]</div>
+<p>含 <span class="arithmatex">\(\tau\)</span> 项在两边同号.</p>
+<h4>初值定理</h4>
+<p>若下式有意义，则</p>
+<div class="arithmatex">\[
+f(0) = \lim_{s\rightarrow\infty}sF(s).
+\]</div>
+<h4>终值定理</h4>
+<p>若 <span class="arithmatex">\(sF(s)\)</span> 的所有奇点都在复平面左半部，则</p>
+<div class="arithmatex">\[
+f(+\infty) = \lim_{s\rightarrow0}sF(s).
+\]</div>
+<h4>卷积定理</h4>
+<p>卷积定理对 Laplace 变换亦成立，</p>
+<div class="arithmatex">\[
+\mathscr{L}\big[f(t)*g(t)\big]=F(s)\cdot G(s),
+\]</div>
+<div class="arithmatex">\[
+\mathscr{L}\big[f(t)\cdot g(t)\big] = \frac{1}{2\pi j}F(s)*G(s).
+\]</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../complex-analysis/complex-analysis/" title="Complex Analysis" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Complex Analysis
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../3b1b/3b1b/" title="3Blue1Brown" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                3Blue1Brown
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 - 2020 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/x4Cx58x54" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f9edbbd5.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../_static/js/extra.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

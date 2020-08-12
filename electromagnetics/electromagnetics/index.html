@@ -1,0 +1,2010 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="x4Cx58x54">
+      
+      <link rel="shortcut icon" href="../../none">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.5">
+    
+    
+      
+        <title>Electromagnetics - Randomish Writing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.63b94e9e.min.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7f672a1f.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../_static/css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Randomish Writing" class="md-header-nav__button md-logo" aria-label="Randomish Writing">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Randomish Writing
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Electromagnetics
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../maths/linear-algebra/essence-of-linear-algebra/" class="md-tabs__link">
+          Mathematics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../c/c-primer-plus/" class="md-tabs__link">
+          Languages
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../ai/deep-learning/deep-learning/" class="md-tabs__link">
+          AI
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../competitive-programming/prime/" class="md-tabs__link">
+          Competitive Programming
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../computer-organization/computer-organization/" class="md-tabs__link">
+          CS
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Misc
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
+
+    </a>
+    Randomish Writing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Mathematics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Mathematics" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Mathematics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/linear-algebra/essence-of-linear-algebra/" title="Essence of Linear Algebra" class="md-nav__link">
+      Essence of Linear Algebra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/linear-algebra/linear-algebra/" title="Linear Algebra" class="md-nav__link">
+      Linear Algebra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Probability Theory
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Probability Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Probability Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/probability-theory/probability-theory/" title="Probability Theory" class="md-nav__link">
+      Probability Theory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3-2" type="checkbox" id="nav-2-3-2">
+    
+    <label class="md-nav__link" for="nav-2-3-2">
+      Problemsets
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Problemsets" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Problemsets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/probability-theory/events-and-probability/" title="Events and Probability" class="md-nav__link">
+      Events and Probability
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/probability-theory/random-variables/" title="Random Variables" class="md-nav__link">
+      Random Variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/statistics/statistics/" title="Statistics" class="md-nav__link">
+      Statistics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/discrete-maths/discrete-maths/" title="Discrete Maths" class="md-nav__link">
+      Discrete Maths
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/calculus/calculus/" title="Calculus" class="md-nav__link">
+      Calculus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/complex-analysis/complex-analysis/" title="Complex Analysis" class="md-nav__link">
+      Complex Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/integral-transforms/integral-transforms/" title="Integral Transforms" class="md-nav__link">
+      Integral Transforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/3b1b/3b1b/" title="3Blue1Brown" class="md-nav__link">
+      3Blue1Brown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maths/memos/memos/" title="Memos" class="md-nav__link">
+      Memos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../c/c-primer-plus/" title="C Primer Plus" class="md-nav__link">
+      C Primer Plus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cpp/cpp-notes/" title="C++ Notes" class="md-nav__link">
+      C++ Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/python-3-object-oriented-programming/" title="Python 3 OOP" class="md-nav__link">
+      Python 3 OOP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      LaTeX
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="LaTeX" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        LaTeX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../latex/latex-cheatsheet/" title="LaTeX Cheatsheet" class="md-nav__link">
+      LaTeX Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../latex/latex-maths/" title="LaTeX Maths Symbols" class="md-nav__link">
+      LaTeX Maths Symbols
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Regex
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Regex" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Regex
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../regex/introducing-regular-expressions/" title="Introducing Regular Expressions" class="md-nav__link">
+      Introducing Regular Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../regex/regular-expressions-cookbook/" title="Regular Expressions Cookbook" class="md-nav__link">
+      Regular Expressions Cookbook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/javascript-the-definitive-guide/" title="JavaScript the Definitive Guide" class="md-nav__link">
+      JavaScript the Definitive Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/html-cheatsheet/" title="HTML Cheatsheet" class="md-nav__link">
+      HTML Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../web/css-cheatsheet/" title="CSS Cheatsheet" class="md-nav__link">
+      CSS Cheatsheet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      AI
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="AI" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        AI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ai/deep-learning/deep-learning/" title="Deep Learning" class="md-nav__link">
+      Deep Learning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Competitive Programming
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Competitive Programming" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Competitive Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Mathematics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Mathematics" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Mathematics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/prime/" title="素数" class="md-nav__link">
+      素数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/exgcd/" title="扩展欧几里得" class="md-nav__link">
+      扩展欧几里得
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/combination/" title="组合数" class="md-nav__link">
+      组合数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/binexp/" title="快速幂" class="md-nav__link">
+      快速幂
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/fibonacci/" title="类斐波那契数列" class="md-nav__link">
+      类斐波那契数列
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/gcd-inverse/" title="GCD Inverse" class="md-nav__link">
+      GCD Inverse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/lagrange-interpolation/" title="拉格朗日插值" class="md-nav__link">
+      拉格朗日插值
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Data Structures
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Data Structures" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Data Structures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/fenwick/" title="树状数组" class="md-nav__link">
+      树状数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/segment-tree/" title="线段树" class="md-nav__link">
+      线段树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/heap/" title="堆" class="md-nav__link">
+      堆
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/sparse-table/" title="ST 表" class="md-nav__link">
+      ST 表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/ufds/" title="并查集" class="md-nav__link">
+      并查集
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Dynamic Programming
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Dynamic Programming" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Dynamic Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/intersection-points/" title="直线交点数" class="md-nav__link">
+      直线交点数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/lis/" title="最长上升序列" class="md-nav__link">
+      最长上升序列
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/number-of-common-substrings/" title="公共子序列" class="md-nav__link">
+      公共子序列
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Basics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Basics" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Basics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/quicksort/" title="快速排序 / 第 k 小的数" class="md-nav__link">
+      快速排序 / 第 k 小的数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/nearest-point-pair/" title="平面最近点对" class="md-nav__link">
+      平面最近点对
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Misc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/josephus-survivor/" title="Josephus Survivor" class="md-nav__link">
+      Josephus Survivor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/chopsticks/" title="找筷子" class="md-nav__link">
+      找筷子
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/double-cola/" title="Double Cola" class="md-nav__link">
+      Double Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/alphabetical-coding/" title="字母计数" class="md-nav__link">
+      字母计数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../competitive-programming/number-of-trailing-zeros-of-n%21/" title="N! 末尾零数" class="md-nav__link">
+      N! 末尾零数
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      CS
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="CS" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        CS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../computer-organization/computer-organization/" title="Computer Organization" class="md-nav__link">
+      Computer Organization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../computer-programming/the-practice-of-programming/" title="The Practice of Programming" class="md-nav__link">
+      The Practice of Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Misc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1" checked>
+    
+    <label class="md-nav__link" for="nav-7-1">
+      Electromagnetics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Electromagnetics" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Electromagnetics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Electromagnetics
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Electromagnetics" class="md-nav__link md-nav__link--active">
+      Electromagnetics
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    静电场
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    电介质
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    恒定磁场
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    电磁感应
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    麦克斯韦方程组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    电磁波
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-1-2" type="checkbox" id="nav-7-1-2">
+    
+    <label class="md-nav__link" for="nav-7-1-2">
+      Problemsets
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Problemsets" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Problemsets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../electric-field/" title="Electric Field" class="md-nav__link">
+      Electric Field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magnetic-field/" title="Magnetic Field" class="md-nav__link">
+      Magnetic Field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../induction/" title="Induction" class="md-nav__link">
+      Induction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../em-wave/" title="EM Wave" class="md-nav__link">
+      EM Wave
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../control-theory/classical-control/" title="Classical Control Theory" class="md-nav__link">
+      Classical Control Theory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    静电场
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    电介质
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    恒定磁场
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    电磁感应
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    麦克斯韦方程组
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    电磁波
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="_1">电磁学<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">静电场<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3>无限大平板的电场</h3>
+<p><img alt="" src="../img/000-02-elecdistribution.png" width="300px" /></p>
+<p>假设平板上的电荷 <span class="arithmatex">\(q = \sigma S\)</span>，左图的分析对应</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;E\cdot 2S = \frac{1}{\varepsilon_0}\sigma S\\
+\Rightarrow &amp; E = \frac{\sigma}{2\varepsilon_0}.
+\end{aligned}
+\]</div>
+<p>右图的分析对应</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;E\cdot S = \frac{1}{\varepsilon_0}\frac{\sigma}{2} S\\
+\Rightarrow &amp; E = \frac{\sigma}{2\varepsilon_0}.
+\end{aligned}
+\]</div>
+<p>两种方法得到的结果是一致的.</p>
+<h2 id="_3">电介质<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>...</p>
+<h3>电荷分布</h3>
+<p>若将两带电球状导体体 <span class="arithmatex">\(R_1\)</span>、<span class="arithmatex">\(R_2\)</span> 用导线连接，那么它们的电荷面密度满足</p>
+<div class="arithmatex">\[
+\sigma_1 R_1 = \sigma_2 R_2.
+\]</div>
+<h3>电极化</h3>
+<div class="arithmatex">\[
+\vec{P}=\frac{\sum{\vec{p}}}{\Delta V}=\chi_e \varepsilon_0 \vec{E}
+\]</div>
+<p>式中 <span class="arithmatex">\(\chi_e\)</span> 为介质的<strong>电极化率</strong> <em>electric susceptibility</em>.</p>
+<p>记介质表面束缚电荷面密度 <span class="arithmatex">\(\sigma'\)</span>，则</p>
+<div class="arithmatex">\[
+P=\frac{\vert\vec{P}\vert}{\Delta V}=\frac{\sigma'\Delta SL}{\Delta SL\cos\theta}=\frac{\sigma'}{\cos\theta},
+\]</div>
+<div class="arithmatex">\[
+\sigma'=P\cos\theta=\vec{P}\cdot\vec{e}_n.
+\]</div>
+<h3>电位移 电介质高斯定理</h3>
+<div class="arithmatex">\[
+\oint_S \vec{E}\cdot\text{d}\vec{S}=\frac{1}{\varepsilon_0}\left(q+q'\right),
+\]</div>
+<p>而束缚电荷反号</p>
+<div class="arithmatex">\[
+q'=-\sigma' S=-\oint_S\vec{P}\cdot\text{d}\vec{S},
+\]</div>
+<p>所以</p>
+<div class="arithmatex">\[
+\vec{D}=\varepsilon_0\vec{E}+\vec{P},
+\]</div>
+<div class="arithmatex">\[
+\oint_S \vec{D}\cdot\text{d}\vec{S}=q.
+\]</div>
+<h3>串联电容器电压分配</h3>
+<p>由 <span class="arithmatex">\(Q=CV\)</span>，<span class="arithmatex">\(Q\)</span> 相等，所以 <span class="arithmatex">\(V\propto\dfrac{1}{C}\)</span>,</p>
+<div class="arithmatex">\[
+V_1 C_1 =V_2 C_2.
+\]</div>
+<h3>电容器</h3>
+<h4>电容</h4>
+<div class="arithmatex">\[
+C=\frac{\varepsilon S}{d}
+\]</div>
+<p><img alt="" src="../img/000-03-capacitor.jpg" width="290px" /></p>
+<div class="arithmatex">\[
+E = \frac{\sigma}{\varepsilon}
+\]</div>
+<p>理想状态下，电容器外侧电场强度为零，可视为两侧异号的电荷电场抵消.</p>
+<h4>电容器能量</h4>
+<div class="arithmatex">\[
+W=\frac{1}{2}CV^2
+\]</div>
+<h4>静电场能量密度</h4>
+<div class="arithmatex">\[
+w=\frac{W}{V}=\frac{1}{2}\varepsilon E^2=\frac{1}{2}DE
+\]</div>
+<h2 id="_4">恒定磁场<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3>电流密度</h3>
+<div class="arithmatex">\[
+\vec{J}=qn\vec{v}
+\]</div>
+<div class="arithmatex">\[
+I=\int_S \vec{J}\cdot\text{d}\vec{S}
+\]</div>
+<h3>Biot-Savart Law</h3>
+<div class="arithmatex">\[
+\text{d}\vec{B}=\frac{\mu_0}{4\pi}\frac{I\text{d}\vec{l}\times\vec{r}}{r^3}
+\]</div>
+<div class="arithmatex">\[
+\vec{B}=\frac{\text{d}\vec{B}}{\text{d}N}=\frac{\mu_0}{4\pi}\frac{q\vec{v}\times\vec{r}}{r^3}
+\]</div>
+<h3>安培环路定理</h3>
+<h3>洛伦兹力</h3>
+<h3>霍尔效应</h3>
+<p>无论载流子类型，磁场对电流的作用力方向一致，故载流子类型决定了电势差方向</p>
+<h3>安培力</h3>
+<div class="arithmatex">\[
+\text{d}\vec{F}=I\text{d}\vec{l}\times\vec{B}
+\]</div>
+<h3>磁力做功</h3>
+<div class="arithmatex">\[
+A=I\Delta\varPhi_m
+\]</div>
+<h3>电矩与磁矩</h3>
+<p><strong>电矩</strong>  </p>
+<div class="arithmatex">\[
+\vec{p}=q\vec{l}
+\]</div>
+<p>由负电荷指向正电荷</p>
+<div class="arithmatex">\[
+\vec{M}=\vec{p}\times\vec{E}
+\]</div>
+<p><strong>磁矩</strong>  </p>
+<div class="arithmatex">\[
+\vec{m}=IS\vec{e}_n
+\]</div>
+<p>符合右手螺旋关系</p>
+<div class="arithmatex">\[
+\vec{M}=\vec{m}\times\vec{B}
+\]</div>
+<h3>磁介质</h3>
+<p>将磁介质等效为一密绕螺线管，单位长度的磁化电流 <span class="arithmatex">\(\alpha=\lambda_I\)</span>,</p>
+<p>故等效附加磁矩为 <span class="arithmatex">\(m=\alpha LS\)</span>,</p>
+<p>所以</p>
+<div class="arithmatex">\[
+M=\frac{m}{\Delta V}=\frac{\alpha LS}{LS}=\alpha.
+\]</div>
+<p><img alt="" src="../img/000-01-ampere.jpg" width="300px" /></p>
+<div class="arithmatex">\[
+\oint_L \vec{M}\cdot\text{d}\vec{l}=Ml=\alpha l=I'S
+\]</div>
+<p><span class="arithmatex">\(I'\)</span> 为通过该曲面的总磁化电流.</p>
+<h3>磁介质安培环路定理</h3>
+<div class="arithmatex">\[
+\oint_L \vec{B}\cdot\text{d}\vec{l}=\mu_0\left(I+I'\right)
+\]</div>
+<div class="arithmatex">\[
+\oint_L\vec{B}\cdot\text{d}\vec{l}=\mu_0\left(I+\oint_L\vec{M}\cdot\text{d}\vec{l}\right)
+\]</div>
+<div class="arithmatex">\[
+\oint_L\left(\frac{\vec{B}}{\mu_0}-\vec{M}\right)\cdot\text{d}\vec{l}=I
+\]</div>
+<div class="arithmatex">\[
+\vec{H}=\frac{\vec{B}}{\mu_0}-\vec{M}
+\]</div>
+<div class="arithmatex">\[
+\vec{M}= \chi_m\vec{H}
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+\vec{B}
+&amp;=\mu_0\vec{H}+\mu_0\vec{M}\\
+&amp;=\mu_0\vec{H}+\mu_0\chi_m\vec{H}\\
+&amp;=\mu\vec{H}
+\end{aligned}
+\]</div>
+<h2 id="_5">电磁感应<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3>法拉第电磁感应定律</h3>
+<div class="arithmatex">\[
+\mathscr{E}=-\frac{\text{d}\varPhi}{\text{d}t}
+\]</div>
+<p>若讨论的是线圈，则需要考虑匝数.</p>
+<p>线圈产生的电动势是各匝线圈电动势之和</p>
+<div class="arithmatex">\[
+\mathscr{E}=-\frac{\text{d}\varPsi}{\text{d}t},
+\quad
+\varPsi=\sum\varPhi,
+\]</div>
+<p>其中通过的电荷</p>
+<div class="arithmatex">\[
+q=\left\vert\int I\text{d}t\right\vert=\left\vert\int \frac{\mathscr{E}}{R}\text{d}t\right\vert=\left\vert\frac{1}{R}\int \text{d}\varPhi\right\vert=\frac{1}{R}\left\vert\Delta\varPhi\right\vert.
+\]</div>
+<h3>动生电动势</h3>
+<p>载流子受到洛伦兹力</p>
+<div class="arithmatex">\[
+\vec{F}=q\vec{v}\times\vec{B},
+\]</div>
+<p>等效非静电场场强</p>
+<div class="arithmatex">\[
+E=\frac{\vec{F}}{q}=\vec{v}\times\vec{B}.
+\]</div>
+<p>所以，动生电动势</p>
+<div class="arithmatex">\[
+\mathscr{E}=\int_L\left(\vec{v}\times\vec{B}\right)\cdot\text{d}\vec{l}.
+\]</div>
+<p>推论：平动动生电动势等效为连接起点与终点的直导线的动生电动势.</p>
+<h3>感生电动势</h3>
+<p>若磁场变化而回路不运动，</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\oint_L\vec{E}\cdot\text{d}\vec{l}
+&amp;=\mathscr{E}=-\frac{\text{d}\varPhi}{\text{d}t}\\
+&amp;=-\frac{\text{d}}{\text{d}t}\int_S\vec{B}\cdot\text{d}\vec{S}\\
+&amp;=-\int_S\frac{\partial\vec{B}}{\partial t}\cdot\text{d}\vec{S},
+\end{aligned}
+\]</div>
+<p>所以</p>
+<div class="arithmatex">\[
+\oint_L\vec{E}\cdot\text{d}\vec{l}=-\int_S\frac{\partial\vec{B}}{\partial t}\cdot\text{d}\vec{S}.
+\]</div>
+<h3>自感</h3>
+<p>毕奥-萨伐尔：<span class="arithmatex">\(B\propto I\)</span>，又 <span class="arithmatex">\(\varPsi\propto B\)</span>，故有</p>
+<div class="arithmatex">\[
+\varPsi=LI.
+\]</div>
+<p>其中<span class="arithmatex">\(L\)</span>为<strong>自感系数</strong>，单位为 <span class="arithmatex">\(\text{H}=\Omega\cdot\text{s}\)</span>.</p>
+<div class="arithmatex">\[
+\mathscr{E}_L=-\frac{\text{d}\varPhi}{\text{d}t}=-L\frac{\text{d}I}{\text{d}t}
+\]</div>
+<p><span class="arithmatex">\(RL\)</span> 串联暂态过程</p>
+<div class="arithmatex">\[
+I=I_0\left(1-\mathrm{e}^{-\frac{t}{\tau}}\right)
+\]</div>
+<p>其中时间常量</p>
+<div class="arithmatex">\[
+\tau=\frac{L}{R}.
+\]</div>
+<h3>互感</h3>
+<p>线圈 2 处由线圈 1 电流变化产生的磁链</p>
+<div class="arithmatex">\[
+\varPsi_{21}=M_{21}I_1,
+\]</div>
+<p>线圈 1 处由线圈 2 电流变化产生的磁链</p>
+<div class="arithmatex">\[
+\varPsi_{12}=M_{12}I_2,
+\]</div>
+<p>而</p>
+<div class="arithmatex">\[
+M_{21}=M_{12}=M,
+\]</div>
+<p>故</p>
+<div class="arithmatex">\[
+\mathscr{E}_{21}=-M\frac{\text{d}I_1}{\text{d}t}\,,\qquad\mathscr{E}_{12}=-M\frac{\text{d}I_2}{\text{d}t}.
+\]</div>
+<h3>磁场能量</h3>
+<p>自感线圈中，</p>
+<div class="arithmatex">\[
+W=\frac{1}{2}LI^2,
+\]</div>
+<p>磁场能量密度</p>
+<div class="arithmatex">\[
+w=\frac{W}{V}=\frac{1}{2}\frac{B^2}{\mu}=\frac{1}{2}BH.
+\]</div>
+<h3>非恒定电流的安培环路定理 位移电流</h3>
+<p>平行板电容器电路处安培环路定理发生矛盾</p>
+<p>由于极板电荷</p>
+<div class="arithmatex">\[q=\int_S\vec{D}\cdot\vec{S}=\varPhi_D,\]</div>
+<p>线路中电流</p>
+<div class="arithmatex">\[I=\frac{\text{d}q}{\text{d}t}=\frac{\text{d}\varPhi_D}{\text{d}t},\]</div>
+<p>故定义<strong>位移电流</strong>与<strong>位移电流密度</strong></p>
+<div class="arithmatex">\[I_d=\frac{\text{d}\varPhi_D}{\text{d}t},\quad\vec{J}_d=\frac{\text{d}\vec{D}}{\text{d}t}.\]</div>
+<p>所以在非恒定情况，安培环路定理为</p>
+<div class="arithmatex">\[\oint_L\vec{H}\cdot\text{d}\vec{l}=I+\frac{\text{d}\varPhi_D}{\text{d}t},\]</div>
+<p>即变化的电场也能激发磁场.</p>
+<h2 id="_6">麦克斯韦方程组<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>积分形式</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\oint_S\vec{D}\cdot\text{d}\vec{S}=\sum q\\
+&amp;\oint_S\vec{B}\cdot\text{d}\vec{S}=0\\
+&amp;\oint_L\vec{E}\cdot\text{d}\vec{l}=-\oint_S\frac{\partial\vec{B}}{\partial t}\cdot\text{d}\vec{S}\\
+&amp;\oint_L\vec{H}\cdot\text{d}\vec{l}=\oint_S\left(\vec{J}+\frac{\partial\vec{D}}{\partial t}\right)\cdot\text{d}\vec{S}
+\end{aligned}
+\]</div>
+<p>微分形式</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\nabla\cdot\vec{D}=\rho\\
+&amp;\nabla\cdot\vec{B}=0\\
+&amp;\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}\\
+&amp;\nabla\times\vec{H}=\vec{J}+\frac{\partial\vec{D}}{\partial t}
+\end{aligned}
+\]</div>
+<p>对于各向同性介质，有</p>
+<div class="arithmatex">\[
+\vec{D}=\varepsilon\vec{E}\,,\quad
+\vec{B}=\mu\vec{H}\,,\quad
+\vec{J}=\sigma\vec{E}.
+\]</div>
+<p>对于带电粒子的运动，</p>
+<div class="arithmatex">\[\vec{F}=q\left(\vec{E}+\vec{v}\times\vec{B}\right).\]</div>
+<h2 id="_7">电磁波<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3>nabla 算符 <span class="arithmatex">\(\nabla\)</span></h3>
+<div class="arithmatex">\[\nabla=\left(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\right)\]</div>
+<p>梯度</p>
+<div class="arithmatex">\[\nabla F=\left(\frac{\partial F}{\partial x},\frac{\partial F}{\partial y},\frac{\partial F}{\partial z}\right)\]</div>
+<p>散度</p>
+<div class="arithmatex">\[\nabla\cdot\vec{F}=\frac{\partial F_x}{\partial x}+\frac{\partial F_y}{\partial y}+\frac{\partial F_z}{\partial z}\]</div>
+<p>旋度</p>
+<div class="arithmatex">\[
+\nabla\times\vec{F}=
+\begin{vmatrix}
+\vec{\text{i}}&amp;\vec{\text{j}}&amp;\vec{\text{k}}\\
+&amp; &amp;\\
+\dfrac{\partial}{\partial x}&amp;\dfrac{\partial}{\partial y}&amp;\dfrac{\partial}{\partial z}\\
+&amp; &amp;\\
+F_x&amp;F_y&amp;F_z
+\end{vmatrix}
+\]</div>
+<p>Laplace 算子 <span class="arithmatex">\(\Delta\)</span></p>
+<div class="arithmatex">\[
+\Delta=\nabla^2=\nabla\cdot\nabla=\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}\right)
+\]</div>
+<h3>电磁波波动方程</h3>
+<p>真空中</p>
+<div class="arithmatex">\[\nabla^2\vec{E}-\varepsilon_0\mu_0\frac{\partial^2\vec{E}}{\partial t^2}=0\]</div>
+<div class="arithmatex">\[\nabla^2\vec{B}-\varepsilon_0\mu_0\frac{\partial^2\vec{B}}{\partial t^2}=0\]</div>
+<p>若电磁波沿<span class="arithmatex">\(\, x\)</span>轴传播，则</p>
+<div class="arithmatex">\[\frac{\partial^2 E_y}{\partial x^2}=\varepsilon_0\mu_0\frac{\partial^2 E_y}{\partial t^2}\,,\quad\frac{\partial^2 H_z}{\partial x^2}=\varepsilon_0\mu_0\frac{\partial^2 H_z}{\partial t^2},\]</div>
+<p>比较平面机械波波动方程有</p>
+<div class="arithmatex">\[c=\frac{1}{\sqrt{\varepsilon_0\mu_0}}.\]</div>
+<p>在介质中，</p>
+<div class="arithmatex">\[u=\frac{1}{\sqrt{\varepsilon\mu}},\]</div>
+<p>且满足关系</p>
+<div class="arithmatex">\[\sqrt{\varepsilon}E=\sqrt{\mu}H.\]</div>
+<h3>电磁波能量</h3>
+<div class="arithmatex">\[
+\begin{aligned}
+w&amp;=w_e+w_m\\
+&amp;=\frac{1}{2}\varepsilon E^2+\frac{1}{2}\mu H^2\\
+&amp;=\varepsilon E^2=\mu H^2
+\end{aligned}
+\]</div>
+<p>能流密度</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S&amp;=wu\\
+&amp;=\frac{1}{2}\frac{\varepsilon E^2+\mu H^2}{\sqrt{\varepsilon\mu}}\\
+&amp;=\frac{1}{2}\frac{\sqrt{\varepsilon}E\sqrt{\mu}H+\sqrt{\mu}H\sqrt{\varepsilon}E}{\sqrt{\varepsilon\mu}}\\
+&amp;=EH
+\end{aligned}
+\]</div>
+<p>即<strong>坡印廷矢量</strong> <em>Poynting vector</em></p>
+<div class="arithmatex">\[
+\vec{S}=\vec{E}\times\vec{H}=\frac{1}{\mu}\;\vec{E}\times\vec{B}
+\]</div>
+<h3>电磁振荡</h3>
+<div class="arithmatex">\[
+\omega=\frac{1}{\sqrt{LC}}
+\]</div>
+<div class="arithmatex">\[
+f=\frac{\omega}{2\pi}=\frac{1}{2\pi\sqrt{LC}}
+\]</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../computer-programming/the-practice-of-programming/" title="The Practice of Programming" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                The Practice of Programming
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../electric-field/" title="Electric Field" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Electric Field
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 - 2020 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/x4Cx58x54" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f9edbbd5.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.fae956e7.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../_static/js/extra.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

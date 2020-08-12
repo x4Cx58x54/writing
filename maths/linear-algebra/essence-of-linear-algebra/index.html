@@ -1,0 +1,2414 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="x4Cx58x54">
+      
+      <link rel="shortcut icon" href="../../../none">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.5">
+    
+    
+      
+        <title>Essence of Linear Algebra - Randomish Writing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.63b94e9e.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.7f672a1f.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../_static/css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#essence-of-linear-algebra1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Randomish Writing" class="md-header-nav__button md-logo" aria-label="Randomish Writing">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Randomish Writing
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Essence of Linear Algebra
+            
+          </span>
+        </div>
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Mathematics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../c/c-primer-plus/" class="md-tabs__link">
+          Languages
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../ai/deep-learning/deep-learning/" class="md-tabs__link">
+          AI
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../competitive-programming/prime/" class="md-tabs__link">
+          Competitive Programming
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../computer-organization/computer-organization/" class="md-tabs__link">
+          CS
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../electromagnetics/electromagnetics/" class="md-tabs__link">
+          Misc
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
+
+    </a>
+    Randomish Writing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Mathematics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Mathematics" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Mathematics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Essence of Linear Algebra
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Essence of Linear Algebra" class="md-nav__link md-nav__link--active">
+      Essence of Linear Algebra
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-vectors-what-even-are-they" class="md-nav__link">
+    1 Vectors, What Even Are They?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-linear-combinations-span-and-bases" class="md-nav__link">
+    2 Linear Combinations, Span and Bases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-matrices-as-linear-transformations" class="md-nav__link">
+    3 Matrices as Linear Transformations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-matrix-multiplication-as-composition" class="md-nav__link">
+    4 Matrix Multiplication as Composition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-determinant" class="md-nav__link">
+    5 The Determinant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-inverse-matrices-column-space-and-null-space" class="md-nav__link">
+    6 Inverse Matrices, Column Space and Null Space
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nonsquare-matrices" class="md-nav__link">
+    6+ Nonsquare Matrices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-dot-products-and-duality" class="md-nav__link">
+    7 Dot Products and Duality
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cross-product-in-the-light-of-linear-transformations" class="md-nav__link">
+    8 Cross Product in the Light of Linear Transformations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-change-of-basis" class="md-nav__link">
+    9 Change of Basis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-eigenvectors-and-eigenvalues" class="md-nav__link">
+    10 Eigenvectors and Eigenvalues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-abstract-vector-spaces" class="md-nav__link">
+    11 Abstract Vector Spaces
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linear-algebra/" title="Linear Algebra" class="md-nav__link">
+      Linear Algebra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Probability Theory
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Probability Theory" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Probability Theory
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../probability-theory/probability-theory/" title="Probability Theory" class="md-nav__link">
+      Probability Theory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3-2" type="checkbox" id="nav-2-3-2">
+    
+    <label class="md-nav__link" for="nav-2-3-2">
+      Problemsets
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Problemsets" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-3-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Problemsets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../probability-theory/events-and-probability/" title="Events and Probability" class="md-nav__link">
+      Events and Probability
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../probability-theory/random-variables/" title="Random Variables" class="md-nav__link">
+      Random Variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../statistics/statistics/" title="Statistics" class="md-nav__link">
+      Statistics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../discrete-maths/discrete-maths/" title="Discrete Maths" class="md-nav__link">
+      Discrete Maths
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../calculus/calculus/" title="Calculus" class="md-nav__link">
+      Calculus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../complex-analysis/complex-analysis/" title="Complex Analysis" class="md-nav__link">
+      Complex Analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integral-transforms/integral-transforms/" title="Integral Transforms" class="md-nav__link">
+      Integral Transforms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3b1b/3b1b/" title="3Blue1Brown" class="md-nav__link">
+      3Blue1Brown
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../memos/memos/" title="Memos" class="md-nav__link">
+      Memos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Languages
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Languages" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Languages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../c/c-primer-plus/" title="C Primer Plus" class="md-nav__link">
+      C Primer Plus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cpp/cpp-notes/" title="C++ Notes" class="md-nav__link">
+      C++ Notes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../python/python-3-object-oriented-programming/" title="Python 3 OOP" class="md-nav__link">
+      Python 3 OOP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      LaTeX
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="LaTeX" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        LaTeX
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../latex/latex-cheatsheet/" title="LaTeX Cheatsheet" class="md-nav__link">
+      LaTeX Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../latex/latex-maths/" title="LaTeX Maths Symbols" class="md-nav__link">
+      LaTeX Maths Symbols
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Regex
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Regex" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Regex
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../regex/introducing-regular-expressions/" title="Introducing Regular Expressions" class="md-nav__link">
+      Introducing Regular Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../regex/regular-expressions-cookbook/" title="Regular Expressions Cookbook" class="md-nav__link">
+      Regular Expressions Cookbook
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../web/javascript-the-definitive-guide/" title="JavaScript the Definitive Guide" class="md-nav__link">
+      JavaScript the Definitive Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../web/html-cheatsheet/" title="HTML Cheatsheet" class="md-nav__link">
+      HTML Cheatsheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../web/css-cheatsheet/" title="CSS Cheatsheet" class="md-nav__link">
+      CSS Cheatsheet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      AI
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="AI" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        AI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ai/deep-learning/deep-learning/" title="Deep Learning" class="md-nav__link">
+      Deep Learning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Competitive Programming
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Competitive Programming" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Competitive Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Mathematics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Mathematics" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Mathematics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/prime/" title="素数" class="md-nav__link">
+      素数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/exgcd/" title="扩展欧几里得" class="md-nav__link">
+      扩展欧几里得
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/combination/" title="组合数" class="md-nav__link">
+      组合数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/binexp/" title="快速幂" class="md-nav__link">
+      快速幂
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/fibonacci/" title="类斐波那契数列" class="md-nav__link">
+      类斐波那契数列
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/gcd-inverse/" title="GCD Inverse" class="md-nav__link">
+      GCD Inverse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/lagrange-interpolation/" title="拉格朗日插值" class="md-nav__link">
+      拉格朗日插值
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Data Structures
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Data Structures" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Data Structures
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/fenwick/" title="树状数组" class="md-nav__link">
+      树状数组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/segment-tree/" title="线段树" class="md-nav__link">
+      线段树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/heap/" title="堆" class="md-nav__link">
+      堆
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/sparse-table/" title="ST 表" class="md-nav__link">
+      ST 表
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/ufds/" title="并查集" class="md-nav__link">
+      并查集
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Dynamic Programming
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Dynamic Programming" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Dynamic Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/intersection-points/" title="直线交点数" class="md-nav__link">
+      直线交点数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/lis/" title="最长上升序列" class="md-nav__link">
+      最长上升序列
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/number-of-common-substrings/" title="公共子序列" class="md-nav__link">
+      公共子序列
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Basics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Basics" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Basics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/quicksort/" title="快速排序 / 第 k 小的数" class="md-nav__link">
+      快速排序 / 第 k 小的数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/nearest-point-pair/" title="平面最近点对" class="md-nav__link">
+      平面最近点对
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Misc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/josephus-survivor/" title="Josephus Survivor" class="md-nav__link">
+      Josephus Survivor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/chopsticks/" title="找筷子" class="md-nav__link">
+      找筷子
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/double-cola/" title="Double Cola" class="md-nav__link">
+      Double Cola
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/alphabetical-coding/" title="字母计数" class="md-nav__link">
+      字母计数
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../competitive-programming/number-of-trailing-zeros-of-n%21/" title="N! 末尾零数" class="md-nav__link">
+      N! 末尾零数
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      CS
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="CS" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        CS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../computer-organization/computer-organization/" title="Computer Organization" class="md-nav__link">
+      Computer Organization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../computer-programming/the-practice-of-programming/" title="The Practice of Programming" class="md-nav__link">
+      The Practice of Programming
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Misc
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Misc" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+    
+    <label class="md-nav__link" for="nav-7-1">
+      Electromagnetics
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Electromagnetics" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Electromagnetics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/electromagnetics/" title="Electromagnetics" class="md-nav__link">
+      Electromagnetics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-1-2" type="checkbox" id="nav-7-1-2">
+    
+    <label class="md-nav__link" for="nav-7-1-2">
+      Problemsets
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Problemsets" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Problemsets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/electric-field/" title="Electric Field" class="md-nav__link">
+      Electric Field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/magnetic-field/" title="Magnetic Field" class="md-nav__link">
+      Magnetic Field
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/induction/" title="Induction" class="md-nav__link">
+      Induction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../electromagnetics/em-wave/" title="EM Wave" class="md-nav__link">
+      EM Wave
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../control-theory/classical-control/" title="Classical Control Theory" class="md-nav__link">
+      Classical Control Theory
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-vectors-what-even-are-they" class="md-nav__link">
+    1 Vectors, What Even Are They?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-linear-combinations-span-and-bases" class="md-nav__link">
+    2 Linear Combinations, Span and Bases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-matrices-as-linear-transformations" class="md-nav__link">
+    3 Matrices as Linear Transformations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-matrix-multiplication-as-composition" class="md-nav__link">
+    4 Matrix Multiplication as Composition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-determinant" class="md-nav__link">
+    5 The Determinant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-inverse-matrices-column-space-and-null-space" class="md-nav__link">
+    6 Inverse Matrices, Column Space and Null Space
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nonsquare-matrices" class="md-nav__link">
+    6+ Nonsquare Matrices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-dot-products-and-duality" class="md-nav__link">
+    7 Dot Products and Duality
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cross-product-in-the-light-of-linear-transformations" class="md-nav__link">
+    8 Cross Product in the Light of Linear Transformations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-change-of-basis" class="md-nav__link">
+    9 Change of Basis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-eigenvectors-and-eigenvalues" class="md-nav__link">
+    10 Eigenvectors and Eigenvalues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-abstract-vector-spaces" class="md-nav__link">
+    11 Abstract Vector Spaces
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="essence-of-linear-algebra1">Essence of Linear Algebra<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><a class="headerlink" href="#essence-of-linear-algebra1" title="Permanent link">&para;</a></h1>
+<h2 id="1-vectors-what-even-are-they">1 Vectors, What Even Are They?<a class="headerlink" href="#1-vectors-what-even-are-they" title="Permanent link">&para;</a></h2>
+<p>Vectors are the extension of numbers.</p>
+<p>Difference between a vector and a point:</p>
+<div class="arithmatex">\[
+\text{a vector:}
+\begin{bmatrix}
+z_1 \\ z_2 \\ \vdots
+\end{bmatrix},\quad
+\text{a point:}
+\left(z_1, z_2, \cdots\right).
+\]</div>
+<h2 id="2-linear-combinations-span-and-bases">2 Linear Combinations, Span and Bases<a class="headerlink" href="#2-linear-combinations-span-and-bases" title="Permanent link">&para;</a></h2>
+<p>Linear independent <span class="arithmatex">\(\Leftrightarrow\)</span> Any one of the vectors is outside the span of the others.</p>
+<h2 id="3-matrices-as-linear-transformations">3 Matrices as Linear Transformations<a class="headerlink" href="#3-matrices-as-linear-transformations" title="Permanent link">&para;</a></h2>
+<p><em>Transformation</em> is a fancy word for function, but it suggests <strong>movement</strong>.</p>
+<p><em>Linear transformation</em>: all straight lines remain straight, and the the origin remains its place.</p>
+<p>In the lingo,</p>
+<div class="arithmatex">\[
+\mathscr{A}(m\mathbf{u}+n\mathbf{v})=m\mathscr{A}(\mathbf{u})+n\mathscr{A}(\mathbf{v}),
+\]</div>
+<p>which suggests that, <strong>a vector remains the same linear combination of the transformed bases</strong>.</p>
+<p>Therefore, in two-dimensional space, suppose</p>
+<div class="arithmatex">\[
+\mathbf{v}=x\hat{\imath}+y\hat{\jmath},
+\]</div>
+<p>when applied linear transformation <span class="arithmatex">\(\mathscr{A}\)</span>, $
+\hat{\imath}$ lands at <span class="arithmatex">\([\,a_{11}\ \ a_{21}\,]^\top\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> lands at <span class="arithmatex">\([\,a_{12}\ \ a_{22}\,]^\top\)</span>. That is</p>
+<div class="arithmatex">\[
+\mathscr{A}(\mathbf{v})=x
+\begin{bmatrix}
+a_{11} \\ a_{21}
+\end{bmatrix}
++y
+\begin{bmatrix}
+a_{12} \\ a_{22}
+\end{bmatrix}=
+\begin{bmatrix}
+a_{11}x+a_{12}y \\ a_{21}x+a_{22}y
+\end{bmatrix}=
+\begin{bmatrix}
+a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
+\end{bmatrix}
+\begin{bmatrix}
+x \\ y
+\end{bmatrix},
+\]</div>
+<p>namely</p>
+<div class="arithmatex">\[
+\mathscr{A}(\mathbf{v})=
+\begin{bmatrix}
+a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
+\end{bmatrix}\mathbf{v}.
+\]</div>
+<p>For the bases,</p>
+<div class="arithmatex">\[
+\mathscr{A}(\hat{\imath})=
+\begin{bmatrix}
+a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
+\end{bmatrix}\hat{\imath}=
+\begin{bmatrix}
+a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}=
+\begin{bmatrix}
+a_{11} \\ a_{21}
+\end{bmatrix},
+\]</div>
+<div class="arithmatex">\[
+\mathscr{A}(\hat{\jmath})=
+\begin{bmatrix}
+a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
+\end{bmatrix}\hat{\jmath}=
+\begin{bmatrix}
+a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
+\end{bmatrix}
+\begin{bmatrix}
+0 \\ 1
+\end{bmatrix}=
+\begin{bmatrix}
+a_{12} \\ a_{22}
+\end{bmatrix}.
+\]</div>
+<p>It is the relation between linear transformation and matrix-vector multiplication.</p>
+<p>By recording where the bases land when applying a linear transformation and packaging them into a matrix, we have all the infomation about this transformation.</p>
+<p>Starting from a specified matrix, we can imagine what the whole space and all the vectors inside look like after the transformation. Conversely, intuitive knowledge of a transformation itself can be expressed as a matrix.</p>
+<p>Particularly, if <span class="arithmatex">\(\mathscr{A}(\hat{\imath}),\,\mathscr{A}(\hat{\jmath})\)</span> are linearly dependent, the whole 2-D space is squished onto the line where those two vectors sit, a.k.a. the span of them.</p>
+<h2 id="4-matrix-multiplication-as-composition">4 Matrix Multiplication as Composition<a class="headerlink" href="#4-matrix-multiplication-as-composition" title="Permanent link">&para;</a></h2>
+<p>Applying two successive linear transformations <span class="arithmatex">\(\mathscr{A}_1\)</span> and <span class="arithmatex">\(\mathscr{A}_2\)</span> on a vector/space, we get a composition of linear transformations. Numerically, it is the multiplication of matrices corresponding to these transformations respectively.</p>
+<div class="arithmatex">\[
+M_2M_1\mathbf{v}=M\mathbf{v},
+\]</div>
+<div class="arithmatex">\[
+M=M_2M_1.
+\]</div>
+<p>Therefore, (square) matrix multiplication can be viewed as a series of linear transformations.</p>
+<p>In 2-D space,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+M&amp;=M_2M_1
+\\&amp;=
+\begin{bmatrix}
+b_{11}&amp;b_{12} \\ b_{21}&amp;b_{22}
+\end{bmatrix}
+\begin{bmatrix}
+a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
+\end{bmatrix}
+\\&amp;=
+\left[
+\begin{bmatrix}
+b_{11}&amp;b_{12} \\ b_{21}&amp;b_{22}
+\end{bmatrix}
+\begin{bmatrix}
+a_{11} \\ a_{21}
+\end{bmatrix}\hat{\imath}\quad
+\begin{bmatrix}
+b_{11}&amp;b_{12} \\ b_{21}&amp;b_{22}
+\end{bmatrix}
+\begin{bmatrix}
+a_{12} \\ a_{22}
+\end{bmatrix}\hat{\jmath}
+\right]
+\quad(\text{Where does }\hat{\imath}\text{ go?})
+\\&amp;=
+\left[\;
+a_{11}\hspace{-7mu}
+\begin{bmatrix}
+b_{11} \\ b_{21}
+\end{bmatrix}+
+a_{21}\hspace{-7mu}
+\begin{bmatrix}
+b_{12} \\ b_{22}
+\end{bmatrix}\quad
+a_{12}\hspace{-7mu}
+\begin{bmatrix}
+b_{11} \\ b_{21}
+\end{bmatrix}+
+a_{22}\hspace{-7mu}
+\begin{bmatrix}
+b_{12} \\ b_{22}
+\end{bmatrix}
+\;\right]
+\\&amp;=\cdots.
+\end{aligned}
+\]</div>
+<h2 id="5-the-determinant">5 The Determinant<a class="headerlink" href="#5-the-determinant" title="Permanent link">&para;</a></h2>
+<p>The determinant of a matrix represents in what scale the trasformation squeezes or streches the space.</p>
+<ul>
+<li>In 2-D space, the unit square that sits on <span class="arithmatex">\(\hat{\imath}\)</span> and <span class="arithmatex">\(\hat{\jmath}\)</span> is transformed into a parallelogram, with its area equals to the determinant.</li>
+<li>In 3-D space, the unit cube that sits on <span class="arithmatex">\(\hat{\imath}\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> and <span class="arithmatex">\(\hat{k}\)</span> transforms into a parallelepiped.</li>
+</ul>
+<p>For negative determinants, they are the result of inverting the orientation of space.</p>
+<ul>
+<li>In 2-D space, imagine flipping space over.</li>
+<li>In 3-D space, right-hand rule is involved.</li>
+</ul>
+<p>In a word, <strong>the determinant equals to the factor by which the areas/volumes have been scaled</strong>.</p>
+<p><img alt="" src="../img/01_eola_06_det.png" width="280px" /></p>
+<div class="arithmatex">\[
+\det \left(\begin{bmatrix}a &amp; b \\ c &amp; d \\ \end{bmatrix}\right)=(a+b)(c+d)-ac-bd-2bc=ad-bc.
+\]</div>
+<p>If we apply two successive linear transformations, it is obvious that the factor by which the space have been scaled equals to the multiplication of the two determinants, namely</p>
+<div class="arithmatex">\[
+\det(M_1M_2)=\det(M_1)\det(M_2)=\det(M_2M_1).
+\]</div>
+<p>行阶梯式（row echelon form）具有以下形式:</p>
+<div class="arithmatex">\[
+A=
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} &amp; \cdots &amp; a_{1n} \\
+0 &amp;  a_{22} &amp; a_{23} &amp; \cdots &amp; a_{2n} \\
+0 &amp;  0 &amp; a_{33} &amp; \cdots &amp; a_{3n} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp;  0 &amp; 0 &amp; 0 &amp; a_{nn}
+\end{bmatrix}
+\]</div>
+<p>其对空间的缩放比例即其行列式，等于其中诸列张成的（<span class="arithmatex">\(n\)</span> 维）立方体之体积，等于每一列垂直于其之前诸列所张成的空间的分量的乘积，即主对角线诸项之乘积</p>
+<div class="arithmatex">\[
+\det(A)=\prod\limits_{i=j}a_{ij}.
+\]</div>
+<p>高斯消元法（Gauss elimination）的本质是用行列式为 <span class="arithmatex">\(1\)</span> 的矩阵与原矩阵相乘，故行列式的值未改变，通过高斯消元得到行阶梯式即可求出行列式.</p>
+<h2 id="6-inverse-matrices-column-space-and-null-space">6 Inverse Matrices, Column Space and Null Space<a class="headerlink" href="#6-inverse-matrices-column-space-and-null-space" title="Permanent link">&para;</a></h2>
+<p>A system of linear equations</p>
+<div class="arithmatex">\[
+A\mathbf{x}=\mathbf{v}
+\]</div>
+<p>has its geometric interpretation that we are looking for a vector <span class="arithmatex">\(\mathbf{x}\)</span> which lands on <span class="arithmatex">\(\mathbf{v}\)</span> when applying the transformation on it.</p>
+<p>The solution for <span class="arithmatex">\(\mathbf{x}\)</span> depends on whether the transformation squishes space into a lower dimensional one, i.e., whether <span class="arithmatex">\(\det(A)\)</span> equals to 0 or not. </p>
+<p>In the case where <span class="arithmatex">\(\det(A)\neq 0\)</span>, there will always be one and only one solution and the finding process is actually playing the transformation in inverse. The inverse transformation corresponds to matrix <span class="arithmatex">\(A^{-1}\)</span> which satisfies that</p>
+<div class="arithmatex">\[
+A^{-1}A\mathbf{x}=A^{-1}\mathbf{v},
+\]</div>
+<p>where</p>
+<div class="arithmatex">\[
+A^{-1}A=I,
+\]</div>
+<p>where <span class="arithmatex">\(I\)</span> is called identity matrix, corresponding to identity transformation, which "does nothing".</p>
+<p>Therefore, we have</p>
+<div class="arithmatex">\[
+\mathbf{x}=A^{-1}\mathbf{v}.
+\]</div>
+<p>And when we play this inverse transformation and follow <span class="arithmatex">\(\mathbf{v}\)</span>, the single unique solution for <span class="arithmatex">\(\mathbf{x}\)</span> is obtained.</p>
+<p>When <span class="arithmatex">\(\det(A)= 0\)</span>, the transformation squishes the space into a lower dimension, but there is no transformation that can unsquish space into a higher one, for a function cannot map a vector to multiple ones. That is to say, <span class="arithmatex">\(A^{-1}\)</span> does not exist in this case. If vector <span class="arithmatex">\(\mathbf{v}\)</span> is lucky enough to live on that lower-dimensional space, there will be infinite solutions for <span class="arithmatex">\(\mathbf{x}\)</span>, otherwise there won't be any solutions.</p>
+<p>The number of dimensions in the output of the transformation is called the <strong>rank</strong> of the matrix. </p>
+<p>Set of all possible <span class="arithmatex">\(A\mathbf{x}\)</span> is called the <strong>column space</strong> of <span class="arithmatex">\(A\)</span>, i.e. the span of columns.</p>
+<div class="arithmatex">\[
+\text{output space = set of all possible }A\mathbf{x}\text{ = span of columns = column space}
+\]</div>
+<p>That is to say, rank is the number of dimensions in the column space. When the rank is as high as it can be, and equals the number of columns, we call the matrix <strong>full rank</strong>. Set of all vectors that land on the origin after transformation is called the <strong>null space</strong> or the <strong>kernel</strong> of the matrix.</p>
+<p>When <span class="arithmatex">\(\det(A)\neq 0\)</span>, i.e. <span class="arithmatex">\(A\)</span> is full rank, only <span class="arithmatex">\(\mathbf{0}\)</span> lands on the origin.  </p>
+<p>When <span class="arithmatex">\(\det(A_{n\times n})= 0\)</span>, a space will land on the origin, its number of dimensions being <span class="arithmatex">\(n-\mathrm{rank}(A)\)</span>.</p>
+<p>For a system of linear equations</p>
+<div class="arithmatex">\[
+A\mathbf{x}=\mathbf{0},
+\]</div>
+<p>its solution is the null space of <span class="arithmatex">\(A\)</span>.</p>
+<h2 id="6-nonsquare-matrices">6+ Nonsquare Matrices<a class="headerlink" href="#6-nonsquare-matrices" title="Permanent link">&para;</a></h2>
+<p>Nonsquare matrices are transformations between dimensions.</p>
+<p>For a <span class="arithmatex">\(m\times n\)</span> matrix</p>
+<div class="arithmatex">\[
+A_{m\times n}=
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{bmatrix}\; m \text{ rows},\\
+\space\\
+n \text{ columns}
+\]</div>
+<p>the inputs are <span class="arithmatex">\(n\)</span> bases, and the outputs are <span class="arithmatex">\(n\)</span> <span class="arithmatex">\(m\)</span>-dimensional vectors, which can be interpreted as a linear transformation from an <span class="arithmatex">\(n\)</span>-dimensional space to an <span class="arithmatex">\(m\)</span> (or lower)-dimensional space.</p>
+<h2 id="7-dot-products-and-duality">7 Dot Products and Duality<a class="headerlink" href="#7-dot-products-and-duality" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\mathbf{a}\cdot\mathbf{b}=
+\begin{bmatrix}
+a_1 \\ a_2 \\ \vdots \\ a_n
+\end{bmatrix}
+\cdotp
+\begin{bmatrix}
+b_1 \\ b_2 \\ \vdots \\ b_n
+\end{bmatrix}
+=
+\big[
+a_1\hspace{10mu}a_2\hspace{8mu}\cdots\hspace{8mu}a_n
+\big]
+\begin{bmatrix}
+b_1 \\ b_2 \\ \vdots \\ b_n
+\end{bmatrix}=\sum_{i=1}^n a_ib_i.
+\]</div>
+<p>Matrix <span class="arithmatex">\([a_1, a_2, \cdots , a_n]\)</span> corresponds to a transformation from <span class="arithmatex">\(n\)</span>-dimensional to one-dimensional, where <span class="arithmatex">\(\hat{e}_1\)</span> lands on <span class="arithmatex">\(a_1\)</span>, <span class="arithmatex">\(\hat{e}_2\)</span> lands on <span class="arithmatex">\(a_2\)</span>, ... ,  <span class="arithmatex">\(\hat{e}_n\)</span> lands on <span class="arithmatex">\(a_n\)</span>.</p>
+<h3>Relation between matrix-vector product and dot product</h3>
+<p>Suppose there is a tilted number line in a space, and for simplicity, the space is 2-dimensional. The number 0 on that line remains in the origin and the base being</p>
+<div class="arithmatex">\[
+\hat{u}=
+\begin{bmatrix}
+u_x \\ u_y
+\end{bmatrix}.
+\]</div>
+<h4>For matrix-vector product:</h4>
+<p>The plane is squished onto a line and <span class="arithmatex">\(\hat{\imath}\)</span> lands at <span class="arithmatex">\(u_x\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> lands at <span class="arithmatex">\(u_y\)</span>,</p>
+<div class="arithmatex">\[
+\mathbf{v}=
+\begin{bmatrix}
+x \\ y
+\end{bmatrix}
+\xrightarrow[\space]{\text{lands at}}
+\bigl[u_x\hspace{10mu} u_y\big]
+\begin{bmatrix}
+x \\ y
+\end{bmatrix}
+=u_x \cdotp x+u_y \cdotp y.
+\]</div>
+<h4>For dot product:</h4>
+<p>Project <span class="arithmatex">\(\hat{\imath}\)</span> to <span class="arithmatex">\(\hat{u}\)</span>, according to symmetry, <span class="arithmatex">\(\hat{\imath}_u=u_x\)</span>. Similarly, <span class="arithmatex">\(\hat{\jmath}_u=u_y\)</span>.</p>
+<p><img alt="" src="../img/01_eola_07_dot_1.png" width="240px" /></p>
+<p>Therefore, projection of <span class="arithmatex">\(\mathbf{v}\)</span> on <span class="arithmatex">\(\hat{u}\)</span></p>
+<div class="arithmatex">\[
+\mathbf{v}_u=x\cdot\hat{\imath}_u+y\cdot\hat{\jmath}=x \cdot u_x+y \cdot u_y,
+\]</div>
+<div class="arithmatex">\[
+\hat{u}\cdot\mathbf{v}=
+\begin{bmatrix}
+u_x \\ u_y
+\end{bmatrix}
+\cdotp
+\begin{bmatrix}
+x \\ y
+\end{bmatrix}
+=u_x \cdotp x+u_y \cdotp y.
+\]</div>
+<p>This is why the dot product with a unit vector can be interpreted as projecting the vector onto to the span of that unit vector and taking the length.</p>
+<h3>Duality</h3>
+<p><strong>A vector is the physical embodiment of a linear transformation.</strong></p>
+<p>A linear transformation from space to the number line can be just defined by projecting space onto that number line, instead of numerical dot products or vectors. Because this transformation is linear, it is necessarily described by some <span class="arithmatex">\(1\times n\)</span> matrix. And since multiplying this matrix is the same as taking the associated dot product, the transformation is inescapably related to some vector.</p>
+<h2 id="8-cross-product-in-the-light-of-linear-transformations">8 Cross Product in the Light of Linear Transformations<a class="headerlink" href="#8-cross-product-in-the-light-of-linear-transformations" title="Permanent link">&para;</a></h2>
+<p>In 2-D space, </p>
+<div class="arithmatex">\[
+\left\lvert \mathbf{v\times w}\right\rvert =\text{Area of parallelogram}.
+\]</div>
+<p>In the light of linear transformation, when <span class="arithmatex">\(\hat{\imath}\)</span> lands on <span class="arithmatex">\(\mathbf{v}\)</span> and <span class="arithmatex">\(\hat{\jmath}\)</span> lands on <span class="arithmatex">\(\mathbf{w}\)</span>, area of the parallelogram equals to the determinant, therefore,</p>
+<div class="arithmatex">\[
+\mathbf{v\times w}=
+\begin{vmatrix}
+v_x &amp; w_x \\
+v_y &amp; w_y
+\end{vmatrix}\hat{k}=
+\begin{vmatrix}
+v_x &amp; v_y \\
+w_x &amp; w_y
+\end{vmatrix}\hat{k}.
+\]</div>
+<p>In 3-D space,</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+v_x \\ v_y \\ v_z
+\end{bmatrix}\times
+\begin{bmatrix}
+w_x \\ w_y \\ w_z
+\end{bmatrix}=
+\begin{vmatrix}
+\hat{\imath} &amp; v_x &amp; w_x \\
+\hat{\jmath} &amp; v_y &amp; w_y \\
+\hat{k} &amp; v_z &amp; w_z
+\end{vmatrix}.
+\]</div>
+<p>Since function</p>
+<div class="arithmatex">\[
+f\left(\begin{bmatrix}x\\y\\z\end{bmatrix}\right)=
+\begin{vmatrix}
+x &amp; v_x &amp; w_x \\
+y &amp; v_y &amp; w_y \\
+z &amp; v_z &amp; w_z
+\end{vmatrix}
+\]</div>
+<p>is linear, and its output is a number. It necessarily associates with a linear transformation whose correspondent is a vector, according to duality.</p>
+<p>It is computationally evident that</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+\begin{vmatrix}v_y &amp; w_y \\ v_z &amp; w_z\end{vmatrix}\\
+\\
+\begin{vmatrix}v_z &amp; w_z \\ v_x &amp; w_x\end{vmatrix}\\
+\\
+\begin{vmatrix}v_x &amp; w_x \\ v_y &amp; w_y\end{vmatrix}
+\end{bmatrix}\cdotp
+\begin{bmatrix}x\\y\\z\end{bmatrix}=
+\begin{bmatrix}
+v_y w_z-v_z w_y\\
+v_z w_x-v_x w_z\\
+v_x w_y-v_y w_x
+\end{bmatrix}\cdotp
+\begin{bmatrix}x\\y\\z\end{bmatrix}=
+\begin{vmatrix}
+x &amp; v_x &amp; w_x \\
+y &amp; v_y &amp; w_y \\
+z &amp; v_z &amp; w_z
+\end{vmatrix},
+\]</div>
+<p>for convenience,</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+\begin{vmatrix}v_y &amp; w_y \\ v_z &amp; w_z\end{vmatrix}\\
+\\
+\begin{vmatrix}v_z &amp; w_z \\ v_x &amp; w_x\end{vmatrix}\\
+\\
+\begin{vmatrix}v_x &amp; w_x \\ v_y &amp; w_y\end{vmatrix}
+\end{bmatrix}
+\triangleq\mathbf{p},
+\]</div>
+<p>therefore, the vector <span class="arithmatex">\(\mathbf{p}\)</span> satisfies that</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathbf{p}\cdot
+\begin{bmatrix}x \\ y \\ z \end{bmatrix}
+&amp; = \det\left(
+\begin{bmatrix}
+x &amp; v_x &amp; w_x \\
+y &amp; v_y &amp; w_y \\
+z &amp; v_z &amp; w_z
+\end{bmatrix}
+\right)\\
+&amp; = \text{Volume of parallelpiped spanned on }\begin{bmatrix}x \\ y \\ z \end{bmatrix},\mathbf{v,w}\\
+&amp; = (\text{Area of parallelogram spanned on }\mathbf{v,w}) \cdot \left\Vert\begin{bmatrix}x \\ y \\ z \end{bmatrix}_{\perp(\mathbf{v,w})}\right\Vert,
+\end{aligned}
+\]</div>
+<p>and geometrically,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathbf{p}\cdot
+\begin{bmatrix}x \\ y \\ z\end{bmatrix}
+&amp; = \left\Vert\mathbf{p}\right\Vert\cdot(\text{projection of }\begin{bmatrix}x\\y\\z\end{bmatrix} \text{on } \mathbf{p})\\
+&amp; = \left\Vert\mathbf{p}\right\Vert\cdot
+\left\Vert\begin{bmatrix}x \\ y \\ z\end{bmatrix}_{\mathbf{p}\perp(\mathbf{v,w})}\right\Vert.
+\end{aligned}
+\]</div>
+<p>Therefore</p>
+<div class="arithmatex">\[
+\left\Vert\mathbf{p}\right\Vert=(\text{Area of parallelogram spanned on }\mathbf{v,w}),
+\]</div>
+<p>and <span class="arithmatex">\(\mathbf{p}\)</span> obeys the right-hand rule.</p>
+<p>And it becomes evident that</p>
+<div class="arithmatex">\[
+\mathbf{p}=\mathbf{v}\times\mathbf{w}.
+\]</div>
+<p>Note that </p>
+<div class="arithmatex">\[
+\mathbf{p}=
+\begin{bmatrix}
+v_x \\ v_y \\ v_z
+\end{bmatrix}\times
+\begin{bmatrix}
+w_x \\ w_y \\ w_z
+\end{bmatrix}=
+\begin{bmatrix}
+\begin{vmatrix}v_y &amp; w_y \\ v_z &amp; w_z\end{vmatrix}\\
+\\
+\begin{vmatrix}v_z &amp; w_z \\ v_x &amp; w_x\end{vmatrix}\\
+\\
+\begin{vmatrix}v_x &amp; w_x \\ v_y &amp; w_y\end{vmatrix}
+\end{bmatrix}=
+\begin{vmatrix}
+\hat{\imath} &amp; v_x &amp; w_x \\
+\hat{\jmath} &amp; v_y &amp; w_y \\
+\hat{k} &amp; v_z &amp; w_z
+\end{vmatrix}.
+\]</div>
+<h2 id="9-change-of-basis">9 Change of Basis<a class="headerlink" href="#9-change-of-basis" title="Permanent link">&para;</a></h2>
+<p>A change of basis is equivalent to a linear transformation.</p>
+<p>Suppose in coordinate system <span class="arithmatex">\(S\)</span>, the bases are</p>
+<div class="arithmatex">\[
+\hat{\imath}=\begin{bmatrix}1 \\ 0\end{bmatrix}, \;
+\hat{\jmath}=\begin{bmatrix}0 \\ 1\end{bmatrix},
+\]</div>
+<p>and another group of bases that span coordinate system <span class="arithmatex">\(S'\)</span>, from the perspective of <span class="arithmatex">\(S\)</span>, are</p>
+<div class="arithmatex">\[
+\hat{u}=\begin{bmatrix}u_1 \\ u_2\end{bmatrix}, \;
+\hat{v}=\begin{bmatrix}v_1 \\ v_2\end{bmatrix}.
+\]</div>
+<p>In coordinate system <span class="arithmatex">\(S'\)</span>, vector </p>
+<div class="arithmatex">\[
+\mathbf{w}'=
+\begin{bmatrix}
+w'_x\\w'_y
+\end{bmatrix}=
+w'_x \hat{u}+w'_y \hat{v}.
+\]</div>
+<p>If we apply linear transformation</p>
+<div class="arithmatex">\[
+A=\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
+\]</div>
+<p>on <span class="arithmatex">\(S\)</span>, some vector <span class="arithmatex">\(\mathbf{w}=w_x \hat{\imath}+w_y \hat{\jmath}\)</span> will land on <span class="arithmatex">\(\mathbf{w}'\)</span>. According to linearity, <span class="arithmatex">\(\mathbf{w}\)</span> will remain the same combination of the bases, which is</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}\mathbf{w} &amp;= \mathbf{w}'\\
+w_x \hat{u}+w_y \hat{v} &amp;= w'_x \hat{u}+w'_y \hat{v}\\
+&amp;\Rightarrow
+\begin{cases}
+w_x=w'_x\\
+w_y=w'_y
+\end{cases}.
+\end{aligned}
+\]</div>
+<p>Therefore,</p>
+<div class="arithmatex">\[
+\mathbf{w}=w'_x \hat{\imath}+w'_y \hat{\jmath}=
+\begin{bmatrix}w'_x \\ w'_y\end{bmatrix} 
+\xrightarrow[A]{\text{lands on}}
+w'_x \hat{u}+w'_y \hat{v}=\mathbf{w}'.
+\]</div>
+<p>So a translation from <span class="arithmatex">\(S'\)</span> to <span class="arithmatex">\(S\)</span> is obtained:</p>
+<div class="arithmatex">\[
+S': \; \mathbf{w}'=\begin{bmatrix}w'_x \\ w'_y\end{bmatrix} 
+=w'_x \hat{u}+w'_y \hat{v}\\
+\]</div>
+<div class="arithmatex">\[
+\Downarrow
+\]</div>
+<div class="arithmatex">\[
+S: \; \mathbf{w}'=
+\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
+\begin{bmatrix}w'_x \\ w'_y\end{bmatrix}.
+\]</div>
+<p>这样，我们能将两个坐标系之间的关系记为</p>
+<div class="arithmatex">\[
+S = AS'.
+\]</div>
+<p>Numerically, since</p>
+<div class="arithmatex">\[
+\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
+\hat{\imath}=\hat{u},
+\]</div>
+<div class="arithmatex">\[
+\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
+\hat{\jmath}=\hat{v},
+\]</div>
+<p>it is obvious that</p>
+<div class="arithmatex">\[
+\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
+\begin{bmatrix}w'_x \\ w'_y\end{bmatrix}_{\hat{\imath},\hat{\jmath}} =
+w'_x \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}\hat{\imath}+
+w'_y \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}\hat{\jmath}
+=w'_x\hat{u}+w'_y\hat{v}.
+\]</div>
+<p>In conclusion,</p>
+<div class="arithmatex">\[
+\mathbf{w}'_{(S')} \Longleftrightarrow A\mathbf{w}'_{(S)},
+\]</div>
+<p>conversely,</p>
+<div class="arithmatex">\[
+\mathbf{w}_{(S)} \Longleftrightarrow A^{-1}\mathbf{w}_{(S')}.
+\]</div>
+<p>In terms of linear transformations, how a transformation is expressed is related to the bases. Here are the steps to describe the same transformation in a different coordinate systems:<br />
+Suppose a linear transformation <span class="arithmatex">\(M\)</span> in coordinate system <span class="arithmatex">\(S\)</span> is applied to some vector <span class="arithmatex">\(\mathbf{w}\)</span> in <span class="arithmatex">\(S'\)</span>,<br />
+1. first translate <span class="arithmatex">\(\mathbf{w}\)</span> to <span class="arithmatex">\(S\)</span> by multiplying <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(\mathbf{w}\)</span>;
+2. since we've got <span class="arithmatex">\(A\mathbf{w}\)</span> in <span class="arithmatex">\(S\)</span>, apply the transformation by multiplying <span class="arithmatex">\(M\)</span> to <span class="arithmatex">\(A\mathbf{w}\)</span>;
+3. translate it back to <span class="arithmatex">\(S'\)</span> by multiplying <span class="arithmatex">\(A^{-1}\)</span> to it;
+4. finally we got <span class="arithmatex">\(A^{-1}MA\mathbf{w}\)</span>. </p>
+<p>To sum up,</p>
+<div class="arithmatex">\[
+M\ \text{ in } S \Longleftrightarrow A^{-1}MA\ \text{ in }S'.
+\]</div>
+<h2 id="10-eigenvectors-and-eigenvalues">10 Eigenvectors and Eigenvalues<a class="headerlink" href="#10-eigenvectors-and-eigenvalues" title="Permanent link">&para;</a></h2>
+<p>An eigenvector of a linear transformation is a <strong>non-zero</strong> vector that changes only a scalar factor when that transformation is applied to it. It is defined as</p>
+<div class="arithmatex">\[
+A\mathbf{v}=\lambda\mathbf{v},
+\]</div>
+<p>where non-zero vector <span class="arithmatex">\(\mathbf{v}\)</span> is an eigenvector of <span class="arithmatex">\(A\)</span>, and <span class="arithmatex">\(\lambda\in\mathbb{R}\)</span> is the eigenvalue associated to it.</p>
+<p>When applying the transformation, each eigenvector is scaled by the factor of its associated eigenvalue, while other vectors are all knocked off their original directions.</p>
+<p>An equivalence of the equation above</p>
+<div class="arithmatex">\[
+(A-\lambda I)\mathbf{v} = \mathbf{0}
+\]</div>
+<p>is called the <em>characteristic equation</em>.</p>
+<p>In other words, non-zero vector <span class="arithmatex">\(\mathbf{v}\)</span> becomes zero when applying linear transformation <span class="arithmatex">\(A-\lambda I\)</span> to it, and the only way to do it is that matrix squeezes the space into a lower-dimensional one, therefore</p>
+<div class="arithmatex">\[
+\det(A-\lambda I)=0.
+\]</div>
+<p>Solve this equation, and if an eigenvector exists, all the vectors on the line spanned by it would be eigenvectors too.</p>
+<p>When all the basis vecetors happen to be eigenvectors, they are called eigenbases, and the corresponding transformation matrix would be diagonal. Therefore a way to interpret a diagonal matrix is that all the bases are eigenvectors, with the diagonal entries of this matrix being their eigenvalues.</p>
+<p>A diagonal matrix has a nice property that</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+a_{1} &amp; &amp; &amp;  \\
+&amp; a_{2} &amp; &amp;  \\
+&amp; &amp; \ddots &amp;  \\
+&amp; &amp; &amp; a_{n}  \\
+\end{bmatrix}^k\mathbf{v}=
+\begin{bmatrix}
+a_{1}^k &amp; &amp; &amp;  \\
+&amp; a_{2}^k &amp; &amp;  \\
+&amp; &amp; \ddots &amp;  \\
+&amp; &amp; &amp; a_{n}^k  \\
+\end{bmatrix}\mathbf{v}=
+\begin{bmatrix}
+a_{1}^k v_1 \\
+a_{2}^k v_2 \\
+\vdots \\
+a_{n}^k v_n
+\end{bmatrix},
+\]</div>
+<p>which indicates that if the eigenvectors of matrix <span class="arithmatex">\(M\)</span> span the whole space, we can change the bases to the eigenvectors, and the change-of-basis matrix is</p>
+<div class="arithmatex">\[
+A=
+\big[
+\mathbf{v}_1\hspace{10mu}\mathbf{v}_2\hspace{8mu}\cdots\hspace{8mu}\mathbf{v}_n
+\big],
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{v}_i\)</span> are the eigenvectors.</p>
+<p>Matrix <span class="arithmatex">\(A^{-1}MA\)</span> would express the same transformation in the eigenbasis coordinate system, and it is guarenteed to be diagonal with its corresponding eigenvalues down that diagonal, because the vectors are only scaled from the perspective of that coordinate system.</p>
+<p>When raising a non-diagonal matrix to some power, first change it into its eigenbases, and then compute that power in the new system, then convert back to the original system.</p>
+<p>When a matrix does not have enough eigenvectors to span the full space, this approach fails to work.</p>
+<h2 id="11-abstract-vector-spaces">11 Abstract Vector Spaces<a class="headerlink" href="#11-abstract-vector-spaces" title="Permanent link">&para;</a></h2>
+<p>Since functions also have linear properties:</p>
+<div class="arithmatex">\[
+(\lambda f)(x)=\lambda f(x),\\
+(f+g)(x)=f(x)+g(x),
+\]</div>
+<p>the concept of vectors can be expanded to functions.</p>
+<p>The derivative is a example of linear transformation (function) of a function, because it is linear,</p>
+<div class="arithmatex">\[
+\frac{\text{d}}{\text{d}x}(\lambda f)=
+\lambda \frac{\text{d}}{\text{d}x}f,
+\]</div>
+<div class="arithmatex">\[
+\frac{\text{d}}{\text{d}x}(f+g)=
+\frac{\text{d}}{\text{d}x}f+\frac{\text{d}}{\text{d}x}g,
+\]</div>
+<p>and it transforms one function into another.</p>
+<p>In other words, the differential operator and the derivative operator are linear.</p>
+<p>To express derivatives in the form of matrices, for example in the space of polynomials, we choose </p>
+<div class="arithmatex">\[
+b_0(x)=1,\; b_1(x)=x,\; b_2(x)=x^2,\; \cdots,\; b_n(x)=x^n ,\; \cdots
+\]</div>
+<p>as <em>basis functions</em>, and all polynomials can be described as the linear combinations of the basis functions:</p>
+<div class="arithmatex">\[
+f(x)=a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n =
+\begin{bmatrix}
+a_0 \\ a_1 \\ a_2 \\ \vdots \\ a_n \\ \vdots
+\end{bmatrix}.
+\]</div>
+<p>Since</p>
+<div class="arithmatex">\[
+\frac{\text{d}}{\text{d}x}b_0(x)=
+\begin{bmatrix}
+0 \\ 0 \\ 0 \\ \vdots
+\end{bmatrix},\;
+\frac{\text{d}}{\text{d}x}b_1(x)=
+\begin{bmatrix}
+1 \\ 0 \\ 0 \\ \vdots
+\end{bmatrix},\;
+\frac{\text{d}}{\text{d}x}b_2(x)=
+\begin{bmatrix}
+0 \\ 2 \\ 0 \\ \vdots
+\end{bmatrix},\;\cdots
+\]</div>
+<p>the derivative operator matrix</p>
+<div class="arithmatex">\[
+\frac{\text{d}}{\text{d}x}=
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; 0 &amp; \cdots \\
+0 &amp; 0 &amp; 2 &amp; 0 &amp; \cdots \\
+0 &amp; 0 &amp; 0 &amp; 3 &amp; \cdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
+\end{bmatrix}.
+\]</div>
+<p>Therefore,</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\text{d}}{\text{d}x}f(x) &amp; =
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; 0 &amp; \cdots \\
+0 &amp; 0 &amp; 2 &amp; 0 &amp; \cdots \\
+0 &amp; 0 &amp; 0 &amp; 3 &amp; \cdots \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
+\end{bmatrix}
+\begin{bmatrix}
+a_0 \\ a_1 \\ a_2 \\ a_3 \\ \vdots
+\end{bmatrix} =
+\begin{bmatrix}
+1a_1 \\ 2a_2 \\ 3a_3 \\ 4a_4 \\ \vdots
+\end{bmatrix}\\ \\ &amp; =
+1a_1+2a_2x+3a_3x^2+4a_4x^3+\cdots.
+\end{aligned}
+\]</div>
+<p>Almost all linear algebra concepts have their alternate names when applied to functions: </p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Linear transformations} &amp; \longleftrightarrow \text{Linear operators}\\
+\text{Dot products} &amp; \longleftrightarrow \text{Inner products}\\
+\text{Eigenvectors} &amp; \longleftrightarrow \text{Eigenfunctions}\\
+\cdots &amp; \longleftrightarrow \cdots
+\end{aligned}
+\]</div>
+<p>In conclusion, <em>vectors</em> can be far more abstract, the from they take does not matter. It is an intangible notion that maths abstracts all its embodiments into.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://www.3blue1brown.com/essence-of-linear-algebra-page/" target="_blank">3Blue1Brown - Essence of Linear Algebra</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../.." title="Welcome" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Welcome
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../linear-algebra/" title="Linear Algebra" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Linear Algebra
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 - 2020 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/x4Cx58x54" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.d1f5a259.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f9edbbd5.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.fae956e7.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../_static/js/extra.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
