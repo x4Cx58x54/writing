@@ -405,6 +405,7 @@ Operations | Time (ns)
 
 **Beware of language trouble spots.**  
 Trouble spots in C and C++ are as follows:
+
 * Size of data types. They are not accurately defined in the standard.
 * Order of evaluation. The order of evaluation of expressions with side effects and functions arguments is not defined. Don't use side effect except for a very few idiomatic constructions.
 * Signedness of `char`. They are not defined in the standard, so do not compare a `char` with `EOF`.
