@@ -258,6 +258,8 @@ content
 
 文档 [texnia.com/archive/enumitem.pdf](http://www.texnia.com/archive/enumitem.pdf){: target=_blank}
 
+[LaTeX 技巧 944: 两个例子让你熟悉 enumitem 宏包](https://www.latexstudio.net/archives/51588.html){: target=_blank}
+
 ```latex
 \usepackage{enumitem}
 ```
@@ -740,6 +742,33 @@ content
 \newcommand{\cpp}{C\raisebox{0.35ex}{\small ++}}
 \newcommand{\e}[1]{\mathrm{e}^{#1}}
 \newcommand{\dif}{\mathrm{d}}
+```
+
+#### 弧符号 [^arc]
+
+[^arc]: [A better notation to denote arcs - Stack Exchange](https://tex.stackexchange.com/questions/96680/a-better-notation-to-denote-arcs-for-an-american-high-school-textbook/284787#284787){: target=_blank}
+
+```latex
+\usepackage{graphicx}
+```
+
+```latex
+\makeatletter
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+
+\newcommand{\arc@arc}[2]{
+  \sbox0{$\m@th#1#2$}
+  \vbox{
+    \hbox{\resizebox{\wd0}{\height}{\arc@char}}
+    \nointerlineskip
+    \box0
+  }
+}
+\makeatother
 ```
 
 
