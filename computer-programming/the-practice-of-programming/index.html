@@ -2040,14 +2040,16 @@ If accuracy isn't a issue, use lower-precision data types.</p>
 <p><strong>Stick to the standard.</strong></p>
 <p><strong>Program in the mainstream.</strong></p>
 <p><strong>Beware of language trouble spots.</strong><br />
-Trouble spots in C and C++ are as follows:
-* Size of data types. They are not accurately defined in the standard.
-* Order of evaluation. The order of evaluation of expressions with side effects and functions arguments is not defined. Don't use side effect except for a very few idiomatic constructions.
-* Signedness of <code>char</code>. They are not defined in the standard, so do not compare a <code>char</code> with <code>EOF</code>.
-* Arithmetic or logical shift. <code>&gt;&gt;</code> may be arithmetic or logical righ shift. Never right shift a signed value.
-* Byte order. Little-endian or big-endian.
-* Alignment of structure and class members. Never assume that the elements of a structure occupy contiguous memory.
-* Bit fields. It's so machine-dependent that no one should use them.</p>
+Trouble spots in C and C++ are as follows:</p>
+<ul>
+<li>Size of data types. They are not accurately defined in the standard.</li>
+<li>Order of evaluation. The order of evaluation of expressions with side effects and functions arguments is not defined. Don't use side effect except for a very few idiomatic constructions.</li>
+<li>Signedness of <code>char</code>. They are not defined in the standard, so do not compare a <code>char</code> with <code>EOF</code>.</li>
+<li>Arithmetic or logical shift. <code>&gt;&gt;</code> may be arithmetic or logical righ shift. Never right shift a signed value.</li>
+<li>Byte order. Little-endian or big-endian.</li>
+<li>Alignment of structure and class members. Never assume that the elements of a structure occupy contiguous memory.</li>
+<li>Bit fields. It's so machine-dependent that no one should use them.</li>
+</ul>
 <p><strong>Try several compilers.</strong></p>
 <h3>Headers and Libraries</h3>
 <p><strong>Use standard libraries.</strong></p>

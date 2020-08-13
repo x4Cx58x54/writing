@@ -760,29 +760,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linear-algebra" class="md-nav__link">
-    Linear Algebra
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#probability-and-information-theory" class="md-nav__link">
-    Probability and Information Theory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#numerical-computation" class="md-nav__link">
-    Numerical Computation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#machine-learning-basics" class="md-nav__link">
-    Machine Learning Basics
+  <a href="#applied-maths" class="md-nav__link">
+    Applied Maths
   </a>
   
 </li>
@@ -1485,29 +1464,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linear-algebra" class="md-nav__link">
-    Linear Algebra
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#probability-and-information-theory" class="md-nav__link">
-    Probability and Information Theory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#numerical-computation" class="md-nav__link">
-    Numerical Computation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#machine-learning-basics" class="md-nav__link">
-    Machine Learning Basics
+  <a href="#applied-maths" class="md-nav__link">
+    Applied Maths
   </a>
   
 </li>
@@ -1534,199 +1492,34 @@
 <em>2016, MIT Press, <a href="https://www.deeplearningbook.org" target="_blank">deeplearningbook.org</a></em>  </p>
 </blockquote>
 <hr />
-<h2 id="linear-algebra">Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permanent link">&para;</a></h2>
+<h2 id="applied-maths">Applied Maths<a class="headerlink" href="#applied-maths" title="Permanent link">&para;</a></h2>
 <h3>Norms</h3>
 <p>The <span class="arithmatex">\(L^p\)</span> norm is given by</p>
 <div class="arithmatex">\[
-\|\boldsymbol{x}\|_p = \left(\sum_i\vert x_i \vert^p\right)^{\frac{1}{p}}
+\|\boldsymbol{x}\|_p = \left(\sum_i|x_i|^p\right)^{\frac{1}{p}}
 \]</div>
 <p>for <span class="arithmatex">\(p\in\mathbb{R}\)</span>, <span class="arithmatex">\(p\ge1\)</span>.</p>
-<p>The <span class="arithmatex">\(L^1\)</span> norm is commonly used when the difference between zero and nonzero if very important. Every time an element of <span class="arithmatex">\(\boldsymbol{x}\)</span> moves away from 0 by <span class="arithmatex">\(\varepsilon\)</span>, the <span class="arithmatex">\(L^1\)</span> norm increases by <span class="arithmatex">\(\varepsilon\)</span>.</p>
-<p>The <span class="arithmatex">\(L^\infty\)</span>, also known as Chebyshev distance is defined by</p>
+<p>当零和非零值之间的区别非常重要时，常用 <span class="arithmatex">\(L^1\)</span> 范数.</p>
+<p>Analogous to <span class="arithmatex">\(L^2\)</span> norm (Euclidean distance), the <em>Frobenius norm</em> measures the size of a matrix:</p>
 <div class="arithmatex">\[
-\|\boldsymbol{x}\|_\infty = \max_i\vert x_i\vert.
+\|\boldsymbol{A}\|_F = \sqrt{\sum_{i,j}A_{i,j}^2}.
 \]</div>
-<p>Analogous to <span class="arithmatex">\(L^2\)</span> norm (Euclidean distance), the <em>Frobenius norm</em></p>
-<div class="arithmatex">\[
-\|\boldsymbol{A}\|_F = \sqrt{\sum_{i,j}A_{i,j}^2}
-\]</div>
-<p>measures the size of a matrix.</p>
-<h3>Orthogonal Matrix</h3>
-<p>An orthogonal matrix is a square matrix whose rows and columns are respectively mutually orthonormal:</p>
-<div class="arithmatex">\[
-\boldsymbol{A}^\top \boldsymbol{A} = \boldsymbol{A}\boldsymbol{A}^\top = \boldsymbol{I},
-\]</div>
-<p>which implies that</p>
-<div class="arithmatex">\[
-\boldsymbol{A}^{-1} = \boldsymbol{A}^\top.
-\]</div>
-<h3>Eigendecomposition</h3>
-<p>Suppose a square matrix <span class="arithmatex">\(\boldsymbol{A}\)</span> has <span class="arithmatex">\(n\)</span> linear independent eigenvectors <span class="arithmatex">\(\{\boldsymbol{v}^{(1)}, \boldsymbol{v}^{(2)}, \cdots, \boldsymbol{v}^{(n)}\}\)</span> with corresponding eigenvalues <span class="arithmatex">\(\{\lambda_1,\lambda_2,\cdots,\lambda_n\}\)</span>. We concatenate all of the eigenvectors to form a matrix <span class="arithmatex">\(\boldsymbol{V} = [\boldsymbol{v}^{(1)}, \boldsymbol{v}^{(2)}, \cdots, \boldsymbol{v}^{(n)}]\)</span>, and all of the eigenvalues to form a vector <span class="arithmatex">\(\boldsymbol{\lambda}\)</span>. The <strong>eigendecomposition</strong> of <span class="arithmatex">\(\boldsymbol{A}\)</span> is then given by</p>
-<div class="arithmatex">\[
-\boldsymbol{A} = \boldsymbol{V}\operatorname{diag}(\boldsymbol{\lambda})V^{-1}.
-\]</div>
-<p>Proof:</p>
-<div class="arithmatex">\[
-\boldsymbol{A}V = [\boldsymbol{Av}^{(1)}\ \boldsymbol{Av}^{(2)}\ \cdots\ \boldsymbol{Av}^{(n)}] = [\lambda_1\boldsymbol{v}^{(1)}\ \lambda_2\boldsymbol{v}^{(2)}\ \cdots\ \lambda_n\boldsymbol{v}^{(n)}] = V\operatorname{diag}(\boldsymbol{\lambda}).
-\]</div>
-<p>Every real symmetric matrix can be decomposed into real-valued eigenvectors and eigenvalues</p>
-<div class="arithmatex">\[
-\boldsymbol{A} = \boldsymbol{Q\Lambda Q}^{-1}
-\]</div>
-<p>where <span class="arithmatex">\(\boldsymbol{Q}\)</span> is an orthogonal matrix composed of eigenvectors of <span class="arithmatex">\(\boldsymbol{A}\)</span>, and <span class="arithmatex">\(\boldsymbol{\Lambda}\)</span> is the diagonal metrix composed of eigenvalues. By convention, we usually sort the entries of <span class="arithmatex">\(\boldsymbol{\Lambda}\)</span> in descending order.</p>
-<h3>Singular Value Decomposition</h3>
-<p>SVD rewrite <span class="arithmatex">\(\boldsymbol{A}_{m\times n}\)</span> as</p>
-<div class="arithmatex">\[
-\boldsymbol{A}=\boldsymbol{UDV}^\top.
-\]</div>
-<p>其中 <span class="arithmatex">\(\boldsymbol{U}\)</span> 是 <span class="arithmatex">\({m\times m}\)</span> 的正交矩阵，由<strong>左奇异向量</strong>构成每一列；<span class="arithmatex">\(\boldsymbol{D}\)</span> 是 <span class="arithmatex">\({m\times n}\)</span> 的对角矩阵，由<strong>奇异值</strong>构成对角项；<span class="arithmatex">\(\boldsymbol{V}\)</span> 是 <span class="arithmatex">\({n\times n}\)</span> 的正交矩阵，由<strong>右奇异向量</strong>构成每一列。</p>
-<p>The left-singular vectors of <span class="arithmatex">\(\boldsymbol{A}\)</span> are the eigenvectors of <span class="arithmatex">\(\boldsymbol{AA}^\top\)</span>. The right-singular eigenvectors of <span class="arithmatex">\(\boldsymbol{A}\)</span> are the eigenvectors of <span class="arithmatex">\(\boldsymbol{A}^\top\boldsymbol{A}\)</span>. The non-zero singular values of <span class="arithmatex">\(\boldsymbol{A}\)</span> are the square roots of the eigenvalues of <span class="arithmatex">\(\boldsymbol{AA}^\top\)</span>, the same for <span class="arithmatex">\(\boldsymbol{A}^\top\boldsymbol{A}\)</span>.</p>
-<h3>The Moore-Penrose Pseudoinverse</h3>
-<p><span class="arithmatex">\(\boldsymbol{A}\)</span> 的摩尔-彭罗斯广义伪逆定义为</p>
-<div class="arithmatex">\[
-\boldsymbol{A}^+=\lim_{\alpha\rightarrow0}(\boldsymbol{A}^\top\boldsymbol{A}+\alpha\boldsymbol{I})^{-1}\boldsymbol{A}^\top.
-\]</div>
-<p>Pratical algorithms for computing the pseudoinverse are based on the formula</p>
-<div class="arithmatex">\[
-\boldsymbol{A}^+=\boldsymbol{VD}^+\boldsymbol{U}^\top
-\]</div>
-<p>where <span class="arithmatex">\(\boldsymbol{U}\)</span>, <span class="arithmatex">\(\boldsymbol{D}\)</span> and <span class="arithmatex">\(\boldsymbol{V}\)</span> are the SVD of <span class="arithmatex">\(\boldsymbol{A}\)</span>, and the pseudoinverse <span class="arithmatex">\(\boldsymbol{D}^+\)</span> is obtained by taking the reciprocal of the non-zero entries in <span class="arithmatex">\(\boldsymbol{D}\)</span> and then taking the transpose of this matrix.</p>
-<p>若 <span class="arithmatex">\(\boldsymbol{Ax}=\boldsymbol{y}\)</span> 有多解，则由 <span class="arithmatex">\(\boldsymbol{x}=\boldsymbol{A}^+\boldsymbol{y}\)</span> 得到的解是使得 <span class="arithmatex">\(\Vert\boldsymbol{x}\Vert_2\)</span> 最小的那一个；若无解，则得到的解使得 <span class="arithmatex">\(\Vert\boldsymbol{Ax}-\boldsymbol{y}\Vert_2\)</span> 最小。</p>
-<h3>The Trace Operator</h3>
-<p>矩阵的迹定义为方阵主对角线上各元素之和</p>
-<div class="arithmatex">\[
-\operatorname{Tr}(\boldsymbol{A}) = \sum_i\boldsymbol{A}_{i,i}.
-\]</div>
-<p>It provides another way of writing the Frobenius norm</p>
+<h3>Trace</h3>
+<p>The trace provides another way of writing the Frobenius norm</p>
 <div class="arithmatex">\[
 \|\boldsymbol{A}\|_F=\sqrt{\operatorname{Tr}(\boldsymbol{A}\boldsymbol{A}^\top)}.
 \]</div>
-<p>若下式有意义，则</p>
+<p>若各因子的形状使得乘积是方阵，</p>
 <div class="arithmatex">\[
 \operatorname{Tr}(\boldsymbol{A}^{(1)}\boldsymbol{A}^{(2)}\cdots\boldsymbol{A}^{(n)})=\operatorname{Tr}(\boldsymbol{A}^{(n)}\boldsymbol{A}^{(1)}\cdots\boldsymbol{A}^{(n-1)}).
 \]</div>
-<p>只要各因子的形状使得乘积是方阵，上式就成立。</p>
-<h3>Example: Principal Components Analysis</h3>
-<p>PCA 的目的在于将一系列的点压缩存储，并且使得精度损失尽可能少。具体地来说，对于每一个点 <span class="arithmatex">\(\boldsymbol{x}\in\mathbb{R}^n\)</span>，构建映射 <span class="arithmatex">\(f\)</span> 使其映射到 <span class="arithmatex">\(\boldsymbol{c}^{(i)}\in\mathbb{R}^l\)</span>，而且 <span class="arithmatex">\(n&gt;l\)</span>. 同时需要构建解码映射 <span class="arithmatex">\(g\)</span>，使得 <span class="arithmatex">\(g(\boldsymbol{c})\)</span> 尽可能接近 <span class="arithmatex">\(\boldsymbol{x}\)</span>. 在 PCA 中，<span class="arithmatex">\(g(\boldsymbol{c})=\boldsymbol{Dc}\)</span>，<span class="arithmatex">\(\boldsymbol{D}\in\mathbb{R}^{n\times l}\)</span>，并且 <span class="arithmatex">\(\boldsymbol{D}\)</span> 各列互相规范正交。</p>
-<p>记每一个 <span class="arithmatex">\(\boldsymbol{x}\)</span> 对应的最佳编码结果为 <span class="arithmatex">\(\boldsymbol{c}^*\)</span>，则有</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\boldsymbol{c}^* &amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{c}\Vert\boldsymbol{x}-g(\boldsymbol{c})\Vert_2\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{c}\Vert\boldsymbol{x}-g(\boldsymbol{c})\Vert_2^2\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{c}\big[(\boldsymbol{x}-g(\boldsymbol{c})\big]^\top\big[\boldsymbol{x}-g(\boldsymbol{c})\big]\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{c}\big[\boldsymbol{x}^\top\boldsymbol{x}-\boldsymbol{x}^\top g(\boldsymbol{c})-g(\boldsymbol{c})^\top\boldsymbol{x}+g(\boldsymbol{c})^\top g(\boldsymbol{c})\big]\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{c}\big[-2\boldsymbol{x}^\top g(\boldsymbol{c})+g(\boldsymbol{c})^\top g(\boldsymbol{c})\big]\\ 
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{c}\big(-2\boldsymbol{x}^\top\boldsymbol{Dc}+\boldsymbol{c}^\top\boldsymbol{D}^\top\boldsymbol{Dc}\big)\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{c}\big(-2\boldsymbol{x}^\top\boldsymbol{Dc}+\boldsymbol{c}^\top\boldsymbol{I}_l\boldsymbol{c}\big)\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{c}\big(-2\boldsymbol{x}^\top\boldsymbol{Dc}+\boldsymbol{c}^\top\boldsymbol{c}\big).
-\end{aligned}
-\]</div>
-<p>取到最小值时，有</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\nabla_{\boldsymbol{c}}\big(-2\boldsymbol{x}^\top \boldsymbol{Dc}+\boldsymbol{c}^\top\boldsymbol{c}\big)&amp;=\boldsymbol{0}\\
--2\boldsymbol{x}^\top\boldsymbol{D}+2\boldsymbol{c}^\top&amp;=\boldsymbol{0}\\
-\boldsymbol{c}&amp;=\boldsymbol{D}^\top\boldsymbol{x},
-\end{aligned}
-\]</div>
-<p>故</p>
-<div class="arithmatex">\[
-f(\boldsymbol{x})=\boldsymbol{D}^\top\boldsymbol{x}.
-\]</div>
-<p>解码得到的信息为</p>
-<div class="arithmatex">\[
-r(\boldsymbol{x}) = \boldsymbol{DD}^\top\boldsymbol{x}.
-\]</div>
-<p>现在考虑所有的点。为了使得误差最小，令</p>
-<div class="arithmatex">\[
-\boldsymbol{D}^* = \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{D}\sqrt{\sum_{i,j}\left(x_j^{(i)}-r(\boldsymbol{x}^{{i}})_j\right)^2},
-\]</div>
-<p>同时须满足 <span class="arithmatex">\(\boldsymbol{D}^\top\boldsymbol{D}=\boldsymbol{I}_l\)</span>。 令 <span class="arithmatex">\(\boldsymbol{X}\)</span> 每一行对应一个点 <span class="arithmatex">\(\boldsymbol{x}^{(i)}\)</span>，并先考虑 <span class="arithmatex">\(l=1\)</span> 的情况，替换符号并整理得</p>
-<div class="arithmatex">\[
-\boldsymbol{d}^*=\mathop{\operatorname{arg\ min}}\limits_\boldsymbol{d}\|\boldsymbol{X}-\boldsymbol{Xdd}^\top\|_F^2,
-\]</div>
-<p>同时满足 <span class="arithmatex">\(\boldsymbol{d}^\top\boldsymbol{d}=1\)</span>. 继续简化上式，</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\boldsymbol{d}^*
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{d}\operatorname{Tr}\big[(\boldsymbol{X}-\boldsymbol{Xdd}^\top)^\top(\boldsymbol{X}-\boldsymbol{Xdd}^\top)\big]\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{d}\operatorname{Tr}(\boldsymbol{X}^\top\boldsymbol{X}-\boldsymbol{X}^\top\boldsymbol{X}\boldsymbol{dd}^\top-\boldsymbol{dd}^\top\boldsymbol{X}^\top\boldsymbol{X}+\boldsymbol{dd}^\top\boldsymbol{X}^\top\boldsymbol{X}\boldsymbol{dd}^\top)\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{d}\big[-\operatorname{Tr(\boldsymbol{X}^\top\boldsymbol{X}\boldsymbol{dd}^\top)}-\operatorname{Tr(\boldsymbol{dd}^\top\boldsymbol{X}^\top\boldsymbol{X})}+\operatorname{Tr(\boldsymbol{dd}^\top\boldsymbol{X}^\top\boldsymbol{Xdd}^\top)}\big]\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{d}\big[-2\operatorname{Tr(\boldsymbol{X}^\top\boldsymbol{X}\boldsymbol{dd}^\top)}+\operatorname{Tr(\boldsymbol{dd}^\top\boldsymbol{X}^\top\boldsymbol{Xdd}^\top)}\big]\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{d}\big[-2\operatorname{Tr(\boldsymbol{X}^\top\boldsymbol{X}\boldsymbol{dd}^\top)}+\operatorname{Tr(\boldsymbol{X}^\top\boldsymbol{Xdd}^\top\boldsymbol{dd}^\top)}\big]\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{d}\big[-2\operatorname{Tr(\boldsymbol{X}^\top\boldsymbol{X}\boldsymbol{dd}^\top)}+\operatorname{Tr(\boldsymbol{X}^\top\boldsymbol{Xdd}^\top)}\big]\\
-&amp;= \mathop{\operatorname{arg\ min}}\limits_\boldsymbol{d}\big[-\operatorname{Tr(\boldsymbol{X}^\top\boldsymbol{X}\boldsymbol{dd}^\top)}\big]\\
-&amp;= \mathop{\operatorname{arg\ max}}\limits_\boldsymbol{d}\operatorname{Tr(\boldsymbol{d}^\top\boldsymbol{X}^\top\boldsymbol{Xd})},
-\end{aligned}
-\]</div>
-<p>根据特征值分解理论，<span class="arithmatex">\(\boldsymbol{d}\)</span> 是对应 <span class="arithmatex">\(\boldsymbol{X}^\top\boldsymbol{X}\)</span> 最大特征值的特征向量。则当 <span class="arithmatex">\(l\)</span> 任意时，<span class="arithmatex">\(\boldsymbol{D}\)</span> 由最大的 <span class="arithmatex">\(l\)</span> 个特征值对应的特征向量组成。</p>
-<h2 id="probability-and-information-theory">Probability and Information Theory<a class="headerlink" href="#probability-and-information-theory" title="Permanent link">&para;</a></h2>
-<h3>Common Probability Distributions</h3>
-<h4>Bernoulli Distribution 伯努利分布</h4>
-<div class="arithmatex">\[
-\begin{cases}
-P(\mathrm{x} = 1) = \phi\\
-P(\mathrm{x} = 0) = 1-\phi
-\end{cases}
-\]</div>
-<h4>Multinoulli Distribution 分类分布</h4>
-<p>离散型随机变量 <span class="arithmatex">\(\mathrm{x}\)</span> 一共有 <span class="arithmatex">\(k\)</span> 种情况，其分布由向量 <span class="arithmatex">\(\boldsymbol{p}\)</span> 给出：</p>
-<div class="arithmatex">\[
-P(\mathrm{x} = x_i) = 
-\begin{cases}
-\boldsymbol{p}_i &amp; 1\le i &lt; k\\
- 1-\boldsymbol{1}^\top\boldsymbol{p} &amp; i=k .
-\end{cases}
-\]</div>
-<h4>Gaussian Distribution 正态分布</h4>
-<div class="arithmatex">\[
-\mathcal{N}(x;\mu, \sigma^2)=\sqrt{\frac{1}{2\pi\sigma^2}}\exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right].
-\]</div>
-<p>令 <span class="arithmatex">\(\beta = \sigma^{-2} \in (0, +\infty)\)</span>，称之为精度（Precision），则有</p>
-<div class="arithmatex">\[
-\mathcal{N}(x;\mu, \beta^{-1})=\sqrt{\frac{\beta}{2\pi}}\exp\left[-\frac{1}{2}\beta(x-\mu)^2\right].
-\]</div>
-<p>对于多维情况，则参数变为期望向量 <span class="arithmatex">\(\boldsymbol{\mu}\)</span> 和协方差矩阵 <span class="arithmatex">\(\boldsymbol{\Sigma}\)</span>. <span class="arithmatex">\(\boldsymbol{\Sigma}\)</span> 必然为正定的对称矩阵。</p>
-<div class="arithmatex">\[
-\mathcal{N}(\boldsymbol{x};\boldsymbol{\mu}, \boldsymbol{\Sigma})=\sqrt{\frac{1}{(2\pi)^n\det(\boldsymbol{\Sigma})}}\exp\left[-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^\top\boldsymbol{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right].
-\]</div>
-<div class="arithmatex">\[
-\mathcal{N}(\boldsymbol{x};\boldsymbol{\mu}, \boldsymbol{\beta}^{-1})=\sqrt{\frac{\det(\boldsymbol{\beta})}{(2\pi)^n}}\exp\left[-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^\top\boldsymbol{\beta}(\boldsymbol{x}-\boldsymbol{\mu})\right].
-\]</div>
-<h4>Exponential Distribution 指数分布</h4>
-<div class="arithmatex">\[
-p(x;\lambda)=
-\begin{cases}
-\lambda\mathrm{e}^{-\lambda x} &amp;x\ge 0,\\
-0 &amp;x&lt;0.
-\end{cases}
-\]</div>
-<h4>Laplace Distribution 拉普拉斯分布</h4>
-<div class="arithmatex">\[
-\mathrm{Laplace}(x;\mu, \gamma)=\frac{1}{2\gamma}\exp\left(-\frac{\vert x-\mu\vert}{\gamma}\right).
-\]</div>
-<h4>Dirac Distribution 狄拉克分布</h4>
-<div class="arithmatex">\[
-p(x) = \delta(x-\mu).
-\]</div>
-<h4>Empirical Distribution 经验分布</h4>
-<div class="arithmatex">\[
-\hat{p}(\boldsymbol{x})=\frac{1}{m}\sum_{i=1}^m\delta(\boldsymbol{x}-\boldsymbol{x}^{(i)}).
-\]</div>
 <h3>Useful Properties of Common Functions</h3>
-<p>Softplus 函数：</p>
 <div class="arithmatex">\[
-\zeta(x) = \ln(1+\mathrm{e}^x).
+\text{Softplus:}\quad \zeta(x) = \ln(1+\mathrm{e}^x)
 \]</div>
-<p>The name of the function comes from the fact that it is a "softened" version of ReLU:</p>
 <div class="arithmatex">\[
-x^+ = \max(0, x).
+\text{Sigmoid:}\quad \sigma(x) = \frac{1}{1+\mathrm{e}^{-x}}
 \]</div>
-<p>Sigmoid 函数：</p>
-<div class="arithmatex">\[
-\sigma(x) = \frac{1}{1+\mathrm{e}^{-x}}
-\]</div>
-<p>以下性质值得记忆：</p>
 <div class="arithmatex">\[
 \sigma(x) = \frac{\mathrm{e}^x}{\mathrm{e}^0+\mathrm{e}^x}
 \]</div>
@@ -1752,16 +1545,16 @@ x^+ = \max(0, x).
 \zeta^{-1}(x)=\ln(\mathrm{e}^x-1)
 \]</div>
 <h3>Information Theory</h3>
-<p>信息的含量取决于此信息代表的事件发生的可能性。低概率事件包含的信息值高，高概率事件的信息则低，同时独立事件的信息值具有可加性。由上面的性质，可以得到事件 <span class="arithmatex">\(\mathrm{x}=x\)</span> 的自信息（self-informaion）为</p>
+<p>信息的含量取决于此信息代表的事件发生的可能性. 低概率事件包含的信息值高，高概率事件的信息则低，同时独立事件的信息值具有可加性. 由上面的性质，可以得到事件 <span class="arithmatex">\(\mathrm{x}=x\)</span> 的自信息（self-informaion）为</p>
 <div class="arithmatex">\[
 I(x) = -\ln P(x).
 \]</div>
-<p>由于使用自然对数，此处 <span class="arithmatex">\(I(x)\)</span> 的单位为 nats，一个 nat 对应概率为 <span class="arithmatex">\(\mathrm{e}^{-1}\)</span> 的事件。如果使用以 <span class="arithmatex">\(2\)</span> 为底的对数，则单位为比特。</p>
+<p>由于使用自然对数，此处 <span class="arithmatex">\(I(x)\)</span> 的单位为 nats，一个 nat 对应概率为 <span class="arithmatex">\(\mathrm{e}^{-1}\)</span> 的事件. 如果使用以 <span class="arithmatex">\(2\)</span> 为底的对数，则单位为比特.</p>
 <p>香农熵用于衡量一个概率分布的不确定性：</p>
 <div class="arithmatex">\[
 H(P)=H(\mathrm{x}) = \operatorname{E}\big[I(x)\big],
 \]</div>
-<p>也就是从一个概率分布中得到的信息量的期望。比较集中的分布熵值低，分散的分布熵值高。</p>
+<p>也就是从一个概率分布中得到的信息量的期望. 比较集中的分布熵值低，分散的分布熵值高.</p>
 <p>KL 距离（Kullback-Leibler divergence）衡量两个分布之间的差异：</p>
 <div class="arithmatex">\[
 D_{\mathrm{KL}}(P\Vert Q)=\operatorname{E}_P \ln\frac{P(x)}{Q(x)}.
@@ -1771,41 +1564,18 @@ D_{\mathrm{KL}}(P\Vert Q)=\operatorname{E}_P \ln\frac{P(x)}{Q(x)}.
 <div class="arithmatex">\[
 H(P,Q) = H(P) + D_{\mathrm{KL}}(P\Vert Q) =  -\operatorname{E}_P\ln Q(x).
 \]</div>
-<p>若以 <span class="arithmatex">\(Q(x)\)</span> 为参数，则交叉熵和 KL 距离同时有最值。</p>
-<h3>Structured Probabilistic Models</h3>
-<p>机器学习中会涉及到大量随机变量的分布，如果用单个函数分别描述，将会十分复杂，导致效率低下。为此，我们将概率分布分解，如</p>
-<div class="arithmatex">\[
-p(\mathrm{a, b, c})=p(\mathrm{a})\cdot p(\mathrm{b\vert a})\cdot p(\mathrm{c\vert b}).
-\]</div>
-<p>由此将一些随机变量表示为有向图，有</p>
-<div class="arithmatex">\[
-p(\mathbf{x})=\prod_i p\big(\mathrm{x}_i\vert Pa_\mathcal{G}(\mathrm{x}_i)\big).
-\]</div>
-<p>还有一种形式，以无向图来表示，这种模型也成为马尔可夫场。此图中，每一个全连接的子图都用 <span class="arithmatex">\(\mathcal{C}\)</span> 来表示，它对应一个联合分布函数 <span class="arithmatex">\(\phi(\mathcal{C})\)</span>. 那么这个模型的概率分布分解为</p>
-<div class="arithmatex">\[
-p(\mathbf{x})=\frac{1}{Z}\prod_i\phi^{(i)}(\mathcal{C}^{(i)}),
-\]</div>
-<p>其中 <span class="arithmatex">\(\mathcal{C}^{(i)}\)</span> 互不包含，比例因子 <span class="arithmatex">\(Z^{-1}\)</span> 保证各项因子之和为 <span class="arithmatex">\(1\)</span>.</p>
-<h2 id="numerical-computation">Numerical Computation<a class="headerlink" href="#numerical-computation" title="Permanent link">&para;</a></h2>
+<p>若以 <span class="arithmatex">\(Q(x)\)</span> 为参数，则交叉熵和 KL 距离同时有最值.</p>
 <h3>Overflow and Underflow</h3>
-<p>数值处理的根本困难在于用有限位的计算机处理连续的实数，这导致了舍入误差（rounding error)。一种破坏力极大的舍入误差是下溢，即一个非常小的数舍入为零。还有一种误差是上溢。</p>
-<p>以 softmax 函数为例：</p>
-<div class="arithmatex">\[
-\operatorname{softmax}(\boldsymbol{x})_i = \frac{\mathrm{e}^{x_i}}{\sum\limits_{j=i}^{n}\mathrm{e}^{x_j}}
-\]</div>
-<p>令 <span class="arithmatex">\(x_i=c\in\mathbb{R}\)</span>，那么函数值必然为 <span class="arithmatex">\(1/n\)</span>. 但是在实际计算时，若 <span class="arithmatex">\(c\)</span> 是非常小的负数，导致分母下溢，则结果变为未定义。如果 <span class="arithmatex">\(c\)</span> 是很大的正数，那么导致上溢，同样结果未定义。解决的办法是利用性质 <span class="arithmatex">\(\operatorname{softmax}(\boldsymbol{x})=\operatorname{softmax}(\boldsymbol{x}-c)\)</span>，将 <span class="arithmatex">\(\boldsymbol{x}\)</span> 换为 <span class="arithmatex">\(\boldsymbol{x}-\max x_i\)</span> 即可。</p>
+<p>数值处理的根本困难在于用有限位的计算机处理连续的实数，这导致了舍入误差（rounding error）.</p>
+<p>以 <span class="arithmatex">\(\operatorname{softmax}(\boldsymbol{x})_i = \mathrm{e}^{x_i}/\sum\limits_{j=i}^{n}\mathrm{e}^{x_j}\)</span> 为例，令 <span class="arithmatex">\(x_i=c\in\mathbb{R}\)</span>，那么函数值必然为 <span class="arithmatex">\(1/n\)</span>. 但是在实际计算时，若 <span class="arithmatex">\(c\)</span> 是非常小的负数，导致分母下溢，则结果变为未定义. 如果 <span class="arithmatex">\(c\)</span> 是很大的正数，那么导致上溢，同样结果未定义. 解决的办法是利用性质 <span class="arithmatex">\(\operatorname{softmax}(\boldsymbol{x})=\operatorname{softmax}(\boldsymbol{x}-c)\)</span>，将 <span class="arithmatex">\(\boldsymbol{x}\)</span> 换为 <span class="arithmatex">\(\boldsymbol{x}-\max x_i\)</span> 即可.</p>
 <h3>Poor Conditioning</h3>
-<p>这种误差指的是微小的输入扰动导致输出大幅变化。这会让之前产生的误差放大。例如函数 <span class="arithmatex">\(f(\boldsymbol{x}) = \boldsymbol{A}^{-1}\boldsymbol{x}\)</span>，当<span class="arithmatex">\(\boldsymbol{A}\)</span> 可以做奇异值分解时，它的 <strong>condition number</strong> 为</p>
-<div class="arithmatex">\[
-\max_{i,j}\left\vert\frac{\lambda_i}{\lambda_j}\right\vert.
-\]</div>
-<p>如果这个数非常大，就会导致这个函数非常敏感。</p>
+<p>这种误差指的是微小的输入扰动导致输出大幅变化. 这会让之前产生的误差放大. 例如函数 <span class="arithmatex">\(f(\boldsymbol{x}) = \boldsymbol{A}^{-1}\boldsymbol{x}\)</span>，当 <span class="arithmatex">\(\boldsymbol{A}\)</span> 可以做奇异值分解时，它的条件数（condition number）为 <span class="arithmatex">\(\max\limits_{i,j}|\lambda_i/\lambda_j|\)</span>. 如果这个数非常大，就会导致这个函数非常敏感.</p>
 <h3>Jacobian and Hessian Matrices</h3>
 <p>函数 <span class="arithmatex">\(f: \mathbb{R}^m\rightarrow\mathbb{R}^n\)</span> 的雅可比矩阵 <span class="arithmatex">\(\boldsymbol{J}\in\mathbb{R}^{m\times n}\)</span> 由下式决定：</p>
 <div class="arithmatex">\[
 J_{i,j} = \frac{\partial}{\partial x_j}f(\boldsymbol{x})_i.
 \]</div>
-<p><span class="arithmatex">\(f\)</span> 的海森矩阵由下式决定</p>
+<p><span class="arithmatex">\(f\)</span> 的海森矩阵</p>
 <div class="arithmatex">\[
 \boldsymbol{H} = \boldsymbol{J}(\nabla f),
 \]</div>
@@ -1813,16 +1583,12 @@ J_{i,j} = \frac{\partial}{\partial x_j}f(\boldsymbol{x})_i.
 <div class="arithmatex">\[
 H_{i,j} = \frac{\partial^2}{\partial x_i x_j}f(\boldsymbol{x}).
 \]</div>
-<p>由克莱罗定理（Clairaut Th.），对于具有连续一阶偏导的实函数，<span class="arithmatex">\(\boldsymbol{H}\)</span> 是实对称的。所以可以将其分解为实特征值与规范正交的特征向量 <span class="arithmatex">\(\boldsymbol{d}\)</span>。对于每一个 <span class="arithmatex">\(\boldsymbol{d}^{(i)}\)</span>，它所指方向上有</p>
-<div class="arithmatex">\[
-f''(\boldsymbol{x})=\lambda^{(i)},
-\]</div>
-<p>在其他方向上，<span class="arithmatex">\(f\)</span> 的二阶导数可以由特征值加权平均求得。</p>
-<p>对于单位向量 <span class="arithmatex">\(\boldsymbol{u}\)</span>，有</p>
+<p>由克莱罗定理（Clairaut's Th.），对于具有连续一阶偏导的实函数，<span class="arithmatex">\(\boldsymbol{H}\)</span> 是实对称的. 所以可以将其分解为实特征值与规范正交的特征向量 <span class="arithmatex">\(\boldsymbol{d}\)</span>. 对于每一个 <span class="arithmatex">\(\boldsymbol{d}^{(i)}\)</span>，它所指方向上有 <span class="arithmatex">\(f''(\boldsymbol{x})=\lambda^{(i)}\)</span>，在其它方向上，<span class="arithmatex">\(f\)</span> 的二阶导数可以由特征值加权平均求得.</p>
+<p>对于单位向量，有</p>
 <div class="arithmatex">\[
 f''(\boldsymbol{x})=\boldsymbol{d}^{\top}\boldsymbol{Hd}.
 \]</div>
-<p>二阶方向导数可以衡量这里的梯度下降的效果。记 <span class="arithmatex">\(\boldsymbol{g}=\nabla f\)</span>，有泰勒展开</p>
+<p>二阶方向导数可以衡量这里的梯度下降的效果. 记 <span class="arithmatex">\(\boldsymbol{g}=\nabla f\)</span>，有泰勒展开</p>
 <div class="arithmatex">\[
 f(\boldsymbol{x})\approx f(\boldsymbol{x}^{(0)})+(\boldsymbol{x}-\boldsymbol{x}^{(0)})^\top\boldsymbol{g}+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{x}^{(0)})^\top\boldsymbol{H}(\boldsymbol{x}-\boldsymbol{x}^{(0)}).
 \]</div>
@@ -1830,48 +1596,37 @@ f(\boldsymbol{x})\approx f(\boldsymbol{x}^{(0)})+(\boldsymbol{x}-\boldsymbol{x}^
 <div class="arithmatex">\[
 f(\boldsymbol{x}^{(0)}-\varepsilon\boldsymbol{g})\approx f(\boldsymbol{x}^{(0)})-\varepsilon\boldsymbol{g}^\top\boldsymbol{g}+\frac{1}{2}\varepsilon^2\boldsymbol{g}^\top\boldsymbol{Hg}.
 \]</div>
-<p>若 <span class="arithmatex">\(\boldsymbol{g}^\top\boldsymbol{Hg}&lt;0\)</span>，则在一定的 <span class="arithmatex">\(\varepsilon\)</span> 范围内，<span class="arithmatex">\(f\)</span> 都是下降的，但是为了求得这个范围，还需要更进一步的算法。如果 <span class="arithmatex">\(\boldsymbol{g}^\top\boldsymbol{Hg}&gt;0\)</span>，则可以直接得到</p>
+<p>若 <span class="arithmatex">\(\boldsymbol{g}^\top\boldsymbol{Hg}&lt;0\)</span>，则在某个 <span class="arithmatex">\(\varepsilon\)</span> 范围内，<span class="arithmatex">\(f\)</span> 都是下降的. 如果 <span class="arithmatex">\(\boldsymbol{g}^\top\boldsymbol{Hg}&gt;0\)</span>，则可以直接得到</p>
 <div class="arithmatex">\[
 \varepsilon^*=\frac{\boldsymbol{g}^\top\boldsymbol{g}}{\boldsymbol{g}^\top\boldsymbol{Hg}}.
 \]</div>
-<p>在高维空间，可以使用海森矩阵来判断驻点的极性。当驻点的海森矩阵所有的特征值都为正（正定）时，此处为极小值。相反如果为负定，则有极大值。若特征值有正有负，则函数在某一个截面是极大值，在另一个截面极小。</p>
-<p>When the Hessian matrix has a poor condition number, gradient descent performs poorly. This is because in one direction the derivative increases rapidly while much more slowly in another direction. Gradient descent do not know that it needs to explore preferentially in the direction where the directive remains negative for longer. Also, it becomes difficult to choose a good step size to avoid overshooting the minimum. As the example shown below:</p>
+<p>在高维空间，可以使用海森矩阵来判断驻点的极性. 当驻点的海森矩阵正定时，此处为极小值. 相反如果为负定，则有极大值. 若特征值有正有负，则函数在某一个截面是极大值，在另一个截面极小.</p>
+<p>当海森矩阵的条件数很大时，梯度下降会受到很大影响. 这是因为会有两个方向上梯度变化速率一个过快而另一个过慢，故很难选择合适的步长. 由于最大曲率在右下到左上的方向取得，而事实上极值正好在垂直方向，导致梯度下降的路径非常曲折，沿着山谷摇摆下降.</p>
 <p><img alt="" src="../img/4.6-gradient-descent.jpg" width="200px" /></p>
-<p>由于最大曲率在右下到左上的方向取得，而事实上极值正好在垂直方向，导致梯度下降的路径非常曲折，沿着山谷摇摆下降，浪费了大量时间。</p>
-<p>一个最简单的解决办法是牛顿法。首先做泰勒展开</p>
+<p>最简单的解决办法是牛顿法. 首先泰勒展开</p>
 <div class="arithmatex">\[
 f(\boldsymbol{x})\approx f(\boldsymbol{x}^{(0)})+(\boldsymbol{x}-\boldsymbol{x}^{(0)})^\top\nabla f(\boldsymbol{x}^{(0)})+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{x}^{(0)})^\top\boldsymbol{H}(\boldsymbol{x}^{(0)})(\boldsymbol{x}-\boldsymbol{x}^{(0)}),
 \]</div>
-<p>求得驻点为</p>
+<p>得驻点</p>
 <div class="arithmatex">\[
 \boldsymbol{x}^* = \boldsymbol{x}^{(0)}-\boldsymbol{H}^{-1}\nabla f(\boldsymbol{x}^{(0)}).
 \]</div>
-<p>若 <span class="arithmatex">\(f\)</span> 在附近可以近似为正定二次函数，则迭代上式便可以得到极值。这个方法在鞍点处则会失效。</p>
-<p>本书所采用的优化算法几乎不能肯定得到最优解。因为深度学习中涉及的函数非常复杂。有一些条件可以提供一些对优化算法有利的限制，比如李普希茨连续，可以保证输入的小扰动不出现输出的过大变化。以及海森矩阵处处半正定的函数，即凸优化问题。</p>
-<h4>Constrained Optimization</h4>
-<p>KKT 法（Karush-Kuhn-Tucker approach）是一种约束优化的一般方法，是拉格朗日乘数法的推广。首先描述限制区域</p>
+<p>若 <span class="arithmatex">\(f\)</span> 在附近可以近似为正定二次函数，则迭代上式便可以得到极值. 这个方法在鞍点处则会失效.</p>
+<h3>Constrained Optimization</h3>
+<p>KKT 法（Karush-Kuhn-Tucker approach）是一种约束优化的一般方法，是拉格朗日乘数法的推广. 首先描述限制区域</p>
 <div class="arithmatex">\[
-\mathbb{S} = \big\{\boldsymbol{x}\ \vert\ \forall i,g^{(i)}(\boldsymbol{x})=0\ \mathrm{and}\ \forall j,h^{(j)}(\boldsymbol{x})\le0\big\}.
+\mathbb{S} = \big\{\boldsymbol{x}\ |\ \forall i,g^{(i)}(\boldsymbol{x})=0\ \mathrm{and}\ \forall j,h^{(j)}(\boldsymbol{x})\le0\big\}.
 \]</div>
 <p>广义拉格朗日函数（generalized Lagrangian）为</p>
 <div class="arithmatex">\[
-L(\boldsymbol{x}, \boldsymbol{\lambda},\boldsymbol{\alpha}) = \sum_i\lambda_ig^{(i)}(\boldsymbol{x})+\sum_j\alpha_jh^{(j)}(\boldsymbol{x})
+L(\boldsymbol{x}, \boldsymbol{\lambda},\boldsymbol{\alpha}) = \sum_i\lambda_ig^{(i)}(\boldsymbol{x})+\sum_j\alpha_jh^{(j)}(\boldsymbol{x}),
 \]</div>
-<p>那么优化问题</p>
-<div class="arithmatex">\[
-\min_{\boldsymbol{x}\in\mathbb{S}}f(\boldsymbol{x})
-\]</div>
-<p>即转化为了</p>
+<p>那么优化问题 <span class="arithmatex">\(\min\limits_{\boldsymbol{x}\in\mathbb{S}}f(\boldsymbol{x})\)</span> 就转化为</p>
 <div class="arithmatex">\[
 \min_{\boldsymbol{x}}\max_{\boldsymbol{\lambda}}\max_{\boldsymbol{\alpha}, \boldsymbol{\alpha}\ge0} L(\boldsymbol{x}, \boldsymbol{\lambda},\boldsymbol{\alpha}).
 \]</div>
 <h3>Example: Linear Least Squares</h3>
-<p>求以下函数的最小值：</p>
-<div class="arithmatex">\[
-f(\boldsymbol{x})=\frac{1}{2}\Vert\boldsymbol{Ax}-\boldsymbol{b}\Vert_2^2.
-\]</div>
-<p>可以使用梯度下降和牛顿法，并且由于此函数是正定二次的，牛顿法可以一步直接得到解。</p>
-<p>如果加上限制 <span class="arithmatex">\(\boldsymbol{x}^\top\boldsymbol{x}=1\)</span>，使用拉格朗日乘数法，</p>
+<p>求 <span class="arithmatex">\(f(\boldsymbol{x})=\dfrac{1}{2}\Vert\boldsymbol{Ax}-\boldsymbol{b}\Vert_2^2\)</span> 的最小值. 可以使用梯度下降和牛顿法，并且由于此函数是正定二次的，牛顿法可以直接得到解. 如果加上限制 <span class="arithmatex">\(\boldsymbol{x}^\top\boldsymbol{x}=1\)</span>，使用拉格朗日乘数法，</p>
 <div class="arithmatex">\[
 L(\boldsymbol{x},\lambda)=f(\boldsymbol{x})+\lambda\big(\boldsymbol{x}^\top\boldsymbol{x}-1\big).
 \]</div>
@@ -1880,7 +1635,7 @@ L(\boldsymbol{x},\lambda)=f(\boldsymbol{x})+\lambda\big(\boldsymbol{x}^\top\bold
 \begin{cases}
 \dfrac{\partial}{\partial\boldsymbol{x}}L=\boldsymbol{A}^\top\boldsymbol{Ax}-\boldsymbol{A}^\top\boldsymbol{b}+2\lambda\boldsymbol{x}=0,\\
 \\
-\dfrac{\partial}{\partial\lambda}L=\boldsymbol{x}^\top\boldsymbol{x}-1=0.
+\dfrac{\partial}{\partial\lambda}L=\boldsymbol{x}^\top\boldsymbol{x}-1=0,
 \end{cases}
 \]</div>
 <p>得</p>
@@ -1890,91 +1645,6 @@ L(\boldsymbol{x},\lambda)=f(\boldsymbol{x})+\lambda\big(\boldsymbol{x}^\top\bold
 \boldsymbol{x}^\top\boldsymbol{x}=1.
 \end{cases}
 \]</div>
-<h2 id="machine-learning-basics">Machine Learning Basics<a class="headerlink" href="#machine-learning-basics" title="Permanent link">&para;</a></h2>
-<h3>Learning Algorithm</h3>
-<p>通常来说，机器学习包含三个要素，它们分别为任务（T）、性能（P）和经验（E）。</p>
-<h4>The Task, T</h4>
-<p>机器学习有非常多种形式，它们分为几大类：</p>
-<ul>
-<li>
-<p><strong>Classification</strong>：<br />
-构造函数 <span class="arithmatex">\(f:\mathbb{R}^n\rightarrow\lbrace1, 2, \cdots, k\rbrace\)</span>.</p>
-</li>
-<li>
-<p><strong>Classification with missing inputs</strong>：<br />
-构造多个分类函数，以对应某些输入的缺失。</p>
-</li>
-<li>
-<p><strong>Regression</strong>：<br />
-构造函数 <span class="arithmatex">\(f:\mathbb{R}^n\rightarrow\mathbb{R}\)</span>，和分类相似，但是输出不同。</p>
-</li>
-<li>
-<p><strong>Transcription</strong>：<br />
-将一些非结构化的信息转换为离散，结构化的形式。包含了 OCR 和语音识别等。</p>
-</li>
-<li>
-<p><strong>Machine translation</strong>.  </p>
-</li>
-<li>
-<p><strong>Structured Output</strong>：<br />
-这是一个范围很广的领域，上面的两种机器学习也能包含进来。其主要特征是输出一种数据结构，其各元素之间有重要关系。其中例子还有语义分析和图像分割。</p>
-</li>
-<li>
-<p><strong>Anomaly detection</strong>：<br />
-例子有信用卡盗用检测。</p>
-</li>
-<li>
-<p><strong>Synthesis and sampling</strong>：<br />
-通过一些样例，产生相似的数据。如语音合成，自动纹理生成等。</p>
-</li>
-<li>
-<p><strong>Imputation of missing values</strong>. </p>
-</li>
-<li>
-<p><strong>Denoising</strong>：<br />
-根据被噪声污染的数据 <span class="arithmatex">\(\hat{\boldsymbol{x}}\)</span>，去噪得到原数据 <span class="arithmatex">\(\boldsymbol{x}\)</span> 或者概率分布 <span class="arithmatex">\(p(\boldsymbol{x}\ \vert\ \hat{\boldsymbol{x}})\)</span> .</p>
-</li>
-<li>
-<p><strong>Probability estimation</strong>.  </p>
-</li>
-</ul>
-<h4>Example: Linear Regression</h4>
-<p>线性回归的目标在于计算</p>
-<div class="arithmatex">\[
-\hat{y} = \boldsymbol{w}^\top\boldsymbol{x},
-\]</div>
-<p>其中，<span class="arithmatex">\(\boldsymbol{x}, \boldsymbol{w}\in\mathbb{R}^n\)</span>. 使用最小二乘，即最小化 MSE（mean squared error）</p>
-<div class="arithmatex">\[
-\mathrm{MSE} = \frac{1}{n}\Vert\hat\boldsymbol{y}-\boldsymbol{y}\Vert_2^2.
-\]</div>
-<p>令 <span class="arithmatex">\(\nabla_\boldsymbol{w}\mathrm{MSE} = 0\)</span>，得</p>
-<div class="arithmatex">\[
-\boldsymbol{w} = \big(\boldsymbol{X}^\top\boldsymbol{X}\big)^{-1}\boldsymbol{X}^\top\boldsymbol{y}
-\]</div>
-<p>即使用训练集数据求得回归函数。</p>
-<h3>Capacity, Overfitting and Underfitting</h3>
-<p>两个目标：
-1. Make the training error small.
-2. Make the gap between training and test error small.</p>
-<p><strong>The no free lunch theorem</strong> states that averaged over all possible data sets, every classification algorithm has the same error on test set.</p>
-<p>Add an penalty call a <strong>regularizer</strong> to the cost function, to reduce the generalization error.</p>
-<h3>Hyperparameters and Validation Sets</h3>
-<p>One example of hyperpatameters is the degree in the polynomial regression. It is not trained by the training set. To solve this problem, we split the training sets into two, one still training set, another <strong>validation set</strong>. Validation sets guide the algorithm to choose hyperparameters after training, allowing them to update accordingly. Typically, Training : Validation = 8 : 2.</p>
-<p>But spiliting the set leads to the test set being small. If the dataset is too small, we need to use all of the examples in  the estimation of MSE, and it comes to the cross-validation.</p>
-<p>One common algorithm is <strong>K-fold</strong>:</p>
-<p>Define<br />
-<span class="arithmatex">\(\mathbb{D}\)</span> be the given dataset, with elements <span class="arithmatex">\(\boldsymbol{z}^{(i)}\)</span>, <br />
-<span class="arithmatex">\(A\)</span> be the learning algorithm, learned function as its output,<br />
-<span class="arithmatex">\(L\)</span> be the loss function,<br />
-<span class="arithmatex">\(k\)</span> be the number of folds.<br />
-<span class="arithmatex">\(\mathtt{KFold}\ (\mathbb{D}, A, L, k)\)</span>:<br />
-<div class="highlight"><pre><span></span><code><span class="n">Split</span> <span class="n">D</span> <span class="n">into</span> <span class="n">k</span> <span class="n">mutally</span> <span class="n">exclusive</span> <span class="n">subsets</span> <span class="n">D_i</span><span class="p">;</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">]:</span>
-    <span class="n">f_i</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="n">D</span><span class="o">-</span><span class="n">D_i</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">z_j</span> <span class="ow">in</span> <span class="n">D_i</span><span class="p">:</span>
-        <span class="n">e_j</span> <span class="o">=</span> <span class="n">L</span><span class="p">(</span><span class="n">f_i</span><span class="p">,</span> <span class="n">z_j</span><span class="p">)</span>
-<span class="k">return</span> <span class="n">e</span>
-</code></pre></div></p>
                 
               
               

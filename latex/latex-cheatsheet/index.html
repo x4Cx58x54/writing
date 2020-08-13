@@ -1995,6 +1995,7 @@ content
 
 <h3>自定义列表 | enumitem</h3>
 <p>文档 <a href="http://www.texnia.com/archive/enumitem.pdf" target="_blank">texnia.com/archive/enumitem.pdf</a></p>
+<p><a href="https://www.latexstudio.net/archives/51588.html" target="_blank">LaTeX 技巧 944: 两个例子让你熟悉 enumitem 宏包</a></p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>enumitem<span class="nb">}</span>
 </code></pre></div>
 
@@ -2342,6 +2343,28 @@ content
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\dif</span><span class="nb">}{</span><span class="k">\mathrm</span><span class="nb">{</span>d<span class="nb">}}</span>
 </code></pre></div>
 
+<h4>弧符号 <sup id="fnref:arc"><a class="footnote-ref" href="#fn:arc">3</a></sup></h4>
+<div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">\makeatletter</span>
+<span class="k">\DeclareFontFamily</span><span class="nb">{</span>U<span class="nb">}{</span>tipa<span class="nb">}{}</span>
+<span class="k">\DeclareFontShape</span><span class="nb">{</span>U<span class="nb">}{</span>tipa<span class="nb">}{</span>m<span class="nb">}{</span>n<span class="nb">}{</span>&lt;-&gt;tipa10<span class="nb">}{}</span>
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\arc</span>@char<span class="nb">}{{</span><span class="k">\usefont</span><span class="nb">{</span>U<span class="nb">}{</span>tipa<span class="nb">}{</span>m<span class="nb">}{</span>n<span class="nb">}</span><span class="k">\symbol</span><span class="nb">{</span>62<span class="nb">}}}</span><span class="c">%</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\arc</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="k">\mathpalette\arc</span>@arc<span class="nb">{</span>#1<span class="nb">}}</span>
+
+<span class="k">\newcommand</span><span class="nb">{</span><span class="k">\arc</span>@arc<span class="nb">}</span>[2]<span class="nb">{</span>
+  <span class="k">\sbox</span>0<span class="nb">{</span><span class="s">$</span><span class="nv">\m</span><span class="nb">@th#</span><span class="m">1</span><span class="nb">#</span><span class="m">2</span><span class="s">$</span><span class="nb">}</span>
+  <span class="k">\vbox</span><span class="nb">{</span>
+    <span class="k">\hbox</span><span class="nb">{</span><span class="k">\resizebox</span><span class="nb">{</span><span class="k">\wd</span>0<span class="nb">}{</span><span class="k">\height</span><span class="nb">}{</span><span class="k">\arc</span>@char<span class="nb">}}</span>
+    <span class="k">\nointerlineskip</span>
+    <span class="k">\box</span>0
+  <span class="nb">}</span>
+<span class="nb">}</span>
+<span class="k">\makeatother</span>
+</code></pre></div>
+
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.resurchify.com/latex_tutorial/latex_tutorial.php" target="_blank">https://www.resurchify.com/latex_tutorial/latex_tutorial.php</a></li>
@@ -2355,6 +2378,9 @@ content
 </li>
 <li id="fn:setargsty">
 <p><a href="https://tex.stackexchange.com/questions/193991/removing-italic-formatting-from-if-statement/193997#193997" target="_blank">Removing italic formatting from if statement - StackExchange</a>&#160;<a class="footnote-backref" href="#fnref:setargsty" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:arc">
+<p><a href="https://tex.stackexchange.com/questions/96680/a-better-notation-to-denote-arcs-for-an-american-high-school-textbook/284787#284787" target="_blank">A better notation to denote arcs - Stack Exchange</a>&#160;<a class="footnote-backref" href="#fnref:arc" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
