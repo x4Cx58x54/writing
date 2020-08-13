@@ -106,6 +106,14 @@ p(\boldsymbol{x})=
 \sqrt{\frac{1}{(2\pi)^n\det(\boldsymbol{\Sigma})}}\exp\left[-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu})^\top\boldsymbol{\Sigma}^{-1}(\boldsymbol{x}-\boldsymbol{\mu})\right].
 $$
 
+### 拉普拉斯分布
+
+$\gamma > 0$, $X \sim \operatorname{Laplace}(\mu, \gamma)$,
+
+$$
+p(x)=\frac{1}{2\gamma}\exp\left(-\frac{\vert x-\mu\vert}{\gamma}\right).
+$$
+
 ### 常用的积分
 
 $$\iint\limits_{x,y>0}mn\cdot\text{e}^{-\left(mx+ny\right)}\text{d}x\text{d}y=1.$$

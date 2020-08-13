@@ -105,7 +105,13 @@ A^+AA^+ = A^+,
 \end{cases}
 $$
 
-且 $AA^+$ 与 $A^+A$ 均对称. $A^+$ 有且仅有一个. 将 $A$ 奇异值分解，
+且 $AA^+$ 与 $A^+A$ 均对称. $A^+$ 有且仅有一个. Moore-Penrose 伪逆定义为
+
+$$
+\boldsymbol{A}^+=\lim_{\alpha\rightarrow0}(\boldsymbol{A}^\top\boldsymbol{A}+\alpha\boldsymbol{I})^{-1}\boldsymbol{A}^\top.
+$$
+
+实际计算中，将 $A$ 奇异值分解，
 
 $$
 A = U\Sigma V^\top,
@@ -118,6 +124,8 @@ A^+ = V\Sigma^+U^\top,
 $$
 
 其中 $\Sigma^+$ 是将 $\Sigma$ 各元素取倒数，然后转置而得到的.
+
+若 $\boldsymbol{Ax}=\boldsymbol{y}$ 有多解，则由 $\boldsymbol{x}=\boldsymbol{A}^+\boldsymbol{y}$ 得到的解是使得 $\Vert\boldsymbol{x}\Vert_2$ 最小的那一个；若无解，则得到的解使得 $\Vert\boldsymbol{Ax}-\boldsymbol{y}\Vert_2$ 最小.
 
 ## 向量空间与线性方程组
 
@@ -167,7 +175,7 @@ $$
 
 ### 正交矩阵
 
-对于正交矩阵 $A$，组成的 $A$ 的列（行）向量均为单位向量，且相互正交,
+An orthogonal matrix is a square matrix whose rows and columns are respectively mutually orthonormal:
 
 $$
 A^\top A = AA^\top = I,
@@ -219,13 +227,13 @@ $n$ 阶方阵 $A$ 能相似对角化的充要条件是它有 $n$ 个线性无关
 
 ### 奇异值分解
 
-对任意实矩阵 $A$，其 SVD 为
+对任意实矩阵 $A_{m\times n}$，其 SVD 为
 
 $$
 A = U\Sigma V^\top,
 $$
 
-$U$ 为左奇异向量组成的正交矩阵，$\Sigma$ 为各奇异值组成的对角阵，$V$ 为右奇异向量组成的正交矩阵.
+$U_{m\times m}$ 为左奇异向量组成的正交矩阵，$\Sigma_{m\times n}$ 为各奇异值组成的对角阵，$V_{n\times n}$ 为右奇异向量组成的正交矩阵.
 
 考虑
 
