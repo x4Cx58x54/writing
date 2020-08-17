@@ -1502,6 +1502,35 @@
                 
                 <h1 id="_1">积分变换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="fourier">Fourier 傅里叶变换<a class="headerlink" href="#fourier" title="Permanent link">&para;</a></h2>
+<h3>三角函数的正交性</h3>
+<p>三角函数系定义为以下函数的集合：</p>
+<div class="arithmatex">\[
+\big\{ 0(=\sin 0x), 1(=\cos 0x), \sin x, \cos x, \sin 2x, \cos 2x, \cdots \big\}
+\]</div>
+<p>三角函数的正交性是指从上面的集合中取出任意两个不同的元素，在 <span class="arithmatex">\([-\pi, \pi]\)</span> 上积分，所得结果必然为零.</p>
+<p>所谓正交，即为垂直. 在离散的情形中，向量 <span class="arithmatex">\(f\)</span>, <span class="arithmatex">\(g\)</span> 之内积，即各元素对应相乘后的总和 <span class="arithmatex">\(\sum\limits_{i=0}^{n}f_ig_i\)</span> 为零，对应两向量垂直；而对于连续函数，形式则相应地变为在区间内所有点上对应相乘后积分 <span class="arithmatex">\(\int_{a}^{b}f(x)g(x)\mathrm{d}x\)</span> 为零，称为正交.</p>
+<p>由于区间 <span class="arithmatex">\([-\pi, \pi]\)</span> 包含了以上任一函数的至少一个周期，故此积分结果必然为零.</p>
+<h3>周期为 <span class="arithmatex">\(2\pi\)</span> 的函数的 Fourier 展开</h3>
+<p>设 <span class="arithmatex">\(f(x)\)</span> 周期为 <span class="arithmatex">\(2\pi\)</span>，且在 <span class="arithmatex">\([-\pi, \pi]\)</span> 上满足 Dirichlet 条件，则它展开为傅里叶级数为</p>
+<div class="arithmatex">\[
+f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n\cos nx + \sum_{n=1}^\infty b_n \sin nx.
+\]</div>
+<p>下面分别求取 <span class="arithmatex">\(a_0\)</span>，<span class="arithmatex">\(a_n\)</span> 以及 <span class="arithmatex">\(b_n\)</span>.</p>
+<div class="arithmatex">\[
+\int_{-\pi}^{\pi}f(x)\mathrm{d}x = \int_{-\pi}^{\pi}\frac{a_0}{2}\mathrm{d}x + \int_{-\pi}^{\pi}a_n\cos nx\mathrm{d}x + \int_{-\pi}^{\pi}b_n \sin nx\mathrm{d}x
+\]</div>
+<p>根据三角函数的正交性，最后的两项均得零，故</p>
+<div class="arithmatex">\[
+a_0 = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\mathrm{d}x.
+\]</div>
+<p>由 <span class="arithmatex">\(\int_{-\pi}^{\pi}f(x)\cos nx\mathrm{d}x\)</span> 和 <span class="arithmatex">\(\int_{-\pi}^{\pi}f(x)\sin nx\mathrm{d}x\)</span> 可分别得到</p>
+<div class="arithmatex">\[
+a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos nx\mathrm{d}x,
+\]</div>
+<div class="arithmatex">\[
+b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx\mathrm{d}x.
+\]</div>
+<p>对于周期为任意 <span class="arithmatex">\(T\)</span> 的函数，则需要加入一个频率因子 <span class="arithmatex">\(\omega\)</span>，由此引出 Fourier 级数.</p>
 <h3>Fourier 级数</h3>
 <p>在 <span class="arithmatex">\([-\frac{T}{2}, \frac{T}{2}]\)</span> 上满足 Dirichlet 条件的周期函数 <span class="arithmatex">\(f_T(t)\)</span> 在其连续点处的 <strong>Fourier 级数三角形式</strong>为</p>
 <div class="arithmatex">\[
