@@ -2,6 +2,52 @@
 
 ## Fourier 傅里叶变换
 
+### 三角函数的正交性
+
+三角函数系定义为以下函数的集合：
+
+$$
+\big\{ 0(=\sin 0x), 1(=\cos 0x), \sin x, \cos x, \sin 2x, \cos 2x, \cdots \big\}
+$$
+
+三角函数的正交性是指从上面的集合中取出任意两个不同的元素，在 $[-\pi, \pi]$ 上积分，所得结果必然为零.
+
+所谓正交，即为垂直. 在离散的情形中，向量 $f$, $g$ 之内积，即各元素对应相乘后的总和 $\sum\limits_{i=0}^{n}f_ig_i$ 为零，对应两向量垂直；而对于连续函数，形式则相应地变为在区间内所有点上对应相乘后积分 $\int_{a}^{b}f(x)g(x)\mathrm{d}x$ 为零，称为正交.
+
+由于区间 $[-\pi, \pi]$ 包含了以上任一函数的至少一个周期，故此积分结果必然为零.
+
+### 周期为 $2\pi$ 的函数的 Fourier 展开
+
+设 $f(x)$ 周期为 $2\pi$，且在 $[-\pi, \pi]$ 上满足 Dirichlet 条件，则它展开为傅里叶级数为
+
+$$
+f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n\cos nx + \sum_{n=1}^\infty b_n \sin nx.
+$$
+
+下面分别求取 $a_0$，$a_n$ 以及 $b_n$.
+
+$$
+\int_{-\pi}^{\pi}f(x)\mathrm{d}x = \int_{-\pi}^{\pi}\frac{a_0}{2}\mathrm{d}x + \int_{-\pi}^{\pi}a_n\cos nx\mathrm{d}x + \int_{-\pi}^{\pi}b_n \sin nx\mathrm{d}x
+$$
+
+根据三角函数的正交性，最后的两项均得零，故
+
+$$
+a_0 = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\mathrm{d}x.
+$$
+
+由 $\int_{-\pi}^{\pi}f(x)\cos nx\mathrm{d}x$ 和 $\int_{-\pi}^{\pi}f(x)\sin nx\mathrm{d}x$ 可分别得到
+
+$$
+a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos nx\mathrm{d}x,
+$$
+
+$$
+b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx\mathrm{d}x.
+$$
+
+对于周期为任意 $T$ 的函数，则需要加入一个频率因子 $\omega$，由此引出 Fourier 级数.
+
 ### Fourier 级数
 
 在 $[-\frac{T}{2}, \frac{T}{2}]$ 上满足 Dirichlet 条件的周期函数 $f_T(t)$ 在其连续点处的 **Fourier 级数三角形式**为

@@ -1,4 +1,4 @@
 .vscode/
 *.drawio
 *.ps1
-/drafts/
+docs/_drafts/
