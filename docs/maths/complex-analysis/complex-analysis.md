@@ -33,8 +33,44 @@ $$
 \int\frac{1}{z}\mathrm{d}z=\operatorname{Ln}z+c'=\ln z+c
 $$
 
+### 初等函数
 
-### 反三角函数和反双曲函数
+指数函数
+
+$$
+\exp z = \mathrm{e}^x(\cos y + i\sin y)
+$$
+
+对数函数
+
+$$
+\operatorname{Ln}z = \ln |z| + i \operatorname{Arg}z
+$$
+
+对数函数主值
+
+$$
+\ln z = \ln |z| + i \arg z
+$$
+
+幂
+
+$$
+a^b = \mathrm{e}^{b\operatorname{Ln}a}
+$$
+
+三角函数
+
+$$
+\cos z = \frac{\mathrm{e}^{iz} + \mathrm{e}^{-iz}}{2}
+$$
+
+$$
+\sin z = \frac{\mathrm{e}^{iz} - \mathrm{e}^{-iz}}{2i}
+$$
+
+
+反三角函数和反双曲函数
 
 $$
 \operatorname{Arcsin}z=-i\operatorname{Ln}\left(iz+\sqrt{1-z^2}\right)\\
@@ -47,6 +83,8 @@ $$
 \operatorname{Arch}z=\operatorname{Ln}\left(z+\sqrt{z^2-1}\right)\\
 \operatorname{Arth}z=\cfrac{i}{2}\operatorname{Ln}\frac{1+z}{1-z}
 $$
+
+欧拉公式的证明：令 $f(x) = \cfrac{\mathrm{e}^{i\theta}}{\cos\theta+i\sin\theta}$，易证 $f(x)$ 恒为零，而 $f(0) = 1$，由此得证.
 
 ### 光滑曲线
 
