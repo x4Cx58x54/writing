@@ -1521,10 +1521,12 @@
 <p>此方法易于理解，没有繁杂的推导过程，且性能较佳。</p>
 <p>总的方法是枚举生成从 <code>a</code> 到 <code>uvwxyz</code> 的所有可能单词，每生成一个即比对一遍。</p>
 <h3>TL;DR</h3>
-<p>主要问题在于如何<strong>进位</strong>。进位规则如下：
-1. 从低位开始数的第 <span class="arithmatex">\(i\)</span> 位 <span class="arithmatex">\((0 \le i \le 5)\)</span> 上最大只能为 <code>'z' - i</code>。超过此值则高位（第 <span class="arithmatex">\(i+1\)</span> 位）进一，当前位待定；
-2. 产生向前进位的数位（即上一条中的第 <span class="arithmatex">\(i\)</span> 位）进位后应变为第 <span class="arithmatex">\(i+1\)</span> 位上字母的后一个字母。
-3. (2) 中的规则应从高位到低位计算。即仔细观察从 <code>yz</code> 到 <code>abc</code> 的进位原理可知，</p>
+<p>主要问题在于如何<strong>进位</strong>。进位规则如下：</p>
+<ol>
+<li>从低位开始数的第 <span class="arithmatex">\(i\)</span> 位 <span class="arithmatex">\((0 \le i \le 5)\)</span> 上最大只能为 <code>'z' - i</code>。超过此值则高位（第 <span class="arithmatex">\(i+1\)</span> 位）进一，当前位待定；</li>
+<li>产生向前进位的数位（即上一条中的第 <span class="arithmatex">\(i\)</span> 位）进位后应变为第 <span class="arithmatex">\(i+1\)</span> 位上字母的后一个字母。</li>
+<li>(2) 中的规则应从高位到低位计算。即仔细观察从 <code>yz</code> 到 <code>abc</code> 的进位原理可知，</li>
+</ol>
 <h3>详细步骤</h3>
 <p>首先将输入的字符串整理为低第 <span class="arithmatex">\(i\)</span> <span class="arithmatex">\((0 \le i \le 5)\)</span> 位位于 <code>ask[i]</code> 的格式，并且将字母转换为对应的序号。</p>
 <p>最低位增 1，考察进位。这里分两个步骤，第一步只考虑进位中的<em>高位</em>得数，从低到高计算；第二步只考虑进位后<em>此位</em>得数，从高到低计算。</p>

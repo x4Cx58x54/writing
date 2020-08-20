@@ -1927,12 +1927,16 @@ A derived class inherits all base methods with the following exceptions:</p>
 </li>
 </ul>
 <h4>Constructors and destructors</h4>
-<p>While creating a derived object: 
-1. Call base constructor.
-2. Call derived constructor.  </p>
-<p>While deleting a derived object:
-1. Call derived destructor.
-2. Call base destructor.</p>
+<p>While creating a derived object:</p>
+<ol>
+<li>Call base constructor.</li>
+<li>Call derived constructor.</li>
+</ol>
+<p>While deleting a derived object:</p>
+<ol>
+<li>Call derived destructor.</li>
+<li>Call base destructor.</li>
+</ol>
 <div class="highlight"><pre><span></span><code><span class="c1">//Constructor</span>
 <span class="n">derived</span><span class="o">::</span><span class="n">derived</span><span class="p">(</span><span class="n">arglist</span><span class="p">)</span><span class="o">:</span> <span class="n">base</span><span class="p">(</span><span class="n">arglist</span><span class="p">);</span>
 </code></pre></div>

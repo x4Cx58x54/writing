@@ -2231,11 +2231,13 @@ w'_y \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}\hat{\jmath}
 \mathbf{w}_{(S)} \Longleftrightarrow A^{-1}\mathbf{w}_{(S')}.
 \]</div>
 <p>In terms of linear transformations, how a transformation is expressed is related to the bases. Here are the steps to describe the same transformation in a different coordinate systems:<br />
-Suppose a linear transformation <span class="arithmatex">\(M\)</span> in coordinate system <span class="arithmatex">\(S\)</span> is applied to some vector <span class="arithmatex">\(\mathbf{w}\)</span> in <span class="arithmatex">\(S'\)</span>,<br />
-1. first translate <span class="arithmatex">\(\mathbf{w}\)</span> to <span class="arithmatex">\(S\)</span> by multiplying <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(\mathbf{w}\)</span>;
-2. since we've got <span class="arithmatex">\(A\mathbf{w}\)</span> in <span class="arithmatex">\(S\)</span>, apply the transformation by multiplying <span class="arithmatex">\(M\)</span> to <span class="arithmatex">\(A\mathbf{w}\)</span>;
-3. translate it back to <span class="arithmatex">\(S'\)</span> by multiplying <span class="arithmatex">\(A^{-1}\)</span> to it;
-4. finally we got <span class="arithmatex">\(A^{-1}MA\mathbf{w}\)</span>. </p>
+Suppose a linear transformation <span class="arithmatex">\(M\)</span> in coordinate system <span class="arithmatex">\(S\)</span> is applied to some vector <span class="arithmatex">\(\mathbf{w}\)</span> in <span class="arithmatex">\(S'\)</span>,</p>
+<ol>
+<li>first translate <span class="arithmatex">\(\mathbf{w}\)</span> to <span class="arithmatex">\(S\)</span> by multiplying <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(\mathbf{w}\)</span>;</li>
+<li>since we've got <span class="arithmatex">\(A\mathbf{w}\)</span> in <span class="arithmatex">\(S\)</span>, apply the transformation by multiplying <span class="arithmatex">\(M\)</span> to <span class="arithmatex">\(A\mathbf{w}\)</span>;</li>
+<li>translate it back to <span class="arithmatex">\(S'\)</span> by multiplying <span class="arithmatex">\(A^{-1}\)</span> to it;</li>
+<li>finally we got <span class="arithmatex">\(A^{-1}MA\mathbf{w}\)</span>. </li>
+</ol>
 <p>To sum up,</p>
 <div class="arithmatex">\[
 M\ \text{ in } S \Longleftrightarrow A^{-1}MA\ \text{ in }S'.

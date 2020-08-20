@@ -2981,12 +2981,14 @@ void prd(int (*arr)[2]);
 这样分配了三个 1 位的空间。如果其中一位越界，则会存储到更高位的空间中。不同机器上存储它们的顺序可能不同。</p>
 <h2 id="the-c-preprocessor">The C Preprocessor<a class="headerlink" href="#the-c-preprocessor" title="Permanent link">&para;</a></h2>
 <h4>Translating a Program</h4>
-<p>在预处理之前，C 源代码需要经过几步翻译。
-1. 处理特殊字符。这里将一些多字节字符、特殊字符以及多字符标记（trigraph、digraph）转换为标准字符。Trigraph 和 digraph 是因为一些键盘不提供相关字符的输入，故 C 规定将多个字符映射到这些字符，如 <code>??=</code>、<code>%:</code> 转换为 <code>#</code>，<code>??&gt;</code>、<code>&lt;%</code> 转换为 <code>{</code>（此特性可能需要设置编译器）。
-2. 将行末的反斜杠 <code>\</code> 连同其后的换行符删除，即将实际的多行合并为一个逻辑行。
-3. 将源码分解为预处理标志（preprocessing token）、空白字符和注释，然后将每一段注释替换为一个空格。
-4. 将一连串的空白字符替换为一个空格（不影响双引号中的内容）。
-5. 查找预处理指令（preprocessing directive），准备开始预处理。</p>
+<p>在预处理之前，C 源代码需要经过几步翻译。</p>
+<ol>
+<li>处理特殊字符。这里将一些多字节字符、特殊字符以及多字符标记（trigraph、digraph）转换为标准字符。Trigraph 和 digraph 是因为一些键盘不提供相关字符的输入，故 C 规定将多个字符映射到这些字符，如 <code>??=</code>、<code>%:</code> 转换为 <code>#</code>，<code>??&gt;</code>、<code>&lt;%</code> 转换为 <code>{</code>（此特性可能需要设置编译器）。</li>
+<li>将行末的反斜杠 <code>\</code> 连同其后的换行符删除，即将实际的多行合并为一个逻辑行。</li>
+<li>将源码分解为预处理标志（preprocessing token）、空白字符和注释，然后将每一段注释替换为一个空格。</li>
+<li>将一连串的空白字符替换为一个空格（不影响双引号中的内容）。</li>
+<li>查找预处理指令（preprocessing directive），准备开始预处理。</li>
+</ol>
 <h4>Tokens</h4>
 <p>所谓预处理标志，笼统来说就是被空白字符分开的各元素。<code>2 * 4</code> 中包含三个标志，<code>2*4</code> 则只包含一个。注意双引号及其中的字符串只算一个标志。</p>
 <h3>The <code>#define</code> Directive</h3>
