@@ -662,7 +662,8 @@ $$
 $$
 
 In terms of linear transformations, how a transformation is expressed is related to the bases. Here are the steps to describe the same transformation in a different coordinate systems:  
-Suppose a linear transformation $M$ in coordinate system $S$ is applied to some vector $\mathbf{w}$ in $S'$,  
+Suppose a linear transformation $M$ in coordinate system $S$ is applied to some vector $\mathbf{w}$ in $S'$,
+
 1. first translate $\mathbf{w}$ to $S$ by multiplying $A$ to $\mathbf{w}$;
 2. since we've got $A\mathbf{w}$ in $S$, apply the transformation by multiplying $M$ to $A\mathbf{w}$;
 3. translate it back to $S'$ by multiplying $A^{-1}$ to it;

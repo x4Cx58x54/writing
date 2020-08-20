@@ -423,11 +423,13 @@ A derived class inherits all base methods with the following exceptions:
     - protected -> private
 
 #### Constructors and destructors
-While creating a derived object: 
+While creating a derived object:
+
 1. Call base constructor.
-2. Call derived constructor.  
+2. Call derived constructor.
 
 While deleting a derived object:
+
 1. Call derived destructor.
 2. Call base destructor.
 
