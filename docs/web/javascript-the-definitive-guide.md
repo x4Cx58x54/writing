@@ -287,6 +287,7 @@ t.split(p)
 
 ### The Global Object
 JavaScript interpreter creates a new global object and gives it a set of properties:
+
 * global properties like `undefined`, `Infinity`, and `NaN`
 * global functions like `isNaN()`, `eval()`
 * constructors like `Date()`, `RegExp()`, `Object()`, `Array()`
@@ -480,10 +481,12 @@ true + true // => 2
 #### Identical and Equality
 
 The identical operator `===` performs following rules:
+
 * If one or both values are `NaN`, they are not identical. `NaN` is the only value of `x` for `x !== x` to be true.
 * `0` and `-0` are identical.
 
-The equality operator `==` converts the type of its operands, if necessary:  
+The equality operator `==` converts the type of its operands, if necessary:
+
 * If the values are identical, they are equal.
 * `null` and `undefined` are equal.
 * `1` and `'1'` are equal.
@@ -740,8 +743,7 @@ The `with` statement is forbidden in strict mode and should be considered deprec
 
 In strict mode:
 
-* 禁用 `with`。
-对未定义的变量、函数、函数参量、`catch` 参量或 global object 的属性赋值，将抛出 `ReferenceError` 异常。
+* 禁用 `with`。对未定义的变量、函数、函数参量、`catch` 参量或 global object 的属性赋值，将抛出 `ReferenceError` 异常。
 * 直接作为函数调用的函数中，`this` 的值为 `undefined`。（非严格模式中，这个值将是 global object。）
 * 若通过 `call()` 和 `apply()` 调用函数，`this` 值将为 `call()` 或 `apply()` 的第一参数。
 * 对只读属性赋值和不可扩展的对象添加成员将抛出 `TypeError`。（非严格模式不会报错。）
@@ -764,6 +766,7 @@ The properties can usually be added or deleted.
 Objects are manipulated by reference. In `var y = x`, `x` and `y` refer to the same object. 
 
 Each property has *property attributes*:
+
 * The *writable* attribute specifies whether the value can be set.
 * The *enumerable* attribure specifies whether the property name is returned by a `for`/`in` loop.
 * The *configurable* attribure specifies whether the property can be deleted and whether its attributes can be altered.
@@ -825,6 +828,7 @@ It is not an error to query a property that does not exist. That will return `un
 Attempts to set read-only properties or add a property to a non-*existensible* object, curiously, however, fails silently, but a `TypeError` will be thrown in strict mode.
 
 An attempt to set a property `p` of an object `o` fails when:
+
 *  `o` *owns* or *inherits* the read-only property `p`,
 *  `o` does not own `p`; `o` does not inherit `p` with a setter method; o is not *extensible*.
 
@@ -889,12 +893,14 @@ The existence of *setter* and *getter* determines the writability and readablity
 In ECMAScript 3, all properties are writeble, enumerable and configureable, and there is no way to change them. ESMCScript 5 allows querying and setting them.
 
 The four attributes of a data property are
+
 * *value*,
 * *writable*,
 * *enumerable*,
 * *configurable*.
 
 The four attributes for an accessor property are
+
 * *get*,
 * *set*,
 * *enumerable*,
@@ -928,6 +934,7 @@ The property desciptor you pass to these functions does not have to include all 
 ### Object Attributes
 
 Every object has three associated attributes:
+
 * *prototype*,
 * *class*,
 * *extensible*.

@@ -606,6 +606,7 @@ long strtol(const char * str, char ** endp, int base);
 所谓作用域，是指一个量能被访问的范围。
 
 C 变量有以下几种作用域：
+
 * 块作用域（block scope）
 * 函数作用域（function scope）
 * 函数原型作用域（function prototype scope）
@@ -628,6 +629,7 @@ C 变量有以下几种作用域：
 存储期描述的是存储单元的分配和释放。
 
 存储期分为四种：
+
 * 静态（static）
 * 线程（thread）
 * 自动（automatic）
@@ -719,6 +721,7 @@ extern int i;
 #### Storage-Class Specifier
 
 C 语言一共有六种存储类型关键字：
+
 * `auto`
 * `register`
 * `static`
@@ -755,6 +758,7 @@ p = (int *) calloc(100, sizeof(int));
 ### Type Qualifiers
 
 C 语言有四种类型限定词：
+
 * `const`（C90）
 * `volatile`（C90）
 * `restrict`（C99）
@@ -880,6 +884,7 @@ while ((ch = getc(fp)) != EOF)
 int fseek(FILE * fp, long offset, int fromwhere);
 ``` 
 `fseek()` 将 `fp` 移动到指定的位置，这是一种随机访问文件的方法。其中，`offset` 可正可负，但注意必须为 `long` 类型，在直接用数字表示时需要加上 `L` 后缀。`fromwhere` 有三种模式选择：
+
 * `SEEK_SET` 文件开头
 * `SEEK_CUR` 当前位置
 * `SEEK_END` 文件结束
@@ -934,6 +939,7 @@ int fflush(FILE * fp);
 int setvbuf(FILE * fp, char * buf, int mode, size_t size);
 ```
 将 `buf` 处长度为 `size` 的空间设置为 `fp` 的缓冲区。模式 `mode` 有三种可选：
+
 * `_IOFBF`（fully buffered）
 * `_IOLBF`（line-buffered）
 * `_IONBF`（non-buffered）
@@ -1160,6 +1166,7 @@ int (* b)[3][4];
 int (* c[3])[4];
 ```
 根据运算符优先级分析有：
+
 * `a` 首先是二维数组，其元素是 `int` 指针； 
 * `b` 是指针，指向的是一个二维数组；
 * `c` 是三元素数组，其元素是指针，指向四元素 `int` 数组。
@@ -1169,6 +1176,7 @@ char * a(int);
 char (* b)(int);
 char (* c[3])(int);
 ```
+
 * `a` 是函数，返回值是字符指针；
 * `b` 是指针，指向函数，函数返回字符类型；
 * `c` 是数组，数组由指针组成，指针指向函数，函数返回字符类型。
@@ -1292,6 +1300,7 @@ PRT(1, "%d", 20);
 `#include` 后若为 `<>`，则优先从标准目录中寻找文件，若为 `""`，则优先从当前目录或者从标明的路径中寻找文件。
 
 一个典型的头文件中一般包含：
+
 * manifest constants
 * macro functions
 * function declarations

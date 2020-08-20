@@ -38,6 +38,7 @@ int & b = a;
 `a` and `b` are two different names of one variable.
 
 Notify that:
+
 - essence: a constant pointer  
 - changing adress **prohibited**
 - reference of array or array elements **prohibited**
@@ -252,6 +253,7 @@ class circle
 
 #### Copy Constructor
 calling:
+
 - when creating an object using another one
 - when acting as an parameter and the function copies it
 - when a function that returns an object
@@ -332,6 +334,7 @@ void r(circle &c)
 #### Static Member
 One member shared by the whole class.
 Notify that:
+
 - `sizeof()` excludes static members
 - not belonged to any specific object
 - `classname::staticmem` or `obj.mem` 
@@ -400,12 +403,15 @@ class Derived: public Base
 };
 ```
 A derived class inherits all base methods with the following exceptions:
+
 - Constructors, destructors
 - Overloaded operators
 - The friend functions
 
 #### Type of inheritance
-*`public, protected, private`*  
+
+*`public, protected, private`*
+
 - Public inheritance
     - public -> public
     - protected -> protected

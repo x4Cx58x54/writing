@@ -54,7 +54,7 @@ p {
 }
 ```
 
-***
+---
 
 ## CSS Selectors
 
@@ -121,7 +121,7 @@ The CSS
    background-color:gray;
 }
 ```
-***
+---
 
 **Comments**
 ```css
@@ -131,7 +131,7 @@ The CSS
 **Inheritance**  
 *A child element will usually take on the characteristics of the parent element unless otherwise defined.*  
 
-***
+---
 
 ## Text Styles
 
@@ -259,7 +259,7 @@ white-space: nowrap;
 - `pre-line` text will wrap where there is a break in code, but extra white space is still ignored
 - `pre-wrap` text will wrap when necessary, and on line breaks
 
-***
+---
 
 ## Block Styles
 
@@ -354,7 +354,7 @@ cursor:help;
 ```
 *Keywords*: `auto`, `default`, `crosshair`, `move`, `help`, `text`, `wait`, `n-resize`, ..., `w-resize`, `ne-resize`, ..., `sw-resize`, `pointer`, `progress`, `not-allowed`, `no-drop`, `vertical-text`, `all-scroll`, `col-resize`, `row-resize`
 
-***
+---
 
 
 ## Layout
