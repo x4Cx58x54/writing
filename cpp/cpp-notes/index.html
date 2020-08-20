@@ -1433,6 +1433,84 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+    
+    <label class="md-nav__link" for="nav-7-3">
+      Reading Notes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Reading Notes" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Reading Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/" title="如何阅读一本书" class="md-nav__link">
+      如何阅读一本书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/" title="中国哲学简史" class="md-nav__link">
+      中国哲学简史
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/" title="惊人的假说" class="md-nav__link">
+      惊人的假说
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/" title="未来简史" class="md-nav__link">
+      未来简史
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1516,13 +1594,15 @@ A normal pointer cannot point to a constant for this constant can be modified th
 <span class="kt">int</span> <span class="o">&amp;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
 </code></pre></div>
 <code>a</code> and <code>b</code> are two different names of one variable.</p>
-<p>Notify that:
-- essence: a constant pointer<br />
-- changing adress <strong>prohibited</strong>
-- reference of array or array elements <strong>prohibited</strong>
-- reference of reference <strong>prohibited</strong>
-- reference of pointer <strong>prohibited</strong>
-- address of a reference: &amp;b=&amp;a</p>
+<p>Notify that:</p>
+<ul>
+<li>essence: a constant pointer  </li>
+<li>changing adress <strong>prohibited</strong></li>
+<li>reference of array or array elements <strong>prohibited</strong></li>
+<li>reference of reference <strong>prohibited</strong></li>
+<li>reference of pointer <strong>prohibited</strong></li>
+<li>address of a reference: &amp;b=&amp;a</li>
+</ul>
 <h3>Function</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">procedure</span><span class="p">(</span><span class="kt">int</span> <span class="n">param1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">param2</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1694,11 +1774,13 @@ Replace the code where the function is called, save time at the cost of memory.<
 </code></pre></div>
 
 <h4>Copy Constructor</h4>
-<p>calling:
-- when creating an object using another one
-- when acting as an parameter and the function copies it
-- when a function that returns an object
-- <strong>not</strong> when assigning value</p>
+<p>calling:</p>
+<ul>
+<li>when creating an object using another one</li>
+<li>when acting as an parameter and the function copies it</li>
+<li>when a function that returns an object</li>
+<li><strong>not</strong> when assigning value</li>
+</ul>
 <p>default: <code>classname obj1(obj)</code> copying all members of obj to obj1</p>
 <p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">classname</span>
 <span class="p">{</span>
@@ -1759,13 +1841,15 @@ cannot change any values and connot access non-static member functions</p>
 <h4>This</h4>
 <h4>Static Member</h4>
 <p>One member shared by the whole class.
-Notify that:
-- <code>sizeof()</code> excludes static members
-- not belonged to any specific object
-- <code>classname::staticmem</code> or <code>obj.mem</code> 
-- must be initialized in the file which contains the definitions of the class
-- initialized outsice the class <code>int classname::staticvar=0;</code>
-- cannot access non-static members</p>
+Notify that:</p>
+<ul>
+<li><code>sizeof()</code> excludes static members</li>
+<li>not belonged to any specific object</li>
+<li><code>classname::staticmem</code> or <code>obj.mem</code> </li>
+<li>must be initialized in the file which contains the definitions of the class</li>
+<li>initialized outsice the class <code>int classname::staticvar=0;</code></li>
+<li>cannot access non-static members</li>
+</ul>
 <h4>Operator Overloading</h4>
 <p>5 operators that cannot be overloaded: <code>.  *  ::  sizeof  ?:</code>  </p>
 <p><div class="highlight"><pre><span></span><code><span class="c1">//As member function</span>
@@ -1817,21 +1901,31 @@ Notify that:
     <span class="p">...</span>
 <span class="p">};</span>
 </code></pre></div>
-A derived class inherits all base methods with the following exceptions:
-- Constructors, destructors
-- Overloaded operators
-- The friend functions</p>
+A derived class inherits all base methods with the following exceptions:</p>
+<ul>
+<li>Constructors, destructors</li>
+<li>Overloaded operators</li>
+<li>The friend functions</li>
+</ul>
 <h4>Type of inheritance</h4>
-<p><em><code>public, protected, private</code></em><br />
-- Public inheritance
-    - public -&gt; public
-    - protected -&gt; protected
-- Protected inheritance
-    - public -&gt; protected
-    - protected -&gt; protected
-- Private inhertance
-    - public -&gt; private
-    - protected -&gt; private</p>
+<p><em><code>public, protected, private</code></em></p>
+<ul>
+<li>Public inheritance<ul>
+<li>public -&gt; public</li>
+<li>protected -&gt; protected</li>
+</ul>
+</li>
+<li>Protected inheritance<ul>
+<li>public -&gt; protected</li>
+<li>protected -&gt; protected</li>
+</ul>
+</li>
+<li>Private inhertance<ul>
+<li>public -&gt; private</li>
+<li>protected -&gt; private</li>
+</ul>
+</li>
+</ul>
 <h4>Constructors and destructors</h4>
 <p>While creating a derived object: 
 1. Call base constructor.

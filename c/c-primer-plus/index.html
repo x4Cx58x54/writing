@@ -1538,6 +1538,84 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+    
+    <label class="md-nav__link" for="nav-7-3">
+      Reading Notes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Reading Notes" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Reading Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/" title="如何阅读一本书" class="md-nav__link">
+      如何阅读一本书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/" title="中国哲学简史" class="md-nav__link">
+      中国哲学简史
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/" title="惊人的假说" class="md-nav__link">
+      惊人的假说
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/" title="未来简史" class="md-nav__link">
+      未来简史
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2372,11 +2450,13 @@ void prd(int (*arr)[2]);
 <h3>Storage Classes</h3>
 <h4>Scope</h4>
 <p>所谓作用域，是指一个量能被访问的范围。</p>
-<p>C 变量有以下几种作用域：
-* 块作用域（block scope）
-* 函数作用域（function scope）
-* 函数原型作用域（function prototype scope）
-* 文件作用域（file scope）</p>
+<p>C 变量有以下几种作用域：</p>
+<ul>
+<li>块作用域（block scope）</li>
+<li>函数作用域（function scope）</li>
+<li>函数原型作用域（function prototype scope）</li>
+<li>文件作用域（file scope）</li>
+</ul>
 <p>“块”（block）是一对花括号内的部分。一个函数是一种块，单独用花括号包围的也是块。C99 又将这个概念扩展到了 <code>if</code>、<code>while</code>、<code>for</code> 语句，无论是否使用花括号。</p>
 <p>函数作用域指 <code>goto</code> 的语句标记的作用域是它所在的整个函数。</p>
 <p>函数原型作用域是指原型中形参作用域仅限于原型。注意原型中的变量名和定义不需一致。</p>
@@ -2385,11 +2465,13 @@ void prd(int (*arr)[2]);
 <p>块作用域、函数作用域和函数原型作用域的变量没有链接。只有文件作用域的可以有内部链接 <code>internal linkage</code> 或者外部链接 <code>external linkage</code>。 内部链接在一整个文件（Translation Unit）中使用，而外部链接可以在整个程序的多个文件中使用。</p>
 <h4>Storage Duration</h4>
 <p>存储期描述的是存储单元的分配和释放。</p>
-<p>存储期分为四种：
-* 静态（static）
-* 线程（thread）
-* 自动（automatic）
-* 分配（allocated）</p>
+<p>存储期分为四种：</p>
+<ul>
+<li>静态（static）</li>
+<li>线程（thread）</li>
+<li>自动（automatic）</li>
+<li>分配（allocated）</li>
+</ul>
 <p>静态存储单元在整个程序运行过程中都有效。注意这里的 <code>static</code> 关键词声明的是链接而不是存储期。线程存储期的单元仅在该线程中有效，并且每一个新线程都能分配的到一个独立的量。自动存储期的存储单元在整个代码块中有效，但是一个例外是 VLA 只在声明之后的块中有效。</p>
 <p>任何存储在静态区的变量若未显式地赋初值，则默认初始化为 0，包括数组中的元素。</p>
 <p>由于本书不涉及并行编程，而且分配存储类型在内存管理中讨论，所以这里总结五种存储类型：</p>
@@ -2486,13 +2568,15 @@ void prd(int (*arr)[2]);
 </code></pre></div>
 但是不会改变这个变量的链接种类。</p>
 <h4>Storage-Class Specifier</h4>
-<p>C 语言一共有六种存储类型关键字：
-* <code>auto</code>
-* <code>register</code>
-* <code>static</code>
-* <code>extern</code>
-* <code>_Thread_local</code>
-* <code>typedef</code></p>
+<p>C 语言一共有六种存储类型关键字：</p>
+<ul>
+<li><code>auto</code></li>
+<li><code>register</code></li>
+<li><code>static</code></li>
+<li><code>extern</code></li>
+<li><code>_Thread_local</code></li>
+<li><code>typedef</code></li>
+</ul>
 <p><code>static</code> 说明变量存储在静态区，但是变量的访问权还需要由上下文确定。<code>extern</code> 说明正在声明的变量在别处定义。</p>
 <p>函数同样也有存储类型，除了 C99 的内联函数，只有外部函数和静态函数。默认的外部函数可以在多文件访问，而加上 <code>static</code> 关键字的函数只能在该文件中使用。其 <code>extern</code> 关键字的使用方法和变量相同。</p>
 <h3>Allocated Memory</h3>
@@ -2510,11 +2594,13 @@ void prd(int (*arr)[2]);
 </code></pre></div>
 它的返回值和 <code>malloc()</code> 完全一样，同样需要使用 <code>free()</code> 释放。有一点不同是它会将分配的内存中的每一位都初始化为 0（注意有一些系统中，每一位都是 0 所代表的浮点数并不是 0）。</p>
 <h3>Type Qualifiers</h3>
-<p>C 语言有四种类型限定词：
-* <code>const</code>（C90）
-* <code>volatile</code>（C90）
-* <code>restrict</code>（C99）
-* <code>_Atomic</code>（C11）</p>
+<p>C 语言有四种类型限定词：</p>
+<ul>
+<li><code>const</code>（C90）</li>
+<li><code>volatile</code>（C90）</li>
+<li><code>restrict</code>（C99）</li>
+<li><code>_Atomic</code>（C11）</li>
+</ul>
 <p>C99 之后限定词是幂等（idempotent）的，即连续的多个限定词相当于一个。
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="k">const</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="k">const</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -2622,10 +2708,12 @@ void prd(int (*arr)[2]);
 <h4>The <code>fseek()</code> and <code>ftell()</code> Function</h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">fseek</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span> <span class="n">fp</span><span class="p">,</span> <span class="kt">long</span> <span class="n">offset</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fromwhere</span><span class="p">);</span>
 </code></pre></div>
-<code>fseek()</code> 将 <code>fp</code> 移动到指定的位置，这是一种随机访问文件的方法。其中，<code>offset</code> 可正可负，但注意必须为 <code>long</code> 类型，在直接用数字表示时需要加上 <code>L</code> 后缀。<code>fromwhere</code> 有三种模式选择：
-* <code>SEEK_SET</code> 文件开头
-* <code>SEEK_CUR</code> 当前位置
-* <code>SEEK_END</code> 文件结束</p>
+<code>fseek()</code> 将 <code>fp</code> 移动到指定的位置，这是一种随机访问文件的方法。其中，<code>offset</code> 可正可负，但注意必须为 <code>long</code> 类型，在直接用数字表示时需要加上 <code>L</code> 后缀。<code>fromwhere</code> 有三种模式选择：</p>
+<ul>
+<li><code>SEEK_SET</code> 文件开头</li>
+<li><code>SEEK_CUR</code> 当前位置</li>
+<li><code>SEEK_END</code> 文件结束</li>
+</ul>
 <p>如果执行正常，返回 0，否则返回 -1（比如超出文件界限）。</p>
 <div class="highlight"><pre><span></span><code><span class="kt">long</span> <span class="nf">ftell</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span> <span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
@@ -2654,10 +2742,12 @@ void prd(int (*arr)[2]);
 <h4>The <code>setvbuf()</code> Function</h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">setvbuf</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span> <span class="n">fp</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mode</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">);</span>
 </code></pre></div>
-将 <code>buf</code> 处长度为 <code>size</code> 的空间设置为 <code>fp</code> 的缓冲区。模式 <code>mode</code> 有三种可选：
-* <code>_IOFBF</code>（fully buffered）
-* <code>_IOLBF</code>（line-buffered）
-* <code>_IONBF</code>（non-buffered）</p>
+将 <code>buf</code> 处长度为 <code>size</code> 的空间设置为 <code>fp</code> 的缓冲区。模式 <code>mode</code> 有三种可选：</p>
+<ul>
+<li><code>_IOFBF</code>（fully buffered）</li>
+<li><code>_IOLBF</code>（line-buffered）</li>
+<li><code>_IONBF</code>（non-buffered）</li>
+</ul>
 <h4>The <code>fread()</code> and <code>fwrite()</code> Function</h4>
 <p>存储浮点数时使用二进制形式，可以避免精度损失，而且占用空间小。
 <div class="highlight"><pre><span></span><code><span class="kt">size_t</span> <span class="nf">fwrite</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">nmem</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span> <span class="n">fp</span><span class="p">);</span>
@@ -2816,17 +2906,22 @@ void prd(int (*arr)[2]);
 <span class="kt">int</span> <span class="p">(</span><span class="o">*</span> <span class="n">b</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
 <span class="kt">int</span> <span class="p">(</span><span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">])[</span><span class="mi">4</span><span class="p">];</span>
 </code></pre></div>
-根据运算符优先级分析有：
-* <code>a</code> 首先是二维数组，其元素是 <code>int</code> 指针； 
-* <code>b</code> 是指针，指向的是一个二维数组；
-* <code>c</code> 是三元素数组，其元素是指针，指向四元素 <code>int</code> 数组。</p>
-<p><div class="highlight"><pre><span></span><code><span class="kt">char</span> <span class="o">*</span> <span class="nf">a</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+根据运算符优先级分析有：</p>
+<ul>
+<li><code>a</code> 首先是二维数组，其元素是 <code>int</code> 指针； </li>
+<li><code>b</code> 是指针，指向的是一个二维数组；</li>
+<li><code>c</code> 是三元素数组，其元素是指针，指向四元素 <code>int</code> 数组。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span> <span class="o">*</span> <span class="nf">a</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
 <span class="kt">char</span> <span class="p">(</span><span class="o">*</span> <span class="n">b</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>
 <span class="kt">char</span> <span class="p">(</span><span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">int</span><span class="p">);</span>
 </code></pre></div>
-* <code>a</code> 是函数，返回值是字符指针；
-* <code>b</code> 是指针，指向函数，函数返回字符类型；
-* <code>c</code> 是数组，数组由指针组成，指针指向函数，函数返回字符类型。</p>
+
+<ul>
+<li><code>a</code> 是函数，返回值是字符指针；</li>
+<li><code>b</code> 是指针，指向函数，函数返回字符类型；</li>
+<li><code>c</code> 是数组，数组由指针组成，指针指向函数，函数返回字符类型。</li>
+</ul>
 <h2 id="bit-fiddling">Bit Fiddling<a class="headerlink" href="#bit-fiddling" title="Permanent link">&para;</a></h2>
 <h3>Bitwise Operators</h3>
 <p>C 语言的位运算符有：</p>
@@ -2937,13 +3032,15 @@ void prd(int (*arr)[2]);
 
 <h3>File Inclusion: <code>#include</code></h3>
 <p><code>#include</code> 后若为 <code>&lt;&gt;</code>，则优先从标准目录中寻找文件，若为 <code>""</code>，则优先从当前目录或者从标明的路径中寻找文件。</p>
-<p>一个典型的头文件中一般包含：
-* manifest constants
-* macro functions
-* function declarations
-* structure template definitions
-* type definitions
-* global variables</p>
+<p>一个典型的头文件中一般包含：</p>
+<ul>
+<li>manifest constants</li>
+<li>macro functions</li>
+<li>function declarations</li>
+<li>structure template definitions</li>
+<li>type definitions</li>
+<li>global variables</li>
+</ul>
 <p>函数的定义一般在源代码而不是头文件中。注意 <code>#define</code> 可能将宏带入 <code>#include</code> 的文件中，所以需要考虑它们的位置。</p>
 <h3>Conditional Compilation</h3>
 <p><code>#ifdef</code>、<code>#ifndef</code>、<code>#else</code> 和 <code>#endif</code> 配合，可以让预处理器选择执行一些预处理命令，甚至其中可以包含普通 C 语句。

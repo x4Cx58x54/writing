@@ -1503,6 +1503,84 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7-3" type="checkbox" id="nav-7-3">
+    
+    <label class="md-nav__link" for="nav-7-3">
+      Reading Notes
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Reading Notes" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Reading Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/" title="如何阅读一本书" class="md-nav__link">
+      如何阅读一本书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/" title="中国哲学简史" class="md-nav__link">
+      中国哲学简史
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/" title="惊人的假说" class="md-nav__link">
+      惊人的假说
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/" title="未来简史" class="md-nav__link">
+      未来简史
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1865,11 +1943,13 @@ Strings are immutable, therefore all those methods do not alter the value of s.<
 <p><code>undefined</code> is a deeper kind of absence. It is the value of something not exists, and it is returned by a function without an return value. Applying <code>typeof</code> on <code>undefined</code> will get <code>undefined</code>.</p>
 <p><code>==</code> consider them equal but <code>===</code> does not. <code>undefined</code> conveys something unexpected and erroneous. <code>null</code> is a better choice to assigning a 'no-value' to a variable.</p>
 <h3>The Global Object</h3>
-<p>JavaScript interpreter creates a new global object and gives it a set of properties:
-* global properties like <code>undefined</code>, <code>Infinity</code>, and <code>NaN</code>
-* global functions like <code>isNaN()</code>, <code>eval()</code>
-* constructors like <code>Date()</code>, <code>RegExp()</code>, <code>Object()</code>, <code>Array()</code>
-* global objects like <code>Math</code> and <code>JSON</code></p>
+<p>JavaScript interpreter creates a new global object and gives it a set of properties:</p>
+<ul>
+<li>global properties like <code>undefined</code>, <code>Infinity</code>, and <code>NaN</code></li>
+<li>global functions like <code>isNaN()</code>, <code>eval()</code></li>
+<li>constructors like <code>Date()</code>, <code>RegExp()</code>, <code>Object()</code>, <code>Array()</code></li>
+<li>global objects like <code>Math</code> and <code>JSON</code></li>
+</ul>
 <p>This global object can be refered by <code>this</code> in the top-level/scope of JavaScript code.</p>
 <h3>Wrapper Objects</h3>
 <p>字符串不是对象，但是我们显然可以调用它的方法和属性。这是因为每次调用时 JS 解释器都会创建一个临时对象 <code>new String(str)</code>，调用其方法然后将其销毁。可以显式创建这样的"wrapper objects"，它们的行为和原值几乎一样，只是类型不同。
@@ -2003,13 +2083,17 @@ Right-to-left associativity:<br />
 <p><code>+</code> 将操作数转换为数类型。<br />
 <code>-</code> 先转换为数，再变号。</p>
 <h4>Identical and Equality</h4>
-<p>The identical operator <code>===</code> performs following rules:
-* If one or both values are <code>NaN</code>, they are not identical. <code>NaN</code> is the only value of <code>x</code> for <code>x !== x</code> to be true.
-* <code>0</code> and <code>-0</code> are identical.</p>
-<p>The equality operator <code>==</code> converts the type of its operands, if necessary:<br />
-* If the values are identical, they are equal.
-* <code>null</code> and <code>undefined</code> are equal.
-* <code>1</code> and <code>'1'</code> are equal.</p>
+<p>The identical operator <code>===</code> performs following rules:</p>
+<ul>
+<li>If one or both values are <code>NaN</code>, they are not identical. <code>NaN</code> is the only value of <code>x</code> for <code>x !== x</code> to be true.</li>
+<li><code>0</code> and <code>-0</code> are identical.</li>
+</ul>
+<p>The equality operator <code>==</code> converts the type of its operands, if necessary:</p>
+<ul>
+<li>If the values are identical, they are equal.</li>
+<li><code>null</code> and <code>undefined</code> are equal.</li>
+<li><code>1</code> and <code>'1'</code> are equal.</li>
+</ul>
 <h4>Comparison Operator</h4>
 <p><div class="highlight"><pre><span></span><code><span class="s2">&quot;11&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;3&quot;</span>
 <span class="s2">&quot;11&quot;</span> <span class="o">&gt;</span> <span class="mi">3</span>    <span class="c1">// &#39;11&#39; is converted into number</span>
@@ -2190,8 +2274,7 @@ Any statement can be labeled, though it is only helpful to label statements that
 <p><code>"use strict"</code> 只出现在脚本、函数或者 <code>eval()</code> 代码参数的开头部分，即在真正的操作语句之前。这代表相应的代码块使用严格模式。The strict mode of ECMAScript 5 is a restricted subset of the language that fixes a few important language deficiencies and provide stronger error checking and increased security.</p>
 <p>In strict mode:</p>
 <ul>
-<li>禁用 <code>with</code>。
-对未定义的变量、函数、函数参量、<code>catch</code> 参量或 global object 的属性赋值，将抛出 <code>ReferenceError</code> 异常。</li>
+<li>禁用 <code>with</code>。对未定义的变量、函数、函数参量、<code>catch</code> 参量或 global object 的属性赋值，将抛出 <code>ReferenceError</code> 异常。</li>
 <li>直接作为函数调用的函数中，<code>this</code> 的值为 <code>undefined</code>。（非严格模式中，这个值将是 global object。）</li>
 <li>若通过 <code>call()</code> 和 <code>apply()</code> 调用函数，<code>this</code> 值将为 <code>call()</code> 或 <code>apply()</code> 的第一参数。</li>
 <li>对只读属性赋值和不可扩展的对象添加成员将抛出 <code>TypeError</code>。（非严格模式不会报错。）</li>
@@ -2208,10 +2291,12 @@ Any statement can be labeled, though it is only helpful to label statements that
 <p>The properties can usually be added or deleted.</p>
 <p>任何不是字符串、数、布尔量、<code>null</code> 或者 <code>undefined</code> 的值都是对象。And strings, numbers and booleans behave like immutable objects.</p>
 <p>Objects are manipulated by reference. In <code>var y = x</code>, <code>x</code> and <code>y</code> refer to the same object. </p>
-<p>Each property has <em>property attributes</em>:
-* The <em>writable</em> attribute specifies whether the value can be set.
-* The <em>enumerable</em> attribure specifies whether the property name is returned by a <code>for</code>/<code>in</code> loop.
-* The <em>configurable</em> attribure specifies whether the property can be deleted and whether its attributes can be altered.</p>
+<p>Each property has <em>property attributes</em>:</p>
+<ul>
+<li>The <em>writable</em> attribute specifies whether the value can be set.
+* The <em>enumerable</em> attribure specifies whether the property name is returned by a <code>for</code>/<code>in</code> loop.</li>
+<li>The <em>configurable</em> attribure specifies whether the property can be deleted and whether its attributes can be altered.</li>
+</ul>
 <p>Every object has three associated <em>object attributes</em>:</p>
 <ul>
 <li><em>prototype</em></li>
@@ -2251,9 +2336,11 @@ Any statement can be labeled, though it is only helpful to label statements that
 <h3>Property Access Errors</h3>
 <p>It is not an error to query a property that does not exist. That will return <code>undefined</code>. But it will raise a <code>TypeError</code> to attempt to query a property of an <em>object that does not exist</em>.</p>
 <p>Attempts to set read-only properties or add a property to a non-<em>existensible</em> object, curiously, however, fails silently, but a <code>TypeError</code> will be thrown in strict mode.</p>
-<p>An attempt to set a property <code>p</code> of an object <code>o</code> fails when:
-*  <code>o</code> <em>owns</em> or <em>inherits</em> the read-only property <code>p</code>,
-*  <code>o</code> does not own <code>p</code>; <code>o</code> does not inherit <code>p</code> with a setter method; o is not <em>extensible</em>.</p>
+<p>An attempt to set a property <code>p</code> of an object <code>o</code> fails when:</p>
+<ul>
+<li><code>o</code> <em>owns</em> or <em>inherits</em> the read-only property <code>p</code>,</li>
+<li><code>o</code> does not own <code>p</code>; <code>o</code> does not inherit <code>p</code> with a setter method; o is not <em>extensible</em>.</li>
+</ul>
 <h3>Deleting Properties</h3>
 <p>The <code>delete</code> operator only deletes own properties, not inherited ones.</p>
 <p><code>delete</code> 删除成功或者删除不存在的属性的时候返回 <code>true</code>。但是删除 non-<em>configurable</em> 时会失败并且返回 <code>false</code>。In strict mode, it raises a <code>SyntaxError</code>.</p>
@@ -2298,16 +2385,20 @@ Any statement can be labeled, though it is only helpful to label statements that
 <p>The existence of <em>setter</em> and <em>getter</em> determines the writability and readablity of this property.</p>
 <h3>Property Attributes</h3>
 <p>In ECMAScript 3, all properties are writeble, enumerable and configureable, and there is no way to change them. ESMCScript 5 allows querying and setting them.</p>
-<p>The four attributes of a data property are
-* <em>value</em>,
-* <em>writable</em>,
-* <em>enumerable</em>,
-* <em>configurable</em>.</p>
-<p>The four attributes for an accessor property are
-* <em>get</em>,
-* <em>set</em>,
-* <em>enumerable</em>,
-* <em>configurable</em>.</p>
+<p>The four attributes of a data property are</p>
+<ul>
+<li><em>value</em>,</li>
+<li><em>writable</em>,</li>
+<li><em>enumerable</em>,</li>
+<li><em>configurable</em>.</li>
+</ul>
+<p>The four attributes for an accessor property are</p>
+<ul>
+<li><em>get</em>,</li>
+<li><em>set</em>,</li>
+<li><em>enumerable</em>,</li>
+<li><em>configurable</em>.</li>
+</ul>
 <p><code>Object.getOwnPropertyDescriptor()</code> returns an object containing these attributes.
 <div class="highlight"><pre><span></span><code><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">);</span>
 <span class="c1">// =&gt; {value:1 ,writable:true ...}</span>
@@ -2327,10 +2418,12 @@ Both the functions returns the processed object.</p>
 <p>The property desciptor you pass to these functions does not have to include all four attributes. If you are creating a new property, then omitted attributes are taken to be <code>false</code> or <code>undefined</code>. If you are modifying an existing property, then the omitted remain unchanged.</p>
 <p>使用 <code>Object.create()</code> 创建新对象时，第二个可选参数的声明 <code>Object.defineProperties()</code> 中的。</p>
 <h3>Object Attributes</h3>
-<p>Every object has three associated attributes:
-* <em>prototype</em>,
-* <em>class</em>,
-* <em>extensible</em>.</p>
+<p>Every object has three associated attributes:</p>
+<ul>
+<li><em>prototype</em>,</li>
+<li><em>class</em>,</li>
+<li><em>extensible</em>.</li>
+</ul>
 <h4>The <code>prototype</code> Attribute</h4>
 <p>The <code>prototype</code> of an object is set when the object is created. In ECMAScript 5, passing the object into <code>Object.getPrototypeOf()</code> queries its prototype. To determine whether an object is the prototype of another, use <code>p.IsPrototypeOf(o)</code>.</p>
 <h4>The <code>class</code> Attribute</h4>
