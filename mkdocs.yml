@@ -94,6 +94,11 @@ nav:
         - Induction: electromagnetics/induction.md
         - EM Wave: electromagnetics/em-wave.md
     - Classical Control Theory: control-theory/classical-control.md
+    - Reading Notes:
+      - 如何阅读一本书: reading-notes/如何阅读一本书.md
+      - 中国哲学简史: reading-notes/中国哲学简史.md
+      - 惊人的假说: reading-notes/惊人的假说.md
+      - 未来简史: reading-notes/未来简史：从智人到智神.md
 
 
 plugins: []
