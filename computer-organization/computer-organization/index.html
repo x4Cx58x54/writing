@@ -1740,10 +1740,12 @@
 <h3>总线控制</h3>
 <h4>总线判优控制</h4>
 <ul>
-<li>集中式</li>
+<li>集中式<ul>
 <li>链式查询：<span class="arithmatex">\(\mathrm{BS}\)</span>、<span class="arithmatex">\(\mathrm{BG}\)</span>、<span class="arithmatex">\(\mathrm{BR}\)</span></li>
 <li>计数器定时查询：<span class="arithmatex">\(\mathrm{BS}\)</span>、<span class="arithmatex">\(\mathrm{BR}\)</span>、设备地址、计数器</li>
 <li>独立请求方式：<span class="arithmatex">\(\mathrm{BG_n}\)</span>、<span class="arithmatex">\(\mathrm{BR_n}\)</span></li>
+</ul>
+</li>
 <li>分布式</li>
 </ul>
 <h4>总线通信控制</h4>
@@ -1757,21 +1759,27 @@
 <h3>分类</h3>
 <p>按存取方式：</p>
 <ul>
-<li>随机访问：存取时间与物理地址无关</li>
+<li>随机访问：存取时间与物理地址无关<ul>
 <li>随机存储器 RAM</li>
 <li>只读存储器 ROM</li>
-<li>串行访问：存取时间与物理地址有关</li>
+</ul>
+</li>
+<li>串行访问：存取时间与物理地址有关<ul>
 <li>顺序存取存储器 eg. 磁带</li>
 <li>直接存取存储器 eg. 机械硬盘</li>
+</ul>
+</li>
 </ul>
 <p>注：机械硬盘的访问方式是先直接找到磁道，然后再顺序寻访到指定位置。</p>
 <h3>主存</h3>
 <h4>主存技术指标</h4>
 <ul>
 <li>容量</li>
-<li>速度</li>
+<li>速度<ul>
 <li>存取时间：访问时间（读出时间、写入时间）</li>
 <li>存取周期：连续两次独立存储器操作所需最小间隔</li>
+</ul>
+</li>
 <li>带宽（位/秒）</li>
 </ul>
 <h4>地址分配</h4>
@@ -1783,9 +1791,11 @@
 <p>控制线：</p>
 <ul>
 <li>片选：<span class="arithmatex">\(\overline{\text{CS}}\)</span>（Chip Select）、<span class="arithmatex">\(\overline{\text{CE}}\)</span>（Chip Enable）</li>
-<li>读/写：</li>
+<li>读/写：<ul>
 <li><span class="arithmatex">\(\overline{\text{WE}}\)</span> 低电平写，高电平读</li>
 <li><span class="arithmatex">\(\overline{\text{OE}}\)</span>（Output Enable）允许读、<span class="arithmatex">\(\overline{\text{WE}}\)</span>（Write Enable）允许写</li>
+</ul>
+</li>
 </ul>
 <p>译码驱动：</p>
 <ul>
@@ -1869,8 +1879,10 @@ Intel 1103、Intel 4116</p>
 <p><span class="arithmatex">\(N\)</span> 体的地位交叉存储器连续读取 <span class="arithmatex">\(N\)</span> 个字，若存取周期为 <span class="arithmatex">\(T\)</span>，总线传输周期为 <span class="arithmatex">\(\tau\)</span>，则有 <span class="arithmatex">\(T=N\tau\)</span>。连续读取 <span class="arithmatex">\(N\)</span> 个字所需的时间为 <span class="arithmatex">\(T+(N-1)\tau\)</span>。</p>
 <h4>高性能存储芯片</h4>
 <ul>
-<li>SDRAM 同步 DRAM</li>
+<li>SDRAM 同步 DRAM<ul>
 <li>在系统时钟的控制下读写，CPU 无需等待</li>
+</ul>
+</li>
 <li>RDRAM</li>
 <li>CDRAM 带 Cache 的 DRAM</li>
 </ul>
@@ -1912,8 +1924,10 @@ Intel 1103、Intel 4116</p>
 <h3>程序中断方式</h3>
 <p>中断服务程序的流程</p>
 <ul>
-<li>保护现场</li>
+<li>保护现场<ul>
 <li>程序断点，寄存器内容</li>
+</ul>
+</li>
 <li>中断服务</li>
 <li>恢复现场</li>
 </ul>
