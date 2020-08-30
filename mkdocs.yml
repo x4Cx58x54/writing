@@ -142,6 +142,7 @@ markdown_extensions:
   - markdown.extensions.sane_lists
   - attr_list
 
+
 google_analytics:
-  - ${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}
+  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_TRACKING_ID"]
   - auto

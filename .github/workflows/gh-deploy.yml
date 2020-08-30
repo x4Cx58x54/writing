@@ -23,6 +23,8 @@ jobs:
           pip install mkdocs-material==5.1.0
 
       - name: Deploy
+        env:
+          GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}
         run: |
           git pull
           mkdocs gh-deploy --clean
