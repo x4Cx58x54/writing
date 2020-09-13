@@ -2,6 +2,8 @@
 
 [^strang1999]: [18.06 Linear Algebra Video Lectures of Prof. Gilbert Strang in Fall 1999 - MIT OpenCourseWare](https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/){: target=_blank}
 
+[^resourses]: [Resource Index of 18.06 Linear Algebra - MIT OpenCourseWare](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/resource-index/){: target=_blank}
+
 ## 矩阵与行列式
 
 ### Basics
@@ -41,13 +43,13 @@ $$
 $$
 A_{2\times 2}^{-1} =
 \begin{bmatrix}
-a_{11} & a_{12}\\
-a_{21} & a_{22}
+a & b\\
+c & d
 \end{bmatrix}^{-1} =
 \frac{1}{\det(A)}
 \begin{bmatrix}
-a_{22} & -a_{12}\\
--a_{21} & a_{11}
+d & -b\\
+-c & a
 \end{bmatrix}
 $$
 
@@ -192,39 +194,6 @@ $$
 对可逆矩阵 $A$ 进行 Gauss 消元，可以得到上三角矩阵 $U$，消元的过程相当于将一系列初等行变换矩阵左乘至 $A$，将它们作为整体求逆即得到下三角矩阵 $L$.
 
 若消元中会出现主元为零的情况，则需要进行行交换，此时 LU 分解的形式变为 $PA=LU$.
-
-### Moore-Penrose 伪逆
-
-$A$ 的伪逆 $A^+$ 满足
-
-$$
-\begin{cases}
-AA^+A = A,\\
-A^+AA^+ = A^+,
-\end{cases}
-$$
-
-且 $AA^+$ 与 $A^+A$ 均对称. $A^+$ 有且仅有一个. Moore-Penrose 伪逆定义为
-
-$$
-\boldsymbol{A}^+=\lim_{\alpha\rightarrow0}(\boldsymbol{A}^\top\boldsymbol{A}+\alpha\boldsymbol{I})^{-1}\boldsymbol{A}^\top.
-$$
-
-实际计算中，将 $A$ 奇异值分解，
-
-$$
-A = U\Sigma V^\top,
-$$
-
-则
-
-$$
-A^+ = V\Sigma^+U^\top,
-$$
-
-其中 $\Sigma^+$ 是将 $\Sigma$ 各元素取倒数，然后转置而得到的.
-
-若 $\boldsymbol{Ax}=\boldsymbol{y}$ 有多解，则由 $\boldsymbol{x}=\boldsymbol{A}^+\boldsymbol{y}$ 得到的解是使得 $\Vert\boldsymbol{x}\Vert_2$ 最小的那一个；若无解，则得到的解使得 $\Vert\boldsymbol{Ax}-\boldsymbol{y}\Vert_2$ 最小.
 
 ## 向量空间与线性方程组
 
@@ -644,6 +613,8 @@ $$
 
 当 $A$ 的各列线性无关时，$A^\top A$ 一定是可逆的. 这也是上面的方程应用的条件. 要证明这个结论，只需要证方程 $A^\top A\boldsymbol{x} = \boldsymbol{0}$ 只有零解. 方程左乘 $\boldsymbol{x}^\top$ 得 $\boldsymbol{x}^\top A^\top A\boldsymbol{x}=\boldsymbol{0}$，等价于 $A\boldsymbol{x} = \boldsymbol{0}$，从而 $\boldsymbol{x}$ 必然为零. 事实上 $A^\top A$ 和 $A$ 的零空间和秩都是相同的.
 
+以上方法的实质是使用左逆解方程. 当左逆不存在时，可使用伪逆.
+
 ### 正交矩阵
 
 An orthogonal matrix is a square matrix whose rows and columns are respectively mutually orthonormal.
@@ -676,6 +647,8 @@ $$
 Q^\top = Q^{-1}.
 $$
 
+正交矩阵所对应的线性变换不会改变空间中向量的长度，即 $|\lambda| = 1$.
+
 ### Gram-Schmidt Orthonormalization
 
 逐个处理需要正交化的向量 $\boldsymbol{v}$. 将向量 $\boldsymbol{v}_k$ 分别减去其在已正交化的向量 $\boldsymbol{u}_i$ 上的投影，
@@ -692,12 +665,244 @@ $$
 
 ![](https://upload.wikimedia.org/wikipedia/commons/e/ee/Gram-Schmidt_orthonormalization_process.gif)
 
+将 $A$ 各列向量的 G-S 正交化写为矩阵形式，可以将其分解为一个正交矩阵 $Q$ 和一个上三角矩阵 $R$，即 QR 分解
+
+$$
+\begin{bmatrix}
+| & | &  & | \\
+\boldsymbol{a}_1 & \boldsymbol{a}_2 & \cdots & \boldsymbol{a_n} \\
+| & | &  & | \\
+\end{bmatrix} =
+\begin{bmatrix}
+| & | &  & | \\
+\boldsymbol{q}_1 & \boldsymbol{q}_2 & \cdots & \boldsymbol{q_n} \\
+| & | &  & | \\
+\end{bmatrix}
+\begin{bmatrix}
+r_{11} & r_{12} & \cdots & r_{1n} \\
+& r_{22} & \cdots & r_{2n} \\
+& & \ddots & \vdots \\
+& & & r_{mn} \\
+\end{bmatrix}.
+$$
 
 ## 特征值与特征向量
 
+### 对角化
+
+$n$ 阶方阵 $A$ 的各特征向量 $\boldsymbol{v}$ 作为列，组成特征向量矩阵 $V$. 若特征向量有 $n$ 个且线性无关，则 $V$ 是可逆的. 此时
+
+$$
+AV = \big[ \lambda_1\boldsymbol{v}_1 ~~ \lambda_2\boldsymbol{v}_2 ~~ \cdots ~~ \lambda_n\boldsymbol{v}_n \big] = V\Lambda,
+$$
+
+即
+
+$$
+A = V\Lambda V^{-1}.
+$$
+
+若 $A$ 的各特征值均不同，则可以保证有 $n$ 个特征向量，且线性无关.
+
+将矩阵对角化后，可以计算其幂
+
+$$
+A^k = V\Lambda^k V^{-1}.
+$$
+
+???+ Note "Fibonacci Sequence"
+
+    递推方程 $F_{k+2} = F_{k+1} + F_k$ 构造了斐波那契数列，其初始条件为 $F_0 = 0$，$F_1 = 1$. 现求其通项公式.
+
+    由于以上递推方程是二阶的，故构造二维向量 $u_k = \big[F_{k+1} ~~ F_k\big]^\top$，并将递推方程根据 $u_k$ 的形式补充为（这种方法也可以用于二阶微分方程）
+
+    $$
+    \begin{aligned}
+    & F_{k+2} = F_{k+1} + F_k, \\
+    & F_{k+1} = F_{k+1}.
+    \end{aligned}
+    $$
+
+    这个方程可以写成矩阵形式
+
+    $$
+    \begin{bmatrix}
+    F_{k+2} \\ F_{k+1}
+    \end{bmatrix} =
+    \begin{bmatrix}
+    1 & 1\\
+    1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+    F_{k+1} \\ F_k
+    \end{bmatrix},
+    $$
+
+    将上面的变换矩阵记为 $A$，则可以写为
+
+    $$
+    u_{k+1} = Au_k,
+    $$
+
+    于是有
+
+    $$
+    u_k = A^ku_0.
+    $$
+
+    将 $A$ 特征值分解，得到特征值 $\lambda_1 = \frac{1+\sqrt{5}}{2}$，$\lambda_2 = \frac{1-\sqrt{5}}{2}$ 以及对应的特征向量矩阵 $V$，则
+
+    $$
+    \begin{bmatrix}
+    F_{k+1} \\ F_{k}
+    \end{bmatrix} =
+    V^{-1}
+    \begin{bmatrix}
+    \lambda_1^k & 0 \\
+    0 & \lambda_2^k
+    \end{bmatrix}
+    V
+    \begin{bmatrix}
+    1 \\ 0
+    \end{bmatrix}.
+    $$
+
+???+ Note "Differential Equation"
+
+    解微分方程
+
+    $$
+    \frac{\mathrm{d}\boldsymbol{u}}{\mathrm{d}t} = A\boldsymbol{u},
+    $$
+
+    其中 $\boldsymbol{u}$ 为 $n$ 维向量，$A$ 为 $n$ 阶方阵.
+
+    将 $A$ 特征分解得到特征值 $\lambda_i$ 和对应的特征向量 $\boldsymbol{v}_i$，$i = 1, 2, \cdots, n$. 则方程通解为
+
+    $$
+    \boldsymbol{y} = \sum_{i=0}^n c_i\mathrm{e}^{\lambda_i}.
+    $$
+
+### 解耦
+
+以一微分方程演示解耦的作用. 沿用上例中的微分方程
+
+$$
+\frac{\mathrm{d}\boldsymbol{u}}{\mathrm{d}t} = A\boldsymbol{u},
+$$
+
+其中 $A$ 的特征向量矩阵记为 $V$. 设 $\boldsymbol{u} = V\boldsymbol{x}$，代入换元得
+
+$$
+\frac{\mathrm{d}\boldsymbol{x}}{\mathrm{d}t} = V^{-1}AV\boldsymbol{x} = \Lambda V.
+$$
+
+这样，方程就被解耦为
+
+$$
+\begin{cases}
+\mathrm{d}x_1 / \mathrm{d}t = \lambda_1 x_1, \\
+\mathrm{d}x_2 / \mathrm{d}t = \lambda_2 x_2, \\
+\qquad \quad \vdots \\
+\mathrm{d}x_n / \mathrm{d}t = \lambda_n x_n.
+\end{cases}
+$$
+
+### 实对称矩阵与 Hermite 矩阵 | Hermitian Matrix
+
+Hermite 矩阵指的是满足下列条件的矩阵
+
+$$
+A = A^\mathrm{H} = \overline{A}^\top,
+$$
+
+在实矩阵中 $A^\mathrm{H} = A^\top$ 该条件退化，仅表现为对称 $A = A^\top$.
+
+实对称矩阵的特征值均为实数，且特征向量矩阵可以选取为正交矩阵，即
+
+$$
+A = Q\Lambda Q^{-1} = Q\Lambda Q^\top.
+$$
+
+复向量 $\boldsymbol{x}$ 与 $\boldsymbol{y}$ 的内积为 $\boldsymbol{x}^\mathrm{H}\boldsymbol{y}$.
+
+故以上实对称性质扩展到复域时表述为 Hermite 矩阵特征值均为实数，且特征向量矩阵可以选为酉矩阵（幺正矩阵，unitary matrix），即
+
+$$
+A = Q\Lambda Q^{-1} = Q\Lambda Q^\mathrm{H}.
+$$
+
+Hermite 矩阵的主元和特征值在符号上保持一致，即正主元数和正特征值数量相等.
+
+???+ Note "Fast Fourier Transform"
+
+    $n$ 阶 Fourier 矩阵定义为
+
+    $$
+    F_n = \begin{bmatrix}
+    1 & 1 & 1 & \cdots & 1 \\
+    1 & \omega & \omega ^2 & \cdots & \omega^{n-1} \\
+    1 & \omega^2 & \omega^4 & \cdots & \omega^{2(n-1)}\\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    1 & \omega^{n-1} & \omega^{2(n-1)} & \cdots & \omega^{(n-1)^2}\\
+    \end{bmatrix},
+    $$
+
+    其中 $\omega$ 为第 1 个 $n$ 次单位根 $\mathrm{e}^{2\pi i/n}$. 等价地有
+
+    $$
+    (F_n)_{ij} = \omega^{(i-1)(j-1)}.
+    $$
+
+    Fourier 矩阵的各列互相正交，即 $\frac{1}{\sqrt{n}}F_n$ 为幺正矩阵.
+
+    FFT 给出了递归关系
+
+    $$
+    F_{2n} = \begin{bmatrix}
+    I & D \\
+    I & -D
+    \end{bmatrix}
+    \begin{bmatrix}
+    F_n & \\
+    & F_n
+    \end{bmatrix}P,
+    $$
+
+    其中 $D = \operatorname{diag}(1, \omega, \omega^2, \cdots, \omega^{n-1})$，$P$ 为将奇序号向量和偶序号向量分开的置换矩阵
+
+    $$
+    P = \begin{bmatrix}
+    1 &   &   &   & \cdots &   &   \\
+    &   & 1 &   & \cdots &   &   \\
+    &   &   &   & \vdots &   &   \\
+    &   &   &   & \cdots & 1 &   \\
+    & 1 &   &   & \cdots &   &   \\
+    &   &   & 1 & \cdots &   &   \\
+    &   &   &   & \vdots &   &   \\
+    &   &   &   & \cdots &   & 1 \\
+    \end{bmatrix}.
+    $$
+
+
+### 正定矩阵
+
+实对称矩阵 $A$ 正定的充要条件主要有：
+
+* 特征值均为正；
+* 主元均为正；
+* 左上子方阵 $\begin{bmatrix}a_{11}\end{bmatrix}, \begin{bmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix}, \cdots$ 的行列式均为正；
+* 对于任意非零向量 $\boldsymbol{x}$，$\boldsymbol{x}^\top A\boldsymbol{x}$ 恒为正.
+
+若可逆矩阵 $A$ 正定，则 $A^{-1}$ 也是正定的（可由特征值证明）.
+
+若 $A$ 和 $B$ 均正定，则 $A+B$ 也正定（可由 $\boldsymbol{x}^\top(A+B)\boldsymbol{x}$ 证明）.
+
+$A^\top A$ 半正定（可由 $\boldsymbol{x}^\top A^\top A\boldsymbol{x}$ 证明）. 特别地，当 $A$ 各列线性无关时，$A^\top A$ 正定.
+
 ### 相似矩阵
 
-若 $\exists P$ 使得
+若存在矩阵 $P$ 使得
 
 $$
 P^{-1}AP = B,
@@ -707,17 +912,32 @@ $$
 
 相似矩阵具有相同的特征值. 实际上，相似矩阵和[基变换](../essence-of-linear-algebra/#9-change-of-basis)的形式是完全一致的，即相似矩阵是在不同基底下，对相同的线性变换的描述.
 
-### 对角化
+### Jordan 标准型
 
-若对于方阵 $A$，存在一个正交阵 $P$，将其相似变换为一个对角阵，
+任意方阵 $A$ 均相似于一个 Jordan 矩阵 $J$，称为 $A$ 的 Jordan 标准型：
 
 $$
-P^{-1}AP = P^\top AP = \Lambda.
+J = \begin{bmatrix}
+\boxed{J_1}\phantom{\boxed{J_2}}\phantom{\ddots}\phantom{\boxed{J_d}} \\
+\phantom{\boxed{J_1}}\boxed{J_2}\phantom{\ddots}\phantom{\boxed{J_d}} \\
+\phantom{\boxed{J_1}}\phantom{\boxed{J_2}}\ddots\phantom{\boxed{J_d}} \\
+\phantom{\boxed{J_1}}\phantom{\boxed{J_2}}\phantom{\ddots}\boxed{J_d}
+\end{bmatrix}.
 $$
 
-则称 $A$ 是可（相似）对角化的.
+$J$ 的对角线上为各 Jordan 块，每一 Jordan 块的对角线上分布着 $A$ 的某一特征值，对角线上方的斜线均为 1：
 
-$n$ 阶方阵 $A$ 能相似对角化的充要条件是它有 $n$ 个线性无关的特征向量. 实对称矩阵一定可以对角化.
+$$
+J_i = \begin{bmatrix}
+\lambda_i & 1 & & & \\
+& \lambda_i & 1 & & \\
+& & \ddots & & \\
+& & & \lambda_i & 1 \\
+& & & & \lambda_i \\
+\end{bmatrix}.
+$$
+
+Jordan 块和特征向量是对应的. 特别地，当特征值各异时，各 Jordan 块均退化为对应的特征值，这样 $J$ 退化为特征值组成的对角阵，即对角化.
 
 ### 奇异值分解
 
@@ -727,7 +947,7 @@ $$
 A = U\Sigma V^\top,
 $$
 
-$U_{m\times m}$ 为左奇异向量组成的正交矩阵，$\Sigma_{m\times n}$ 为各奇异值组成的对角阵，$V_{n\times n}$ 为右奇异向量组成的正交矩阵.
+$U_{m\times m}$ 为左奇异向量 $\boldsymbol{u}_i$ 组成的正交矩阵，$\Sigma_{m\times n}$ 为各奇异值 $\sigma_i$ 组成的对角阵，$V_{n\times n}$ 为右奇异向量 $\boldsymbol{v}_i$ 组成的正交矩阵.
 
 考虑
 
@@ -736,3 +956,81 @@ A^\top A = V\Sigma^\top\Sigma V^\top = V\Lambda V^\top,
 $$
 
 故将 $A^\top A$ 特征分解，得到各个特征值的算术平方根 $\sqrt{\lambda_i}$ 即为各奇异值 $\sigma_i$（$A^\top A$ 必然是半正定的，$\lambda_i \ge 0$），对应的特征向量组成 $V$.
+
+设 $A$ 的秩为 $r$，则 $\boldsymbol{v}_1, \boldsymbol{v}_2, \cdots, \boldsymbol{v}_r$ 为行空间中的一组正交基，$\boldsymbol{u}_1, \boldsymbol{u}_2, \cdots, \boldsymbol{u}_r$ 为列空间中的一组正交基. $A$ 作为线性变换，将行空间的正交基变换到列空间中，且保持其正交性：
+
+$$
+A\boldsymbol{v}_i = \sigma_i\boldsymbol{u}_i.
+$$
+
+$\boldsymbol{v}_{r+1}, \cdots, \boldsymbol{v}_n$ 和 $\boldsymbol{u}_{r+1}, \cdots, \boldsymbol{u}_m$ 分别是零空间和左零空间的正交基，显然它们所对应的奇异值均为 0. 它们补全了之前的两组正交基，使其张成整个空间.
+
+### 左右逆
+
+各列线性无关的矩阵 $A_{m\times n}$（列满秩，$r = n$）存在左逆
+
+$$
+A^{-1}_{\mathrm{left}} = (A^\top A)^{-1}A^\top
+$$
+
+使得 $A^{-1}_{\mathrm{left}}A = I_n$.
+
+同样地，当 $A$ 行满秩时，有右逆
+
+$$
+A^{-1}_{\mathrm{right}} = A^\top(AA^\top)^{-1}
+$$
+
+使得 $AA^{-1}_{\mathrm{right}} = I_m$.
+
+### Moore-Penrose 伪逆
+
+$A$ 的伪逆 $A^+$ 满足
+
+$$
+\begin{cases}
+AA^+A = A,\\
+A^+AA^+ = A^+,
+\end{cases}
+$$
+
+且 $AA^+$ 与 $A^+A$ 均对称. $A^+$ 有且仅有一个. Moore-Penrose 伪逆定义为
+
+$$
+\boldsymbol{A}^+=\lim_{\alpha\rightarrow0}(\boldsymbol{A}^\top\boldsymbol{A}+\alpha\boldsymbol{I})^{-1}\boldsymbol{A}^\top.
+$$
+
+实际计算中，将 $A$ 奇异值分解，
+
+$$
+A = U\Sigma V^\top,
+$$
+
+则
+
+$$
+A^+ = V\Sigma^+U^\top,
+$$
+
+其中 $\Sigma^+$ 是将 $\Sigma$ 各非零元素取倒数，然后转置而得到的，即
+
+$$
+\Sigma^+ =
+\begin{bmatrix}
+\sigma_1\!\! & & & & \\
+& \!\!\sigma_2 & & & \\
+& & \!\!\!\ddots & & \\
+& & & \!\!\!\sigma_r& \\
+& & & & \!\! O \\
+\end{bmatrix}^+
+=
+\begin{bmatrix}
+1/\sigma_1\!\! & & & & \\
+& \!\!1/\sigma_2 & & & \\
+& & \!\!\!\ddots & & \\
+& & & \!\!\!1/\sigma_r& \\
+& & & & \!\! O \\
+\end{bmatrix}
+$$
+
+若 $\boldsymbol{Ax}=\boldsymbol{y}$ 有多解，则由 $\boldsymbol{x}=\boldsymbol{A}^+\boldsymbol{y}$ 得到的解是使得 $\Vert\boldsymbol{x}\Vert_2$ 最小的那一个；若无解，则得到的解使得 $\Vert\boldsymbol{Ax}-\boldsymbol{y}\Vert_2$ 最小.
