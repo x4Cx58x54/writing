@@ -1531,11 +1531,11 @@
 <p>如果直接存储，则单点修改的复杂度是 <span class="arithmatex">\(O(1)\)</span>，区间求和的复杂度是 <span class="arithmatex">\(O(n)\)</span>，若使用前缀和数组，则两项指标互换。树状数组的单点修改和区间求和的复杂度都是 <span class="arithmatex">\(O(\log n)\)</span>，很好地平衡了性能。</p>
 <p><a href="https://www.luogu.com.cn/problem/P3374" target="_blank">树状数组 1 - 洛谷</a></p>
 <div class="highlight"><pre><span></span><code><span class="kt">long</span> <span class="kt">long</span> <span class="n">fenwick</span><span class="p">[</span><span class="mi">500010</span><span class="p">];</span>
-<span class="kr">inline</span> <span class="kt">int</span> <span class="nf">lowbit</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">)</span>
+<span class="kr">inline</span> <span class="kt">int</span> <span class="n">lowbit</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="n">pos</span> <span class="o">&amp;</span> <span class="o">-</span><span class="n">pos</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">while</span><span class="p">(</span><span class="n">pos</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span>
     <span class="p">{</span>
@@ -1543,7 +1543,7 @@
         <span class="n">pos</span> <span class="o">+=</span> <span class="n">lowbit</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="kr">inline</span> <span class="kt">long</span> <span class="kt">long</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">)</span>
+<span class="kr">inline</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">pos</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">long</span> <span class="kt">long</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">while</span><span class="p">(</span><span class="n">pos</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span>

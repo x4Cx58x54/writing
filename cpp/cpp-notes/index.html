@@ -1710,7 +1710,7 @@ Replace the code where the function is called, save time at the cost of memory.<
 <h3>Files</h3>
 <h3>Derived Data Types</h3>
 <h4>Struct</h4>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">struct1</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">struct1</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">varint</span><span class="p">;</span>
     <span class="kt">double</span> <span class="n">vardouble</span><span class="p">;</span>
@@ -1724,14 +1724,14 @@ Replace the code where the function is called, save time at the cost of memory.<
 
 <h4>Union</h4>
 <p><em>Union types can save memory</em><br />
-<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="n">union1</span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="nc">union1</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">varint</span><span class="p">;</span>
     <span class="kt">double</span> <span class="n">vardouble</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div></p>
 <h4>Enum</h4>
-<div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="n">spectrum</span> <span class="p">{</span><span class="n">r</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">u</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="nc">spectrum</span> <span class="p">{</span><span class="n">r</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">u</span><span class="p">};</span>
 </code></pre></div>
 
 <h2 id="object-oriented-programming">Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permanent link">&para;</a></h2>
@@ -1834,7 +1834,7 @@ cannot change any values and connot access non-static member functions</p>
 <span class="p">{</span>
     <span class="k">private</span><span class="o">:</span>
         <span class="kt">int</span> <span class="n">radius</span><span class="p">;</span>
-    <span class="k">friend</span> <span class="kt">void</span> <span class="nf">r</span><span class="p">(</span><span class="n">circle</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+    <span class="k">friend</span> <span class="kt">void</span> <span class="n">r</span><span class="p">(</span><span class="n">circle</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="kt">void</span> <span class="nf">r</span><span class="p">(</span><span class="n">circle</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">)</span>
 <span class="p">{</span>

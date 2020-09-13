@@ -1641,13 +1641,13 @@
 <div class="arithmatex">\[
 A_{2\times 2}^{-1} =
 \begin{bmatrix}
-a_{11} &amp; a_{12}\\
-a_{21} &amp; a_{22}
+a &amp; b\\
+c &amp; d
 \end{bmatrix}^{-1} =
 \frac{1}{\det(A)}
 \begin{bmatrix}
-a_{22} &amp; -a_{12}\\
--a_{21} &amp; a_{11}
+d &amp; -b\\
+-c &amp; a
 \end{bmatrix}
 \]</div>
 <h3>Derivatives</h3>
@@ -1799,28 +1799,6 @@ A = LU
 \]</div>
 <p>对可逆矩阵 <span class="arithmatex">\(A\)</span> 进行 Gauss 消元，可以得到上三角矩阵 <span class="arithmatex">\(U\)</span>，消元的过程相当于将一系列初等行变换矩阵左乘至 <span class="arithmatex">\(A\)</span>，将它们作为整体求逆即得到下三角矩阵 <span class="arithmatex">\(L\)</span>.</p>
 <p>若消元中会出现主元为零的情况，则需要进行行交换，此时 LU 分解的形式变为 <span class="arithmatex">\(PA=LU\)</span>.</p>
-<h3>Moore-Penrose 伪逆</h3>
-<p><span class="arithmatex">\(A\)</span> 的伪逆 <span class="arithmatex">\(A^+\)</span> 满足</p>
-<div class="arithmatex">\[
-\begin{cases}
-AA^+A = A,\\
-A^+AA^+ = A^+,
-\end{cases}
-\]</div>
-<p>且 <span class="arithmatex">\(AA^+\)</span> 与 <span class="arithmatex">\(A^+A\)</span> 均对称. <span class="arithmatex">\(A^+\)</span> 有且仅有一个. Moore-Penrose 伪逆定义为</p>
-<div class="arithmatex">\[
-\boldsymbol{A}^+=\lim_{\alpha\rightarrow0}(\boldsymbol{A}^\top\boldsymbol{A}+\alpha\boldsymbol{I})^{-1}\boldsymbol{A}^\top.
-\]</div>
-<p>实际计算中，将 <span class="arithmatex">\(A\)</span> 奇异值分解，</p>
-<div class="arithmatex">\[
-A = U\Sigma V^\top,
-\]</div>
-<p>则</p>
-<div class="arithmatex">\[
-A^+ = V\Sigma^+U^\top,
-\]</div>
-<p>其中 <span class="arithmatex">\(\Sigma^+\)</span> 是将 <span class="arithmatex">\(\Sigma\)</span> 各元素取倒数，然后转置而得到的.</p>
-<p>若 <span class="arithmatex">\(\boldsymbol{Ax}=\boldsymbol{y}\)</span> 有多解，则由 <span class="arithmatex">\(\boldsymbol{x}=\boldsymbol{A}^+\boldsymbol{y}\)</span> 得到的解是使得 <span class="arithmatex">\(\Vert\boldsymbol{x}\Vert_2\)</span> 最小的那一个；若无解，则得到的解使得 <span class="arithmatex">\(\Vert\boldsymbol{Ax}-\boldsymbol{y}\Vert_2\)</span> 最小.</p>
 <h2 id="_2">向量空间与线性方程组<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3>初等变换</h3>
 <p>初等行变换有以下三种操作：</p>
@@ -2140,6 +2118,7 @@ A^\top A\hat{\boldsymbol{x}} = A^\top\boldsymbol{b}.
 \]</div>
 <p>在统计学当中，这个方法正是最小二乘法. 原方程组中的每一个方程均代表一个样本点，<span class="arithmatex">\(\boldsymbol{b}\)</span> 中的每一个分量是样本点的因变量值，<span class="arithmatex">\(\boldsymbol{p}\)</span> 的每一个分量是各样本点拟合后的值，<span class="arithmatex">\(\boldsymbol{x}\)</span> 是拟合直线的系数向量.</p>
 <p>当 <span class="arithmatex">\(A\)</span> 的各列线性无关时，<span class="arithmatex">\(A^\top A\)</span> 一定是可逆的. 这也是上面的方程应用的条件. 要证明这个结论，只需要证方程 <span class="arithmatex">\(A^\top A\boldsymbol{x} = \boldsymbol{0}\)</span> 只有零解. 方程左乘 <span class="arithmatex">\(\boldsymbol{x}^\top\)</span> 得 <span class="arithmatex">\(\boldsymbol{x}^\top A^\top A\boldsymbol{x}=\boldsymbol{0}\)</span>，等价于 <span class="arithmatex">\(A\boldsymbol{x} = \boldsymbol{0}\)</span>，从而 <span class="arithmatex">\(\boldsymbol{x}\)</span> 必然为零. 事实上 <span class="arithmatex">\(A^\top A\)</span> 和 <span class="arithmatex">\(A\)</span> 的零空间和秩都是相同的.</p>
+<p>以上方法的实质是使用左逆解方程. 当左逆不存在时，可使用伪逆.</p>
 <h3>正交矩阵</h3>
 <p>An orthogonal matrix is a square matrix whose rows and columns are respectively mutually orthonormal.</p>
 <p>设正交矩阵 <span class="arithmatex">\(Q = \big[\boldsymbol{q}_1, \boldsymbol{q}_2, \cdots, \boldsymbol{q}_n\big]\)</span>，由于其各列互相正交，</p>
@@ -2162,48 +2141,295 @@ QQ^\top = I.
 <div class="arithmatex">\[
 Q^\top = Q^{-1}.
 \]</div>
+<p>正交矩阵所对应的线性变换不会改变空间中向量的长度，即 <span class="arithmatex">\(|\lambda| = 1\)</span>.</p>
 <h3>Gram-Schmidt Orthonormalization</h3>
 <p>逐个处理需要正交化的向量 <span class="arithmatex">\(\boldsymbol{v}\)</span>. 将向量 <span class="arithmatex">\(\boldsymbol{v}_k\)</span> 分别减去其在已正交化的向量 <span class="arithmatex">\(\boldsymbol{u}_i\)</span> 上的投影，</p>
 <div class="arithmatex">\[
 \boldsymbol{u}_k = \boldsymbol{v}_k - \sum_{i &lt; k} |\boldsymbol{v}_k| \cos(\boldsymbol{v}_k, \boldsymbol{u}_i),
 \]</div>
 <p>最后将所有向量归一化.</p>
-<p>过程演示如下<sup id="fnref:gramschmidt"><a class="footnote-ref" href="#fn:gramschmidt">2</a></sup>.</p>
+<p>过程演示如下<sup id="fnref:gramschmidt"><a class="footnote-ref" href="#fn:gramschmidt">3</a></sup>.</p>
 <p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Gram-Schmidt_orthonormalization_process.gif" /></p>
+<p>将 <span class="arithmatex">\(A\)</span> 各列向量的 G-S 正交化写为矩阵形式，可以将其分解为一个正交矩阵 <span class="arithmatex">\(Q\)</span> 和一个上三角矩阵 <span class="arithmatex">\(R\)</span>，即 QR 分解</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+| &amp; | &amp;  &amp; | \\
+\boldsymbol{a}_1 &amp; \boldsymbol{a}_2 &amp; \cdots &amp; \boldsymbol{a_n} \\
+| &amp; | &amp;  &amp; | \\
+\end{bmatrix} =
+\begin{bmatrix}
+| &amp; | &amp;  &amp; | \\
+\boldsymbol{q}_1 &amp; \boldsymbol{q}_2 &amp; \cdots &amp; \boldsymbol{q_n} \\
+| &amp; | &amp;  &amp; | \\
+\end{bmatrix}
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; \cdots &amp; r_{1n} \\
+&amp; r_{22} &amp; \cdots &amp; r_{2n} \\
+&amp; &amp; \ddots &amp; \vdots \\
+&amp; &amp; &amp; r_{mn} \\
+\end{bmatrix}.
+\]</div>
 <h2 id="_4">特征值与特征向量<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3>对角化</h3>
+<p><span class="arithmatex">\(n\)</span> 阶方阵 <span class="arithmatex">\(A\)</span> 的各特征向量 <span class="arithmatex">\(\boldsymbol{v}\)</span> 作为列，组成特征向量矩阵 <span class="arithmatex">\(V\)</span>. 若特征向量有 <span class="arithmatex">\(n\)</span> 个且线性无关，则 <span class="arithmatex">\(V\)</span> 是可逆的. 此时</p>
+<div class="arithmatex">\[
+AV = \big[ \lambda_1\boldsymbol{v}_1 ~~ \lambda_2\boldsymbol{v}_2 ~~ \cdots ~~ \lambda_n\boldsymbol{v}_n \big] = V\Lambda,
+\]</div>
+<p>即</p>
+<div class="arithmatex">\[
+A = V\Lambda V^{-1}.
+\]</div>
+<p>若 <span class="arithmatex">\(A\)</span> 的各特征值均不同，则可以保证有 <span class="arithmatex">\(n\)</span> 个特征向量，且线性无关.</p>
+<p>将矩阵对角化后，可以计算其幂</p>
+<div class="arithmatex">\[
+A^k = V\Lambda^k V^{-1}.
+\]</div>
+<details class="note" open="open"><summary>Fibonacci Sequence</summary><p>递推方程 <span class="arithmatex">\(F_{k+2} = F_{k+1} + F_k\)</span> 构造了斐波那契数列，其初始条件为 <span class="arithmatex">\(F_0 = 0\)</span>，<span class="arithmatex">\(F_1 = 1\)</span>. 现求其通项公式.</p>
+<p>由于以上递推方程是二阶的，故构造二维向量 <span class="arithmatex">\(u_k = \big[F_{k+1} ~~ F_k\big]^\top\)</span>，并将递推方程根据 <span class="arithmatex">\(u_k\)</span> 的形式补充为（这种方法也可以用于二阶微分方程）</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; F_{k+2} = F_{k+1} + F_k, \\
+&amp; F_{k+1} = F_{k+1}.
+\end{aligned}
+\]</div>
+<p>这个方程可以写成矩阵形式</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+F_{k+2} \\ F_{k+1}
+\end{bmatrix} =
+\begin{bmatrix}
+1 &amp; 1\\
+1 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+F_{k+1} \\ F_k
+\end{bmatrix},
+\]</div>
+<p>将上面的变换矩阵记为 <span class="arithmatex">\(A\)</span>，则可以写为</p>
+<div class="arithmatex">\[
+u_{k+1} = Au_k,
+\]</div>
+<p>于是有</p>
+<div class="arithmatex">\[
+u_k = A^ku_0.
+\]</div>
+<p>将 <span class="arithmatex">\(A\)</span> 特征值分解，得到特征值 <span class="arithmatex">\(\lambda_1 = \frac{1+\sqrt{5}}{2}\)</span>，<span class="arithmatex">\(\lambda_2 = \frac{1-\sqrt{5}}{2}\)</span> 以及对应的特征向量矩阵 <span class="arithmatex">\(V\)</span>，则</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+F_{k+1} \\ F_{k}
+\end{bmatrix} =
+V^{-1}
+\begin{bmatrix}
+\lambda_1^k &amp; 0 \\
+0 &amp; \lambda_2^k
+\end{bmatrix}
+V
+\begin{bmatrix}
+1 \\ 0
+\end{bmatrix}.
+\]</div>
+</details>
+<details class="note" open="open"><summary>Differential Equation</summary><p>解微分方程</p>
+<div class="arithmatex">\[
+\frac{\mathrm{d}\boldsymbol{u}}{\mathrm{d}t} = A\boldsymbol{u},
+\]</div>
+<p>其中 <span class="arithmatex">\(\boldsymbol{u}\)</span> 为 <span class="arithmatex">\(n\)</span> 维向量，<span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(n\)</span> 阶方阵.</p>
+<p>将 <span class="arithmatex">\(A\)</span> 特征分解得到特征值 <span class="arithmatex">\(\lambda_i\)</span> 和对应的特征向量 <span class="arithmatex">\(\boldsymbol{v}_i\)</span>，<span class="arithmatex">\(i = 1, 2, \cdots, n\)</span>. 则方程通解为</p>
+<div class="arithmatex">\[
+\boldsymbol{y} = \sum_{i=0}^n c_i\mathrm{e}^{\lambda_i}.
+\]</div>
+</details>
+<h3>解耦</h3>
+<p>以一微分方程演示解耦的作用. 沿用上例中的微分方程</p>
+<div class="arithmatex">\[
+\frac{\mathrm{d}\boldsymbol{u}}{\mathrm{d}t} = A\boldsymbol{u},
+\]</div>
+<p>其中 <span class="arithmatex">\(A\)</span> 的特征向量矩阵记为 <span class="arithmatex">\(V\)</span>. 设 <span class="arithmatex">\(\boldsymbol{u} = V\boldsymbol{x}\)</span>，代入换元得</p>
+<div class="arithmatex">\[
+\frac{\mathrm{d}\boldsymbol{x}}{\mathrm{d}t} = V^{-1}AV\boldsymbol{x} = \Lambda V.
+\]</div>
+<p>这样，方程就被解耦为</p>
+<div class="arithmatex">\[
+\begin{cases}
+\mathrm{d}x_1 / \mathrm{d}t = \lambda_1 x_1, \\
+\mathrm{d}x_2 / \mathrm{d}t = \lambda_2 x_2, \\
+\qquad \quad \vdots \\
+\mathrm{d}x_n / \mathrm{d}t = \lambda_n x_n.
+\end{cases}
+\]</div>
+<h3>实对称矩阵与 Hermite 矩阵 | Hermitian Matrix</h3>
+<p>Hermite 矩阵指的是满足下列条件的矩阵</p>
+<div class="arithmatex">\[
+A = A^\mathrm{H} = \overline{A}^\top,
+\]</div>
+<p>在实矩阵中 <span class="arithmatex">\(A^\mathrm{H} = A^\top\)</span> 该条件退化，仅表现为对称 <span class="arithmatex">\(A = A^\top\)</span>.</p>
+<p>实对称矩阵的特征值均为实数，且特征向量矩阵可以选取为正交矩阵，即</p>
+<div class="arithmatex">\[
+A = Q\Lambda Q^{-1} = Q\Lambda Q^\top.
+\]</div>
+<p>复向量 <span class="arithmatex">\(\boldsymbol{x}\)</span> 与 <span class="arithmatex">\(\boldsymbol{y}\)</span> 的内积为 <span class="arithmatex">\(\boldsymbol{x}^\mathrm{H}\boldsymbol{y}\)</span>.</p>
+<p>故以上实对称性质扩展到复域时表述为 Hermite 矩阵特征值均为实数，且特征向量矩阵可以选为酉矩阵（幺正矩阵，unitary matrix），即</p>
+<div class="arithmatex">\[
+A = Q\Lambda Q^{-1} = Q\Lambda Q^\mathrm{H}.
+\]</div>
+<p>Hermite 矩阵的主元和特征值在符号上保持一致，即正主元数和正特征值数量相等.</p>
+<details class="note" open="open"><summary>Fast Fourier Transform</summary><p><span class="arithmatex">\(n\)</span> 阶 Fourier 矩阵定义为</p>
+<div class="arithmatex">\[
+F_n = \begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\
+1 &amp; \omega &amp; \omega ^2 &amp; \cdots &amp; \omega^{n-1} \\
+1 &amp; \omega^2 &amp; \omega^4 &amp; \cdots &amp; \omega^{2(n-1)}\\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; \omega^{n-1} &amp; \omega^{2(n-1)} &amp; \cdots &amp; \omega^{(n-1)^2}\\
+\end{bmatrix},
+\]</div>
+<p>其中 <span class="arithmatex">\(\omega\)</span> 为第 1 个 <span class="arithmatex">\(n\)</span> 次单位根 <span class="arithmatex">\(\mathrm{e}^{2\pi i/n}\)</span>. 等价地有</p>
+<div class="arithmatex">\[
+(F_n)_{ij} = \omega^{(i-1)(j-1)}.
+\]</div>
+<p>Fourier 矩阵的各列互相正交，即 <span class="arithmatex">\(\frac{1}{\sqrt{n}}F_n\)</span> 为幺正矩阵.</p>
+<p>FFT 给出了递归关系</p>
+<div class="arithmatex">\[
+F_{2n} = \begin{bmatrix}
+I &amp; D \\
+I &amp; -D
+\end{bmatrix}
+\begin{bmatrix}
+F_n &amp; \\
+&amp; F_n
+\end{bmatrix}P,
+\]</div>
+<p>其中 <span class="arithmatex">\(D = \operatorname{diag}(1, \omega, \omega^2, \cdots, \omega^{n-1})\)</span>，<span class="arithmatex">\(P\)</span> 为将奇序号向量和偶序号向量分开的置换矩阵</p>
+<div class="arithmatex">\[
+P = \begin{bmatrix}
+1 &amp;   &amp;   &amp;   &amp; \cdots &amp;   &amp;   \\
+&amp;   &amp; 1 &amp;   &amp; \cdots &amp;   &amp;   \\
+&amp;   &amp;   &amp;   &amp; \vdots &amp;   &amp;   \\
+&amp;   &amp;   &amp;   &amp; \cdots &amp; 1 &amp;   \\
+&amp; 1 &amp;   &amp;   &amp; \cdots &amp;   &amp;   \\
+&amp;   &amp;   &amp; 1 &amp; \cdots &amp;   &amp;   \\
+&amp;   &amp;   &amp;   &amp; \vdots &amp;   &amp;   \\
+&amp;   &amp;   &amp;   &amp; \cdots &amp;   &amp; 1 \\
+\end{bmatrix}.
+\]</div>
+</details>
+<h3>正定矩阵</h3>
+<p>实对称矩阵 <span class="arithmatex">\(A\)</span> 正定的充要条件主要有：</p>
+<ul>
+<li>特征值均为正；</li>
+<li>主元均为正；</li>
+<li>左上子方阵 <span class="arithmatex">\(\begin{bmatrix}a_{11}\end{bmatrix}, \begin{bmatrix}a_{11}&amp;a_{12}\\a_{21}&amp;a_{22}\end{bmatrix}, \cdots\)</span> 的行列式均为正；</li>
+<li>对于任意非零向量 <span class="arithmatex">\(\boldsymbol{x}\)</span>，<span class="arithmatex">\(\boldsymbol{x}^\top A\boldsymbol{x}\)</span> 恒为正.</li>
+</ul>
+<p>若可逆矩阵 <span class="arithmatex">\(A\)</span> 正定，则 <span class="arithmatex">\(A^{-1}\)</span> 也是正定的（可由特征值证明）.</p>
+<p>若 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> 均正定，则 <span class="arithmatex">\(A+B\)</span> 也正定（可由 <span class="arithmatex">\(\boldsymbol{x}^\top(A+B)\boldsymbol{x}\)</span> 证明）.</p>
+<p><span class="arithmatex">\(A^\top A\)</span> 半正定（可由 <span class="arithmatex">\(\boldsymbol{x}^\top A^\top A\boldsymbol{x}\)</span> 证明）. 特别地，当 <span class="arithmatex">\(A\)</span> 各列线性无关时，<span class="arithmatex">\(A^\top A\)</span> 正定.</p>
 <h3>相似矩阵</h3>
-<p>若 <span class="arithmatex">\(\exists P\)</span> 使得</p>
+<p>若存在矩阵 <span class="arithmatex">\(P\)</span> 使得</p>
 <div class="arithmatex">\[
 P^{-1}AP = B,
 \]</div>
 <p>则称 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 相似.</p>
 <p>相似矩阵具有相同的特征值. 实际上，相似矩阵和<a href="../essence-of-linear-algebra/#9-change-of-basis">基变换</a>的形式是完全一致的，即相似矩阵是在不同基底下，对相同的线性变换的描述.</p>
-<h3>对角化</h3>
-<p>若对于方阵 <span class="arithmatex">\(A\)</span>，存在一个正交阵 <span class="arithmatex">\(P\)</span>，将其相似变换为一个对角阵，</p>
+<h3>Jordan 标准型</h3>
+<p>任意方阵 <span class="arithmatex">\(A\)</span> 均相似于一个 Jordan 矩阵 <span class="arithmatex">\(J\)</span>，称为 <span class="arithmatex">\(A\)</span> 的 Jordan 标准型：</p>
 <div class="arithmatex">\[
-P^{-1}AP = P^\top AP = \Lambda.
+J = \begin{bmatrix}
+\boxed{J_1}\phantom{\boxed{J_2}}\phantom{\ddots}\phantom{\boxed{J_d}} \\
+\phantom{\boxed{J_1}}\boxed{J_2}\phantom{\ddots}\phantom{\boxed{J_d}} \\
+\phantom{\boxed{J_1}}\phantom{\boxed{J_2}}\ddots\phantom{\boxed{J_d}} \\
+\phantom{\boxed{J_1}}\phantom{\boxed{J_2}}\phantom{\ddots}\boxed{J_d}
+\end{bmatrix}.
 \]</div>
-<p>则称 <span class="arithmatex">\(A\)</span> 是可（相似）对角化的.</p>
-<p><span class="arithmatex">\(n\)</span> 阶方阵 <span class="arithmatex">\(A\)</span> 能相似对角化的充要条件是它有 <span class="arithmatex">\(n\)</span> 个线性无关的特征向量. 实对称矩阵一定可以对角化.</p>
+<p><span class="arithmatex">\(J\)</span> 的对角线上为各 Jordan 块，每一 Jordan 块的对角线上分布着 <span class="arithmatex">\(A\)</span> 的某一特征值，对角线上方的斜线均为 1：</p>
+<div class="arithmatex">\[
+J_i = \begin{bmatrix}
+\lambda_i &amp; 1 &amp; &amp; &amp; \\
+&amp; \lambda_i &amp; 1 &amp; &amp; \\
+&amp; &amp; \ddots &amp; &amp; \\
+&amp; &amp; &amp; \lambda_i &amp; 1 \\
+&amp; &amp; &amp; &amp; \lambda_i \\
+\end{bmatrix}.
+\]</div>
+<p>Jordan 块和特征向量是对应的. 特别地，当特征值各异时，各 Jordan 块均退化为对应的特征值，这样 <span class="arithmatex">\(J\)</span> 退化为特征值组成的对角阵，即对角化.</p>
 <h3>奇异值分解</h3>
 <p>对任意实矩阵 <span class="arithmatex">\(A_{m\times n}\)</span>，其 SVD 为</p>
 <div class="arithmatex">\[
 A = U\Sigma V^\top,
 \]</div>
-<p><span class="arithmatex">\(U_{m\times m}\)</span> 为左奇异向量组成的正交矩阵，<span class="arithmatex">\(\Sigma_{m\times n}\)</span> 为各奇异值组成的对角阵，<span class="arithmatex">\(V_{n\times n}\)</span> 为右奇异向量组成的正交矩阵.</p>
+<p><span class="arithmatex">\(U_{m\times m}\)</span> 为左奇异向量 <span class="arithmatex">\(\boldsymbol{u}_i\)</span> 组成的正交矩阵，<span class="arithmatex">\(\Sigma_{m\times n}\)</span> 为各奇异值 <span class="arithmatex">\(\sigma_i\)</span> 组成的对角阵，<span class="arithmatex">\(V_{n\times n}\)</span> 为右奇异向量 <span class="arithmatex">\(\boldsymbol{v}_i\)</span> 组成的正交矩阵.</p>
 <p>考虑</p>
 <div class="arithmatex">\[
 A^\top A = V\Sigma^\top\Sigma V^\top = V\Lambda V^\top,
 \]</div>
 <p>故将 <span class="arithmatex">\(A^\top A\)</span> 特征分解，得到各个特征值的算术平方根 <span class="arithmatex">\(\sqrt{\lambda_i}\)</span> 即为各奇异值 <span class="arithmatex">\(\sigma_i\)</span>（<span class="arithmatex">\(A^\top A\)</span> 必然是半正定的，<span class="arithmatex">\(\lambda_i \ge 0\)</span>），对应的特征向量组成 <span class="arithmatex">\(V\)</span>.</p>
+<p>设 <span class="arithmatex">\(A\)</span> 的秩为 <span class="arithmatex">\(r\)</span>，则 <span class="arithmatex">\(\boldsymbol{v}_1, \boldsymbol{v}_2, \cdots, \boldsymbol{v}_r\)</span> 为行空间中的一组正交基，<span class="arithmatex">\(\boldsymbol{u}_1, \boldsymbol{u}_2, \cdots, \boldsymbol{u}_r\)</span> 为列空间中的一组正交基. <span class="arithmatex">\(A\)</span> 作为线性变换，将行空间的正交基变换到列空间中，且保持其正交性：</p>
+<div class="arithmatex">\[
+A\boldsymbol{v}_i = \sigma_i\boldsymbol{u}_i.
+\]</div>
+<p><span class="arithmatex">\(\boldsymbol{v}_{r+1}, \cdots, \boldsymbol{v}_n\)</span> 和 <span class="arithmatex">\(\boldsymbol{u}_{r+1}, \cdots, \boldsymbol{u}_m\)</span> 分别是零空间和左零空间的正交基，显然它们所对应的奇异值均为 0. 它们补全了之前的两组正交基，使其张成整个空间.</p>
+<h3>左右逆</h3>
+<p>各列线性无关的矩阵 <span class="arithmatex">\(A_{m\times n}\)</span>（列满秩，<span class="arithmatex">\(r = n\)</span>）存在左逆</p>
+<div class="arithmatex">\[
+A^{-1}_{\mathrm{left}} = (A^\top A)^{-1}A^\top
+\]</div>
+<p>使得 <span class="arithmatex">\(A^{-1}_{\mathrm{left}}A = I_n\)</span>.</p>
+<p>同样地，当 <span class="arithmatex">\(A\)</span> 行满秩时，有右逆</p>
+<div class="arithmatex">\[
+A^{-1}_{\mathrm{right}} = A^\top(AA^\top)^{-1}
+\]</div>
+<p>使得 <span class="arithmatex">\(AA^{-1}_{\mathrm{right}} = I_m\)</span>.</p>
+<h3>Moore-Penrose 伪逆</h3>
+<p><span class="arithmatex">\(A\)</span> 的伪逆 <span class="arithmatex">\(A^+\)</span> 满足</p>
+<div class="arithmatex">\[
+\begin{cases}
+AA^+A = A,\\
+A^+AA^+ = A^+,
+\end{cases}
+\]</div>
+<p>且 <span class="arithmatex">\(AA^+\)</span> 与 <span class="arithmatex">\(A^+A\)</span> 均对称. <span class="arithmatex">\(A^+\)</span> 有且仅有一个. Moore-Penrose 伪逆定义为</p>
+<div class="arithmatex">\[
+\boldsymbol{A}^+=\lim_{\alpha\rightarrow0}(\boldsymbol{A}^\top\boldsymbol{A}+\alpha\boldsymbol{I})^{-1}\boldsymbol{A}^\top.
+\]</div>
+<p>实际计算中，将 <span class="arithmatex">\(A\)</span> 奇异值分解，</p>
+<div class="arithmatex">\[
+A = U\Sigma V^\top,
+\]</div>
+<p>则</p>
+<div class="arithmatex">\[
+A^+ = V\Sigma^+U^\top,
+\]</div>
+<p>其中 <span class="arithmatex">\(\Sigma^+\)</span> 是将 <span class="arithmatex">\(\Sigma\)</span> 各非零元素取倒数，然后转置而得到的，即</p>
+<div class="arithmatex">\[
+\Sigma^+ =
+\begin{bmatrix}
+\sigma_1\!\! &amp; &amp; &amp; &amp; \\
+&amp; \!\!\sigma_2 &amp; &amp; &amp; \\
+&amp; &amp; \!\!\!\ddots &amp; &amp; \\
+&amp; &amp; &amp; \!\!\!\sigma_r&amp; \\
+&amp; &amp; &amp; &amp; \!\! O \\
+\end{bmatrix}^+
+=
+\begin{bmatrix}
+1/\sigma_1\!\! &amp; &amp; &amp; &amp; \\
+&amp; \!\!1/\sigma_2 &amp; &amp; &amp; \\
+&amp; &amp; \!\!\!\ddots &amp; &amp; \\
+&amp; &amp; &amp; \!\!\!1/\sigma_r&amp; \\
+&amp; &amp; &amp; &amp; \!\! O \\
+\end{bmatrix}
+\]</div>
+<p>若 <span class="arithmatex">\(\boldsymbol{Ax}=\boldsymbol{y}\)</span> 有多解，则由 <span class="arithmatex">\(\boldsymbol{x}=\boldsymbol{A}^+\boldsymbol{y}\)</span> 得到的解是使得 <span class="arithmatex">\(\Vert\boldsymbol{x}\Vert_2\)</span> 最小的那一个；若无解，则得到的解使得 <span class="arithmatex">\(\Vert\boldsymbol{Ax}-\boldsymbol{y}\Vert_2\)</span> 最小.</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:strang1999">
 <p><a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/" target="_blank">18.06 Linear Algebra Video Lectures of Prof. Gilbert Strang in Fall 1999 - MIT OpenCourseWare</a>&#160;<a class="footnote-backref" href="#fnref:strang1999" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
+<li id="fn:resourses">
+<p><a href="https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/resource-index/" target="_blank">Resource Index of 18.06 Linear Algebra - MIT OpenCourseWare</a>&#160;<a class="footnote-backref" href="#fnref:resourses" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
 <li id="fn:gramschmidt">
-<p><a href="https://en.wikipedia.org/wiki/File:Gram-Schmidt_orthonormalization_process.gif" target="_blank">https://en.wikipedia.org/wiki/File:Gram-Schmidt_orthonormalization_process.gif</a>&#160;<a class="footnote-backref" href="#fnref:gramschmidt" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://en.wikipedia.org/wiki/File:Gram-Schmidt_orthonormalization_process.gif" target="_blank">https://en.wikipedia.org/wiki/File:Gram-Schmidt_orthonormalization_process.gif</a>&#160;<a class="footnote-backref" href="#fnref:gramschmidt" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

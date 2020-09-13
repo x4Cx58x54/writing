@@ -1727,7 +1727,7 @@
 <p>Javascript supports unicode. They can be typed to the code directly or use <code>\uxxxx</code>.</p>
 <p>JS is case-sensitive.</p>
 <h3>Identifiers</h3>
-<p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
 </code></pre></div>
 The naming rules are very similar to that in C language, but identifiers in JavaScript can also begin with a dollar sign (<code>$</code>), besides an underscore (<code>_</code>).</p>
 <h4>Reserved Words</h4>
@@ -1879,7 +1879,7 @@ The naming rules are very similar to that in C language, but identifiers in Java
 <p>JS 中浮点数是二进制表示的，即可以精确表示 1/2、1/4，但是 0.1 却不行。0.3-0.2 和 0.2-0.1 不一定等于 0.1，甚至它们两个本身都不相等。</p>
 <h3>Date and Times</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">then</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">59</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">then</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mf">2010</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">17</span><span class="p">,</span><span class="mf">59</span><span class="p">,</span><span class="mf">59</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">elapsed</span> <span class="o">=</span> <span class="nx">now</span><span class="o">-</span><span class="nx">then</span><span class="p">;</span> <span class="c1">// In milliseconds</span>
 
 <span class="nx">now</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>      <span class="c1">// ==&gt;2019</span>
@@ -1968,21 +1968,21 @@ Strings are immutable, therefore all those methods do not alter the value of s.<
 <h3>Type Conversions</h3>
 <p><img alt="" src="../img/typeconversion.png" width="600px" /></p>
 <p>JavaScript is very flexible about types.
-<div class="highlight"><pre><span></span><code><span class="mi">10</span> <span class="o">+</span> <span class="s2">&quot; objects&quot;</span> <span class="c1">// =&gt; &quot;10 objects&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="mf">10</span> <span class="o">+</span> <span class="s2">&quot; objects&quot;</span> <span class="c1">// =&gt; &quot;10 objects&quot;</span>
 <span class="s1">&#39;7&#39;</span> <span class="o">*</span> <span class="s1">&#39;4&#39;</span>       <span class="c1">// =&gt; 28</span>
-<span class="mi">1</span> <span class="o">-</span> <span class="s1">&#39;x&#39;</span>         <span class="c1">// =&gt; NaN</span>
+<span class="mf">1</span> <span class="o">-</span> <span class="s1">&#39;x&#39;</span>         <span class="c1">// =&gt; NaN</span>
 </code></pre></div></p>
 <p>When using <code>==</code> operator, type conversion is performed, while <code>===</code> does not:
 <div class="highlight"><pre><span></span><code><span class="kc">null</span> <span class="o">==</span> <span class="kc">undefined</span>
-<span class="s2">&quot;0&quot;</span> <span class="o">==</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="o">==</span> <span class="kc">false</span>
+<span class="s2">&quot;0&quot;</span> <span class="o">==</span> <span class="mf">0</span>
+<span class="mf">0</span> <span class="o">==</span> <span class="kc">false</span>
 <span class="s2">&quot;0&quot;</span> <span class="o">==</span> <span class="kc">false</span>
 </code></pre></div></p>
 <p>可以显式类型转换：
 <div class="highlight"><pre><span></span><code><span class="nb">Number</span><span class="p">(</span><span class="s2">&quot;10&quot;</span><span class="p">)</span>
 <span class="nb">String</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
-<span class="nb">Boolean</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">Object</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">Boolean</span><span class="p">(</span><span class="mf">1</span><span class="p">)</span>
+<span class="nb">Object</span><span class="p">(</span><span class="mf">3</span><span class="p">)</span>
 </code></pre></div></p>
 <p>也可进行隐式转换：
 <div class="highlight"><pre><span></span><code><span class="nx">x</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span>
@@ -2005,14 +2005,14 @@ These two functions ignores leading whitespaces. Illegal leading characters like
 <p>所有从对象到布尔值的转换都得到 <code>true</code>，哪怕是<code>new Boolean(false)</code>。</p>
 <p>所有的对象都有两种转换方法：</p>
 <p><code>toString()</code>:
-<div class="highlight"><pre><span></span><code><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">2</span><span class="p">}).</span><span class="nx">toString</span><span class="p">()</span>             <span class="c1">// =&gt; &quot;[object Object]&quot;</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nx">toString</span><span class="p">()</span>                  <span class="c1">// =&gt; &quot;1,2,3&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">2</span><span class="p">}).</span><span class="nx">toString</span><span class="p">()</span>             <span class="c1">// =&gt; &quot;[object Object]&quot;</span>
+<span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">].</span><span class="nx">toString</span><span class="p">()</span>                  <span class="c1">// =&gt; &quot;1,2,3&quot;</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="p">}).</span><span class="nx">toString</span><span class="p">()</span>  <span class="c1">// =&gt; &quot;function(x) {\n    f(x);\n}&quot;</span>
 <span class="sr">/\d/i</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>                    <span class="c1">// =&gt; &quot;/\\d/g&quot;</span>
-<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>       <span class="c1">// =&gt; &quot;Fri Jan 01 2010 00:00:00 GMT-0800 (PST)&quot;</span>
+<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mf">2010</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>       <span class="c1">// =&gt; &quot;Fri Jan 01 2010 00:00:00 GMT-0800 (PST)&quot;</span>
 </code></pre></div></p>
 <p><code>valueOf()</code>:
-<div class="highlight"><pre><span></span><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nx">valueOf</span><span class="p">()</span>      <span class="c1">// =&gt; 1262332800000 (ms since 1970/1/1)</span>
+<div class="highlight"><pre><span></span><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mf">2010</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">).</span><span class="nx">valueOf</span><span class="p">()</span>      <span class="c1">// =&gt; 1262332800000 (ms since 1970/1/1)</span>
 </code></pre></div></p>
 <p>转换为字符串时，先调用 <code>toString()</code>，如果失败则调用 <code>valurOf()</code> 并转为字符串，如果仍失败则 <code>TypeError</code>。<br />
 转换为数则是将两个方法的顺序调换。</p>
@@ -2020,18 +2020,18 @@ These two functions ignores leading whitespaces. Illegal leading characters like
 <h3>Varible Delcaration</h3>
 <p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">i</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">k</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">p</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">q</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">p</span><span class="o">=</span><span class="mf">0</span><span class="p">,</span> <span class="nx">q</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span>
 </code></pre></div>
 如果在声明时不给出初值，则这个变量为 <code>undefined</code>。</p>
 <p>也可在<code>for</code>循环当中声明变量：
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">,</span> <span class="nx">j</span><span class="o">=</span><span class="mf">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mf">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 </code></pre></div></p>
 <p>重复的变量声明将被视为普通的赋值语句。</p>
 <p>In strict ECMAScript 5, it is illigal to assign a value to an undelared variable, but you can get away with it by not using strict ES5. In this case, the interpreter will create this variable as a property of the global object.</p>
 <p>作为 global object 属性的变量是可删除的，而普通变量不可删除。
-<div class="highlight"><pre><span></span><code><span class="nx">fakevar</span> <span class="o">=</span> <span class="mi">0</span><span class="err">；</span>
+<div class="highlight"><pre><span></span><code><span class="nx">fakevar</span> <span class="o">=</span> <span class="mf">0</span><span class="err">；</span>
 <span class="k">delete</span> <span class="nx">fakevar</span><span class="p">;</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">fakevar</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">fakevar</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span>
 <span class="k">delete</span> <span class="k">this</span><span class="p">.</span><span class="nx">fakevar</span><span class="p">;</span>
 </code></pre></div></p>
 <h3>Variable Scope</h3>
@@ -2080,8 +2080,8 @@ Right-to-left associativity:<br />
 <code>a?b:c?d:e?f:g</code> <span class="arithmatex">\(\Longleftrightarrow\)</span> <code>a?b:(c?d:(e?f:g))</code></p>
 <h4>Binary <code>+</code> Operator</h4>
 <p>If either of the operands is a string or an object that converts to a string, <code>+</code> performs concatenation.
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;1&quot;</span> <span class="o">+</span> <span class="mi">2</span>     <span class="c1">// =&gt; &quot;12&quot;</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="p">{}</span>      <span class="c1">// =&gt; &quot;1[object Object]&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;1&quot;</span> <span class="o">+</span> <span class="mf">2</span>     <span class="c1">// =&gt; &quot;12&quot;</span>
+<span class="mf">1</span> <span class="o">+</span> <span class="p">{}</span>      <span class="c1">// =&gt; &quot;1[object Object]&quot;</span>
 <span class="kc">true</span> <span class="o">+</span> <span class="kc">true</span> <span class="c1">// =&gt; 2</span>
 </code></pre></div></p>
 <h4>Unary <code>+</code>, <code>-</code> Operator</h4>
@@ -2101,19 +2101,19 @@ Right-to-left associativity:<br />
 </ul>
 <h4>Comparison Operator</h4>
 <p><div class="highlight"><pre><span></span><code><span class="s2">&quot;11&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;3&quot;</span>
-<span class="s2">&quot;11&quot;</span> <span class="o">&gt;</span> <span class="mi">3</span>    <span class="c1">// &#39;11&#39; is converted into number</span>
+<span class="s2">&quot;11&quot;</span> <span class="o">&gt;</span> <span class="mf">3</span>    <span class="c1">// &#39;11&#39; is converted into number</span>
 </code></pre></div>
 如果两边有一个是（或被转换为）<code>NaN</code>，那么总是返回<code>false</code></p>
 <h4>The <code>in</code> Operator</h4>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">1</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">1</span><span class="p">};</span>
 <span class="s2">&quot;x&quot;</span> <span class="k">in</span> <span class="nx">p</span>             <span class="c1">// =&gt; true: p has property named &quot;x&quot;</span>
 <span class="s2">&quot;z&quot;</span> <span class="k">in</span> <span class="nx">p</span>             <span class="c1">// =&gt; false: p has no &quot;z&quot; property.</span>
 <span class="s2">&quot;toString&quot;</span> <span class="k">in</span> <span class="nx">p</span>      <span class="c1">// =&gt; true: p inherits toString method</span>
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">];</span>    <span class="c1">// An array with elements 0 and 1</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">];</span>    <span class="c1">// An array with elements 0 and 1</span>
 <span class="s2">&quot;0&quot;</span> <span class="k">in</span> <span class="nx">data</span>          <span class="c1">// =&gt; true: array has an element &quot;0&quot;</span>
-<span class="mi">1</span> <span class="k">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; true: numbers are converted to strings</span>
-<span class="mi">3</span> <span class="k">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; false: no element 3</span>
+<span class="mf">1</span> <span class="k">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; true: numbers are converted to strings</span>
+<span class="mf">3</span> <span class="k">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; false: no element 3</span>
 </code></pre></div>
 
 <h4>The <code>instanceof</code> Operator</h4>
@@ -2125,7 +2125,7 @@ Right-to-left associativity:<br />
 <span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="nx">b</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">foo</span><span class="p">();</span>  <span class="c1">// They do the same thing!</span>
 </code></pre></div></p>
 <p>The same for OR (<code>||</code>), the second operand is neglected when the first one is truthy.
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">m1</span> <span class="o">||</span> <span class="nx">m2</span> <span class="o">||</span> <span class="mi">100</span>     <span class="c1">// Choose the first truthy one.</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">m1</span> <span class="o">||</span> <span class="nx">m2</span> <span class="o">||</span> <span class="mf">100</span>     <span class="c1">// Choose the first truthy one.</span>
 </code></pre></div></p>
 <h4>Assignment with Operation</h4>
 <p><code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&lt;&lt;=</code>, <code>&gt;&gt;=</code>, <code>&gt;&gt;&gt;=</code>, <code>&amp;=</code>, <code>|=</code>, <code>^=</code>.</p>
@@ -2144,7 +2144,7 @@ Right-to-left associativity:<br />
 <h4>The Comma Operator</h4>
 <p><code>,</code> evaluates the left operand, then discards it, returns the value of the right operand. So it make sense only when the left operand has side effects.</p>
 <p>The comma operator is commonly used in <code>for</code> loop
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">j</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">j</span><span class="o">--</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">,</span> <span class="nx">j</span><span class="o">=</span><span class="mf">10</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">j</span><span class="o">--</span><span class="p">)</span>
 </code></pre></div></p>
 <h2 id="statements">Statements<a class="headerlink" href="#statements" title="Permanent link">&para;</a></h2>
 <p>Expressions are <em>evaluated</em> to produce a value, while statements ar <em>executed</em> to make something happen.</p>
@@ -2152,7 +2152,7 @@ Right-to-left associativity:<br />
 <p>最常用的就是赋值语句，还有函数调用和自增自减。</p>
 <h4>Compound and Empty Statements</h4>
 <p>Compound statements are used to execute multiple statements where JavaScript expects a single statement. The empty statement is the opposite, it is a single semicolon and does nothing. It is commonly used in loops；
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0</span><span class="p">);</span>
 </code></pre></div></p>
 <h4>Declaration</h4>
 <p><code>var</code> and <code>function</code> define identifiers. <br />
@@ -2234,7 +2234,7 @@ Any statement can be labeled, though it is only helpful to label statements that
 <p><div class="highlight"><pre><span></span><code><span class="k">throw</span> <span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 <code>&lt;expression&gt;</code> may evaluate to a value of any type. Or the error classes that the JavaScript interpreter uses. An error object has a <code>name</code> property that specify the type of this error, and a <code>message</code> property that holds the string passed to the constructor.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;x must be positive.&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mf">0</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;x must be positive.&quot;</span><span class="p">);</span>
 </code></pre></div>
 
 <h4><code>try</code> / <code>catch</code> / <code>finally</code></h4>
@@ -2262,9 +2262,9 @@ Any statement can be labeled, though it is only helpful to label statements that
 <code>with</code> 用于简化访问同一对象不同属性的代码。
 <div class="highlight"><pre><span></span><code><span class="kd">with</span> <span class="p">(</span><span class="nx">point</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="nx">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span>
+    <span class="nx">y</span> <span class="o">=</span> <span class="mf">2</span><span class="p">;</span>
+    <span class="nx">z</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p>如果其中一语句出现对非此对象属性的变量名的操作，则这一句的效果和在 <code>with</code> 外执行一样。</p>
@@ -2312,7 +2312,7 @@ Any statement can be labeled, though it is only helpful to label statements that
 <p>Every object has its <em>prototype</em> , or very few of them <code>null</code>. All object created by object literal share the common prototype called <code>Object.prototype</code>. <code>new Object()</code> or <code>{}</code> also share this prototype. Similarly, <code>new Array()</code> or <code>[]</code> has the prototype <code>Array.prototype</code>. This link a series of objects to form a <em>prototype chain</em>.</p>
 <p><code>Object.prototype</code> itself doesn't have a prototype, inheriting no properties.</p>
 <h3>Creating Objects</h3>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">point</span><span class="o">=</span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">0</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">point</span><span class="o">=</span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">0</span><span class="p">};</span>
 </code></pre></div>
 
 <p>每次执行到这个语句时，都会创建一个全新的对象。在 ES5 中，即使属性名是保留字，也不必加引号，但有一些 ES3 解释器要求有引号。最后一个属性后的逗号可有可无，但是 IE 中不允许出现这个逗号。</p>
@@ -2323,7 +2323,7 @@ Any statement can be labeled, though it is only helpful to label statements that
 </code></pre></div></p>
 <p><code>Object.create()</code> 创建对象：
 第一个参数是对象原型，第二个可选参数是新对象的参数。
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mi">2</span><span class="p">});</span> <span class="c1">// o 继承 x 和 y</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">2</span><span class="p">});</span> <span class="c1">// o 继承 x 和 y</span>
 <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </code></pre></div></p>
 <h3>Object as Associative Arrays</h3>
@@ -2374,8 +2374,8 @@ Any statement can be labeled, though it is only helpful to label statements that
 <p>The property value may be replaced by one or two methods, known as a <em>getter</em> and a <em>setter</em>. These properties are called <em>accessor properties</em> to distinguish them from normal <em>data properties</em>.</p>
 <p>The difinition of these two methods are like functions:
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
-    <span class="nx">y</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="nx">x</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span>
+    <span class="nx">y</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span>
     <span class="nx">get</span> <span class="nx">r</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="o">*</span><span class="k">this</span><span class="p">.</span><span class="nx">y</span><span class="p">)},</span>
     <span class="nx">set</span> <span class="nx">r</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="p">...</span>
@@ -2385,7 +2385,7 @@ Any statement can be labeled, though it is only helpful to label statements that
 
 
 <span class="nx">p</span><span class="p">.</span><span class="nx">r</span>     <span class="c1">// =&gt; 1.414...</span>
-<span class="nx">p</span><span class="p">.</span><span class="nx">r</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">r</span> <span class="o">=</span> <span class="mf">2</span>
 </code></pre></div></p>
 <p>The existence of <em>setter</em> and <em>getter</em> determines the writability and readablity of this property.</p>
 <h3>Property Attributes</h3>
@@ -2412,11 +2412,11 @@ Any statement can be labeled, though it is only helpful to label statements that
 </code></pre></div></p>
 <p>It returns <code>undefined</code> on inherited properties or properties that does not exist. To query the attributes of inherited properties, you must traverse the protopype chain using <code>Object.getPrototypeOf()</code>.</p>
 <p>To modify the attributes, use <code>Object.defineProperty()</code> or <code>Object.defineProperties()</code>:
-<div class="highlight"><pre><span></span><code><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">value</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
                                 <span class="nx">writable</span><span class="o">:</span> <span class="kc">false</span><span class="p">});</span>
 <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperties</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">x</span><span class="o">:</span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">writable</span><span class="o">:</span><span class="kc">true</span><span class="p">},</span>
-    <span class="nx">y</span><span class="o">:</span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span> <span class="nx">configurable</span><span class="o">:</span><span class="kc">false</span><span class="p">}</span>
+    <span class="nx">x</span><span class="o">:</span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">writable</span><span class="o">:</span><span class="kc">true</span><span class="p">},</span>
+    <span class="nx">y</span><span class="o">:</span><span class="p">{</span><span class="nx">value</span><span class="o">:</span><span class="mf">2</span><span class="p">,</span> <span class="nx">configurable</span><span class="o">:</span><span class="kc">false</span><span class="p">}</span>
 <span class="p">})</span>
 </code></pre></div>
 Both the functions returns the processed object.</p>
@@ -2433,7 +2433,7 @@ Both the functions returns the processed object.</p>
 <p>The <code>prototype</code> of an object is set when the object is created. In ECMAScript 5, passing the object into <code>Object.getPrototypeOf()</code> queries its prototype. To determine whether an object is the prototype of another, use <code>p.IsPrototypeOf(o)</code>.</p>
 <h4>The <code>class</code> Attribute</h4>
 <p>The default <code>toString()</code> method (inherited from <code>Object.prototype</code>) returns a string of the from <code>[object class]</code>. To invoke the right version, we usually do
-<div class="highlight"><pre><span></span><code><span class="nb">Object</span><span class="p">.</span><span class="nx">protptype</span><span class="p">.</span><span class="nx">toString</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">o</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">Object</span><span class="p">.</span><span class="nx">protptype</span><span class="p">.</span><span class="nx">toString</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">o</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mf">8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1</span><span class="p">)</span>
 </code></pre></div>
 This works for any value except <code>null</code> and <code>undefined</code>.</p>
 <h4>The <code>extensible</code> Attribute</h4>
@@ -2452,12 +2452,12 @@ This works for any value except <code>null</code> and <code>undefined</code>.</p
 <h3>Creating Arrays</h3>
 <p>Array literal:
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">empty</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="kd">var</span> <span class="nx">primes</span> <span class="o">=</span> <span class="p">[</span><span class="nx">empty</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">];</span>
+<span class="kd">var</span> <span class="nx">primes</span> <span class="o">=</span> <span class="p">[</span><span class="nx">empty</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">+</span><span class="mf">1</span><span class="p">,</span> <span class="p">];</span>
 </code></pre></div>
 Array constuctor:
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">1</span> <span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;this&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">1</span> <span class="p">,</span><span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;this&quot;</span><span class="p">);</span>
 </code></pre></div>
 The only patameter for <code>Array()</code> specifies the length. If there is more than one parameters, they are the array elements.</p>
 <h3>Arrays as Objects</h3>
@@ -2465,7 +2465,7 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <h3>Sparse Array</h3>
 <p>A sparse array is one in which the elements do not have contiguous indexes starting at 0. If the array is sparse, the <code>length</code> property is larger than all its indexes.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="nx">a</span><span class="p">[</span><span class="mi">1000</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">[</span><span class="mf">1000</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 </code></pre></div>
 
 <p>注意，稀疏数组和普通数组的区别在于，稀疏数组中有不存在的下标，而普通数组未被赋值的地方只是 <code>undefined</code> 而已。</p>
@@ -2476,7 +2476,7 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <p>When inserting an element whose index <code>i</code> is beyond current length of an array, its <code>length</code> will automatically increase to <code>i+1</code>. If <code>length</code> is set to a smaller value, then the array is cut off and the values higher than current length will be lost.</p>
 <h3>Iterating Arrays</h3>
 <p>使用 <code>for</code> 循环遍历下标：
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
 </code></pre></div></p>
 <p>若要跳过不存在和未定义的元素则需要加上
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
@@ -2490,9 +2490,9 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <p>由于数组是一个对象，若它有其它自定义的属性，则在使用 <code>for/in</code> 循环时一般是按照创建顺序来遍历，Implementations differ in how they handle this case, so if iteration matters for your algorithm it is best to use a regular <code>for</code> loop instead of <code>for/in</code></p>
 <h3>Multidimentional Arrays</h3>
 <p>JavaScript does not support true multdimentional arrays but you can approximate them with arrays of arrays.
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="nx">table</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="nx">table</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
 </code></pre></div></p>
 <h3>Array Methods</h3>
 <p><strong>ECMAScript 3</strong>:</p>
@@ -2512,19 +2512,19 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 </code></pre></div></p>
 <h4><code>concat()</code></h4>
 <p><code>concat()</code> method creates and returns a new array that contains the elements of the original array and its parameters.
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>            <span class="c1">// =&gt; [1,2,3,4,5]</span>
-<span class="kd">var</span> <span class="nx">a2</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]);</span>          <span class="c1">// =&gt; [1,2,3,4,5]</span>
-<span class="kd">var</span> <span class="nx">a3</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]);</span>    <span class="c1">// =&gt; [1,2,3,4,5,6,7]</span>
-<span class="kd">var</span> <span class="nx">a4</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]);</span>      <span class="c1">// =&gt; [1,2,3,4,[5,6]]</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="mf">5</span><span class="p">);</span>            <span class="c1">// =&gt; [1,2,3,4,5]</span>
+<span class="kd">var</span> <span class="nx">a2</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mf">4</span><span class="p">,</span> <span class="mf">5</span><span class="p">]);</span>          <span class="c1">// =&gt; [1,2,3,4,5]</span>
+<span class="kd">var</span> <span class="nx">a3</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">],</span> <span class="p">[</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">]);</span>    <span class="c1">// =&gt; [1,2,3,4,5,6,7]</span>
+<span class="kd">var</span> <span class="nx">a4</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mf">4</span><span class="p">,</span> <span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">]]);</span>      <span class="c1">// =&gt; [1,2,3,4,[5,6]]</span>
 </code></pre></div></p>
 <h4><code>slice()</code></h4>
 <p>A <em>slice</em> is another name of a <em>subarray</em>. 即 <code>a.slice(m,n)</code> 返回位置满足 <span class="arithmatex">\(m\le i&lt;n\)</span> 的子数组。这里的位置若为负数，则是指倒数的位置。若第二个参数为空，则表示到数组结束。（参考 Python）</p>
 <h4><code>splice()</code></h4>
 <p><code>splice()</code> modifies the array on which it is invoked. 它删除或者插入数组元素，而且数组的其他元素会自动调整以保持连续。第一个参数是删除/插入操作的起始位，第二个参数可选，是从此开始删除的位数，再之后的参数也可选，是在此插入的元素。若省略删除位数，则后面的元素均被截去。最终 <code>splice()</code> 返回被删除的子数组。
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">];</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>        <span class="c1">// =&gt; [5,6,7,8], a=[1,2,3,4]</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>      <span class="c1">// =&gt; [2,3], a=[1,4]</span>
-<span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>  <span class="c1">// =&gt; [], a=[1,4,3,4]</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">];</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span>        <span class="c1">// =&gt; [5,6,7,8], a=[1,2,3,4]</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">);</span>      <span class="c1">// =&gt; [2,3], a=[1,4]</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">);</span>  <span class="c1">// =&gt; [], a=[1,4,3,4]</span>
 </code></pre></div></p>
 <h4><code>push()</code> and <code>pop()</code></h4>
 <p><code>push()</code> 方法将所有的参数压入数组末尾，返回数组的新长度。参数保持原序。<code>pop()</code> 删除并返回数组末尾元素。</p>
@@ -2532,18 +2532,18 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <p><code>unshift()</code> 方法将所有的参数压入数组起始，返回数组的新长度。参数保持原序。<code>shift()</code> 删除并返回数组起始元素。</p>
 <h4><code>toString()</code> and <code>toLocaleString()</code></h4>
 <p><code>toString()</code> 将数组转为字符串，注意它将忽略所有的定界符，如引号和方括号。
-<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mi">1</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]].</span><span class="nx">toString</span><span class="p">()</span>  <span class="c1">// =&gt; &#39;1,2,c&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mf">1</span><span class="p">,[</span><span class="mf">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]].</span><span class="nx">toString</span><span class="p">()</span>  <span class="c1">// =&gt; &#39;1,2,c&#39;</span>
 </code></pre></div></p>
 <p><strong>ECMAScript 5</strong>:</p>
 <p>这几个方法的第一个参数大多都是一个函数，执行方法时会对每一个数组元素执行这个函数（稀疏数组中未定义的元素除外）。这个函数有三个参数，分别是数组元素的值，下标和数组名。一般来讲后两个参数都会被省略。</p>
 <h4><code>forEach()</code></h4>
 <p><code>forEach()</code> 就接受上述形式的函数，并将其作用于每一个元素。
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">];</span>
-<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span> <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">value</span><span class="p">;</span> <span class="p">});</span>
 <span class="c1">// sum =&gt; 15</span>
 
-<span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">a</span><span class="p">){</span> <span class="nx">a</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="p">});</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">a</span><span class="p">){</span> <span class="nx">a</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span> <span class="o">+</span> <span class="mf">1</span><span class="p">;</span> <span class="p">});</span>
 <span class="c1">//data =&gt; [2,3,4,5,6]</span>
 </code></pre></div></p>
 <p>注意 <code>forEach()</code> 并不提供中断的方法。如果需要中止遍历，则需要在中止处抛出异常，并将整个 <code>forEach()</code> 放到 <code>try</code> 语句内。</p>
@@ -2558,7 +2558,7 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <p>这两个方法就像全称量词 <span class="arithmatex">\(\forall\)</span> 和存在量词 <span class="arithmatex">\(\exists\)</span>。<code>every()</code> 只在数组中所有元素都使得其参数函数返回 <code>true</code> 时返回 <code>true</code>。<code>some()</code> 则在至少有一个元素使得函数返回 <code>true</code> 时返回 <code>false</code>。注意 <code>every()</code> 在遇到第一个产生 <code>false</code> 的元素时就退出返回 <code>false</code>，<code>some()</code> 在遇到第一个产生 <code>true</code> 的元素时就退出返回 <code>true</code>。</p>
 <h4><code>reduce()</code>, <code>reduceRight()</code></h4>
 <p>这两个函数将数组元素全部作用于一个二元算符，即成为一个连算符。区别只在于 <code>reduce()</code> 从低位到高位遍历，而 <code>reduceRight()</code> 相反。这个参数函数有些不同，前面的“值”和可选的“下标”，“数组名”移到了第二、三、四位，而 the first argument is the accumulated result of the reduction so far. 如果加上 <code>reduce()</code>/<code>reduceRight()</code> 的第二个参数，则相当于给连算符序列之前再加上一项。</p>
-<p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span> <span class="k">return</span> <span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span> <span class="p">},</span> <span class="mi">0</span><span class="p">)</span>
+<p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span> <span class="k">return</span> <span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span> <span class="p">},</span> <span class="mf">0</span><span class="p">)</span>
 </code></pre></div>
 相当于计算 <span class="arithmatex">\(\sum_{n=-1}^{\mathrm{UB}}a_n\)</span>，其中 <span class="arithmatex">\(a_{-1}=0\)</span>。</p>
 <p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">prod</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">reduceRight</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span> <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">y</span><span class="p">;</span> <span class="p">})</span>
@@ -2574,12 +2574,12 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="p">[],</span>
         <span class="nx">len</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
-        <span class="nx">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="nx">pos</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 
     <span class="k">while</span><span class="p">(</span><span class="nx">pos</span><span class="o">&lt;</span><span class="nx">len</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nx">pos</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">pos</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">pos</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">pos</span> <span class="o">===</span> <span class="o">-</span><span class="mf">1</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
         <span class="nx">results</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">pos</span><span class="p">)</span>
         <span class="nx">pos</span><span class="o">++</span><span class="p">;</span>
     <span class="p">}</span>
@@ -2588,7 +2588,7 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 </code></pre></div></p>
 <h3>Array-Like Objects</h3>
 <p>只要一个对象的属性有和数组下标一样的名称，还有 <code>length</code> 标注其长度，则它们也可以做一些类似的事情，甚至可以调用对应的数组原型方法。</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="o">:</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="nx">length</span><span class="o">:</span><span class="mi">3</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="o">:</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="nx">length</span><span class="o">:</span><span class="mf">3</span><span class="p">};</span>
 <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">join</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">)</span>  <span class="c1">// =&gt; &quot;a+b+c&quot;</span>
 </code></pre></div>
 
@@ -2612,7 +2612,7 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <span class="kd">var</span> <span class="nx">square</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">){</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">);</span> <span class="p">};</span>
 
 <span class="c1">// immediately invoked</span>
-<span class="kd">var</span> <span class="nx">tensquare</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">){</span> <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span> <span class="p">}(</span><span class="mi">10</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">tensquare</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">){</span> <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span> <span class="p">}(</span><span class="mf">10</span><span class="p">);</span>
 </code></pre></div>
 
 <p>如果没有<code>return</code>语句，则返回<code>undefined</code>。</p>
@@ -2642,7 +2642,7 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <h4>Optional Parameters</h4>
 <p>When a function is invoked with fewer arguments thn delcared parameters, the additional parameters are set to <code>undefined</code>. To set default values to omitted parameters, we need to do it exliciptly:
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="cm">/* optional */</span> <span class="nx">y</span><span class="p">){</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
     <span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div></p>
@@ -2665,16 +2665,16 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 </code></pre></div></p>
 <p>利用闭包可以创建对象的“私有属性”。
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">count</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
     <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">counter</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">}();</span>
 </code></pre></div>
 每次执行 <code>count()</code> 都返回自增 1 的 <code>counter</code> 值，并且 <code>counter</code> 只能由 <code>count()</code> 访问。</p>
 <p><div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">counter</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">{</span>
         <span class="nx">reset</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">n</span><span class="o">++</span><span class="p">;</span> <span class="p">},</span>
-        <span class="nx">count</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+        <span class="nx">count</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">n</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="p">}</span>
     <span class="p">};</span>
 <span class="p">}</span>
 
@@ -2691,28 +2691,28 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
     <span class="p">};</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">count</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
 <span class="nx">c</span><span class="p">.</span><span class="nx">count</span>
-<span class="nx">c</span><span class="p">.</span><span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">count</span> <span class="o">=</span> <span class="mf">0</span>
 </code></pre></div>
 结合 <code>get</code> 和 <code>set</code> 使用闭包。</p>
 <p>比较下面两例：
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">constf</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">v</span><span class="p">;</span> <span class="p">};}</span>
 
 <span class="kd">var</span> <span class="nx">funcs</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">funcs</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">constfunc</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mf">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">funcs</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">constfunc</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 
-<span class="nx">funcs</span><span class="p">[</span><span class="mi">5</span><span class="p">]()</span>  <span class="c1">// =&gt; 5</span>
+<span class="nx">funcs</span><span class="p">[</span><span class="mf">5</span><span class="p">]()</span>  <span class="c1">// =&gt; 5</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">constf</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">funcs</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mf">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
         <span class="nx">funs</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">i</span><span class="p">;</span> <span class="p">};</span>
     <span class="k">return</span> <span class="nx">funcs</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">funcs</span> <span class="o">=</span> <span class="nx">constf</span><span class="p">()</span>
-<span class="nx">funcs</span><span class="p">[</span><span class="mi">5</span><span class="p">]()</span>  <span class="c1">// =&gt; 9</span>
+<span class="nx">funcs</span><span class="p">[</span><span class="mf">5</span><span class="p">]()</span>  <span class="c1">// =&gt; 9</span>
 </code></pre></div></p>
 <h3>Function Properties, Methods, and Constructor</h3>
 <h4><code>arguments.length</code> Property</h4>
@@ -2720,16 +2720,16 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <h4><code>prototype</code> Property</h4>
 <p>函数即对象，<code>protopype</code>即函数所继承的原型。</p>
 <h4><code>call()</code> and <code>apply()</code></h4>
-<p><div class="highlight"><pre><span></span><code><span class="nx">f</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-<span class="nx">f</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span>
+<p><div class="highlight"><pre><span></span><code><span class="nx">f</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">);</span>
+<span class="nx">f</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">]);</span>
 </code></pre></div>
 这两个函数将函数 <code>f</code> 作为对象 <code>o</code> 的方法来调用。之后的参数就是传入 <code>f</code> 的参数。这种调用方式中 <code>this</code> 就是对象本身（ECMAScript 3 以及非严格模式中，若 <code>o</code> 是简单值，则为 <code>global object</code>）。</p>
 <h4><code>bind()</code> Method</h4>
 <p>This method returns a new function which invokes the original function as the method of an object.
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span> <span class="p">}</span>
-<span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mi">1</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mf">1</span> <span class="p">};</span>
 <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
-<span class="nx">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">g</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span>
 </code></pre></div></p>
 <h4><code>toString()</code> Method</h4>
 <p>In most implementations <code>toString()</code> returns the complete source code of the function.</p>
@@ -2753,7 +2753,7 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
     <span class="k">this</span><span class="p">.</span><span class="nx">i</span> <span class="o">=</span> <span class="nx">imaginary</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
 </code></pre></div>
 Note that an constructor does not create or return the object. It just initializes <code>this</code>. And propertie values defined within a constructor is noninherited that are unique to this object.\</p>
 <p>这样，构造函数名就成为了类名。一般这个函数首字母大写。由这个构造函数产生的对象自动继承自其原型。</p>
@@ -2789,15 +2789,15 @@ Note that an constructor does not create or return the object. It just initializ
 <p><em>Constructor</em> object<br />
 These properties serve as class fields and methods that are associated with the class rather than with instances. Note that constructor properties are NOT <code>this</code> properties! 
 <div class="highlight"><pre><span></span><code><span class="c1">// Constructor properties</span>
-<span class="nx">Complex</span><span class="p">.</span><span class="nx">ZERO</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nx">Complex</span><span class="p">.</span><span class="nx">I</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Complez</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nx">Complex</span><span class="p">.</span><span class="nx">ZERO</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
+<span class="nx">Complex</span><span class="p">.</span><span class="nx">I</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Complez</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
 
 <span class="c1">// Constructor methods</span>
 <span class="nx">Complex</span><span class="p">.</span><span class="nx">parse</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">){</span>
     <span class="k">try</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">format</span> <span class="o">=</span> <span class="sr">/^\{([^,]+),([^}])\}$/</span><span class="p">;</span>
         <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">format</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="mi">2</span><span class="p">]));</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="mf">1</span><span class="p">]),</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="mf">2</span><span class="p">]));</span>
     <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t parse &#39;&quot;</span> <span class="o">+</span> <span class="nx">s</span> <span class="o">+</span> <span class="s2">&quot;&#39; as a complex number.&quot;</span><span class="p">);</span>
     <span class="p">}</span>
@@ -2833,7 +2833,7 @@ This expression evaluates to the constructor of the object, and note that <code>
 </blockquote>
 <p>A function for duck-typing checking:
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">quacks</span><span class="p">(</span><span class="nx">o</span> <span class="cm">/*, ...*/</span><span class="p">){</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
         <span class="kd">var</span> <span class="nx">arg</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
         <span class="k">switch</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">arg</span><span class="p">){</span>
             <span class="k">case</span> <span class="s1">&#39;string&#39;</span><span class="o">:</span>
@@ -2859,12 +2859,12 @@ Note that this approach does not work for built-in methods because their methods
 <p>This set class works by mapping any JavaScript value to a unique string.
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">Set</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">values</span> <span class="o">=</span> <span class="p">{};</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">n</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
         <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">Set</span><span class="p">.</span><span class="nx">_v2s</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">str</span><span class="p">))</span> <span class="p">{</span>
@@ -2897,7 +2897,7 @@ Note that this approach does not work for built-in methods because their methods
         <span class="k">return</span> <span class="nx">o</span><span class="p">[</span><span class="nx">prop</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">};</span>
-<span class="nx">Set</span><span class="p">.</span><span class="nx">_v2s</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">Set</span><span class="p">.</span><span class="nx">_v2s</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 </code></pre></div></p>
 <h4>Private State</h4>
 <p>A range class with weakly encapsulated endpoints
@@ -2929,7 +2929,7 @@ Note that this approach does not work for built-in methods because their methods
 <span class="nx">NonNullSet</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">inherit</span><span class="p">(</span><span class="nx">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
 <span class="nx">NonNullSet</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">NonNullSet</span><span class="p">;</span>
 <span class="nx">NonNullSet</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
             <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Can&#39;t add null or undefined.&quot;</span><span class="p">);</span>
     <span class="k">return</span> <span class="nx">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
@@ -3013,59 +3013,59 @@ Note that this approach does not work for built-in methods because their methods
 <h4>Constants</h4>
 <div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 
-<span class="nx">pi</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>        <span class="c1">// assignments are silently ignored</span>
-<span class="kr">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">// redeclaration raise an error</span>
-<span class="kd">var</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>    <span class="c1">// error</span>
+<span class="nx">pi</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>        <span class="c1">// assignments are silently ignored</span>
+<span class="kr">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>  <span class="c1">// redeclaration raise an error</span>
+<span class="kd">var</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>    <span class="c1">// error</span>
 </code></pre></div>
 
 <h4>Scoped Variables: <code>let</code></h4>
 <p>Variables declared with <code>let</code> are defined only within the closest enclosing block.</p>
 <p><div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span>
     <span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div>
 Note the difference of evaluation of the initializer expressions between these two cases:
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">1</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">1</span><span class="p">;</span> <span class="nx">x</span> <span class="o">&lt;</span> <span class="mf">5</span><span class="p">;</span> <span class="nx">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// prints 2, 3, 4</span>
 <span class="p">}</span>
 
 <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">1</span><span class="p">;</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// undefined+1 is NaN</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p><code>let</code> also hoists as the same as <code>var</code>.</p>
 <p><code>let</code> block statement avoids the problem of using variables before they are initialized:
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="kd">let</span><span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">2</span><span class="p">;</span>
+<span class="kd">let</span><span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>   <span class="c1">// prints 5</span>
 <span class="p">}</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">);</span>   <span class="c1">// prints 3</span>
 </code></pre></div></p>
 <p>There is also <code>let</code> expression:
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kd">let</span><span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>  <span class="c1">// prints 5</span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">2</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kd">let</span><span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">2</span><span class="p">),</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>  <span class="c1">// prints 5</span>
 </code></pre></div></p>
 <h4>Destructuring Assignment</h4>
 <p>This works on node, but not on V8.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span>
-<span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span> <span class="c1">// x = 3, y = 2</span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">];</span>
+<span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">y</span> <span class="o">+</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">1</span><span class="p">];</span> <span class="c1">// x = 3, y = 2</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">cartesian</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">theta</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">[</span><span class="nx">r</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">theta</span><span class="p">),</span> <span class="nx">r</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">theta</span><span class="p">)];</span>
 <span class="p">}</span>
-<span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cartesian</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cartesian</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mf">4</span><span class="p">);</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// y = undefined</span>
-<span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span> <span class="c1">// 3 is lost</span>
-<span class="p">[,</span> <span class="nx">x</span><span class="p">,</span> <span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span> <span class="c1">// x=2, y=4</span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">];</span> <span class="c1">// y = undefined</span>
+<span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">];</span> <span class="c1">// 3 is lost</span>
+<span class="p">[,</span> <span class="nx">x</span><span class="p">,</span> <span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">4</span><span class="p">];</span> <span class="c1">// x=2, y=4</span>
 <span class="kd">let</span> <span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">,</span> <span class="nx">all</span><span class="p">;</span>
-<span class="nx">all</span> <span class="o">=</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
-<span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="p">[</span><span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">];</span>
+<span class="nx">all</span> <span class="o">=</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">4</span><span class="p">];</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="p">[</span><span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">],</span> <span class="mf">4</span><span class="p">];</span>
 </code></pre></div>
 
 <p>For object:
@@ -3073,7 +3073,7 @@ Note the difference of evaluation of the initializer expressions between these t
 </code></pre></div></p>
 <h4>The <code>for each</code> loop</h4>
 <p>The <code>for each</code> loop is much like the <code>for/in</code> loop. Instead of iterating through the properties, it iterates throught the values of those properties.
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span><span class="nx">one</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">two</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">three</span><span class="o">:</span> <span class="mi">3</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span><span class="nx">one</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">two</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span> <span class="nx">three</span><span class="o">:</span> <span class="mf">3</span><span class="p">};</span>
 <span class="k">for</span> <span class="nx">each</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">v</span> <span class="k">in</span> <span class="nx">o</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
 </code></pre></div>
 It will enumerate through the value of any enumerable property of the object including enumerable methods inherited by the object. For this reason, the <code>for each</code> loop is not recommended for use with arrays.</p>
@@ -3089,7 +3089,7 @@ It will enumerate through the value of any enumerable property of the object inc
     <span class="p">}</span>
 <span class="p">}</span>  
 
-<span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">5</span><span class="p">);</span>
 <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">try</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
@@ -3116,12 +3116,12 @@ It will enumerate through the value of any enumerable property of the object inc
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 </code></pre></div>
 
 <p><code>Iterator()</code> function iterates the own properties names and values. If a <code>true</code> is passed as the second optional argument, it will iterate only property names.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Problem: no for node or V8.</span>
-<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="p">[</span><span class="nx">k</span><span class="p">,</span><span class="nx">nv</span><span class="p">]</span> <span class="k">in</span> <span class="nx">Iterator</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mi">2</span><span class="p">}))</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="p">[</span><span class="nx">k</span><span class="p">,</span><span class="nx">nv</span><span class="p">]</span> <span class="k">in</span> <span class="nx">Iterator</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">2</span><span class="p">}))</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">);</span>
 </code></pre></div>
 
@@ -3131,17 +3131,17 @@ It will enumerate through the value of any enumerable property of the object inc
 <span class="kd">function</span> <span class="nx">range</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">min</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">max</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="k">yield</span> <span class="nx">i</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 </code></pre></div>
 
 <h4>Array Comprehensions</h4>
 <p><div class="highlight"><pre><span></span><code><span class="c1">// No for node or V8</span>
-<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="nx">x</span><span class="o">%</span><span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)];</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="nx">x</span><span class="o">%</span><span class="mf">2</span> <span class="o">===</span> <span class="mf">0</span><span class="p">)];</span>
 </code></pre></div>
 注意变量之前没有 <code>var</code> 或者 <code>let</code>。后面的条件语句如果省略，则遍历所有值。</p>
 <h4>Generator Expressions</h4>
 <div class="highlight"><pre><span></span><code><span class="c1">// No for node or V8</span>
-<span class="kd">var</span> <span class="nx">h</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+<span class="kd">var</span> <span class="nx">h</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">]))</span>
 </code></pre></div>
 
 <h4>Shorthand Functions</h4>

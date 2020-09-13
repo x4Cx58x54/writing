@@ -2769,21 +2769,21 @@ void prd(int (*arr)[2]);
 <h2 id="structures-and-other-data-forms">Structures and Other Data Forms<a class="headerlink" href="#structures-and-other-data-forms" title="Permanent link">&para;</a></h2>
 <h3>Structure</h3>
 <p>有多种方法定义结构体，一般的做法是首先声明结构体的形式（structure template），然后定义具体的变量。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">book</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">book</span> <span class="p">{</span>
     <span class="kt">char</span> <span class="n">title</span><span class="p">[</span><span class="mi">60</span><span class="p">];</span>
     <span class="kt">float</span> <span class="n">value</span><span class="p">;</span>
 <span class="p">};</span>
-<span class="k">struct</span> <span class="n">book</span> <span class="n">lib</span><span class="p">;</span>
+<span class="k">struct</span> <span class="nc">book</span> <span class="n">lib</span><span class="p">;</span>
 </code></pre></div>
 上例中声明了一种名称（tag）为 <code>book</code> 的结构体，这种声明使得 <code>struct book</code> 代指花括号内各成员的声明。亦可以此声明与定义合并，若只使用一次，还可以不给此结构体种类命名。</p>
 <p>结构体的初始化和数组相似：
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">book</span> <span class="n">lib</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">book</span> <span class="n">lib</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">&quot;C Primer Plus&quot;</span><span class="p">,</span>
     <span class="mi">118</span>
 <span class="p">};</span>
 </code></pre></div>
 也可以采用指定成员的初始化
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">book</span> <span class="n">lib</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">book</span> <span class="n">lib</span> <span class="o">=</span> <span class="p">{</span>
     <span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;C Primer Plus&quot;</span><span class="p">,</span>
     <span class="mi">118</span>
 <span class="p">};</span>
@@ -2795,21 +2795,21 @@ void prd(int (*arr)[2]);
 <p>注意 “<code>.</code>” 运算符的优先级比 “<code>&amp;</code>” 和 “<code>*</code>” 运算符高。</p>
 <p>指向结构体的指针到其成员的运算可以表示为 <code>(*p).m</code>，但显然写为 <code>p-&gt;m</code> 更加方便。</p>
 <p>由于结构体可能占用比较多空间，所以在向函数传递结构体参数时，为了速度，一般的做法是传递指针而非直接传参。
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">foo</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="n">book</span> <span class="o">*</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">foo</span><span class="p">(</span><span class="k">const</span> <span class="k">struct</span> <span class="nc">book</span> <span class="o">*</span><span class="p">);</span>
 </code></pre></div></p>
 <p>结构体中不能包括自身，但是可以能包括指向自身的指针。这常在数据结构中使用到。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">node</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">node</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="n">node</span> <span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="nc">node</span> <span class="o">*</span> <span class="n">next</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div></p>
 <h4>Structure Compound Literals</h4>
 <p>Compound literals can be converted to structures, similar to arrays
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">struct</span> <span class="n">book</span><span class="p">){</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">struct</span> <span class="nc">book</span><span class="p">){</span>
     <span class="s">&quot;The Art of Computer Programming&quot;</span><span class="p">,</span> 
     <span class="s">&quot;100&quot;</span>
 <span class="p">}</span>
-<span class="p">(</span><span class="k">struct</span> <span class="n">book</span><span class="p">){</span>
+<span class="p">(</span><span class="k">struct</span> <span class="nc">book</span><span class="p">){</span>
     <span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Introduction to Robotics&quot;</span><span class="p">,</span>
     <span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">99</span>
 <span class="p">}</span>
@@ -2817,7 +2817,7 @@ void prd(int (*arr)[2]);
 如果定义在函数内，则为自动存储期，若在函数外，则有静态存储期。并且它们可以取地址。</p>
 <h4>Flexible Array Members</h4>
 <p>C99 规定了一种特殊的成员数组。如果一种结构体的最后一个成员是数组，并且它不是唯一的成员，那么在定义时它的下标限可以留空，称为变长成员数组。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">flex</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">flex</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
     <span class="kt">double</span> <span class="n">average</span><span class="p">;</span>
@@ -2825,37 +2825,37 @@ void prd(int (*arr)[2]);
 <span class="p">}</span>
 </code></pre></div>
 这种类型的结构体变量在定义时，并不会分配任何空间给变长成员数组。这种结构体的使用方法是手动分配空间。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">flex</span> <span class="o">*</span> <span class="n">p</span><span class="p">;</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">flex</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">flex</span> <span class="o">*</span> <span class="n">p</span><span class="p">;</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="nc">flex</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
 <span class="n">p</span><span class="o">-&gt;</span><span class="n">scores</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">;</span>
 </code></pre></div>
 这样就给变长数组分配了空间。不同的变量可以分配不同长度的空间，因此称为变长数组。</p>
 <p>但是由于这一种结构体本身不包含变长数组的空间，所以它们在直接相互赋值时，只有非变长的部分有效。它们不可用于直接传参，不可作为数组元素，不可嵌套在其它结构体中。</p>
 <h4>Anonymous Structures</h4>
 <p>C11 中规定了一种新特性，称为匿名结构体。在定义嵌套结构体的时候，可以省去内结构体的定义：
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">staff</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">staff</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
     <span class="k">struct</span> <span class="p">{</span><span class="kt">char</span> <span class="n">first</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="kt">char</span> <span class="n">last</span><span class="p">[</span><span class="mi">20</span><span class="p">]};</span>
 <span class="p">};</span>
 </code></pre></div>
 可以直接对其初始化，可以直接访问子结构体中的元素。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">staff</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">23</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;Stephen&quot;</span><span class="p">,</span> <span class="s">&quot;Prata&quot;</span><span class="p">}};</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">staff</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">23</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;Stephen&quot;</span><span class="p">,</span> <span class="s">&quot;Prata&quot;</span><span class="p">}};</span>
 <span class="n">a</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
 </code></pre></div></p>
 <h3>Union</h3>
 <p>共用体允许将不同种类的数据存放在同一段空间。其定义形式与结构体相同：
-<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="n">hold</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="nc">hold</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">digit</span><span class="p">;</span>
     <span class="kt">double</span> <span class="n">real</span><span class="p">;</span>
     <span class="kt">char</span> <span class="n">letter</span><span class="p">;</span>
 <span class="p">};</span>
-<span class="k">union</span> <span class="n">hold</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">union</span> <span class="nc">hold</span> <span class="n">a</span><span class="p">;</span>
 </code></pre></div>
 它可以有多种初始化形式：
-<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="n">hold</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">};</span>
-<span class="k">union</span> <span class="n">hold</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
-<span class="k">union</span> <span class="n">hold</span> <span class="n">c</span> <span class="o">=</span> <span class="p">{.</span><span class="n">real</span> <span class="o">=</span> <span class="mf">7.1</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="nc">hold</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">};</span>
+<span class="k">union</span> <span class="nc">hold</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">union</span> <span class="nc">hold</span> <span class="n">c</span> <span class="o">=</span> <span class="p">{.</span><span class="n">real</span> <span class="o">=</span> <span class="mf">7.1</span><span class="p">};</span>
 <span class="n">a</span><span class="p">.</span><span class="n">letter</span> <span class="o">=</span> <span class="sc">&#39;r&#39;</span><span class="p">;</span>
 </code></pre></div>
 一个共用体是单个变量，在存储一种类型之后之前的数据随之被覆盖。它也可以使用 <code>-&gt;</code> 运算符。</p>
@@ -3133,14 +3133,14 @@ void prd(int (*arr)[2]);
 <div class="highlight"><pre><span></span><code><span class="cp">#pragma c9x on</span>
 </code></pre></div></p>
 <p>C99 also provides the <code>_Pragma</code> operator, 
-<div class="highlight"><pre><span></span><code><span class="n">_Pragma</span><span class="p">(</span><span class="s">&quot;once&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">_Pragma</span><span class="p">(</span><span class="s">&quot;once&quot;</span><span class="p">)</span>
 </code></pre></div>
 is equivalent to
 <div class="highlight"><pre><span></span><code><span class="cp">#pragma once</span>
 </code></pre></div></p>
 <h4>Generic Selection</h4>
 <p>C11 提供了一种判断类型的方法，虽然这并不是预处理命令，但是它定义于宏中。
-<div class="highlight"><pre><span></span><code><span class="n">_Generic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">float</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">int</span><span class="o">*:</span> <span class="mi">2</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">_Generic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">float</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">int</span><span class="o">*:</span> <span class="mi">2</span><span class="p">,</span> <span class="k">default</span><span class="o">:</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 若 <code>x</code> 类型为 <code>int</code>，则此表达式值为 0，之后以此类推。<code>x</code> 可以是任何量。一般的用法是
 <div class="highlight"><pre><span></span><code><span class="cp">#define TYPE(X) _Generic((X), \</span>

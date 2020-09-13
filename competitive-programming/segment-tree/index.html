@@ -1609,7 +1609,7 @@
 </code></pre></div>
 
 <p>这个过程并不是递归的，我们只往下传递一层（所以叫“懒”标记啊！），以后要用再才继续传递。其实我们常常把这个传递过程封装成一个函数：</p>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">push_down</span><span class="p">(</span><span class="n">ll</span> <span class="n">p</span><span class="p">,</span> <span class="n">ll</span> <span class="n">len</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">push_down</span><span class="p">(</span><span class="n">ll</span> <span class="n">p</span><span class="p">,</span> <span class="n">ll</span> <span class="n">len</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">lazy</span><span class="p">[</span><span class="n">p</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">lazy</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
     <span class="n">lazy</span><span class="p">[</span><span class="n">p</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">lazy</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
