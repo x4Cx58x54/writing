@@ -33,12 +33,25 @@ title: Randomish Writing
   }
 </style>
 
+<script>
+window.onload = function() {
+  var btnRandom = document.getElementById('random');
+  var navigation = `{{ navigation }}`;
+  navigation = navigation.replace(/\r?\n|\r/g, '');
+  navigation = navigation.replace(/.*?url='\/'/, '');
+  navigation = navigation.replace(/Section\(title='Reading Notes'\).*/, '');
+  var posts = navigation.match(/(?<=url=').*?(?=')/g);
+  var randomPostUrl = posts[Math.floor(Math.random() * posts.length)];
+  btnRandom.href = randomPostUrl;
+}
+</script>
+
 <div align="center">
 
   <h1 class="title"><b>Gibberish. Gobbledegook. Abracadabra. Fantastic&nbsp;Talk.</b></h1>
 
   <p>
-    <a href="javascript:app.dialog$.next('Do have fun here, please!')" class="md-button">About</a>
+    <a class="md-button" id="random">Random</a>
     &ensp;
     <a href="https://github.com/x4Cx58x54" class="md-button md-button--primary">x4Cx58x54</a>
   </p>

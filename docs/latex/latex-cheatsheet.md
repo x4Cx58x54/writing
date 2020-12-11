@@ -2,6 +2,8 @@
 title: LaTeX Cheatsheet
 ---
 
+{% raw %}
+
 # $\LaTeX$ Cheatsheet
 
 > 本文内容中大部分可在各版本 LaTeX 中使用，但主要针对 XeLaTeX。
@@ -756,7 +758,7 @@ content
 \makeatletter
 \DeclareFontFamily{U}{tipa}{}
 \DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
-\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+\newcommand{\arc@char}{\usefont{U}{tipa}{m}{n}\symbol{62}}
 
 \newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
 
@@ -776,3 +778,5 @@ content
 
 * [https://www.resurchify.com/latex_tutorial/latex_tutorial.php](https://www.resurchify.com/latex_tutorial/latex_tutorial.php){: target=_blank}
 * [https://liam.page/categories/LaTeX/](https://liam.page/categories/LaTeX/){: target=_blank}
+
+{% endraw %}

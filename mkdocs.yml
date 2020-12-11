@@ -101,7 +101,8 @@ nav:
       - 未来简史: reading-notes/未来简史：从智人到智神.md
 
 
-plugins: []
+plugins:
+  - macros
 
 
 extra:
