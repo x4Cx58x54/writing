@@ -1722,7 +1722,6 @@
 <span class="cm">/* Multiline</span>
 <span class="cm">   Comments */</span>
 </code></pre></div>
-
 <h3>Character set</h3>
 <p>Javascript supports unicode. They can be typed to the code directly or use <code>\uxxxx</code>.</p>
 <p>JS is case-sensitive.</p>
@@ -1892,7 +1891,6 @@ The naming rules are very similar to that in C language, but identifiers in Java
 <span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">();</span>
 <span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">();</span>
 </code></pre></div>
-
 <h3>Text</h3>
 <p>A string is immutable and ordered, <em>contained in single or double quotation marks, similar to Python</em>.</p>
 <p>字符串使用无符号 16 位编码，从 0 开始编号。一些特殊的字符会用 17 位，它们的长度算作 2。</p>
@@ -1925,7 +1923,6 @@ Strings are immutable, therefore all those methods do not alter the value of s.<
 <span class="nx">t</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">str</span><span class="p">)</span>
 <span class="nx">t</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
 </code></pre></div>
-
 <h3>Boolean Values</h3>
 <p>即 <code>true</code> 和 <code>false</code>。可以用 <code>toString()</code> 方法来转换为对应字符串。</p>
 <p>与或非运算符为
@@ -2115,7 +2112,6 @@ Right-to-left associativity:<br />
 <span class="mf">1</span> <span class="k">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; true: numbers are converted to strings</span>
 <span class="mf">3</span> <span class="k">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; false: no element 3</span>
 </code></pre></div>
-
 <h4>The <code>instanceof</code> Operator</h4>
 <p>若左边的对象是右边类名的实例则返回真。因为 JS 中类名就是构造函数名，所以右操作数应为一函数名，否则 it throws <code>TypeError</code>.</p>
 <h4>Logical Operators</h4>
@@ -2180,13 +2176,11 @@ Right-to-left associativity:<br />
 <div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="o">&lt;</span><span class="nx">statement</span><span class="o">&gt;</span>
 </code></pre></div>
-
 <h4><code>do</code> / <code>while</code></h4>
 <div class="highlight"><pre><span></span><code><span class="k">do</span>
     <span class="o">&lt;</span><span class="nx">statement</span><span class="o">&gt;</span>
 <span class="k">while</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">);</span>
 </code></pre></div>
-
 <h4><code>for</code></h4>
 <p><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">initialize</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="nx">test</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="nx">increment</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="nx">statement</span>
@@ -2204,7 +2198,6 @@ Right-to-left associativity:<br />
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">variable</span><span class="o">&gt;</span> <span class="k">in</span> <span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="o">&lt;</span><span class="nx">statement</span><span class="o">&gt;</span>
 </code></pre></div>
-
 <p>此处循环变量遍历的是对象中属性的名称，形式为字符串。</p>
 <p>既然每次循环都将循环变量赋值，可以使用 <code>for(a[i++] in obj);</code> 来将对象中的每一个属性名复制到数组 <code>a</code> 中。</p>
 <p>The <code>for</code>/<code>in</code> loop does not actually enumerate all properties of an object, only the enumerable properties. In practice, the enumeration order is the order in which they were defined. However, this rule may be altered by using some techniques.</p>
@@ -2217,7 +2210,6 @@ Any statement can be labeled, though it is only helpful to label statements that
 <h4><code>break</code></h4>
 <div class="highlight"><pre><span></span><code><span class="k">break</span> <span class="o">&lt;</span><span class="nx">labelname</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
-
 <p>This statement can even be a statement block grouped within curly braces for the sole purpose of naming the block with a label. When <code>labelname</code> is omitted, the program will break out to the nearest layer of enclosing loop or switch.</p>
 <h4><code>continue</code></h4>
 <p>Similar to <code>break</code>:
@@ -2236,7 +2228,6 @@ Any statement can be labeled, though it is only helpful to label statements that
 <code>&lt;expression&gt;</code> may evaluate to a value of any type. Or the error classes that the JavaScript interpreter uses. An error object has a <code>name</code> property that specify the type of this error, and a <code>message</code> property that holds the string passed to the constructor.</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mf">0</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;x must be positive.&quot;</span><span class="p">);</span>
 </code></pre></div>
-
 <h4><code>try</code> / <code>catch</code> / <code>finally</code></h4>
 <p><div class="highlight"><pre><span></span><code><span class="k">try</span>
 <span class="p">{</span>
@@ -2314,7 +2305,6 @@ Any statement can be labeled, though it is only helpful to label statements that
 <h3>Creating Objects</h3>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">point</span><span class="o">=</span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">0</span><span class="p">};</span>
 </code></pre></div>
-
 <p>每次执行到这个语句时，都会创建一个全新的对象。在 ES5 中，即使属性名是保留字，也不必加引号，但有一些 ES3 解释器要求有引号。最后一个属性后的逗号可有可无，但是 IE 中不允许出现这个逗号。</p>
 <p><code>new</code> 与构造函数创建对象：
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>   <span class="c1">// == {}</span>
@@ -2364,7 +2354,6 @@ Any statement can be labeled, though it is only helpful to label statements that
 <span class="c1">// 和 in 的区别在于是否能判别是存在的属性而被赋值为 undefined。</span>
 <span class="c1">// 注意是严格不等号。</span>
 </code></pre></div>
-
 <h3>Enumerating Properties</h3>
 <p>Built-in methods that objects inherit are not enumerable, but properties that the codes add are, unless made nonenumerable manually.</p>
 <p>在 ES5 中，还有两个函数返回对象的属性名。<br />
@@ -2467,7 +2456,6 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
 <span class="nx">a</span><span class="p">[</span><span class="mf">1000</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 </code></pre></div>
-
 <p>注意，稀疏数组和普通数组的区别在于，稀疏数组中有不存在的下标，而普通数组未被赋值的地方只是 <code>undefined</code> 而已。</p>
 <p>像这样 <code>var a = [,,,]</code> 定义的数组并不是稀疏的，只是它的值都是 <code>undefined</code> 而已。</p>
 <p>可以使用 <code>delete</code> 删除一些元素使得一个普通数组变为稀疏数组。</p>
@@ -2591,7 +2579,6 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="o">:</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="nx">length</span><span class="o">:</span><span class="mf">3</span><span class="p">};</span>
 <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">join</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">)</span>  <span class="c1">// =&gt; &quot;a+b+c&quot;</span>
 </code></pre></div>
-
 <h3>String As Arrays</h3>
 <p>字符串可以当作一种只读数组来用。一个广泛应用的例子就是 <code>str.charAt(i)</code> 常写作 <code>str[i]</code>。甚至可以调用一些方法
 <div class="highlight"><pre><span></span><code><span class="nx">s</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
@@ -2614,7 +2601,6 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <span class="c1">// immediately invoked</span>
 <span class="kd">var</span> <span class="nx">tensquare</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">){</span> <span class="k">return</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span> <span class="p">}(</span><span class="mf">10</span><span class="p">);</span>
 </code></pre></div>
-
 <p>如果没有<code>return</code>语句，则返回<code>undefined</code>。</p>
 <p>In nested functions, function declaration statements are "hoisted", so functions declared in this way may be invoked from code that appears before they defined. 但是这和变量的提前不同，变量只有声明提前，但是对其赋值不会提前。</p>
 <p>函数声明语句并不是真正的语句。它们不能在循环、<code>try</code> 或者 <code>with</code> 语句中出现。函数定义表达式则无此限制。</p>
@@ -2812,12 +2798,10 @@ These properties serve as class fields and methods that are associated with the 
 <h4>The <code>instanceof</code> Operator</h4>
 <div class="highlight"><pre><span></span><code><span class="nx">c</span> <span class="k">instanceof</span> <span class="nx">Complex</span>    <span class="c1">// =&gt; true</span>
 </code></pre></div>
-
 <p>The <code>instanceof</code> operator check whether <code>c</code> inherits from <code>Complex.prototype</code> instead of whether it is initialized by the <code>Complex</code> constructor. This inheritance need not to be direct. Nevertheless, the <code>instanceof</code> syntax reinforces the use of constructors as the public identity of the class.</p>
 <p>Remember that constructor are the public identity of the class, but prototypes are the fundarmental identity. </p>
 <div class="highlight"><pre><span></span><code><span class="nx">Complex</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isProtytypeOf</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span> <span class="c1">// =&gt; true</span>
 </code></pre></div>
-
 <p>One shortcoming of these approaches is that they do not allow querying the class of an object. only to test an object against a class specified. A more serious shortcoming arises in client-side JavaScript where a web application uses more than one frame or window. Each frame or window is a distinct execution context, and each has its own global object and its own set of constructor functions. Two objects created in two different contexts inherits from two identical but distinct constructors.</p>
 <h4>The <code>constructor</code> Property</h4>
 <p>可以直接比较对象的构造函数。
@@ -2965,7 +2949,6 @@ Note that this approach does not work for built-in methods because their methods
 <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="sr">/&quot;[^&quot;]*&quot;/g</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="s1">&#39;“$1”&#39;</span><span class="p">));</span>
 </code></pre></div>
-
 <h4>The <code>match()</code> Method</h4>
 <p>If the regular expression has the <code>g</code> flag, the method returns an array of all matches that appear in the string, otherwise, it still returns a array, but with its first element the matching string, and any remaining elements are the parenthesized subexpressions of the regular expression.
 <div class="highlight"><pre><span></span><code><span class="s1">&#39;1, 2, 3&#39;</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\d+/g</span><span class="p">)</span>         <span class="c1">// =&gt; [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</span>
@@ -3017,7 +3000,6 @@ Note that this approach does not work for built-in methods because their methods
 <span class="kr">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>  <span class="c1">// redeclaration raise an error</span>
 <span class="kd">var</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>    <span class="c1">// error</span>
 </code></pre></div>
-
 <h4>Scoped Variables: <code>let</code></h4>
 <p>Variables declared with <code>let</code> are defined only within the closest enclosing block.</p>
 <p><div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
@@ -3053,13 +3035,11 @@ Note the difference of evaluation of the initializer expressions between these t
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">];</span>
 <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">y</span> <span class="o">+</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">1</span><span class="p">];</span> <span class="c1">// x = 3, y = 2</span>
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">cartesian</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">theta</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">[</span><span class="nx">r</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">theta</span><span class="p">),</span> <span class="nx">r</span><span class="o">*</span><span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">theta</span><span class="p">)];</span>
 <span class="p">}</span>
 <span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="nx">cartesian</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">/</span><span class="mf">4</span><span class="p">);</span>
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">];</span> <span class="c1">// y = undefined</span>
 <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">];</span> <span class="c1">// 3 is lost</span>
 <span class="p">[,</span> <span class="nx">x</span><span class="p">,</span> <span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">4</span><span class="p">];</span> <span class="c1">// x=2, y=4</span>
@@ -3067,7 +3047,6 @@ Note the difference of evaluation of the initializer expressions between these t
 <span class="nx">all</span> <span class="o">=</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">4</span><span class="p">];</span>
 <span class="kd">let</span> <span class="p">[</span><span class="nx">one</span><span class="p">,</span> <span class="p">[</span><span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">],</span> <span class="mf">4</span><span class="p">];</span>
 </code></pre></div>
-
 <p>For object:
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="p">{</span><span class="nx">sin</span><span class="o">:</span><span class="nx">sine</span><span class="p">,</span> <span class="nx">cos</span><span class="o">:</span><span class="nx">cosine</span><span class="p">,</span> <span class="nx">tan</span><span class="o">:</span><span class="nx">tangent</span><span class="p">}</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">;</span>
 </code></pre></div></p>
@@ -3118,13 +3097,11 @@ It will enumerate through the value of any enumerable property of the object inc
 
 <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 </code></pre></div>
-
 <p><code>Iterator()</code> function iterates the own properties names and values. If a <code>true</code> is passed as the second optional argument, it will iterate only property names.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Problem: no for node or V8.</span>
 <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="p">[</span><span class="nx">k</span><span class="p">,</span><span class="nx">nv</span><span class="p">]</span> <span class="k">in</span> <span class="nx">Iterator</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">2</span><span class="p">}))</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">);</span>
 </code></pre></div>
-
 <h4>Generators</h4>
 <p>Any function that uses <code>yield</code> keyword is a generator function. The <code>yield</code> return values, and a <code>return</code> ay be used as a termination, but <code>return</code> with a value is forbidden in a generator. A generator behaves completely different than a regular function: instead of executing the body of the generator function, the invocation returns a generator object, which represents teh current execution state of the generator function. It automatically defines the <code>next()</code> method and throws a <code>StopIteration</code> when ending the execution.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// No for node or V8</span>
@@ -3133,7 +3110,6 @@ It will enumerate through the value of any enumerable property of the object inc
 <span class="p">}</span>
 <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 </code></pre></div>
-
 <h4>Array Comprehensions</h4>
 <p><div class="highlight"><pre><span></span><code><span class="c1">// No for node or V8</span>
 <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="nx">x</span><span class="o">%</span><span class="mf">2</span> <span class="o">===</span> <span class="mf">0</span><span class="p">)];</span>
@@ -3143,11 +3119,9 @@ It will enumerate through the value of any enumerable property of the object inc
 <div class="highlight"><pre><span></span><code><span class="c1">// No for node or V8</span>
 <span class="kd">var</span> <span class="nx">h</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">]))</span>
 </code></pre></div>
-
 <h4>Shorthand Functions</h4>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">square</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
 </code></pre></div>
-
 <h4>Multiple Catch Clauses</h4>
 <div class="highlight"><pre><span></span><code><span class="k">try</span> <span class="p">{</span>
     <span class="p">...</span>

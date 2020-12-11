@@ -2131,7 +2131,6 @@
     <span class="c1">// loop actions</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>可以使用 <code>n = getchar()</code> 代替。这样的效果完全一样，差别只在 <code>getchar()</code> 略快一些。对应的是 <code>putchar()</code> 函数。</p>
 <h4><code>for</code> Loop</h4>
 <p><code>for</code> 循环的过程：首次循环之前初始化，每次循环之前比对条件，每次循环结束后更新。</p>
@@ -2141,12 +2140,10 @@
     <span class="c1">// loop actions</span>
 <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">CONDITION</span><span class="p">)</span>
 </code></pre></div>
-
 <h4>判断质数</h4>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
     <span class="p">...</span>
 </code></pre></div>
-
 <h4>读取每行第一个字符</h4>
 <div class="highlight"><pre><span></span><code><span class="k">while</span><span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">())</span> <span class="o">==</span> <span class="sc">&#39;#&#39;</span><span class="p">)</span>
 <span class="p">{</span>
@@ -2155,7 +2152,6 @@
         <span class="k">continue</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h2 id="branching-and-jumps">Branching and Jumps<a class="headerlink" href="#branching-and-jumps" title="Permanent link">&para;</a></h2>
 <h4><code>ctype.h</code></h4>
 <table>
@@ -2246,7 +2242,6 @@
     <span class="n">STATEMENT</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>若无 <code>break</code> 语句，则程序执行完一个 <code>case</code> 之后不会跳出而是执行下面的语句。当然 <code>continue</code> 不能作用于 <code>switch</code>。</p>
 <h2 id="character-io-and-input-validation">Character I/O and Input Validation<a class="headerlink" href="#character-io-and-input-validation" title="Permanent link">&para;</a></h2>
 <h4>End Of File</h4>
@@ -2305,7 +2300,6 @@
 <p>向函数传递数组参数时，只能传送地址。这会导致函数对数组做意外修改的危险。为了保护参数不被修改，可以使用常量参数。</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">arr</span><span class="p">[]);</span>
 </code></pre></div>
-
 <h4>常量与指针</h4>
 <p>指向常量的指针定义为
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="kt">int</span> <span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
@@ -2403,7 +2397,6 @@ void prd(int (*arr)[2]);
 <div class="highlight"><pre><span></span><code><span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">15</span><span class="p">];</span>
 <span class="n">gets</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </code></pre></div>
-
 <p><code>gets()</code> 函数读入一行数据，并截去末尾换行，再添加上 <code>\0</code>。这个函数并不安全，因为它不判断输入的字符是否超出分配的空间，导致可能会覆盖其他数据。C11 已经取消了该函数，但是大多数编译器为了向前兼容，还保留了这一函数。</p>
 <h4><code>fgets()</code> 函数</h4>
 <p><code>fgets()</code> 用于从文件输入。第一个参数是字符数组名（指针），第二个参数是字符上限，第三个参数是源文件指针。它从源文件读入字符串，直到 <code>\n</code> 出现或者达到上限。如果是从控制台输入，则源文件为 <code>stdin</code>。此函数不会丢弃末尾换行符。</p>
@@ -2438,7 +2431,6 @@ void prd(int (*arr)[2]);
 <h4><code>strpbrk()</code> 函数</h4>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span> <span class="o">*</span> <span class="nf">strpbrk</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">s1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">s2</span><span class="p">);</span>
 </code></pre></div>
-
 <p>返回指向 <code>s2</code> 中任一字符在 <code>s1</code> 中第一次出现的位置的指针，未找到则返回 <code>NULL</code>。</p>
 <h4><code>sprintf()</code> 函数</h4>
 <p>此函数定义在 <code>stdio.h</code> 中，它和 <code>printf()</code> 非常相似，区别在于它输出到字符串而非控制台。<code>sprintf()</code> 的第一个参数是目标字符数组，之后的参数和 <code>printf()</code> 一样，根据这些生成的字符串存入之前的字符数组中。</p>
@@ -2722,7 +2714,6 @@ void prd(int (*arr)[2]);
 <p>如果执行正常，返回 0，否则返回 -1（比如超出文件界限）。</p>
 <div class="highlight"><pre><span></span><code><span class="kt">long</span> <span class="nf">ftell</span><span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span> <span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
-
 <p><code>ftell()</code> 返回指针 <code>fp</code> 到文件开头的距离，用于和 <code>fseek()</code> 配合使用。</p>
 <p>在二进制模式中，这两个函数可以精确地根据字节数做相应的操作，但是在文本模式中，会有一些偏差。尽管如此，根据 ANSI C 中的规定，它们的配合是没有问题的。</p>
 <p>这两个函数为 UNIX 文件而设计，在其它操作系统上不一定可以完全正常运行，比如二进制模式 <code>SEEK_END</code> 模式可能出错。但文本模式中，只要 <code>offset</code> 为 <code>0L</code>，或者模式为 <code>SEEK_SET</code>，就一定可以正常工作。</p>
@@ -2921,7 +2912,6 @@ void prd(int (*arr)[2]);
 <span class="kt">char</span> <span class="p">(</span><span class="o">*</span> <span class="n">b</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>
 <span class="kt">char</span> <span class="p">(</span><span class="o">*</span> <span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">int</span><span class="p">);</span>
 </code></pre></div>
-
 <ul>
 <li><code>a</code> 是函数，返回值是字符指针；</li>
 <li><code>b</code> 是指针，指向函数，函数返回字符类型；</li>
@@ -3036,7 +3026,6 @@ void prd(int (*arr)[2]);
 <div class="highlight"><pre><span></span><code><span class="cp">#define INFTY 100000</span>
 <span class="cp">#undef INFTY</span>
 </code></pre></div>
-
 <h3>File Inclusion: <code>#include</code></h3>
 <p><code>#include</code> 后若为 <code>&lt;&gt;</code>，则优先从标准目录中寻找文件，若为 <code>""</code>，则优先从当前目录或者从标明的路径中寻找文件。</p>
 <p>一个典型的头文件中一般包含：</p>

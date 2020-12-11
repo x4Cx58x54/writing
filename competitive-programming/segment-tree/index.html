@@ -1545,7 +1545,6 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>这里用一张 gif 展现上述的过程：</p>
 <p><img alt="" src="../img/segment-tree-build.webp" width="350px" /></p>
 <h3>区间修改</h3>
@@ -1575,7 +1574,6 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>更新时，我们是从最大的区间开始，递归向下处理。注意到，任何区间都是线段树上某些结点的并集。于是我们记目标区间为 <span class="arithmatex">\([l, r]\)</span>，当前区间为 <span class="arithmatex">\([cl, cr]\)</span>， 当前结点为 <span class="arithmatex">\(p\)</span> ，我们会遇到三种情况：</p>
 <p>1. 当前区间与目标区间没有交集：</p>
 <p><img alt="" src="../img/segment-tree-no-intersection.jpg" width="400px" /></p>
@@ -1585,11 +1583,9 @@
 <p>这时可以更新当前区间，别忘了乘上区间长度：</p>
 <div class="highlight"><pre><span></span><code><span class="n">tree</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">cr</span> <span class="o">-</span> <span class="n">cl</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="p">;</span>
 </code></pre></div>
-
 <p>然后打上懒标记（叶子结点可以不打标记，因为不会再向下传递了）：</p>
 <div class="highlight"><pre><span></span><code><span class="n">lazy</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">+=</span> <span class="n">d</span><span class="p">;</span>
 </code></pre></div>
-
 <p>这个标记表示“该区间上每一个点都要加上 <span class="arithmatex">\(d\)</span>”。因为原来可能存在标记，所以是 <code>+=</code> 而不是 <code>=</code>。</p>
 <p>3. 当前区间与目标区间相交，但不包含于其中：</p>
 <p><img alt="" src="../img/segment-tree-intersection.jpg" width="400px" /></p>
@@ -1598,16 +1594,13 @@
 <span class="n">lazy</span><span class="p">[</span><span class="n">p</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">lazy</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
 <span class="n">lazy</span><span class="p">[</span><span class="n">p</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">lazy</span><span class="p">[</span><span class="n">p</span><span class="p">];</span>
 </code></pre></div>
-
 <p>两个子结点的值也就需要相应的更新（后面乘的是区间长度）：</p>
 <div class="highlight"><pre><span></span><code><span class="n">tree</span><span class="p">[</span><span class="n">p</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">lazy</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">mid</span> <span class="o">-</span> <span class="n">cl</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
 <span class="n">tree</span><span class="p">[</span><span class="n">p</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">lazy</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">cr</span> <span class="o">-</span> <span class="n">mid</span><span class="p">);</span>
 </code></pre></div>
-
 <p>不要忘记清除该结点的懒标记：</p>
 <div class="highlight"><pre><span></span><code><span class="n">lazy</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </code></pre></div>
-
 <p>这个过程并不是递归的，我们只往下传递一层（所以叫“懒”标记啊！），以后要用再才继续传递。其实我们常常把这个传递过程封装成一个函数：</p>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">push_down</span><span class="p">(</span><span class="n">ll</span> <span class="n">p</span><span class="p">,</span> <span class="n">ll</span> <span class="n">len</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1618,11 +1611,9 @@
     <span class="n">lazy</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>然后在 <code>update</code> 函数中这样调用：</p>
 <div class="highlight"><pre><span></span><code><span class="n">push_down</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">cr</span> <span class="o">-</span> <span class="n">cl</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
 </code></pre></div>
-
 <p>传递完标记后，再递归地去处理左右两个子结点。</p>
 <p>下面的 gif 显示了为区间 <span class="arithmatex">\([1, 4]\)</span> 加上 <span class="arithmatex">\(1\)</span> 的过程：</p>
 <p><img alt="" src="../img/segment-tree-update.webp" width="600px" /></p>
@@ -1644,7 +1635,6 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>一样的递归，一样自顶至底地寻找，一样的合并信息。</p>
 <p>本文只介绍了最基本的线段树用法，其实线段树的题目千奇百怪，有很多技巧。在维护不同的信息时，需要注意是否需要乘区间长度、不同的标记之间是否相互影响等。</p>
                 

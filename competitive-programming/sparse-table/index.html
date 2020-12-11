@@ -1534,7 +1534,6 @@
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
         <span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))][</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]);</span>
 </code></pre></div>
-
 <p>原理如下图所示：</p>
 <p><img alt="" src="../img/sparse-table-init.svg" width="400px" /></p>
 <p>注意 <code>1&lt;&lt;i</code> 相当于 <span class="arithmatex">\(2^i\)</span>。</p>
@@ -1547,7 +1546,6 @@
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
     <span class="n">Log2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Log2</span><span class="p">[</span><span class="n">i</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
-
 <p>在线查询的代码如下：</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
 <span class="p">{</span>
@@ -1556,7 +1554,6 @@
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">max</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">s</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="n">r</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">s</span><span class="p">]));</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p>其实 ST 表不仅能处理最大值/最小值，凡是符合结合律且可重复贡献的信息查询都可以使用 ST 表高效进行。什么叫可重复贡献呢？设有一个二元运算 <span class="arithmatex">\(f(x, y)\)</span>，满足 <span class="arithmatex">\(f(a, a) = a\)</span>，则 <span class="arithmatex">\(f\)</span> 是可重复贡献的。显然最大值、最小值、最大公因数、最小公倍数、按位或、按位与都符合这个条件。可重复贡献的意义在于，可以对两个交集不为空的区间进行信息合并。</p>
                 
               

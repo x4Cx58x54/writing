@@ -1554,7 +1554,6 @@
     <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <p><a href="https://www.luogu.com.cn/problem/P3368" target="_blank">树状数组 2 - 洛谷</a></p>
 <p>如果需要单点取值，区间修改，则可以使用将每一个数据表示为与之前一位的差分，再使用树状数组存储。则单点取值的操作为 <code>sum(x)</code>，区间 <span class="arithmatex">\([x, y)\)</span> 增加 <span class="arithmatex">\(k\)</span> 的操作为 <code>add(x, k), add(y, -k)</code>。在存入差分数组初值时，应计算差分直接存入数组，以降低复杂度。</p>
                 

@@ -1682,7 +1682,6 @@
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="err">&lt;</span><span class="nc">ClassName</span><span class="o">&gt;</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">declarations</span><span class="p">,</span> <span class="n">definitions</span><span class="o">&gt;</span>
 </code></pre></div>
-
 <h4>成员函数</h4>
 <p><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="o">&lt;</span><span class="n">FunctionName</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span> <span class="o">&lt;</span><span class="p">,</span> <span class="n">arglist</span><span class="o">&gt;</span><span class="p">):</span>
     <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
@@ -1726,7 +1725,6 @@
 
 <span class="o">...</span>
 </code></pre></div>
-
 <p>在 <code>__init__.py</code> 中亦可引用。则在引用到此模块时自动可以执行其中的 <code>import</code>。</p>
 <h4>变量封装</h4>
 <p>Python 没有变量访问权限机制。</p>
@@ -1746,7 +1744,6 @@
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">People</span><span class="p">):</span>
     <span class="k">pass</span>
 </code></pre></div>
-
 <p>事实上所有的类斗继承自 <code>object</code> 类。</p>
 <h4>重载成员函数</h4>
 <p>子类对父类的重载不需要其他说明，直接在子类定义中重写即可。<br />
@@ -1782,7 +1779,6 @@
 
     <span class="k">return</span> <span class="bp">NotImplemented</span>
 </code></pre></div>
-
 <h2 id="chapter-4-expecting-the-unexpected">Chapter 4: Expecting the Unexpected<a class="headerlink" href="#chapter-4-expecting-the-unexpected" title="Permanent link">&para;</a></h2>
 <h4>Raise An Exception</h4>
 <div class="highlight"><pre><span></span><code><span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Msg&quot;</span><span class="p">)</span>
@@ -1791,7 +1787,6 @@
 <span class="k">raise</span> <span class="ne">ZeroDivisionError</span>
 <span class="k">raise</span> <span class="c1"># Re-raise the last exception</span>
 </code></pre></div>
-
 <h4>Try-Except</h4>
 <p><div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
     <span class="o">&lt;</span><span class="n">statements</span><span class="o">&gt;</span>
@@ -1875,7 +1870,6 @@
 <span class="n">Stock</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Stock&quot;</span><span class="p">,</span> <span class="s2">&quot;symbol current high low&quot;</span><span class="p">)</span> 
 <span class="n">stock</span> <span class="o">=</span> <span class="n">Stock</span><span class="p">(</span><span class="s2">&quot;FB&quot;</span><span class="p">,</span> <span class="mf">75.00</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mf">75.03</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mf">74.90</span><span class="p">)</span> 
 </code></pre></div>
-
 <p>相同地，namedtuple 也可以被解包，但它提供一种更方便的方式：
 <div class="highlight"><pre><span></span><code><span class="n">stock</span><span class="o">.</span><span class="n">current</span>
 </code></pre></div></p>
@@ -1892,7 +1886,6 @@
 若键不存在，则返回 <code>None</code>，或者返回给定的默认值（第二个参数）。</p>
 <div class="highlight"><pre><span></span><code><span class="n">stocks</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;GOOG&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
-
 <p><code>setdefault</code> 也返回键对应的值，若键不存在，则以此键和默认值建立新项。</p>
 <p>除了列表和字典，字典可以有多种键类型，包括对象。甚至在同一字典中可以同时有多种键。</p>
 <p><code>keys() values() items()</code> 三个方法分别返回键、值和键值对元组的迭代器，可以将它们像列表一样使用，它们在 <code>for</code> 循环中尤其有用。

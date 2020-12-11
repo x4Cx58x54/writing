@@ -1524,12 +1524,100 @@
   }
 </style>
 
+<script>
+window.onload = function() {
+  var btnRandom = document.getElementById('random');
+  var navigation = `Page(title='Welcome', url='.')
+Section(title='Mathematics')
+    Page(title='Essence of Linear Algebra', url='maths/linear-algebra/essence-of-linear-algebra/')
+    Page(title='Linear Algebra', url='maths/linear-algebra/linear-algebra/')
+    Section(title='Probability Theory')
+        Page(title='Probability Theory', url='maths/probability-theory/probability-theory/')
+        Section(title='Problemsets')
+            Page(title='Events and Probability', url='maths/probability-theory/events-and-probability/')
+            Page(title='Random Variables', url='maths/probability-theory/random-variables/')
+    Page(title='Statistics', url='maths/statistics/statistics/')
+    Page(title='Discrete Maths', url='maths/discrete-maths/discrete-maths/')
+    Page(title='Calculus', url='maths/calculus/calculus/')
+    Page(title='Complex Analysis', url='maths/complex-analysis/complex-analysis/')
+    Page(title='Integral Transforms', url='maths/integral-transforms/integral-transforms/')
+    Page(title='3Blue1Brown', url='maths/3b1b/3b1b/')
+    Page(title='Memos', url='maths/memos/memos/')
+Section(title='Languages')
+    Page(title='C Primer Plus', url='c/c-primer-plus/')
+    Page(title='C++ Notes', url='cpp/cpp-notes/')
+    Page(title='Python 3 OOP', url='python/python-3-object-oriented-programming/')
+    Section(title='LaTeX')
+        Page(title='LaTeX Cheatsheet', url='latex/latex-cheatsheet/')
+        Page(title='LaTeX Maths Symbols', url='latex/latex-maths/')
+    Section(title='Regex')
+        Page(title='Introducing Regular Expressions', url='regex/introducing-regular-expressions/')
+        Page(title='Regular Expressions Cookbook', url='regex/regular-expressions-cookbook/')
+    Page(title='JavaScript the Definitive Guide', url='web/javascript-the-definitive-guide/')
+    Page(title='HTML Cheatsheet', url='web/html-cheatsheet/')
+    Page(title='CSS Cheatsheet', url='web/css-cheatsheet/')
+Section(title='AI')
+    Page(title='Deep Learning', url='ai/deep-learning/deep-learning/')
+Section(title='Competitive Programming')
+    Section(title='Mathematics')
+        Page(title='素数', url='competitive-programming/prime/')
+        Page(title='扩展欧几里得', url='competitive-programming/exgcd/')
+        Page(title='组合数', url='competitive-programming/combination/')
+        Page(title='快速幂', url='competitive-programming/binexp/')
+        Page(title='类斐波那契数列', url='competitive-programming/fibonacci/')
+        Page(title='GCD Inverse', url='competitive-programming/gcd-inverse/')
+        Page(title='拉格朗日插值', url='competitive-programming/lagrange-interpolation/')
+    Section(title='Data Structures')
+        Page(title='树状数组', url='competitive-programming/fenwick/')
+        Page(title='线段树', url='competitive-programming/segment-tree/')
+        Page(title='堆', url='competitive-programming/heap/')
+        Page(title='ST 表', url='competitive-programming/sparse-table/')
+        Page(title='并查集', url='competitive-programming/ufds/')
+    Section(title='Dynamic Programming')
+        Page(title='直线交点数', url='competitive-programming/intersection-points/')
+        Page(title='最长上升序列', url='competitive-programming/lis/')
+        Page(title='公共子序列', url='competitive-programming/number-of-common-substrings/')
+    Section(title='Basics')
+        Page(title='快速排序 / 第 k 小的数', url='competitive-programming/quicksort/')
+        Page(title='平面最近点对', url='competitive-programming/nearest-point-pair/')
+    Section(title='Misc')
+        Page(title='Josephus Survivor', url='competitive-programming/josephus-survivor/')
+        Page(title='找筷子', url='competitive-programming/chopsticks/')
+        Page(title='Double Cola', url='competitive-programming/double-cola/')
+        Page(title='字母计数', url='competitive-programming/alphabetical-coding/')
+        Page(title='N! 末尾零数', url='competitive-programming/number-of-trailing-zeros-of-n%21/')
+Section(title='CS')
+    Page(title='Computer Organization', url='computer-organization/computer-organization/')
+    Page(title='The Practice of Programming', url='computer-programming/the-practice-of-programming/')
+Section(title='Misc')
+    Section(title='Electromagnetics')
+        Page(title='Electromagnetics', url='electromagnetics/electromagnetics/')
+        Section(title='Problemsets')
+            Page(title='Electric Field', url='electromagnetics/electric-field/')
+            Page(title='Magnetic Field', url='electromagnetics/magnetic-field/')
+            Page(title='Induction', url='electromagnetics/induction/')
+            Page(title='EM Wave', url='electromagnetics/em-wave/')
+    Page(title='Classical Control Theory', url='control-theory/classical-control/')
+    Section(title='Reading Notes')
+        Page(title='如何阅读一本书', url='reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/')
+        Page(title='中国哲学简史', url='reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/')
+        Page(title='惊人的假说', url='reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/')
+        Page(title='未来简史', url='reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/')`;
+  navigation = navigation.replace(/\r?\n|\r/g, '');
+  navigation = navigation.replace(/.*?url='\/'/, '');
+  navigation = navigation.replace(/Section\(title='Reading Notes'\).*/, '');
+  var posts = navigation.match(/(?<=url=').*?(?=')/g);
+  var randomPostUrl = posts[Math.floor(Math.random() * posts.length)];
+  btnRandom.href = randomPostUrl;
+}
+</script>
+
 <div align="center">
 
   <h1 class="title"><b>Gibberish. Gobbledegook. Abracadabra. Fantastic&nbsp;Talk.</b></h1>
 
   <p>
-    <a href="javascript:app.dialog$.next('Do have fun here, please!')" class="md-button">About</a>
+    <a class="md-button" id="random">Random</a>
     &ensp;
     <a href="https://github.com/x4Cx58x54" class="md-button md-button--primary">x4Cx58x54</a>
   </p>

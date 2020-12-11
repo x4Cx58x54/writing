@@ -1586,14 +1586,12 @@ A normal pointer cannot point to a constant for this constant can be modified th
 <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="n">p1</span><span class="p">;</span>
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">;</span>
 </code></pre></div>
-
 <h4>Dynamic Memory</h4>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">;</span>
 <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>
 <span class="kt">int</span> <span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
 <span class="k">delete</span> <span class="p">[]</span> <span class="n">p</span><span class="p">;</span>
 </code></pre></div>
-
 <h3>Reference</h3>
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
 <span class="kt">int</span> <span class="o">&amp;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
@@ -1615,7 +1613,6 @@ A normal pointer cannot point to a constant for this constant can be modified th
     <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h4>Function and Pointer</h4>
 <p>The adress of a function is the name.</p>
 <p><code>double (*p) (int)</code><br />
@@ -1629,7 +1626,6 @@ p is a pointer of a function.</p>
 <span class="p">...</span>
 <span class="n">f</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
 </code></pre></div>
-
 <h4>Function and Reference</h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span>
 </code></pre></div>
@@ -1652,11 +1648,9 @@ Replace the code where the function is called, save time at the cost of memory.<
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arrf</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3>Const</h3>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </code></pre></div>
-
 <h3>Templates</h3>
 <h4>Function Templates</h4>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
@@ -1665,7 +1659,6 @@ Replace the code where the function is called, save time at the cost of memory.<
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h4>Class Templates</h4>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">circle</span>
@@ -1673,7 +1666,6 @@ Replace the code where the function is called, save time at the cost of memory.<
     <span class="p">...</span>
 <span class="p">};</span>
 </code></pre></div>
-
 <h4>Template Specialization</h4>
 <p>To specify a different behavior for some data types.<br />
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
@@ -1721,7 +1713,6 @@ Replace the code where the function is called, save time at the cost of memory.<
 <span class="c1">//initialization</span>
 <span class="n">struct1</span> <span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">};</span>
 </code></pre></div>
-
 <h4>Union</h4>
 <p><em>Union types can save memory</em><br />
 <div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="nc">union1</span>
@@ -1733,7 +1724,6 @@ Replace the code where the function is called, save time at the cost of memory.<
 <h4>Enum</h4>
 <div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="nc">spectrum</span> <span class="p">{</span><span class="n">r</span><span class="p">,</span> <span class="n">o</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">u</span><span class="p">};</span>
 </code></pre></div>
-
 <h2 id="object-oriented-programming">Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permanent link">&para;</a></h2>
 <p><em>Abstraction, Encapsulation, Inheritance, Polymorphism</em>  </p>
 <h3>Object Basics, <em>Abstraction</em> and <em>Encapsulation</em></h3>
@@ -1756,7 +1746,6 @@ Replace the code where the function is called, save time at the cost of memory.<
     <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h4>Access Specifiers</h4>
 <p><em><code>public, protected, private</code></em><br />
 <code>Public</code> methods can be accessed anywhere within the scope;<br />
@@ -1777,7 +1766,6 @@ Replace the code where the function is called, save time at the cost of memory.<
     <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
-
 <h4>Copy Constructor</h4>
 <p>calling:</p>
 <ul>
@@ -1806,7 +1794,6 @@ Reference is a <strong>must</strong>.<br />
 <h4>Constant Object</h4>
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">ClassName</span> <span class="n">ObjName</span><span class="p">;</span>
 </code></pre></div>
-
 <h4>Constant Member Function</h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">ClassName</span><span class="o">::</span><span class="n">FunctionName</span><span class="p">()</span> <span class="k">const</span>
 <span class="p">{</span>
@@ -1828,7 +1815,6 @@ cannot change any values and connot access non-static member functions</p>
         <span class="n">circle</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span><span class="o">:</span> <span class="n">radius</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">color</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">};</span>
 </code></pre></div>
-
 <h4>Friend</h4>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">circle</span>
 <span class="p">{</span>
@@ -1842,7 +1828,6 @@ cannot change any values and connot access non-static member functions</p>
     <span class="k">return</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h4>This</h4>
 <h4>Static Member</h4>
 <p>One member shared by the whole class.
@@ -1945,7 +1930,6 @@ A derived class inherits all base methods with the following exceptions:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Constructor</span>
 <span class="n">derived</span><span class="o">::</span><span class="n">derived</span><span class="p">(</span><span class="n">arglist</span><span class="p">)</span><span class="o">:</span> <span class="n">base</span><span class="p">(</span><span class="n">arglist</span><span class="p">);</span>
 </code></pre></div>
-
 <h4>Compatibility</h4>
 <p>In public inhertance, a object/reference/pointer of a derived class can be assigned to a base one.</p>
 <h3><em>Polymorphism</em></h3>
