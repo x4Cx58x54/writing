@@ -481,6 +481,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../matrix-algebra/matrix-algebra/" title="Matrix Algebra" class="md-nav__link">
+      Matrix Algebra
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../discrete-maths/discrete-maths/" title="Discrete Maths" class="md-nav__link">
       Discrete Maths
     </a>
@@ -1938,9 +1950,13 @@ c_1, c_2 \in \mathbb{R}.
 <div class="arithmatex">\[
 R(AB) \le \min\{(R(A), R(B)\}.
 \]</div>
-<p>矩阵和的秩不大于秩之和，</p>
+<p>若 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 的方阵，且 <span class="arithmatex">\(B\)</span> 是任意可以与之相乘的矩阵，则有</p>
 <div class="arithmatex">\[
-R(A+B) \le R(A) + R(B).
+R(AB) \ge R(A) + R(B) - n.
+\]</div>
+<p>对于两矩阵之和的秩，有</p>
+<div class="arithmatex">\[
+|R(A) - R(B)| \le R(A+B) \le R(A) + R(B).
 \]</div>
 <details class="note" open="open"><summary>Circuit in Matrix Form</summary><p>电路拓扑结构与参考方向如图所示.</p>
 <p><img alt="" src="../img/la_circuit.png" width="200px" /></p>
@@ -2012,9 +2028,12 @@ N_\mathrm{node} - N_\mathrm{edge} + N_\mathrm{indep.\ loop} = 1.
 <h4>系数矩阵和增广矩阵的秩判据</h4>
 <p>对于 <span class="arithmatex">\(n\)</span> 元线性方程组 <span class="arithmatex">\(A\boldsymbol{x} = \boldsymbol{b}\)</span>，系数矩阵为 <span class="arithmatex">\(A\)</span>，增广矩阵为 <span class="arithmatex">\((A, \boldsymbol{b})\)</span>：</p>
 <ul>
-<li><span class="arithmatex">\(R(A) &lt; R(A, \boldsymbol{b})\)</span> 时，零系数得到非零和，无解；</li>
+<li><span class="arithmatex">\(R(A) &lt; R(A, \boldsymbol{b})\)</span> 时，零系数得到非零和，无解（称该系统为 consistent system）；</li>
+<li><span class="arithmatex">\(R(A) = R(A, \boldsymbol{b})\)</span> 时，<span class="arithmatex">\([A~|~\boldsymbol{b}]\)</span> 与 <span class="arithmatex">\(A\)</span> 张成的空间相同，有解（称该系统为 inconsistent system）；<ul>
 <li><span class="arithmatex">\(R(A) = R(A, \boldsymbol{b}) = n\)</span> 时，有唯一解；</li>
 <li><span class="arithmatex">\(R(A) = R(A, \boldsymbol{b}) &lt; n\)</span> 时，有无穷多解.</li>
+</ul>
+</li>
 </ul>
 <p>另外，<span class="arithmatex">\(A\boldsymbol{x} = \boldsymbol{0}\)</span> 有解的充要条件是 <span class="arithmatex">\(R(A) &lt; n\)</span>.</p>
 <h4>行秩与列秩判据</h4>
@@ -2142,6 +2161,9 @@ QQ^\top = I.
 Q^\top = Q^{-1}.
 \]</div>
 <p>正交矩阵所对应的线性变换不会改变空间中向量的长度，即 <span class="arithmatex">\(|\lambda| = 1\)</span>.</p>
+<p>若 <span class="arithmatex">\(Q\)</span> 为方阵，则 <span class="arithmatex">\(|Q| = \pm 1\)</span>.</p>
+<p><span class="arithmatex">\(Q_{m\times n}\cdot Q_{m\times n} = n\)</span>.</p>
+<p><span class="arithmatex">\(Q_1 \otimes Q_2\)</span> 仍为正交矩阵.</p>
 <h3>Gram-Schmidt Orthonormalization</h3>
 <p>逐个处理需要正交化的向量 <span class="arithmatex">\(\boldsymbol{v}\)</span>. 将向量 <span class="arithmatex">\(\boldsymbol{v}_k\)</span> 分别减去其在已正交化的向量 <span class="arithmatex">\(\boldsymbol{u}_i\)</span> 上的投影，</p>
 <div class="arithmatex">\[
