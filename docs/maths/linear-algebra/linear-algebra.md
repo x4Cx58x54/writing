@@ -378,10 +378,16 @@ $$
 R(AB) \le \min\{(R(A), R(B)\}.
 $$
 
-矩阵和的秩不大于秩之和，
+若 $A$ 是 $n\times n$ 的方阵，且 $B$ 是任意可以与之相乘的矩阵，则有
 
 $$
-R(A+B) \le R(A) + R(B).
+R(AB) \ge R(A) + R(B) - n.
+$$
+
+对于两矩阵之和的秩，有
+
+$$
+|R(A) - R(B)| \le R(A+B) \le R(A) + R(B).
 $$
 
 ???+ Note "Circuit in Matrix Form"
@@ -483,9 +489,10 @@ $$
 
 对于 $n$ 元线性方程组 $A\boldsymbol{x} = \boldsymbol{b}$，系数矩阵为 $A$，增广矩阵为 $(A, \boldsymbol{b})$：
 
-* $R(A) < R(A, \boldsymbol{b})$ 时，零系数得到非零和，无解；
-* $R(A) = R(A, \boldsymbol{b}) = n$ 时，有唯一解；
-* $R(A) = R(A, \boldsymbol{b}) < n$ 时，有无穷多解.
+* $R(A) < R(A, \boldsymbol{b})$ 时，零系数得到非零和，无解（称该系统为 consistent system）；
+* $R(A) = R(A, \boldsymbol{b})$ 时，$[A~|~\boldsymbol{b}]$ 与 $A$ 张成的空间相同，有解（称该系统为 inconsistent system）；
+    * $R(A) = R(A, \boldsymbol{b}) = n$ 时，有唯一解；
+    * $R(A) = R(A, \boldsymbol{b}) < n$ 时，有无穷多解.
 
 另外，$A\boldsymbol{x} = \boldsymbol{0}$ 有解的充要条件是 $R(A) < n$.
 
@@ -648,6 +655,12 @@ Q^\top = Q^{-1}.
 $$
 
 正交矩阵所对应的线性变换不会改变空间中向量的长度，即 $|\lambda| = 1$.
+
+若 $Q$ 为方阵，则 $|Q| = \pm 1$.
+
+$Q_{m\times n}\cdot Q_{m\times n} = n$.
+
+$Q_1 \otimes Q_2$ 仍为正交矩阵.
 
 ### Gram-Schmidt Orthonormalization
 
