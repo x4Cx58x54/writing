@@ -1882,10 +1882,10 @@
 
 <span class="c">% Main Document 正文</span>
 <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-<span class="k">\maketitle</span><span class="nb">{}</span>
-<span class="k">\tebleofcontents</span><span class="nb">{}</span>
+<span class="k">\maketitle</span>
+<span class="k">\tableofcontents</span>
 <span class="k">\\</span> <span class="c">% Linebreak</span>
-<span class="k">\newpage</span><span class="nb">{}</span>
+<span class="k">\clearpage</span>
 Hello World!
 <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </code></pre></div>
@@ -1909,6 +1909,7 @@ content
 <span class="k">\documentclass</span><span class="na">[utf8, ...]</span><span class="nb">{</span>...<span class="nb">}</span>    <span class="c">% UTF-8 编码</span>
 <span class="k">\documentclass</span><span class="na">[a4paper, ...]</span><span class="nb">{</span>...<span class="nb">}</span> <span class="c">% 纸张大小</span>
 <span class="k">\documentclass</span><span class="na">[twoside, ...]</span><span class="nb">{</span>...<span class="nb">}</span> <span class="c">% 双面模式，偶数页的左右页边距交换</span>
+<span class="k">\documentclass</span><span class="na">[landscape, ...]</span><span class="nb">{</span>...<span class="nb">}</span> <span class="c">% 纸张方向为横向</span>
 </code></pre></div>
 <h2 id="_2">中文支持<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="na">[UTF8]</span><span class="nb">{</span>ctexart<span class="nb">}</span> <span class="c">% 相应地，也可以使用 ctexbook、ctexrep</span>
@@ -1951,11 +1952,11 @@ content
 <h3>中文标题设置</h3>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>ctexcap<span class="nb">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">\ctexset</span><span class="nb">{</span>section=<span class="nb">{</span>name=<span class="nb">{</span>~,~<span class="nb">}</span>,format=<span class="nb">{</span><span class="k">\center\heiti\zihao</span><span class="nb">{</span>3<span class="nb">}</span><span class="k">\textbf</span><span class="nb">}}}</span>
+<div class="highlight"><pre><span></span><code><span class="k">\ctexset</span><span class="nb">{</span>section=<span class="nb">{</span>name=<span class="nb">{</span>第 , 章<span class="nb">}</span>,format=<span class="nb">{</span><span class="k">\center\heiti\zihao</span><span class="nb">{</span>3<span class="nb">}</span><span class="k">\bfseries</span><span class="nb">}}}</span>
 <span class="k">\ctexset</span><span class="nb">{</span>subsection=<span class="nb">{</span>format=<span class="nb">{</span><span class="k">\heiti\zihao</span><span class="nb">{</span>4<span class="nb">}}}}</span>
 <span class="k">\ctexset</span><span class="nb">{</span>subsubsection=<span class="nb">{</span>format=<span class="nb">{</span><span class="k">\kaishu\zihao</span><span class="nb">{</span>-4<span class="nb">}}}}</span>
-<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\abstractname</span><span class="nb">}{</span><span class="k">\zihao</span><span class="nb">{</span>3<span class="nb">}</span>摘<span class="k">\ </span>要<span class="nb">}</span>
-<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\contentsname</span><span class="nb">}{</span>目<span class="k">\hspace</span><span class="nb">{</span>30pt<span class="nb">}</span>录<span class="nb">}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\abstractname</span><span class="nb">}{</span><span class="k">\zihao</span><span class="nb">{</span>-3<span class="nb">}</span><span class="k">\bfseries</span><span class="nb">{</span>摘<span class="k">\quad</span> 要<span class="nb">}}</span>
+<span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\contentsname</span><span class="nb">}{</span>目<span class="k">\quad</span> 录<span class="nb">}</span>
 </code></pre></div>
 <h2 id="_3">图片<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
@@ -2066,7 +2067,6 @@ content
 ...
 </code></pre></div>
 <h3>自定义列表 | enumitem</h3>
-<p>文档 <a href="http://www.texnia.com/archive/enumitem.pdf" target="_blank">texnia.com/archive/enumitem.pdf</a></p>
 <p><a href="https://www.latexstudio.net/archives/51588.html" target="_blank">LaTeX 技巧 944: 两个例子让你熟悉 enumitem 宏包</a></p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>enumitem<span class="nb">}</span>
 </code></pre></div>
@@ -2102,7 +2102,7 @@ content
 <h2 id="_9">参考文献<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>thebibliography<span class="nb">}{</span>0<span class="nb">}</span>
 <span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>section<span class="nb">}{</span>参考文献<span class="nb">}</span>
-    <span class="k">\bibitem</span><span class="nb">{</span>标签名<span class="nb">}</span> 参考文献信息
+  <span class="k">\bibitem</span><span class="nb">{</span>标签名<span class="nb">}</span> 参考文献信息
 <span class="k">\end</span><span class="nb">{</span>thebibliography<span class="nb">}</span>
 </code></pre></div>
 <p>需要引用时</p>
@@ -2114,7 +2114,7 @@ content
 <span class="k">\begin</span><span class="nb">{</span>flushleft<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>thebibliography<span class="nb">}{</span>0<span class="nb">}</span>
 <span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>section<span class="nb">}{</span>参考文献<span class="nb">}</span>
-    <span class="k">\bibitem</span><span class="nb">{</span>1<span class="nb">}</span> Foo Bar, Qaz.
+  <span class="k">\bibitem</span><span class="nb">{</span>1<span class="nb">}</span> Foo Bar, Qaz.
 <span class="k">\end</span><span class="nb">{</span>thebibliography<span class="nb">}</span>
 <span class="k">\end</span><span class="nb">{</span>flushleft<span class="nb">}</span>
 </code></pre></div>
@@ -2168,7 +2168,6 @@ content
 <span class="k">\thispagestyle</span><span class="nb">{</span>...<span class="nb">}</span> <span class="c">% 单独设置一页的样式</span>
 </code></pre></div>
 <h3>fancyhdr</h3>
-<p>文档 <a href="http://www.ctex.org/documents/packages/layout/fancyhdr.htm">ctex.org/documents/packages/layout/fancyhdr.htm</a></p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>fancyhdr<span class="nb">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="k">\pagestyle</span><span class="nb">{</span>fancy<span class="nb">}</span>
@@ -2264,7 +2263,6 @@ content
 <span class="k">\setlength</span><span class="nb">{</span><span class="k">\parskip</span><span class="nb">}{</span>6pt<span class="nb">}</span>       <span class="c">% 段落间距</span>
 </code></pre></div>
 <h2 id="algorithm2e">算法 | algorithm2e<a class="headerlink" href="#algorithm2e" title="Permanent link">&para;</a></h2>
-<p>文档 <a href="http://mirrors.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf" target="_blank">mirrors.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf</a></p>
 <div class="highlight"><pre><span></span><code><span class="k">\usepackage</span><span class="nb">{</span>algorithm2e<span class="nb">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="k">\begin</span><span class="nb">{</span>algorithm<span class="nb">}</span>
