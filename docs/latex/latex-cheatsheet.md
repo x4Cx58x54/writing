@@ -24,10 +24,10 @@ title: LaTeX Cheatsheet
 
 % Main Document 正文
 \begin{document}
-\maketitle{}
-\tebleofcontents{}
+\maketitle
+\tableofcontents
 \\ % Linebreak
-\newpage{}
+\clearpage
 Hello World!
 \end{document}
 ```
@@ -56,6 +56,7 @@ content
 \documentclass[utf8, ...]{...}    % UTF-8 编码
 \documentclass[a4paper, ...]{...} % 纸张大小
 \documentclass[twoside, ...]{...} % 双面模式，偶数页的左右页边距交换
+\documentclass[landscape, ...]{...} % 纸张方向为横向
 ```
 
 ## 中文支持
@@ -88,11 +89,11 @@ content
 ```
 
 ```latex
-\ctexset{section={name={~,~},format={\center\heiti\zihao{3}\textbf}}}
+\ctexset{section={name={第 , 章},format={\center\heiti\zihao{3}\bfseries}}}
 \ctexset{subsection={format={\heiti\zihao{4}}}}
 \ctexset{subsubsection={format={\kaishu\zihao{-4}}}}
-\renewcommand{\abstractname}{\zihao{3}摘\ 要}
-\renewcommand{\contentsname}{目\hspace{30pt}录}
+\renewcommand{\abstractname}{\zihao{-3}\bfseries{摘\quad 要}}
+\renewcommand{\contentsname}{目\quad 录}
 ```
 
 
@@ -258,8 +259,6 @@ content
 
 ### 自定义列表 | enumitem
 
-文档 [texnia.com/archive/enumitem.pdf](http://www.texnia.com/archive/enumitem.pdf){: target=_blank}
-
 [LaTeX 技巧 944: 两个例子让你熟悉 enumitem 宏包](https://www.latexstudio.net/archives/51588.html){: target=_blank}
 
 ```latex
@@ -321,7 +320,7 @@ content
 ```latex
 \begin{thebibliography}{0}
 \addcontentsline{toc}{section}{参考文献}
-    \bibitem{标签名} 参考文献信息
+  \bibitem{标签名} 参考文献信息
 \end{thebibliography}
 ```
 
@@ -339,7 +338,7 @@ content
 \begin{flushleft}
 \begin{thebibliography}{0}
 \addcontentsline{toc}{section}{参考文献}
-    \bibitem{1} Foo Bar, Qaz.
+  \bibitem{1} Foo Bar, Qaz.
 \end{thebibliography}
 \end{flushleft}
 ```
@@ -427,8 +426,6 @@ content
 ```
 
 ### fancyhdr
-
-文档 [ctex.org/documents/packages/layout/fancyhdr.htm](http://www.ctex.org/documents/packages/layout/fancyhdr.htm)
 
 ```latex
 \usepackage{fancyhdr}
@@ -584,8 +581,6 @@ content
 ```
 
 ## 算法 | algorithm2e
-
-文档 [mirrors.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf](http://mirrors.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf){: target=_blank}
 
 ```latex
 \usepackage{algorithm2e}
