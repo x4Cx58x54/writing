@@ -674,7 +674,7 @@ $$
 
 过程演示如下[^gramschmidt].
 
-[^gramschmidt]: [https://en.wikipedia.org/wiki/File:Gram-Schmidt_orthonormalization_process.gif](https://en.wikipedia.org/wiki/File:Gram-Schmidt_orthonormalization_process.gif){: target="_blank"}
+[^gramschmidt]: <https://en.wikipedia.org/wiki/File:Gram-Schmidt_orthonormalization_process.gif>{: target="_blank"}
 
 ![](https://upload.wikimedia.org/wikipedia/commons/e/ee/Gram-Schmidt_orthonormalization_process.gif)
 

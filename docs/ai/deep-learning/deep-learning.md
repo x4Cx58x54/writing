@@ -1,7 +1,7 @@
 # Deep Learning
 
 >*Ian Goodfellow, Yoshua Bengio, Aaron Courville*  
-*2016, MIT Press, [deeplearningbook.org](https://www.deeplearningbook.org){:target="_blank"}*  
+*2016, MIT Press, <https://www.deeplearningbook.org>{:target="_blank"}*  
 
 ---
 

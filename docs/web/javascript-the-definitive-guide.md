@@ -1720,7 +1720,7 @@ Douglas Crockford's *JavaScript: The Good Parts* recommends using only the goods
 * Use `var` only at the first line of a function body;
 * Avoid global variables.
 
-Online code-quality checking tool: [http://jslint.com](http://jslint.com){:target+"_black"}
+Online code-quality checking tool: <http://jslint.com>{:target+"_black"}
 
 #### Subsets for Security
 Avoid:

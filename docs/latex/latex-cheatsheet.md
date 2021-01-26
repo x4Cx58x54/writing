@@ -167,7 +167,7 @@ content
 
 ## 表格
 
-表格生成器 [tablesgenerator.com](http://www.tablesgenerator.com/){: target=_blank}
+表格生成器 <http://www.tablesgenerator.com/>{: target=_blank}
 
 ### 三线表
 
@@ -771,7 +771,8 @@ content
 
 ## See Also
 
-* [https://www.resurchify.com/latex_tutorial/latex_tutorial.php](https://www.resurchify.com/latex_tutorial/latex_tutorial.php){: target=_blank}
-* [https://liam.page/categories/LaTeX/](https://liam.page/categories/LaTeX/){: target=_blank}
+* <https://www.latex-project.org/>{: target=_blank}
+* <https://www.resurchify.com/latex_tutorial/latex_tutorial.php>{: target=_blank}
+* <https://liam.page/categories/LaTeX/>{: target=_blank}
 
 {% endraw %}

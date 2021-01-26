@@ -96,4 +96,4 @@ int main(void)
 
 ---
 
-原文载于[此处](https://www.luogu.com.cn/blog/x4Cx58x54/solution-p1246){:target="_blank"}
+原文载于 <https://www.luogu.com.cn/blog/x4Cx58x54/solution-p1246>{:target="_blank"}

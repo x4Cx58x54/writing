@@ -1,6 +1,6 @@
 # 拉格朗日插值 | Lagrange Interpolation
 
-本文原载于 [OI-wiki](https://oi-wiki.org/math/poly/lagrange/)，此处节录本人修改部分。
+本文原载于 <https://oi-wiki.org/math/poly/lagrange/>，此处节录本人修改部分。
 
 [拉格朗日插值 - 洛谷](https://www.luogu.com.cn/problem/P4781){:target="_blank"}
 

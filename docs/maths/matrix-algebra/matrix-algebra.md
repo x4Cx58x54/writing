@@ -1,7 +1,7 @@
 # Matrix Algebra
 
 > *Matrix Algebra: Theory, Computations and Applications in Statisitcs*  
-*James E. Gentle [http://mason.gmu.edu/~jgentle/books/matbk.htm](http://mason.gmu.edu/~jgentle/books/matbk.htm){:target="_blank"}*  
+*James E. Gentle <http://mason.gmu.edu/~jgentle/books/matbk.htm>{:target="_blank"}*  
 *2007, Springer, 2017, 世界图书出版公司*
 
 ---

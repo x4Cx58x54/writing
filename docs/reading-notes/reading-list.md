@@ -49,12 +49,12 @@ Stephen Prata
 
 ### MATLAB Primer
 >R2019a, Digital  
-2019, MathWorks, [mathworks.com/help/pdf_doc/matlab/getstart.pdf](http://www.mathworks.com/help/pdf_doc/matlab/getstart.pdf){:target="_blank"}  
+2019, MathWorks, <http://www.mathworks.com/help/pdf_doc/matlab/getstart.pdf>{:target="_blank"}  
 2019.7.21 ~ 10.
 
 ### Deep Learning
 >Ian Goodfellow, Yoshua Bengio, Aaron Courville  
-2016, MIT Press, [deeplearningbook.org](https://www.deeplearningbook.org){:target="_blank"}  
+2016, MIT Press, <https://www.deeplearningbook.org>{:target="_blank"}  
 2019.7.24 ~ 8.14  
 
 ### The Practice of Programming
