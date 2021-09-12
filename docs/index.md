@@ -33,15 +33,34 @@ title: Randomish Writing
   }
 </style>
 
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
 <script>
 window.onload = function() {
   var btnRandom = document.getElementById('random');
   var navigation = `{{ navigation }}`;
-  navigation = navigation.replace(/\r?\n|\r/g, '');
-  navigation = navigation.replace(/.*?url='\/'/, '');
-  navigation = navigation.replace(/Section\(title='Reading Notes'\).*/, '');
-  var posts = navigation.match(/(?<=url=').*?(?=')/g);
-  var randomPostUrl = posts[Math.floor(Math.random() * posts.length)];
+  navigation = navigation.replace("Page(title='Welcome', url='/')\n", '');
+  navigation = navigation.replace(/Section\(title='([^']*)'\)$/gm, '$1:');
+  navigation = navigation.replace(/Page\(title='([^']*)', url='([^']*)'\)$/gm, '$1: $2');
+
+  var navJson = jsyaml.load(navigation);
+
+  delete navJson['Misc']['Reading Notes']
+
+  // traverse through the json tree
+  function getJsonLeaves(json, leaves=[]){
+    for (var subJson in json){
+      if (typeof(json[subJson]) == 'string'){
+        leaves.push(json[subJson])
+      } else {
+        getJsonLeaves(json[subJson], leaves);
+      }
+    }
+    return leaves;
+  }
+
+  var postUrls = getJsonLeaves(navJson);
+  var randomPostUrl = postUrls[Math.floor(Math.random() * postUrls.length)];
   btnRandom.href = randomPostUrl;
 }
 </script>
