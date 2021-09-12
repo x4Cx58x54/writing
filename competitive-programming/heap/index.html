@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="../../none">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-5.1.0">
     
     
       
@@ -1538,59 +1538,59 @@
 <p>堆是一棵完全二叉树，其中每一子树之根节点总是不大于或不小于子树其余节点，由此有小端堆（min-heap）和大端堆（max-heap）之分。</p>
 <p>堆不同于二叉查找树。二叉查找树不可能总保持完全二叉树的形态，而且堆没有高效查找操作。</p>
 <p>由完全二叉树的良好性质，一般使用一维数组即可实现堆。接下来均以小端堆举例。</p>
-<h3>添加元素</h3>
+<h3 id="_2">添加元素<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>在堆末尾添加一个元素，然后再上浮。其余部分已经是堆，所以每次只需要与父节点比较。</p>
-<h3>取最小值</h3>
+<h3 id="_3">取最小值<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>取出堆首，以堆末元素替代，然后再下沉。在某一步确定是否下沉以及往哪一方向下沉需要先试探：如果左子节点比当前节点小，则将预备转移的地址指向左子节点。但是到这里并不代表一定向左下沉，而是还需要判断右子节点是否比当前节点和左子节点均小，如果是则向右下沉。如果两个条件均不满足，则代表下沉停止。在判断过程中要注意先判边界。</p>
-<h3>建堆</h3>
+<h3 id="_4">建堆<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>建堆的 <span class="arithmatex">\(O(n\log n)\)</span> 方法应该是将元素逐个添加到堆中。</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="kt">int</span> <span class="n">heap</span><span class="p">[</span><span class="mi">1000000</span><span class="p">];</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">tt</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">tp</span><span class="p">,</span> <span class="n">child</span><span class="p">,</span> <span class="n">parent</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">heapsize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tt</span><span class="p">);</span>
-    <span class="k">while</span><span class="p">(</span><span class="n">tt</span><span class="o">--</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">command</span><span class="p">);</span>
-        <span class="k">switch</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">case</span> <span class="mi">1</span><span class="o">:</span> <span class="c1">// Insert e</span>
-                <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">e</span><span class="p">);</span>
-                <span class="n">heapsize</span><span class="o">++</span><span class="p">;</span>
-                <span class="n">child</span> <span class="o">=</span> <span class="n">heapsize</span><span class="p">;</span>
-                <span class="k">for</span><span class="p">(</span><span class="n">parent</span> <span class="o">=</span> <span class="n">heapsize</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span> <span class="n">parent</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="n">heap</span><span class="p">[</span><span class="n">parent</span><span class="p">];</span>\
-                    <span class="n">child</span> <span class="o">=</span> <span class="n">parent</span><span class="p">,</span> <span class="n">parent</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">)</span>
-                    <span class="n">heap</span><span class="p">[</span><span class="n">child</span><span class="p">]</span> <span class="o">=</span> <span class="n">heap</span><span class="p">[</span><span class="n">parent</span><span class="p">];</span>
-                <span class="n">heap</span><span class="p">[</span><span class="n">child</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span>
-                <span class="k">break</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="mi">1000000</span><span class="p">];</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tt</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="n">tp</span><span class="p">,</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">heapsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tt</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">tt</span><span class="o">--</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">command</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">switch</span><span class="p">(</span><span class="n">command</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="w"> </span><span class="c1">// Insert e</span>
+<span class="w">                </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="n">heapsize</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heapsize</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heapsize</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="n">parent</span><span class="p">];</span>\
+<span class="w">                    </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="n">heap</span><span class="p">[</span><span class="n">child</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="n">parent</span><span class="p">];</span><span class="w"></span>
+<span class="w">                </span><span class="n">heap</span><span class="p">[</span><span class="n">child</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 
-            <span class="k">case</span> <span class="mi">2</span><span class="o">:</span> <span class="c1">// Min</span>
-                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">heap</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-                <span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="w"> </span><span class="c1">// Min</span>
+<span class="w">                </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 
-            <span class="k">case</span> <span class="mi">3</span><span class="o">:</span> <span class="c1">// ExtractMin</span>
-                <span class="n">e</span> <span class="o">=</span> <span class="n">heap</span><span class="p">[</span><span class="n">heapsize</span><span class="o">--</span><span class="p">];</span>
-                <span class="n">parent</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="n">child</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-                <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-                <span class="p">{</span>
-                    <span class="n">tp</span> <span class="o">=</span> <span class="n">parent</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">tp</span> <span class="o">&lt;=</span> <span class="n">heapsize</span> <span class="o">&amp;&amp;</span> <span class="n">heap</span><span class="p">[</span><span class="n">tp</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">e</span><span class="p">)</span>
-                        <span class="n">child</span> <span class="o">=</span> <span class="n">tp</span><span class="p">;</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">heapsize</span> <span class="o">&amp;&amp;</span> <span class="n">heap</span><span class="p">[</span><span class="n">tp</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">heap</span><span class="p">[</span><span class="n">tp</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">heap</span><span class="p">[</span><span class="n">tp</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">e</span><span class="p">)</span>
-                        <span class="n">child</span> <span class="o">=</span> <span class="n">tp</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">parent</span> <span class="o">==</span> <span class="n">child</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-                    <span class="n">heap</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span> <span class="o">=</span> <span class="n">heap</span><span class="p">[</span><span class="n">child</span><span class="p">];</span>
-                    <span class="n">parent</span> <span class="o">=</span> <span class="n">child</span><span class="p">;</span>
-                <span class="p">}</span>
-                <span class="n">heap</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span><span class="p">;</span>
-                <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="o">:</span><span class="w"> </span><span class="c1">// ExtractMin</span>
+<span class="w">                </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="n">heapsize</span><span class="o">--</span><span class="p">];</span><span class="w"></span>
+<span class="w">                </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">tp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tp</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">heapsize</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="n">tp</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="w">                        </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tp</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tp</span><span class="o">+</span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">heapsize</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="n">tp</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="n">tp</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="n">tp</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"></span>
+<span class="w">                        </span><span class="n">child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">parent</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">child</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">heap</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">heap</span><span class="p">[</span><span class="n">child</span><span class="p">];</span><span class="w"></span>
+<span class="w">                    </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">child</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">                </span><span class="n">heap</span><span class="p">[</span><span class="n">parent</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
                 
               

@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="../../../none">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-5.1.0">
     
     
       
@@ -1603,11 +1603,11 @@
 </blockquote>
 <hr />
 <h2 id="vector-spaces">Vector Spaces<a class="headerlink" href="#vector-spaces" title="Permanent link">&para;</a></h2>
-<h3>Dimension and Order</h3>
+<h3 id="dimension-and-order">Dimension and Order<a class="headerlink" href="#dimension-and-order" title="Permanent link">&para;</a></h3>
 <p>The maximum number of linearly independent vectors in a vector space is the dimension of the vector space. The length or order of the vectors in the space is the order of the vector space.</p>
-<h3>Essentially Disjoint</h3>
+<h3 id="essentially-disjoint">Essentially Disjoint<a class="headerlink" href="#essentially-disjoint" title="Permanent link">&para;</a></h3>
 <p>若两向量空间之交集仅含加法单位元，则称它们 essentially disjoint.</p>
-<h3>Sum and Direct Sum</h3>
+<h3 id="sum-and-direct-sum">Sum and Direct Sum<a class="headerlink" href="#sum-and-direct-sum" title="Permanent link">&para;</a></h3>
 <p>若两向量空间之和 <span class="arithmatex">\(\mathcal{V} = \mathcal{V}_1 + \mathcal{V}_2\)</span>，则</p>
 <div class="arithmatex">\[
 \mathcal{V} = \{v \operatorname{|} v = v_1 + v_2,~v_1 \in \mathcal{V}_1,~v_2 \in \mathcal{V}_2\}.
@@ -1616,7 +1616,7 @@
 <div class="arithmatex">\[
 \mathcal{V} = \mathcal{V}_1 \oplus \mathcal{V}_2.
 \]</div>
-<h3><span class="arithmatex">\(L_p\)</span> 范数</h3>
+<h3 id="l_p"><span class="arithmatex">\(L_p\)</span> 范数<a class="headerlink" href="#l_p" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
 \|x\|_p = \left(\sum_i |x_i|^p\right)^{1/p}.
 \]</div>
@@ -1626,10 +1626,10 @@
 r\|x\|_b \le \|x\|_a \le s\|x\|_b.
 \]</div>
 <p>这是一个自反、对称且传递的关系，故这说明了范数的等价性.</p>
-<h3>正交向量空间</h3>
+<h3 id="_1">正交向量空间<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>若向量空间 <span class="arithmatex">\(\mathcal{V}_1 + \mathcal{V}_2 = \mathcal{V}\)</span> 且 <span class="arithmatex">\(\mathcal{V}_1 \oplus \mathcal{V}_2 = \mathcal{V}\)</span>，则称 <span class="arithmatex">\(\mathcal{V}_2\)</span> 是 <span class="arithmatex">\(\mathcal{V}_1\)</span> 对于 <span class="arithmatex">\(\mathcal{V}\)</span> 的正交补.</p>
 <p>若 <span class="arithmatex">\(\mathcal{V}_1\)</span> 与 <span class="arithmatex">\(\mathcal{V}_2\)</span> 为 <span class="arithmatex">\(\mathcal{V}\)</span> 中相互正交的子空间，且 <span class="arithmatex">\(\dim \mathcal{V}_1 + \dim \mathcal{V}_2 = \dim \mathcal{V}\)</span>，则 <span class="arithmatex">\(\mathcal{V} \oplus \mathcal{V}_2 = \mathcal{V}\)</span>.</p>
-<h3>Parseval 等式</h3>
+<h3 id="parseval">Parseval 等式<a class="headerlink" href="#parseval" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\(u_1, u_2, \cdots, u_n\)</span> 为空间中一组正交基，且 <span class="arithmatex">\(x = \sum\limits_{i=1}^n c_iu_i\)</span>，则有 Parseval 等式</p>
 <div class="arithmatex">\[
 \|x\|^2 = \sum_{i=1}^n c_i^2.
@@ -1639,8 +1639,8 @@ r\|x\|_b \le \|x\|_a \le s\|x\|_b.
 \left\|x - \sum_{i=1}^k c_iu_i\right\|^2 = \langle x, x\rangle - \sum_{i=1}^k c_i^2
 \]</div>
 <p>其中 <span class="arithmatex">\(k\)</span> 是不大于 <span class="arithmatex">\(n\)</span> 的非负整数.</p>
-<h3>几何结构</h3>
-<h4>线性结构</h4>
+<h3 id="_2">几何结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h4 id="_3">线性结构<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>在一个 <span class="arithmatex">\(n\)</span> 维向量空间中，由 <span class="arithmatex">\(m\ (&lt; n)\)</span> 个方程</p>
 <div class="arithmatex">\[
 \begin{cases}
@@ -1650,7 +1650,7 @@ c_m^\top x = b_m
 \end{cases}
 \]</div>
 <p>所确定的 <span class="arithmatex">\(x\)</span> 的解的集合称为一个 flat. 当方程组齐次时，这个 flat 是 <span class="arithmatex">\(n-m\)</span> 维的向量空间. 当 <span class="arithmatex">\(m=1\)</span> 时，为一超平面.</p>
-<h4>锥</h4>
+<h4 id="_4">锥<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p>若 <span class="arithmatex">\(\forall x \in C\)</span> 与 <span class="arithmatex">\(\forall a \ge 0\)</span>，均有 <span class="arithmatex">\(ax \in C\)</span> 则称 <span class="arithmatex">\(C\)</span> 为锥.</p>
 <p>若 <span class="arithmatex">\(\forall x_1, x_2 \in C\)</span> 与 <span class="arithmatex">\(\forall a, b \ge 0\)</span>，均有 <span class="arithmatex">\(ax_1 + bx_2 \in C\)</span> 则称 <span class="arithmatex">\(C\)</span> 为凸锥.</p>
 <p>对于一个锥 <span class="arithmatex">\(C\)</span>，定义其对偶锥（dual cone）<span class="arithmatex">\(C^*\)</span> 为</p>
@@ -1662,7 +1662,7 @@ C^* = \{x^* ~|~ \forall x \in V,~ x^{*\top}x \ge 0\},
 C^0 = \{x^0 ~|~ \forall x \in V,~ x^{0\top}x \le 0\}.
 \]</div>
 <p>几何上，<span class="arithmatex">\(C^*\)</span> 包含所有与锥 <span class="arithmatex">\(C\)</span> 中向量均成锐角或直角的向量. 显然 <span class="arithmatex">\(C^0 = -C^*\)</span> 和 <span class="arithmatex">\((-C)^* = -C^*\)</span>.</p>
-<h3>中心化向量</h3>
+<h3 id="_5">中心化向量<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>向量 <span class="arithmatex">\(x\)</span> 减去其均值向量 <span class="arithmatex">\(\bar{x}\)</span> 的过程称为中心化，得到<strong>中心化向量</strong>（centered vector）<span class="arithmatex">\(x_c = x - \bar{x}\)</span>.</p>
 <p>均值向量 <span class="arithmatex">\(\bar{x}\)</span> 在几何上恰为 <span class="arithmatex">\(x\)</span> 在 <span class="arithmatex">\(1_n\)</span> 上的投影，这样它们和 <span class="arithmatex">\(x_c\)</span> 恰构成一个直角三角形，于是有</p>
 <div class="arithmatex">\[
@@ -1672,7 +1672,7 @@ C^0 = \{x^0 ~|~ \forall x \in V,~ x^{0\top}x \le 0\}.
 <div class="arithmatex">\[
 \sum_i (x_i - \bar{x})^2 = \sum_i x_i^2 - n\bar{x}^2.
 \]</div>
-<h3>标准差、方差、协方差</h3>
+<h3 id="_6">标准差、方差、协方差<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(x\)</span> 的<strong>方差</strong>定义为</p>
 <div class="arithmatex">\[
 s_x = \frac{\|x_c\|}{\sqrt{n-1}}.
@@ -1723,14 +1723,14 @@ x_{cs} = \frac{x_c}{s_x} = \sqrt{n-1}\frac{x_c}{\|x_c\|},
 <p>相关系数的值一定在 <span class="arithmatex">\([-1, 1]\)</span> 上. 若为 1，则两向量同向；若为 -1，则两向量反向；若为 0，则两向量正交.</p>
 <p>对任意实数 <span class="arithmatex">\(a\)</span>，有 <span class="arithmatex">\(\operatorname{Corr}(ax, y) = \operatorname{sign}(a)\operatorname{Corr}(x, y)\)</span>.</p>
 <h2 id="matrices">Matrices<a class="headerlink" href="#matrices" title="Permanent link">&para;</a></h2>
-<h3>Basic Definitions</h3>
+<h3 id="basic-definitions">Basic Definitions<a class="headerlink" href="#basic-definitions" title="Permanent link">&para;</a></h3>
 <p>The column space of <span class="arithmatex">\(A\)</span> is also called the range of <span class="arithmatex">\(A\)</span> or the manifold of <span class="arithmatex">\(A\)</span>, and it is denoted by <span class="arithmatex">\(\mathcal{V}(A)\)</span> or <span class="arithmatex">\(\operatorname{span}(A)\)</span>.</p>
 <p>无论矩阵 <span class="arithmatex">\(A_{m\times n}\)</span> 是否为方阵，都定义有主对角线（pricinpal diagonal）<span class="arithmatex">\(\{a_{ii}\}\)</span>、codiagonal or minor diagonal <span class="arithmatex">\(a_{i, i + c_k}\)</span>、斜对角线（skew diagonal）<span class="arithmatex">\(a_{i, m+1-i}\)</span>. 对应地有对角矩阵和斜对角矩阵.</p>
 <p>若 <span class="arithmatex">\(A\)</span> 中除了 <span class="arithmatex">\(a_{i, i+c_k}, c_k \in\{-w_l, \cdots, -1, 0, 1, \cdots, w_u\}\)</span> 以外的元素均为 0，则称此矩阵为 band matrix，其中 <span class="arithmatex">\(w_l\)</span> 称为 lower band width. 若 upper 和 lower band width 均为 1，则称矩阵为 tridiagonal matrix.</p>
 <p><span class="arithmatex">\(\operatorname{vecdiag}(A)\)</span> 取出 <span class="arithmatex">\(A\)</span> 中的对角元素作为向量，得到 <span class="arithmatex">\((a_{11}, \cdots, a_{kk})\)</span>.</p>
 <p><span class="arithmatex">\(\operatorname{vec}(A)\)</span> 将 <span class="arithmatex">\(A\)</span> 的各列取出排列为向量，得到 <span class="arithmatex">\((a_1^\top, \cdots, a_m^\top)\)</span></p>
 <p>矩阵的直和（direct dum）为 <span class="arithmatex">\(A\oplus B = \operatorname{diag}(A, B)\)</span>，参与运算的两矩阵并不必须形状相同，也不必须是方阵.</p>
-<h3>Determinants</h3>
+<h3 id="determinants">Determinants<a class="headerlink" href="#determinants" title="Permanent link">&para;</a></h3>
 <p>方阵 <span class="arithmatex">\(A\)</span> 的<strong>行列式</strong>定义为</p>
 <div class="arithmatex">\[
 |A| = \sum_{\pi_j}\sigma(\pi_j)a_{1j_1}a_{2j_2}\cdots a_{nj_n},
@@ -1771,7 +1771,7 @@ A\operatorname{adj}(A) = \operatorname{adj}(A)A = |A|I,
 <div class="arithmatex">\[
 A^{-1} = \frac{1}{|A|}\operatorname{adj}(A).
 \]</div>
-<h3>Two Monomial Factorizations</h3>
+<h3 id="two-monomial-factorizations">Two Monomial Factorizations<a class="headerlink" href="#two-monomial-factorizations" title="Permanent link">&para;</a></h3>
 <p>对任意正整数 <span class="arithmatex">\(k\)</span>，</p>
 <div class="arithmatex">\[
 I - A^k = (I-A)(I+A+\cdots+A^{k-1}).
@@ -1780,7 +1780,7 @@ I - A^k = (I-A)(I+A+\cdots+A^{k-1}).
 <div class="arithmatex">\[
 I + A^k = (I+A)(I-A+\cdots+A^{k-1}).
 \]</div>
-<h3>Elementary Transformation Matrices</h3>
+<h3 id="elementary-transformation-matrices">Elementary Transformation Matrices<a class="headerlink" href="#elementary-transformation-matrices" title="Permanent link">&para;</a></h3>
 <ul>
 <li>交换行/列：<span class="arithmatex">\(E_\pi\)</span>，其中 <span class="arithmatex">\(\pi\)</span> 是需要交换的行/列序号，例如</li>
 </ul>
@@ -1814,16 +1814,16 @@ E_{23}(a) = \begin{bmatrix}
 \]</div>
 <p><strong>Premultiplication</strong> operates on rows,<br />
 <strong>Postmultiplication</strong> operates on columns.</p>
-<h3>Bilinear and Quadratic Forms, Definiteness</h3>
+<h3 id="bilinear-and-quadratic-forms-definiteness">Bilinear and Quadratic Forms, Definiteness<a class="headerlink" href="#bilinear-and-quadratic-forms-definiteness" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(x^\top Ay\)</span> 称为<strong>双线性形</strong>，而 <span class="arithmatex">\(x^\top Ax\)</span> 称为<strong>二次型</strong>. 广义上来说，并不要求二次型中的 <span class="arithmatex">\(A\)</span> 是对称阵，但是对任意的 <span class="arithmatex">\(A\)</span>，都有且仅有一个对称阵 <span class="arithmatex">\(A_s = \frac{1}{2}\left(A+A^\top\right)\)</span> 使得 <span class="arithmatex">\(x^\top Ax = x^\top A_sx\)</span>. 故在讨论二次型时，只针对 <span class="arithmatex">\(A\)</span> 对称的情况.</p>
 <p>记 <span class="arithmatex">\(A\)</span> 半正定为 <span class="arithmatex">\(A \succeq 0\)</span>，<span class="arithmatex">\(A\)</span> 正定为 <span class="arithmatex">\(A \succ 0\)</span>. <span class="arithmatex">\(A \succ B\)</span>（<span class="arithmatex">\(A \succeq B\)</span>）表示 <span class="arithmatex">\(A-B\)</span>（半）正定.</p>
-<h3>Anisometric Spaces</h3>
+<h3 id="anisometric-spaces">Anisometric Spaces<a class="headerlink" href="#anisometric-spaces" title="Permanent link">&para;</a></h3>
 <p>之前所讨论的向量空间都是<strong>等距</strong>（isometric）的，其中两向量 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(y\)</span> 内积定义为 <span class="arithmatex">\(x^\top Iy\)</span>. 若描述内积的矩阵为任意矩阵，则称该空间是<strong>非等距</strong>（anisometric）的. 例如各坐标轴保持相互垂直，但单位长度不同的空间中，将各轴相对长度之倒数作为对角阵 <span class="arithmatex">\(D\)</span> 对角线上各项，则该非等距空间中的内积为 <span class="arithmatex">\(x^\top Dy\)</span>. 为了能够扩展点积（确保自乘时非负），一般还要求矩阵是正定的. 此时 <span class="arithmatex">\(L_2\)</span> 范数扩展为 <span class="arithmatex">\(\|x\|_A = \sqrt{x^\top Ax}\)</span>，称为 elliptic norm 或 conjugate norm. 由此又可引出 elliptic metric. 在这种度量下两向量 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(y\)</span> 的距离为 <span class="arithmatex">\(\sqrt{(x-y)^\top A(x-y)}\)</span>. Mahalanobis 距离则是一个常用的例子：<span class="arithmatex">\(\sqrt{(x-y)^\top S^{-1}(x-y)}\)</span>，其中 <span class="arithmatex">\(S\)</span> 为样本协方差矩阵.</p>
-<h3>Other Kinds of Matrix Multiplication</h3>
+<h3 id="other-kinds-of-matrix-multiplication">Other Kinds of Matrix Multiplication<a class="headerlink" href="#other-kinds-of-matrix-multiplication" title="Permanent link">&para;</a></h3>
 <p>矩阵乘法一般指 Cayley 乘法，而事实上还定义有其它的乘法.</p>
-<h4>The Hadamard Product</h4>
+<h4 id="the-hadamard-product">The Hadamard Product<a class="headerlink" href="#the-hadamard-product" title="Permanent link">&para;</a></h4>
 <p>Hadamard 乘法定义为两同形矩阵的对应元素相乘.</p>
-<h4>The Kronecker Product</h4>
+<h4 id="the-kronecker-product">The Kronecker Product<a class="headerlink" href="#the-kronecker-product" title="Permanent link">&para;</a></h4>
 <p>两任意矩阵 <span class="arithmatex">\(A_{m\times n}\)</span> 与 <span class="arithmatex">\(B_{p\times q}\)</span> 之 Kronecker 积定义为</p>
 <div class="arithmatex">\[
 A\otimes B = \begin{bmatrix}
@@ -1835,7 +1835,7 @@ a_{m1}B &amp; \cdots &amp; a_{mn}B
 <p>这是一个 <span class="arithmatex">\(\mathbb{R}^{m\times n} \otimes \mathbb{R}^{p\times q} \mapsto \mathbb{R}^{mp\times nq}\)</span> 的映射.</p>
 <p>Kronecker 乘法又称为直积或右直积（左直积相当于互换 <span class="arithmatex">\(A\)</span>、<span class="arithmatex">\(B\)</span> 位置）.</p>
 <p>显然这种乘法并不服从交换律（commutative），但服从分配律（associative）与对加法的分配律（distributive）. 它的单位元为 <span class="arithmatex">\([1]\)</span>.</p>
-<h4>The Dot Product</h4>
+<h4 id="the-dot-product">The Dot Product<a class="headerlink" href="#the-dot-product" title="Permanent link">&para;</a></h4>
 <p>两同形矩阵 <span class="arithmatex">\(A_{m\times n}\)</span> 与 <span class="arithmatex">\(B_{m\times n}\)</span> 的点积是向量点积的扩展：</p>
 <div class="arithmatex">\[
 A\cdot B = \langle A, B\rangle = \sum_{i=1}^m\sum_{j=1}^n a_{ij}b_{ij}.
@@ -1866,7 +1866,7 @@ U_i\cdot U_j = \begin{cases}
 A = \sum_{i=1}^k c_i U_i,
 \]</div>
 <p>其中 <span class="arithmatex">\(c_i = A\cdot U_i\)</span>.</p>
-<h3>Equivalent Matrices Forms</h3>
+<h3 id="equivalent-matrices-forms">Equivalent Matrices Forms<a class="headerlink" href="#equivalent-matrices-forms" title="Permanent link">&para;</a></h3>
 <p>秩为 <span class="arithmatex">\(r\)</span> 的矩阵由一系列初等变换可变换为其<strong>等价标准型</strong></p>
 <div class="arithmatex">\[
 PAQ = \begin{bmatrix}
@@ -1883,9 +1883,9 @@ I_r &amp; 0 \\
 </ul>
 <p><span class="arithmatex">\(H\)</span> 显然是幂等的.</p>
 <p>矩阵还有其它的等价形式如阶梯形、若尔当标准型等.</p>
-<h3>Preservation of Positive Definiteness</h3>
+<h3 id="preservation-of-positive-definiteness">Preservation of Positive Definiteness<a class="headerlink" href="#preservation-of-positive-definiteness" title="Permanent link">&para;</a></h3>
 <p>若 <span class="arithmatex">\(C\)</span> 正定，<span class="arithmatex">\(A\)</span> 为形状符合条件的列满秩矩阵，则 <span class="arithmatex">\(A^\top CA\)</span> 仍正定. 反之，若 <span class="arithmatex">\(A^\top CA\)</span> 正定，则 <span class="arithmatex">\(A\)</span> 列满秩.</p>
-<h3>Gramian Matrix <span class="arithmatex">\(A^\top A\)</span></h3>
+<h3 id="gramian-matrix-atop-a">Gramian Matrix <span class="arithmatex">\(A^\top A\)</span><a class="headerlink" href="#gramian-matrix-atop-a" title="Permanent link">&para;</a></h3>
 <p>显然，</p>
 <div class="arithmatex">\[
 \operatorname{Tr}(A^\top A) = 0 \Leftrightarrow A = 0,
@@ -1903,7 +1903,7 @@ A^\top AB = A^\top AC \Leftrightarrow AB = AC,
 BA^\top A = CA^\top A \Leftrightarrow BA^\top = CA^\top.
 \]</div>
 <p><span class="arithmatex">\(\operatorname{rank}(A^\top A) = \operatorname{rank}(AA^\top) = \operatorname{rank}(A)\)</span>，故 <span class="arithmatex">\(A^\top Ax = A^\top b\)</span> 一定有解.</p>
-<h3>Inverses of Sum of Matrices</h3>
+<h3 id="inverses-of-sum-of-matrices">Inverses of Sum of Matrices<a class="headerlink" href="#inverses-of-sum-of-matrices" title="Permanent link">&para;</a></h3>
 <p>对于相同形状的满秩矩阵 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span>，有以下等式成立：</p>
 <ul>
 <li><span class="arithmatex">\(A(I+A)^{-1} = (I+A^{-1})^{-1}\)</span>；</li>
@@ -1919,13 +1919,13 @@ BA^\top A = CA^\top A \Leftrightarrow BA^\top = CA^\top.
 <div class="arithmatex">\[
 (I-A)^{-1} = I + A + A^2 + A^3 + \cdots.
 \]</div>
-<h3>Determinants of Partitioned Matrices</h3>
+<h3 id="determinants-of-partitioned-matrices">Determinants of Partitioned Matrices<a class="headerlink" href="#determinants-of-partitioned-matrices" title="Permanent link">&para;</a></h3>
 <p>若 <span class="arithmatex">\(A\)</span> 分块为 <span class="arithmatex">\(\begin{bmatrix}A_{11} &amp; A_{12} \\ A_{21} &amp; A_{22}\end{bmatrix}\)</span>，且 <span class="arithmatex">\(A_{11}\)</span> 可逆，则</p>
 <div class="arithmatex">\[
 |A| = |A_{11}|\left|A_{22} - A_{21}A_{11}^{-1}A_{12}\right|.
 \]</div>
 <p>上式中的 <span class="arithmatex">\(A_{22} - A_{21}A_{11}^{-1}A_{12}\)</span> 称为 <span class="arithmatex">\(A\)</span> 中 <span class="arithmatex">\(A_{11}\)</span> 的<strong>舒尔补</strong>（Schur complement）.</p>
-<h3>Generalized Inverses and Pseudoinverse</h3>
+<h3 id="generalized-inverses-and-pseudoinverse">Generalized Inverses and Pseudoinverse<a class="headerlink" href="#generalized-inverses-and-pseudoinverse" title="Permanent link">&para;</a></h3>
 <p>若 <span class="arithmatex">\(G\)</span> 满足 <span class="arithmatex">\(AGA = A\)</span> 则称 <span class="arithmatex">\(G\)</span> 为 <span class="arithmatex">\(A\)</span> 的<strong>广义逆</strong>，记为 <span class="arithmatex">\(A^-\)</span>. 广义逆满足</p>
 <div class="arithmatex">\[
 (A^\top)^- = (A^-)^\top,
@@ -1943,7 +1943,7 @@ BA^\top A = CA^\top A \Leftrightarrow BA^\top = CA^\top.
 <li><span class="arithmatex">\(A^-A\)</span> 对称. 此时的广义逆又称为 <span class="arithmatex">\(g_3\)</span> inverse、<span class="arithmatex">\(g_{123}\)</span> inverse.</li>
 <li><span class="arithmatex">\(AA^-\)</span> 对称. 此时的广义逆记为 <span class="arithmatex">\(A^+\)</span>，又称为 Moore-Penrose inverse、pseudoinverse 或 normalized generalized inverse.</li>
 </ol>
-<h3>Eigenanalysis</h3>
+<h3 id="eigenanalysis">Eigenanalysis<a class="headerlink" href="#eigenanalysis" title="Permanent link">&para;</a></h3>
 <p>若 <span class="arithmatex">\(Av = \lambda v\)</span>，其中 <span class="arithmatex">\(\lambda\)</span> 和 <span class="arithmatex">\(v\)</span> 分别为 <span class="arithmatex">\(A\)</span> 的特征值和对应的特征向量，则有以下性质：</p>
 <ul>
 <li><span class="arithmatex">\(bv\)</span> 亦为 <span class="arithmatex">\(A\)</span> 的特征向量，其中 <span class="arithmatex">\(b\)</span> 为非零实数；</li>
@@ -1974,13 +1974,13 @@ p(x) = a_0 + a_1x + \cdots + a_{n-1}x^{n-1} + x^n,
 -a_0 &amp; -a_1 &amp; -a_2 &amp; \cdots &amp; -a_{n-1}
 \end{bmatrix}.
 \]</div>
-<h4>Left Eigenvectors</h4>
+<h4 id="left-eigenvectors">Left Eigenvectors<a class="headerlink" href="#left-eigenvectors" title="Permanent link">&para;</a></h4>
 <p>左特征向量 <span class="arithmatex">\(w\)</span> 使得</p>
 <div class="arithmatex">\[
 w^\top A = \lambda w^\top,
 \]</div>
 <p>即 <span class="arithmatex">\(w\)</span> 是 <span class="arithmatex">\(A^\top\)</span> 的特征向量. 相应地，以上 <span class="arithmatex">\(v\)</span> 又称为右特征向量. 由于 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(A^\top\)</span> 的特征值相同，每个特征值都对应一组左右特征向量. 若 <span class="arithmatex">\(w\)</span> 和 <span class="arithmatex">\(v\)</span> 对应的特征值不同，则 <span class="arithmatex">\(w\cdot v = 0\)</span>.</p>
-<h4>The Spectrum</h4>
+<h4 id="the-spectrum">The Spectrum<a class="headerlink" href="#the-spectrum" title="Permanent link">&para;</a></h4>
 <p>记矩阵 <span class="arithmatex">\(A_{n\times n}\)</span> 的各不相同的特征值为 <span class="arithmatex">\(\lambda_1, \lambda_2, \cdots, \lambda_k\)</span>，则 <span class="arithmatex">\(A\)</span> 的<strong>谱</strong>（spectrum）记为</p>
 <div class="arithmatex">\[
 \sigma(A) = \{\lambda_1, \lambda_2, \cdots, \lambda_k\}.
@@ -2001,7 +2001,7 @@ w^\top A = \lambda w^\top,
 <div class="arithmatex">\[
 \rho(A) \le \max_k \sum_j |a_{kj}|.
 \]</div>
-<h4>Geometric and Algebraic Multiplicity</h4>
+<h4 id="geometric-and-algebraic-multiplicity">Geometric and Algebraic Multiplicity<a class="headerlink" href="#geometric-and-algebraic-multiplicity" title="Permanent link">&para;</a></h4>
 <p>对第 <span class="arithmatex">\(i\)</span> 组特征值和特征向量，有 <span class="arithmatex">\((A - \lambda_iI)v_i = 0\)</span>. 故 <span class="arithmatex">\(v_i\)</span> 在 <span class="arithmatex">\(\mathcal{N}(A-\lambda_iI)\)</span> 中（<span class="arithmatex">\(A-\lambda_iI\)</span> 不可能满秩），该向量空间称为对应 <span class="arithmatex">\(\lambda_i\)</span> 的<strong>特征空间</strong>（eigenspace）.</p>
 <p>与某特征值 <span class="arithmatex">\(\lambda_i\)</span> 对应的线性独立的特征向量可能有多个. 它们的非零线性组合，即该特征空间中的非零向量，都是对应 <span class="arithmatex">\(\lambda_i\)</span> 的特征向量，该特征空间的维数称为 <span class="arithmatex">\(\lambda_i\)</span> 的<strong>几何重数</strong>（geometric multiplicity）<span class="arithmatex">\(g_i\)</span>，且满足</p>
 <div class="arithmatex">\[
@@ -2010,7 +2010,7 @@ w^\top A = \lambda w^\top,
 <p>虽然特征值是非零的，但是仍可讨论对应 0 的几何重数，它正好是 <span class="arithmatex">\(A\)</span> 的零空间维数（零化度，nullity）.</p>
 <p>特征方程中某根的重数即为该特征值的<strong>代数重数</strong>，简称为重数. 代数与几何重数相同的特征值称为半单特征值（semisimple eigenvalue）；代数重数为 1 的特征值称为简单特征值（simple eigenvalue）.</p>
 <p>当特征多项式有 <span class="arithmatex">\(m\)</span> 重根时，产生代数重数为 <span class="arithmatex">\(m\)</span> 的特征值. 若它们各自对应的特征向量可以选取为线性独立的，则几何重数与代数重数相等；若这些特征向量线性相关，则特征向量矩阵不可逆，即原矩阵无法对角化，此时特征向量有代数重数个，但分布在几何重数维的空间中. 总而言之，几何重数不超过代数重数.</p>
-<h4>对角化</h4>
+<h4 id="_7">对角化<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>矩阵 <span class="arithmatex">\(A_{n\times n}\)</span> 有 <span class="arithmatex">\(n\)</span> 个各不相同的特征值（从而必然对应 <span class="arithmatex">\(n\)</span> 个线性独立的特征向量）是 <span class="arithmatex">\(A\)</span> 可对角化的一个充分不必要条件. 可对角化定理（diagonalizablity theorem）说明了矩阵可对角化的充要条件：记 <span class="arithmatex">\(A_{n\times n}\)</span> 的各不相同的特征值为 <span class="arithmatex">\(\lambda_1, \lambda_2, \cdots, \lambda_k\)</span>，对应的代数重数分别为 <span class="arithmatex">\(m_1, m_2, \cdots, m_k\)</span>，若对 <span class="arithmatex">\(l = 1, 2, \cdots, k\)</span> 均有</p>
 <div class="arithmatex">\[
 \operatorname{rank}(A - \lambda_i I) = n - m_i,
@@ -2029,7 +2029,7 @@ w^\top A = \lambda w^\top,
 <div class="arithmatex">\[
 \mathrm{e}^A = \sum_{k=0}^\infty \frac{A^k}{k!} = V\left(\sum_{k=0}^\infty\frac{A^k}{k!}\right)V^{-1}.
 \]</div>
-<h4>Spectral Decomposition</h4>
+<h4 id="spectral-decomposition">Spectral Decomposition<a class="headerlink" href="#spectral-decomposition" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(A\)</span> 为对称矩阵，其特征向量 <span class="arithmatex">\(v_i\)</span> 选取为相互正交的，则其<strong>谱分解</strong>（Spectral Decomposition）为</p>
 <div class="arithmatex">\[
 A = \sum_i \lambda_i v_i v_i^\top = V\Lambda V^{-1}.
@@ -2053,7 +2053,7 @@ A = \sum_i \lambda_iP_i.
 <div class="arithmatex">\[
 \lambda_i = A\cdot(v_iv_i^\top).
 \]</div>
-<h4>Powers of Matrices</h4>
+<h4 id="powers-of-matrices">Powers of Matrices<a class="headerlink" href="#powers-of-matrices" title="Permanent link">&para;</a></h4>
 <p>若对称矩阵 <span class="arithmatex">\(A\)</span> 的特征值 <span class="arithmatex">\(\lambda\)</span> 对应特征向量 <span class="arithmatex">\(v\)</span>，且通过放缩使得 <span class="arithmatex">\(v^\top v = 1\)</span>，则由数学归纳法可证</p>
 <div class="arithmatex">\[
 (A - \lambda vv^\top)^k = A^k - \lambda^kvv^\top.
@@ -2062,7 +2062,7 @@ A = \sum_i \lambda_iP_i.
 <div class="arithmatex">\[
 (A - \lambda vw^\top)^k = A^k - \lambda^kvw^\top.
 \]</div>
-<h4>Rayleigh Quotient</h4>
+<h4 id="rayleigh-quotient">Rayleigh Quotient<a class="headerlink" href="#rayleigh-quotient" title="Permanent link">&para;</a></h4>
 <p>在对称矩阵的谱分解 <span class="arithmatex">\(A = V\Lambda V^\top = \sum\limits_i \lambda_i v_iv_i^\top\)</span> 中，由于 <span class="arithmatex">\(V\)</span> 是满秩的，对任意的对应维数的向量 <span class="arithmatex">\(x\)</span> 一定存在 <span class="arithmatex">\(b\)</span> 使得 <span class="arithmatex">\(x = Vb\)</span>，又由于 <span class="arithmatex">\(V\)</span> 是正交矩阵，<span class="arithmatex">\(x^\top x = b^\top b\)</span>. 由此有</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -2077,14 +2077,14 @@ R_A(x) = \frac{x^\top Ax}{x^\top x},
 \]</div>
 <p>其最大值为 <span class="arithmatex">\(\max(\lambda_i)\)</span>.</p>
 <p>正定矩阵的瑞利商恒为正，半正定矩阵瑞利商恒非负</p>
-<h4>矩阵的方根</h4>
+<h4 id="_8">矩阵的方根<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>若半正定矩阵 <span class="arithmatex">\(A\)</span> 的谱分解为 <span class="arithmatex">\(A = V\Lambda V^\top\)</span>，将 <span class="arithmatex">\(\Lambda\)</span> 对角线元素各自取平方根，得到矩阵 <span class="arithmatex">\(S\)</span>，则可定义 <span class="arithmatex">\(A\)</span> 的平方根</p>
 <div class="arithmatex">\[
 A^{\frac{1}{2}} = VSV^\top.
 \]</div>
 <p>类似地还可以定义 <span class="arithmatex">\(A^{\frac{1}{r}}\)</span>，其中 <span class="arithmatex">\(r &gt; 0\)</span>. 显然 <span class="arithmatex">\(A^{\frac{1}{r}}\)</span> 仍保持半正定. 若 <span class="arithmatex">\(A\)</span> 正定，则可在 <span class="arithmatex">\(r \neq 0\)</span> 时定义 <span class="arithmatex">\(A^{\frac{1}{r}}\)</span>，它们保持正定.</p>
 <p>注意此处矩阵的方根是半正定的，而非半正定矩阵不视为任何矩阵的方根.</p>
-<h4>Generalized Eigenanalysis and Matrix Pencils</h4>
+<h4 id="generalized-eigenanalysis-and-matrix-pencils">Generalized Eigenanalysis and Matrix Pencils<a class="headerlink" href="#generalized-eigenanalysis-and-matrix-pencils" title="Permanent link">&para;</a></h4>
 <p>满足方程</p>
 <div class="arithmatex">\[
 Av = \lambda Bv
@@ -2094,7 +2094,7 @@ Av = \lambda Bv
 |A - \lambda B| = 0.
 \]</div>
 <p>当 <span class="arithmatex">\(c\)</span> 在整个 <span class="arithmatex">\(\mathbb{R}\)</span> 或 <span class="arithmatex">\(\mathbb{C}\)</span> 上变化时，<span class="arithmatex">\(A - cB\)</span> 所产生的矩阵集合称为矩阵束，记为 <span class="arithmatex">\((A, B)\)</span>.</p>
-<h4>Singular Value Decomposition</h4>
+<h4 id="singular-value-decomposition">Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition" title="Permanent link">&para;</a></h4>
 <p>在奇异值分解 <span class="arithmatex">\(A = UDV^\top\)</span> 中，<span class="arithmatex">\(A\)</span> 亦可写为</p>
 <div class="arithmatex">\[
 A = \sum_{i = 1}^r d_i u_iv_i^\top,
@@ -2103,7 +2103,7 @@ A = \sum_{i = 1}^r d_i u_iv_i^\top,
 <div class="arithmatex">\[
 d_i = A\cdot(u_iv_i^\top).
 \]</div>
-<h3>Matrix Norms</h3>
+<h3 id="matrix-norms">Matrix Norms<a class="headerlink" href="#matrix-norms" title="Permanent link">&para;</a></h3>
 <p>在范数的三条基本性质之上，再加入一致性，组成矩阵范数的基本性质</p>
 <ol>
 <li>非负性与加法单位元：若 <span class="arithmatex">\(A = 0\)</span>，则 <span class="arithmatex">\(\|A\| = 0\)</span>，否则 <span class="arithmatex">\(\|A\|&gt;0\)</span>.</li>
@@ -2112,13 +2112,13 @@ d_i = A\cdot(u_iv_i^\top).
 <li>一致性：<span class="arithmatex">\(\|AB\| \le \|A\|\|B\|\)</span>.</li>
 </ol>
 <p>任何满足以上四性质的 <span class="arithmatex">\(\mathbb{R}^{m\times n} \mapsto \mathbb{R}\)</span> 的函数均是矩阵范数.</p>
-<h4>Induced Norms</h4>
+<h4 id="induced-norms">Induced Norms<a class="headerlink" href="#induced-norms" title="Permanent link">&para;</a></h4>
 <p>矩阵 <span class="arithmatex">\(A\)</span> 的<strong>诱导范数</strong>（induced norm）定义为</p>
 <div class="arithmatex">\[
 \|A\| = \max_{x\neq 0} \frac{\|Ax\|}{\|x\|},
 \]</div>
 <p>该范数又称为 maximum magnification.</p>
-<h4><span class="arithmatex">\(L_p\)</span> Matrix Norms</h4>
+<h4 id="l_p-matrix-norms"><span class="arithmatex">\(L_p\)</span> Matrix Norms<a class="headerlink" href="#l_p-matrix-norms" title="Permanent link">&para;</a></h4>
 <p>矩阵的 <span class="arithmatex">\(L_p\)</span> 范数可视作由向量的 <span class="arithmatex">\(L_p\)</span> 范数诱导而来：</p>
 <div class="arithmatex">\[
 \|A\|_p = \max_{\|x\|_p=1} \|Ax\|_p.
@@ -2138,7 +2138,7 @@ d_i = A\cdot(u_iv_i^\top).
 <p>显然有 <span class="arithmatex">\(\|A^\top\|_\infty = \|A\|_1\)</span> 和 <span class="arithmatex">\(\|A^\top\|_2 = \|A\|_2\)</span>.</p>
 <p>若 <span class="arithmatex">\(A\)</span> 对称，则 <span class="arithmatex">\(\|A\|_2 = \rho(A)\)</span>.</p>
 <p>若 <span class="arithmatex">\(Q\)</span> 是正交矩阵，则 <span class="arithmatex">\(\|Qx\|_2 = \|x\|_2\)</span>，<span class="arithmatex">\(\|Q\|_2 = 1\)</span>.</p>
-<h4>The Frobenius Norm</h4>
+<h4 id="the-frobenius-norm">The Frobenius Norm<a class="headerlink" href="#the-frobenius-norm" title="Permanent link">&para;</a></h4>
 <p>Frobenius 范数定义为</p>
 <div class="arithmatex">\[
 \|A\|_\mathrm{F} = \sqrt{\sum_{i, j}a_{ij}^2} = \sqrt{\operatorname{Tr}(A^\top A)} = \sqrt{A\cdot A}.
@@ -2151,7 +2151,7 @@ d_i = A\cdot(u_iv_i^\top).
 <div class="arithmatex">\[
 \|A\|_\mathrm{F}^2 = \sum d_i^2.
 \]</div>
-<h4>Matrix Norm Inequalities</h4>
+<h4 id="matrix-norm-inequalities">Matrix Norm Inequalities<a class="headerlink" href="#matrix-norm-inequalities" title="Permanent link">&para;</a></h4>
 <p>若 <span class="arithmatex">\(\|\cdot\|_a\)</span> 和 <span class="arithmatex">\(\|\cdot\|_b\)</span> 均为矩阵范数，则一定存在正实数 <span class="arithmatex">\(r\)</span> 与 <span class="arithmatex">\(s\)</span>，使对任意矩阵 <span class="arithmatex">\(A\)</span> 都有</p>
 <div class="arithmatex">\[
 r\|A\|_b \le \|A\|_a \le s\|A\|_b.
@@ -2176,7 +2176,7 @@ r\|A\|_b \le \|A\|_a \le s\|A\|_b.
 \|A\|_1 \le \sqrt{m}\|A\|_2.
 \]</div>
 <p>对任意给定的矩阵 <span class="arithmatex">\(A\)</span>，<span class="arithmatex">\(\|A\|_p\)</span> 是在 <span class="arithmatex">\(p \ge 1\)</span> 上不增的函数.</p>
-<h4>Convergence of a Matrix Power Series</h4>
+<h4 id="convergence-of-a-matrix-power-series">Convergence of a Matrix Power Series<a class="headerlink" href="#convergence-of-a-matrix-power-series" title="Permanent link">&para;</a></h4>
 <p>若方阵列 <span class="arithmatex">\(\{A_k\}\)</span> 使得数列 <span class="arithmatex">\(\{\|A_k - A\|\}\)</span> 收敛至 0，则称 <span class="arithmatex">\(\{A_k\}\)</span> 收敛至 <span class="arithmatex">\(A\)</span>. 又由于</p>
 <div class="arithmatex">\[
 \rho(A) \le \|A\|,
@@ -2194,7 +2194,7 @@ A^k \rightarrow 0,~ \operatorname{if} \|A\| &lt; 1.
 <div class="arithmatex">\[
 (I - A)^{-1} = I + A + A^2 + A^3 + \cdots.
 \]</div>
-<h4>Nilpotent Matrices</h4>
+<h4 id="nilpotent-matrices">Nilpotent Matrices<a class="headerlink" href="#nilpotent-matrices" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(\|A\| &lt; 1\)</span> 并非 <span class="arithmatex">\(A^k \rightarrow 0\)</span> 的必要条件. 一个反例是 <span class="arithmatex">\(A = \begin{bmatrix} 0 &amp; 2 \\ 0 &amp; 0 \end{bmatrix}\)</span>，此时 <span class="arithmatex">\(A^2 = 0\)</span>，但 <span class="arithmatex">\(\|A\|_1 = \|A\|_2 = \|A\|_\infty = \|A\|_\mathrm{F} = 2\)</span>. 这种矩阵称为<strong>幂零矩阵</strong>（Nilpotent Matrix）. 使 <span class="arithmatex">\(A^k = 0\)</span> 的最小 <span class="arithmatex">\(k\)</span> 值称为度数（index）. 若 <span class="arithmatex">\(A_{n\times n}\)</span> 是幂零矩阵，则</p>
 <div class="arithmatex">\[
 \operatorname{Tr}(A) = 0,

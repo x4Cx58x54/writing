@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="../../../none">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-5.1.0">
     
     
       
@@ -1597,7 +1597,7 @@
                 
                 <h1 id="_1">积分变换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="fourier">Fourier 傅里叶变换<a class="headerlink" href="#fourier" title="Permanent link">&para;</a></h2>
-<h3>三角函数的正交性</h3>
+<h3 id="_2">三角函数的正交性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>三角函数系定义为以下函数的集合：</p>
 <div class="arithmatex">\[
 \big\{ 0(=\sin 0x), 1(=\cos 0x), \sin x, \cos x, \sin 2x, \cos 2x, \cdots \big\}
@@ -1605,7 +1605,7 @@
 <p>三角函数的正交性是指从上面的集合中取出任意两个不同的元素，在 <span class="arithmatex">\([-\pi, \pi]\)</span> 上积分，所得结果必然为零.</p>
 <p>所谓正交，即为垂直. 在离散的情形中，向量 <span class="arithmatex">\(f\)</span>, <span class="arithmatex">\(g\)</span> 之内积，即各元素对应相乘后的总和 <span class="arithmatex">\(\sum\limits_{i=0}^{n}f_ig_i\)</span> 为零，对应两向量垂直；而对于连续函数，形式则相应地变为在区间内所有点上对应相乘后积分 <span class="arithmatex">\(\int_{a}^{b}f(x)g(x)\mathrm{d}x\)</span> 为零，称为正交.</p>
 <p>由于区间 <span class="arithmatex">\([-\pi, \pi]\)</span> 包含了以上任一函数的至少一个周期，故此积分结果必然为零.</p>
-<h3>周期为 <span class="arithmatex">\(2\pi\)</span> 的函数的 Fourier 展开</h3>
+<h3 id="2pi-fourier">周期为 <span class="arithmatex">\(2\pi\)</span> 的函数的 Fourier 展开<a class="headerlink" href="#2pi-fourier" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\(f(x)\)</span> 周期为 <span class="arithmatex">\(2\pi\)</span>，且在 <span class="arithmatex">\([-\pi, \pi]\)</span> 上满足 Dirichlet 条件，则它展开为傅里叶级数为</p>
 <div class="arithmatex">\[
 f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n\cos nx + \sum_{n=1}^\infty b_n \sin nx.
@@ -1626,7 +1626,7 @@ a_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos nx\mathrm{d}x,
 b_n = \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx\mathrm{d}x.
 \]</div>
 <p>对于周期为任意 <span class="arithmatex">\(T\)</span> 的函数，则需要加入一个频率因子 <span class="arithmatex">\(\omega\)</span>，由此引出 Fourier 级数.</p>
-<h3>Fourier 级数</h3>
+<h3 id="fourier_1">Fourier 级数<a class="headerlink" href="#fourier_1" title="Permanent link">&para;</a></h3>
 <p>在 <span class="arithmatex">\([-\frac{T}{2}, \frac{T}{2}]\)</span> 上满足 Dirichlet 条件的周期函数 <span class="arithmatex">\(f_T(t)\)</span> 在其连续点处的 <strong>Fourier 级数三角形式</strong>为</p>
 <div class="arithmatex">\[
 f_T(t) = \frac{a_0}{2} + \sum_{n=1}^\infty\left(a_n\cos n\omega t + b_n\sin n\omega t\right)\quad(n\in\mathbb{Z^+}),
@@ -1673,7 +1673,7 @@ f_T(t) = \sum_{n=-\infty}^{+\infty}c_n\mathrm{e}^{i\omega_n t},
 <div class="arithmatex">\[
 f_T(t) = \frac{1}{T}\sum_{n=-\infty}^{+\infty}\left[\int_{-\frac{T}{2}}^{\frac{T}{2}}f_T(\tau)\mathrm{e}^{-i\omega_n\tau}\mathrm{d}\tau\right]\mathrm{e}^{i\omega_n t}.
 \]</div>
-<h3>Fourier 积分</h3>
+<h3 id="fourier_2">Fourier 积分<a class="headerlink" href="#fourier_2" title="Permanent link">&para;</a></h3>
 <p>下面讨论非周期函数的展开，令 <span class="arithmatex">\(T\rightarrow+\infty\)</span>，此时 <span class="arithmatex">\(\omega_n\)</span> 均匀分布在整个数轴上，且 <span class="arithmatex">\(\Delta\omega = \omega_n - \omega_{n-1} = \omega\)</span>，<span class="arithmatex">\(\Delta\omega\rightarrow 0\)</span>. 于是有</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -1704,7 +1704,7 @@ f(t) = \frac{2}{\pi}\int_0^{+\infty}\left[\int_0^{+\infty}f(t)\sin\omega\tau\mat
 f(t) = \frac{2}{\pi}\int_0^{+\infty}\left[\int_0^{+\infty}f(t)\cos\omega\tau\mathrm{d}\tau\right]\cos\omega t\mathrm{d}\omega,
 \]</div>
 <p>分别称为 <strong>Fourier 正弦积分公式</strong> 和 <strong>Fourier 余弦积分公式</strong>.</p>
-<h3>Fourier 变换</h3>
+<h3 id="fourier_3">Fourier 变换<a class="headerlink" href="#fourier_3" title="Permanent link">&para;</a></h3>
 <p>称函数</p>
 <div class="arithmatex">\[
 \mathscr{F}\left[f(t)\right] = F(\omega) = \int_{-\infty}^{+\infty}f(t)\mathrm{e}^{-i\omega t}\mathrm{d}t
@@ -1733,22 +1733,22 @@ f(t) = \frac{2}{\pi}\int_0^{+\infty}\left[\int_0^{+\infty}f(t)\cos\omega\tau\mat
 \]</div>
 <p>称为 <span class="arithmatex">\(F(\omega)\)</span> 的 <strong>Fourier 余弦逆变换</strong>.</p>
 <p>当满足条件时，<span class="arithmatex">\(F(\omega) = -2iF_s(\omega)\)</span>、<span class="arithmatex">\(F(\omega) = 2F_c(\omega)\)</span> 分别成立.</p>
-<h3>Fourier 变换的性质</h3>
-<h4>线性性质</h4>
+<h3 id="fourier_4">Fourier 变换的性质<a class="headerlink" href="#fourier_4" title="Permanent link">&para;</a></h3>
+<h4 id="_3">线性性质<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 \mathscr{F}[\alpha f(t) + \beta g(t)] = \alpha\mathscr{F}[f(t)]+\beta\mathscr{F}[g(t)]
 \]</div>
 <div class="arithmatex">\[
 \mathscr{F}^{-1}[\alpha F(\omega) + \beta G(\omega)] = \alpha\mathscr{F}^{-1}[F(\omega)]+\beta\mathscr{F}^{-1}[G(\omega)]
 \]</div>
-<h4>位移性质</h4>
+<h4 id="_4">位移性质<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 \mathscr{F}[f(t\pm t_0)]=\mathrm{e}^{\pm i\omega t_0}\mathscr{F}[f(t)]
 \]</div>
 <div class="arithmatex">\[
 \mathscr{F}^{-1}[F(\omega\pm\omega_0)]=\mathrm{e}^{\mp i\omega_0t}\mathscr{F}^{-1}[F(\omega)]
 \]</div>
-<h4>微分性质</h4>
+<h4 id="_5">微分性质<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 \mathscr{F}[f'(t)] = i\omega\mathscr{F}[f(t)]\\
 \mathscr{F}[f^{(n)}(t)] = (i\omega)^n\mathscr{F}[f(t)]
@@ -1759,11 +1759,11 @@ f(t) = \frac{2}{\pi}\int_0^{+\infty}\left[\int_0^{+\infty}f(t)\cos\omega\tau\mat
 <div class="arithmatex">\[
 \frac{\mathrm{d}^n}{\mathrm{d}\omega^n}F(\omega) = (-i)^n\mathscr{F}[t^nf(t)]
 \]</div>
-<h4>积分性质</h4>
+<h4 id="_6">积分性质<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 \mathscr{F}\left[\int_{-\infty}^tf(t)\mathrm{d}t\right]=\frac{1}{i\omega}\mathscr{F}[f(t)]
 \]</div>
-<h3>卷积</h3>
+<h3 id="_7">卷积<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(f(t)\)</span> 与 <span class="arithmatex">\(g(t)\)</span> 的卷积定义为</p>
 <div class="arithmatex">\[
 f(t)*g(t)=\int_{-\infty}^{+\infty}f(\tau)g(t-\tau)\mathrm{d}\tau.
@@ -1787,7 +1787,7 @@ a[f(t)*g(t)]=[af(t)]*g(t)=f(t)*[ag(t)],
 <div class="arithmatex">\[
 \mathscr{F}[f(t)\cdot g(t)]=\frac{1}{2\pi}F(\omega)*G(\omega).
 \]</div>
-<h3>常用 Fourier 变换</h3>
+<h3 id="fourier_5">常用 Fourier 变换<a class="headerlink" href="#fourier_5" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1855,7 +1855,7 @@ a[f(t)*g(t)]=[af(t)]*g(t)=f(t)*[ag(t)],
 </tbody>
 </table>
 <h2 id="laplace">Laplace 拉普拉斯变换<a class="headerlink" href="#laplace" title="Permanent link">&para;</a></h2>
-<h3>Laplace 变换</h3>
+<h3 id="laplace_1">Laplace 变换<a class="headerlink" href="#laplace_1" title="Permanent link">&para;</a></h3>
 <p>对一个函数 <span class="arithmatex">\(\varphi(t)\)</span>，乘上 <span class="arithmatex">\(u(t)\mathrm{e}^{-\beta t}(\beta&gt;0)\)</span>，再取 Fourier 变换，就得到了 Laplace 变换，即</p>
 <div class="arithmatex">\[
 \varPhi(\omega) = \int_{-\infty}^{+\infty}\varphi(t)u(t)\mathrm{e}^{-\beta t}\mathrm{e}^{-i\omega t}\mathrm{d}t,
@@ -1932,10 +1932,10 @@ F(s) = \mathscr{L}[f(t)].
 </tr>
 </tbody>
 </table>
-<h3>Laplace 变换的性质</h3>
-<h4>线性性质</h4>
+<h3 id="laplace_2">Laplace 变换的性质<a class="headerlink" href="#laplace_2" title="Permanent link">&para;</a></h3>
+<h4 id="_8">线性性质<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>Laplace 正逆变换均具有线性性质.</p>
-<h4>微分性质</h4>
+<h4 id="_9">微分性质<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p>在时域微分：</p>
 <div class="arithmatex">\[
 \mathscr{L}\big[f'(t)\big] = sF(s)-f(0).
@@ -1944,7 +1944,7 @@ F(s) = \mathscr{L}[f(t)].
 <div class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}s}F(s) = -\mathscr{L}\big[tf(t)\big].
 \]</div>
-<h4>积分性质</h4>
+<h4 id="_10">积分性质<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <p>在时域积分：</p>
 <div class="arithmatex">\[
 \mathscr{L}\left[\int_0^tf(t)\mathrm{d}t\right]=\frac{1}{s}F(s).
@@ -1953,28 +1953,28 @@ F(s) = \mathscr{L}[f(t)].
 <div class="arithmatex">\[
 \int_s^\infty F(s)\mathrm{d}s =  \mathscr{L}\left[\frac{f(t)}{t}\right].
 \]</div>
-<h4>位移性质（频移）</h4>
+<h4 id="_11">位移性质（频移）<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 \mathscr{L}\big[\mathrm{e}^{at}f(t)\big]=F(s-a),
 \]</div>
 <p>含 <span class="arithmatex">\(a\)</span> 项在两边异号.</p>
-<h4>延迟性质（时移）</h4>
+<h4 id="_12">延迟性质（时移）<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <p>若 <span class="arithmatex">\(t&lt;0\)</span> 时 <span class="arithmatex">\(f(t)=0\)</span>，且 <span class="arithmatex">\(\tau\ge0\)</span>，</p>
 <div class="arithmatex">\[
 \mathscr{L}\big[f(t-\tau)\big]=\mathrm{e}^{-s\tau}F(s),
 \]</div>
 <p>含 <span class="arithmatex">\(\tau\)</span> 项在两边同号.</p>
-<h4>初值定理</h4>
+<h4 id="_13">初值定理<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <p>若下式有意义，则</p>
 <div class="arithmatex">\[
 f(0) = \lim_{s\rightarrow\infty}sF(s).
 \]</div>
-<h4>终值定理</h4>
+<h4 id="_14">终值定理<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <p>若 <span class="arithmatex">\(sF(s)\)</span> 的所有奇点都在复平面左半部，则</p>
 <div class="arithmatex">\[
 f(+\infty) = \lim_{s\rightarrow0}sF(s).
 \]</div>
-<h4>卷积定理</h4>
+<h4 id="_15">卷积定理<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
 <p>卷积定理对 Laplace 变换亦成立，</p>
 <div class="arithmatex">\[
 \mathscr{L}\big[f(t)*g(t)\big]=F(s)\cdot G(s),

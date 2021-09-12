@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="../../none">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-5.1.0">
     
     
       
@@ -1729,19 +1729,19 @@
 </blockquote>
 <hr />
 <h2 id="lexical-structure">Lexical Structure<a class="headerlink" href="#lexical-structure" title="Permanent link">&para;</a></h2>
-<h4>Comment</h4>
+<h4 id="comment">Comment<a class="headerlink" href="#comment" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1">// Comments</span>
 <span class="cm">/* Multiline</span>
 <span class="cm">   Comments */</span>
 </code></pre></div>
-<h3>Character set</h3>
+<h3 id="character-set">Character set<a class="headerlink" href="#character-set" title="Permanent link">&para;</a></h3>
 <p>Javascript supports unicode. They can be typed to the code directly or use <code>\uxxxx</code>.</p>
 <p>JS is case-sensitive.</p>
-<h3>Identifiers</h3>
+<h3 id="identifiers">Identifiers<a class="headerlink" href="#identifiers" title="Permanent link">&para;</a></h3>
 <p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
 </code></pre></div>
 The naming rules are very similar to that in C language, but identifiers in JavaScript can also begin with a dollar sign (<code>$</code>), besides an underscore (<code>_</code>).</p>
-<h4>Reserved Words</h4>
+<h4 id="reserved-words">Reserved Words<a class="headerlink" href="#reserved-words" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
   <tr>
@@ -1842,7 +1842,7 @@ The naming rules are very similar to that in C language, but identifiers in Java
 </tbody>
 </table>
 
-<h3>Semicolon</h3>
+<h3 id="semicolon">Semicolon<a class="headerlink" href="#semicolon" title="Permanent link">&para;</a></h3>
 <p>Semicolons are optional. JavaScript treat a line break as a semicolon only when it can't parse the code without it. 
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">f</span>
 <span class="p">;(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span> <span class="c1">// Defensive semicolon</span>
@@ -1861,12 +1861,12 @@ The naming rules are very similar to that in C language, but identifiers in Java
 <p>Any JavaScript <strong>value</strong> that is not a number, a string, a boolean, a <code>null</code> or <code>undefined</code> is an <strong>object</strong>, for example, arrays and functions.</p>
 <p>JavaScript is <strong>object-oriented</strong>.</p>
 <p>JavaScript uses <strong>lexical scoping</strong>. Variables declared inside a function scope are visible only to code inside that function. And variables outside functions are global.</p>
-<h3>Numbers</h3>
+<h3 id="numbers">Numbers<a class="headerlink" href="#numbers" title="Permanent link">&para;</a></h3>
 <p>JS 并不严格区分整数和浮点数，它们都用 64 位浮点数来表示，范围和精度分别是约 <span class="arithmatex">\(\pm1.8\times10^{308}\)</span> 和 <span class="arithmatex">\(\pm5\times10^{324}\)</span>。可以精确表示 <span class="arithmatex">\(\pm2^{53}\)</span> 内的整数，超出范围可能会导致小数点后的偏差。</p>
 <p>整数可以直接用十进制表示，十六进制用 <code>0x</code> 开头表示（大小写均可）。<br />
 但是有些版本的 JS 可以用 0 开头表示八进制，有些不支持，所以有时候根本不知道这是八进制还是十进制。严格 ECMAScript 5 禁止使用这种表示法。  </p>
 <p>整数部分为 0 的浮点数可以直接以小数点开头。科学计数法用 <code>E</code> 表示，和 C 语言一样。</p>
-<h4>Arithmetics</h4>
+<h4 id="arithmetics">Arithmetics<a class="headerlink" href="#arithmetics" title="Permanent link">&para;</a></h4>
 <p>除了加减乘除余，其它运算要用到 <code>Math</code> 对象。
 <div class="highlight"><pre><span></span><code><span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span>
 <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
@@ -1888,9 +1888,9 @@ The naming rules are very similar to that in C language, but identifiers in Java
 <p>如果运算超过了范围，JS 不会报错，而是将它们表示为 <code>Infinity</code> 或者是 <code>-Infinity</code>，被零除或者 <code>Infinity</code> 加上一个正数都属于这种情况。但是有趣的是，<code>0</code> 和 <code>-0</code> 是相等的，但是被它们除分别得到正负的无限，即不相等。若是零被零除，这个未定义的值则会显示为 <code>NaN</code>，Not A Number。<br />
 除了直接逻辑判断，还可以用 <code>IsNaN(x)</code> 和 <code>IsFinite()</code> 来判别。</p>
 <p>JS 中浮点数是二进制表示的，即可以精确表示 1/2、1/4，但是 0.1 却不行。0.3-0.2 和 0.2-0.1 不一定等于 0.1，甚至它们两个本身都不相等。</p>
-<h3>Date and Times</h3>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">then</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mf">2010</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">17</span><span class="p">,</span><span class="mf">59</span><span class="p">,</span><span class="mf">59</span><span class="p">);</span>
+<h3 id="date-and-times">Date and Times<a class="headerlink" href="#date-and-times" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">then</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mf">2010</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">17</span><span class="p">,</span><span class="mf">59</span><span class="p">,</span><span class="mf">59</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">elapsed</span> <span class="o">=</span> <span class="nx">now</span><span class="o">-</span><span class="nx">then</span><span class="p">;</span> <span class="c1">// In milliseconds</span>
 
 <span class="nx">now</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>      <span class="c1">// ==&gt;2019</span>
@@ -1903,7 +1903,7 @@ The naming rules are very similar to that in C language, but identifiers in Java
 <span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">();</span>
 <span class="nx">now</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">();</span>
 </code></pre></div>
-<h3>Text</h3>
+<h3 id="text">Text<a class="headerlink" href="#text" title="Permanent link">&para;</a></h3>
 <p>A string is immutable and ordered, <em>contained in single or double quotation marks, similar to Python</em>.</p>
 <p>字符串使用无符号 16 位编码，从 0 开始编号。一些特殊的字符会用 17 位，它们的长度算作 2。</p>
 <p>转义字符，除了一般的以外，可以用 <code>\</code> + 换行表示 newline 字符（ES5）。
@@ -1925,7 +1925,7 @@ The naming rules are very similar to that in C language, but identifiers in Java
 <span class="nx">s</span><span class="p">[</span><span class="nx">x</span><span class="p">]</span>                <span class="c1">// ECMAScript 5</span>
 </code></pre></div>
 Strings are immutable, therefore all those methods do not alter the value of s.</p>
-<h4>Pattern Matching</h4>
+<h4 id="pattern-matching">Pattern Matching<a class="headerlink" href="#pattern-matching" title="Permanent link">&para;</a></h4>
 <p>JavaScript adopt Perl's syntax for regular expressions. Regex literals are quoted between a pair of slashes (<code>/</code>), where the second slash can be followed by some letters, which modify the meaning of the pattern.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="s2">&quot;1, 2, 3&quot;</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="sr">/\d+/gi</span>     <span class="c1">// Case-insensitive, all instances</span>
@@ -1935,7 +1935,7 @@ Strings are immutable, therefore all those methods do not alter the value of s.<
 <span class="nx">t</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">str</span><span class="p">)</span>
 <span class="nx">t</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
 </code></pre></div>
-<h3>Boolean Values</h3>
+<h3 id="boolean-values">Boolean Values<a class="headerlink" href="#boolean-values" title="Permanent link">&para;</a></h3>
 <p>即 <code>true</code> 和 <code>false</code>。可以用 <code>toString()</code> 方法来转换为对应字符串。</p>
 <p>与或非运算符为
 <div class="highlight"><pre><span></span><code><span class="o">&amp;&amp;</span>
@@ -1952,11 +1952,11 @@ Strings are immutable, therefore all those methods do not alter the value of s.<
 <li><code>""</code></li>
 </ul>
 <p>注意 <code>if (x !== null)</code> 和 <code>if (x)</code> 是不同的。</p>
-<h3><code>null</code> and <code>undefined</code></h3>
+<h3 id="null-and-undefined"><code>null</code> and <code>undefined</code><a class="headerlink" href="#null-and-undefined" title="Permanent link">&para;</a></h3>
 <p><code>null</code> indicates some kind of abcense of value. It is a special object.</p>
 <p><code>undefined</code> is a deeper kind of absence. It is the value of something not exists, and it is returned by a function without an return value. Applying <code>typeof</code> on <code>undefined</code> will get <code>undefined</code>.</p>
 <p><code>==</code> consider them equal but <code>===</code> does not. <code>undefined</code> conveys something unexpected and erroneous. <code>null</code> is a better choice to assigning a 'no-value' to a variable.</p>
-<h3>The Global Object</h3>
+<h3 id="the-global-object">The Global Object<a class="headerlink" href="#the-global-object" title="Permanent link">&para;</a></h3>
 <p>JavaScript interpreter creates a new global object and gives it a set of properties:</p>
 <ul>
 <li>global properties like <code>undefined</code>, <code>Infinity</code>, and <code>NaN</code></li>
@@ -1965,16 +1965,16 @@ Strings are immutable, therefore all those methods do not alter the value of s.<
 <li>global objects like <code>Math</code> and <code>JSON</code></li>
 </ul>
 <p>This global object can be refered by <code>this</code> in the top-level/scope of JavaScript code.</p>
-<h3>Wrapper Objects</h3>
+<h3 id="wrapper-objects">Wrapper Objects<a class="headerlink" href="#wrapper-objects" title="Permanent link">&para;</a></h3>
 <p>字符串不是对象，但是我们显然可以调用它的方法和属性。这是因为每次调用时 JS 解释器都会创建一个临时对象 <code>new String(str)</code>，调用其方法然后将其销毁。可以显式创建这样的"wrapper objects"，它们的行为和原值几乎一样，只是类型不同。
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">boo</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">String</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">boo</span><span class="p">);</span>
 </code></pre></div></p>
-<h3>Primitives and Mutables</h3>
+<h3 id="primitives-and-mutables">Primitives and Mutables<a class="headerlink" href="#primitives-and-mutables" title="Permanent link">&para;</a></h3>
 <p>Primitive values are <strong>immutable</strong>, including <code>undefined</code>, <code>null</code>, booleans, numbers and strings, while objects are mutable, includeing arrays and functions.</p>
 <p>There is no way to mutate primitive values, and they are compared by value. Objects are different, they are compared by reference, that is, two object are equal only when they refer to the same object.</p>
-<h3>Type Conversions</h3>
+<h3 id="type-conversions">Type Conversions<a class="headerlink" href="#type-conversions" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../img/typeconversion.png" width="600px" /></p>
 <p>JavaScript is very flexible about types.
 <div class="highlight"><pre><span></span><code><span class="mf">10</span> <span class="o">+</span> <span class="s2">&quot; objects&quot;</span> <span class="c1">// =&gt; &quot;10 objects&quot;</span>
@@ -2010,7 +2010,7 @@ Strings are immutable, therefore all those methods do not alter the value of s.<
 </code></pre></div>
 These two functions ignores leading whitespaces. Illegal leading characters like '.' and '$' will produce a <code>NaN</code>. Leading <code>0x</code> indicates hexademical and the number is converted into 10-base.</p>
 <p><code>parseInt()</code> accepts an optional second argument specifying the radix of the number to be parsed.</p>
-<h4>Object to Primitive Conversion</h4>
+<h4 id="object-to-primitive-conversion">Object to Primitive Conversion<a class="headerlink" href="#object-to-primitive-conversion" title="Permanent link">&para;</a></h4>
 <p>所有从对象到布尔值的转换都得到 <code>true</code>，哪怕是<code>new Boolean(false)</code>。</p>
 <p>所有的对象都有两种转换方法：</p>
 <p><code>toString()</code>:
@@ -2018,15 +2018,15 @@ These two functions ignores leading whitespaces. Illegal leading characters like
 <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">].</span><span class="nx">toString</span><span class="p">()</span>                  <span class="c1">// =&gt; &quot;1,2,3&quot;</span>
 <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="p">}).</span><span class="nx">toString</span><span class="p">()</span>  <span class="c1">// =&gt; &quot;function(x) {\n    f(x);\n}&quot;</span>
 <span class="sr">/\d/i</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>                    <span class="c1">// =&gt; &quot;/\\d/g&quot;</span>
-<span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mf">2010</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>       <span class="c1">// =&gt; &quot;Fri Jan 01 2010 00:00:00 GMT-0800 (PST)&quot;</span>
+<span class="ow">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mf">2010</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">1</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>       <span class="c1">// =&gt; &quot;Fri Jan 01 2010 00:00:00 GMT-0800 (PST)&quot;</span>
 </code></pre></div></p>
 <p><code>valueOf()</code>:
-<div class="highlight"><pre><span></span><code><span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mf">2010</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">).</span><span class="nx">valueOf</span><span class="p">()</span>      <span class="c1">// =&gt; 1262332800000 (ms since 1970/1/1)</span>
+<div class="highlight"><pre><span></span><code><span class="ow">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mf">2010</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">).</span><span class="nx">valueOf</span><span class="p">()</span>      <span class="c1">// =&gt; 1262332800000 (ms since 1970/1/1)</span>
 </code></pre></div></p>
 <p>转换为字符串时，先调用 <code>toString()</code>，如果失败则调用 <code>valurOf()</code> 并转为字符串，如果仍失败则 <code>TypeError</code>。<br />
 转换为数则是将两个方法的顺序调换。</p>
 <p><code>+</code>, <code>==</code>, <code>!=</code> and the relational operators are the ones that perform object-to-primitive conversions, while others convert more explicitly to a special type.</p>
-<h3>Varible Delcaration</h3>
+<h3 id="varible-delcaration">Varible Delcaration<a class="headerlink" href="#varible-delcaration" title="Permanent link">&para;</a></h3>
 <p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">i</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">k</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">p</span><span class="o">=</span><span class="mf">0</span><span class="p">,</span> <span class="nx">q</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span>
@@ -2039,22 +2039,22 @@ These two functions ignores leading whitespaces. Illegal leading characters like
 <p>In strict ECMAScript 5, it is illigal to assign a value to an undelared variable, but you can get away with it by not using strict ES5. In this case, the interpreter will create this variable as a property of the global object.</p>
 <p>作为 global object 属性的变量是可删除的，而普通变量不可删除。
 <div class="highlight"><pre><span></span><code><span class="nx">fakevar</span> <span class="o">=</span> <span class="mf">0</span><span class="err">；</span>
-<span class="k">delete</span> <span class="nx">fakevar</span><span class="p">;</span>
+<span class="ow">delete</span> <span class="nx">fakevar</span><span class="p">;</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">fakevar</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span>
-<span class="k">delete</span> <span class="k">this</span><span class="p">.</span><span class="nx">fakevar</span><span class="p">;</span>
+<span class="ow">delete</span> <span class="k">this</span><span class="p">.</span><span class="nx">fakevar</span><span class="p">;</span>
 </code></pre></div></p>
-<h3>Variable Scope</h3>
+<h3 id="variable-scope">Variable Scope<a class="headerlink" href="#variable-scope" title="Permanent link">&para;</a></h3>
 <p>全局变量可以与局部变量重名，在局部变量作用域内，同名全局变量相当于被隐藏。</p>
 <p>不同于 C 的是，JS 没有所谓的 ‘block scope’，即一对花括号之间的范围作为一个作用域。在 JS 中，只有函数能作为局部作用域。一个函数当中声明的变量的作用域就是这个函数。<br />
 这样就产生了一个奇怪的特性：在函数中声明一个变量可以在声明之前调用，返回的是 <code>undefined</code> 而不会报错。</p>
 <h2 id="expressions">Expressions<a class="headerlink" href="#expressions" title="Permanent link">&para;</a></h2>
-<h3>Primary Expressions</h3>
+<h3 id="primary-expressions">Primary Expressions<a class="headerlink" href="#primary-expressions" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Constants: <code>1.2</code>, <code>"hello"</code>, <code>/\d+/g</code></li>
 <li>Some reserved words: <code>true</code>, <code>false</code>, <code>null</code>, <code>this</code></li>
 <li>Variables: <code>i</code>, <code>undefined</code></li>
 </ul>
-<h3>Initializers</h3>
+<h3 id="initializers">Initializers<a class="headerlink" href="#initializers" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Array initializers:<br />
@@ -2069,12 +2069,12 @@ The value may be any expression, and it can be nested.<br />
 Property names can be identifiers or strings. </p>
 </li>
 </ul>
-<h3>Property Access Expressions</h3>
+<h3 id="property-access-expressions">Property Access Expressions<a class="headerlink" href="#property-access-expressions" title="Permanent link">&para;</a></h3>
 <p><code>p.x</code> In this case, the property name must be a legal identifier.</p>
 <p><code>p["y"]</code> In this case, the property name may be a string. If the value is not an object, it is converted into one.</p>
-<h3>Function Definition</h3>
-<h3>Invocation</h3>
-<h3>Object Creation</h3>
+<h3 id="function-definition">Function Definition<a class="headerlink" href="#function-definition" title="Permanent link">&para;</a></h3>
+<h3 id="invocation">Invocation<a class="headerlink" href="#invocation" title="Permanent link">&para;</a></h3>
+<h3 id="object-creation">Object Creation<a class="headerlink" href="#object-creation" title="Permanent link">&para;</a></h3>
 <p><code>new Point(1, 1.4)</code>  </p>
 <p>If no argument is passed to the constructor, the parentheses can be omitted.<br />
 <code>new Date</code></p>
@@ -2087,16 +2087,16 @@ Property names can be identifiers or strings. </p>
 Right-to-left associativity:<br />
 <code>w = x = y = z</code> <span class="arithmatex">\(\Longleftrightarrow\)</span> <code>w = (x = (y = z))</code><br />
 <code>a?b:c?d:e?f:g</code> <span class="arithmatex">\(\Longleftrightarrow\)</span> <code>a?b:(c?d:(e?f:g))</code></p>
-<h4>Binary <code>+</code> Operator</h4>
+<h4 id="binary-operator">Binary <code>+</code> Operator<a class="headerlink" href="#binary-operator" title="Permanent link">&para;</a></h4>
 <p>If either of the operands is a string or an object that converts to a string, <code>+</code> performs concatenation.
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;1&quot;</span> <span class="o">+</span> <span class="mf">2</span>     <span class="c1">// =&gt; &quot;12&quot;</span>
 <span class="mf">1</span> <span class="o">+</span> <span class="p">{}</span>      <span class="c1">// =&gt; &quot;1[object Object]&quot;</span>
 <span class="kc">true</span> <span class="o">+</span> <span class="kc">true</span> <span class="c1">// =&gt; 2</span>
 </code></pre></div></p>
-<h4>Unary <code>+</code>, <code>-</code> Operator</h4>
+<h4 id="unary-operator">Unary <code>+</code>, <code>-</code> Operator<a class="headerlink" href="#unary-operator" title="Permanent link">&para;</a></h4>
 <p><code>+</code> 将操作数转换为数类型。<br />
 <code>-</code> 先转换为数，再变号。</p>
-<h4>Identical and Equality</h4>
+<h4 id="identical-and-equality">Identical and Equality<a class="headerlink" href="#identical-and-equality" title="Permanent link">&para;</a></h4>
 <p>The identical operator <code>===</code> performs following rules:</p>
 <ul>
 <li>If one or both values are <code>NaN</code>, they are not identical. <code>NaN</code> is the only value of <code>x</code> for <code>x !== x</code> to be true.</li>
@@ -2108,25 +2108,25 @@ Right-to-left associativity:<br />
 <li><code>null</code> and <code>undefined</code> are equal.</li>
 <li><code>1</code> and <code>'1'</code> are equal.</li>
 </ul>
-<h4>Comparison Operator</h4>
+<h4 id="comparison-operator">Comparison Operator<a class="headerlink" href="#comparison-operator" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="s2">&quot;11&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;3&quot;</span>
 <span class="s2">&quot;11&quot;</span> <span class="o">&gt;</span> <span class="mf">3</span>    <span class="c1">// &#39;11&#39; is converted into number</span>
 </code></pre></div>
 如果两边有一个是（或被转换为）<code>NaN</code>，那么总是返回<code>false</code></p>
-<h4>The <code>in</code> Operator</h4>
+<h4 id="the-in-operator">The <code>in</code> Operator<a class="headerlink" href="#the-in-operator" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">1</span><span class="p">};</span>
-<span class="s2">&quot;x&quot;</span> <span class="k">in</span> <span class="nx">p</span>             <span class="c1">// =&gt; true: p has property named &quot;x&quot;</span>
-<span class="s2">&quot;z&quot;</span> <span class="k">in</span> <span class="nx">p</span>             <span class="c1">// =&gt; false: p has no &quot;z&quot; property.</span>
-<span class="s2">&quot;toString&quot;</span> <span class="k">in</span> <span class="nx">p</span>      <span class="c1">// =&gt; true: p inherits toString method</span>
+<span class="s2">&quot;x&quot;</span> <span class="ow">in</span> <span class="nx">p</span>             <span class="c1">// =&gt; true: p has property named &quot;x&quot;</span>
+<span class="s2">&quot;z&quot;</span> <span class="ow">in</span> <span class="nx">p</span>             <span class="c1">// =&gt; false: p has no &quot;z&quot; property.</span>
+<span class="s2">&quot;toString&quot;</span> <span class="ow">in</span> <span class="nx">p</span>      <span class="c1">// =&gt; true: p inherits toString method</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">7</span><span class="p">,</span><span class="mf">8</span><span class="p">];</span>    <span class="c1">// An array with elements 0 and 1</span>
-<span class="s2">&quot;0&quot;</span> <span class="k">in</span> <span class="nx">data</span>          <span class="c1">// =&gt; true: array has an element &quot;0&quot;</span>
-<span class="mf">1</span> <span class="k">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; true: numbers are converted to strings</span>
-<span class="mf">3</span> <span class="k">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; false: no element 3</span>
+<span class="s2">&quot;0&quot;</span> <span class="ow">in</span> <span class="nx">data</span>          <span class="c1">// =&gt; true: array has an element &quot;0&quot;</span>
+<span class="mf">1</span> <span class="ow">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; true: numbers are converted to strings</span>
+<span class="mf">3</span> <span class="ow">in</span> <span class="nx">data</span>            <span class="c1">// =&gt; false: no element 3</span>
 </code></pre></div>
-<h4>The <code>instanceof</code> Operator</h4>
+<h4 id="the-instanceof-operator">The <code>instanceof</code> Operator<a class="headerlink" href="#the-instanceof-operator" title="Permanent link">&para;</a></h4>
 <p>若左边的对象是右边类名的实例则返回真。因为 JS 中类名就是构造函数名，所以右操作数应为一函数名，否则 it throws <code>TypeError</code>.</p>
-<h4>Logical Operators</h4>
+<h4 id="logical-operators">Logical Operators<a class="headerlink" href="#logical-operators" title="Permanent link">&para;</a></h4>
 <p>逻辑运算符 <code>&amp;&amp;</code>、<code>||</code> 和 <code>!</code> 并不要求操作数是布尔值，若不是，则先转换为布尔值。</p>
 <p>For AND (<code>&amp;&amp;</code>), if the left operand if falsy, the right operand WON'T be evaluated.
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="nx">b</span><span class="p">)</span> <span class="nx">foo</span><span class="p">();</span>
@@ -2135,39 +2135,39 @@ Right-to-left associativity:<br />
 <p>The same for OR (<code>||</code>), the second operand is neglected when the first one is truthy.
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">m1</span> <span class="o">||</span> <span class="nx">m2</span> <span class="o">||</span> <span class="mf">100</span>     <span class="c1">// Choose the first truthy one.</span>
 </code></pre></div></p>
-<h4>Assignment with Operation</h4>
+<h4 id="assignment-with-operation">Assignment with Operation<a class="headerlink" href="#assignment-with-operation" title="Permanent link">&para;</a></h4>
 <p><code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&lt;&lt;=</code>, <code>&gt;&gt;=</code>, <code>&gt;&gt;&gt;=</code>, <code>&amp;=</code>, <code>|=</code>, <code>^=</code>.</p>
-<h4>Evaluation</h4>
+<h4 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h4>
 <p><code>eval()</code> interprets JavaScript source code in string. Dynamic evaluation is powerful but almost never necessary in practice. Think carefully before using it.</p>
 <p>It returns the value of the last expression or statement. If the last expression or statement has no value, it returns <code>undefined</code>. If the string throws an exception, <code>eval()</code> throws <code>SyntaxError</code>.</p>
 <p><code>eval()</code> 的一个很重要的特性就是它能获取变量的值，它对变量的操作和直接操作时一样的。</p>
 <p>Only the variable declaration is hoisted -- the variable initialization remains where it is placed.</p>
-<h4>The <code>typeof</code> Operator</h4>
+<h4 id="the-typeof-operator">The <code>typeof</code> Operator<a class="headerlink" href="#the-typeof-operator" title="Permanent link">&para;</a></h4>
 <p><code>typeof</code> returns a string such as "undefined", "object", "boolean", "string", "number", "function".</p>
 <p>Note that <code>typeof(null)</code> returns "object", and <code>typeof(NaN)</code> returns "number".</p>
-<h4>The <code>delete</code> Operator</h4>
+<h4 id="the-delete-operator">The <code>delete</code> Operator<a class="headerlink" href="#the-delete-operator" title="Permanent link">&para;</a></h4>
 <p><code>delete</code> 可被用于删除对象或者是数组的成员。注意使用 <code>var</code> 和 <code>function</code> 所定义的量是不可删除的。</p>
-<h4>The <code>void</code> Operator</h4>
+<h4 id="the-void-operator">The <code>void</code> Operator<a class="headerlink" href="#the-void-operator" title="Permanent link">&para;</a></h4>
 <p><code>void</code> evaluates the operand and then discard the value and return <code>undefined</code>, so it only make sense when the operand has side effects.</p>
-<h4>The Comma Operator</h4>
+<h4 id="the-comma-operator">The Comma Operator<a class="headerlink" href="#the-comma-operator" title="Permanent link">&para;</a></h4>
 <p><code>,</code> evaluates the left operand, then discards it, returns the value of the right operand. So it make sense only when the left operand has side effects.</p>
 <p>The comma operator is commonly used in <code>for</code> loop
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">,</span> <span class="nx">j</span><span class="o">=</span><span class="mf">10</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">j</span><span class="o">--</span><span class="p">)</span>
 </code></pre></div></p>
 <h2 id="statements">Statements<a class="headerlink" href="#statements" title="Permanent link">&para;</a></h2>
 <p>Expressions are <em>evaluated</em> to produce a value, while statements ar <em>executed</em> to make something happen.</p>
-<h4>Expression Statements</h4>
+<h4 id="expression-statements">Expression Statements<a class="headerlink" href="#expression-statements" title="Permanent link">&para;</a></h4>
 <p>最常用的就是赋值语句，还有函数调用和自增自减。</p>
-<h4>Compound and Empty Statements</h4>
+<h4 id="compound-and-empty-statements">Compound and Empty Statements<a class="headerlink" href="#compound-and-empty-statements" title="Permanent link">&para;</a></h4>
 <p>Compound statements are used to execute multiple statements where JavaScript expects a single statement. The empty statement is the opposite, it is a single semicolon and does nothing. It is commonly used in loops；
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0</span><span class="p">);</span>
 </code></pre></div></p>
-<h4>Declaration</h4>
+<h4 id="declaration">Declaration<a class="headerlink" href="#declaration" title="Permanent link">&para;</a></h4>
 <p><code>var</code> and <code>function</code> define identifiers. <br />
 使用 <code>var</code> 声明变量时可以用表达式给出初值。<br />
 函数定义可以不给出函数名，而将这个函数赋值给一个变量或者作为参数传入另一个函数。</p>
-<h3>Conditionals</h3>
-<h4><code>if</code></h4>
+<h3 id="conditionals">Conditionals<a class="headerlink" href="#conditionals" title="Permanent link">&para;</a></h3>
+<h4 id="if"><code>if</code><a class="headerlink" href="#if" title="Permanent link">&para;</a></h4>
 <p>注意：
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">)</span>
@@ -2176,24 +2176,24 @@ Right-to-left associativity:<br />
     <span class="o">&lt;</span><span class="nx">statement</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 这样的缩进方式是错误的。JS 将会把 <code>else</code> 语句归为内层的 <code>if</code> 语句。</p>
-<h4><code>switch</code></h4>
+<h4 id="switch"><code>switch</code><a class="headerlink" href="#switch" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">case</span> 
 <span class="p">}</span>
 </code></pre></div>
 各个 <code>case</code> 子句中的比较是以 <code>===</code> 作为标准的。因为遇到 <code>break</code> 时整个语句被跳出，所以并不知道哪些 <code>case</code> 会被比较，故比较表达式最好不要引起 side effect。如果没有 <code>break</code> 语句，则在执行完匹配到的子块后会继续比较下一情况。</p>
-<h3>Loops</h3>
-<h4><code>while</code></h4>
+<h3 id="loops">Loops<a class="headerlink" href="#loops" title="Permanent link">&para;</a></h3>
+<h4 id="while"><code>while</code><a class="headerlink" href="#while" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="o">&lt;</span><span class="nx">statement</span><span class="o">&gt;</span>
 </code></pre></div>
-<h4><code>do</code> / <code>while</code></h4>
+<h4 id="do-while"><code>do</code> / <code>while</code><a class="headerlink" href="#do-while" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">do</span>
     <span class="o">&lt;</span><span class="nx">statement</span><span class="o">&gt;</span>
 <span class="k">while</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">);</span>
 </code></pre></div>
-<h4><code>for</code></h4>
+<h4 id="for"><code>for</code><a class="headerlink" href="#for" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">initialize</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="nx">test</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="nx">increment</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="nx">statement</span>
 </code></pre></div>
@@ -2206,24 +2206,24 @@ Right-to-left associativity:<br />
 <span class="p">}</span>
 </code></pre></div>
 同样地，<code>for(;;)</code> 就相当于 <code>while(true)</code>。</p>
-<h4><code>for</code> / <code>in</code></h4>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">variable</span><span class="o">&gt;</span> <span class="k">in</span> <span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="p">)</span>
+<h4 id="for-in"><code>for</code> / <code>in</code><a class="headerlink" href="#for-in" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">variable</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="o">&lt;</span><span class="nx">statement</span><span class="o">&gt;</span>
 </code></pre></div>
 <p>此处循环变量遍历的是对象中属性的名称，形式为字符串。</p>
 <p>既然每次循环都将循环变量赋值，可以使用 <code>for(a[i++] in obj);</code> 来将对象中的每一个属性名复制到数组 <code>a</code> 中。</p>
 <p>The <code>for</code>/<code>in</code> loop does not actually enumerate all properties of an object, only the enumerable properties. In practice, the enumeration order is the order in which they were defined. However, this rule may be altered by using some techniques.</p>
-<h3>Jumps</h3>
-<h4>Labeled Statements</h4>
+<h3 id="jumps">Jumps<a class="headerlink" href="#jumps" title="Permanent link">&para;</a></h3>
+<h4 id="labeled-statements">Labeled Statements<a class="headerlink" href="#labeled-statements" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">identifier</span><span class="o">&gt;:</span> <span class="o">&lt;</span><span class="nx">statement</span><span class="o">&gt;</span>
 </code></pre></div>
 Any statement can be labeled, though it is only helpful to label statements that have bodies, such as loops, conditionals, and compound statements. Labels are used to specify the destination layer of <code>break</code> and <code>continue</code>.</p>
 <p>标签和变量所使用的命名空间不同，所以它可以和变量或者函数重名。这个标签的作用域只在于被标签的语句之内，所以只要两个标签不嵌套，它们也可以重名。</p>
-<h4><code>break</code></h4>
+<h4 id="break"><code>break</code><a class="headerlink" href="#break" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">break</span> <span class="o">&lt;</span><span class="nx">labelname</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 <p>This statement can even be a statement block grouped within curly braces for the sole purpose of naming the block with a label. When <code>labelname</code> is omitted, the program will break out to the nearest layer of enclosing loop or switch.</p>
-<h4><code>continue</code></h4>
+<h4 id="continue"><code>continue</code><a class="headerlink" href="#continue" title="Permanent link">&para;</a></h4>
 <p>Similar to <code>break</code>:
 <div class="highlight"><pre><span></span><code><span class="k">continue</span> <span class="o">&lt;</span><span class="nx">labelname</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div></p>
@@ -2232,15 +2232,15 @@ Any statement can be labeled, though it is only helpful to label statements that
 <li><code>for</code> 循环中，将执行<code>&lt;increment&gt;</code>，然后测试循环条件。</li>
 <li><code>for</code>/<code>in</code> 循环中，直接将下一个属性名赋值给循环变量（如果存在的话）。</li>
 </ul>
-<h4><code>return</code></h4>
+<h4 id="return"><code>return</code><a class="headerlink" href="#return" title="Permanent link">&para;</a></h4>
 <p>若函数中没有 <code>return</code> 或者 <code>return</code> 后面没有值，则函数返回的是 <code>undefined</code>。</p>
-<h4><code>throw</code></h4>
+<h4 id="throw"><code>throw</code><a class="headerlink" href="#throw" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="k">throw</span> <span class="o">&lt;</span><span class="nx">expression</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 <code>&lt;expression&gt;</code> may evaluate to a value of any type. Or the error classes that the JavaScript interpreter uses. An error object has a <code>name</code> property that specify the type of this error, and a <code>message</code> property that holds the string passed to the constructor.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mf">0</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;x must be positive.&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mf">0</span><span class="p">)</span> <span class="k">throw</span> <span class="ow">new</span> <span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;x must be positive.&quot;</span><span class="p">);</span>
 </code></pre></div>
-<h4><code>try</code> / <code>catch</code> / <code>finally</code></h4>
+<h4 id="try-catch-finally"><code>try</code> / <code>catch</code> / <code>finally</code><a class="headerlink" href="#try-catch-finally" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="k">try</span>
 <span class="p">{</span>
     <span class="nx">statement</span>
@@ -2257,8 +2257,8 @@ Any statement can be labeled, though it is only helpful to label statements that
 若 <code>try</code> 块中出错，则跳转至最近的 <code>catch</code>，最后执行 <code>finally</code>。<code>catch</code> 和 <code>finally</code> 必须要有一个，否则 <code>try</code> 出错。注意就算只包含一个语句，这三个语句块的花括号也不能省略。</p>
 <p>When an exception is caught, the value associated with the exception is assigned to the parameter following <code>catch</code>. Unlike regular variables, this identifier is only defined within the <code>catch</code> block.</p>
 <p><code>finally</code> block is always executed, whether the exception is caught or not, whether the <code>try</code> block is exited normally or because of a <code>break</code>, <code>continue</code> or <code>return</code>.</p>
-<h3>Miscellaneous Statements</h3>
-<h4><code>with</code></h4>
+<h3 id="miscellaneous-statements">Miscellaneous Statements<a class="headerlink" href="#miscellaneous-statements" title="Permanent link">&para;</a></h3>
+<h4 id="with"><code>with</code><a class="headerlink" href="#with" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="kd">with</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">object</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="o">&lt;</span><span class="nx">statement</span><span class="o">&gt;</span>
 </code></pre></div>
@@ -2272,9 +2272,9 @@ Any statement can be labeled, though it is only helpful to label statements that
 </code></pre></div></p>
 <p>如果其中一语句出现对非此对象属性的变量名的操作，则这一句的效果和在 <code>with</code> 外执行一样。</p>
 <p>The <code>with</code> statement is forbidden in strict mode and should be considered deprecated in non-strict mode. It is likely to run more slowly than the equivalent code written without <code>with</code> statement.</p>
-<h4><code>debugger</code></h4>
+<h4 id="debugger"><code>debugger</code><a class="headerlink" href="#debugger" title="Permanent link">&para;</a></h4>
 <p><code>debugger</code> 相当于断点。执行到此语句的时候代码停止执行，以便检查调用栈。</p>
-<h4><code>"use strict"</code></h4>
+<h4 id="use-strict"><code>"use strict"</code><a class="headerlink" href="#use-strict" title="Permanent link">&para;</a></h4>
 <p>这是一个字符串，但被当作语句使用。
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
 </code></pre></div>
@@ -2311,28 +2311,28 @@ Any statement can be labeled, though it is only helpful to label statements that
 <li><em>class</em></li>
 <li><em>extensible</em></li>
 </ul>
-<h3>Prototypes</h3>
+<h3 id="prototypes">Prototypes<a class="headerlink" href="#prototypes" title="Permanent link">&para;</a></h3>
 <p>Every object has its <em>prototype</em> , or very few of them <code>null</code>. All object created by object literal share the common prototype called <code>Object.prototype</code>. <code>new Object()</code> or <code>{}</code> also share this prototype. Similarly, <code>new Array()</code> or <code>[]</code> has the prototype <code>Array.prototype</code>. This link a series of objects to form a <em>prototype chain</em>.</p>
 <p><code>Object.prototype</code> itself doesn't have a prototype, inheriting no properties.</p>
-<h3>Creating Objects</h3>
+<h3 id="creating-objects">Creating Objects<a class="headerlink" href="#creating-objects" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">point</span><span class="o">=</span><span class="p">{</span><span class="nx">x</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">0</span><span class="p">};</span>
 </code></pre></div>
 <p>每次执行到这个语句时，都会创建一个全新的对象。在 ES5 中，即使属性名是保留字，也不必加引号，但有一些 ES3 解释器要求有引号。最后一个属性后的逗号可有可无，但是 IE 中不允许出现这个逗号。</p>
 <p><code>new</code> 与构造函数创建对象：
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>   <span class="c1">// == {}</span>
-<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>    <span class="c1">// == []</span>
-<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>     <span class="c1">// Current time</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Object</span><span class="p">();</span>   <span class="c1">// == {}</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">();</span>    <span class="c1">// == []</span>
+<span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Date</span><span class="p">();</span>     <span class="c1">// Current time</span>
 </code></pre></div></p>
 <p><code>Object.create()</code> 创建对象：
 第一个参数是对象原型，第二个可选参数是新对象的参数。
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span><span class="mf">2</span><span class="p">});</span> <span class="c1">// o 继承 x 和 y</span>
 <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </code></pre></div></p>
-<h3>Object as Associative Arrays</h3>
+<h3 id="object-as-associative-arrays">Object as Associative Arrays<a class="headerlink" href="#object-as-associative-arrays" title="Permanent link">&para;</a></h3>
 <p><div class="highlight"><pre><span></span><code><span class="nx">object</span><span class="p">[</span><span class="s2">&quot;property&quot;</span><span class="p">]</span>
 </code></pre></div>
 这种访问方式非常像数组，事实上中括号内的内容是先转换为字符串。也就是说可以在中括号内进行运算或者类型转换。</p>
-<h3>Inheritance</h3>
+<h3 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permanent link">&para;</a></h3>
 <p>从原型对象继承的属性保留其值。事实上，继承所得的属性还是归原型所有。若改变原型，子对象的继承属性也会改变。</p>
 <p>对某对象的属性赋值时：</p>
 <ul>
@@ -2340,7 +2340,7 @@ Any statement can be labeled, though it is only helpful to label statements that
 <li>若对象无该属性，则创建这个属性并赋值。</li>
 <li>若对象属性是继承而来，that inherited property is now hidden by the newly created own property with the same name.</li>
 </ul>
-<h3>Property Access Errors</h3>
+<h3 id="property-access-errors">Property Access Errors<a class="headerlink" href="#property-access-errors" title="Permanent link">&para;</a></h3>
 <p>It is not an error to query a property that does not exist. That will return <code>undefined</code>. But it will raise a <code>TypeError</code> to attempt to query a property of an <em>object that does not exist</em>.</p>
 <p>Attempts to set read-only properties or add a property to a non-<em>existensible</em> object, curiously, however, fails silently, but a <code>TypeError</code> will be thrown in strict mode.</p>
 <p>An attempt to set a property <code>p</code> of an object <code>o</code> fails when:</p>
@@ -2348,12 +2348,12 @@ Any statement can be labeled, though it is only helpful to label statements that
 <li><code>o</code> <em>owns</em> or <em>inherits</em> the read-only property <code>p</code>,</li>
 <li><code>o</code> does not own <code>p</code>; <code>o</code> does not inherit <code>p</code> with a setter method; o is not <em>extensible</em>.</li>
 </ul>
-<h3>Deleting Properties</h3>
+<h3 id="deleting-properties">Deleting Properties<a class="headerlink" href="#deleting-properties" title="Permanent link">&para;</a></h3>
 <p>The <code>delete</code> operator only deletes own properties, not inherited ones.</p>
 <p><code>delete</code> 删除成功或者删除不存在的属性的时候返回 <code>true</code>。但是删除 non-<em>configurable</em> 时会失败并且返回 <code>false</code>。In strict mode, it raises a <code>SyntaxError</code>.</p>
-<h3>Testing Properties</h3>
+<h3 id="testing-properties">Testing Properties<a class="headerlink" href="#testing-properties" title="Permanent link">&para;</a></h3>
 <p>有几种方法来查看对象的某属性是否存在。</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;x&quot;</span> <span class="k">in</span> <span class="nx">o</span>    <span class="c1">// =&gt; true or false</span>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;x&quot;</span> <span class="ow">in</span> <span class="nx">o</span>    <span class="c1">// =&gt; true or false</span>
 
 <span class="nx">o</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="c1">// must be an own property</span>
@@ -2366,12 +2366,12 @@ Any statement can be labeled, though it is only helpful to label statements that
 <span class="c1">// 和 in 的区别在于是否能判别是存在的属性而被赋值为 undefined。</span>
 <span class="c1">// 注意是严格不等号。</span>
 </code></pre></div>
-<h3>Enumerating Properties</h3>
+<h3 id="enumerating-properties">Enumerating Properties<a class="headerlink" href="#enumerating-properties" title="Permanent link">&para;</a></h3>
 <p>Built-in methods that objects inherit are not enumerable, but properties that the codes add are, unless made nonenumerable manually.</p>
 <p>在 ES5 中，还有两个函数返回对象的属性名。<br />
 <code>Object.keys()</code> 接受一个对象作为参数，返回这个对象中可遍历的属性名。<br />
 <code>Object.getOwnPropertyNames()</code> 则返回对象所有的自有属性。</p>
-<h3>Property Getters and Setters</h3>
+<h3 id="property-getters-and-setters">Property Getters and Setters<a class="headerlink" href="#property-getters-and-setters" title="Permanent link">&para;</a></h3>
 <p>The property value may be replaced by one or two methods, known as a <em>getter</em> and a <em>setter</em>. These properties are called <em>accessor properties</em> to distinguish them from normal <em>data properties</em>.</p>
 <p>The difinition of these two methods are like functions:
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="p">{</span>
@@ -2389,7 +2389,7 @@ Any statement can be labeled, though it is only helpful to label statements that
 <span class="nx">p</span><span class="p">.</span><span class="nx">r</span> <span class="o">=</span> <span class="mf">2</span>
 </code></pre></div></p>
 <p>The existence of <em>setter</em> and <em>getter</em> determines the writability and readablity of this property.</p>
-<h3>Property Attributes</h3>
+<h3 id="property-attributes">Property Attributes<a class="headerlink" href="#property-attributes" title="Permanent link">&para;</a></h3>
 <p>In ECMAScript 3, all properties are writeble, enumerable and configureable, and there is no way to change them. ESMCScript 5 allows querying and setting them.</p>
 <p>The four attributes of a data property are</p>
 <ul>
@@ -2423,47 +2423,47 @@ Any statement can be labeled, though it is only helpful to label statements that
 Both the functions returns the processed object.</p>
 <p>The property desciptor you pass to these functions does not have to include all four attributes. If you are creating a new property, then omitted attributes are taken to be <code>false</code> or <code>undefined</code>. If you are modifying an existing property, then the omitted remain unchanged.</p>
 <p>使用 <code>Object.create()</code> 创建新对象时，第二个可选参数的声明 <code>Object.defineProperties()</code> 中的。</p>
-<h3>Object Attributes</h3>
+<h3 id="object-attributes">Object Attributes<a class="headerlink" href="#object-attributes" title="Permanent link">&para;</a></h3>
 <p>Every object has three associated attributes:</p>
 <ul>
 <li><em>prototype</em>,</li>
 <li><em>class</em>,</li>
 <li><em>extensible</em>.</li>
 </ul>
-<h4>The <code>prototype</code> Attribute</h4>
+<h4 id="the-prototype-attribute">The <code>prototype</code> Attribute<a class="headerlink" href="#the-prototype-attribute" title="Permanent link">&para;</a></h4>
 <p>The <code>prototype</code> of an object is set when the object is created. In ECMAScript 5, passing the object into <code>Object.getPrototypeOf()</code> queries its prototype. To determine whether an object is the prototype of another, use <code>p.IsPrototypeOf(o)</code>.</p>
-<h4>The <code>class</code> Attribute</h4>
+<h4 id="the-class-attribute">The <code>class</code> Attribute<a class="headerlink" href="#the-class-attribute" title="Permanent link">&para;</a></h4>
 <p>The default <code>toString()</code> method (inherited from <code>Object.prototype</code>) returns a string of the from <code>[object class]</code>. To invoke the right version, we usually do
 <div class="highlight"><pre><span></span><code><span class="nb">Object</span><span class="p">.</span><span class="nx">protptype</span><span class="p">.</span><span class="nx">toString</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">o</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mf">8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1</span><span class="p">)</span>
 </code></pre></div>
 This works for any value except <code>null</code> and <code>undefined</code>.</p>
-<h4>The <code>extensible</code> Attribute</h4>
+<h4 id="the-extensible-attribute">The <code>extensible</code> Attribute<a class="headerlink" href="#the-extensible-attribute" title="Permanent link">&para;</a></h4>
 <p>ECMASctipt 5 defines functions to query and setting extensibility of an object. Pass an object to <code>Object.isExtensible()</code> to determine whether it is extensible, to <code>Object.preventExtensions()</code> to make it nonextensible. Note that making it nonextensible only affect the object itself, and it is irreverseable..</p>
 <p><code>Object.seal()</code> not only make the object nonextensible, but also make all properties nonconfigurable, that is, no properties can be added, deleted or configured. <code>Object.isSealed()</code> determines whether it is sealed.</p>
 <p><code>Object.freeze()</code> locks the object down more tightly. It makes the object nonexistensible, and all its properties nonconfigurable and read-only. And <code>Object.isFrozen()</code> is its indicator function.</p>
 <p><code>Object.preventExtensions()</code>, <code>Object.seal()</code> and <code>Object.freeze()</code> only affect the object itself, not its prototypes. Also, they return the modified object.</p>
-<h3>Serializing Objects</h3>
+<h3 id="serializing-objects">Serializing Objects<a class="headerlink" href="#serializing-objects" title="Permanent link">&para;</a></h3>
 <p>ECMAScript 5 provides conversions between JSON and strings. <code>JSON.stringify()</code> returns the corresponding string of its JSON parameter. And <code>JSON.parse()</code> parses the JSON parameter into a string.</p>
-<h3>Object Methods</h3>
+<h3 id="object-methods">Object Methods<a class="headerlink" href="#object-methods" title="Permanent link">&para;</a></h3>
 <p><code>toString()</code> method returns a string in the form of  <code>[object &lt;class&gt;]</code>. But it is not much useful, so there are some customized versions such as <code>Array.toString()</code>, <code>Date.toString()</code> and <code>Function.toString()</code>.</p>
 <p><code>toLocaleString()</code> method returns a localized string.</p>
 <p><code>valueOf()</code> is another not-so-interesting method.</p>
 <h2 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h2>
 <p>An array is an ordered collection of values. Each value is called a <em>element</em> and has its position called <em>index</em>. JavaScript arrays are untyped, and different elements of an array may be of different types. The indexes use 32-bit integer and are zero-based (highest <span class="arithmatex">\(4294967294 = 2^{32}\)</span>).</p>
-<h3>Creating Arrays</h3>
+<h3 id="creating-arrays">Creating Arrays<a class="headerlink" href="#creating-arrays" title="Permanent link">&para;</a></h3>
 <p>Array literal:
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">empty</span> <span class="o">=</span> <span class="p">[];</span>
 <span class="kd">var</span> <span class="nx">primes</span> <span class="o">=</span> <span class="p">[</span><span class="nx">empty</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span><span class="o">+</span><span class="mf">1</span><span class="p">,</span> <span class="p">];</span>
 </code></pre></div>
 Array constuctor:
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">1</span> <span class="p">,</span><span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;this&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">1</span> <span class="p">,</span><span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;this&quot;</span><span class="p">);</span>
 </code></pre></div>
 The only patameter for <code>Array()</code> specifies the length. If there is more than one parameters, they are the array elements.</p>
-<h3>Arrays as Objects</h3>
+<h3 id="arrays-as-objects">Arrays as Objects<a class="headerlink" href="#arrays-as-objects" title="Permanent link">&para;</a></h3>
 <p>JavaScript arrays are a special type of object. When accessing elements like <code>a[1]</code>, the index becomes a string <code>"1"</code>. You can index the array with non-index numbers like real number or even strings, and they are treated like normal object properties. There is no "Out Of Bound" error, and when accessing an nonexistent property, you simply get <code>undefined</code>. What is special about arrays is that they automatically update <code>length</code> property for you.</p>
-<h3>Sparse Array</h3>
+<h3 id="sparse-array">Sparse Array<a class="headerlink" href="#sparse-array" title="Permanent link">&para;</a></h3>
 <p>A sparse array is one in which the elements do not have contiguous indexes starting at 0. If the array is sparse, the <code>length</code> property is larger than all its indexes.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
 <span class="nx">a</span><span class="p">[</span><span class="mf">1000</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
@@ -2471,10 +2471,10 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <p>注意，稀疏数组和普通数组的区别在于，稀疏数组中有不存在的下标，而普通数组未被赋值的地方只是 <code>undefined</code> 而已。</p>
 <p>像这样 <code>var a = [,,,]</code> 定义的数组并不是稀疏的，只是它的值都是 <code>undefined</code> 而已。</p>
 <p>可以使用 <code>delete</code> 删除一些元素使得一个普通数组变为稀疏数组。</p>
-<h3>Array Length</h3>
+<h3 id="array-length">Array Length<a class="headerlink" href="#array-length" title="Permanent link">&para;</a></h3>
 <p>In dense arrays, <code>length</code> is one more than the highest index. In sparse arrays, it is larger than all indexes.</p>
 <p>When inserting an element whose index <code>i</code> is beyond current length of an array, its <code>length</code> will automatically increase to <code>i+1</code>. If <code>length</code> is set to a smaller value, then the array is cut off and the values higher than current length will be lost.</p>
-<h3>Iterating Arrays</h3>
+<h3 id="iterating-arrays">Iterating Arrays<a class="headerlink" href="#iterating-arrays" title="Permanent link">&para;</a></h3>
 <p>使用 <code>for</code> 循环遍历下标：
 <div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
 </code></pre></div></p>
@@ -2482,61 +2482,61 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
 </code></pre></div></p>
 <p>若要跳过不存在的下标
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">i</span> <span class="k">in</span> <span class="nx">a</span><span class="p">))</span> <span class="k">continue</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">i</span> <span class="ow">in</span> <span class="nx">a</span><span class="p">))</span> <span class="k">continue</span><span class="p">;</span>
 </code></pre></div></p>
 <p>还可以使用 <code>for/in</code> 循环，注意这里的循环变量是字符串。
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">a</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="ow">in</span> <span class="nx">a</span><span class="p">)</span>
 </code></pre></div></p>
 <p>由于数组是一个对象，若它有其它自定义的属性，则在使用 <code>for/in</code> 循环时一般是按照创建顺序来遍历，Implementations differ in how they handle this case, so if iteration matters for your algorithm it is best to use a regular <code>for</code> loop instead of <code>for/in</code></p>
-<h3>Multidimentional Arrays</h3>
+<h3 id="multidimentional-arrays">Multidimentional Arrays<a class="headerlink" href="#multidimentional-arrays" title="Permanent link">&para;</a></h3>
 <p>JavaScript does not support true multdimentional arrays but you can approximate them with arrays of arrays.
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">table</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">table</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="nx">table</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+    <span class="nx">table</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
 </code></pre></div></p>
-<h3>Array Methods</h3>
+<h3 id="array-methods">Array Methods<a class="headerlink" href="#array-methods" title="Permanent link">&para;</a></h3>
 <p><strong>ECMAScript 3</strong>:</p>
-<h4><code>join()</code> and <code>split()</code></h4>
+<h4 id="join-and-split"><code>join()</code> and <code>split()</code><a class="headerlink" href="#join-and-split" title="Permanent link">&para;</a></h4>
 <p><code>join()</code> 方法接受一个字符串参数，返回数组对应的字符串，每个元素之间用这个字符串分隔符分开。参数默认是一个英文逗号。
 <div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="p">.</span><span class="nx">join</span><span class="p">()</span>    <span class="c1">// =&gt; &quot;1,2,3&quot;</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>    <span class="c1">// =&gt; &quot;123&quot;</span>
 </code></pre></div>
 <code>split()</code> 则和 <code>join()</code> 相反，which creates an array by breaking a string into pieces.</p>
 <p>这两个方法不会改变原数组。</p>
-<h4><code>reverse()</code></h4>
+<h4 id="reverse"><code>reverse()</code><a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h4>
 <p><code>reverse()</code> reverses the order of elements in an array <em>in place</em>, 也就是说它将原数组逆序。同时它也会返回改变后的数组。</p>
-<h4><code>sort()</code></h4>
+<h4 id="sort"><code>sort()</code><a class="headerlink" href="#sort" title="Permanent link">&para;</a></h4>
 <p><code>sort()</code> sorts the elements of the array <em>in place</em> and returns the sorted array. 默认情况下按照 Unicode 顺序排列。</p>
 <p>若需要其他顺序，则需要一个比较函数作为参数。若左参数在前则返回负值，若两参数等价则返回 0，若右参数在前则返回正值。
 <div class="highlight"><pre><span></span><code><span class="nx">a</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span> <span class="k">return</span> <span class="nx">a</span><span class="o">-</span><span class="nx">b</span><span class="p">;</span> <span class="p">});</span>
 </code></pre></div></p>
-<h4><code>concat()</code></h4>
+<h4 id="concat"><code>concat()</code><a class="headerlink" href="#concat" title="Permanent link">&para;</a></h4>
 <p><code>concat()</code> method creates and returns a new array that contains the elements of the original array and its parameters.
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="mf">5</span><span class="p">);</span>            <span class="c1">// =&gt; [1,2,3,4,5]</span>
 <span class="kd">var</span> <span class="nx">a2</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mf">4</span><span class="p">,</span> <span class="mf">5</span><span class="p">]);</span>          <span class="c1">// =&gt; [1,2,3,4,5]</span>
 <span class="kd">var</span> <span class="nx">a3</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">],</span> <span class="p">[</span><span class="mf">6</span><span class="p">,</span><span class="mf">7</span><span class="p">]);</span>    <span class="c1">// =&gt; [1,2,3,4,5,6,7]</span>
 <span class="kd">var</span> <span class="nx">a4</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="mf">4</span><span class="p">,</span> <span class="p">[</span><span class="mf">5</span><span class="p">,</span><span class="mf">6</span><span class="p">]]);</span>      <span class="c1">// =&gt; [1,2,3,4,[5,6]]</span>
 </code></pre></div></p>
-<h4><code>slice()</code></h4>
+<h4 id="slice"><code>slice()</code><a class="headerlink" href="#slice" title="Permanent link">&para;</a></h4>
 <p>A <em>slice</em> is another name of a <em>subarray</em>. 即 <code>a.slice(m,n)</code> 返回位置满足 <span class="arithmatex">\(m\le i&lt;n\)</span> 的子数组。这里的位置若为负数，则是指倒数的位置。若第二个参数为空，则表示到数组结束。（参考 Python）</p>
-<h4><code>splice()</code></h4>
+<h4 id="splice"><code>splice()</code><a class="headerlink" href="#splice" title="Permanent link">&para;</a></h4>
 <p><code>splice()</code> modifies the array on which it is invoked. 它删除或者插入数组元素，而且数组的其他元素会自动调整以保持连续。第一个参数是删除/插入操作的起始位，第二个参数可选，是从此开始删除的位数，再之后的参数也可选，是在此插入的元素。若省略删除位数，则后面的元素均被截去。最终 <code>splice()</code> 返回被删除的子数组。
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">];</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">4</span><span class="p">);</span>        <span class="c1">// =&gt; [5,6,7,8], a=[1,2,3,4]</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">);</span>      <span class="c1">// =&gt; [2,3], a=[1,4]</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">);</span>  <span class="c1">// =&gt; [], a=[1,4,3,4]</span>
 </code></pre></div></p>
-<h4><code>push()</code> and <code>pop()</code></h4>
+<h4 id="push-and-pop"><code>push()</code> and <code>pop()</code><a class="headerlink" href="#push-and-pop" title="Permanent link">&para;</a></h4>
 <p><code>push()</code> 方法将所有的参数压入数组末尾，返回数组的新长度。参数保持原序。<code>pop()</code> 删除并返回数组末尾元素。</p>
-<h4><code>unshift()</code> and <code>shift()</code></h4>
+<h4 id="unshift-and-shift"><code>unshift()</code> and <code>shift()</code><a class="headerlink" href="#unshift-and-shift" title="Permanent link">&para;</a></h4>
 <p><code>unshift()</code> 方法将所有的参数压入数组起始，返回数组的新长度。参数保持原序。<code>shift()</code> 删除并返回数组起始元素。</p>
-<h4><code>toString()</code> and <code>toLocaleString()</code></h4>
+<h4 id="tostring-and-tolocalestring"><code>toString()</code> and <code>toLocaleString()</code><a class="headerlink" href="#tostring-and-tolocalestring" title="Permanent link">&para;</a></h4>
 <p><code>toString()</code> 将数组转为字符串，注意它将忽略所有的定界符，如引号和方括号。
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="mf">1</span><span class="p">,[</span><span class="mf">2</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]].</span><span class="nx">toString</span><span class="p">()</span>  <span class="c1">// =&gt; &#39;1,2,c&#39;</span>
 </code></pre></div></p>
 <p><strong>ECMAScript 5</strong>:</p>
 <p>这几个方法的第一个参数大多都是一个函数，执行方法时会对每一个数组元素执行这个函数（稀疏数组中未定义的元素除外）。这个函数有三个参数，分别是数组元素的值，下标和数组名。一般来讲后两个参数都会被省略。</p>
-<h4><code>forEach()</code></h4>
+<h4 id="foreach"><code>forEach()</code><a class="headerlink" href="#foreach" title="Permanent link">&para;</a></h4>
 <p><code>forEach()</code> 就接受上述形式的函数，并将其作用于每一个元素。
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">];</span>
 <span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
@@ -2547,16 +2547,16 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <span class="c1">//data =&gt; [2,3,4,5,6]</span>
 </code></pre></div></p>
 <p>注意 <code>forEach()</code> 并不提供中断的方法。如果需要中止遍历，则需要在中止处抛出异常，并将整个 <code>forEach()</code> 放到 <code>try</code> 语句内。</p>
-<h4><code>map()</code></h4>
+<h4 id="map"><code>map()</code><a class="headerlink" href="#map" title="Permanent link">&para;</a></h4>
 <p>顾名思义，这个函数就是做一个映射：返回一个新数组，其中的元素按顺序是原数组元素通过函数映射的结果。如果原数组是稀疏的，那么返回的数组也会有相同的长度和相同的缺失项。</p>
-<h4><code>filter()</code></h4>
+<h4 id="filter"><code>filter()</code><a class="headerlink" href="#filter" title="Permanent link">&para;</a></h4>
 <p>类似地，<code>filter()</code> 也接受这么一个函数，这个函数返回一个布尔值，若返回的是 <code>false</code>，则对应的元素在返回的新数组中将被滤去（原数组不变）。Note that <code>filter()</code> skips the missing elements in sparse array, and that its return value is always dense.</p>
 <p>To close the gaps in a sparse array,
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">dense</span> <span class="o">=</span> <span class="nx">sparse</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">});</span>
 </code></pre></div></p>
-<h4><code>every()</code> and <code>some()</code></h4>
+<h4 id="every-and-some"><code>every()</code> and <code>some()</code><a class="headerlink" href="#every-and-some" title="Permanent link">&para;</a></h4>
 <p>这两个方法就像全称量词 <span class="arithmatex">\(\forall\)</span> 和存在量词 <span class="arithmatex">\(\exists\)</span>。<code>every()</code> 只在数组中所有元素都使得其参数函数返回 <code>true</code> 时返回 <code>true</code>。<code>some()</code> 则在至少有一个元素使得函数返回 <code>true</code> 时返回 <code>false</code>。注意 <code>every()</code> 在遇到第一个产生 <code>false</code> 的元素时就退出返回 <code>false</code>，<code>some()</code> 在遇到第一个产生 <code>true</code> 的元素时就退出返回 <code>true</code>。</p>
-<h4><code>reduce()</code>, <code>reduceRight()</code></h4>
+<h4 id="reduce-reduceright"><code>reduce()</code>, <code>reduceRight()</code><a class="headerlink" href="#reduce-reduceright" title="Permanent link">&para;</a></h4>
 <p>这两个函数将数组元素全部作用于一个二元算符，即成为一个连算符。区别只在于 <code>reduce()</code> 从低位到高位遍历，而 <code>reduceRight()</code> 相反。这个参数函数有些不同，前面的“值”和可选的“下标”，“数组名”移到了第二、三、四位，而 the first argument is the accumulated result of the reduction so far. 如果加上 <code>reduce()</code>/<code>reduceRight()</code> 的第二个参数，则相当于给连算符序列之前再加上一项。</p>
 <p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span> <span class="k">return</span> <span class="nx">x</span><span class="o">+</span><span class="nx">y</span><span class="p">;</span> <span class="p">},</span> <span class="mf">0</span><span class="p">)</span>
 </code></pre></div>
@@ -2567,7 +2567,7 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span> <span class="k">return</span> <span class="p">(</span><span class="nx">x</span><span class="o">&gt;</span><span class="nx">y</span><span class="p">)</span><span class="o">?</span><span class="nx">x</span><span class="o">:</span><span class="nx">y</span><span class="p">;</span> <span class="p">})</span>
 </code></pre></div>
 相当于计算 <span class="arithmatex">\(\max a_n\)</span>。</p>
-<h4><code>indexOf()</code> and <code>lastIndexOf()</code></h4>
+<h4 id="indexof-and-lastindexof"><code>indexOf()</code> and <code>lastIndexOf()</code><a class="headerlink" href="#indexof-and-lastindexof" title="Permanent link">&para;</a></h4>
 <p>显然，这分别是从低位和从高位开始的匹配函数。这两个方法则不接受函数参数，而第一个参数是要匹配的模式，第二个参数可选，是搜寻的起始位（可以用负数表示倒数）。返回值是第一次匹配到的位置，若未找到则返回 -1。</p>
 <p>要寻找所有匹配的元素下标，并放入一个数组，可以
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">findall</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">x</span><span class="p">)</span>
@@ -2586,12 +2586,12 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
     <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<h3>Array-Like Objects</h3>
+<h3 id="array-like-objects">Array-Like Objects<a class="headerlink" href="#array-like-objects" title="Permanent link">&para;</a></h3>
 <p>只要一个对象的属性有和数组下标一样的名称，还有 <code>length</code> 标注其长度，则它们也可以做一些类似的事情，甚至可以调用对应的数组原型方法。</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="o">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="o">:</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="nx">length</span><span class="o">:</span><span class="mf">3</span><span class="p">};</span>
 <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">join</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">)</span>  <span class="c1">// =&gt; &quot;a+b+c&quot;</span>
 </code></pre></div>
-<h3>String As Arrays</h3>
+<h3 id="string-as-arrays">String As Arrays<a class="headerlink" href="#string-as-arrays" title="Permanent link">&para;</a></h3>
 <p>字符串可以当作一种只读数组来用。一个广泛应用的例子就是 <code>str.charAt(i)</code> 常写作 <code>str[i]</code>。甚至可以调用一些方法
 <div class="highlight"><pre><span></span><code><span class="nx">s</span> <span class="o">=</span> <span class="s2">&quot;JavaScript&quot;</span><span class="p">;</span>
 <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">join</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
@@ -2599,11 +2599,11 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 </code></pre></div></p>
 <p>当然，既然是只读的数组，诸如 <code>push()</code>, <code>sort()</code>, <code>sort()</code>, <code>splice()</code> 这样的会改变原数组的方法就无法使用，they fail silently.</p>
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
-<h3>Defining Functions</h3>
+<h3 id="defining-functions">Defining Functions<a class="headerlink" href="#defining-functions" title="Permanent link">&para;</a></h3>
 <p>Functions are defined in <strong>function definition expressions</strong> or <strong>function declaration statement</strong>. 函数声明语句当中必须要有函数名以供调用。但是一个函数表达式可以没有函数名，即使存在，the name refers to the function object only within the body of the function itself. 这个函数表达式可以复制给一个变量，那么这个变量就成为了函数名。</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// declaration statement</span>
 <span class="kd">function</span> <span class="nx">props</span><span class="p">(</span><span class="nx">o</span><span class="p">){</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="k">in</span> <span class="nx">o</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="ow">in</span> <span class="nx">o</span><span class="p">)</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -2616,7 +2616,7 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <p>如果没有<code>return</code>语句，则返回<code>undefined</code>。</p>
 <p>In nested functions, function declaration statements are "hoisted", so functions declared in this way may be invoked from code that appears before they defined. 但是这和变量的提前不同，变量只有声明提前，但是对其赋值不会提前。</p>
 <p>函数声明语句并不是真正的语句。它们不能在循环、<code>try</code> 或者 <code>with</code> 语句中出现。函数定义表达式则无此限制。</p>
-<h3>Invoking Functions</h3>
+<h3 id="invoking-functions">Invoking Functions<a class="headerlink" href="#invoking-functions" title="Permanent link">&para;</a></h3>
 <p>定义函数的时候并不会执行其中语句，只有调用函数时才会执行。函数的调用有四种方法：</p>
 <ul>
 <li>as functions,</li>
@@ -2631,26 +2631,26 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 </code></pre></div>
 方法中的 <code>this</code> 指向方法所属的对象。注意，JavaScript 中 <code>this</code> 是关键字，不可更改它的值，当然也不会继承。</p>
 <p>构造函数中，<code>this</code> 指向当前创建的对象，即使这个构造函数是对象的方法也是如此。
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
-<span class="kd">var</span> <span class="nx">o1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">o</span><span class="p">.</span><span class="nx">m</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Object</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">o1</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">o</span><span class="p">.</span><span class="nx">m</span><span class="p">();</span>
 </code></pre></div>
 构造函数当中一般没有 <code>return</code>，若存在此语句且后面跟随一个对象，则返回该对象；若跟随的是 primitive value 或者只有一个单独的 <code>return</code>，则这个语句将会被略过。</p>
-<h3>Function Arguments and Parameters</h3>
+<h3 id="function-arguments-and-parameters">Function Arguments and Parameters<a class="headerlink" href="#function-arguments-and-parameters" title="Permanent link">&para;</a></h3>
 <p>JavaScript do not do any type checking, it even do not check the number of arguments being passed. </p>
-<h4>Optional Parameters</h4>
+<h4 id="optional-parameters">Optional Parameters<a class="headerlink" href="#optional-parameters" title="Permanent link">&para;</a></h4>
 <p>When a function is invoked with fewer arguments thn delcared parameters, the additional parameters are set to <code>undefined</code>. To set default values to omitted parameters, we need to do it exliciptly:
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="cm">/* optional */</span> <span class="nx">y</span><span class="p">){</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
     <span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<h4>The Arguments Object</h4>
+<h4 id="the-arguments-object">The Arguments Object<a class="headerlink" href="#the-arguments-object" title="Permanent link">&para;</a></h4>
 <p>When a function is invoked with more argument values than there are parameter names, there if to direct way to refer to those unnamed values. An array-like object <code>arguments</code> provides a solution: its elements refer to the same values of the parameters passed into the function. For example, <code>arguments[0]</code> holds the first parameter. It has a <code>length</code> property too, which specifies the number of parameters. Also, <code>arguments</code> provides a way to construct a <em>vararg</em> function.</p>
 <p>In non-strict mode, the array elements of <code>arguments</code> are aliases for the actual parameters. If you change the value of either of them, the other would change too. </p>
 <p><code>arguments</code> 还有两个属性：<code>callee</code> 和 <code>caller</code>。<code>callee</code> 就指向当前的函数，常用于匿名函数的递归。<code>caller</code> 则是返回调用该函数的函数，若函数在顶层代码被调用则返回 <code>null</code>。严格模式中访问这两个属性将造成 <code>TypeError</code>。</p>
-<h4>Object as Arguments</h4>
+<h4 id="object-as-arguments">Object as Arguments<a class="headerlink" href="#object-as-arguments" title="Permanent link">&para;</a></h4>
 <p>如果需要通过名称而不是顺序来区分参数，一般的做法是将一个对象传入函数，然后函数中使用对象的属性。</p>
-<h3>Closures</h3>
+<h3 id="closures">Closures<a class="headerlink" href="#closures" title="Permanent link">&para;</a></h3>
 <p>JavaScript uses <em>lexical scoping</em>. That means that functions are executed using the variable scope that was in effect when they were <strong>defined</strong>.</p>
 <p>下面举例说明闭包的作用。
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span><span class="p">;</span>
@@ -2712,69 +2712,69 @@ The only patameter for <code>Array()</code> specifies the length. If there is mo
 <span class="kd">var</span> <span class="nx">funcs</span> <span class="o">=</span> <span class="nx">constf</span><span class="p">()</span>
 <span class="nx">funcs</span><span class="p">[</span><span class="mf">5</span><span class="p">]()</span>  <span class="c1">// =&gt; 9</span>
 </code></pre></div></p>
-<h3>Function Properties, Methods, and Constructor</h3>
-<h4><code>arguments.length</code> Property</h4>
+<h3 id="function-properties-methods-and-constructor">Function Properties, Methods, and Constructor<a class="headerlink" href="#function-properties-methods-and-constructor" title="Permanent link">&para;</a></h3>
+<h4 id="argumentslength-property"><code>arguments.length</code> Property<a class="headerlink" href="#argumentslength-property" title="Permanent link">&para;</a></h4>
 <p>Returns the number of arguments actually passed, compared to <code>arguments.callee.length</code>, which is the number expected.</p>
-<h4><code>prototype</code> Property</h4>
+<h4 id="prototype-property"><code>prototype</code> Property<a class="headerlink" href="#prototype-property" title="Permanent link">&para;</a></h4>
 <p>函数即对象，<code>protopype</code>即函数所继承的原型。</p>
-<h4><code>call()</code> and <code>apply()</code></h4>
+<h4 id="call-and-apply"><code>call()</code> and <code>apply()</code><a class="headerlink" href="#call-and-apply" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="nx">f</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">);</span>
 <span class="nx">f</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">]);</span>
 </code></pre></div>
 这两个函数将函数 <code>f</code> 作为对象 <code>o</code> 的方法来调用。之后的参数就是传入 <code>f</code> 的参数。这种调用方式中 <code>this</code> 就是对象本身（ECMAScript 3 以及非严格模式中，若 <code>o</code> 是简单值，则为 <code>global object</code>）。</p>
-<h4><code>bind()</code> Method</h4>
+<h4 id="bind-method"><code>bind()</code> Method<a class="headerlink" href="#bind-method" title="Permanent link">&para;</a></h4>
 <p>This method returns a new function which invokes the original function as the method of an object.
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">f</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span> <span class="p">}</span>
 <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">x</span><span class="o">:</span> <span class="mf">1</span> <span class="p">};</span>
 <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
 <span class="nx">g</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span>
 </code></pre></div></p>
-<h4><code>toString()</code> Method</h4>
+<h4 id="tostring-method"><code>toString()</code> Method<a class="headerlink" href="#tostring-method" title="Permanent link">&para;</a></h4>
 <p>In most implementations <code>toString()</code> returns the complete source code of the function.</p>
-<h4>The <code>Function()</code> Constructor</h4>
+<h4 id="the-function-constructor">The <code>Function()</code> Constructor<a class="headerlink" href="#the-function-constructor" title="Permanent link">&para;</a></h4>
 <p>The <code>Function()</code> Constructor parses the function body and creates a new function object each time it is called and the function DO NOT use lexical scoping.
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;return x*y;&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;return x*y;&#39;</span><span class="p">);</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span><span class="p">;</span>
 <span class="kd">function</span> <span class="nx">f</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">scope</span> <span class="o">=</span> <span class="s1">&#39;local&#39;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">&#39;return scope;&#39;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="ow">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">&#39;return scope;&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">f</span><span class="p">()();</span>  <span class="c1">// =&gt; &#39;global&#39;</span>
 </code></pre></div></p>
 <h2 id="classes-and-modules">Classes and Modules<a class="headerlink" href="#classes-and-modules" title="Permanent link">&para;</a></h2>
-<h3>Constructors</h3>
+<h3 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permanent link">&para;</a></h3>
 <p><div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">Complex</span><span class="p">(</span><span class="nx">real</span><span class="p">,</span> <span class="nx">imaginary</span><span class="p">){</span>
     <span class="k">if</span> <span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">real</span><span class="p">)</span> <span class="o">||</span> <span class="nb">isNaN</span><span class="p">(</span><span class="nx">imaginary</span><span class="p">))</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">();</span>
+        <span class="k">throw</span> <span class="ow">new</span> <span class="ne">TypeError</span><span class="p">();</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">r</span> <span class="o">=</span> <span class="nx">real</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">i</span> <span class="o">=</span> <span class="nx">imaginary</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
 </code></pre></div>
 Note that an constructor does not create or return the object. It just initializes <code>this</code>. And propertie values defined within a constructor is noninherited that are unique to this object.\</p>
 <p>这样，构造函数名就成为了类名。一般这个函数首字母大写。由这个构造函数产生的对象自动继承自其原型。</p>
-<h3>Prototypes</h3>
+<h3 id="prototypes_1">Prototypes<a class="headerlink" href="#prototypes_1" title="Permanent link">&para;</a></h3>
 <p>The instances of an class inherits the properties of the prototype (even if the prototype changes after the instances is created!), and those properties serves as shared methods and members of the class.
 <div class="highlight"><pre><span></span><code><span class="nx">Complex</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">add</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">that</span><span class="p">){</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">r</span><span class="o">+</span><span class="nx">that</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">i</span><span class="o">+</span><span class="nx">that</span><span class="p">.</span><span class="nx">i</span><span class="p">);</span>
+        <span class="k">return</span> <span class="ow">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">r</span><span class="o">+</span><span class="nx">that</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">i</span><span class="o">+</span><span class="nx">that</span><span class="p">.</span><span class="nx">i</span><span class="p">);</span>
     <span class="p">},</span>
     <span class="nx">toString</span><span class="o">:</span> <span class="kd">function</span><span class="p">{</span>
         <span class="k">return</span> <span class="s1">&#39;{&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">r</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">i</span><span class="s1">&#39;}&#39;</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<h3>The <code>constructor</code> Property</h3>
+<h3 id="the-constructor-property">The <code>constructor</code> Property<a class="headerlink" href="#the-constructor-property" title="Permanent link">&para;</a></h3>
 <p>Every JavaScript function (except functions returned by <code>Function.bind()</code> method) automatically has a <code>prototype</code> property. And the value of <code>prototype</code> is an object that has a single nonenumerable <code>constructor</code> property, while the value of <code>constructor</code> property is the function object itself.
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">F</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
-<span class="nx">F</span> <span class="o">===</span> <span class="nx">F</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span>   <span class="c1">// true</span>
+<span class="nx">F</span> <span class="o">===</span> <span class="nx">F</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kr">constructor</span>   <span class="c1">// true</span>
 </code></pre></div></p>
 <p>Therefore, the definition of <code>Complex.prototype</code> overwrites the original one, and does not have a <code>constructor</code> property. To remedy this, two common techniques are:
 <div class="highlight"><pre><span></span><code><span class="c1">// Explicitly adding the property</span>
 <span class="nx">Complex</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="o">:</span> <span class="nx">Complex</span><span class="p">,</span>
+    <span class="kr">constructor</span><span class="o">:</span> <span class="nx">Complex</span><span class="p">,</span>
     <span class="nx">add</span><span class="o">:</span> <span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2782,22 +2782,22 @@ Note that an constructor does not create or return the object. It just initializ
 <span class="nx">Complex</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">...</span>
 <span class="nx">Complex</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">...</span>
 </code></pre></div></p>
-<h3>Class-shared and Object-unique</h3>
+<h3 id="class-shared-and-object-unique">Class-shared and Object-unique<a class="headerlink" href="#class-shared-and-object-unique" title="Permanent link">&para;</a></h3>
 <p>在不同位置定义的数据成员（JS 函数也属于数据）有不同的作用域。</p>
 <p><em>Constructor</em> object<br />
 These properties serve as class fields and methods that are associated with the class rather than with instances. Note that constructor properties are NOT <code>this</code> properties! 
 <div class="highlight"><pre><span></span><code><span class="c1">// Constructor properties</span>
-<span class="nx">Complex</span><span class="p">.</span><span class="nx">ZERO</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
-<span class="nx">Complex</span><span class="p">.</span><span class="nx">I</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Complez</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
+<span class="nx">Complex</span><span class="p">.</span><span class="nx">ZERO</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">0</span><span class="p">);</span>
+<span class="nx">Complex</span><span class="p">.</span><span class="nx">I</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Complez</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
 
 <span class="c1">// Constructor methods</span>
 <span class="nx">Complex</span><span class="p">.</span><span class="nx">parse</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">s</span><span class="p">){</span>
     <span class="k">try</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">format</span> <span class="o">=</span> <span class="sr">/^\{([^,]+),([^}])\}$/</span><span class="p">;</span>
         <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">format</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="mf">1</span><span class="p">]),</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="mf">2</span><span class="p">]));</span>
+        <span class="k">return</span> <span class="ow">new</span> <span class="nx">Complex</span><span class="p">(</span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="mf">1</span><span class="p">]),</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">m</span><span class="p">[</span><span class="mf">2</span><span class="p">]));</span>
     <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t parse &#39;&quot;</span> <span class="o">+</span> <span class="nx">s</span> <span class="o">+</span> <span class="s2">&quot;&#39; as a complex number.&quot;</span><span class="p">);</span>
+        <span class="k">throw</span> <span class="ow">new</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Can&#39;t parse &#39;&quot;</span> <span class="o">+</span> <span class="nx">s</span> <span class="o">+</span> <span class="s2">&quot;&#39; as a complex number.&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
@@ -2805,25 +2805,25 @@ These properties serve as class fields and methods that are associated with the 
 每一个类实例都会继承其中的属性。这些属性中的函数就是每一个实例的方法。</p>
 <p><em>Instance</em> object<br />
 在实例中定义的属性当然只对这个实例有效。</p>
-<h3>Classes and Types</h3>
+<h3 id="classes-and-types">Classes and Types<a class="headerlink" href="#classes-and-types" title="Permanent link">&para;</a></h3>
 <p>有时候需要分辨一个对象所属的类，而 JavaScript 中的 <code>typeof</code> 并做不到这一点。下面介绍几种方法来实现这个功能。</p>
-<h4>The <code>instanceof</code> Operator</h4>
-<div class="highlight"><pre><span></span><code><span class="nx">c</span> <span class="k">instanceof</span> <span class="nx">Complex</span>    <span class="c1">// =&gt; true</span>
+<h4 id="the-instanceof-operator_1">The <code>instanceof</code> Operator<a class="headerlink" href="#the-instanceof-operator_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nx">c</span> <span class="ow">instanceof</span> <span class="nx">Complex</span>    <span class="c1">// =&gt; true</span>
 </code></pre></div>
 <p>The <code>instanceof</code> operator check whether <code>c</code> inherits from <code>Complex.prototype</code> instead of whether it is initialized by the <code>Complex</code> constructor. This inheritance need not to be direct. Nevertheless, the <code>instanceof</code> syntax reinforces the use of constructors as the public identity of the class.</p>
 <p>Remember that constructor are the public identity of the class, but prototypes are the fundarmental identity. </p>
 <div class="highlight"><pre><span></span><code><span class="nx">Complex</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">isProtytypeOf</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span> <span class="c1">// =&gt; true</span>
 </code></pre></div>
 <p>One shortcoming of these approaches is that they do not allow querying the class of an object. only to test an object against a class specified. A more serious shortcoming arises in client-side JavaScript where a web application uses more than one frame or window. Each frame or window is a distinct execution context, and each has its own global object and its own set of constructor functions. Two objects created in two different contexts inherits from two identical but distinct constructors.</p>
-<h4>The <code>constructor</code> Property</h4>
+<h4 id="the-constructor-property_1">The <code>constructor</code> Property<a class="headerlink" href="#the-constructor-property_1" title="Permanent link">&para;</a></h4>
 <p>可以直接比较对象的构造函数。
-<div class="highlight"><pre><span></span><code><span class="nx">o</span><span class="p">.</span><span class="nx">constructor</span>   <span class="c1">// =&gt; Number, String, RegExp, Complex, etc. </span>
+<div class="highlight"><pre><span></span><code><span class="nx">o</span><span class="p">.</span><span class="kr">constructor</span>   <span class="c1">// =&gt; Number, String, RegExp, Complex, etc. </span>
 </code></pre></div>
 This expression evaluates to the constructor of the object, and note that <code>null</code> and <code>undefined</code> don't have constructors.</p>
 <p>There is the same problem that it does not always work in multiple execution contexts.</p>
-<h4>The Constructor Name</h4>
+<h4 id="the-constructor-name">The Constructor Name<a class="headerlink" href="#the-constructor-name" title="Permanent link">&para;</a></h4>
 <p>前面提到过用 <code>toString()</code> 方法可以获取构造函数名，直接比较即避开了上述问题。但是新的问题是如果构造函数是匿名函数，这个方法就失效了。</p>
-<h4>Duck-Typing</h4>
+<h4 id="duck-typing">Duck-Typing<a class="headerlink" href="#duck-typing" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.</p>
 </blockquote>
@@ -2831,18 +2831,18 @@ This expression evaluates to the constructor of the object, and note that <code>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">quacks</span><span class="p">(</span><span class="nx">o</span> <span class="cm">/*, ...*/</span><span class="p">){</span>
     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">){</span>
         <span class="kd">var</span> <span class="nx">arg</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-        <span class="k">switch</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">arg</span><span class="p">){</span>
+        <span class="k">switch</span><span class="p">(</span><span class="ow">typeof</span> <span class="nx">arg</span><span class="p">){</span>
             <span class="k">case</span> <span class="s1">&#39;string&#39;</span><span class="o">:</span>
-                <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">o</span><span class="p">[</span><span class="nx">arg</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="ow">typeof</span> <span class="nx">o</span><span class="p">[</span><span class="nx">arg</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
                 <span class="k">continue</span><span class="p">;</span>
         <span class="k">case</span> <span class="s1">&#39;function&#39;</span><span class="o">:</span>
             <span class="nx">arg</span> <span class="o">=</span> <span class="nx">arg</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
             <span class="c1">// fall throught to the next case</span>
         <span class="k">case</span> <span class="s1">&#39;object&#39;</span><span class="o">:</span>
-            <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">m</span> <span class="k">in</span> <span class="nx">arg</span><span class="p">){</span>
-                <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">arg</span><span class="p">[</span><span class="nx">m</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">m</span> <span class="ow">in</span> <span class="nx">arg</span><span class="p">){</span>
+                <span class="k">if</span> <span class="p">(</span><span class="ow">typeof</span> <span class="nx">arg</span><span class="p">[</span><span class="nx">m</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
                 <span class="c1">// skip non-methods</span>
-                <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">o</span><span class="p">[</span><span class="nx">m</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="ow">typeof</span> <span class="nx">o</span><span class="p">[</span><span class="nx">m</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -2850,19 +2850,19 @@ This expression evaluates to the constructor of the object, and note that <code>
 <span class="p">}</span>
 </code></pre></div>
 Note that this approach does not work for built-in methods because their methods are nonenumerable.</p>
-<h3>Object-Oriented Techniques</h3>
-<h4>A Set Class</h4>
+<h3 id="object-oriented-techniques">Object-Oriented Techniques<a class="headerlink" href="#object-oriented-techniques" title="Permanent link">&para;</a></h3>
+<h4 id="a-set-class">A Set Class<a class="headerlink" href="#a-set-class" title="Permanent link">&para;</a></h4>
 <p>This set class works by mapping any JavaScript value to a unique string.
-<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">Set</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nb">Set</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">values</span> <span class="o">=</span> <span class="p">{};</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">n</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nb">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-        <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">Set</span><span class="p">.</span><span class="nx">_v2s</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="nb">Set</span><span class="p">.</span><span class="nx">_v2s</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">str</span><span class="p">))</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">values</span><span class="p">[</span><span class="nx">str</span><span class="p">]</span> <span class="o">=</span> <span class="nx">val</span><span class="p">;</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">n</span><span class="o">++</span><span class="p">;</span>
@@ -2871,15 +2871,15 @@ Note that this approach does not work for built-in methods because their methods
     <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
 <span class="p">};</span>
 
-<span class="nx">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">remove</span> <span class="o">=</span> <span class="p">...</span>
+<span class="nb">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">remove</span> <span class="o">=</span> <span class="p">...</span>
 
-<span class="nx">Set</span><span class="p">.</span><span class="nx">_v2s</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+<span class="nb">Set</span><span class="p">.</span><span class="nx">_v2s</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">switch</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">case</span> <span class="kc">undefined</span><span class="o">:</span> <span class="k">return</span> <span class="s1">&#39;u&#39;</span><span class="p">;</span>
         <span class="k">case</span> <span class="kc">null</span><span class="o">:</span> <span class="k">return</span> <span class="s1">&#39;n&#39;</span><span class="p">;</span>
         <span class="k">case</span> <span class="kc">true</span><span class="o">:</span> <span class="k">return</span> <span class="s1">&#39;t&#39;</span><span class="p">;</span>
         <span class="k">case</span> <span class="kc">false</span><span class="o">:</span> <span class="k">return</span> <span class="s1">&#39;f&#39;</span><span class="p">;</span>
-        <span class="k">default</span><span class="o">:</span> <span class="k">switch</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">default</span><span class="o">:</span> <span class="k">switch</span><span class="p">(</span><span class="ow">typeof</span> <span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">case</span> <span class="s1">&#39;number&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="s1">&#39;#&#39;</span><span class="o">+</span><span class="nx">val</span><span class="p">;</span>
             <span class="k">case</span> <span class="s1">&#39;string&#39;</span><span class="o">:</span> <span class="k">return</span> <span class="s1">&#39;&quot;&#39;</span><span class="o">+</span><span class="nx">val</span><span class="p">;</span>
             <span class="k">default</span><span class="o">:</span> <span class="k">return</span> <span class="s1">&#39;@&#39;</span><span class="o">+</span><span class="nx">objectId</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
@@ -2893,94 +2893,94 @@ Note that this approach does not work for built-in methods because their methods
         <span class="k">return</span> <span class="nx">o</span><span class="p">[</span><span class="nx">prop</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">};</span>
-<span class="nx">Set</span><span class="p">.</span><span class="nx">_v2s</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<span class="nb">Set</span><span class="p">.</span><span class="nx">_v2s</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
 </code></pre></div></p>
-<h4>Private State</h4>
+<h4 id="private-state">Private State<a class="headerlink" href="#private-state" title="Permanent link">&para;</a></h4>
 <p>A range class with weakly encapsulated endpoints
-<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">Range</span><span class="p">(</span><span class="nx">from</span><span class="p">,</span> <span class="nx">to</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">from</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">from</span><span class="p">;</span> <span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">Range</span><span class="p">(</span><span class="kr">from</span><span class="p">,</span> <span class="nx">to</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="kr">from</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="kr">from</span><span class="p">;</span> <span class="p">};</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">to</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">to</span><span class="p">;</span> <span class="p">};</span>
 <span class="p">}</span>
 <span class="nx">Range</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="o">:</span> <span class="nx">Range</span><span class="p">,</span>
-    <span class="nx">includes</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">from</span><span class="p">()</span><span class="o">&lt;=</span><span class="nx">x</span><span class="o">&lt;=</span><span class="k">this</span><span class="p">.</span><span class="nx">to</span><span class="p">();</span> <span class="p">}</span><span class="err">，</span>
-    <span class="nx">toString</span><span class="p">()</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s1">&#39;(&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">from</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;...&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">to</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">;}</span>
+    <span class="kr">constructor</span><span class="o">:</span> <span class="nx">Range</span><span class="p">,</span>
+    <span class="nx">includes</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="kr">from</span><span class="p">()</span><span class="o">&lt;=</span><span class="nx">x</span><span class="o">&lt;=</span><span class="k">this</span><span class="p">.</span><span class="nx">to</span><span class="p">();</span> <span class="p">}</span><span class="err">，</span>
+    <span class="nx">toString</span><span class="p">()</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s1">&#39;(&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="kr">from</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;...&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">to</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;)&#39;</span><span class="p">;}</span>
 <span class="p">};</span>
 </code></pre></div></p>
-<h4>Construcrtor Overloading and Factory Methods</h4>
+<h4 id="construcrtor-overloading-and-factory-methods">Construcrtor Overloading and Factory Methods<a class="headerlink" href="#construcrtor-overloading-and-factory-methods" title="Permanent link">&para;</a></h4>
 <p>To overload a constructor, explicitly checking the arguments passed into it is needed. </p>
 <p>Another way to construct objects by different ways is that define factory function.
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">SetFromArray</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">Set</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span>
+    <span class="nb">Set</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">a</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nx">SetFromArray</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+<span class="nx">SetFromArray</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
 </code></pre></div></p>
-<h3>Subclasses</h3>
+<h3 id="subclasses">Subclasses<a class="headerlink" href="#subclasses" title="Permanent link">&para;</a></h3>
 <p>A class B can <strong>extend</strong> or <strong>subclass</strong> another class A. We say that A is the <strong>superclass</strong> and B is <strong>subclass</strong>. B can <strong>override</strong> methods inherited from A. If B want to invoke the overridden methods of A, this is called <strong>method chaining</strong>. Similarly there is <strong>constructor chaining</strong>. It is useful to define <strong>abstract classes</strong> that has <strong>abstract methods</strong> without implementations.</p>
 <p>通过手动继承原型可以创建子类，注意相应的构造函数也要做修改。</p>
 <p>Constructor chaining from subclass to superclass:
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">NonNullSet</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">Set</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+    <span class="nb">Set</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nx">NonNullSet</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">inherit</span><span class="p">(</span><span class="nx">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
-<span class="nx">NonNullSet</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">NonNullSet</span><span class="p">;</span>
+<span class="nx">NonNullSet</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">inherit</span><span class="p">(</span><span class="nb">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span>
+<span class="nx">NonNullSet</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="kr">constructor</span> <span class="o">=</span> <span class="nx">NonNullSet</span><span class="p">;</span>
 <span class="nx">NonNullSet</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Can&#39;t add null or undefined.&quot;</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="ow">new</span> <span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Can&#39;t add null or undefined.&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">Set</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<h3>Modules</h3>
+<h3 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h3>
 <p>Typically, a module is a single file of JavaScript code. A module file might contain a class definition, a set of related classes, a library of utility functions, or just a script of code to execute.</p>
 <p>To avoid creating global variables, use an object as its namespace, and function scope as its private namespace.</p>
 <h2 id="regular-expressions">Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permanent link">&para;</a></h2>
 <p>JavaScript's regular expression grammar is a fairly complete subset of the regular expression syntax used by Perl 5.</p>
-<h3>Defineing Regular Expressions</h3>
+<h3 id="defineing-regular-expressions">Defineing Regular Expressions<a class="headerlink" href="#defineing-regular-expressions" title="Permanent link">&para;</a></h3>
 <p>These statements are equivalent:
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/\d$/</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s1">&#39;\\d$&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s1">&#39;\\d$&#39;</span><span class="p">);</span>
 </code></pre></div>
 注意由于字符串当中 <code>\</code> 是转义字符标志，所以需要用 <code>\\</code> 表示正则表达式当中的 <code>\</code>。</p>
 <p>Regex flags specify high-level pattern-matching rules.
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="sr">/JavaScript/ig</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s1">&#39;JavaScript&#39;</span><span class="p">,</span> <span class="s1">&#39;ig&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s1">&#39;JavaScript&#39;</span><span class="p">,</span> <span class="s1">&#39;ig&#39;</span><span class="p">);</span>
 </code></pre></div>
 <code>i</code>: case-insensitive;<br />
 <code>g</code>: global. find all matches instead of stopping after the first match;<br />
 <code>m</code>: multiline. <code>^</code>/<code>$</code> matches the beginning/end of a line or string.</p>
-<h3>String Methods for Pattern Matching</h3>
-<h4>The <code>search()</code> Method</h4>
+<h3 id="string-methods-for-pattern-matching">String Methods for Pattern Matching<a class="headerlink" href="#string-methods-for-pattern-matching" title="Permanent link">&para;</a></h3>
+<h4 id="the-search-method">The <code>search()</code> Method<a class="headerlink" href="#the-search-method" title="Permanent link">&para;</a></h4>
 <p><code>search()</code> returns the index of the first matching substring or -1 th there is no match. It ignores the <code>g</code> flag.
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;JavaScript&quot;</span><span class="p">.</span><span class="nx">search</span><span class="p">(</span><span class="sr">/script/i</span><span class="p">);</span> <span class="c1">// =&gt; 4</span>
 </code></pre></div></p>
-<h4>The <code>replace()</code> Method</h4>
+<h4 id="the-replace-method">The <code>replace()</code> Method<a class="headerlink" href="#the-replace-method" title="Permanent link">&para;</a></h4>
 <p>If the matching is global, all the matchings will be replaced, otherwise only the first matching substring will be replaced.</p>
 <p>A <code>$</code> followed by a digit appeared in the replacement string backreferences the substring matching the parenthesized subexpressions.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// replace all the stright &quot;&quot; with curly “” in text</span>
 <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="sr">/&quot;[^&quot;]*&quot;/g</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="s1">&#39;“$1”&#39;</span><span class="p">));</span>
 </code></pre></div>
-<h4>The <code>match()</code> Method</h4>
+<h4 id="the-match-method">The <code>match()</code> Method<a class="headerlink" href="#the-match-method" title="Permanent link">&para;</a></h4>
 <p>If the regular expression has the <code>g</code> flag, the method returns an array of all matches that appear in the string, otherwise, it still returns a array, but with its first element the matching string, and any remaining elements are the parenthesized subexpressions of the regular expression.
 <div class="highlight"><pre><span></span><code><span class="s1">&#39;1, 2, 3&#39;</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/\d+/g</span><span class="p">)</span>         <span class="c1">// =&gt; [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</span>
 <span class="s1">&#39;1, 2, 3&#39;</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/(\d),\s(\d)/</span><span class="p">)</span>  <span class="c1">// =&gt; [&#39;1, 2&#39;, &#39;1&#39;, &#39;2&#39;]</span>
 </code></pre></div></p>
-<h4>The <code>split()</code> Method</h4>
+<h4 id="the-split-method">The <code>split()</code> Method<a class="headerlink" href="#the-split-method" title="Permanent link">&para;</a></h4>
 <p>Besides a string, a regex can also be passed into the <code>split()</code> method as a seperator.
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;1, 2, 3&quot;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/\s*,\s*/</span><span class="p">)</span>  <span class="c1">// =&gt; [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]</span>
 </code></pre></div></p>
-<h3>RegExp Object</h3>
-<h4>RegExp Properties</h4>
+<h3 id="regexp-object">RegExp Object<a class="headerlink" href="#regexp-object" title="Permanent link">&para;</a></h3>
+<h4 id="regexp-properties">RegExp Properties<a class="headerlink" href="#regexp-properties" title="Permanent link">&para;</a></h4>
 <p>Read-only properties <code>source</code>, <code>global</code>, <code>ignoreCase</code>, <code>multiline</code> holds the value of the source text of the regex, the boolean values that specify the existence of the three flags. Read/write property <code>lastIndex</code> stores the position in the string ar which the next search is to begin.</p>
-<h4>The <code>exec()</code> Method</h4>
+<h4 id="the-exec-method">The <code>exec()</code> Method<a class="headerlink" href="#the-exec-method" title="Permanent link">&para;</a></h4>
 <p><code>exec()</code> returns the same kind of array of <code>match()</code> whether or not the regular expression has the global <code>g</code> flag. By contrast, it always returns a single match and provides complete information about that match. Each time it is called, it sets the <code>lastIndex</code> property to the position immediately following the matched substring. If no match is found, the <code>lastIndex</code> is reset to 0.</p>
-<h4>The <code>test()</code> Method</h4>
+<h4 id="the-test-method">The <code>test()</code> Method<a class="headerlink" href="#the-test-method" title="Permanent link">&para;</a></h4>
 <p>This method returns <code>true</code> if the string after <code>lastIndex</code> contains a match.</p>
 <p>If there is a "leftover" <code>lastIndex</code> value, JavaScript may start to <code>exec()</code> or <code>test()</code> a new string at some arbitrary position rather than from the beginning.</p>
 <h2 id="javascript-subsets-and-extensions">JavaScript Subsets and Extensions<a class="headerlink" href="#javascript-subsets-and-extensions" title="Permanent link">&para;</a></h2>
-<h3>Subsets</h3>
-<h4><em>The Good Parts</em></h4>
+<h3 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h3>
+<h4 id="the-good-parts"><em>The Good Parts</em><a class="headerlink" href="#the-good-parts" title="Permanent link">&para;</a></h4>
 <p>Douglas Crockford's <em>JavaScript: The Good Parts</em> recommends using only the goods parts and avoid the bad parts.</p>
 <ul>
 <li>Avoid <code>with</code>, <code>continue</code> and <code>eval()</code>;</li>
@@ -2994,7 +2994,7 @@ Note that this approach does not work for built-in methods because their methods
 <li>Avoid global variables.</li>
 </ul>
 <p>Online code-quality checking tool: <a href="http://jslint.com" target__black_="target+&quot;_black&quot;">http://jslint.com</a></p>
-<h4>Subsets for Security</h4>
+<h4 id="subsets-for-security">Subsets for Security<a class="headerlink" href="#subsets-for-security" title="Permanent link">&para;</a></h4>
 <p>Avoid:</p>
 <ul>
 <li><code>eval()</code> and the <code>Function()</code> constructor;</li>
@@ -3004,15 +3004,15 @@ Note that this approach does not work for built-in methods because their methods
 <li><code>caller</code>, <code>callee</code>, <code>arguments</code>, <code>constructor</code>, <code>prototype</code>, <code>__proto__</code>;</li>
 <li><code>[]</code> operator accessing an object property.</li>
 </ul>
-<h3>Extensions</h3>
-<h4>Constants</h4>
+<h3 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h3>
+<h4 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
 
 <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>        <span class="c1">// assignments are silently ignored</span>
 <span class="kd">const</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>  <span class="c1">// redeclaration raise an error</span>
 <span class="kd">var</span> <span class="nx">pi</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>    <span class="c1">// error</span>
 </code></pre></div>
-<h4>Scoped Variables: <code>let</code></h4>
+<h4 id="scoped-variables-let">Scoped Variables: <code>let</code><a class="headerlink" href="#scoped-variables-let" title="Permanent link">&para;</a></h4>
 <p>Variables declared with <code>let</code> are defined only within the closest enclosing block.</p>
 <p><div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">f</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">1</span><span class="p">;</span>
@@ -3042,7 +3042,7 @@ Note the difference of evaluation of the initializer expressions between these t
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mf">2</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kd">let</span><span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">2</span><span class="p">),</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>  <span class="c1">// prints 5</span>
 </code></pre></div></p>
-<h4>Destructuring Assignment</h4>
+<h4 id="destructuring-assignment">Destructuring Assignment<a class="headerlink" href="#destructuring-assignment" title="Permanent link">&para;</a></h4>
 <p>This works on node, but not on V8.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">];</span>
 <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">y</span> <span class="o">+</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">x</span> <span class="o">+</span> <span class="mf">1</span><span class="p">];</span> <span class="c1">// x = 3, y = 2</span>
@@ -3062,13 +3062,13 @@ Note the difference of evaluation of the initializer expressions between these t
 <p>For object:
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="p">{</span><span class="nx">sin</span><span class="o">:</span><span class="nx">sine</span><span class="p">,</span> <span class="nx">cos</span><span class="o">:</span><span class="nx">cosine</span><span class="p">,</span> <span class="nx">tan</span><span class="o">:</span><span class="nx">tangent</span><span class="p">}</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">;</span>
 </code></pre></div></p>
-<h4>The <code>for each</code> loop</h4>
+<h4 id="the-for-each-loop">The <code>for each</code> loop<a class="headerlink" href="#the-for-each-loop" title="Permanent link">&para;</a></h4>
 <p>The <code>for each</code> loop is much like the <code>for/in</code> loop. Instead of iterating through the properties, it iterates throught the values of those properties.
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{</span><span class="nx">one</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">two</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span> <span class="nx">three</span><span class="o">:</span> <span class="mf">3</span><span class="p">};</span>
-<span class="k">for</span> <span class="nx">each</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">v</span> <span class="k">in</span> <span class="nx">o</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+<span class="k">for</span> <span class="nx">each</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">v</span> <span class="ow">in</span> <span class="nx">o</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
 </code></pre></div>
 It will enumerate through the value of any enumerable property of the object including enumerable methods inherited by the object. For this reason, the <code>for each</code> loop is not recommended for use with arrays.</p>
-<h4>Iterators</h4>
+<h4 id="iterators">Iterators<a class="headerlink" href="#iterators" title="Permanent link">&para;</a></h4>
 <p>An iterator is an object that allows iteration over some collection of values and maintains whatever state is necessary to keep track of the current "position" in the collection. It must have a <code>next()</code> method that returns the next value from the collection. A <code>StopIteration</code> should be thrown when terminating the iteration is needed.
 <div class="highlight"><pre><span></span><code><span class="c1">// An awkward implementation</span>
 <span class="kd">function</span> <span class="nx">range</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
@@ -3107,41 +3107,41 @@ It will enumerate through the value of any enumerable property of the object inc
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="ow">in</span> <span class="nx">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 </code></pre></div>
 <p><code>Iterator()</code> function iterates the own properties names and values. If a <code>true</code> is passed as the second optional argument, it will iterate only property names.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Problem: no for node or V8.</span>
-<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="p">[</span><span class="nx">k</span><span class="p">,</span><span class="nx">nv</span><span class="p">]</span> <span class="k">in</span> <span class="nx">Iterator</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">2</span><span class="p">}))</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="p">[</span><span class="nx">k</span><span class="p">,</span><span class="nx">nv</span><span class="p">]</span> <span class="ow">in</span> <span class="nx">Iterator</span><span class="p">({</span><span class="nx">a</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span><span class="mf">2</span><span class="p">}))</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">v</span><span class="p">);</span>
 </code></pre></div>
-<h4>Generators</h4>
+<h4 id="generators">Generators<a class="headerlink" href="#generators" title="Permanent link">&para;</a></h4>
 <p>Any function that uses <code>yield</code> keyword is a generator function. The <code>yield</code> return values, and a <code>return</code> ay be used as a termination, but <code>return</code> with a value is forbidden in a generator. A generator behaves completely different than a regular function: instead of executing the body of the generator function, the invocation returns a generator object, which represents teh current execution state of the generator function. It automatically defines the <code>next()</code> method and throws a <code>StopIteration</code> when ending the execution.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// No for node or V8</span>
 <span class="kd">function</span> <span class="nx">range</span><span class="p">(</span><span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">min</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">max</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="k">yield</span> <span class="nx">i</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="ow">in</span> <span class="nx">range</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">5</span><span class="p">))</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
 </code></pre></div>
-<h4>Array Comprehensions</h4>
+<h4 id="array-comprehensions">Array Comprehensions<a class="headerlink" href="#array-comprehensions" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="c1">// No for node or V8</span>
-<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="nx">x</span><span class="o">%</span><span class="mf">2</span> <span class="o">===</span> <span class="mf">0</span><span class="p">)];</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">4</span><span class="p">,</span><span class="mf">5</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="nx">x</span><span class="o">%</span><span class="mf">2</span> <span class="o">===</span> <span class="mf">0</span><span class="p">)];</span>
 </code></pre></div>
 注意变量之前没有 <code>var</code> 或者 <code>let</code>。后面的条件语句如果省略，则遍历所有值。</p>
-<h4>Generator Expressions</h4>
+<h4 id="generator-expressions">Generator Expressions<a class="headerlink" href="#generator-expressions" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1">// No for node or V8</span>
-<span class="kd">var</span> <span class="nx">h</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="k">in</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">]))</span>
+<span class="kd">var</span> <span class="nx">h</span> <span class="o">=</span> <span class="p">(</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="k">for</span> <span class="p">(</span><span class="nx">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">3</span><span class="p">]))</span>
 </code></pre></div>
-<h4>Shorthand Functions</h4>
+<h4 id="shorthand-functions">Shorthand Functions<a class="headerlink" href="#shorthand-functions" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">square</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="nx">x</span><span class="o">*</span><span class="nx">x</span><span class="p">;</span>
 </code></pre></div>
-<h4>Multiple Catch Clauses</h4>
+<h4 id="multiple-catch-clauses">Multiple Catch Clauses<a class="headerlink" href="#multiple-catch-clauses" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">try</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">}</span>
-<span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="k">if</span> <span class="nx">e</span> <span class="nx">instanceOf</span> <span class="nx">ReferenceError</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="k">if</span> <span class="nx">e</span> <span class="nx">instanceOf</span> <span class="ne">ReferenceError</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">}</span>
-<span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="k">if</span> <span class="k">typeof</span> <span class="nx">e</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="k">if</span> <span class="ow">typeof</span> <span class="nx">e</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">}</span>
 <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>

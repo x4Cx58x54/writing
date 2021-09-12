@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="../../none">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-5.1.0">
     
     
       
@@ -1589,42 +1589,42 @@
 <em>正则表达式 Cookbook（第二版 影印版）</em><br />
 <em>2012, O'Reilly, 2013, 东南大学出版社</em>  </p>
 <h2 id="basic-regex-skills">Basic Regex Skills<a class="headerlink" href="#basic-regex-skills" title="Permanent link">&para;</a></h2>
-<h4>Metacharacters</h4>
+<h4 id="metacharacters">Metacharacters<a class="headerlink" href="#metacharacters" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code>$()*+.?[\^{|
 </code></pre></div>
 以上字符在所有情况下都是元字符，要匹配这些字符需要转义。</p>
 <p>注意 <code>]</code> 和 <code>-</code> 要在未转义的 <code>[</code> 之后才成为元字符，<code>}</code> 只在未转义 <code>{</code> 之后作元字符。</p>
-<h4><code>\Q</code> and <code>\E</code></h4>
+<h4 id="q-and-e"><code>\Q</code> and <code>\E</code><a class="headerlink" href="#q-and-e" title="Permanent link">&para;</a></h4>
 <p>这两个标志之间的所有字符都作字面意义解析。</p>
 <p>Flavour: Java 6, PCRE, Perl.</p>
-<h4>Case-insensitive Flags</h4>
+<h4 id="case-insensitive-flags">Case-insensitive Flags<a class="headerlink" href="#case-insensitive-flags" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code>(?i) (?-i)
 </code></pre></div>
 之间的字符是大小写不敏感的。若无结束标志则一直到正则表达式结束有作用。</p>
 <p>Flavour: 除 JavaScript。</p>
-<h4>Control Characters</h4>
+<h4 id="control-characters">Control Characters<a class="headerlink" href="#control-characters" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code>\cA\cB\cC...\cZ
 </code></pre></div>
 <code>c</code> 小写，后面的字母建议大写。分别对应 ASCII 码在 <code>\x01</code> 至 <code>\x1A</code> 的 26 个控制字符。比如：<br />
 <code>\cH</code> = <code>BS</code> = <code>Backspace</code><br />
 <code>\cJ</code> = <code>LF</code> = <code>Line Feed</code>  </p>
-<h4>Character Classes</h4>
+<h4 id="character-classes">Character Classes<a class="headerlink" href="#character-classes" title="Permanent link">&para;</a></h4>
 <p>在字符类中，仅 <code>\^-]</code> 有特殊的含义。所以 <code>[$()*+.?{|]</code> 就按字面意义匹配。</p>
 <p>.NET 中，可用 <code>[A-[B]]</code> 表示差集 <span class="arithmatex">\(A\setminus B\)</span>。如 <code>[0-9-[4-7]]</code> = <code>[012389]</code></p>
 <p>Java 中，方括号的嵌套 <code>[A[B]]</code> 则表示并集。多个嵌套 <code>[A[B][C]]</code>、<code>[A[B[C]]]</code> 表示同样的意思。<code>[A&amp;&amp;[B]]</code> 则是交集。所以 <code>[A&amp;&amp;[^B]]</code> 就是差集。</p>
-<h4>Dot Match All?</h4>
+<h4 id="dot-match-all">Dot Match All?<a class="headerlink" href="#dot-match-all" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code>(?s)
 </code></pre></div>
 这个标志表示 inline mode。这个模式种点号 <code>.</code> 不匹配换行。</p>
-<h4>Or</h4>
+<h4 id="or">Or<a class="headerlink" href="#or" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code>(react|angular|vue)
 </code></pre></div>
 表示三个中选一个匹配。为了去掉括号带来的副作用，有下一个：</p>
-<h4>Noncapturing Group</h4>
+<h4 id="noncapturing-group">Noncapturing Group<a class="headerlink" href="#noncapturing-group" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code>(?:react|angular|vue)
 </code></pre></div>
 <code>:</code> 表示这个括号不被 backreference。也可以将加上 flags: <code>(?i:</code> 来表示其他选项。</p>
-<h4>Named Groups</h4>
+<h4 id="named-groups">Named Groups<a class="headerlink" href="#named-groups" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>(?&lt;oddseq&gt;[13579]*)     \k&lt;oddseq&gt;
 </code></pre></div>
 <p>.NET 中：
@@ -1633,18 +1633,18 @@
 <p>Python 中：
 <div class="highlight"><pre><span></span><code>(P&lt;oddseq&gt;[13579]*)     (?P=oddseq)
 </code></pre></div></p>
-<h4>Capture and Repetition</h4>
+<h4 id="capture-and-repetition">Capture and Repetition<a class="headerlink" href="#capture-and-repetition" title="Permanent link">&para;</a></h4>
 <p><code>(\d\d){3}</code> = <code>\d\d\d\d(\d\d)</code><br />
 to capture the whole expression,
 <div class="highlight"><pre><span></span><code>((?:\d\d){3})
 </code></pre></div>
 如果用 <code>((\d\d){3})</code> 匹配 <code>123456</code>，那么 <code>\1</code> = <code>123456</code>，<code>\2</code> = <code>56</code>。</p>
-<h4>Laziness</h4>
+<h4 id="laziness">Laziness<a class="headerlink" href="#laziness" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code>&lt;p&gt;.*?&lt;/p&gt;
 </code></pre></div>
 matchs a pair of tags.</p>
 <p>But <code>&lt;p&gt;.*&lt;/p&gt;</code> eats up the whole file after the beginning tag, and then start backtracking. It will match the longest gap, instead of a single paragraph.</p>
-<h4>Possessiveness</h4>
+<h4 id="possessiveness">Possessiveness<a class="headerlink" href="#possessiveness" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code>\b\d++\b
 </code></pre></div>
 When testing <code>123abc 456</code>, this possesive regex tries <code>123</code> first, but fails at <code>a</code>. It quits without backtracking, therefore it will eventually match <code>456</code>.</p>

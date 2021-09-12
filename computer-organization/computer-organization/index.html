@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="../../none">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-5.1.0">
     
     
       
@@ -1270,28 +1270,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     系统总线
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     存储器
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_32" class="md-nav__link">
     输入输出系统
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_35" class="md-nav__link">
     计算方法
   </a>
   
@@ -1594,28 +1594,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     系统总线
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     存储器
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_32" class="md-nav__link">
     输入输出系统
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_35" class="md-nav__link">
     计算方法
   </a>
   
@@ -1639,7 +1639,7 @@
                 
                 <h1 id="computer-organization">Computer Organization<a class="headerlink" href="#computer-organization" title="Permanent link">&para;</a></h1>
 <h2 id="_1">概论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3>主机基本结构</h3>
+<h3 id="_2">主机基本结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>主 机
   ├─ 运算器
   │    ├─ ALU 算术逻辑单元
@@ -1657,7 +1657,7 @@
        ├─ MAR 存储地址寄存器
        └─ MDR 存储数据缓冲寄存器
 </code></pre></div>
-<h3>运算器</h3>
+<h3 id="_3">运算器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1695,7 +1695,7 @@
 </tbody>
 </table>
 <p>乘法运算原理：在计算机中，数以二进制表示，所以竖式斜式的一行中要么是被乘数，要么全为 0，故乘法通过移位累加来实现。除法则是通过移位减法。</p>
-<h3>指令执行过程</h3>
+<h3 id="_4">指令执行过程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>处理一条指令的过程分为三个阶段：<strong>取指令</strong>、<strong>分析指令</strong>和<strong>执行指令</strong></p>
 <ul>
 <li>取指令：PC 存放当前指令地址并计数 (PC)+1 -&gt; PC</li>
@@ -1712,12 +1712,12 @@
 \xrightarrow{\text{opnd. addr.}}\text{MAR}\xrightarrow{\text{opnd. addr.}}\text{Memory}\xrightarrow{\text{opnd.}}\text{MDR}\xrightarrow{\text{opnd.}}\text{ACC}\\
 \end{cases}
 \]</div>
-<h3>计算机性能指标</h3>
-<h4>机器字长</h4>
+<h3 id="_5">计算机性能指标<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="_6">机器字长<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>CPU 一次处理的位数。<br />
 比如一次运算为 <span class="arithmatex">\(8\text{bit}+8\text{bit}\rightarrow 8\text{bit}\)</span>，则机器字长为 8 位。<br />
 在这个模型机的假设中，机器字长和寄存器（ACC、MQ、X）位数以及存储字长相等。  </p>
-<h4>运算速度</h4>
+<h4 id="_7">运算速度<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>有不同的测量方法：
 + 主频，还要考虑核数和每核线程数
 + 吉普森法，即指令执行时间的加权平均
@@ -1725,10 +1725,10 @@
 + IPC
 + MIPS, Million Instructions Per Second
 + (M)FLOPS，每秒浮点运算（百万）次数</p>
-<h4>存储容量</h4>
+<h4 id="_8">存储容量<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <p>主存：单元个数<span class="arithmatex">\(\times\)</span>存储字长，字节数<br />
 辅存：字节数</p>
-<h2 id="_2">系统总线<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_9">系统总线<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>总线分为：</p>
 <ul>
 <li>片内总线：芯片内部的总线</li>
@@ -1741,7 +1741,7 @@
 <li>地址总线：单向 与存储地址和 I/O 地址有关</li>
 <li>控制总线：有出有入</li>
 </ul>
-<h3>总线性能指标</h3>
+<h3 id="_10">总线性能指标<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <ul>
 <li>总线宽度：数据线根数</li>
 <li>标准传输率： 每秒传输的最大字节数（MBps）</li>
@@ -1751,10 +1751,10 @@
 <li>总线控制方式</li>
 <li>其它</li>
 </ul>
-<h3>总线结构</h3>
+<h3 id="_11">总线结构<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>（见教材）</p>
-<h3>总线控制</h3>
-<h4>总线判优控制</h4>
+<h3 id="_12">总线控制<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h4 id="_13">总线判优控制<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <ul>
 <li>集中式<ul>
 <li>链式查询：<span class="arithmatex">\(\mathrm{BS}\)</span>、<span class="arithmatex">\(\mathrm{BG}\)</span>、<span class="arithmatex">\(\mathrm{BR}\)</span></li>
@@ -1764,15 +1764,15 @@
 </li>
 <li>分布式</li>
 </ul>
-<h4>总线通信控制</h4>
+<h4 id="_14">总线通信控制<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li>同步：统一时钟，同步时序</li>
 <li>异步：请求—回答；不互锁、半互锁、全互锁</li>
 <li>半同步：发送在 <span class="arithmatex">\(\text{CLK}\)</span> 前沿，接受在 <span class="arithmatex">\(\text{CLK}\)</span> 后沿；<span class="arithmatex">\(\overline{\text{WAIT}}\)</span> 信号</li>
 <li>分离：主模块请求后放弃控制权</li>
 </ul>
-<h2 id="_3">存储器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3>分类</h3>
+<h2 id="_15">存储器<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="_16">分类<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <p>按存取方式：</p>
 <ul>
 <li>随机访问：存取时间与物理地址无关<ul>
@@ -1787,8 +1787,8 @@
 </li>
 </ul>
 <p>注：机械硬盘的访问方式是先直接找到磁道，然后再顺序寻访到指定位置。</p>
-<h3>主存</h3>
-<h4>主存技术指标</h4>
+<h3 id="_17">主存<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<h4 id="_18">主存技术指标<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li>容量</li>
 <li>速度<ul>
@@ -1798,12 +1798,12 @@
 </li>
 <li>带宽（位/秒）</li>
 </ul>
-<h4>地址分配</h4>
+<h4 id="_19">地址分配<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li>大端方式：高位字节存低位地址，作为字地址</li>
 <li>小端方式：低位字节存低位地址，作为字地址（8086）</li>
 </ul>
-<h4>半导体芯片</h4>
+<h4 id="_20">半导体芯片<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <p>控制线：</p>
 <ul>
 <li>片选：<span class="arithmatex">\(\overline{\text{CS}}\)</span>（Chip Select）、<span class="arithmatex">\(\overline{\text{CE}}\)</span>（Chip Enable）</li>
@@ -1818,12 +1818,12 @@
 <li>线选法：字线、位线</li>
 <li>重合法：行地址、列地址</li>
 </ul>
-<h4>RAM</h4>
-<h5>SRAM</h5>
+<h4 id="ram">RAM<a class="headerlink" href="#ram" title="Permanent link">&para;</a></h4>
+<h5 id="sram">SRAM<a class="headerlink" href="#sram" title="Permanent link">&para;</a></h5>
 <p>基于触发器原理<br />
 基本单元电路<br />
 Intel 2114：列分组  </p>
-<h5>DRAM</h5>
+<h5 id="dram">DRAM<a class="headerlink" href="#dram" title="Permanent link">&para;</a></h5>
 <p>基于电容原理<br />
 基本单元电路：三管、单管<br />
 Intel 1103、Intel 4116</p>
@@ -1877,23 +1877,23 @@ Intel 1103、Intel 4116</p>
 </tbody>
 </table>
 <p>内存条用 DRAM，高速缓存用 SRAM。</p>
-<h4>存储器容量扩展</h4>
+<h4 id="_21">存储器容量扩展<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
 <ul>
 <li>位扩展 增加存储字长 地址线一样，接不同数据线，共用片选、读写线，同时工作</li>
 <li>字扩展 增加存储字的总数 低位地址线一样，最高（几）位地址线（译码后）接片选，使得不同时工作，接相同数据线</li>
 <li>字-位扩展 分组</li>
 </ul>
-<h4>CPU 与存储器的连接</h4>
+<h4 id="cpu">CPU 与存储器的连接<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(\mathrm{\overline{MREQ}}\)</span> Memory Request 访存信号  </p>
-<h3>提高访存速度的措施</h3>
-<h4>单体多字系统</h4>
+<h3 id="_22">提高访存速度的措施<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<h4 id="_23">单体多字系统<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
 <p>在存储器和寄存器之间增加多字寄存器<br />
 增加存储器带宽</p>
-<h4>多体并行系统</h4>
-<h5>高位交叉</h5>
-<h5>低位交叉</h5>
+<h4 id="_24">多体并行系统<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<h5 id="_25">高位交叉<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h5>
+<h5 id="_26">低位交叉<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h5>
 <p><span class="arithmatex">\(N\)</span> 体的地位交叉存储器连续读取 <span class="arithmatex">\(N\)</span> 个字，若存取周期为 <span class="arithmatex">\(T\)</span>，总线传输周期为 <span class="arithmatex">\(\tau\)</span>，则有 <span class="arithmatex">\(T=N\tau\)</span>。连续读取 <span class="arithmatex">\(N\)</span> 个字所需的时间为 <span class="arithmatex">\(T+(N-1)\tau\)</span>。</p>
-<h4>高性能存储芯片</h4>
+<h4 id="_27">高性能存储芯片<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
 <ul>
 <li>SDRAM 同步 DRAM<ul>
 <li>在系统时钟的控制下读写，CPU 无需等待</li>
@@ -1902,26 +1902,26 @@ Intel 1103、Intel 4116</p>
 <li>RDRAM</li>
 <li>CDRAM 带 Cache 的 DRAM</li>
 </ul>
-<h3>高速缓冲存储器</h3>
+<h3 id="_28">高速缓冲存储器<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
 <p>程序访问的局部性原理：当前正在使用的指令和数据和在空间上相邻的指令和数据在不久的将来还会被使用。</p>
 <p>主存和缓存按块存储，块的大小相同，所以主存和缓存的块内地址完全一样。</p>
-<h5>命中率</h5>
+<h5 id="_29">命中率<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h5>
 <p>命中率和 Cache 的容量和块长有关，一般每块取 4 到 8 个字。</p>
-<h5>Cache-主存的效率</h5>
-<h5>Cache 的基本结构</h5>
-<h4>Cache-主存地址映射</h4>
+<h5 id="cache-">Cache-主存的效率<a class="headerlink" href="#cache-" title="Permanent link">&para;</a></h5>
+<h5 id="cache">Cache 的基本结构<a class="headerlink" href="#cache" title="Permanent link">&para;</a></h5>
+<h4 id="cache-_1">Cache-主存地址映射<a class="headerlink" href="#cache-_1" title="Permanent link">&para;</a></h4>
 <p>在组相联映射中，若把 Cache 当中所有的块都分成一组，那么就退化成全相联映射；如果每一组只有唯一的一块，那么就退化成直接相联。</p>
 <p>靠近 CPU 的缓存要求速度高，采用直接相联或者路数比较少的组相联。中间的层次采用组相联，距离 CPU 最远的层次采用全相联。</p>
-<h4>替换算法</h4>
+<h4 id="_30">替换算法<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
 <ul>
 <li>先进先出算法 FIFO</li>
 <li>近期最少使用算法 LRU</li>
 </ul>
-<h3>辅助存储器</h3>
+<h3 id="_31">辅助存储器<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
 <p>盘面-磁道-存储单元</p>
 <p>磁道组成同心圆，外部同心圆位密度低。</p>
-<h2 id="_4">输入输出系统<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3>I/O 接口</h3>
+<h2 id="_32">输入输出系统<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<h3 id="io">I/O 接口<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
 <p>接口的功能和组成：</p>
 <ul>
 <li>选址，设备选择电路</li>
@@ -1936,8 +1936,8 @@ Intel 1103、Intel 4116</p>
 <li>通用接口、专用接口</li>
 <li>中断接口、DMA 接口</li>
 </ul>
-<h3>程序查询方式</h3>
-<h3>程序中断方式</h3>
+<h3 id="_33">程序查询方式<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<h3 id="_34">程序中断方式<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
 <p>中断服务程序的流程</p>
 <ul>
 <li>保护现场<ul>
@@ -1947,29 +1947,29 @@ Intel 1103、Intel 4116</p>
 <li>中断服务</li>
 <li>恢复现场</li>
 </ul>
-<h3>DMA 方式</h3>
-<h2 id="_5">计算方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3>数据表示</h3>
-<h4>无符号数</h4>
+<h3 id="dma">DMA 方式<a class="headerlink" href="#dma" title="Permanent link">&para;</a></h3>
+<h2 id="_35">计算方法<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
+<h3 id="_36">数据表示<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
+<h4 id="_37">无符号数<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
 <p>只有数值部分，长度和寄存器长度有关。如 8 位寄存器能存储 0~255 的数。</p>
-<h4>有符号数</h4>
-<h5>原码</h5>
+<h4 id="_38">有符号数<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h4>
+<h5 id="_39">原码<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h5>
 <p>原码实际上是带符号的绝对值表示。</p>
 <p>注意原码中有正负 0 之分。</p>
-<h5>补码</h5>
+<h5 id="_40">补码<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h5>
 <p>找到一个与负数等价的正数，使得加减法归一化。</p>
 <p>+9 是 -3 以 12 为模的补数。即 <span class="arithmatex">\(-3\equiv +9 \ \ (\text{mod } 12)\)</span>。</p>
 <p>一个负数与其补数的绝对值之和即为模值。</p>
 <p>正数的补数就是本身。为了区别正负，一个 n 位数的补数规定以 <span class="arithmatex">\(2^{n+1}\)</span> 为模，这样负数的补数前面自然地添加上了一个 1。</p>
 <p>对于小数，使用模为 2 的补数。</p>
-<h5>反码</h5>
+<h5 id="_41">反码<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h5>
 <p>反码表示即对负数的原码取反，与负数补码相比，没有加一。相当于模 <span class="arithmatex">\(2^{n+1}-1\)</span>。对于小数，相当于模 <span class="arithmatex">\(2-2^{-n}\)</span>，综合来看，就是少了最低位的权值。</p>
 <p>也有正负 0 之分。</p>
-<h5>移码</h5>
+<h5 id="_42">移码<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h5>
 <p>移码不区分正负数，定义为 <span class="arithmatex">\(2^n+x\)</span>。以 1 开头表示正数，以 0 开头表示负数。<br />
 移码和补码只差一个符号位。<br />
 移码没有给出小数的定义，通常用来表示浮点数的阶码。</p>
-<h4>定点表示</h4>
+<h4 id="_43">定点表示<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>

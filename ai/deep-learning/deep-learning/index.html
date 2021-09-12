@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="../../../none">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-5.1.0">
     
     
       
@@ -1588,7 +1588,7 @@
 </blockquote>
 <hr />
 <h2 id="applied-maths">Applied Maths<a class="headerlink" href="#applied-maths" title="Permanent link">&para;</a></h2>
-<h3>Norms</h3>
+<h3 id="norms">Norms<a class="headerlink" href="#norms" title="Permanent link">&para;</a></h3>
 <p>The <span class="arithmatex">\(L^p\)</span> norm is given by</p>
 <div class="arithmatex">\[
 \|\boldsymbol{x}\|_p = \left(\sum_i|x_i|^p\right)^{\frac{1}{p}}
@@ -1599,7 +1599,7 @@
 <div class="arithmatex">\[
 \|\boldsymbol{A}\|_F = \sqrt{\sum_{i,j}A_{i,j}^2}.
 \]</div>
-<h3>Trace</h3>
+<h3 id="trace">Trace<a class="headerlink" href="#trace" title="Permanent link">&para;</a></h3>
 <p>The trace provides another way of writing the Frobenius norm</p>
 <div class="arithmatex">\[
 \|\boldsymbol{A}\|_F=\sqrt{\operatorname{Tr}(\boldsymbol{A}\boldsymbol{A}^\top)}.
@@ -1608,7 +1608,7 @@
 <div class="arithmatex">\[
 \operatorname{Tr}(\boldsymbol{A}^{(1)}\boldsymbol{A}^{(2)}\cdots\boldsymbol{A}^{(n)})=\operatorname{Tr}(\boldsymbol{A}^{(n)}\boldsymbol{A}^{(1)}\cdots\boldsymbol{A}^{(n-1)}).
 \]</div>
-<h3>Useful Properties of Common Functions</h3>
+<h3 id="useful-properties-of-common-functions">Useful Properties of Common Functions<a class="headerlink" href="#useful-properties-of-common-functions" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
 \text{Softplus:}\quad \zeta(x) = \ln(1+\mathrm{e}^x)
 \]</div>
@@ -1639,7 +1639,7 @@
 <div class="arithmatex">\[
 \zeta^{-1}(x)=\ln(\mathrm{e}^x-1)
 \]</div>
-<h3>Information Theory</h3>
+<h3 id="information-theory">Information Theory<a class="headerlink" href="#information-theory" title="Permanent link">&para;</a></h3>
 <p>信息的含量取决于此信息代表的事件发生的可能性. 低概率事件包含的信息值高，高概率事件的信息则低，同时独立事件的信息值具有可加性. 由上面的性质，可以得到事件 <span class="arithmatex">\(\mathrm{x}=x\)</span> 的自信息（self-informaion）为</p>
 <div class="arithmatex">\[
 I(x) = -\ln P(x).
@@ -1660,12 +1660,12 @@ D_{\mathrm{KL}}(P\Vert Q)=\operatorname{E}_P \ln\frac{P(x)}{Q(x)}.
 H(P,Q) = H(P) + D_{\mathrm{KL}}(P\Vert Q) =  -\operatorname{E}_P\ln Q(x).
 \]</div>
 <p>若以 <span class="arithmatex">\(Q(x)\)</span> 为参数，则交叉熵和 KL 距离同时有最值.</p>
-<h3>Overflow and Underflow</h3>
+<h3 id="overflow-and-underflow">Overflow and Underflow<a class="headerlink" href="#overflow-and-underflow" title="Permanent link">&para;</a></h3>
 <p>数值处理的根本困难在于用有限位的计算机处理连续的实数，这导致了舍入误差（rounding error）.</p>
 <p>以 <span class="arithmatex">\(\operatorname{softmax}(\boldsymbol{x})_i = \mathrm{e}^{x_i}/\sum\limits_{j=i}^{n}\mathrm{e}^{x_j}\)</span> 为例，令 <span class="arithmatex">\(x_i=c\in\mathbb{R}\)</span>，那么函数值必然为 <span class="arithmatex">\(1/n\)</span>. 但是在实际计算时，若 <span class="arithmatex">\(c\)</span> 是非常小的负数，导致分母下溢，则结果变为未定义. 如果 <span class="arithmatex">\(c\)</span> 是很大的正数，那么导致上溢，同样结果未定义. 解决的办法是利用性质 <span class="arithmatex">\(\operatorname{softmax}(\boldsymbol{x})=\operatorname{softmax}(\boldsymbol{x}-c)\)</span>，将 <span class="arithmatex">\(\boldsymbol{x}\)</span> 换为 <span class="arithmatex">\(\boldsymbol{x}-\max x_i\)</span> 即可.</p>
-<h3>Poor Conditioning</h3>
+<h3 id="poor-conditioning">Poor Conditioning<a class="headerlink" href="#poor-conditioning" title="Permanent link">&para;</a></h3>
 <p>这种误差指的是微小的输入扰动导致输出大幅变化. 这会让之前产生的误差放大. 例如函数 <span class="arithmatex">\(f(\boldsymbol{x}) = \boldsymbol{A}^{-1}\boldsymbol{x}\)</span>，当 <span class="arithmatex">\(\boldsymbol{A}\)</span> 可以做奇异值分解时，它的条件数（condition number）为 <span class="arithmatex">\(\max\limits_{i,j}|\lambda_i/\lambda_j|\)</span>. 如果这个数非常大，就会导致这个函数非常敏感.</p>
-<h3>Jacobian and Hessian Matrices</h3>
+<h3 id="jacobian-and-hessian-matrices">Jacobian and Hessian Matrices<a class="headerlink" href="#jacobian-and-hessian-matrices" title="Permanent link">&para;</a></h3>
 <p>函数 <span class="arithmatex">\(f: \mathbb{R}^m\rightarrow\mathbb{R}^n\)</span> 的雅可比矩阵 <span class="arithmatex">\(\boldsymbol{J}\in\mathbb{R}^{m\times n}\)</span> 由下式决定：</p>
 <div class="arithmatex">\[
 J_{i,j} = \frac{\partial}{\partial x_j}f(\boldsymbol{x})_i.
@@ -1707,7 +1707,7 @@ f(\boldsymbol{x})\approx f(\boldsymbol{x}^{(0)})+(\boldsymbol{x}-\boldsymbol{x}^
 \boldsymbol{x}^* = \boldsymbol{x}^{(0)}-\boldsymbol{H}^{-1}\nabla f(\boldsymbol{x}^{(0)}).
 \]</div>
 <p>若 <span class="arithmatex">\(f\)</span> 在附近可以近似为正定二次函数，则迭代上式便可以得到极值. 这个方法在鞍点处则会失效.</p>
-<h3>Constrained Optimization</h3>
+<h3 id="constrained-optimization">Constrained Optimization<a class="headerlink" href="#constrained-optimization" title="Permanent link">&para;</a></h3>
 <p>KKT 法（Karush-Kuhn-Tucker approach）是一种约束优化的一般方法，是拉格朗日乘数法的推广. 首先描述限制区域</p>
 <div class="arithmatex">\[
 \mathbb{S} = \big\{\boldsymbol{x}\ |\ \forall i,g^{(i)}(\boldsymbol{x})=0\ \mathrm{and}\ \forall j,h^{(j)}(\boldsymbol{x})\le0\big\}.
@@ -1720,7 +1720,7 @@ L(\boldsymbol{x}, \boldsymbol{\lambda},\boldsymbol{\alpha}) = \sum_i\lambda_ig^{
 <div class="arithmatex">\[
 \min_{\boldsymbol{x}}\max_{\boldsymbol{\lambda}}\max_{\boldsymbol{\alpha}, \boldsymbol{\alpha}\ge0} L(\boldsymbol{x}, \boldsymbol{\lambda},\boldsymbol{\alpha}).
 \]</div>
-<h3>Example: Linear Least Squares</h3>
+<h3 id="example-linear-least-squares">Example: Linear Least Squares<a class="headerlink" href="#example-linear-least-squares" title="Permanent link">&para;</a></h3>
 <p>求 <span class="arithmatex">\(f(\boldsymbol{x})=\dfrac{1}{2}\Vert\boldsymbol{Ax}-\boldsymbol{b}\Vert_2^2\)</span> 的最小值. 可以使用梯度下降和牛顿法，并且由于此函数是正定二次的，牛顿法可以直接得到解. 如果加上限制 <span class="arithmatex">\(\boldsymbol{x}^\top\boldsymbol{x}=1\)</span>，使用拉格朗日乘数法，</p>
 <div class="arithmatex">\[
 L(\boldsymbol{x},\lambda)=f(\boldsymbol{x})+\lambda\big(\boldsymbol{x}^\top\boldsymbol{x}-1\big).

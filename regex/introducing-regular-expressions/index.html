@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="../../none">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-5.1.0">
     
     
       
@@ -1825,20 +1825,20 @@
 <p><code>[0-3[6-9]]</code> union</p>
 <p><code>[a-z&amp;&amp;[^c]]</code> minus</p>
 <h2 id="quantifiers">Quantifiers<a class="headerlink" href="#quantifiers" title="Permanent link">&para;</a></h2>
-<h4>Greedy</h4>
+<h4 id="greedy">Greedy<a class="headerlink" href="#greedy" title="Permanent link">&para;</a></h4>
 <p><code>*</code> = zero or more<br />
 <code>?</code> = zero or one<br />
 <code>+</code> = one or more<br />
 <code>{m}</code> = m times<br />
 <code>{m,}</code> = m times or more<br />
 <code>{m,n}</code> = m to n times  </p>
-<h4>Lazy</h4>
+<h4 id="lazy">Lazy<a class="headerlink" href="#lazy" title="Permanent link">&para;</a></h4>
 <p>Append a <code>?</code> to the quantifier to add laziness.</p>
 <p>Lazy quantifiers matches as less characters as possible. For example, <code>5*?</code> is matches 0 characters.</p>
-<h4>Possessive</h4>
+<h4 id="possessive">Possessive<a class="headerlink" href="#possessive" title="Permanent link">&para;</a></h4>
 <p>Append a <code>+</code> to the quantifier to add selfishness.</p>
 <p>Possessive quantifiers never backtracks.</p>
-<h4>Lookarounds</h4>
+<h4 id="lookarounds">Lookarounds<a class="headerlink" href="#lookarounds" title="Permanent link">&para;</a></h4>
 <p>Lookarounds do not consume characters.</p>
 <p><code>(?=abc)</code> : followed by 'abc'<br />
 <code>(?!abc)</code> : not followed by 'abc'  </p>

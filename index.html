@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="none">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-5.1.0">
     
     
       
@@ -1536,6 +1536,8 @@
   }
 </style>
 
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
 <script>
 window.onload = function() {
   var btnRandom = document.getElementById('random');
@@ -1616,11 +1618,28 @@ Section(title='Misc')
         Page(title='中国哲学简史', url='reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/')
         Page(title='惊人的假说', url='reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/')
         Page(title='未来简史', url='reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/')`;
-  navigation = navigation.replace(/\r?\n|\r/g, '');
-  navigation = navigation.replace(/.*?url='\/'/, '');
-  navigation = navigation.replace(/Section\(title='Reading Notes'\).*/, '');
-  var posts = navigation.match(/(?<=url=').*?(?=')/g);
-  var randomPostUrl = posts[Math.floor(Math.random() * posts.length)];
+  navigation = navigation.replace("Page(title='Welcome', url='/')\n", '');
+  navigation = navigation.replace(/Section\(title='([^']*)'\)$/gm, '$1:');
+  navigation = navigation.replace(/Page\(title='([^']*)', url='([^']*)'\)$/gm, '$1: $2');
+
+  var navJson = jsyaml.load(navigation);
+
+  delete navJson['Misc']['Reading Notes']
+
+  // traverse through the json tree
+  function getJsonLeaves(json, leaves=[]){
+    for (var subJson in json){
+      if (typeof(json[subJson]) == 'string'){
+        leaves.push(json[subJson])
+      } else {
+        getJsonLeaves(json[subJson], leaves);
+      }
+    }
+    return leaves;
+  }
+
+  var postUrls = getJsonLeaves(navJson);
+  var randomPostUrl = postUrls[Math.floor(Math.random() * postUrls.length)];
   btnRandom.href = randomPostUrl;
 }
 </script>
