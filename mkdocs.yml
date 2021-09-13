@@ -86,6 +86,16 @@ nav:
   - CS:
     - Computer Organization: computer-organization/computer-organization.md
     - The Practice of Programming: computer-programming/the-practice-of-programming.md
+  - Guides:
+    - Linux:
+      - Linux Initial Setup: guides/linux/linux-initial-setup.md
+      - Ubuntu Beautify: guides/linux/ubuntu-beautify.md
+      - WSL Initial Setup: guides/linux/wsl-initial-setup.md
+    - Linux Tools:
+      - Tmux: guides/linux-tools/tmux.md
+      - Vim: guides/linux-tools/vim.md
+    - Networking:
+      - SSH through NAT: guides/networking/ssh-through-nat.md
   - Misc:
     - Electromagnetics:
       - Electromagnetics: electromagnetics/electromagnetics.md
