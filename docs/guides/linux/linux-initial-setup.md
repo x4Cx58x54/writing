@@ -63,9 +63,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 #### 3) Configure Zsh
 
-Copy the configuration file [.zshrc](https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.zshrc) to `~`.
+Copy the configuration file [.zshrc](https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.zshrc){:target="_blank"} to `~`.
 
-Some themes may require powerline fonts, which can be found at [powerline/fonts](https://github.com/powerline/fonts) and [Znuff/consolas-powerline](https://github.com/Znuff/consolas-powerline).
+Some themes may require powerline fonts, which can be found at [powerline/fonts](https://github.com/powerline/fonts){:target="_blank"} and [Znuff/consolas-powerline](https://github.com/Znuff/consolas-powerline){:target="_blank"}.
 
 
 ## Configure Vim
@@ -79,14 +79,14 @@ wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O ~/.v
 
 To install a plugin, add `Plug 'pluginname'` in the section which starts with `call plug#begin('~/.vim/plugged')` and ends with `call plug#end()` in the vim configuration file (`~/.vimrc` or `/etc/.vimrc`), then run `:PlugInstall` in Vim.
 
-#### 2) Install [lightline](https://github.com/itchyny/lightline.vim)
+#### 2) Install [lightline](https://github.com/itchyny/lightline.vim){:target="_blank"}
 
 Add the following line to vim-plug section in `.vimrc`:
 ```
 Plug 'itchyny/lightline.vim'
 ```
 
-#### 3) Install [code-dark colour scheme](https://github.com/tomasiser/vim-code-dark)
+#### 3) Install [code-dark colour scheme](https://github.com/tomasiser/vim-code-dark){:target="_blank"}
 
 Add the following line to vim-plug section in `.vimrc`:
 ```
@@ -98,7 +98,7 @@ Apply the colour scheme in `.vimrc` by
 colorscheme codedark
 ```
 
-#### 4) Install [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+#### 4) Install [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe){:target="_blank"}
 
 ```
 Plug 'Valloric/YouCompleteMe'
@@ -128,7 +128,7 @@ let g:ycm_auto_trigger = 0  " disable YCM
 
 #### Other configuration settings
 
-Copy the vim configuration file [.vimrc](https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.vimrc) to `.vimrc`.
+Copy the vim configuration file [.vimrc](https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.vimrc){:target="_blank"} to `.vimrc`.
 
 ## Setup Python 3.x
 
@@ -163,4 +163,4 @@ Settings -> About -> Software Update -> choose a server
 
 Or
 
-[Ubuntu 镜像使用帮助 - TUNA](https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/)
+[Ubuntu 镜像使用帮助 - TUNA](https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/){:target="_blank"}

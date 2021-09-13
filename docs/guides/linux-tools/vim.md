@@ -2,7 +2,7 @@
 
 ## Moves
 
-[All the right moves | Vim Tips Wiki](https://vim.fandom.com/wiki/All_the_right_moves)
+[All the right moves | Vim Tips Wiki](https://vim.fandom.com/wiki/All_the_right_moves){:target="_blank"}
 
 ### Move between Words
 
@@ -71,7 +71,7 @@
 
 ### Inserting Text (Enter Insert Mode)
 
-[Tutorial | Vim Tips Wiki](https://vim.fandom.com/wiki/Tutorial)
+[Tutorial | Vim Tips Wiki](https://vim.fandom.com/wiki/Tutorial){:target="_blank"}
 
 * `i` **insert** at current location
 * `I` **insert** at the start of current line
@@ -106,7 +106,7 @@
 
 ### Search and Replace
 
-[Search and replace | Vim Tips Wiki](https://vim.fandom.com/wiki/Search_and_replace)
+[Search and replace | Vim Tips Wiki](https://vim.fandom.com/wiki/Search_and_replace){:target="_blank"}
 
 * `/regex` search for regex
 * `?regex` search backwards

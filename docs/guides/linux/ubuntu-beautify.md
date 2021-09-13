@@ -14,25 +14,25 @@ sudo apt install chrome-gnome-shell
 sudo apt install gnome-shell-extensions
 ```
 
-Follow the instructions on <https://extensions.gnome.org> to install the Gnome Extension on FireFox.
+Follow the instructions on <https://extensions.gnome.org>{:target="_blank"} to install the Gnome Extension on FireFox.
 
-[ubuntu_logo_white.svg](https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/ubuntu_logo_white.svg)
+[ubuntu_logo_white.svg](https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/ubuntu_logo_white.svg){:target="_blank"}
 
 
 ## Themes
 
 Recommended themes:
 
-* <https://github.com/vinceliuice/ChromeOS-theme>
-* <https://github.com/vinceliuice/Azure-theme>
-* <https://github.com/vinceliuice/Toffee-gtk-theme>
-* <https://github.com/vinceliuice/Sierra-gtk-theme>
-* <https://github.com/vinceliuice/Mojave-gtk-theme>
-* <https://github.com/vinceliuice/Tela-icon-theme>
-* <https://github.com/vinceliuice/Tela-circle-icon-theme>
-* <https://github.com/vinceliuice/Qogir-icon-theme>
-* <https://github.com/vinceliuice/McMojave-circle>
-* <https://github.com/vinceliuice/WhiteSur-cursors>
+* <https://github.com/vinceliuice/ChromeOS-theme>{:target="_blank"}
+* <https://github.com/vinceliuice/Azure-theme>{:target="_blank"}
+* <https://github.com/vinceliuice/Toffee-gtk-theme>{:target="_blank"}
+* <https://github.com/vinceliuice/Sierra-gtk-theme>{:target="_blank"}
+* <https://github.com/vinceliuice/Mojave-gtk-theme>{:target="_blank"}
+* <https://github.com/vinceliuice/Tela-icon-theme>{:target="_blank"}
+* <https://github.com/vinceliuice/Tela-circle-icon-theme>{:target="_blank"}
+* <https://github.com/vinceliuice/Qogir-icon-theme>{:target="_blank"}
+* <https://github.com/vinceliuice/McMojave-circle>{:target="_blank"}
+* <https://github.com/vinceliuice/WhiteSur-cursors>{:target="_blank"}
 
 Set the themes in Tweak.
 
@@ -44,7 +44,7 @@ Install 'Dash to dock' in Gnome Extensions. Configure in Tweak.
 
 ## Wallpaper
 
-[Every Default macOS Wallpaper](https://512pixels.net/projects/default-mac-wallpapers-in-5k/)
+[Every Default macOS Wallpaper](https://512pixels.net/projects/default-mac-wallpapers-in-5k/){:target="_blank"}
 
 ## Top Bar
 

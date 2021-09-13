@@ -2,7 +2,7 @@
 
 ## Register NAT
 
-Register a DDNS address on a DDNS provider (for example <https://hsk.oray.com>) and login DDNS in the server router.
+Register a DDNS address on a DDNS provider (for example <https://hsk.oray.com>{:target="_blank"}) and login DDNS in the server router.
 
 ![](./img/router-ddns.png)
 
