@@ -1900,26 +1900,26 @@ This will apply to all users after reboot.</p>
 <div class="highlight"><pre><span></span><code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 </code></pre></div></p>
 <h4 id="3-configure-zsh">3) Configure Zsh<a class="headerlink" href="#3-configure-zsh" title="Permanent link">&para;</a></h4>
-<p>Copy the configuration file <a href="https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.zshrc">.zshrc</a> to <code>~</code>.</p>
-<p>Some themes may require powerline fonts, which can be found at <a href="https://github.com/powerline/fonts">powerline/fonts</a> and <a href="https://github.com/Znuff/consolas-powerline">Znuff/consolas-powerline</a>.</p>
+<p>Copy the configuration file <a href="https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.zshrc" target="_blank">.zshrc</a> to <code>~</code>.</p>
+<p>Some themes may require powerline fonts, which can be found at <a href="https://github.com/powerline/fonts" target="_blank">powerline/fonts</a> and <a href="https://github.com/Znuff/consolas-powerline" target="_blank">Znuff/consolas-powerline</a>.</p>
 <h2 id="configure-vim">Configure Vim<a class="headerlink" href="#configure-vim" title="Permanent link">&para;</a></h2>
 <h4 id="1-install-vim-plug">1) Install vim-plug<a class="headerlink" href="#1-install-vim-plug" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>mkdir -p ~/.vim/autoload
 wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O ~/.vim/autoload/plug.vim
 </code></pre></div>
 <p>To install a plugin, add <code>Plug 'pluginname'</code> in the section which starts with <code>call plug#begin('~/.vim/plugged')</code> and ends with <code>call plug#end()</code> in the vim configuration file (<code>~/.vimrc</code> or <code>/etc/.vimrc</code>), then run <code>:PlugInstall</code> in Vim.</p>
-<h4 id="2-install-lightline">2) Install <a href="https://github.com/itchyny/lightline.vim">lightline</a><a class="headerlink" href="#2-install-lightline" title="Permanent link">&para;</a></h4>
+<h4 id="2-install-lightline">2) Install <a href="https://github.com/itchyny/lightline.vim" target="_blank">lightline</a><a class="headerlink" href="#2-install-lightline" title="Permanent link">&para;</a></h4>
 <p>Add the following line to vim-plug section in <code>.vimrc</code>:
 <div class="highlight"><pre><span></span><code>Plug &#39;itchyny/lightline.vim&#39;
 </code></pre></div></p>
-<h4 id="3-install-code-dark-colour-scheme">3) Install <a href="https://github.com/tomasiser/vim-code-dark">code-dark colour scheme</a><a class="headerlink" href="#3-install-code-dark-colour-scheme" title="Permanent link">&para;</a></h4>
+<h4 id="3-install-code-dark-colour-scheme">3) Install <a href="https://github.com/tomasiser/vim-code-dark" target="_blank">code-dark colour scheme</a><a class="headerlink" href="#3-install-code-dark-colour-scheme" title="Permanent link">&para;</a></h4>
 <p>Add the following line to vim-plug section in <code>.vimrc</code>:
 <div class="highlight"><pre><span></span><code>Plug &#39;tomasiser/vim-code-dark&#39;
 </code></pre></div></p>
 <p>Apply the colour scheme in <code>.vimrc</code> by
 <div class="highlight"><pre><span></span><code>colorscheme codedark
 </code></pre></div></p>
-<h4 id="4-install-youcompleteme">4) Install <a href="https://github.com/ycm-core/YouCompleteMe">YouCompleteMe</a><a class="headerlink" href="#4-install-youcompleteme" title="Permanent link">&para;</a></h4>
+<h4 id="4-install-youcompleteme">4) Install <a href="https://github.com/ycm-core/YouCompleteMe" target="_blank">YouCompleteMe</a><a class="headerlink" href="#4-install-youcompleteme" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>Plug &#39;Valloric/YouCompleteMe&#39;
 </code></pre></div>
 <p>Compile YCM</p>
@@ -1936,7 +1936,7 @@ let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_auto_trigger = 0  &quot; disable YCM
 </code></pre></div>
 <h4 id="other-configuration-settings">Other configuration settings<a class="headerlink" href="#other-configuration-settings" title="Permanent link">&para;</a></h4>
-<p>Copy the vim configuration file <a href="https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.vimrc">.vimrc</a> to <code>.vimrc</code>.</p>
+<p>Copy the vim configuration file <a href="https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.vimrc" target="_blank">.vimrc</a> to <code>.vimrc</code>.</p>
 <h2 id="setup-python-3x">Setup Python 3.x<a class="headerlink" href="#setup-python-3x" title="Permanent link">&para;</a></h2>
 <h4 id="1-install-python-3x-and-pip">1) Install Python 3.x and PIP<a class="headerlink" href="#1-install-python-3x-and-pip" title="Permanent link">&para;</a></h4>
 <p>CentOS:
@@ -1955,7 +1955,7 @@ sudo yum install python3-pip
 <h2 id="replace-ubuntu-software-source">Replace Ubuntu Software Source<a class="headerlink" href="#replace-ubuntu-software-source" title="Permanent link">&para;</a></h2>
 <p>Settings -&gt; About -&gt; Software Update -&gt; choose a server</p>
 <p>Or</p>
-<p><a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/">Ubuntu 镜像使用帮助 - TUNA</a></p>
+<p><a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank">Ubuntu 镜像使用帮助 - TUNA</a></p>
                 
               
               
