@@ -12,18 +12,18 @@
       
         <meta name="author" content="x4Cx58x54">
       
-      <link rel="shortcut icon" href="/none">
+      <link rel="shortcut icon" href="../../../none">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-5.1.0">
     
     
       
-        <title>Randomish Writing</title>
+        <title>Jacobian Matrix - Randomish Writing</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.89dc9fe3.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.89dc9fe3.min.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/palette.ecd4686e.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecd4686e.min.css">
       
       
         
@@ -39,7 +39,7 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/./_static/css/extra.css">
+      <link rel="stylesheet" href="../../../_static/css/extra.css">
     
     
       
@@ -62,6 +62,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#jacobian-matrix" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -69,7 +74,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="/." title="Randomish Writing" class="md-header-nav__button md-logo" aria-label="Randomish Writing">
+    <a href="../../.." title="Randomish Writing" class="md-header-nav__button md-logo" aria-label="Randomish Writing">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
@@ -86,7 +91,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              
+              Jacobian Matrix
             
           </span>
         </div>
@@ -105,14 +110,16 @@
         
           
 
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="/." class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." class="md-tabs__link">
         Welcome
       </a>
     
@@ -124,7 +131,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/maths/linear-algebra/essence-of-linear-algebra/" class="md-tabs__link">
+        <a href="../../../maths/linear-algebra/essence-of-linear-algebra/" class="md-tabs__link">
           Mathematics
         </a>
       
@@ -137,7 +144,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/c/c-primer-plus/" class="md-tabs__link">
+        <a href="../../../c/c-primer-plus/" class="md-tabs__link">
           Languages
         </a>
       
@@ -150,7 +157,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/ai/deep-learning/deep-learning/" class="md-tabs__link">
+        <a href="../../../ai/deep-learning/deep-learning/" class="md-tabs__link">
           AI
         </a>
       
@@ -167,7 +174,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/competitive-programming/prime/" class="md-tabs__link">
+        <a href="../../../competitive-programming/prime/" class="md-tabs__link">
           Competitive Programming
         </a>
       
@@ -182,7 +189,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/computer-organization/computer-organization/" class="md-tabs__link">
+        <a href="../../../computer-organization/computer-organization/" class="md-tabs__link">
           CS
         </a>
       
@@ -199,7 +206,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/guides/linux/linux-initial-setup/" class="md-tabs__link">
+        <a href="../../../guides/linux/linux-initial-setup/" class="md-tabs__link">
           Guides
         </a>
       
@@ -218,7 +225,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/electromagnetics/electromagnetics/" class="md-tabs__link">
+        <a href="../../../electromagnetics/electromagnetics/" class="md-tabs__link">
           Misc
         </a>
       
@@ -233,7 +240,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/scribbles/" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link md-tabs__link--active">
           Scribbles
         </a>
       
@@ -255,7 +262,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing">
+    <a href="../../.." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M257.981 272.971L63.638 467.314c-9.373 9.373-24.569 9.373-33.941 0L7.029 444.647c-9.357-9.357-9.375-24.522-.04-33.901L161.011 256 6.99 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L257.981 239.03c9.373 9.372 9.373 24.568 0 33.941zM640 456v-32c0-13.255-10.745-24-24-24H312c-13.255 0-24 10.745-24 24v32c0 13.255 10.745 24 24 24h304c13.255 0 24-10.745 24-24z"/></svg>
@@ -272,7 +279,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/." title="Welcome" class="md-nav__link">
+    <a href="../../.." title="Welcome" class="md-nav__link">
       Welcome
     </a>
   </li>
@@ -309,7 +316,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/linear-algebra/essence-of-linear-algebra/" title="Essence of Linear Algebra" class="md-nav__link">
+    <a href="../../../maths/linear-algebra/essence-of-linear-algebra/" title="Essence of Linear Algebra" class="md-nav__link">
       Essence of Linear Algebra
     </a>
   </li>
@@ -321,7 +328,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/linear-algebra/linear-algebra/" title="Linear Algebra" class="md-nav__link">
+    <a href="../../../maths/linear-algebra/linear-algebra/" title="Linear Algebra" class="md-nav__link">
       Linear Algebra
     </a>
   </li>
@@ -358,7 +365,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/probability-theory/probability-theory/" title="Probability Theory" class="md-nav__link">
+    <a href="../../../maths/probability-theory/probability-theory/" title="Probability Theory" class="md-nav__link">
       Probability Theory
     </a>
   </li>
@@ -370,7 +377,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/probability-theory/combinatorics/" title="Combinatorics Example Problems" class="md-nav__link">
+    <a href="../../../maths/probability-theory/combinatorics/" title="Combinatorics Example Problems" class="md-nav__link">
       Combinatorics Example Problems
     </a>
   </li>
@@ -407,7 +414,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/probability-theory/events-and-probability/" title="Events and Probability" class="md-nav__link">
+    <a href="../../../maths/probability-theory/events-and-probability/" title="Events and Probability" class="md-nav__link">
       Events and Probability
     </a>
   </li>
@@ -419,7 +426,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/probability-theory/random-variables/" title="Random Variables" class="md-nav__link">
+    <a href="../../../maths/probability-theory/random-variables/" title="Random Variables" class="md-nav__link">
       Random Variables
     </a>
   </li>
@@ -441,7 +448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/statistics/statistics/" title="Statistics" class="md-nav__link">
+    <a href="../../../maths/statistics/statistics/" title="Statistics" class="md-nav__link">
       Statistics
     </a>
   </li>
@@ -453,7 +460,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/matrix-algebra/matrix-algebra/" title="Matrix Algebra" class="md-nav__link">
+    <a href="../../../maths/matrix-algebra/matrix-algebra/" title="Matrix Algebra" class="md-nav__link">
       Matrix Algebra
     </a>
   </li>
@@ -465,7 +472,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/discrete-maths/discrete-maths/" title="Discrete Maths" class="md-nav__link">
+    <a href="../../../maths/discrete-maths/discrete-maths/" title="Discrete Maths" class="md-nav__link">
       Discrete Maths
     </a>
   </li>
@@ -477,7 +484,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/calculus/calculus/" title="Calculus" class="md-nav__link">
+    <a href="../../../maths/calculus/calculus/" title="Calculus" class="md-nav__link">
       Calculus
     </a>
   </li>
@@ -489,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/complex-analysis/complex-analysis/" title="Complex Analysis" class="md-nav__link">
+    <a href="../../../maths/complex-analysis/complex-analysis/" title="Complex Analysis" class="md-nav__link">
       Complex Analysis
     </a>
   </li>
@@ -501,7 +508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/integral-transforms/integral-transforms/" title="Integral Transforms" class="md-nav__link">
+    <a href="../../../maths/integral-transforms/integral-transforms/" title="Integral Transforms" class="md-nav__link">
       Integral Transforms
     </a>
   </li>
@@ -513,7 +520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/3b1b/3b1b/" title="3Blue1Brown" class="md-nav__link">
+    <a href="../../../maths/3b1b/3b1b/" title="3Blue1Brown" class="md-nav__link">
       3Blue1Brown
     </a>
   </li>
@@ -525,7 +532,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/maths/memos/memos/" title="Memos" class="md-nav__link">
+    <a href="../../../maths/memos/memos/" title="Memos" class="md-nav__link">
       Memos
     </a>
   </li>
@@ -567,7 +574,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/c/c-primer-plus/" title="C Primer Plus" class="md-nav__link">
+    <a href="../../../c/c-primer-plus/" title="C Primer Plus" class="md-nav__link">
       C Primer Plus
     </a>
   </li>
@@ -579,7 +586,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cpp/cpp-notes/" title="C++ Notes" class="md-nav__link">
+    <a href="../../../cpp/cpp-notes/" title="C++ Notes" class="md-nav__link">
       C++ Notes
     </a>
   </li>
@@ -591,7 +598,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/python/python-3-object-oriented-programming/" title="Python 3 OOP" class="md-nav__link">
+    <a href="../../../python/python-3-object-oriented-programming/" title="Python 3 OOP" class="md-nav__link">
       Python 3 OOP
     </a>
   </li>
@@ -628,7 +635,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/latex/latex-cheatsheet/" title="LaTeX Cheatsheet" class="md-nav__link">
+    <a href="../../../latex/latex-cheatsheet/" title="LaTeX Cheatsheet" class="md-nav__link">
       LaTeX Cheatsheet
     </a>
   </li>
@@ -640,7 +647,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/latex/latex-maths/" title="LaTeX Maths Symbols" class="md-nav__link">
+    <a href="../../../latex/latex-maths/" title="LaTeX Maths Symbols" class="md-nav__link">
       LaTeX Maths Symbols
     </a>
   </li>
@@ -682,7 +689,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/regex/introducing-regular-expressions/" title="Introducing Regular Expressions" class="md-nav__link">
+    <a href="../../../regex/introducing-regular-expressions/" title="Introducing Regular Expressions" class="md-nav__link">
       Introducing Regular Expressions
     </a>
   </li>
@@ -694,7 +701,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/regex/regular-expressions-cookbook/" title="Regular Expressions Cookbook" class="md-nav__link">
+    <a href="../../../regex/regular-expressions-cookbook/" title="Regular Expressions Cookbook" class="md-nav__link">
       Regular Expressions Cookbook
     </a>
   </li>
@@ -711,7 +718,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/web/javascript-the-definitive-guide/" title="JavaScript the Definitive Guide" class="md-nav__link">
+    <a href="../../../web/javascript-the-definitive-guide/" title="JavaScript the Definitive Guide" class="md-nav__link">
       JavaScript the Definitive Guide
     </a>
   </li>
@@ -723,7 +730,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/web/html-cheatsheet/" title="HTML Cheatsheet" class="md-nav__link">
+    <a href="../../../web/html-cheatsheet/" title="HTML Cheatsheet" class="md-nav__link">
       HTML Cheatsheet
     </a>
   </li>
@@ -735,7 +742,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/web/css-cheatsheet/" title="CSS Cheatsheet" class="md-nav__link">
+    <a href="../../../web/css-cheatsheet/" title="CSS Cheatsheet" class="md-nav__link">
       CSS Cheatsheet
     </a>
   </li>
@@ -777,7 +784,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/ai/deep-learning/deep-learning/" title="Deep Learning" class="md-nav__link">
+    <a href="../../../ai/deep-learning/deep-learning/" title="Deep Learning" class="md-nav__link">
       Deep Learning
     </a>
   </li>
@@ -844,7 +851,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/prime/" title="素数" class="md-nav__link">
+    <a href="../../../competitive-programming/prime/" title="素数" class="md-nav__link">
       素数
     </a>
   </li>
@@ -856,7 +863,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/exgcd/" title="扩展欧几里得" class="md-nav__link">
+    <a href="../../../competitive-programming/exgcd/" title="扩展欧几里得" class="md-nav__link">
       扩展欧几里得
     </a>
   </li>
@@ -868,7 +875,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/combination/" title="组合数" class="md-nav__link">
+    <a href="../../../competitive-programming/combination/" title="组合数" class="md-nav__link">
       组合数
     </a>
   </li>
@@ -880,7 +887,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/binexp/" title="快速幂" class="md-nav__link">
+    <a href="../../../competitive-programming/binexp/" title="快速幂" class="md-nav__link">
       快速幂
     </a>
   </li>
@@ -892,7 +899,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/fibonacci/" title="类斐波那契数列" class="md-nav__link">
+    <a href="../../../competitive-programming/fibonacci/" title="类斐波那契数列" class="md-nav__link">
       类斐波那契数列
     </a>
   </li>
@@ -904,7 +911,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/gcd-inverse/" title="GCD Inverse" class="md-nav__link">
+    <a href="../../../competitive-programming/gcd-inverse/" title="GCD Inverse" class="md-nav__link">
       GCD Inverse
     </a>
   </li>
@@ -916,7 +923,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/lagrange-interpolation/" title="拉格朗日插值" class="md-nav__link">
+    <a href="../../../competitive-programming/lagrange-interpolation/" title="拉格朗日插值" class="md-nav__link">
       拉格朗日插值
     </a>
   </li>
@@ -958,7 +965,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/fenwick/" title="树状数组" class="md-nav__link">
+    <a href="../../../competitive-programming/fenwick/" title="树状数组" class="md-nav__link">
       树状数组
     </a>
   </li>
@@ -970,7 +977,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/segment-tree/" title="线段树" class="md-nav__link">
+    <a href="../../../competitive-programming/segment-tree/" title="线段树" class="md-nav__link">
       线段树
     </a>
   </li>
@@ -982,7 +989,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/heap/" title="堆" class="md-nav__link">
+    <a href="../../../competitive-programming/heap/" title="堆" class="md-nav__link">
       堆
     </a>
   </li>
@@ -994,7 +1001,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/sparse-table/" title="ST 表" class="md-nav__link">
+    <a href="../../../competitive-programming/sparse-table/" title="ST 表" class="md-nav__link">
       ST 表
     </a>
   </li>
@@ -1006,7 +1013,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/ufds/" title="并查集" class="md-nav__link">
+    <a href="../../../competitive-programming/ufds/" title="并查集" class="md-nav__link">
       并查集
     </a>
   </li>
@@ -1048,7 +1055,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/intersection-points/" title="直线交点数" class="md-nav__link">
+    <a href="../../../competitive-programming/intersection-points/" title="直线交点数" class="md-nav__link">
       直线交点数
     </a>
   </li>
@@ -1060,7 +1067,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/lis/" title="最长上升序列" class="md-nav__link">
+    <a href="../../../competitive-programming/lis/" title="最长上升序列" class="md-nav__link">
       最长上升序列
     </a>
   </li>
@@ -1072,7 +1079,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/number-of-common-substrings/" title="公共子序列" class="md-nav__link">
+    <a href="../../../competitive-programming/number-of-common-substrings/" title="公共子序列" class="md-nav__link">
       公共子序列
     </a>
   </li>
@@ -1114,7 +1121,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/quicksort/" title="快速排序 / 第 k 小的数" class="md-nav__link">
+    <a href="../../../competitive-programming/quicksort/" title="快速排序 / 第 k 小的数" class="md-nav__link">
       快速排序 / 第 k 小的数
     </a>
   </li>
@@ -1126,7 +1133,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/nearest-point-pair/" title="平面最近点对" class="md-nav__link">
+    <a href="../../../competitive-programming/nearest-point-pair/" title="平面最近点对" class="md-nav__link">
       平面最近点对
     </a>
   </li>
@@ -1168,7 +1175,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/josephus-survivor/" title="Josephus Survivor" class="md-nav__link">
+    <a href="../../../competitive-programming/josephus-survivor/" title="Josephus Survivor" class="md-nav__link">
       Josephus Survivor
     </a>
   </li>
@@ -1180,7 +1187,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/chopsticks/" title="找筷子" class="md-nav__link">
+    <a href="../../../competitive-programming/chopsticks/" title="找筷子" class="md-nav__link">
       找筷子
     </a>
   </li>
@@ -1192,7 +1199,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/double-cola/" title="Double Cola" class="md-nav__link">
+    <a href="../../../competitive-programming/double-cola/" title="Double Cola" class="md-nav__link">
       Double Cola
     </a>
   </li>
@@ -1204,7 +1211,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/alphabetical-coding/" title="字母计数" class="md-nav__link">
+    <a href="../../../competitive-programming/alphabetical-coding/" title="字母计数" class="md-nav__link">
       字母计数
     </a>
   </li>
@@ -1216,7 +1223,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/competitive-programming/number-of-trailing-zeros-of-n%21/" title="N! 末尾零数" class="md-nav__link">
+    <a href="../../../competitive-programming/number-of-trailing-zeros-of-n%21/" title="N! 末尾零数" class="md-nav__link">
       N! 末尾零数
     </a>
   </li>
@@ -1263,7 +1270,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/computer-organization/computer-organization/" title="Computer Organization" class="md-nav__link">
+    <a href="../../../computer-organization/computer-organization/" title="Computer Organization" class="md-nav__link">
       Computer Organization
     </a>
   </li>
@@ -1275,7 +1282,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/computer-programming/the-practice-of-programming/" title="The Practice of Programming" class="md-nav__link">
+    <a href="../../../computer-programming/the-practice-of-programming/" title="The Practice of Programming" class="md-nav__link">
       The Practice of Programming
     </a>
   </li>
@@ -1342,7 +1349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/guides/linux/linux-initial-setup/" title="Linux Initial Setup" class="md-nav__link">
+    <a href="../../../guides/linux/linux-initial-setup/" title="Linux Initial Setup" class="md-nav__link">
       Linux Initial Setup
     </a>
   </li>
@@ -1354,7 +1361,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/guides/linux/ubuntu-beautify/" title="Ubuntu Beautify" class="md-nav__link">
+    <a href="../../../guides/linux/ubuntu-beautify/" title="Ubuntu Beautify" class="md-nav__link">
       Ubuntu Beautify
     </a>
   </li>
@@ -1366,7 +1373,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/guides/linux/wsl-initial-setup/" title="WSL Initial Setup" class="md-nav__link">
+    <a href="../../../guides/linux/wsl-initial-setup/" title="WSL Initial Setup" class="md-nav__link">
       WSL Initial Setup
     </a>
   </li>
@@ -1408,7 +1415,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/guides/linux-tools/tmux/" title="Tmux" class="md-nav__link">
+    <a href="../../../guides/linux-tools/tmux/" title="Tmux" class="md-nav__link">
       Tmux
     </a>
   </li>
@@ -1420,7 +1427,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/guides/linux-tools/vim/" title="Vim" class="md-nav__link">
+    <a href="../../../guides/linux-tools/vim/" title="Vim" class="md-nav__link">
       Vim
     </a>
   </li>
@@ -1462,7 +1469,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/guides/networking/ssh-through-nat/" title="SSH through NAT" class="md-nav__link">
+    <a href="../../../guides/networking/ssh-through-nat/" title="SSH through NAT" class="md-nav__link">
       SSH through NAT
     </a>
   </li>
@@ -1534,7 +1541,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/electromagnetics/electromagnetics/" title="Electromagnetics" class="md-nav__link">
+    <a href="../../../electromagnetics/electromagnetics/" title="Electromagnetics" class="md-nav__link">
       Electromagnetics
     </a>
   </li>
@@ -1571,7 +1578,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/electromagnetics/electric-field/" title="Electric Field" class="md-nav__link">
+    <a href="../../../electromagnetics/electric-field/" title="Electric Field" class="md-nav__link">
       Electric Field
     </a>
   </li>
@@ -1583,7 +1590,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/electromagnetics/magnetic-field/" title="Magnetic Field" class="md-nav__link">
+    <a href="../../../electromagnetics/magnetic-field/" title="Magnetic Field" class="md-nav__link">
       Magnetic Field
     </a>
   </li>
@@ -1595,7 +1602,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/electromagnetics/induction/" title="Induction" class="md-nav__link">
+    <a href="../../../electromagnetics/induction/" title="Induction" class="md-nav__link">
       Induction
     </a>
   </li>
@@ -1607,7 +1614,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/electromagnetics/em-wave/" title="EM Wave" class="md-nav__link">
+    <a href="../../../electromagnetics/em-wave/" title="EM Wave" class="md-nav__link">
       EM Wave
     </a>
   </li>
@@ -1629,7 +1636,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/control-theory/classical-control/" title="Classical Control Theory" class="md-nav__link">
+    <a href="../../../control-theory/classical-control/" title="Classical Control Theory" class="md-nav__link">
       Classical Control Theory
     </a>
   </li>
@@ -1666,7 +1673,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/" title="如何阅读一本书" class="md-nav__link">
+    <a href="../../../reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/" title="如何阅读一本书" class="md-nav__link">
       如何阅读一本书
     </a>
   </li>
@@ -1678,7 +1685,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/" title="中国哲学简史" class="md-nav__link">
+    <a href="../../../reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/" title="中国哲学简史" class="md-nav__link">
       中国哲学简史
     </a>
   </li>
@@ -1690,7 +1697,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/" title="惊人的假说" class="md-nav__link">
+    <a href="../../../reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/" title="惊人的假说" class="md-nav__link">
       惊人的假说
     </a>
   </li>
@@ -1702,7 +1709,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/" title="未来简史" class="md-nav__link">
+    <a href="../../../reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/" title="未来简史" class="md-nav__link">
       未来简史
     </a>
   </li>
@@ -1722,10 +1729,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
       Scribbles
@@ -1749,7 +1758,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/scribbles/" title="Index" class="md-nav__link">
+    <a href="../../" title="Index" class="md-nav__link">
       Index
     </a>
   </li>
@@ -1759,10 +1768,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-2" type="checkbox" id="nav-9-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-2" type="checkbox" id="nav-9-2" checked>
     
     <label class="md-nav__link" for="nav-9-2">
       Calculus
@@ -1784,11 +1795,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="/scribbles/calculus/jacobian-matrix/" title="Jacobian Matrix" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Jacobian Matrix" class="md-nav__link md-nav__link--active">
       Jacobian Matrix
     </a>
+    
   </li>
 
         
@@ -1809,12 +1829,104 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                
+                  
+                
+                
+                <h1 id="jacobian-matrix">Jacobian Matrix<a class="headerlink" href="#jacobian-matrix" title="Permanent link">&para;</a></h1>
+<p>雅可比矩阵描述的是线性空间中变换的导数。以一个二维空间为例：设点 <span class="arithmatex">\(\boldsymbol{a} = (x_a, y_a)\)</span> 经过变换 <span class="arithmatex">\(f = (f_x, f_y)\)</span> 后映射到了 <span class="arithmatex">\(f(\boldsymbol{a}) = \boldsymbol{b} = (x_b, y_b)\)</span> 上，即</p>
+<div class="arithmatex">\[
+f_x(x_a, y_a) = x_b,\\
+f_y(x_a, y_a) = y_b.
+\]</div>
+<p>若无穷小量 <span class="arithmatex">\(\varepsilon_x\)</span> 和 <span class="arithmatex">\(\varepsilon_y\)</span> 带来的扰动使 <span class="arithmatex">\(\boldsymbol{a}\)</span> 偏移到了 <span class="arithmatex">\(\boldsymbol{a}' = \boldsymbol{a} + \varepsilon_x\boldsymbol{e}_x + \varepsilon_y\boldsymbol{e}_y\)</span>，那么 <span class="arithmatex">\(\boldsymbol{b}\)</span> 也会相应地偏移至 <span class="arithmatex">\(\boldsymbol{b}' = f(\boldsymbol{a}')\)</span>。这里将两个基底方向上的扰动分开考虑：</p>
+<div class="arithmatex">\[
+\begin{gathered}
+f_x(x_a + \varepsilon_x, y_a) = x_b + \tfrac{\partial f_x}{\partial x} \varepsilon_x,\\
+f_x(x_a, y_a + \varepsilon_y) = x_b + \tfrac{\partial f_x}{\partial y} \varepsilon_y,\\
+f_y(x_a + \varepsilon_x, y_a) = y_b + \tfrac{\partial f_y}{\partial x} \varepsilon_x,\\
+f_y(x_a, y_a + \varepsilon_y) = y_b + \tfrac{\partial f_y}{\partial y} \varepsilon_y.
+\end{gathered}
+\]</div>
+<p>综上，有</p>
+<div class="arithmatex">\[
+f(\boldsymbol{a} +
+\begin{bmatrix}
+\varepsilon_x\\
+\varepsilon_y
+\end{bmatrix}) = f(\boldsymbol{a}) +
+\begin{bmatrix}
+\frac{\partial f_x}{\partial x} &amp; \frac{\partial f_x}{\partial y}\\
+\frac{\partial f_y}{\partial x} &amp; \frac{\partial f_y}{\partial y}
+\end{bmatrix}
+\begin{bmatrix}
+\varepsilon_x\\
+\varepsilon_y
+\end{bmatrix}.
+\]</div>
+<p>其中矩阵</p>
+<div class="arithmatex">\[
+\boldsymbol{J} = \begin{bmatrix}
+\frac{\partial f_x}{\partial x} &amp; \frac{\partial f_x}{\partial y}\\
+\frac{\partial f_y}{\partial x} &amp; \frac{\partial f_y}{\partial y}
+\end{bmatrix}
+\]</div>
+<p>即为 <span class="arithmatex">\(f\)</span> 的雅可比矩阵，很容易可以看到它的意义即为 <span class="arithmatex">\(f\)</span> 的导数，记为</p>
+<div class="arithmatex">\[
+\boldsymbol{J} = \operatorname{D}f,
+\]</div>
+<p>且</p>
+<div class="arithmatex">\[
+J_{ij} = \frac{\partial f_i}{\partial x_j}.
+\]</div>
+<p>特别地，当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}\)</span> 时，<span class="arithmatex">\(\operatorname{D}f\)</span> 为梯度 <span class="arithmatex">\(\nabla f\)</span>；当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}^m\)</span> 时，<span class="arithmatex">\(\operatorname{D}f\)</span> 为雅可比矩阵。</p>
+<hr />
+<p>在对积分变量进行换元时，即需要使用雅可比矩阵。简单起见，先以一元积分为例：</p>
+<div class="arithmatex">\[
+\int_a^b f(x) \mathrm{d}x,
+\]</div>
+<p>将 <span class="arithmatex">\(x\)</span> 换元为 <span class="arithmatex">\(y\)</span>，满足关系 <span class="arithmatex">\(x = h(y)\)</span>，则原积分化为</p>
+<div class="arithmatex">\[
+\int_{h^{-1}(a)}^{h^{-1}(b)}f(h(y))\ \mathrm{d}(h(y)),
+\]</div>
+<p>其中的 <span class="arithmatex">\(\mathrm{d}x\)</span> 的转化可以理解为 <span class="arithmatex">\(\mathrm{d}(h(y)) \mapsto \det(\boldsymbol{J}_h)\mathrm{d}y = h'(y)\mathrm{d}y\)</span>（考虑到行列式的意义在于空间被放缩的比例）。</p>
+<p>在二维区域上进行积分时，从直角坐标系到极坐标系的变换为</p>
+<div class="arithmatex">\[
+h(x, y) = (r\cos\theta, r\sin\theta)
+\]</div>
+<p>那么积分的转换为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\iint_S f(x, y) \mathrm{d}x\mathrm{d}y
+&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\det(\boldsymbol{J}_h)\mathrm{d}r\mathrm{d}\theta\\
+&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\left|\frac{\partial(x, y)}{\partial(r, \theta)}\right|\mathrm{d}r\mathrm{d}\theta\\
+&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\begin{vmatrix}\frac{\partial x}{\partial r} &amp; \frac{\partial x}{\partial \theta}\\\frac{\partial y}{\partial r} &amp; \frac{\partial y}{\partial \theta}\end{vmatrix}\mathrm{d}r\mathrm{d}\theta\\
+&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\begin{vmatrix}\cos\theta &amp; -r\sin\theta\\ \sin\theta &amp; r\cos\theta\end{vmatrix}\mathrm{d}r\mathrm{d}\theta\\
+&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)r\mathrm{d}r\mathrm{d}\theta.
+\end{aligned}
+\]</div>
+                
+              
               
                 
 
@@ -1827,6 +1939,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../" title="Index" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Index
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1858,15 +1991,15 @@
       
     </div>
     
-      <script src="/assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="/assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.36cbf620.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "/",
+          base: "../../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "/assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../../../assets/javascripts/worker/search.7f7c8775.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
@@ -1875,7 +2008,7 @@
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"></script>
       
-        <script src="/./_static/js/extra.js"></script>
+        <script src="../../../_static/js/extra.js"></script>
       
     
   </body>
