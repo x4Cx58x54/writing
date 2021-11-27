@@ -19,7 +19,7 @@ theme:
     # - instant
 
 
-copyright: 'Copyright &copy; 2017 - 2020 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
+copyright: 'Copyright &copy; 2017 - 2021 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
 
 
 nav:
@@ -29,6 +29,7 @@ nav:
     - Linear Algebra: maths/linear-algebra/linear-algebra.md
     - Probability Theory:
       - Probability Theory: maths/probability-theory/probability-theory.md
+      - Combinatorics Example Problems: maths/probability-theory/combinatorics.md
       - Problemsets:
         - Events and Probability: maths/probability-theory/events-and-probability.md
         - Random Variables: maths/probability-theory/random-variables.md
@@ -110,6 +111,10 @@ nav:
       - 中国哲学简史: reading-notes/中国哲学简史.md
       - 惊人的假说: reading-notes/惊人的假说.md
       - 未来简史: reading-notes/未来简史：从智人到智神.md
+  - Scribbles:
+    - Index: scribbles/index.md
+    - Calculus:
+      - scribbles/calculus/jacobian-matrix.md
 
 
 plugins:
@@ -143,7 +148,7 @@ markdown_extensions:
   - meta
   - toc:
       permalink: true
-      toc_depth: 2
+      toc_depth: 3
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.tasklist:
