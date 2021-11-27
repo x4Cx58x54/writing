@@ -112,7 +112,7 @@ nav:
       - 惊人的假说: reading-notes/惊人的假说.md
       - 未来简史: reading-notes/未来简史：从智人到智神.md
   - Scribbles:
-    - Index: scribbles/index.md
+    - Scribbles: scribbles/index.md
     - Calculus:
       - scribbles/calculus/jacobian-matrix.md
 
