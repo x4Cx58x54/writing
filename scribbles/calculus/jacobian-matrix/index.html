@@ -1859,24 +1859,24 @@
 f_x(x_a, y_a) = x_b,\\
 f_y(x_a, y_a) = y_b.
 \]</div>
-<p>若无穷小量 <span class="arithmatex">\(\varepsilon_x\)</span> 和 <span class="arithmatex">\(\varepsilon_y\)</span> 带来的扰动使 <span class="arithmatex">\(\boldsymbol{a}\)</span> 偏移到了 <span class="arithmatex">\(\boldsymbol{a}' = \boldsymbol{a} + \varepsilon_x\boldsymbol{e}_x + \varepsilon_y\boldsymbol{e}_y\)</span>，那么 <span class="arithmatex">\(\boldsymbol{b}\)</span> 也会相应地偏移至 <span class="arithmatex">\(\boldsymbol{b}' = f(\boldsymbol{a}')\)</span>。这里将两个基底方向上的扰动分开考虑：</p>
+<p>若无穷小量 <span class="arithmatex">\(\varepsilon_x\)</span> 和 <span class="arithmatex">\(\varepsilon_y\)</span> 带来的扰动使 <span class="arithmatex">\(\boldsymbol{a}\)</span> 偏移到了 <span class="arithmatex">\(\boldsymbol{a} + (\varepsilon_x, \varepsilon_y)\)</span>，分开考虑两个基底方向上的扰动：</p>
 <div class="arithmatex">\[
-\begin{gathered}
-f_x(x_a + \varepsilon_x, y_a) = x_b + \tfrac{\partial f_x}{\partial x} \varepsilon_x,\\
-f_x(x_a, y_a + \varepsilon_y) = x_b + \tfrac{\partial f_x}{\partial y} \varepsilon_y,\\
-f_y(x_a + \varepsilon_x, y_a) = y_b + \tfrac{\partial f_y}{\partial x} \varepsilon_x,\\
-f_y(x_a, y_a + \varepsilon_y) = y_b + \tfrac{\partial f_y}{\partial y} \varepsilon_y.
-\end{gathered}
+\begin{aligned}
+&amp;f_x(x_a + \varepsilon_x , &amp;y_a&amp;&amp;\hspace{-1em}) = x_b + \tfrac{\partial f_x}{\partial x} \varepsilon_x,\\
+&amp;f_x(x_a , &amp;y_a&amp; + \varepsilon_y&amp;\hspace{-1em}) = x_b + \tfrac{\partial f_x}{\partial y} \varepsilon_y,\\
+&amp;f_y(x_a + \varepsilon_x , &amp;y_a&amp;&amp;\hspace{-1em}) = y_b + \tfrac{\partial f_y}{\partial x} \varepsilon_x,\\
+&amp;f_y(x_a , &amp;y_a&amp; + \varepsilon_y&amp;\hspace{-1em}) = y_b + \tfrac{\partial f_y}{\partial y} \varepsilon_y.
+\end{aligned}
 \]</div>
 <p>综上，有</p>
 <div class="arithmatex">\[
-f(\boldsymbol{a} +
+f\left(\boldsymbol{a} +
 \begin{bmatrix}
 \varepsilon_x\\
 \varepsilon_y
-\end{bmatrix}) = f(\boldsymbol{a}) +
+\end{bmatrix}\right) = f(\boldsymbol{a}) +
 \begin{bmatrix}
-\frac{\partial f_x}{\partial x} &amp; \frac{\partial f_x}{\partial y}\\
+\frac{\partial f_x}{\partial x} &amp; \frac{\partial f_x}{\partial y}\\[0.5em]
 \frac{\partial f_y}{\partial x} &amp; \frac{\partial f_y}{\partial y}
 \end{bmatrix}
 \begin{bmatrix}
@@ -1887,19 +1887,19 @@ f(\boldsymbol{a} +
 <p>其中矩阵</p>
 <div class="arithmatex">\[
 \boldsymbol{J} = \begin{bmatrix}
-\frac{\partial f_x}{\partial x} &amp; \frac{\partial f_x}{\partial y}\\
-\frac{\partial f_y}{\partial x} &amp; \frac{\partial f_y}{\partial y}
+\dfrac{\partial f_x}{\partial x} &amp; \dfrac{\partial f_x}{\partial y}\\[1.2em]
+\dfrac{\partial f_y}{\partial x} &amp; \dfrac{\partial f_y}{\partial y}
 \end{bmatrix}
 \]</div>
-<p>即为 <span class="arithmatex">\(f\)</span> 的雅可比矩阵，很容易可以看到它的意义即为 <span class="arithmatex">\(f\)</span> 的导数，记为</p>
+<p>即为 <span class="arithmatex">\(f\)</span> 的雅可比矩阵，很容易可以看到它的意义即为 <span class="arithmatex">\(f\)</span> 的导数</p>
 <div class="arithmatex">\[
-\boldsymbol{J} = \operatorname{D}f,
+\boldsymbol{J} = \mathrm{D}f.
 \]</div>
-<p>且</p>
+<p>特别地，当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}\)</span> 时，<span class="arithmatex">\(\mathrm{D}f\)</span> 为梯度 <span class="arithmatex">\(\nabla f\)</span>；当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}^m\)</span> 时，<span class="arithmatex">\(\mathrm{D}f\)</span> 为雅可比矩阵。</p>
+<p>定义：函数 <span class="arithmatex">\(f(x_1, x_2, \cdots, x_n) = (f_1, f_2, \cdots, f_m)\)</span> 的雅可比矩阵为以下元素组成的矩阵</p>
 <div class="arithmatex">\[
 J_{ij} = \frac{\partial f_i}{\partial x_j}.
 \]</div>
-<p>特别地，当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}\)</span> 时，<span class="arithmatex">\(\operatorname{D}f\)</span> 为梯度 <span class="arithmatex">\(\nabla f\)</span>；当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}^m\)</span> 时，<span class="arithmatex">\(\operatorname{D}f\)</span> 为雅可比矩阵。</p>
 <hr />
 <p>在对积分变量进行换元时，即需要使用雅可比矩阵。简单起见，先以一元积分为例：</p>
 <div class="arithmatex">\[
@@ -1909,7 +1909,7 @@ J_{ij} = \frac{\partial f_i}{\partial x_j}.
 <div class="arithmatex">\[
 \int_{h^{-1}(a)}^{h^{-1}(b)}f(h(y))\ \mathrm{d}(h(y)),
 \]</div>
-<p>其中的 <span class="arithmatex">\(\mathrm{d}x\)</span> 的转化可以理解为 <span class="arithmatex">\(\mathrm{d}(h(y)) \mapsto \det(\boldsymbol{J}_h)\mathrm{d}y = h'(y)\mathrm{d}y\)</span>（考虑到行列式的意义在于空间被放缩的比例）。</p>
+<p>其中的 <span class="arithmatex">\(\mathrm{d}x\)</span> 的转化可以理解为 <span class="arithmatex">\(\mathrm{d}(h(y)) \mapsto \det(\boldsymbol{J}_h)\mathrm{d}y = h'(y)\mathrm{d}y\)</span>（注意：行列式的意义在于空间被放缩的比例）。</p>
 <p>在二维区域上进行积分时，从直角坐标系到极坐标系的变换为</p>
 <div class="arithmatex">\[
 h(x, y) = (r\cos\theta, r\sin\theta)
@@ -1920,11 +1920,12 @@ h(x, y) = (r\cos\theta, r\sin\theta)
 \iint_S f(x, y) \mathrm{d}x\mathrm{d}y
 &amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\det(\boldsymbol{J}_h)\mathrm{d}r\mathrm{d}\theta\\
 &amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\left|\frac{\partial(x, y)}{\partial(r, \theta)}\right|\mathrm{d}r\mathrm{d}\theta\\
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\begin{vmatrix}\frac{\partial x}{\partial r} &amp; \frac{\partial x}{\partial \theta}\\\frac{\partial y}{\partial r} &amp; \frac{\partial y}{\partial \theta}\end{vmatrix}\mathrm{d}r\mathrm{d}\theta\\
+&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\begin{vmatrix}\frac{\partial x}{\partial r} &amp; \frac{\partial x}{\partial \theta}\\[0.3em]\frac{\partial y}{\partial r} &amp; \frac{\partial y}{\partial \theta}\end{vmatrix}\mathrm{d}r\mathrm{d}\theta\\
 &amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\begin{vmatrix}\cos\theta &amp; -r\sin\theta\\ \sin\theta &amp; r\cos\theta\end{vmatrix}\mathrm{d}r\mathrm{d}\theta\\
 &amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)r\mathrm{d}r\mathrm{d}\theta.
 \end{aligned}
 \]</div>
+<p>上式第二行使用的是雅可比行列式（Jacobian determinant）的一种写法。</p>
                 
               
               
