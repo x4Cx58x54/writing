@@ -115,8 +115,6 @@ nav:
     - Scribbles: scribbles/index.md
     - Calculus:
       - scribbles/calculus/jacobian-matrix.md
-    - Control Theory:
-      - scribbles/control-theory/传递函数相关的MATLAB命令.md
 
 
 plugins:
