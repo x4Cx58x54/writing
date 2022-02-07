@@ -2163,48 +2163,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-3" type="checkbox" id="nav-9-3">
-    
-    <label class="md-nav__link" for="nav-9-3">
-      Control Theory
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Control Theory" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Control Theory
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scribbles/control-theory/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3%E7%9A%84MATLAB%E5%91%BD%E4%BB%A4/" title="传递函数相关的 MATLAB 命令" class="md-nav__link">
-      传递函数相关的 MATLAB 命令
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -3554,21 +3512,21 @@ void prd(int (*arr)[2]);
 <h2 id="structures-and-other-data-forms">Structures and Other Data Forms<a class="headerlink" href="#structures-and-other-data-forms" title="Permanent link">&para;</a></h2>
 <h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h3>
 <p>有多种方法定义结构体，一般的做法是首先声明结构体的形式（structure template），然后定义具体的变量。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">book</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">title</span><span class="p">[</span><span class="mi">60</span><span class="p">];</span><span class="w"></span>
 <span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
-<span class="k">struct</span> <span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="p">;</span><span class="w"></span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 上例中声明了一种名称（tag）为 <code>book</code> 的结构体，这种声明使得 <code>struct book</code> 代指花括号内各成员的声明。亦可以此声明与定义合并，若只使用一次，还可以不给此结构体种类命名。</p>
 <p>结构体的初始化和数组相似：
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;C Primer Plus&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="mi">118</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
 也可以采用指定成员的初始化
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;C Primer Plus&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="mi">118</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
@@ -3580,21 +3538,21 @@ void prd(int (*arr)[2]);
 <p>注意 “<code>.</code>” 运算符的优先级比 “<code>&amp;</code>” 和 “<code>*</code>” 运算符高。</p>
 <p>指向结构体的指针到其成员的运算可以表示为 <code>(*p).m</code>，但显然写为 <code>p-&gt;m</code> 更加方便。</p>
 <p>由于结构体可能占用比较多空间，所以在向函数传递结构体参数时，为了速度，一般的做法是传递指针而非直接传参。
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span> <span class="nc">book</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w"></span>
 </code></pre></div></p>
 <p>结构体中不能包括自身，但是可以能包括指向自身的指针。这常在数据结构中使用到。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span> <span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div></p>
 <h4 id="structure-compound-literals">Structure Compound Literals<a class="headerlink" href="#structure-compound-literals" title="Permanent link">&para;</a></h4>
 <p>Compound literals can be converted to structures, similar to arrays
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">struct</span> <span class="nc">book</span><span class="p">){</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="s">&quot;The Art of Computer Programming&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">    </span><span class="s">&quot;100&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-<span class="p">(</span><span class="k">struct</span> <span class="nc">book</span><span class="p">){</span><span class="w"></span>
+<span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="p">){</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Introduction to Robotics&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -3602,7 +3560,7 @@ void prd(int (*arr)[2]);
 如果定义在函数内，则为自动存储期，若在函数外，则有静态存储期。并且它们可以取地址。</p>
 <h4 id="flexible-array-members">Flexible Array Members<a class="headerlink" href="#flexible-array-members" title="Permanent link">&para;</a></h4>
 <p>C99 规定了一种特殊的成员数组。如果一种结构体的最后一个成员是数组，并且它不是唯一的成员，那么在定义时它的下标限可以留空，称为变长成员数组。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">flex</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">flex</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">average</span><span class="p">;</span><span class="w"></span>
@@ -3610,37 +3568,37 @@ void prd(int (*arr)[2]);
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 这种类型的结构体变量在定义时，并不会分配任何空间给变长成员数组。这种结构体的使用方法是手动分配空间。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">flex</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="nc">flex</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">flex</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">flex</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span><span class="w"></span>
 <span class="n">p</span><span class="o">-&gt;</span><span class="n">scores</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.3</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 这样就给变长数组分配了空间。不同的变量可以分配不同长度的空间，因此称为变长数组。</p>
 <p>但是由于这一种结构体本身不包含变长数组的空间，所以它们在直接相互赋值时，只有非变长的部分有效。它们不可用于直接传参，不可作为数组元素，不可嵌套在其它结构体中。</p>
 <h4 id="anonymous-structures">Anonymous Structures<a class="headerlink" href="#anonymous-structures" title="Permanent link">&para;</a></h4>
 <p>C11 中规定了一种新特性，称为匿名结构体。在定义嵌套结构体的时候，可以省去内结构体的定义：
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">staff</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">staff</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span> <span class="p">{</span><span class="kt">char</span><span class="w"> </span><span class="n">first</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">last</span><span class="p">[</span><span class="mi">20</span><span class="p">]};</span><span class="w"></span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="kt">char</span><span class="w"> </span><span class="n">first</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">last</span><span class="p">[</span><span class="mi">20</span><span class="p">]};</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
 可以直接对其初始化，可以直接访问子结构体中的元素。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">staff</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Stephen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Prata&quot;</span><span class="p">}};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">staff</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Stephen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Prata&quot;</span><span class="p">}};</span><span class="w"></span>
 <span class="n">a</span><span class="p">.</span><span class="n">first</span><span class="p">;</span><span class="w"></span>
 </code></pre></div></p>
 <h3 id="union">Union<a class="headerlink" href="#union" title="Permanent link">&para;</a></h3>
 <p>共用体允许将不同种类的数据存放在同一段空间。其定义形式与结构体相同：
-<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="nc">hold</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">digit</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">letter</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
-<span class="k">union</span> <span class="nc">hold</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 它可以有多种初始化形式：
-<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="nc">hold</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">};</span><span class="w"></span>
-<span class="k">union</span> <span class="nc">hold</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="k">union</span> <span class="nc">hold</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.1</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">};</span><span class="w"></span>
+<span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.1</span><span class="p">};</span><span class="w"></span>
 <span class="n">a</span><span class="p">.</span><span class="n">letter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;r&#39;</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 一个共用体是单个变量，在存储一种类型之后之前的数据随之被覆盖。它也可以使用 <code>-&gt;</code> 运算符。</p>
@@ -3685,7 +3643,7 @@ void prd(int (*arr)[2]);
 </code></pre></div>
 二者显然不同。</p>
 <p><code>typedef</code> 还有更复杂的用法，比如
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span> <span class="p">{</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;}</span><span class="w"> </span><span class="n">point</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;}</span><span class="w"> </span><span class="n">point</span><span class="p">;</span><span class="w"></span>
 <span class="n">point</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 所声明的新类型名不一定要在右端：
@@ -3760,11 +3718,11 @@ void prd(int (*arr)[2]);
 <p>移位运算符本身不会改变变量的值。左移运算右边补零。右移无符号类型左边补零。但是有一些机器上右移有符号数补 0，另一些补符号位。（MinGW-w64 补符号位）</p>
 <h3 id="bit-fields">Bit Fields<a class="headerlink" href="#bit-fields" title="Permanent link">&para;</a></h3>
 <p>位字段用于以比特为单位分配空间。它必须在结构体中使用 <code>signed int</code> 或者 <code>unsigned int</code> 类型。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nl">a2</span> <span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nl">a1</span> <span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nl">a0</span> <span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
 这样分配了三个 1 位的空间。如果其中一位越界，则会存储到更高位的空间中。不同机器上存储它们的顺序可能不同。</p>
@@ -4045,7 +4003,7 @@ is equivalent to
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2017 - 2021 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+            Copyright &copy; 2017 - 2022 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
           </div>
         
         Made with

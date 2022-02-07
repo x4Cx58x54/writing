@@ -1713,6 +1713,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#matlab" class="md-nav__link">
+    MATLAB 命令
+  </a>
+  
+    <nav class="md-nav" aria-label="MATLAB 命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    多项式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    传递函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    其它
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1882,48 +1916,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-3" type="checkbox" id="nav-9-3">
-    
-    <label class="md-nav__link" for="nav-9-3">
-      Control Theory
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Control Theory" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Control Theory
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scribbles/control-theory/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3%E7%9A%84MATLAB%E5%91%BD%E4%BB%A4/" title="传递函数相关的 MATLAB 命令" class="md-nav__link">
-      传递函数相关的 MATLAB 命令
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -1992,6 +1984,40 @@
   <a href="#root-locus-method" class="md-nav__link">
     Root-Locus Method
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matlab" class="md-nav__link">
+    MATLAB 命令
+  </a>
+  
+    <nav class="md-nav" aria-label="MATLAB 命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    多项式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    传递函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    其它
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2123,6 +2149,117 @@ K = \lim_{s\rightarrow0}s^2G = K_a.
 <p>根轨迹相角条件（FCDS, 261）</p>
 <p>根轨迹绘制规则（FCDS, 262-268）注意起始终止角规则采用 FCDS 版本。</p>
 <p>图解法求轨迹某点对应的 <span class="arithmatex">\(K\)</span>（FCDS, 270）</p>
+<h2 id="matlab">MATLAB 命令<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h2>
+<h3 id="_3">多项式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>使用系数行向量表示。如 <span class="arithmatex">\(p(x) = x^2 + 4x + 4\)</span> 表示为
+<div class="highlight"><pre><span></span><code>p = [1 4 4]
+</code></pre></div>
+将 <span class="arithmatex">\(x_0\)</span> 代入求值
+<div class="highlight"><pre><span></span><code>val = polyval(p, x0)
+</code></pre></div></p>
+<p>求解 <span class="arithmatex">\(p(x) = 0\)</span>
+<div class="highlight"><pre><span></span><code>r = roots(p)    % r = [-2; -2]
+</code></pre></div>
+由这些根重新构造多项式
+<div class="highlight"><pre><span></span><code>p = poly(r)
+</code></pre></div></p>
+<p>多项式相乘（卷积）
+<div class="highlight"><pre><span></span><code>conv(p1, p2)
+</code></pre></div></p>
+<p>部分分式展开
+<div class="highlight"><pre><span></span><code>[r, p, k] = residue(num, den)
+</code></pre></div>
+<code>p</code> 为展开后各分式极点，<code>r</code> 为各分式在极点上的留数（分子），<code>k</code> 为余下的常数项。反过来，也可以将部分分式合并
+<div class="highlight"><pre><span></span><code>[num, den] = residue(r, p, k)
+</code></pre></div></p>
+<p>化简分式（零极点对消）
+<div class="highlight"><pre><span></span><code>sys0 = minreal(sys)
+</code></pre></div></p>
+<p>求极限
+<div class="highlight"><pre><span></span><code>Ess = limit(s*E, s, 0)
+</code></pre></div></p>
+<p>拉普拉斯变换
+<div class="highlight"><pre><span></span><code>sys_s = laplace(sys_t_sym, t, s)
+</code></pre></div>
+相似地有 <code>ilaplace</code> 函数。函数接受的都是 <code>syms</code> 表达式。</p>
+<p>极大值与极大值点
+<div class="highlight"><pre><span></span><code>y_max = max(y)
+[y_max, t_p] = max(y)
+</code></pre></div></p>
+<p>符号表达式代值（使用 <code>eval</code> 求值）
+<div class="highlight"><pre><span></span><code>y_dynamic = eval(subs(res, [omega_n, zeta], [sqrt(21), 2/2/sqrt(21)]))
+y_infty = eval(subs(y_dynamic, t, 1e8))
+</code></pre></div></p>
+<h3 id="_4">传递函数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>若传递函数有上述多项式形式的分子 <code>num</code> 与 分母 <code>den</code>，则系统为
+<div class="highlight"><pre><span></span><code>sys = tf(num, den)
+</code></pre></div>
+此系统之零点与极点分别为
+<div class="highlight"><pre><span></span><code>z = zero(sys)
+p = pole(sys)
+</code></pre></div></p>
+<p>绘制零极点分布图
+<div class="highlight"><pre><span></span><code>pzmap(sys)
+</code></pre></div></p>
+<p>以零点、极点、增益来描述模型
+<div class="highlight"><pre><span></span><code>sys = zpk(z, p, k)
+</code></pre></div></p>
+<p>这两种描述系统的方式可以互相转换
+<div class="highlight"><pre><span></span><code>[num, den] = zp2tf(z, p, k)
+[z, p, k] = tf2zp(num, den)
+</code></pre></div></p>
+<p>各系统之串联、并联、反馈连接
+<div class="highlight"><pre><span></span><code>sys = series(G1, G2)
+sys = parallel(G1, G2)
+sys = feedback(G1, H1, sign)
+</code></pre></div></p>
+<p>阶跃稳态值（low-frequency gain）
+<div class="highlight"><pre><span></span><code>y = dcgain(sys)
+</code></pre></div></p>
+<p>阶跃响应
+<div class="highlight"><pre><span></span><code>step(sys)
+% or
+t = 0:0.1:10
+y = step(sys, t)
+plot(t, y)
+</code></pre></div>
+相似地有 <code>impulse</code> 函数。</p>
+<p>求任意输入信号的响应
+<div class="highlight"><pre><span></span><code>t = 0:0.1:10
+r = t
+y = lsim(sys, r, t)
+plot(y, t)
+</code></pre></div></p>
+<p>传递函数转多项式
+<div class="highlight"><pre><span></span><code>[num, den] = tfdata(sys, &#39;v&#39;)
+</code></pre></div></p>
+<p>多项式转符号表达式
+<div class="highlight"><pre><span></span><code>syms s
+sys_sym = poly2sym(num, s)/poly2sym(den, s)
+</code></pre></div></p>
+<h3 id="_5">其它<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>显示空行
+<div class="highlight"><pre><span></span><code>disp(newline)
+</code></pre></div></p>
+<p>字符串格式化
+<div class="highlight"><pre><span></span><code>disp(sprintf(&#39;Overshoot = %.2f%%&#39;, overshoot*100))
+</code></pre></div></p>
+<p>四舍五入至 <span class="arithmatex">\(10^{-n}\)</span> 位
+<div class="highlight"><pre><span></span><code>x = round(x, n)
+</code></pre></div></p>
+<p>调整图位置
+<div class="highlight"><pre><span></span><code>figure(1)
+...
+set(figure(1),&#39;Position&#39;,[100,50,1200,900])
+</code></pre></div>
+其中参数分别为左间距、下间距、宽、高的像素值。</p>
+<p>图中显示字符
+<div class="highlight"><pre><span></span><code>text(t_p - 0.06, y_p + 0.02, &#39;Peak&#39;)
+</code></pre></div></p>
+<p>显示水平/竖直线
+<div class="highlight"><pre><span></span><code>xline(t_p, &#39;--&#39;, &#39;Peak time&#39;, &#39;LabelVerticalAlignment&#39;, &#39;bottom&#39;)
+yline(y_p, &#39;--&#39;, &#39;Peak response&#39;, &#39;LabelVerticalAlignment&#39;, &#39;bottom&#39;)
+</code></pre></div></p>
 <div class="footnote">
 <hr />
 <ol>
@@ -2189,7 +2326,7 @@ K = \lim_{s\rightarrow0}s^2G = K_a.
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2017 - 2021 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+            Copyright &copy; 2017 - 2022 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
           </div>
         
         Made with

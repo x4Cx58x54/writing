@@ -1924,48 +1924,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-3" type="checkbox" id="nav-9-3">
-    
-    <label class="md-nav__link" for="nav-9-3">
-      Control Theory
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Control Theory" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Control Theory
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scribbles/control-theory/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3%E7%9A%84MATLAB%E5%91%BD%E4%BB%A4/" title="传递函数相关的 MATLAB 命令" class="md-nav__link">
-      传递函数相关的 MATLAB 命令
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -2179,29 +2137,29 @@ Replace the code where the function is called, save time at the cost of memory.<
 </code></pre></div>
 <h3 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">&para;</a></h3>
 <h4 id="function-templates">Function Templates<a class="headerlink" href="#function-templates" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
 <span class="n">T</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h4 id="class-templates">Class Templates<a class="headerlink" href="#class-templates" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
-<span class="k">class</span> <span class="nc">circle</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
 <h4 id="template-specialization">Template Specialization<a class="headerlink" href="#template-specialization" title="Permanent link">&para;</a></h4>
 <p>To specify a different behavior for some data types.<br />
-<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
-<span class="k">class</span> <span class="nc">circle</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 
 <span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"></span>
-<span class="k">class</span> <span class="nc">circle</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
@@ -2228,7 +2186,7 @@ Replace the code where the function is called, save time at the cost of memory.<
 <h3 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
 <h3 id="derived-data-types">Derived Data Types<a class="headerlink" href="#derived-data-types" title="Permanent link">&para;</a></h3>
 <h4 id="struct">Struct<a class="headerlink" href="#struct" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">struct1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">struct1</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">varint</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vardouble</span><span class="p">;</span><span class="w"></span>
@@ -2241,19 +2199,19 @@ Replace the code where the function is called, save time at the cost of memory.<
 </code></pre></div>
 <h4 id="union">Union<a class="headerlink" href="#union" title="Permanent link">&para;</a></h4>
 <p><em>Union types can save memory</em><br />
-<div class="highlight"><pre><span></span><code><span class="k">union</span> <span class="nc">union1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span><span class="w"> </span><span class="nc">union1</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">varint</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vardouble</span><span class="p">;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div></p>
 <h4 id="enum">Enum<a class="headerlink" href="#enum" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="nc">spectrum</span><span class="w"> </span><span class="p">{</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="nc">spectrum</span><span class="w"> </span><span class="p">{</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
 <h2 id="object-oriented-programming">Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permanent link">&para;</a></h2>
 <p><em>Abstraction, Encapsulation, Inheritance, Polymorphism</em>  </p>
 <h3 id="object-basics-abstraction-and-encapsulation">Object Basics, <em>Abstraction</em> and <em>Encapsulation</em><a class="headerlink" href="#object-basics-abstraction-and-encapsulation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">circle</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
@@ -2278,7 +2236,7 @@ Replace the code where the function is called, save time at the cost of memory.<
 <code>protected</code> methods can only be accessed by derived classes and the methods within the class;<br />
 <code>private</code> methods can only be viewed from within the class.</p>
 <h4 id="constructor-and-destructor">Constructor and Destructor<a class="headerlink" href="#constructor-and-destructor" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">circle</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
@@ -2301,7 +2259,7 @@ Replace the code where the function is called, save time at the cost of memory.<
 <li><strong>not</strong> when assigning value</li>
 </ul>
 <p>default: <code>classname obj1(obj)</code> copying all members of obj to obj1</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">classname</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">classname</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
@@ -2333,7 +2291,7 @@ cannot change any values and connot access non-static member functions</p>
 <h4 id="conatant-member-variables">Conatant Member Variables<a class="headerlink" href="#conatant-member-variables" title="Permanent link">&para;</a></h4>
 <p>must be initialized in constructor</p>
 <h4 id="member-initializers">Member Initializers<a class="headerlink" href="#member-initializers" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">circle</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
@@ -2342,7 +2300,7 @@ cannot change any values and connot access non-static member functions</p>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
 <h4 id="friend">Friend<a class="headerlink" href="#friend" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">circle</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
@@ -2369,7 +2327,7 @@ Notify that:</p>
 <h4 id="operator-overloading">Operator Overloading<a class="headerlink" href="#operator-overloading" title="Permanent link">&para;</a></h4>
 <p>5 operators that cannot be overloaded: <code>.  *  ::  sizeof  ?:</code>  </p>
 <p><div class="highlight"><pre><span></span><code><span class="c1">//As member function</span>
-<span class="k">class</span> <span class="nc">Complex</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Complex</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">imag</span><span class="p">;</span><span class="w"></span>
@@ -2408,11 +2366,11 @@ Notify that:</p>
 <span class="n">istream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div></p>
 <h3 id="inheritance"><em>Inheritance</em><a class="headerlink" href="#inheritance" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Base</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
-<span class="k">class</span> <span class="nc">Derived</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">...</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
@@ -2462,12 +2420,12 @@ A derived class inherits all base methods with the following exceptions:</p>
 <p>A member of base class can be overloaded. The derived one will be called in default unless <code>base::</code> is used.</p>
 <h4 id="virtual-function">virtual function<a class="headerlink" href="#virtual-function" title="Permanent link">&para;</a></h4>
 <p>Whether a derived or base one to call depends on the type of pointer/reference.
-<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">base</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">base</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
-<span class="k">class</span> <span class="nc">derived</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">base</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">derived</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">base</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
@@ -2542,7 +2500,7 @@ if <code>virtual ~base(){}</code>, derived destructor called.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2017 - 2021 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+            Copyright &copy; 2017 - 2022 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
           </div>
         
         Made with

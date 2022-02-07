@@ -1876,48 +1876,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-3" type="checkbox" id="nav-9-3">
-    
-    <label class="md-nav__link" for="nav-9-3">
-      Control Theory
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Control Theory" data-md-level="2">
-      <label class="md-nav__title" for="nav-9-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-        </span>
-        Control Theory
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../scribbles/control-theory/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E7%9B%B8%E5%85%B3%E7%9A%84MATLAB%E5%91%BD%E4%BB%A4/" title="传递函数相关的 MATLAB 命令" class="md-nav__link">
-      传递函数相关的 MATLAB 命令
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -2005,25 +1963,25 @@ Function: separate style from content in HTML  </p>
 <h2 id="css-types">CSS Types<a class="headerlink" href="#css-types" title="Permanent link">&para;</a></h2>
 <p><strong>Inline CSS</strong><br />
 <em>CSS applied to a single element</em>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nt">p</span> <span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:white; background-color:gray;&quot;</span><span class="o">&gt;</span> 
-<span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nt">p</span><span class="w"> </span><span class="nt">style</span><span class="o">=</span><span class="s2">&quot;color:white; background-color:gray;&quot;</span><span class="o">&gt;</span><span class="w"> </span>
+<span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span><span class="w"></span>
 </code></pre></div></p>
 <p><strong>Embedded CSS</strong><br />
 <em>CSS defined in a <code>&lt;style&gt;</code> tag</em>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nt">html</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="nt">head</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
-      <span class="nt">p</span> <span class="p">{</span>
-         <span class="k">color</span><span class="p">:</span><span class="kc">white</span><span class="p">;</span>
-         <span class="k">background-color</span><span class="p">:</span><span class="kc">gray</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
-   <span class="o">&lt;/</span><span class="nt">head</span><span class="o">&gt;</span>
-   <span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">This</span> <span class="nt">is</span> <span class="nt">my</span> <span class="nt">first</span> <span class="nt">paragraph</span><span class="o">.</span> <span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">This</span> <span class="nt">is</span> <span class="nt">my</span> <span class="nt">second</span> <span class="nt">paragraph</span><span class="o">.</span> <span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-   <span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="nt">html</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nt">html</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">   </span><span class="o">&lt;</span><span class="nt">head</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">         </span><span class="k">color</span><span class="p">:</span><span class="kc">white</span><span class="p">;</span><span class="w"></span>
+<span class="w">         </span><span class="k">background-color</span><span class="p">:</span><span class="kc">gray</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">   </span><span class="o">&lt;/</span><span class="nt">head</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">   </span><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">This</span><span class="w"> </span><span class="nt">is</span><span class="w"> </span><span class="nt">my</span><span class="w"> </span><span class="nt">first</span><span class="w"> </span><span class="nt">paragraph</span><span class="o">.</span><span class="w"> </span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">This</span><span class="w"> </span><span class="nt">is</span><span class="w"> </span><span class="nt">my</span><span class="w"> </span><span class="nt">second</span><span class="w"> </span><span class="nt">paragraph</span><span class="o">.</span><span class="w"> </span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">   </span><span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span><span class="w"></span>
+<span class="o">&lt;/</span><span class="nt">html</span><span class="o">&gt;</span><span class="w"></span>
 </code></pre></div></p>
 <p><strong>External CSS</strong><br />
 <em>CSS saved in <code>.css</code> files</em>  </p>
@@ -2038,22 +1996,22 @@ Function: separate style from content in HTML  </p>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></div>
 The CSS
-<div class="highlight"><pre><span></span><code><span class="nt">p</span> <span class="p">{</span>
-   <span class="k">color</span><span class="p">:</span><span class="kc">white</span><span class="p">;</span>
-   <span class="k">background-color</span><span class="p">:</span><span class="kc">gray</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="kc">white</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">background-color</span><span class="p">:</span><span class="kc">gray</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <hr />
 <h2 id="css-selectors">CSS Selectors<a class="headerlink" href="#css-selectors" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>   <span class="nt">h1</span>   <span class="p">{</span> <span class="k">color</span><span class="p">:</span> <span class="kc">orange</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">Selector</span> <span class="nt">Property</span> <span class="nt">Value</span>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nt">h1</span><span class="w">   </span><span class="p">{</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">orange</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="nt">Selector</span><span class="w"> </span><span class="nt">Property</span><span class="w"> </span><span class="nt">Value</span><span class="w"></span>
 </code></pre></div>
 <p><strong>Type selectors</strong><br />
 <em>Style targeting all the items of one kind of element</em>
-<div class="highlight"><pre><span></span><code><span class="nt">p</span> <span class="p">{</span>
-   <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-   <span class="k">font-size</span><span class="p">:</span><span class="mi">130</span><span class="kt">%</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">font-size</span><span class="p">:</span><span class="mi">130</span><span class="kt">%</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 This targets all the paragraphs on the page.  </p>
 <p><strong>ID selectors</strong>  </p>
@@ -2063,10 +2021,10 @@ This targets all the paragraphs on the page.  </p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></p>
 <p>The CSS
-<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">intro</span> <span class="p">{</span>
-   <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
-   <span class="k">background-color</span><span class="p">:</span> <span class="kc">gray</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">intro</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">gray</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <p><strong>Class selectors</strong>  </p>
 <p>The HTML
@@ -2075,7 +2033,7 @@ This targets all the paragraphs on the page.  </p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></p>
 <p>The CSS
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">first</span> <span class="p">{</span><span class="k">font-size</span><span class="p">:</span> <span class="mi">200</span><span class="kt">%</span><span class="p">;}</span>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">first</span><span class="w"> </span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">%</span><span class="p">;}</span><span class="w"></span>
 </code></pre></div></p>
 <p><strong>Descendant Selectors</strong><br />
 <em>CSS targeting contents in <code>&lt;em&gt;</code> tags</em></p>
@@ -2085,14 +2043,14 @@ This targets all the paragraphs on the page.  </p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div></p>
 <p>The CSS
-<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">intro</span> <span class="p">.</span><span class="nc">first</span> <span class="nt">em</span> <span class="p">{</span>
-   <span class="k">color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span> 
-   <span class="k">background-color</span><span class="p">:</span><span class="kc">gray</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">intro</span><span class="w"> </span><span class="p">.</span><span class="nc">first</span><span class="w"> </span><span class="nt">em</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">pink</span><span class="p">;</span><span class="w"> </span>
+<span class="w">   </span><span class="k">background-color</span><span class="p">:</span><span class="kc">gray</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <hr />
 <p><strong>Comments</strong>
-<div class="highlight"><pre><span></span><code><span class="c">/* Comment goes here */</span>
+<div class="highlight"><pre><span></span><code><span class="c">/* Comment goes here */</span><span class="w"></span>
 </code></pre></div></p>
 <p><strong>Inheritance</strong><br />
 <em>A child element will usually take on the characteristics of the parent element unless otherwise defined.</em>  </p>
@@ -2108,40 +2066,40 @@ This targets all the paragraphs on the page.  </p>
 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span> 
 </code></pre></div></p>
 <p>The CSS
-<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="p">.</span><span class="nc">sansserif</span> <span class="p">{</span>
-   <span class="k">font-family</span><span class="p">:</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">p</span><span class="p">.</span><span class="nc">monospace</span> <span class="p">{</span>
-   <span class="k">font-family</span><span class="p">:</span> <span class="s2">&quot;Courier New&quot;</span><span class="p">,</span> <span class="n">Courier</span><span class="p">,</span> <span class="kc">monospace</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="p">.</span><span class="nc">sansserif</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Helvetica</span><span class="p">,</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nt">p</span><span class="p">.</span><span class="nc">monospace</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Courier</span><span class="p">,</span><span class="w"> </span><span class="kc">monospace</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 It obeys 'fallback' rule</p>
 <p><strong>Font size</strong></p>
 <p>The CSS
-<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="p">.</span><span class="nc">medium</span> <span class="p">{</span>
-   <span class="k">font-size</span><span class="p">:</span> <span class="kc">medium</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">h1</span> <span class="p">{</span>
-   <span class="k">font-size</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="p">.</span><span class="nc">medium</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="kc">medium</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nt">h1</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>xx-small</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>larger</code>, <code>x-large</code><br />
 <em><code>em</code> = <code>pixels</code> / 16</em>  </p>
 <p><strong>Font style</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">font-style</span><span class="o">:</span> <span class="nt">italic</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">font-style</span><span class="o">:</span><span class="w"> </span><span class="nt">italic</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>normal</code>, <code>italic</code>, <code>oblique</code></p>
 <p><strong>Font weight</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">font-weight</span><span class="o">:</span> <span class="nt">bold</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">font-weight</span><span class="o">:</span><span class="w"> </span><span class="nt">bold</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>lighter</code>, <code>bold</code>, <code>bolder</code><br />
 <em>Values</em>: <code>100</code> (thin) - <code>900</code> (thick)  </p>
 <p><strong>Font variant</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">font-variant</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">font-variant</span><span class="o">:</span><span class="w"> </span><span class="nt">normal</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>normal</code>, <code>small-caps</code>, <code>inherit</code></p>
 <p><strong>Color</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">color</span><span class="o">:</span> <span class="nt">red</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">color</span><span class="o">:</span><span class="w"> </span><span class="nt">red</span><span class="o">;</span><span class="w"></span>
 </code></pre></div></p>
 <p><em>Values</em>: </p>
 <ul>
@@ -2150,36 +2108,36 @@ It obeys 'fallback' rule</p>
 <li>RGB <code>rgb(255,0,0)</code></li>
 </ul>
 <p><strong>Text align</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">text-align</span><span class="o">:</span> <span class="nt">left</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">text-align</span><span class="o">:</span><span class="w"> </span><span class="nt">left</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>left</code>, <code>center</code>, <code>right</code></p>
 <p><strong>Vertical align</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">vertical-align</span><span class="o">:</span> <span class="nt">top</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">vertical-align</span><span class="o">:</span><span class="w"> </span><span class="nt">top</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>top</code>, <code>middle</code>, <code>bottom</code>, <code>baseline</code>, <code>sub</code>, <code>super</code>, <code>px</code>(positive and negative)</p>
 <p><strong>Text decoration</strong>
-<div class="highlight"><pre><span></span><code> <span class="nt">text-decoration</span><span class="o">:</span> <span class="nt">inherit</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">text-decoration</span><span class="o">:</span><span class="w"> </span><span class="nt">inherit</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>none</code>, <code>inherit</code>, <code>overline</code>, <code>underline</code>, <code>line-through</code>, <code>blink</code></p>
 <p><strong>Text indent</strong>
-<div class="highlight"><pre><span></span><code> <span class="nt">text-indent</span><span class="o">:</span> <span class="nt">60px</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">text-indent</span><span class="o">:</span><span class="w"> </span><span class="nt">60px</span><span class="o">;</span><span class="w"></span>
 </code></pre></div></p>
 <p><strong>Text shadow</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">text-shadow</span><span class="o">:</span> <span class="nt">5px</span> <span class="nt">2px</span> <span class="nt">4px</span> <span class="nt">grey</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">text-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="nt">4px</span><span class="w"> </span><span class="nt">grey</span><span class="o">;</span><span class="w"></span>
 </code></pre></div></p>
 <p><em>parameters</em>: X coord., Y coord., blur radius, color</p>
 <p><strong>Text transform</strong><br />
-<div class="highlight"><pre><span></span><code><span class="nt">transform</span><span class="o">:</span> <span class="nt">capitalize</span><span class="o">;</span>
-<span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">Transforms</span> <span class="nt">the</span> <span class="nt">first</span> <span class="nt">character</span> <span class="nt">in</span> <span class="nt">each</span> <span class="nt">word</span> <span class="nt">to</span> <span class="nt">uppercase</span> <span class="nt">--</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">transform</span><span class="o">:</span><span class="w"> </span><span class="nt">capitalize</span><span class="o">;</span><span class="w"></span>
+<span class="o">&lt;!</span><span class="nt">--</span><span class="w"> </span><span class="nt">Transforms</span><span class="w"> </span><span class="nt">the</span><span class="w"> </span><span class="nt">first</span><span class="w"> </span><span class="nt">character</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nt">each</span><span class="w"> </span><span class="nt">word</span><span class="w"> </span><span class="nt">to</span><span class="w"> </span><span class="nt">uppercase</span><span class="w"> </span><span class="nt">--</span><span class="o">&gt;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>capitalize</code>, <code>uppercase</code>, <code>lowercase</code></p>
 <p><strong>Letter and word spacing</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">letter-spacing</span><span class="o">:</span> <span class="nt">4px</span><span class="o">;</span> 
-<span class="nt">word-spacing</span><span class="o">:</span> <span class="nt">4px</span><span class="o">;</span> 
+<div class="highlight"><pre><span></span><code><span class="nt">letter-spacing</span><span class="o">:</span><span class="w"> </span><span class="nt">4px</span><span class="o">;</span><span class="w"> </span>
+<span class="nt">word-spacing</span><span class="o">:</span><span class="w"> </span><span class="nt">4px</span><span class="o">;</span><span class="w"> </span>
 </code></pre></div>
 <em>Keywords</em>: <code>normal</code>, <code>px</code>(positive and negative)</p>
 <p><strong>White space</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">white-space</span><span class="o">:</span> <span class="nt">nowrap</span><span class="o">;</span> 
+<div class="highlight"><pre><span></span><code><span class="nt">white-space</span><span class="o">:</span><span class="w"> </span><span class="nt">nowrap</span><span class="o">;</span><span class="w"> </span>
 </code></pre></div>
 <em>Keywords</em>: </p>
 <ul>
@@ -2196,12 +2154,12 @@ It obeys 'fallback' rule</p>
 <p><img alt="" src="../img/cssbox.png" width="384px" /></p>
 <p>backgound color covers content and padding</p>
 <p><strong>Border</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">border-style</span><span class="o">:</span> <span class="nt">solid</span><span class="o">;</span>
-<span class="nt">border-width</span><span class="o">:</span> <span class="nt">2px</span><span class="o">;</span>
-<span class="nt">border-color</span><span class="o">:</span> <span class="nt">blue</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">border-style</span><span class="o">:</span><span class="w"> </span><span class="nt">solid</span><span class="o">;</span><span class="w"></span>
+<span class="nt">border-width</span><span class="o">:</span><span class="w"> </span><span class="nt">2px</span><span class="o">;</span><span class="w"></span>
+<span class="nt">border-color</span><span class="o">:</span><span class="w"> </span><span class="nt">blue</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 or
-<div class="highlight"><pre><span></span><code><span class="nt">border</span><span class="o">:</span> <span class="nt">5px</span> <span class="nt">solid</span> <span class="nt">green</span><span class="o">;</span> 
+<div class="highlight"><pre><span></span><code><span class="nt">border</span><span class="o">:</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">solid</span><span class="w"> </span><span class="nt">green</span><span class="o">;</span><span class="w"> </span>
 </code></pre></div>
 <em>Border-style keywords</em>: 
 <code>none</code>, <code>dotted</code>, <code>dashed</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, <code>outset</code>, <code>hidden</code></p>
@@ -2209,67 +2167,67 @@ or
 <p><strong>Width and height</strong></p>
 <p><em>Parameters</em>: <code>width</code>, <code>height</code>, <code>min-width</code>, <code>max-width</code>, <code>min-height</code>, <code>max-height</code></p>
 <p><strong>Background color</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">background-color</span><span class="o">:</span> <span class="nt">rgb</span><span class="o">(</span><span class="nt">135</span><span class="o">,</span><span class="nt">206</span><span class="o">,</span><span class="nt">235</span><span class="o">);</span>
+<div class="highlight"><pre><span></span><code><span class="nt">background-color</span><span class="o">:</span><span class="w"> </span><span class="nt">rgb</span><span class="o">(</span><span class="nt">135</span><span class="o">,</span><span class="nt">206</span><span class="o">,</span><span class="nt">235</span><span class="o">);</span><span class="w"></span>
 </code></pre></div></p>
 <p><strong>Background image repeat and attachment</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&quot;logo.png&quot;</span><span class="o">);</span>
-<span class="nt">background-repeat</span><span class="o">:</span> <span class="nt">repeat-x</span><span class="o">;</span>
-<span class="nt">background-attachment</span><span class="o">:</span> <span class="nt">fixed</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">background-image</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;logo.png&quot;</span><span class="o">);</span><span class="w"></span>
+<span class="nt">background-repeat</span><span class="o">:</span><span class="w"> </span><span class="nt">repeat-x</span><span class="o">;</span><span class="w"></span>
+<span class="nt">background-attachment</span><span class="o">:</span><span class="w"> </span><span class="nt">fixed</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Background-repeat keywords</em>: <code>repeat</code>, <code>no-repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>, <code>inherit</code><br />
 <em>Background-attachment keywords</em>: <code>fixed</code>, <code>scroll</code>, <code>inherit</code><br />
 can be set for the whole page too.</p>
 <p><strong>List item marker</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">list-style-type</span><span class="o">:</span> <span class="nt">lower-alpha</span><span class="o">;</span>
-<span class="nt">list-style-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">&quot;logo.jpg&quot;</span><span class="o">);</span>
-<span class="nt">list-style-position</span><span class="o">:</span> <span class="nt">inside</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">list-style-type</span><span class="o">:</span><span class="w"> </span><span class="nt">lower-alpha</span><span class="o">;</span><span class="w"></span>
+<span class="nt">list-style-image</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s2">&quot;logo.jpg&quot;</span><span class="o">);</span><span class="w"></span>
+<span class="nt">list-style-position</span><span class="o">:</span><span class="w"> </span><span class="nt">inside</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em><code>&lt;ul&gt;</code> keywords</em>: <code>circle</code>, <code>square</code><br />
 <em><code>&lt;ol&gt;</code> keywords</em>: <code>lower-alpha</code>, <code>decimal</code>, <code>disc</code>  </p>
 <p>or
-<div class="highlight"><pre><span></span><code><span class="nt">list-style</span><span class="o">:</span> <span class="nt">square</span> <span class="nt">outside</span> <span class="nt">none</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">list-style</span><span class="o">:</span><span class="w"> </span><span class="nt">square</span><span class="w"> </span><span class="nt">outside</span><span class="w"> </span><span class="nt">none</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 type position image</p>
 <p><strong>Table style</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">border-collapse</span><span class="o">:</span> <span class="nt">separate</span><span class="o">;</span>
-<span class="nt">border-spacing</span><span class="o">:</span> <span class="nt">20px</span> <span class="nt">40px</span><span class="o">;</span>
-<span class="nt">caption-side</span><span class="o">:</span> <span class="nt">top</span><span class="o">;</span>
-<span class="nt">empty-cells</span><span class="o">:</span> <span class="nt">hide</span><span class="o">;</span>
-<span class="nt">table-layout</span><span class="o">:</span> <span class="nt">auto</span><span class="o">;</span>
-<span class="nt">width</span><span class="o">=</span><span class="s2">&quot;10%&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">border-collapse</span><span class="o">:</span><span class="w"> </span><span class="nt">separate</span><span class="o">;</span><span class="w"></span>
+<span class="nt">border-spacing</span><span class="o">:</span><span class="w"> </span><span class="nt">20px</span><span class="w"> </span><span class="nt">40px</span><span class="o">;</span><span class="w"></span>
+<span class="nt">caption-side</span><span class="o">:</span><span class="w"> </span><span class="nt">top</span><span class="o">;</span><span class="w"></span>
+<span class="nt">empty-cells</span><span class="o">:</span><span class="w"> </span><span class="nt">hide</span><span class="o">;</span><span class="w"></span>
+<span class="nt">table-layout</span><span class="o">:</span><span class="w"> </span><span class="nt">auto</span><span class="o">;</span><span class="w"></span>
+<span class="nt">width</span><span class="o">=</span><span class="s2">&quot;10%&quot;</span><span class="w"></span>
 </code></pre></div></p>
 <p><em><code>empty-cells</code> keywords</em>: <code>hide</code>, <code>show</code><br />
 <em><code>caption-side</code> keywords</em>: <code>top</code>, <code>bottom</code><br />
 <em><code>table-layout</code> keywords</em>: <code>auto</code>, <code>fixed</code>  </p>
 <p><strong>Link style</strong><br />
-<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
-   <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <em>pseudo selectors</em>:<br />
 <code>a:link</code> defines the style for normal unvisited links<br />
 <code>a:visited</code> defines the style for visited links<br />
 <code>a:active</code> a link becomes active once you click on it<br />
 <code>a:hover</code> a link is hovered when the mouse is over it  </p>
-<div class="highlight"><pre><span></span><code><span class="nt">text-decoration</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">text-decoration</span><span class="o">:</span><span class="w"> </span><span class="nt">none</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <p><strong>Cursor</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">cursor</span><span class="p">:</span><span class="nd">help</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">cursor</span><span class="p">:</span><span class="nd">help</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>auto</code>, <code>default</code>, <code>crosshair</code>, <code>move</code>, <code>help</code>, <code>text</code>, <code>wait</code>, <code>n-resize</code>, ..., <code>w-resize</code>, <code>ne-resize</code>, ..., <code>sw-resize</code>, <code>pointer</code>, <code>progress</code>, <code>not-allowed</code>, <code>no-drop</code>, <code>vertical-text</code>, <code>all-scroll</code>, <code>col-resize</code>, <code>row-resize</code></p>
 <hr />
 <h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h2>
 <p><strong>display</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">display</span><span class="p">:</span><span class="nd">block</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">display</span><span class="p">:</span><span class="nd">block</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>block</code>, <code>inline</code>, <code>none</code>, <code>list-item</code>, <code>table</code>, <code>table-cell</code>, <code>table-column</code>, <code>grid</code></p>
 <p><strong>visibility</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">visibility</span><span class="o">:</span> <span class="nt">hidden</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">visibility</span><span class="o">:</span><span class="w"> </span><span class="nt">hidden</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>hidden</code>, <code>visible</code><br />
 <em>Notes</em>: <code>display:none</code> hides the entire place, while <code>visibility: hidden</code> leaves a blank.</p>
 <p><strong>position</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">position</span><span class="p">:</span><span class="nd">static</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">position</span><span class="p">:</span><span class="nd">static</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>:</p>
 <ul>
@@ -2280,31 +2238,31 @@ type position image</p>
 </ul>
 <p><strong>Floating</strong><br />
 <em>Elements that come after the floating element will flow around it.</em>
-<div class="highlight"><pre><span></span><code><span class="nt">img</span> <span class="p">{</span>
-   <span class="k">float</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">img</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">float</span><span class="p">:</span><span class="w"> </span><span class="kc">right</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>none</code>, <code>left</code>, <code>right</code></p>
 <p><strong>Clear</strong><br />
 <em>The clear property specifies the sides of an element where other floating elements are not allowed to be.</em>
-<div class="highlight"><pre><span></span><code><span class="nt">clear</span><span class="o">:</span> <span class="nt">both</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">clear</span><span class="o">:</span><span class="w"> </span><span class="nt">both</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>none</code>, <code>both</code>, <code>left</code>, <code>right</code>  </p>
 <p><strong>Overflow</strong><br />
 <em>The overflow property specifies the behavior that occurs when an element's content overflows the element's box.</em>
-<div class="highlight"><pre><span></span><code><span class="nt">overflow</span><span class="o">:</span> <span class="nt">scroll</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">overflow</span><span class="o">:</span><span class="w"> </span><span class="nt">scroll</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>visible</code>(default), <code>scroll</code>, <code>hidden</code>, <code>auto</code>  </p>
 <p><strong>Z-index</strong>
 <em>The z-index property specifies the stack order of an element.</em>
-<div class="highlight"><pre><span></span><code><span class="nt">z-index</span><span class="o">:</span> <span class="nt">3</span><span class="o">;</span> 
+<div class="highlight"><pre><span></span><code><span class="nt">z-index</span><span class="o">:</span><span class="w"> </span><span class="nt">3</span><span class="o">;</span><span class="w"> </span>
 </code></pre></div>
 default: later ones are on the top of former ones.
 ones of higher index can cover the lower ones.</p>
 <hr />
 <h1 id="css3-features">CSS3 Features<a class="headerlink" href="#css3-features" title="Permanent link">&para;</a></h1>
 <p><strong>Vendor prefix / browser prefix</strong><br />
-<div class="highlight"><pre><span></span><code><span class="nt">-webkit-border-radius</span><span class="o">:</span> <span class="nt">24px</span><span class="o">;</span>  
+<div class="highlight"><pre><span></span><code><span class="nt">-webkit-border-radius</span><span class="o">:</span><span class="w"> </span><span class="nt">24px</span><span class="o">;</span><span class="w">  </span>
 </code></pre></div></p>
 <ul>
 <li>Chrome <code>-webkit-</code>  </li>
@@ -2315,15 +2273,15 @@ ones of higher index can cover the lower ones.</p>
 </ul>
 <p><strong>Border radius</strong><br />
 <em>rounded corners</em>
-<div class="highlight"><pre><span></span><code><span class="nt">border-radius</span><span class="o">:</span> <span class="nt">20px</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">border-radius</span><span class="o">:</span><span class="w"> </span><span class="nt">20px</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 or
-<div class="highlight"><pre><span></span><code><span class="nt">border-radius</span><span class="o">:</span> <span class="nt">0</span> <span class="nt">0</span> <span class="nt">20px</span> <span class="nt">20px</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">border-radius</span><span class="o">:</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">0</span><span class="w"> </span><span class="nt">20px</span><span class="w"> </span><span class="nt">20px</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>parameter order</em>: top-left, top-right, bottom-right, bottom-left  </p>
 <p><strong>Box shadow</strong><br />
-<div class="highlight"><pre><span></span><code><span class="nt">box-shadow</span><span class="o">:</span> <span class="nt">10px</span> <span class="nt">10px</span> <span class="nt">5px</span> <span class="nt">5px</span> <span class="p">#</span><span class="nn">888888</span>
-<span class="nt">inset</span> <span class="nt">10px</span> <span class="nt">10px</span> <span class="nt">5px</span> <span class="p">#</span><span class="nn">888888</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">box-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">10px</span><span class="w"> </span><span class="nt">10px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="p">#</span><span class="nn">888888</span><span class="w"></span>
+<span class="nt">inset</span><span class="w"> </span><span class="nt">10px</span><span class="w"> </span><span class="nt">10px</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="p">#</span><span class="nn">888888</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>parameter order</em>: horizontal offset, vertical offset, blur distance, spread distance, color<br />
 inset: inner shadow<br />
@@ -2338,8 +2296,8 @@ separate different shadows by comma</p>
 <li>HSLA</li>
 </ul>
 <p><strong>Text shadow</strong> 
-<div class="highlight"><pre><span></span><code><span class="nt">text-shadow</span><span class="o">:</span> <span class="nt">5px</span> <span class="nt">10px</span> <span class="nt">2px</span> <span class="p">#</span><span class="nn">93968f</span><span class="o">;</span>
-<span class="nt">text-shadow</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">text-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">5px</span><span class="w"> </span><span class="nt">10px</span><span class="w"> </span><span class="nt">2px</span><span class="w"> </span><span class="p">#</span><span class="nn">93968f</span><span class="o">;</span><span class="w"></span>
+<span class="nt">text-shadow</span><span class="o">:</span><span class="w"> </span><span class="nt">none</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>parameter order</em>: X offset, Y offset, blur, color  </p>
 <p><strong>Pseudo-classes</strong>  </p>
@@ -2351,10 +2309,10 @@ separate different shadows by comma</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>The CSS</p>
-<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">parent</span> <span class="nt">p</span><span class="p">:</span><span class="nd">first-child</span> <span class="p">{</span>
-   <span class="k">color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
-   <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">underline</span><span class="p">;</span>   
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">parent</span><span class="w"> </span><span class="nt">p</span><span class="p">:</span><span class="nd">first-child</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span><span class="w">   </span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p><em>Commonly used pseudo-classes</em>: <code>first-child</code>, <code>last-child</code></p>
 <p><strong>Pseudo-elements</strong></p>
@@ -2366,32 +2324,32 @@ separate different shadows by comma</p>
 <li><code>::after</code> - inserts some content after an element  </li>
 </ul>
 <p><strong>Word wrap</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">word-wrap</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">word-wrap</span><span class="o">:</span><span class="w"> </span><span class="nt">normal</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>normal</code>, <code>break-word</code></p>
 <p><strong>Linear gradient</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">background</span><span class="p">:</span><span class="nd">linear-gradient</span><span class="o">(</span><span class="nt">DeepSkyBlue</span><span class="o">,</span> <span class="nt">Black</span><span class="o">);</span>
+<div class="highlight"><pre><span></span><code><span class="nt">background</span><span class="p">:</span><span class="nd">linear-gradient</span><span class="o">(</span><span class="nt">DeepSkyBlue</span><span class="o">,</span><span class="w"> </span><span class="nt">Black</span><span class="o">);</span><span class="w"></span>
 </code></pre></div>
 displays a smooth transtions of multiple colors from top to bottom
-<div class="highlight"><pre><span></span><code><span class="nt">linear-gradient</span><span class="o">(</span><span class="nt">blue</span> <span class="nt">20</span><span class="o">%,</span> <span class="nt">yellow</span> <span class="nt">30</span><span class="o">%,</span> <span class="nt">green</span> <span class="nt">85</span><span class="o">%);</span>
-<span class="nt">linear-gradient</span><span class="o">(</span><span class="nt">bottom</span> <span class="nt">left</span><span class="o">,</span> <span class="nt">blue</span><span class="o">,</span> <span class="nt">green</span><span class="o">,</span> <span class="nt">white</span><span class="o">);</span>
-<span class="nt">linear-gradient</span><span class="o">(</span><span class="nt">100deg</span><span class="o">,</span> <span class="nt">blue</span><span class="o">,</span> <span class="nt">green</span><span class="o">,</span> <span class="nt">white</span><span class="o">);</span>
-<span class="nt">repeating-linear-gradient</span><span class="o">(</span><span class="nt">blue</span><span class="o">,</span> <span class="nt">green</span> <span class="nt">20px</span><span class="o">);</span>
+<div class="highlight"><pre><span></span><code><span class="nt">linear-gradient</span><span class="o">(</span><span class="nt">blue</span><span class="w"> </span><span class="nt">20</span><span class="o">%,</span><span class="w"> </span><span class="nt">yellow</span><span class="w"> </span><span class="nt">30</span><span class="o">%,</span><span class="w"> </span><span class="nt">green</span><span class="w"> </span><span class="nt">85</span><span class="o">%);</span><span class="w"></span>
+<span class="nt">linear-gradient</span><span class="o">(</span><span class="nt">bottom</span><span class="w"> </span><span class="nt">left</span><span class="o">,</span><span class="w"> </span><span class="nt">blue</span><span class="o">,</span><span class="w"> </span><span class="nt">green</span><span class="o">,</span><span class="w"> </span><span class="nt">white</span><span class="o">);</span><span class="w"></span>
+<span class="nt">linear-gradient</span><span class="o">(</span><span class="nt">100deg</span><span class="o">,</span><span class="w"> </span><span class="nt">blue</span><span class="o">,</span><span class="w"> </span><span class="nt">green</span><span class="o">,</span><span class="w"> </span><span class="nt">white</span><span class="o">);</span><span class="w"></span>
+<span class="nt">repeating-linear-gradient</span><span class="o">(</span><span class="nt">blue</span><span class="o">,</span><span class="w"> </span><span class="nt">green</span><span class="w"> </span><span class="nt">20px</span><span class="o">);</span><span class="w"></span>
 </code></pre></div>
 <code>0deg</code> = <code>left</code></p>
 <p><strong>Radial gradient</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">green</span><span class="o">,</span> <span class="nt">yellow</span><span class="o">,</span> <span class="nt">blue</span><span class="o">);</span>
-<span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">circle</span><span class="o">,</span> <span class="nt">green</span><span class="o">,</span> <span class="nt">yellow</span><span class="o">,</span> <span class="nt">blue</span><span class="o">);</span>
-<span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">top</span> <span class="nt">left</span><span class="o">,</span> <span class="nt">green</span><span class="o">,</span> <span class="nt">yellow</span><span class="o">,</span> <span class="nt">blue</span><span class="o">);</span>
-<span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">green</span> <span class="nt">5</span><span class="o">%,</span> <span class="nt">yellow</span> <span class="nt">15</span><span class="o">%,</span> <span class="nt">blue</span> <span class="nt">60</span><span class="o">%);</span>
+<div class="highlight"><pre><span></span><code><span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">green</span><span class="o">,</span><span class="w"> </span><span class="nt">yellow</span><span class="o">,</span><span class="w"> </span><span class="nt">blue</span><span class="o">);</span><span class="w"></span>
+<span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">circle</span><span class="o">,</span><span class="w"> </span><span class="nt">green</span><span class="o">,</span><span class="w"> </span><span class="nt">yellow</span><span class="o">,</span><span class="w"> </span><span class="nt">blue</span><span class="o">);</span><span class="w"></span>
+<span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">top</span><span class="w"> </span><span class="nt">left</span><span class="o">,</span><span class="w"> </span><span class="nt">green</span><span class="o">,</span><span class="w"> </span><span class="nt">yellow</span><span class="o">,</span><span class="w"> </span><span class="nt">blue</span><span class="o">);</span><span class="w"></span>
+<span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">green</span><span class="w"> </span><span class="nt">5</span><span class="o">%,</span><span class="w"> </span><span class="nt">yellow</span><span class="w"> </span><span class="nt">15</span><span class="o">%,</span><span class="w"> </span><span class="nt">blue</span><span class="w"> </span><span class="nt">60</span><span class="o">%);</span><span class="w"></span>
 </code></pre></div>
 Default is an ellipse filling the selector</p>
 <p><strong>Background size</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">background-size</span><span class="o">:</span> <span class="nt">100px</span> <span class="nt">100px</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">background-size</span><span class="o">:</span><span class="w"> </span><span class="nt">100px</span><span class="w"> </span><span class="nt">100px</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>: <code>width and height</code>, <code>contain</code>, <code>cover</code></p>
 <p><strong>Background clip</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">background-clip</span><span class="o">:</span> <span class="nt">border-box</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">background-clip</span><span class="o">:</span><span class="w"> </span><span class="nt">border-box</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>Keywords</em>:</p>
 <ul>
@@ -2400,62 +2358,62 @@ Default is an ellipse filling the selector</p>
 <li><code>content-box</code> - the background is painted within the content box  </li>
 </ul>
 <p><strong>Multiple backgrounds</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="nt">csslogo</span><span class="p">.</span><span class="nc">png</span><span class="o">),</span> <span class="nt">url</span><span class="o">(</span><span class="nt">csscode</span><span class="p">.</span><span class="nc">jpg</span><span class="o">);</span>
-<span class="nt">background-position</span><span class="o">:</span> <span class="nt">right</span> <span class="nt">bottom</span><span class="o">,</span> <span class="nt">left</span> <span class="nt">top</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">background-image</span><span class="o">:</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="nt">csslogo</span><span class="p">.</span><span class="nc">png</span><span class="o">),</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="nt">csscode</span><span class="p">.</span><span class="nc">jpg</span><span class="o">);</span><span class="w"></span>
+<span class="nt">background-position</span><span class="o">:</span><span class="w"> </span><span class="nt">right</span><span class="w"> </span><span class="nt">bottom</span><span class="o">,</span><span class="w"> </span><span class="nt">left</span><span class="w"> </span><span class="nt">top</span><span class="o">;</span><span class="w"></span>
 </code></pre></div></p>
 <p><strong>Opacity</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">opacity</span><span class="o">:</span> <span class="nt">1</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">opacity</span><span class="o">:</span><span class="w"> </span><span class="nt">1</span><span class="o">;</span><span class="w"></span>
 </code></pre></div></p>
 <p><strong>Transitions</strong><br />
 <em>allow one property value change to another value over time</em>
-<div class="highlight"><pre><span></span><code><span class="nt">transition</span><span class="o">:</span> <span class="nt">background-color</span> <span class="nt">5s</span> <span class="nt">ease-in</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">transition</span><span class="o">:</span><span class="w"> </span><span class="nt">background-color</span><span class="w"> </span><span class="nt">5s</span><span class="w"> </span><span class="nt">ease-in</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <em>parameters</em>: <code>transition-property</code>, <code>transition-duration</code>, <code>transition-timing-function</code>, <code>transition-delay</code>  </p>
 <p><em><code>Timing-function</code> keywords</em>: <code>ease</code>, <code>ease-in</code>, <code>ease-out</code>, <code>ease-in-out</code>, <code>linear</code>, <code>cubic-bezier(n,n,n,n)</code>;  </p>
 <p><strong>Transforms</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">transform</span><span class="o">:</span> <span class="nt">rotate</span><span class="o">(</span><span class="nt">10deg</span><span class="o">);</span>
-<span class="nt">transform-origin</span><span class="o">:</span> <span class="nt">25</span><span class="o">%</span> <span class="nt">75</span><span class="o">%;</span>
-<span class="nt">transform</span><span class="o">:</span> <span class="nt">translate</span><span class="o">(</span><span class="nt">100px</span><span class="o">,</span> <span class="nt">50px</span><span class="o">);.</span>
-<span class="nt">transform</span><span class="o">:</span> <span class="nt">skew</span><span class="o">(</span><span class="nt">30deg</span><span class="o">);</span>
-<span class="nt">transform</span><span class="o">:</span> <span class="nt">scale</span><span class="o">(</span><span class="nt">0</span><span class="p">.</span><span class="nc">7</span><span class="o">,</span> <span class="nt">0</span><span class="p">.</span><span class="nc">7</span><span class="o">);</span>
+<div class="highlight"><pre><span></span><code><span class="nt">transform</span><span class="o">:</span><span class="w"> </span><span class="nt">rotate</span><span class="o">(</span><span class="nt">10deg</span><span class="o">);</span><span class="w"></span>
+<span class="nt">transform-origin</span><span class="o">:</span><span class="w"> </span><span class="nt">25</span><span class="o">%</span><span class="w"> </span><span class="nt">75</span><span class="o">%;</span><span class="w"></span>
+<span class="nt">transform</span><span class="o">:</span><span class="w"> </span><span class="nt">translate</span><span class="o">(</span><span class="nt">100px</span><span class="o">,</span><span class="w"> </span><span class="nt">50px</span><span class="o">);.</span><span class="w"></span>
+<span class="nt">transform</span><span class="o">:</span><span class="w"> </span><span class="nt">skew</span><span class="o">(</span><span class="nt">30deg</span><span class="o">);</span><span class="w"></span>
+<span class="nt">transform</span><span class="o">:</span><span class="w"> </span><span class="nt">scale</span><span class="o">(</span><span class="nt">0</span><span class="p">.</span><span class="nc">7</span><span class="o">,</span><span class="w"> </span><span class="nt">0</span><span class="p">.</span><span class="nc">7</span><span class="o">);</span><span class="w"></span>
 </code></pre></div>
 separate different transforms with spaces</p>
 <p><strong>Keyframes</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">div</span> <span class="p">{</span>
-   <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-   <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-   <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-   <span class="k">animation-name</span><span class="p">:</span> <span class="n">colorchange</span><span class="p">;</span>
-   <span class="k">animation-duration</span><span class="p">:</span> <span class="mi">1</span><span class="kt">s</span><span class="p">;</span>
-   <span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">linear</span><span class="p">;</span>
-   <span class="k">animation-delay</span><span class="p">:</span> <span class="mi">2</span><span class="kt">s</span><span class="p">;</span>
-   <span class="k">animation-iteration-count</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">@</span><span class="k">keyframes</span> <span class="nt">colorchange</span> <span class="p">{</span>
-   <span class="nt">0</span><span class="o">%</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;}</span>
-   <span class="nt">50</span><span class="o">%</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;}</span>
-   <span class="nt">100</span><span class="o">%</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;}</span>
-<span class="p">}</span> 
+<div class="highlight"><pre><span></span><code><span class="nt">div</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">animation-name</span><span class="p">:</span><span class="w"> </span><span class="n">colorchange</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">animation-duration</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">animation-timing-function</span><span class="p">:</span><span class="w"> </span><span class="kc">linear</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">animation-delay</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">s</span><span class="p">;</span><span class="w"></span>
+<span class="w">   </span><span class="k">animation-iteration-count</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">colorchange</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nt">0</span><span class="o">%</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;}</span><span class="w"></span>
+<span class="w">   </span><span class="nt">50</span><span class="o">%</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;}</span><span class="w"></span>
+<span class="w">   </span><span class="nt">100</span><span class="o">%</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">blue</span><span class="p">;}</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span>
 </code></pre></div>
 or
-<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">keyframes</span> <span class="nt">colorchange</span> <span class="p">{</span>
-   <span class="nt">from</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;}</span>
-   <span class="nt">to</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">colorchange</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nt">from</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;}</span><span class="w"></span>
+<span class="w">   </span><span class="nt">to</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">green</span><span class="p">;}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <p><em><code>animation-iteration-count</code></em>: repeats the animation. The keyword can be <code>infinite</code></p>
 <p><em><code>animation-direction</code> keywords</em>: <code>normal</code>, <code>reverse</code>, <code>alternate</code>, <code>alternate reverse</code></p>
 <p>or</p>
-<div class="highlight"><pre><span></span><code><span class="nt">animation</span><span class="o">:</span> <span class="nt">colorchange</span> <span class="nt">3s</span> <span class="nt">ease-in</span> <span class="nt">1s</span> <span class="nt">infinite</span> <span class="nt">reverse</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">animation</span><span class="o">:</span><span class="w"> </span><span class="nt">colorchange</span><span class="w"> </span><span class="nt">3s</span><span class="w"> </span><span class="nt">ease-in</span><span class="w"> </span><span class="nt">1s</span><span class="w"> </span><span class="nt">infinite</span><span class="w"> </span><span class="nt">reverse</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <p><em>order</em>: <code>name duration time-function delay iteration-count direction</code></p>
 <p><strong>3D transforms</strong>
-<div class="highlight"><pre><span></span><code><span class="nt">transform</span><span class="o">:</span> <span class="nt">rotateX</span><span class="o">(</span><span class="nt">150deg</span><span class="o">);</span>
-<span class="nt">transform</span><span class="o">:</span> <span class="nt">rotateY</span><span class="o">(</span><span class="nt">150deg</span><span class="o">);</span>
-<span class="nt">transform</span><span class="o">:</span> <span class="nt">rotateZ</span><span class="o">(</span><span class="nt">150deg</span><span class="o">);</span>
-<span class="nt">transform</span><span class="o">:</span> <span class="nt">translateX</span><span class="o">(</span><span class="nt">29px</span><span class="o">)</span>
-           <span class="nt">scaleX</span><span class="o">(</span><span class="nt">0</span><span class="p">.</span><span class="nc">5</span><span class="o">)</span>
-<span class="nt">perspective</span><span class="o">:</span> <span class="nt">100px</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">transform</span><span class="o">:</span><span class="w"> </span><span class="nt">rotateX</span><span class="o">(</span><span class="nt">150deg</span><span class="o">);</span><span class="w"></span>
+<span class="nt">transform</span><span class="o">:</span><span class="w"> </span><span class="nt">rotateY</span><span class="o">(</span><span class="nt">150deg</span><span class="o">);</span><span class="w"></span>
+<span class="nt">transform</span><span class="o">:</span><span class="w"> </span><span class="nt">rotateZ</span><span class="o">(</span><span class="nt">150deg</span><span class="o">);</span><span class="w"></span>
+<span class="nt">transform</span><span class="o">:</span><span class="w"> </span><span class="nt">translateX</span><span class="o">(</span><span class="nt">29px</span><span class="o">)</span><span class="w"></span>
+<span class="w">           </span><span class="nt">scaleX</span><span class="o">(</span><span class="nt">0</span><span class="p">.</span><span class="nc">5</span><span class="o">)</span><span class="w"></span>
+<span class="nt">perspective</span><span class="o">:</span><span class="w"> </span><span class="nt">100px</span><span class="o">;</span><span class="w"></span>
 </code></pre></div>
 <code>perspective</code> indicates the distance from the object</p>
                 
@@ -2513,7 +2471,7 @@ or
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2017 - 2021 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+            Copyright &copy; 2017 - 2022 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
           </div>
         
         Made with
