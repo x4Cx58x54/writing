@@ -39,6 +39,7 @@ nav:
     - Calculus: maths/calculus/calculus.md
     - Complex Analysis: maths/complex-analysis/complex-analysis.md
     - Integral Transforms: maths/integral-transforms/integral-transforms.md
+    - Convex Optimization: maths/convex-optimization/convex-optimization.md
     - 3Blue1Brown: maths/3b1b/3b1b.md
     - Memos: maths/memos/memos.md
   - Languages:
