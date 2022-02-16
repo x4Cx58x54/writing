@@ -25,6 +25,7 @@ $$
 $$
 
 单位圆上，有
+
 $$
 \overline{z}=\frac{1}{z}
 $$
@@ -84,7 +85,7 @@ $$
 \operatorname{Arth}z=\cfrac{i}{2}\operatorname{Ln}\frac{1+z}{1-z}
 $$
 
-欧拉公式的证明：令 $f(x) = \cfrac{\mathrm{e}^{i\theta}}{\cos\theta+i\sin\theta}$，易证 $f(x)$ 恒为零，而 $f(0) = 1$，由此得证.
+欧拉公式的证明：令 $f(x) = \cfrac{\mathrm{e}^{i\theta}}{\cos\theta+i\sin\theta}$，易证 $f'(x)$ 恒为零，而 $f(0) = 1$，由此得证.
 
 ### 光滑曲线
 

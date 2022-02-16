@@ -1,8 +1,8 @@
 # Probability Theory
 
-## Ramdom Distributions
+## Random Distributions
 
-### 0-1 分布（Bernoulli 分布）
+### 0-1 分布 | Bernoulli Distribution
 
 $$
 \begin{cases}
@@ -11,19 +11,23 @@ P(X = 0) = 1-p.
 \end{cases}
 $$
 
-### 二项分布
+是二项分布在 $n=1$ 时的特殊情形.
 
-$X\sim B(n, p)$,
+### 二项分布 | Binomial Distribution
+
+$X\sim \operatorname{B}(n, p)$,
 
 $$
-P(X=k) = \mathrm{C}_n^k p^k(1-p)^{n-k}, \quad k = 0, 1, 2,\cdots, n.
+P(X=k) = \mathrm{C}_n^k p^k(1-p)^{n-k}, \quad k = 0, 1, 2,\cdots, n,
 $$
+
+描述在 $n$ 次成功率均为 $p$ 的独立 Bernoulli 实验中成功次数为 $k$ 的概率.
 
 期望 $E(X)=np$，方差 $D(X)=np(1-p)$.
 
 ### Poisson 分布
 
-$X\sim P(\lambda)$,
+$X\sim \operatorname{P}(\lambda)$,
 
 $$
 P(X=k) = \frac{\lambda^k}{k!}\mathrm{e}^{-\lambda}, \quad \lambda>0,\ k = 0, 1, 2, \cdots.
@@ -37,13 +41,15 @@ $$
 \lim_{n\rightarrow +\infty}\mathrm{C}_n^k p^k(1-p)^{n-k}=\frac{\lambda^k}{k!}\mathrm{e}^{-\lambda}.
 $$
 
-### 超几何分布
+### 超几何分布 | Hypergeometric Distribution
 
-$X\sim H(N, M, n)$,
+$X\sim \operatorname{H}(N, M, n)$,
 
 $$
-P(X=k)=\frac{\mathrm{C}_M^k\mathrm{C}_{N-M}^{n-k}}{\mathrm{C}_N^n}, \quad k = \max(0,\ n+M-N),\cdots,\min(n,\ M).
+P(X=k)=\frac{\mathrm{C}_M^k\mathrm{C}_{N-M}^{n-k}}{\mathrm{C}_N^n}, \quad k = \max(0,\ n+M-N),\cdots,\min(n,\ M),
 $$
+
+描述在 $N$ 件物品中，共有 $M$ 件具有某属性. 从所有物品中不放回地取出 $n$ 件后，其中恰好 $k$ 件具有该属性的概率.
 
 当 $M=Np$ 时有
 
@@ -51,25 +57,29 @@ $$
 \lim_{n\rightarrow +\infty}\frac{\mathrm{C}_M^k\mathrm{C}_{N-M}^{n-k}}{\mathrm{C}_N^n}=\mathrm{C}_n^k p^k(1-p)^{n-k}.
 $$
 
-### 几何分布
+### 几何分布 | Geometric Distribution
 
-$X\sim Ge(p)$,
-
-$$
-P(X=k)=p(1-p)^{k-1}, \quad k = 1, 2, 3, \cdots.
-$$
-
-### 负二项分布
-
-$X\sim NB(r, p)$,
+$X\sim \operatorname{Ge}(p)$,
 
 $$
-P(X=k) = \mathrm{C}_{k-1}^{r-1}p^r(1-p)^{k-r}, \quad k = r, r+1, \cdots.
+P(X=k)=p(1-p)^{k-1}, \quad k = 1, 2, 3, \cdots,
 $$
+
+描述连续多次成功概率为 $p$ 的 Bernoulli 实验中，第一次成功时总实验数为 $k$ 的概率.
+
+### 负二项分布 | Negative Binomial Distribution
+
+$X\sim \operatorname{NB}(r, p)$,
+
+$$
+P(X=k) = \mathrm{C}_{k-1}^{r-1}p^r(1-p)^{k-r}, \quad k = r, r+1, \cdots,
+$$
+
+描述连续多次成功概率为 $p$ 的 Bernoulli 实验中，第 $r$ 次成功时总实验数为 $k$ 的概率.
 
 ### 均匀分布
 
-$X\sim U(a, b)$,
+$X\sim \operatorname{U}(a, b)$,
 
 $$
 p(x)=
@@ -81,7 +91,7 @@ $$
 
 ### 指数分布
 
-$\lambda > 0$, $X\sim E(\lambda)$,
+$\lambda > 0$, $X\sim \operatorname{E}(\lambda)$,
 
 $$
 p(x)=
@@ -93,7 +103,7 @@ $$
 
 ### 正态分布
 
-对一维随机变量 $X\sim N(\mu, \sigma^2)$,
+对一维随机变量 $X\sim \mathcal{N}(\mu, \sigma^2)$,
 
 $$
 p(x)=\sqrt{\frac{1}{2\pi\sigma^2}}\exp\left[-\frac{(x-\mu)^2}{2\sigma^2}\right].
