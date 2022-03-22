@@ -114,8 +114,14 @@ nav:
       - 未来简史: reading-notes/未来简史：从智人到智神.md
   - Scribbles:
     - Scribbles: scribbles/index.md
+    - Automobile:
+      - scribbles/automobile/wheel-alignment.md
     - Calculus:
       - scribbles/calculus/jacobian-matrix.md
+    - OpenCV:
+      - scribbles/opencv/opencv-basics.md
+    - PyTorch:
+      - scribbles/pytorch/pytorch-gpu-management.md
 
 
 plugins:
