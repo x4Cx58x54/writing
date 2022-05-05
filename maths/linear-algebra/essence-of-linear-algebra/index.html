@@ -13,7 +13,7 @@
         <meta name="author" content="x4Cx58x54">
       
       <link rel="shortcut icon" href="../../../none">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-5.1.0">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-5.1.0">
     
     
       
@@ -2349,15 +2349,14 @@ b_{11}&amp;b_{12} \\ b_{21}&amp;b_{22}
 \end{bmatrix}
 \begin{bmatrix}
 a_{11} \\ a_{21}
-\end{bmatrix}\hat{\imath}\quad
+\end{bmatrix}\quad
 \begin{bmatrix}
 b_{11}&amp;b_{12} \\ b_{21}&amp;b_{22}
 \end{bmatrix}
 \begin{bmatrix}
 a_{12} \\ a_{22}
-\end{bmatrix}\hat{\jmath}
+\end{bmatrix}
 \right]
-\quad(\text{Where does }\hat{\imath}\text{ go?})
 \\&amp;=
 \left[\;
 a_{11}\hspace{-7mu}
@@ -2384,7 +2383,7 @@ b_{12} \\ b_{22}
 <p>The determinant of a matrix represents in what scale the trasformation squeezes or streches the space.</p>
 <ul>
 <li>In 2-D space, the unit square that sits on <span class="arithmatex">\(\hat{\imath}\)</span> and <span class="arithmatex">\(\hat{\jmath}\)</span> is transformed into a parallelogram, with its area equals to the determinant.</li>
-<li>In 3-D space, the unit cube that sits on <span class="arithmatex">\(\hat{\imath}\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> and <span class="arithmatex">\(\hat{k}\)</span> transforms into a parallelepiped.</li>
+<li>In 3-D space, the unit cube that sits on <span class="arithmatex">\(\hat{\imath}\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> and <span class="arithmatex">\(\hat{k}\)</span> transforms into a parallelepiped, with its volume equals to the determinant.</li>
 </ul>
 <p>For negative determinants, they are the result of inverting the orientation of space.</p>
 <ul>
@@ -2411,18 +2410,18 @@ a_{11} &amp; a_{12} &amp; a_{13} &amp; \cdots &amp; a_{1n} \\
 0 &amp;  0 &amp; 0 &amp; 0 &amp; a_{nn}
 \end{bmatrix}
 \]</div>
-<p>其对空间的缩放比例即其行列式，等于其中诸列张成的（<span class="arithmatex">\(n\)</span> 维）立方体之体积，等于每一列垂直于其之前诸列所张成的空间的分量的乘积，即主对角线诸项之乘积</p>
+<p>其对空间的缩放比例即其行列式，等于其对原空间中单位超立方体的变换结果（对应矩阵任意前 <span class="arithmatex">\(k\)</span> 列的 <span class="arithmatex">\(k\)</span> 维图形均为将对应矩阵 <span class="arithmatex">\(k-1\)</span> 列之图形沿第 <span class="arithmatex">\(k\)</span> 列向量扫过的超柱体）之体积，等于每一列垂直于其之前诸列张成空间的分量的乘积，即主对角线诸项之乘积</p>
 <div class="arithmatex">\[
 \det(A)=\prod\limits_{i=j}a_{ij}.
 \]</div>
-<p>高斯消元法（Gauss elimination）的本质是用行列式为 <span class="arithmatex">\(1\)</span> 的矩阵与原矩阵相乘，故行列式的值未改变，通过高斯消元得到行阶梯式即可求出行列式.</p>
+<p>高斯消元法（Gaussian elimination）可视为用行列式为 1 的矩阵与原矩阵相乘，故行列式的值未改变，通过高斯消元得到行阶梯式即可求出行列式.</p>
 <h2 id="6-inverse-matrices-column-space-and-null-space">6 Inverse Matrices, Column Space and Null Space<a class="headerlink" href="#6-inverse-matrices-column-space-and-null-space" title="Permanent link">&para;</a></h2>
 <p>A system of linear equations</p>
 <div class="arithmatex">\[
 A\mathbf{x}=\mathbf{v}
 \]</div>
-<p>has its geometric interpretation that we are looking for a vector <span class="arithmatex">\(\mathbf{x}\)</span> which lands on <span class="arithmatex">\(\mathbf{v}\)</span> when applying the transformation on it.</p>
-<p>The solution for <span class="arithmatex">\(\mathbf{x}\)</span> depends on whether the transformation squishes space into a lower dimensional one, i.e., whether <span class="arithmatex">\(\det(A)\)</span> equals to 0 or not. </p>
+<p>has its geometric interpretation that we are looking for a vector <span class="arithmatex">\(\mathbf{x}\)</span> which lands on <span class="arithmatex">\(\mathbf{v}\)</span> when applying the transformation <span class="arithmatex">\(A\)</span> on it.</p>
+<p>The solution for <span class="arithmatex">\(\mathbf{x}\)</span> depends on whether the transformation <span class="arithmatex">\(A\)</span> squishes space into a lower dimensional one, i.e., whether <span class="arithmatex">\(\det(A)\)</span> equals to 0 or not.</p>
 <p>In the case where <span class="arithmatex">\(\det(A)\neq 0\)</span>, there will always be one and only one solution and the finding process is actually playing the transformation in inverse. The inverse transformation corresponds to matrix <span class="arithmatex">\(A^{-1}\)</span> which satisfies that</p>
 <div class="arithmatex">\[
 A^{-1}A\mathbf{x}=A^{-1}\mathbf{v},
@@ -2438,13 +2437,11 @@ A^{-1}A=I,
 \]</div>
 <p>And when we play this inverse transformation and follow <span class="arithmatex">\(\mathbf{v}\)</span>, the single unique solution for <span class="arithmatex">\(\mathbf{x}\)</span> is obtained.</p>
 <p>When <span class="arithmatex">\(\det(A)= 0\)</span>, the transformation squishes the space into a lower dimension, but there is no transformation that can unsquish space into a higher one, for a function cannot map a vector to multiple ones. That is to say, <span class="arithmatex">\(A^{-1}\)</span> does not exist in this case. If vector <span class="arithmatex">\(\mathbf{v}\)</span> is lucky enough to live on that lower-dimensional space, there will be infinite solutions for <span class="arithmatex">\(\mathbf{x}\)</span>, otherwise there won't be any solutions.</p>
-<p>The number of dimensions in the output of the transformation is called the <strong>rank</strong> of the matrix. </p>
+<p>The number of dimensions in the output of the transformation is called the <strong>rank</strong> of the matrix.</p>
 <p>Set of all possible <span class="arithmatex">\(A\mathbf{x}\)</span> is called the <strong>column space</strong> of <span class="arithmatex">\(A\)</span>, i.e. the span of columns.</p>
-<div class="arithmatex">\[
-\text{output space = set of all possible }A\mathbf{x}\text{ = span of columns = column space}
-\]</div>
+<p>output space = set of all possible <span class="arithmatex">\(A\mathbf{x}\)</span> = span of columns = column space</p>
 <p>That is to say, rank is the number of dimensions in the column space. When the rank is as high as it can be, and equals the number of columns, we call the matrix <strong>full rank</strong>. Set of all vectors that land on the origin after transformation is called the <strong>null space</strong> or the <strong>kernel</strong> of the matrix.</p>
-<p>When <span class="arithmatex">\(\det(A)\neq 0\)</span>, i.e. <span class="arithmatex">\(A\)</span> is full rank, only <span class="arithmatex">\(\mathbf{0}\)</span> lands on the origin.  </p>
+<p>When <span class="arithmatex">\(\det(A)\neq 0\)</span>, i.e. <span class="arithmatex">\(A\)</span> is full rank, only <span class="arithmatex">\(\mathbf{0}\)</span> lands on the origin.</p>
 <p>When <span class="arithmatex">\(\det(A_{n\times n})= 0\)</span>, a space will land on the origin, its number of dimensions being <span class="arithmatex">\(n-\mathrm{rank}(A)\)</span>.</p>
 <p>For a system of linear equations</p>
 <div class="arithmatex">\[
@@ -2475,8 +2472,7 @@ a_1 \\ a_2 \\ \vdots \\ a_n
 \cdotp
 \begin{bmatrix}
 b_1 \\ b_2 \\ \vdots \\ b_n
-\end{bmatrix}
-=
+\end{bmatrix} =
 \big[
 a_1\hspace{10mu}a_2\hspace{8mu}\cdots\hspace{8mu}a_n
 \big]
@@ -2486,7 +2482,7 @@ b_1 \\ b_2 \\ \vdots \\ b_n
 \]</div>
 <p>Matrix <span class="arithmatex">\([a_1, a_2, \cdots , a_n]\)</span> corresponds to a transformation from <span class="arithmatex">\(n\)</span>-dimensional to one-dimensional, where <span class="arithmatex">\(\hat{e}_1\)</span> lands on <span class="arithmatex">\(a_1\)</span>, <span class="arithmatex">\(\hat{e}_2\)</span> lands on <span class="arithmatex">\(a_2\)</span>, ... ,  <span class="arithmatex">\(\hat{e}_n\)</span> lands on <span class="arithmatex">\(a_n\)</span>.</p>
 <h3 id="relation-between-matrix-vector-product-and-dot-product">Relation between matrix-vector product and dot product<a class="headerlink" href="#relation-between-matrix-vector-product-and-dot-product" title="Permanent link">&para;</a></h3>
-<p>Suppose there is a tilted number line in a space, and for simplicity, the space is 2-dimensional. The number 0 on that line remains in the origin and the base being</p>
+<p>Suppose there is a tilted number line in a space, and for simplicity, the space is 2-dimensional. The number 0 on that line remains in the origin and the base (with the same length of the bases in the original space) being</p>
 <div class="arithmatex">\[
 \hat{u}=
 \begin{bmatrix}
@@ -2494,46 +2490,31 @@ u_x \\ u_y
 \end{bmatrix}.
 \]</div>
 <h4 id="for-matrix-vector-product">For matrix-vector product:<a class="headerlink" href="#for-matrix-vector-product" title="Permanent link">&para;</a></h4>
-<p>The plane is squished onto a line and <span class="arithmatex">\(\hat{\imath}\)</span> lands at <span class="arithmatex">\(u_x\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> lands at <span class="arithmatex">\(u_y\)</span>,</p>
+<p>Imagine a linear transformation that squishes the plane is onto that number line and <span class="arithmatex">\(\hat{\imath}\)</span> lands at <span class="arithmatex">\(u_x\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> lands at <span class="arithmatex">\(u_y\)</span>. In this transformation, vector <span class="arithmatex">\(\mathbf{v} = \big[x\quad  y\big]^\top\)</span> lands on</p>
 <div class="arithmatex">\[
-\mathbf{v}=
-\begin{bmatrix}
-x \\ y
-\end{bmatrix}
-\xrightarrow[\space]{\text{lands at}}
-\bigl[u_x\hspace{10mu} u_y\big]
+\big[u_x\quad u_y\big]
 \begin{bmatrix}
 x \\ y
 \end{bmatrix}
 =u_x \cdotp x+u_y \cdotp y.
 \]</div>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Yes, <span class="arithmatex">\(\big[u_x\quad u_y\big]\)</span> itself corresponds to another linear transformation where all points in the space are squished onto <span class="arithmatex">\(x\)</span> axis, but the calculation above also integrates a change of bases, which rotates the <span class="arithmatex">\(x\)</span> axis to the tilted number line. Without this change of bases, the transformation described would be <span class="arithmatex">\(\begin{bmatrix}u_x^2 &amp; u_x u_y \\ u_x u_y &amp; u_y^2\end{bmatrix}\)</span>. Next, we rotate the space back to horizontal, namely by <span class="arithmatex">\(\operatorname{rot}(-\arg \hat{u}) = \begin{bmatrix}\cos (-\arg\hat{u}) &amp; - \sin (-\arg\hat{u}) \\ -\sin (-\arg\hat{u}) &amp; \cos (-\arg\hat{u})\end{bmatrix} = \begin{bmatrix}u_x &amp; u_y \\ -u_y &amp; u_x\end{bmatrix}\)</span>. Multiply this rotation matrix to the former transformation matrix, and the composition is <span class="arithmatex">\(\begin{bmatrix}u_x &amp; u_y \\ 0 &amp; 0\end{bmatrix}\)</span>.</p>
+</details>
 <h4 id="for-dot-product">For dot product:<a class="headerlink" href="#for-dot-product" title="Permanent link">&para;</a></h4>
-<p>Project <span class="arithmatex">\(\hat{\imath}\)</span> to <span class="arithmatex">\(\hat{u}\)</span>, according to symmetry, <span class="arithmatex">\(\hat{\imath}_u=u_x\)</span>. Similarly, <span class="arithmatex">\(\hat{\jmath}_u=u_y\)</span>.</p>
-<p><img alt="" src="../img/01_eola_07_dot_1.png" width="240px" /></p>
+<p>Project <span class="arithmatex">\(\hat{\imath}\)</span> to <span class="arithmatex">\(\hat{u}\)</span>, according to symmetry shown in the figure below, <span class="arithmatex">\(\hat{\imath}_u=u_x\)</span>. Similarly, <span class="arithmatex">\(\hat{\jmath}_u=u_y\)</span>.</p>
+<p><img alt="" src="../img/01_eola_07_dot_1.png" width="160px" /></p>
 <p>Therefore, projection of <span class="arithmatex">\(\mathbf{v}\)</span> on <span class="arithmatex">\(\hat{u}\)</span></p>
 <div class="arithmatex">\[
-\mathbf{v}_u=x\cdot\hat{\imath}_u+y\cdot\hat{\jmath}=x \cdot u_x+y \cdot u_y,
+\mathbf{v}_u = x\cdot\hat{\imath}_u+y\cdot\hat{\jmath}_u=x \cdot u_x+y \cdot u_y = \hat{u}\cdot\mathbf{v}.
 \]</div>
-<div class="arithmatex">\[
-\hat{u}\cdot\mathbf{v}=
-\begin{bmatrix}
-u_x \\ u_y
-\end{bmatrix}
-\cdotp
-\begin{bmatrix}
-x \\ y
-\end{bmatrix}
-=u_x \cdotp x+u_y \cdotp y.
-\]</div>
-<p>This is why the dot product with a unit vector can be interpreted as projecting the vector onto to the span of that unit vector and taking the length.</p>
+<p>This is why the dot product with a unit vector can be interpreted as projecting the vector onto to the span of that unit vector and taking the (directed) length.</p>
 <h3 id="duality">Duality<a class="headerlink" href="#duality" title="Permanent link">&para;</a></h3>
 <p><strong>A vector is the physical embodiment of a linear transformation.</strong></p>
 <p>A linear transformation from space to the number line can be just defined by projecting space onto that number line, instead of numerical dot products or vectors. Because this transformation is linear, it is necessarily described by some <span class="arithmatex">\(1\times n\)</span> matrix. And since multiplying this matrix is the same as taking the associated dot product, the transformation is inescapably related to some vector.</p>
 <h2 id="8-cross-product-in-the-light-of-linear-transformations">8 Cross Product in the Light of Linear Transformations<a class="headerlink" href="#8-cross-product-in-the-light-of-linear-transformations" title="Permanent link">&para;</a></h2>
-<p>In 2-D space, </p>
-<div class="arithmatex">\[
-\left\lvert \mathbf{v\times w}\right\rvert =\text{Area of parallelogram}.
-\]</div>
+<p>In 2-D space, <span class="arithmatex">\(|\mathbf{v\times w}|\)</span> equals to area of the parallelogram determined by these vectors.</p>
 <p>In the light of linear transformation, when <span class="arithmatex">\(\hat{\imath}\)</span> lands on <span class="arithmatex">\(\mathbf{v}\)</span> and <span class="arithmatex">\(\hat{\jmath}\)</span> lands on <span class="arithmatex">\(\mathbf{w}\)</span>, area of the parallelogram equals to the determinant, therefore,</p>
 <div class="arithmatex">\[
 \mathbf{v\times w}=
@@ -2590,9 +2571,9 @@ v_x w_y-v_y w_x
 x &amp; v_x &amp; w_x \\
 y &amp; v_y &amp; w_y \\
 z &amp; v_z &amp; w_z
-\end{vmatrix},
+\end{vmatrix}.
 \]</div>
-<p>for convenience,</p>
+<p>For convenience, define</p>
 <div class="arithmatex">\[
 \begin{bmatrix}
 \begin{vmatrix}v_y &amp; w_y \\ v_z &amp; w_z\end{vmatrix}\\
@@ -2624,21 +2605,16 @@ z &amp; v_z &amp; w_z
 \begin{aligned}
 \mathbf{p}\cdot
 \begin{bmatrix}x \\ y \\ z\end{bmatrix}
-&amp; = \left\Vert\mathbf{p}\right\Vert\cdot(\text{projection of }\begin{bmatrix}x\\y\\z\end{bmatrix} \text{on } \mathbf{p})\\
-&amp; = \left\Vert\mathbf{p}\right\Vert\cdot
+&amp; = \|\mathbf{p}\|\cdot(\text{projection of }\begin{bmatrix}x\\y\\z\end{bmatrix} \text{on } \mathbf{p})\\
+&amp; = \|\mathbf{p}\|\cdot
 \left\Vert\begin{bmatrix}x \\ y \\ z\end{bmatrix}_{\mathbf{p}\perp(\mathbf{v,w})}\right\Vert.
 \end{aligned}
 \]</div>
-<p>Therefore</p>
-<div class="arithmatex">\[
-\left\Vert\mathbf{p}\right\Vert=(\text{Area of parallelogram spanned on }\mathbf{v,w}),
-\]</div>
-<p>and <span class="arithmatex">\(\mathbf{p}\)</span> obeys the right-hand rule.</p>
-<p>And it becomes evident that</p>
+<p>Therefore <span class="arithmatex">\(\|\mathbf{p}\|\)</span> equals to area of parallelogram spanned on <span class="arithmatex">\(\mathbf{v,w}\)</span>, and <span class="arithmatex">\(\mathbf{p}\)</span> obeys the right-hand rule. So it becomes evident that</p>
 <div class="arithmatex">\[
 \mathbf{p}=\mathbf{v}\times\mathbf{w}.
 \]</div>
-<p>Note that </p>
+<p>Note that</p>
 <div class="arithmatex">\[
 \mathbf{p}=
 \begin{bmatrix}
@@ -2672,7 +2648,7 @@ w_x \\ w_y \\ w_z
 \hat{u}=\begin{bmatrix}u_1 \\ u_2\end{bmatrix}, \;
 \hat{v}=\begin{bmatrix}v_1 \\ v_2\end{bmatrix}.
 \]</div>
-<p>In coordinate system <span class="arithmatex">\(S'\)</span>, vector </p>
+<p>In coordinate system <span class="arithmatex">\(S'\)</span>, vector</p>
 <div class="arithmatex">\[
 \mathbf{w}'=
 \begin{bmatrix}
@@ -2689,73 +2665,41 @@ A=\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
 \begin{aligned}
 \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}\mathbf{w} &amp;= \mathbf{w}'\\
 w_x \hat{u}+w_y \hat{v} &amp;= w'_x \hat{u}+w'_y \hat{v}\\
-&amp;\Rightarrow
+\Rightarrow
 \begin{cases}
 w_x=w'_x\\
 w_y=w'_y
 \end{cases}.
 \end{aligned}
 \]</div>
-<p>Therefore,</p>
+<p>That is, <span class="arithmatex">\(\mathbf{w}\)</span> in <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(\mathbf{w}'\)</span> in <span class="arithmatex">\(S'\)</span> has the same representation. And from the perspective of each coordinate system,</p>
 <div class="arithmatex">\[
-\mathbf{w}=w'_x \hat{\imath}+w'_y \hat{\jmath}=
-\begin{bmatrix}w'_x \\ w'_y\end{bmatrix} 
-\xrightarrow[A]{\text{lands on}}
-w'_x \hat{u}+w'_y \hat{v}=\mathbf{w}'.
+\begin{aligned}
+\mathbf{w'} &amp;= w'_x \hat{u} + w'_y \hat{v} \qquad\left(= \begin{bmatrix}w'_x \\ w'_y\end{bmatrix}_{(S')}\right)\\
+&amp;= w'_x \begin{bmatrix}u_1\\ u_2 \end{bmatrix} \hat{\imath} + w'_y \begin{bmatrix}u_1 \\ u_2 \end{bmatrix}\hat{\jmath}\\
+&amp;= \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix} \begin{bmatrix}w'_x \\ w'_y\end{bmatrix}_{(S)}.
+\end{aligned}
 \]</div>
 <p>So a translation from <span class="arithmatex">\(S'\)</span> to <span class="arithmatex">\(S\)</span> is obtained:</p>
 <div class="arithmatex">\[
-S': \; \mathbf{w}'=\begin{bmatrix}w'_x \\ w'_y\end{bmatrix} 
-=w'_x \hat{u}+w'_y \hat{v}\\
+\mathbf{w}'_{(S)} = \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix} \mathbf{w}'_{(S')}.
 \]</div>
-<div class="arithmatex">\[
-\Downarrow
-\]</div>
-<div class="arithmatex">\[
-S: \; \mathbf{w}'=
-\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
-\begin{bmatrix}w'_x \\ w'_y\end{bmatrix}.
-\]</div>
+<p>In the simplest case, <span class="arithmatex">\(\hat{u} = \begin{bmatrix}u_1\\ u_2\end{bmatrix}_{(S)} = \begin{bmatrix}1\\ 0\end{bmatrix}_{(S')}\)</span>.</p>
 <p>这样，我们能将两个坐标系之间的关系记为</p>
 <div class="arithmatex">\[
 S = AS'.
 \]</div>
-<p>Numerically, since</p>
-<div class="arithmatex">\[
-\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
-\hat{\imath}=\hat{u},
-\]</div>
-<div class="arithmatex">\[
-\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
-\hat{\jmath}=\hat{v},
-\]</div>
-<p>it is obvious that</p>
-<div class="arithmatex">\[
-\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
-\begin{bmatrix}w'_x \\ w'_y\end{bmatrix}_{\hat{\imath},\hat{\jmath}} =
-w'_x \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}\hat{\imath}+
-w'_y \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}\hat{\jmath}
-=w'_x\hat{u}+w'_y\hat{v}.
-\]</div>
-<p>In conclusion,</p>
-<div class="arithmatex">\[
-\mathbf{w}'_{(S')} \Longleftrightarrow A\mathbf{w}'_{(S)},
-\]</div>
-<p>conversely,</p>
-<div class="arithmatex">\[
-\mathbf{w}_{(S)} \Longleftrightarrow A^{-1}\mathbf{w}_{(S')}.
-\]</div>
-<p>In terms of linear transformations, how a transformation is expressed is related to the bases. Here are the steps to describe the same transformation in a different coordinate systems:<br />
-Suppose a linear transformation <span class="arithmatex">\(M\)</span> in coordinate system <span class="arithmatex">\(S\)</span> is applied to some vector <span class="arithmatex">\(\mathbf{w}\)</span> in <span class="arithmatex">\(S'\)</span>,</p>
+<p>In terms of linear transformations, how a transformation is expressed is related to the bases. Here are the steps to describe the same transformation in a different coordinate systems:</p>
+<p>Suppose a linear transformation <span class="arithmatex">\(M\)</span> in coordinate system <span class="arithmatex">\(S\)</span> is applied to some vector <span class="arithmatex">\(\mathbf{w}\)</span> in <span class="arithmatex">\(S'\)</span>,</p>
 <ol>
 <li>first translate <span class="arithmatex">\(\mathbf{w}\)</span> to <span class="arithmatex">\(S\)</span> by multiplying <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(\mathbf{w}\)</span>;</li>
 <li>since we've got <span class="arithmatex">\(A\mathbf{w}\)</span> in <span class="arithmatex">\(S\)</span>, apply the transformation by multiplying <span class="arithmatex">\(M\)</span> to <span class="arithmatex">\(A\mathbf{w}\)</span>;</li>
 <li>translate it back to <span class="arithmatex">\(S'\)</span> by multiplying <span class="arithmatex">\(A^{-1}\)</span> to it;</li>
-<li>finally we got <span class="arithmatex">\(A^{-1}MA\mathbf{w}\)</span>. </li>
+<li>finally we got <span class="arithmatex">\(A^{-1}MA\mathbf{w}\)</span>.</li>
 </ol>
 <p>To sum up,</p>
 <div class="arithmatex">\[
-M\ \text{ in } S \Longleftrightarrow A^{-1}MA\ \text{ in }S'.
+M_{(S)} = A^{-1}MA_{(S')}.
 \]</div>
 <h2 id="10-eigenvectors-and-eigenvalues">10 Eigenvectors and Eigenvalues<a class="headerlink" href="#10-eigenvectors-and-eigenvalues" title="Permanent link">&para;</a></h2>
 <p>An eigenvector of a linear transformation is a <strong>non-zero</strong> vector that changes only a scalar factor when that transformation is applied to it. It is defined as</p>
@@ -2825,7 +2769,7 @@ A=
 \]</div>
 <p>and it transforms one function into another.</p>
 <p>In other words, the differential operator and the derivative operator are linear.</p>
-<p>To express derivatives in the form of matrices, for example in the space of polynomials, we choose </p>
+<p>To express derivatives in the form of matrices, for example in the space of polynomials, we choose</p>
 <div class="arithmatex">\[
 b_0(x)=1,\; b_1(x)=x,\; b_2(x)=x^2,\; \cdots,\; b_n(x)=x^n ,\; \cdots
 \]</div>
@@ -2891,7 +2835,7 @@ a_0 \\ a_1 \\ a_2 \\ a_3 \\ \vdots
 \cdots &amp; \longleftrightarrow \cdots
 \end{aligned}
 \]</div>
-<p>In conclusion, <em>vectors</em> can be far more abstract, the from they take does not matter. It is an intangible notion that maths abstracts all its embodiments into.</p>
+<p>In conclusion, <em>vectors</em> can be far more abstract, the forms they take do not matter. It is an intangible notion that maths abstracts all its embodiments into.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -2981,7 +2925,7 @@ a_0 \\ a_1 \\ a_2 \\ a_3 \\ \vdots
     </div>
     
       <script src="../../../assets/javascripts/vendor.36cbf620.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/bundle.00c583dd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching"}</script>
       
       <script>
         app = initialize({
