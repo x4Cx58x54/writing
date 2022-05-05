@@ -149,15 +149,14 @@ b_{11}&b_{12} \\ b_{21}&b_{22}
 \end{bmatrix}
 \begin{bmatrix}
 a_{11} \\ a_{21}
-\end{bmatrix}\hat{\imath}\quad
+\end{bmatrix}\quad
 \begin{bmatrix}
 b_{11}&b_{12} \\ b_{21}&b_{22}
 \end{bmatrix}
 \begin{bmatrix}
 a_{12} \\ a_{22}
-\end{bmatrix}\hat{\jmath}
+\end{bmatrix}
 \right]
-\quad(\text{Where does }\hat{\imath}\text{ go?})
 \\&=
 \left[\;
 a_{11}\hspace{-7mu}
@@ -187,7 +186,7 @@ $$
 The determinant of a matrix represents in what scale the trasformation squeezes or streches the space.
 
 * In 2-D space, the unit square that sits on $\hat{\imath}$ and $\hat{\jmath}$ is transformed into a parallelogram, with its area equals to the determinant.
-* In 3-D space, the unit cube that sits on $\hat{\imath}$, $\hat{\jmath}$ and $\hat{k}$ transforms into a parallelepiped.
+* In 3-D space, the unit cube that sits on $\hat{\imath}$, $\hat{\jmath}$ and $\hat{k}$ transforms into a parallelepiped, with its volume equals to the determinant.
 
 For negative determinants, they are the result of inverting the orientation of space.
 
@@ -221,13 +220,13 @@ a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
 \end{bmatrix}
 $$
 
-其对空间的缩放比例即其行列式，等于其中诸列张成的（$n$ 维）立方体之体积，等于每一列垂直于其之前诸列所张成的空间的分量的乘积，即主对角线诸项之乘积
+其对空间的缩放比例即其行列式，等于其对原空间中单位超立方体的变换结果（对应矩阵任意前 $k$ 列的 $k$ 维图形均为将对应矩阵 $k-1$ 列之图形沿第 $k$ 列向量扫过的超柱体）之体积，等于每一列垂直于其之前诸列张成空间的分量的乘积，即主对角线诸项之乘积
 
 $$
 \det(A)=\prod\limits_{i=j}a_{ij}.
 $$
 
-高斯消元法（Gauss elimination）的本质是用行列式为 $1$ 的矩阵与原矩阵相乘，故行列式的值未改变，通过高斯消元得到行阶梯式即可求出行列式.
+高斯消元法（Gaussian elimination）可视为用行列式为 1 的矩阵与原矩阵相乘，故行列式的值未改变，通过高斯消元得到行阶梯式即可求出行列式.
 
 
 ## 6 Inverse Matrices, Column Space and Null Space
@@ -238,9 +237,9 @@ $$
 A\mathbf{x}=\mathbf{v}
 $$
 
-has its geometric interpretation that we are looking for a vector $\mathbf{x}$ which lands on $\mathbf{v}$ when applying the transformation on it.
+has its geometric interpretation that we are looking for a vector $\mathbf{x}$ which lands on $\mathbf{v}$ when applying the transformation $A$ on it.
 
-The solution for $\mathbf{x}$ depends on whether the transformation squishes space into a lower dimensional one, i.e., whether $\det(A)$ equals to 0 or not. 
+The solution for $\mathbf{x}$ depends on whether the transformation $A$ squishes space into a lower dimensional one, i.e., whether $\det(A)$ equals to 0 or not.
 
 In the case where $\det(A)\neq 0$, there will always be one and only one solution and the finding process is actually playing the transformation in inverse. The inverse transformation corresponds to matrix $A^{-1}$ which satisfies that
 
@@ -266,17 +265,15 @@ And when we play this inverse transformation and follow $\mathbf{v}$, the single
 
 When $\det(A)= 0$, the transformation squishes the space into a lower dimension, but there is no transformation that can unsquish space into a higher one, for a function cannot map a vector to multiple ones. That is to say, $A^{-1}$ does not exist in this case. If vector $\mathbf{v}$ is lucky enough to live on that lower-dimensional space, there will be infinite solutions for $\mathbf{x}$, otherwise there won't be any solutions.
 
-The number of dimensions in the output of the transformation is called the **rank** of the matrix. 
+The number of dimensions in the output of the transformation is called the **rank** of the matrix.
 
 Set of all possible $A\mathbf{x}$ is called the **column space** of $A$, i.e. the span of columns.
 
-$$
-\text{output space = set of all possible }A\mathbf{x}\text{ = span of columns = column space}
-$$
+output space = set of all possible $A\mathbf{x}$ = span of columns = column space
 
 That is to say, rank is the number of dimensions in the column space. When the rank is as high as it can be, and equals the number of columns, we call the matrix **full rank**. Set of all vectors that land on the origin after transformation is called the **null space** or the **kernel** of the matrix.
 
-When $\det(A)\neq 0$, i.e. $A$ is full rank, only $\mathbf{0}$ lands on the origin.  
+When $\det(A)\neq 0$, i.e. $A$ is full rank, only $\mathbf{0}$ lands on the origin.
 
 When $\det(A_{n\times n})= 0$, a space will land on the origin, its number of dimensions being $n-\mathrm{rank}(A)$.
 
@@ -318,8 +315,7 @@ a_1 \\ a_2 \\ \vdots \\ a_n
 \cdotp
 \begin{bmatrix}
 b_1 \\ b_2 \\ \vdots \\ b_n
-\end{bmatrix}
-=
+\end{bmatrix} =
 \big[
 a_1\hspace{10mu}a_2\hspace{8mu}\cdots\hspace{8mu}a_n
 \big]
@@ -332,7 +328,7 @@ Matrix $[a_1, a_2, \cdots , a_n]$ corresponds to a transformation from $n$-dimen
 
 ### Relation between matrix-vector product and dot product 
 
-Suppose there is a tilted number line in a space, and for simplicity, the space is 2-dimensional. The number 0 on that line remains in the origin and the base being
+Suppose there is a tilted number line in a space, and for simplicity, the space is 2-dimensional. The number 0 on that line remains in the origin and the base (with the same length of the bases in the original space) being
 
 $$
 \hat{u}=
@@ -343,46 +339,32 @@ $$
 
 #### For matrix-vector product:
 
-The plane is squished onto a line and $\hat{\imath}$ lands at $u_x$, $\hat{\jmath}$ lands at $u_y$,
+Imagine a linear transformation that squishes the plane is onto that number line and $\hat{\imath}$ lands at $u_x$, $\hat{\jmath}$ lands at $u_y$. In this transformation, vector $\mathbf{v} = \big[x\quad  y\big]^\top$ lands on
 
 $$
-\mathbf{v}=
-\begin{bmatrix}
-x \\ y
-\end{bmatrix}
-\xrightarrow[\space]{\text{lands at}}
-\bigl[u_x\hspace{10mu} u_y\big]
+\big[u_x\quad u_y\big]
 \begin{bmatrix}
 x \\ y
 \end{bmatrix}
 =u_x \cdotp x+u_y \cdotp y.
 $$
 
+???+ Note
+    Yes, $\big[u_x\quad u_y\big]$ itself corresponds to another linear transformation where all points in the space are squished onto $x$ axis, but the calculation above also integrates a change of bases, which rotates the $x$ axis to the tilted number line. Without this change of bases, the transformation described would be $\begin{bmatrix}u_x^2 & u_x u_y \\ u_x u_y & u_y^2\end{bmatrix}$. Next, we rotate the space back to horizontal, namely by $\operatorname{rot}(-\arg \hat{u}) = \begin{bmatrix}\cos (-\arg\hat{u}) & - \sin (-\arg\hat{u}) \\ -\sin (-\arg\hat{u}) & \cos (-\arg\hat{u})\end{bmatrix} = \begin{bmatrix}u_x & u_y \\ -u_y & u_x\end{bmatrix}$. Multiply this rotation matrix to the former transformation matrix, and the composition is $\begin{bmatrix}u_x & u_y \\ 0 & 0\end{bmatrix}$.
+
 #### For dot product:
 
-Project $\hat{\imath}$ to $\hat{u}$, according to symmetry, $\hat{\imath}_u=u_x$. Similarly, $\hat{\jmath}_u=u_y$.
+Project $\hat{\imath}$ to $\hat{u}$, according to symmetry shown in the figure below, $\hat{\imath}_u=u_x$. Similarly, $\hat{\jmath}_u=u_y$.
 
-![](./img/01_eola_07_dot_1.png){: width=240px}
+![](./img/01_eola_07_dot_1.png){: width=160px}
 
 Therefore, projection of $\mathbf{v}$ on $\hat{u}$
 
 $$
-\mathbf{v}_u=x\cdot\hat{\imath}_u+y\cdot\hat{\jmath}=x \cdot u_x+y \cdot u_y,
+\mathbf{v}_u = x\cdot\hat{\imath}_u+y\cdot\hat{\jmath}_u=x \cdot u_x+y \cdot u_y = \hat{u}\cdot\mathbf{v}.
 $$
 
-$$
-\hat{u}\cdot\mathbf{v}=
-\begin{bmatrix}
-u_x \\ u_y
-\end{bmatrix}
-\cdotp
-\begin{bmatrix}
-x \\ y
-\end{bmatrix}
-=u_x \cdotp x+u_y \cdotp y.
-$$
-
-This is why the dot product with a unit vector can be interpreted as projecting the vector onto to the span of that unit vector and taking the length.
+This is why the dot product with a unit vector can be interpreted as projecting the vector onto to the span of that unit vector and taking the (directed) length.
 
 ### Duality
 
@@ -392,11 +374,7 @@ A linear transformation from space to the number line can be just defined by pro
 
 ## 8 Cross Product in the Light of Linear Transformations
 
-In 2-D space, 
-
-$$
-\left\lvert \mathbf{v\times w}\right\rvert =\text{Area of parallelogram}.
-$$
+In 2-D space, $|\mathbf{v\times w}|$ equals to area of the parallelogram determined by these vectors.
 
 In the light of linear transformation, when $\hat{\imath}$ lands on $\mathbf{v}$ and $\hat{\jmath}$ lands on $\mathbf{w}$, area of the parallelogram equals to the determinant, therefore,
 
@@ -462,10 +440,10 @@ v_x w_y-v_y w_x
 x & v_x & w_x \\
 y & v_y & w_y \\
 z & v_z & w_z
-\end{vmatrix},
+\end{vmatrix}.
 $$
 
-for convenience,
+For convenience, define
 
 $$
 \begin{bmatrix}
@@ -502,27 +480,19 @@ $$
 \begin{aligned}
 \mathbf{p}\cdot
 \begin{bmatrix}x \\ y \\ z\end{bmatrix}
-& = \left\Vert\mathbf{p}\right\Vert\cdot(\text{projection of }\begin{bmatrix}x\\y\\z\end{bmatrix} \text{on } \mathbf{p})\\
-& = \left\Vert\mathbf{p}\right\Vert\cdot
+& = \|\mathbf{p}\|\cdot(\text{projection of }\begin{bmatrix}x\\y\\z\end{bmatrix} \text{on } \mathbf{p})\\
+& = \|\mathbf{p}\|\cdot
 \left\Vert\begin{bmatrix}x \\ y \\ z\end{bmatrix}_{\mathbf{p}\perp(\mathbf{v,w})}\right\Vert.
 \end{aligned}
 $$
 
-Therefore
-
-$$
-\left\Vert\mathbf{p}\right\Vert=(\text{Area of parallelogram spanned on }\mathbf{v,w}),
-$$
-
-and $\mathbf{p}$ obeys the right-hand rule.
-
-And it becomes evident that
+Therefore $\|\mathbf{p}\|$ equals to area of parallelogram spanned on $\mathbf{v,w}$, and $\mathbf{p}$ obeys the right-hand rule. So it becomes evident that
 
 $$
 \mathbf{p}=\mathbf{v}\times\mathbf{w}.
 $$
 
-Note that 
+Note that
 
 $$
 \mathbf{p}=
@@ -565,7 +535,7 @@ $$
 \hat{v}=\begin{bmatrix}v_1 \\ v_2\end{bmatrix}.
 $$
 
-In coordinate system $S'$, vector 
+In coordinate system $S'$, vector
 
 $$
 \mathbf{w}'=
@@ -587,7 +557,7 @@ $$
 \begin{aligned}
 \begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix}\mathbf{w} &= \mathbf{w}'\\
 w_x \hat{u}+w_y \hat{v} &= w'_x \hat{u}+w'_y \hat{v}\\
-&\Rightarrow
+\Rightarrow
 \begin{cases}
 w_x=w'_x\\
 w_y=w'_y
@@ -595,31 +565,23 @@ w_y=w'_y
 \end{aligned}
 $$
 
-Therefore,
+That is, $\mathbf{w}$ in $S$ and $\mathbf{w}'$ in $S'$ has the same representation. And from the perspective of each coordinate system,
 
 $$
-\mathbf{w}=w'_x \hat{\imath}+w'_y \hat{\jmath}=
-\begin{bmatrix}w'_x \\ w'_y\end{bmatrix} 
-\xrightarrow[A]{\text{lands on}}
-w'_x \hat{u}+w'_y \hat{v}=\mathbf{w}'.
+\begin{aligned}
+\mathbf{w'} &= w'_x \hat{u} + w'_y \hat{v} \qquad\left(= \begin{bmatrix}w'_x \\ w'_y\end{bmatrix}_{(S')}\right)\\
+&= w'_x \begin{bmatrix}u_1\\ u_2 \end{bmatrix} \hat{\imath} + w'_y \begin{bmatrix}u_1 \\ u_2 \end{bmatrix}\hat{\jmath}\\
+&= \begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix} \begin{bmatrix}w'_x \\ w'_y\end{bmatrix}_{(S)}.
+\end{aligned}
 $$
 
 So a translation from $S'$ to $S$ is obtained:
 
 $$
-S': \; \mathbf{w}'=\begin{bmatrix}w'_x \\ w'_y\end{bmatrix} 
-=w'_x \hat{u}+w'_y \hat{v}\\
+\mathbf{w}'_{(S)} = \begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix} \mathbf{w}'_{(S')}.
 $$
 
-$$
-\Downarrow
-$$
-
-$$
-S: \; \mathbf{w}'=
-\begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix}
-\begin{bmatrix}w'_x \\ w'_y\end{bmatrix}.
-$$
+In the simplest case, $\hat{u} = \begin{bmatrix}u_1\\ u_2\end{bmatrix}_{(S)} = \begin{bmatrix}1\\ 0\end{bmatrix}_{(S')}$.
 
 这样，我们能将两个坐标系之间的关系记为
 
@@ -627,52 +589,19 @@ $$
 S = AS'.
 $$
 
-Numerically, since
+In terms of linear transformations, how a transformation is expressed is related to the bases. Here are the steps to describe the same transformation in a different coordinate systems:
 
-$$
-\begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix}
-\hat{\imath}=\hat{u},
-$$
-
-$$
-\begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix}
-\hat{\jmath}=\hat{v},
-$$
-
-it is obvious that
-
-$$
-\begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix}
-\begin{bmatrix}w'_x \\ w'_y\end{bmatrix}_{\hat{\imath},\hat{\jmath}} =
-w'_x \begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix}\hat{\imath}+
-w'_y \begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix}\hat{\jmath}
-=w'_x\hat{u}+w'_y\hat{v}.
-$$
-
-In conclusion,
-
-$$
-\mathbf{w}'_{(S')} \Longleftrightarrow A\mathbf{w}'_{(S)},
-$$
-
-conversely,
-
-$$
-\mathbf{w}_{(S)} \Longleftrightarrow A^{-1}\mathbf{w}_{(S')}.
-$$
-
-In terms of linear transformations, how a transformation is expressed is related to the bases. Here are the steps to describe the same transformation in a different coordinate systems:  
 Suppose a linear transformation $M$ in coordinate system $S$ is applied to some vector $\mathbf{w}$ in $S'$,
 
 1. first translate $\mathbf{w}$ to $S$ by multiplying $A$ to $\mathbf{w}$;
 2. since we've got $A\mathbf{w}$ in $S$, apply the transformation by multiplying $M$ to $A\mathbf{w}$;
 3. translate it back to $S'$ by multiplying $A^{-1}$ to it;
-4. finally we got $A^{-1}MA\mathbf{w}$. 
+4. finally we got $A^{-1}MA\mathbf{w}$.
 
 To sum up,
 
 $$
-M\ \text{ in } S \Longleftrightarrow A^{-1}MA\ \text{ in }S'.
+M_{(S)} = A^{-1}MA_{(S')}.
 $$
 
 ## 10 Eigenvectors and Eigenvalues
@@ -772,7 +701,7 @@ and it transforms one function into another.
 
 In other words, the differential operator and the derivative operator are linear.
 
-To express derivatives in the form of matrices, for example in the space of polynomials, we choose 
+To express derivatives in the form of matrices, for example in the space of polynomials, we choose
 
 $$
 b_0(x)=1,\; b_1(x)=x,\; b_2(x)=x^2,\; \cdots,\; b_n(x)=x^n ,\; \cdots
@@ -850,4 +779,4 @@ $$
 \end{aligned}
 $$
 
-In conclusion, *vectors* can be far more abstract, the from they take does not matter. It is an intangible notion that maths abstracts all its embodiments into.
+In conclusion, *vectors* can be far more abstract, the forms they take do not matter. It is an intangible notion that maths abstracts all its embodiments into.
