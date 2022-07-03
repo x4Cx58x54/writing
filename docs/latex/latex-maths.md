@@ -26,7 +26,7 @@ vector | `\vec` | $\vec{e}$
 right arrow | `\overrightarrow` | $\overrightarrow{AB}$
 fraction | `\frac{}{}` | $\frac{x}{\ln x}$
 tiny fraction | `\tfrac{}{}` | $\tfrac{\sin x}{x}$
-clossal fraction | `\cfrac{}{}` | $\cfrac{\text{numerator}}{\text{denominator}}$
+colossal fraction | `\cfrac{}{}` | $\cfrac{\text{numerator}}{\text{denominator}}$
 numbering | `\tag{1.1}` / `\tag*{1.1}` | $(1.1)$ / $1.1$
 
 ## Spaces
@@ -34,7 +34,7 @@ numbering | `\tag{1.1}` / `\tag*{1.1}` | $(1.1)$ / $1.1$
 Name | LaTeX | Spacing | Display
 :---: | :---: | :---: | :---:
 thin space | `\,` or `\thinspace` | 3 mu | $A\, B$
-mediuim space | `\:` or `\medspace` | 4 mu | $A\hspace{4mu} B$
+medium space | `\:` or `\medspace` | 4 mu | $A\hspace{4mu} B$
 thick space | `\;` or `\thickspace` | 5 mu | $A\; B$
 thicker space | `\ ` | 6 mu  | $A\ B$
 quad | `\quad` | 1 em = 18 mu | $A\quad B$

@@ -129,7 +129,7 @@ class circle
 ```
 
 #### Template Specialization
-To specify a different behavior for some data types.  
+To specify a different behavior for some data types.
 ```cpp
 template <class T>
 class circle
@@ -185,7 +185,7 @@ struct1 y = {0, 0.0};
 ```
 
 #### Union
-*Union types can save memory*  
+*Union types can save memory*
 ```cpp
 union union1
 {
@@ -202,7 +202,7 @@ enum spectrum {r, o, y, g, b, v, i, u};
 
 ## Object-Oriented Programming
 
-*Abstraction, Encapsulation, Inheritance, Polymorphism*  
+*Abstraction, Encapsulation, Inheritance, Polymorphism*
 
 ### Object Basics, *Abstraction* and *Encapsulation*
 
@@ -229,9 +229,9 @@ circle::showname()
 
 #### Access Specifiers
 *`public, protected, private`*  
-`Public` methods can be accessed anywhere within the scope;  
-`protected` methods can only be accessed by derived classes and the methods within the class;  
-`private` methods can only be viewed from within the class.
+* `Public` methods can be accessed anywhere within the scope;
+* `protected` methods can only be accessed by derived classes and the methods within the class;
+* `private` methods can only be viewed from within the class.
 
 
 #### Constructor and Destructor
@@ -255,7 +255,7 @@ class circle
 calling:
 
 - when creating an object using another one
-- when acting as an parameter and the function copies it
+- when acting as a parameter and the function copies it
 - when a function that returns an object
 - **not** when assigning value
 
@@ -272,14 +272,15 @@ class classname
         }
 };
 ```
-Reference is a **must**.  
+Reference is a **must**.
+
 `const` ensures that obj is not modified.
 
 #### Object Array
 ```cpp
 classname objname[2] = {1, 2};
 ```
-*parameters of constructor* 
+*parameters of constructor*
 
 #### Constant Object
 ```cpp
@@ -293,14 +294,14 @@ void ClassName::FunctionName() const
     statements
 }
 ```
-cannot change any values and connot access non-static member functions
+cannot change any values and cannot access non-static member functions
 
 calling:
 ```cpp
 const FunctionName();
 ```
 
-#### Conatant Member Variables
+#### Constant Member Variables
 must be initialized in constructor
 
 #### Member Initializers
@@ -337,13 +338,13 @@ Notify that:
 
 - `sizeof()` excludes static members
 - not belonged to any specific object
-- `classname::staticmem` or `obj.mem` 
+- `classname::staticmem` or `obj.mem`
 - must be initialized in the file which contains the definitions of the class
 - initialized outsice the class `int classname::staticvar=0;`
 - cannot access non-static members
 
 #### Operator Overloading
-5 operators that cannot be overloaded: `.  *  ::  sizeof  ?:`  
+5 operators that cannot be overloaded: `.  *  ::  sizeof  ?:`
 
 ```cpp
 //As member function
@@ -418,7 +419,7 @@ A derived class inherits all base methods with the following exceptions:
 - Protected inheritance
     - public -> protected
     - protected -> protected
-- Private inhertance
+- Private inheritance
     - public -> private
     - protected -> private
 
@@ -440,13 +441,13 @@ derived::derived(arglist): base(arglist);
 
 #### Compatibility
 
-In public inhertance, a object/reference/pointer of a derived class can be assigned to a base one.
+In public inheritance, an object/reference/pointer of a derived class can be assigned to a base one.
 
 ### *Polymorphism*
 
 A member of base class can be overloaded. The derived one will be called in default unless `base::` is used.
 
-#### virtual function
+#### Virtual function
 
 Whether a derived or base one to call depends on the type of pointer/reference.
 ```cpp

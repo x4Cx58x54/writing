@@ -19,7 +19,7 @@ PermitRootLogin yes
 PasswordAuthentication yes
 ```
 
-Host Windows and WSL use the same set of port IDs, and Windows has higher priority. To avoid confict, use 2222 as the SSH port ID for WSL.
+Host Windows and WSL use the same set of port IDs, and Windows has higher priority. To avoid conflict, use 2222 as the SSH port ID for WSL.
 
 To start SSH service, run
 

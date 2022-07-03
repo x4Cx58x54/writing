@@ -119,7 +119,7 @@ strcpy(p, buf);
 The implementation behind the interfaces should be hidden from the rest of the program.
 
 **Choose a small orthogonal set of primitives.**  
-The functions provided by an interfaces should not overlap excessively in their capabilities. And use a narrow interface: do one thing and do it well.
+The functions provided by an interface should not overlap excessively in their capabilities. And use a narrow interface: do one thing and do it well.
 
 **Don't reach behind the user's back.**
 
@@ -150,7 +150,7 @@ The functions provided by an interfaces should not overlap excessively in their 
 **Get a stack trace.**
 
 **Read before typing.**  
-Resist the urge to start typing, because chances are that you do not know what's really broken, and will change the wrong thing or even breake other code. Take a break for a while; sometimes what you see in the source code is what you meant rather than what you wrote.
+Resist the urge to start typing, because chances are that you do not know what's really broken, and will change the wrong thing or even break other code. Take a break for a while; sometimes what you see in the source code is what you meant rather than what you wrote.
 
 **Explain your code to someone else.**
 
@@ -158,7 +158,7 @@ Resist the urge to start typing, because chances are that you do not know what's
 
 **Make the bug reproducible.**
 
-**Devide and conquer.**
+**Divide and conquer.**
 
 **Study the numerology of failures.**
 
@@ -201,7 +201,7 @@ Overwriting memory by storing into memory location that isn't used until much la
 
 ## Testing
 
-Debugging is what you do when you know that a program is broken. Testing is a determined, systematic attempt to break a prigram you think is working.
+Debugging is what you do when you know that a program is broken. Testing is a determined, systematic attempt to break a program you think is working.
 
 ### Test as You Write the Code
 
@@ -225,11 +225,11 @@ Testing should go hand in hand with program construction.
 **Know what output to expect.**  
 Make sure there's something to compare with, and if there's an inverse, check if it recovers input.
 
-**Varify conservation properties.**  
-For example, the number of insertions into a data structure minus the number os deletions must equal the number of elements contained.
+**Verify conservation properties.**  
+For example, the number of insertions into a data structure minus the number of deletions must equal the number of elements contained.
 
 **Compare independent implementations.**  
-Write a trivial program to use as slow but indenpendent comparison.
+Write a trivial program to use as slow but independent comparison.
 
 **Measure test coverage.**  
 Make sure that every statement has been executed during the test.
@@ -315,13 +315,13 @@ Often a hot spot in a program is memory allocation, and substantial speedups are
 
 **Buffer input and output.**
 
-**Handle spectial cases separately.**
+**Handle special cases separately.**
 
 **Precompute results.**  
-For example, if a system needs to repeatly compute sine but only for integer degrees, precompute a table and index into it as needed.
+For example, if a system needs to repeatedly compute sine but only for integer degrees, precompute a table and index into it as needed.
 
 **Use approximate values.**  
-If accuracy isn't a issue, use lower-precision data types.
+If accuracy isn't an issue, use lower-precision data types.
 
 **Rewrite in a lower-level language.**
 
@@ -409,7 +409,7 @@ Trouble spots in C and C++ are as follows:
 * Size of data types. They are not accurately defined in the standard.
 * Order of evaluation. The order of evaluation of expressions with side effects and functions arguments is not defined. Don't use side effect except for a very few idiomatic constructions.
 * Signedness of `char`. They are not defined in the standard, so do not compare a `char` with `EOF`.
-* Arithmetic or logical shift. `>>` may be arithmetic or logical righ shift. Never right shift a signed value.
+* Arithmetic or logical shift. `>>` may be arithmetic or logical right shift. Never right shift a signed value.
 * Byte order. Little-endian or big-endian.
 * Alignment of structure and class members. Never assume that the elements of a structure occupy contiguous memory.
 * Bit fields. It's so machine-dependent that no one should use them.
@@ -447,7 +447,7 @@ Binary files need specialized tools and rarely can be used together even on the 
 ### Portability and Upgrade
 
 **Change the name if you change the specification.**  
-One example is `sum` on UNIX, which prints the size and checksum of a file. But the algorithm of `sum` was changed during upgrade, sowhen use `sum` to compute copied files and getting different results on different machines, maybe the file was corrupted or we just have different versions of `sum`, or both. It is the perfect portability disaster.
+One example is `sum` on UNIX, which prints the size and checksum of a file. But the algorithm of `sum` was changed during upgrade, so when use `sum` to compute copied files and getting different results on different machines, maybe the file was corrupted or we just have different versions of `sum`, or both. It is the perfect portability disaster.
 
 **Maintain compatibility with existing programs and data.**
 

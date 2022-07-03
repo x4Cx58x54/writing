@@ -36,12 +36,12 @@
 * `zz` with current line to the center of the screen
 * `zt` with current line to the **top**
 * `zb` with current line to the **bottom**
-* `ctrl-u`  half-page **up**
-* `ctrl-d`  half-page **down**
-* `ctrl-b`  page up (**backwards**)
-* `ctrl-f`  page down (**forwards**)
-* `ctrl-y`  one line up
-* `ctrl-e`  one line down
+* `ctrl-u` half-page **up**
+* `ctrl-d` half-page **down**
+* `ctrl-b` page up (**backwards**)
+* `ctrl-f` page down (**forwards**)
+* `ctrl-y` one line up
+* `ctrl-e` one line down
 * `n%` to n%
 
 ### Jumping
@@ -76,7 +76,7 @@
 * `i` **insert** at current location
 * `I` **insert** at the start of current line
 * `a` **append** after current location
-* `A` **append** after cuttent line
+* `A` **append** after current line
 * `o` **open** a line below current line
 * `O` **open** a line above current line
 * `s` **substitute** char (delete current char and start insert mode)
