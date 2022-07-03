@@ -2303,7 +2303,7 @@ z_1 \\ z_2 \\ \vdots
 <p>Linear independent <span class="arithmatex">\(\Leftrightarrow\)</span> Any one of the vectors is outside the span of the others.</p>
 <h2 id="3-matrices-as-linear-transformations">3 Matrices as Linear Transformations<a class="headerlink" href="#3-matrices-as-linear-transformations" title="Permanent link">&para;</a></h2>
 <p><em>Transformation</em> is a fancy word for function, but it suggests <strong>movement</strong>.</p>
-<p><em>Linear transformation</em>: all straight lines remain straight, and the the origin remains its place.</p>
+<p><em>Linear transformation</em>: all straight lines remain straight, and the origin remains its place.</p>
 <p>In the lingo,</p>
 <div class="arithmatex">\[
 \mathscr{A}(m\mathbf{u}+n\mathbf{v})=m\mathscr{A}(\mathbf{u})+n\mathscr{A}(\mathbf{v}),
@@ -2373,7 +2373,7 @@ a_{12} \\ a_{22}
 \end{bmatrix}.
 \]</div>
 <p>It is the relation between linear transformation and matrix-vector multiplication.</p>
-<p>By recording where the bases land when applying a linear transformation and packaging them into a matrix, we have all the infomation about this transformation.</p>
+<p>By recording where the bases land when applying a linear transformation and packaging them into a matrix, we have all the information about this transformation.</p>
 <p>Starting from a specified matrix, we can imagine what the whole space and all the vectors inside look like after the transformation. Conversely, intuitive knowledge of a transformation itself can be expressed as a matrix.</p>
 <p>Particularly, if <span class="arithmatex">\(\mathscr{A}(\hat{\imath}),\,\mathscr{A}(\hat{\jmath})\)</span> are linearly dependent, the whole 2-D space is squished onto the line where those two vectors sit, a.k.a. the span of them.</p>
 <h2 id="4-matrix-multiplication-as-composition">4 Matrix Multiplication as Composition<a class="headerlink" href="#4-matrix-multiplication-as-composition" title="Permanent link">&para;</a></h2>
@@ -2434,7 +2434,7 @@ b_{12} \\ b_{22}
 \end{aligned}
 \]</div>
 <h2 id="5-the-determinant">5 The Determinant<a class="headerlink" href="#5-the-determinant" title="Permanent link">&para;</a></h2>
-<p>The determinant of a matrix represents in what scale the trasformation squeezes or streches the space.</p>
+<p>The determinant of a matrix represents in what scale the transformation squeezes or stretches the space.</p>
 <ul>
 <li>In 2-D space, the unit square that sits on <span class="arithmatex">\(\hat{\imath}\)</span> and <span class="arithmatex">\(\hat{\jmath}\)</span> is transformed into a parallelogram, with its area equals to the determinant.</li>
 <li>In 3-D space, the unit cube that sits on <span class="arithmatex">\(\hat{\imath}\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> and <span class="arithmatex">\(\hat{k}\)</span> transforms into a parallelepiped, with its volume equals to the determinant.</li>
@@ -2772,7 +2772,7 @@ A\mathbf{v}=\lambda\mathbf{v},
 \det(A-\lambda I)=0.
 \]</div>
 <p>Solve this equation, and if an eigenvector exists, all the vectors on the line spanned by it would be eigenvectors too.</p>
-<p>When all the basis vecetors happen to be eigenvectors, they are called eigenbases, and the corresponding transformation matrix would be diagonal. Therefore a way to interpret a diagonal matrix is that all the bases are eigenvectors, with the diagonal entries of this matrix being their eigenvalues.</p>
+<p>When all the basis vectors happen to be eigenvectors, they are called eigenbases, and the corresponding transformation matrix would be diagonal. Therefore a way to interpret a diagonal matrix is that all the bases are eigenvectors, with the diagonal entries of this matrix being their eigenvalues.</p>
 <p>A diagonal matrix has a nice property that</p>
 <div class="arithmatex">\[
 \begin{bmatrix}
@@ -2802,7 +2802,7 @@ A=
 \big],
 \]</div>
 <p>where <span class="arithmatex">\(\mathbf{v}_i\)</span> are the eigenvectors.</p>
-<p>Matrix <span class="arithmatex">\(A^{-1}MA\)</span> would express the same transformation in the eigenbasis coordinate system, and it is guarenteed to be diagonal with its corresponding eigenvalues down that diagonal, because the vectors are only scaled from the perspective of that coordinate system.</p>
+<p>Matrix <span class="arithmatex">\(A^{-1}MA\)</span> would express the same transformation in the eigenbasis coordinate system, and it is guaranteed to be diagonal with its corresponding eigenvalues down that diagonal, because the vectors are only scaled from the perspective of that coordinate system.</p>
 <p>When raising a non-diagonal matrix to some power, first change it into its eigenbases, and then compute that power in the new system, then convert back to the original system.</p>
 <p>When a matrix does not have enough eigenvectors to span the full space, this approach fails to work.</p>
 <h2 id="11-abstract-vector-spaces">11 Abstract Vector Spaces<a class="headerlink" href="#11-abstract-vector-spaces" title="Permanent link">&para;</a></h2>
@@ -2812,7 +2812,7 @@ A=
 (f+g)(x)=f(x)+g(x),
 \]</div>
 <p>the concept of vectors can be expanded to functions.</p>
-<p>The derivative is a example of linear transformation (function) of a function, because it is linear,</p>
+<p>The derivative is an example of linear transformation (function) of a function, because it is linear,</p>
 <div class="arithmatex">\[
 \frac{\text{d}}{\text{d}x}(\lambda f)=
 \lambda \frac{\text{d}}{\text{d}x}f,
@@ -2880,7 +2880,7 @@ a_0 \\ a_1 \\ a_2 \\ a_3 \\ \vdots
 1a_1+2a_2x+3a_3x^2+4a_4x^3+\cdots.
 \end{aligned}
 \]</div>
-<p>Almost all linear algebra concepts have their alternate names when applied to functions: </p>
+<p>Almost all linear algebra concepts have their alternate names when applied to functions:</p>
 <div class="arithmatex">\[
 \begin{aligned}
 \text{Linear transformations} &amp; \longleftrightarrow \text{Linear operators}\\

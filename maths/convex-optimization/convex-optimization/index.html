@@ -2153,7 +2153,7 @@
 <p>A <strong>polyhedron</strong> is <span class="arithmatex">\(\{x \mid a_i^\top x \le b_i, c_i^\top x = d_i\}\)</span>, including all affine sets, rays, segments, halfspaces, hyperplanes and all their intersections.</p>
 <p><span class="arithmatex">\(k+1\)</span> points <span class="arithmatex">\(\{v_0, v_1, \cdots, v_k\}\)</span> are <strong>affinely independent</strong> iff <span class="arithmatex">\(\{v_1-v_0, v_2-v0, \cdots, v_k - v_0\}\)</span> is linearly independent.</p>
 <p><strong>Simplexes</strong> are a family of polyhedra, and a <span class="arithmatex">\(k\)</span>-dimentional simplex is the convex hull of <span class="arithmatex">\(k+1\)</span> affinely independent points.</p>
-<p>Operations that perserves convexity of a set includes:</p>
+<p>Operations that perserve convexity of a set includes:</p>
 <ul>
 <li>intersection,</li>
 <li>affine function and its inverse,</li>
@@ -2177,7 +2177,7 @@
 <p>Any sublevel set of a convex function is convex, and any superlevel set of a concave function is convex.</p>
 <p>The <strong>epigraph</strong> of <span class="arithmatex">\(f\)</span> is <span class="arithmatex">\(\operatorname{\mathbf{epi}}f = \{(x, t) \mid t \ge f(x), x \in \operatorname{\mathbf{dom}}f\}\)</span>, and the <strong>hypograph</strong> is defined likewise.</p>
 <p><span class="arithmatex">\(f\)</span> is convex iff <span class="arithmatex">\(\operatorname{\mathbf{epi}}f\)</span> is convex.</p>
-<p>Operations that preserves convexity of a function <span class="arithmatex">\(f\)</span> includes:</p>
+<p>Operations that preserve convexity of a function <span class="arithmatex">\(f\)</span> includes:</p>
 <ul>
 <li>nonnegative weighted sum,</li>
 <li>composition with an affine function, <span class="arithmatex">\(f(Ax + b)\)</span>,</li>
@@ -2205,7 +2205,7 @@
 &amp; h_i(x) = 0, \quad i = 1, 2, \cdots, p.
 \end{aligned}
 \]</div>
-<p>A <strong>convex optimization problem</strong> is a minimization problem with the objective function and inequality contraints are convex, and equality constraints are affine.</p>
+<p>A <strong>convex optimization problem</strong> is a minimization problem with the objective function and inequality constraints are convex, and equality constraints are affine.</p>
 <p><strong>Optimality criterion</strong> for differentiable objective functions: <span class="arithmatex">\(x_0\)</span> is optimal iff <span class="arithmatex">\(\nabla f_0(x_0)^\top (y-x) \ge 0\)</span> for all <span class="arithmatex">\(y\)</span> in feasible set.</p>
 <h2 id="duality">Duality<a class="headerlink" href="#duality" title="Permanent link">&para;</a></h2>
 <p><strong>Lagrange function</strong> <span class="arithmatex">\(L(x, \lambda, \nu) = f_0(x) + \sum \lambda_i f_i(x) + \sum \nu_i h_i(x)\)</span>.</p>
@@ -2232,7 +2232,7 @@ h_i(x^*) = 0&amp; \text{ (primal problem constraints)},\\
 \end{aligned}
 \]</div>
 <p>For any optimization problem with differentiable objective and constraint functions for which strong duality obtains, any primal optimal and dual optimal points must satisfy KKT conditions, that is, KKT conditions are necessary for optimality.</p>
-<p>For any convex optimization problem, any pair of points that satify KKT conditions are primal optimal and dual optimal, that is, KKT conditions are sufficient for optimality.</p>
+<p>For any convex optimization problem, any pair of points that satisfy KKT conditions are primal optimal and dual optimal, that is, KKT conditions are sufficient for optimality.</p>
                 
               
               
