@@ -34,7 +34,7 @@ $k+1$ points $\{v_0, v_1, \cdots, v_k\}$ are **affinely independent** iff $\{v_1
 
 **Simplexes** are a family of polyhedra, and a $k$-dimentional simplex is the convex hull of $k+1$ affinely independent points.
 
-Operations that perserves convexity of a set includes:
+Operations that perserve convexity of a set includes:
 
 * intersection,
 * affine function and its inverse,
@@ -72,7 +72,7 @@ The **epigraph** of $f$ is $\operatorname{\mathbf{epi}}f = \{(x, t) \mid t \ge f
 
 $f$ is convex iff $\operatorname{\mathbf{epi}}f$ is convex.
 
-Operations that preserves convexity of a function $f$ includes:
+Operations that preserve convexity of a function $f$ includes:
 
 * nonnegative weighted sum,
 * composition with an affine function, $f(Ax + b)$,
@@ -107,7 +107,7 @@ $$
 \end{aligned}
 $$
 
-A **convex optimization problem** is a minimization problem with the objective function and inequality contraints are convex, and equality constraints are affine.
+A **convex optimization problem** is a minimization problem with the objective function and inequality constraints are convex, and equality constraints are affine.
 
 **Optimality criterion** for differentiable objective functions: $x_0$ is optimal iff $\nabla f_0(x_0)^\top (y-x) \ge 0$ for all $y$ in feasible set.
 
@@ -148,4 +148,4 @@ $$
 
 For any optimization problem with differentiable objective and constraint functions for which strong duality obtains, any primal optimal and dual optimal points must satisfy KKT conditions, that is, KKT conditions are necessary for optimality.
 
-For any convex optimization problem, any pair of points that satify KKT conditions are primal optimal and dual optimal, that is, KKT conditions are sufficient for optimality.
+For any convex optimization problem, any pair of points that satisfy KKT conditions are primal optimal and dual optimal, that is, KKT conditions are sufficient for optimality.

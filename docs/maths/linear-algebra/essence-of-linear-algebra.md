@@ -25,7 +25,7 @@ Linear independent $\Leftrightarrow$ Any one of the vectors is outside the span 
 
 *Transformation* is a fancy word for function, but it suggests **movement**.
 
-*Linear transformation*: all straight lines remain straight, and the the origin remains its place.
+*Linear transformation*: all straight lines remain straight, and the origin remains its place.
 
 In the lingo,
 
@@ -109,7 +109,7 @@ $$
 
 It is the relation between linear transformation and matrix-vector multiplication.
 
-By recording where the bases land when applying a linear transformation and packaging them into a matrix, we have all the infomation about this transformation.
+By recording where the bases land when applying a linear transformation and packaging them into a matrix, we have all the information about this transformation.
 
 Starting from a specified matrix, we can imagine what the whole space and all the vectors inside look like after the transformation. Conversely, intuitive knowledge of a transformation itself can be expressed as a matrix.
 
@@ -183,7 +183,7 @@ $$
 
 ## 5 The Determinant
 
-The determinant of a matrix represents in what scale the trasformation squeezes or streches the space.
+The determinant of a matrix represents in what scale the transformation squeezes or stretches the space.
 
 * In 2-D space, the unit square that sits on $\hat{\imath}$ and $\hat{\jmath}$ is transformed into a parallelogram, with its area equals to the determinant.
 * In 3-D space, the unit cube that sits on $\hat{\imath}$, $\hat{\jmath}$ and $\hat{k}$ transforms into a parallelepiped, with its volume equals to the determinant.
@@ -632,7 +632,7 @@ $$
 
 Solve this equation, and if an eigenvector exists, all the vectors on the line spanned by it would be eigenvectors too.
 
-When all the basis vecetors happen to be eigenvectors, they are called eigenbases, and the corresponding transformation matrix would be diagonal. Therefore a way to interpret a diagonal matrix is that all the bases are eigenvectors, with the diagonal entries of this matrix being their eigenvalues.
+When all the basis vectors happen to be eigenvectors, they are called eigenbases, and the corresponding transformation matrix would be diagonal. Therefore a way to interpret a diagonal matrix is that all the bases are eigenvectors, with the diagonal entries of this matrix being their eigenvalues.
 
 A diagonal matrix has a nice property that
 
@@ -668,7 +668,7 @@ $$
 
 where $\mathbf{v}_i$ are the eigenvectors.
 
-Matrix $A^{-1}MA$ would express the same transformation in the eigenbasis coordinate system, and it is guarenteed to be diagonal with its corresponding eigenvalues down that diagonal, because the vectors are only scaled from the perspective of that coordinate system.
+Matrix $A^{-1}MA$ would express the same transformation in the eigenbasis coordinate system, and it is guaranteed to be diagonal with its corresponding eigenvalues down that diagonal, because the vectors are only scaled from the perspective of that coordinate system.
 
 When raising a non-diagonal matrix to some power, first change it into its eigenbases, and then compute that power in the new system, then convert back to the original system.
 
@@ -685,7 +685,7 @@ $$
 
 the concept of vectors can be expanded to functions.
 
-The derivative is a example of linear transformation (function) of a function, because it is linear,
+The derivative is an example of linear transformation (function) of a function, because it is linear,
 
 $$
 \frac{\text{d}}{\text{d}x}(\lambda f)=
@@ -768,7 +768,7 @@ a_0 \\ a_1 \\ a_2 \\ a_3 \\ \vdots
 \end{aligned}
 $$
 
-Almost all linear algebra concepts have their alternate names when applied to functions: 
+Almost all linear algebra concepts have their alternate names when applied to functions:
 
 $$
 \begin{aligned}
