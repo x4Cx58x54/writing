@@ -116,8 +116,11 @@ nav:
     - Scribbles: scribbles/index.md
     - Automobile:
       - scribbles/automobile/wheel-alignment.md
-    - Calculus:
-      - scribbles/calculus/jacobian-matrix.md
+    - Maths:
+      - scribbles/maths/jacobian-matrix.md
+      - scribbles/maths/chebyshev-center.md
+    - CUDA:
+      - scribbles/cuda/cuda-basics.md
     - OpenCV:
       - scribbles/opencv/opencv-basics.md
     - PyTorch:
