@@ -168,8 +168,3 @@ markdown_extensions:
   - pymdownx.superfences
   - markdown.extensions.sane_lists
   - attr_list
-
-
-google_analytics:
-  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_TRACKING_ID"]
-  - auto
