@@ -1,5 +1,5 @@
-// KaTeX Rendering
-document.addEventListener('DOMContentLoaded', function() {
+// Render KaTeX, supports instant mode
+document$.subscribe(() => {
   renderMathInElement(document.body, {
     delimiters: [
       {left: '$', right: '$', display: false},
@@ -8,4 +8,4 @@ document.addEventListener('DOMContentLoaded', function() {
       {left: '\\[', right: '\\]', display: true},
     ]
   });
-});
+})
