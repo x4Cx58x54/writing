@@ -1,5 +1,5 @@
 ---
-title: Randomish Writing
+title:
 hide:
   - navigation
   - toc
