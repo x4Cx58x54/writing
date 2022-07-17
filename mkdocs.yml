@@ -12,11 +12,13 @@ theme:
   font: false
   favicon: none
   icon:
-    logo: fontawesome/solid/terminal
+    logo: material/text-short
+    # logo: fontawesome/solid/terminal
     repo: fontawesome/brands/git-alt
   features:
-    - tabs
-    # - instant
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.instant
 
 
 copyright: 'Copyright &copy; 2017 - 2022 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
@@ -113,7 +115,7 @@ nav:
       - 惊人的假说: reading-notes/惊人的假说.md
       - 未来简史: reading-notes/未来简史：从智人到智神.md
   - Scribbles:
-    - Scribbles: scribbles/index.md
+    - scribbles/index.md
     - Automobile:
       - scribbles/automobile/wheel-alignment.md
     - Maths:
@@ -129,12 +131,16 @@ nav:
 
 plugins:
   - macros
+  - tags
 
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/x4Cx58x54
+  analytics:
+    provider: google
+    property: ${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}
 
 
 extra_css:
@@ -156,6 +162,7 @@ markdown_extensions:
       guess_lang: false
   - footnotes
   - meta
+  - tables
   - toc:
       permalink: true
       toc_depth: 3
@@ -168,3 +175,4 @@ markdown_extensions:
   - pymdownx.superfences
   - markdown.extensions.sane_lists
   - attr_list
+  - md_in_html

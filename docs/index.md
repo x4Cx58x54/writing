@@ -1,5 +1,8 @@
 ---
 title: Randomish Writing
+hide:
+  - navigation
+  - toc
 ---
 
 <style>
@@ -11,25 +14,35 @@ title: Randomish Writing
     display: none;
   }
   .title {
-    font-size: 1.8rem !important;
-    line-height: 1.9 !important;
-    margin-top: 3rem !important;
-    margin-bottom: 5rem !important;
+    font-size: 2rem !important;
+    line-height: 1.75 !important;
+    margin-top: 5rem !important;
+    margin-bottom: 7rem !important;
   }
-  @media screen and (min-width:60em) {
-    .md-sidebar--secondary {
-      display: none;
-    }
-    .title {
-      font-size: 2rem !important;
-      margin-top: 5rem !important;
-      margin-bottom: 7rem !important;
-    }
+  :root {
+    --indigo-color: hsla(231deg, 48%, 48%, 1);
   }
-  @media screen and (min-width:76.25em) {
-    .md-sidebar--primary, .button-sep {
-      display: none;
-    }
+  .md-button {
+      background-color: var(--md-accent-bg-color) !important;
+      border-color: var(--indigo-color) !important;
+      color: var(--indigo-color) !important;
+  }
+  .md-button:focus,
+  .md-button:hover {
+      background-color: var(--md-accent-fg-color) !important;
+      border-color: var(--md-accent-fg-color) !important;
+      color: var(--md-accent-bg-color) !important;
+  }
+  .md-button--primary {
+      background-color: var(--indigo-color) !important;
+      border-color: var(--indigo-color) !important;
+      color: var(--md-accent-bg-color) !important;
+  }
+  .md-button--primary:focus,
+  .md-button--primary:hover {
+      background-color: var(--md-accent-fg-color) !important;
+      border-color: var(--md-accent-fg-color) !important;
+      color: var(--md-accent-bg-color) !important;
   }
 </style>
 
@@ -41,10 +54,9 @@ window.onload = function() {
   var navigation = `{{ navigation }}`;
   navigation = navigation.replace("Page(title='Welcome', url='/')\n", '');
   navigation = navigation.replace(/Section\(title='([^']*)'\)$/gm, '$1:');
-  navigation = navigation.replace(/Page\(title='([^']*)', url='([^']*)'\)$/gm, '$1: $2');
+  navigation = navigation.replace(/Page\(title=['\[]([^'\]]*)['\]], url='([^']*)'\)$/gm, '$2: $2');
 
   var navJson = jsyaml.load(navigation);
-
   delete navJson['Misc']['Reading Notes']
 
   // traverse through the json tree

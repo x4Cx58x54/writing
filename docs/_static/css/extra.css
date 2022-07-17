@@ -34,3 +34,12 @@ td {
 .md-footer {
   background-color: #202020;
 }
+
+.md-typeset .footnote-ref {
+  font-weight: normal;
+}
+
+/* prevent KaTeX justificated right */
+a.md-nav__link {
+  justify-content: inherit;
+}
