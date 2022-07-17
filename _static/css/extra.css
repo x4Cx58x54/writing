@@ -43,3 +43,7 @@ td {
 a.md-nav__link {
   justify-content: inherit;
 }
+
+.md-ellipsis {
+  font-weight: 500;
+}
