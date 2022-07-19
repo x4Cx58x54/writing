@@ -18,7 +18,7 @@ pre, code, kbd {
 }
 
 .katex-display {
-  margin: 0;
+  margin: 0 !important;
 }
 
 /* Align all images at the center */
@@ -46,4 +46,8 @@ td {
 /* prevent KaTeX justificated right */
 a.md-nav__link {
   justify-content: inherit;
+}
+
+.md-ellipsis {
+  font-weight: 500 !important;
 }
