@@ -36,6 +36,7 @@ nav:
         - Events and Probability: maths/probability-theory/events-and-probability.md
         - Random Variables: maths/probability-theory/random-variables.md
     - Statistics: maths/statistics/statistics.md
+    - Elements of Information Theory: maths/elements-of-information-theory/elements-of-information-theory.md
     - Matrix Algebra: maths/matrix-algebra/matrix-algebra.md
     - Discrete Maths: maths/discrete-maths/discrete-maths.md
     - Calculus: maths/calculus/calculus.md

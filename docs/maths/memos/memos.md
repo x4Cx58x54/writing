@@ -2,6 +2,9 @@
 
 ## 三角函数
 
+[Trigonometric Functions with Their Formulas](https://trigidentities.net/trigonometric-functions-with-formulas/){: target=_blank}
+
+
 #### 和差化积
 
 $$
