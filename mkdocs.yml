@@ -118,16 +118,18 @@ nav:
   - Scribbles:
     - scribbles/index.md
     - Automobile:
-      - scribbles/automobile/wheel-alignment.md
-    - Maths:
-      - scribbles/maths/jacobian-matrix.md
-      - scribbles/maths/chebyshev-center.md
+      - Wheel Alignment: scribbles/automobile/wheel-alignment.md
     - CUDA:
-      - scribbles/cuda/cuda-basics.md
+      - CUDA Basics: scribbles/cuda/cuda-basics.md
+    - Maths:
+      - Jacobian Matrix: scribbles/maths/jacobian-matrix.md
+      - Chebyshev Center: scribbles/maths/chebyshev-center.md
     - OpenCV:
-      - scribbles/opencv/opencv-basics.md
+      - OpenCV Basics: scribbles/opencv/opencv-basics.md
+    - Python:
+      - Python Type Hints: scribbles/python/python-type-hints.md
     - PyTorch:
-      - scribbles/pytorch/pytorch-gpu-management.md
+      - PyTorch GPU Management: scribbles/pytorch/pytorch-gpu-management.md
 
 
 plugins:
@@ -175,5 +177,7 @@ markdown_extensions:
   - pymdownx.extra
   - pymdownx.superfences
   - markdown.extensions.sane_lists
+  - pymdownx.tabbed:
+      alternate_style: true 
   - attr_list
   - md_in_html
