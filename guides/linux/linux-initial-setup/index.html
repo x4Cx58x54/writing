@@ -1949,6 +1949,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7_3">
@@ -1962,6 +1964,20 @@
           Networking
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/remote-access-and-port-forwarding/" class="md-nav__link">
+        Remote Access and Port Forwarding
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -2767,13 +2783,19 @@
 <h1 id="linux-initial-setup">Linux Initial Setup<a class="headerlink" href="#linux-initial-setup" title="Permanent link">&para;</a></h1>
 <h2 id="add-user">Add User<a class="headerlink" href="#add-user" title="Permanent link">&para;</a></h2>
 <h4 id="1-add-user-and-set-password">1) Add user and set password<a class="headerlink" href="#1-add-user-and-set-password" title="Permanent link">&para;</a></h4>
-<p>CentOS:
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ubuntu</label><label for="__tabbed_1_2">CentOS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>adduser username
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>useradd username
 passwd username
-</code></pre></div></p>
-<p>Ubuntu:
-<div class="highlight"><pre><span></span><code>adduser username
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <h4 id="2-add-to-sudoers">2) Add to sudoers<a class="headerlink" href="#2-add-to-sudoers" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>visudo
 </code></pre></div>
@@ -2786,9 +2808,18 @@ passwd username
 This will apply to all users after reboot.</p>
 <h2 id="install-zsh-and-oh-my-zsh">Install Zsh and Oh-My-Zsh<a class="headerlink" href="#install-zsh-and-oh-my-zsh" title="Permanent link">&para;</a></h2>
 <h4 id="1-install-zsh">1) Install Zsh<a class="headerlink" href="#1-install-zsh" title="Permanent link">&para;</a></h4>
-<p>CentOS:
-<div class="highlight"><pre><span></span><code>yum install zsh
-</code></pre></div></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ubuntu</label><label for="__tabbed_2_2">CentOS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>sudo apt install zsh
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>sudo yum install zsh
+</code></pre></div>
+</div>
+</div>
+</div>
 <p>Change default shell.
 <div class="highlight"><pre><span></span><code>chsh -s /bin/zsh
 </code></pre></div></p>
@@ -2839,14 +2870,20 @@ let g:ycm_auto_trigger = 0  &quot; disable YCM
 <p>Copy the vim configuration file <a href="https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.vimrc" target="_blank">.vimrc</a> to <code>.vimrc</code>.</p>
 <h2 id="setup-python-3x">Setup Python 3.x<a class="headerlink" href="#setup-python-3x" title="Permanent link">&para;</a></h2>
 <h4 id="1-install-python-3x-and-pip">1) Install Python 3.x and PIP<a class="headerlink" href="#1-install-python-3x-and-pip" title="Permanent link">&para;</a></h4>
-<p>CentOS:
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Ubuntu</label><label for="__tabbed_3_2">CentOS</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>sudo apt install python3-pip
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>sudo yum install python3
 sudo yum install epel-release
 sudo yum install python3-pip
-</code></pre></div></p>
-<p>Ubuntu:
-<div class="highlight"><pre><span></span><code>sudo apt install python3-pip
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</div>
 <p>Python is installed in Ubuntu by default.</p>
 <h4 id="2-replace-pip-source-to-tsinghua-mirror">2) Replace PIP source to Tsinghua mirror<a class="headerlink" href="#2-replace-pip-source-to-tsinghua-mirror" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>sudo pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
