@@ -100,6 +100,7 @@ nav:
       - Tmux: guides/linux-tools/tmux.md
       - Vim: guides/linux-tools/vim.md
     - Networking:
+      - Remote Access and Port Forwarding: guides/networking/remote-access-and-port-forwarding.md
       - SSH through NAT: guides/networking/ssh-through-nat.md
   - Misc:
     - Electromagnetics:
@@ -178,6 +179,6 @@ markdown_extensions:
   - pymdownx.superfences
   - markdown.extensions.sane_lists
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - attr_list
   - md_in_html

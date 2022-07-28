@@ -5,16 +5,16 @@
 
 #### 1) Add user and set password
 
-CentOS:
-```
-useradd username
-passwd username
-```
+=== "Ubuntu"
+    ```
+    adduser username
+    ```
 
-Ubuntu:
-```
-adduser username
-```
+=== "CentOS"
+    ```
+    useradd username
+    passwd username
+    ```
 
 #### 2) Add to sudoers
 
@@ -39,10 +39,15 @@ This will apply to all users after reboot.
 
 #### 1) Install Zsh
 
-CentOS:
-```
-yum install zsh
-```
+=== "Ubuntu"
+    ```
+    sudo apt install zsh
+    ```
+
+=== "CentOS"
+    ```
+    sudo yum install zsh
+    ```
 
 Change default shell.
 ```
@@ -134,17 +139,16 @@ Copy the vim configuration file [.vimrc](https://raw.githubusercontent.com/x4Cx5
 
 #### 1) Install Python 3.x and PIP
 
-CentOS:
-```
-sudo yum install python3
-sudo yum install epel-release
-sudo yum install python3-pip
-```
-
-Ubuntu:
-```
-sudo apt install python3-pip
-```
+=== "Ubuntu"
+    ```
+    sudo apt install python3-pip
+    ```
+=== "CentOS"
+    ```
+    sudo yum install python3
+    sudo yum install epel-release
+    sudo yum install python3-pip
+    ```
 
 Python is installed in Ubuntu by default.
 
