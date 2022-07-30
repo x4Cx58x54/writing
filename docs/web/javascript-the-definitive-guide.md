@@ -17,7 +17,7 @@
 
 ### Character set
 
-Javascript supports unicode. They can be typed to the code directly or use `\uxxxx`.
+JavaScript supports Unicode. They can be typed to the code directly or use `\uxxxx`.
 
 JS is case-sensitive.
 
@@ -132,7 +132,7 @@ The naming rules are very similar to that in C language, but identifiers in Java
 
 ### Semicolon
 
-Semicolons are optional. JavaScript treat a line break as a semicolon only when it can't parse the code without it. 
+Semicolons are optional. JavaScript treats a line break as a semicolon only when it can't parse the code without it.
 ```js
 var y = x + f
 ;(a+b).toString() // Defensive semicolon
@@ -162,8 +162,7 @@ JavaScript uses **lexical scoping**. Variables declared inside a function scope 
 
 JS 并不严格区分整数和浮点数，它们都用 64 位浮点数来表示，范围和精度分别是约 $\pm1.8\times10^{308}$ 和 $\pm5\times10^{324}$。可以精确表示 $\pm2^{53}$ 内的整数，超出范围可能会导致小数点后的偏差。
 
-整数可以直接用十进制表示，十六进制用 `0x` 开头表示（大小写均可）。  
-但是有些版本的 JS 可以用 0 开头表示八进制，有些不支持，所以有时候根本不知道这是八进制还是十进制。严格 ECMAScript 5 禁止使用这种表示法。  
+整数可以直接用十进制表示，十六进制用 `0x` 开头表示（大小写均可）。但是有些版本的 JS 可以用 0 开头表示八进制，有些不支持，所以有时候根本不知道这是八进制还是十进制。严格 ECMAScript 5 禁止使用这种表示法。
 
 整数部分为 0 的浮点数可以直接以小数点开头。科学计数法用 `E` 表示，和 C 语言一样。
 
@@ -188,7 +187,8 @@ Math.log(x)/Math.LN2
 Math.exp(x)
 ```
 
-如果运算超过了范围，JS 不会报错，而是将它们表示为 `Infinity` 或者是 `-Infinity`，被零除或者 `Infinity` 加上一个正数都属于这种情况。但是有趣的是，`0` 和 `-0` 是相等的，但是被它们除分别得到正负的无限，即不相等。若是零被零除，这个未定义的值则会显示为 `NaN`，Not A Number。  
+如果运算超过了范围，JS 不会报错，而是将它们表示为 `Infinity` 或者是 `-Infinity`，被零除或者 `Infinity` 加上一个正数都属于这种情况。但是有趣的是，`0` 和 `-0` 是相等的，但是被它们除分别得到正负的无限，即不相等。若是零被零除，这个未定义的值则会显示为 `NaN`，Not A Number。
+
 除了直接逻辑判断，还可以用 `IsNaN(x)` 和 `IsFinite()` 来判别。
 
 JS 中浮点数是二进制表示的，即可以精确表示 1/2、1/4，但是 0.1 却不行。0.3-0.2 和 0.2-0.1 不一定等于 0.1，甚至它们两个本身都不相等。
@@ -279,9 +279,9 @@ t.split(p)
 
 ### `null` and `undefined`
 
-`null` indicates some kind of abcense of value. It is a special object.
+`null` indicates some kind of absence of value. It is a special object.
 
-`undefined` is a deeper kind of absence. It is the value of something not exists, and it is returned by a function without an return value. Applying `typeof` on `undefined` will get `undefined`.
+`undefined` is a deeper kind of absence. It is the value of something not exists, and it is returned by a function without a return value. Applying `typeof` on `undefined` will get `undefined`.
 
 `==` consider them equal but `===` does not. `undefined` conveys something unexpected and erroneous. `null` is a better choice to assigning a 'no-value' to a variable.
 
@@ -305,9 +305,9 @@ var b = new Boolean(boo);
 ```
 
 ### Primitives and Mutables
-Primitive values are **immutable**, including `undefined`, `null`, booleans, numbers and strings, while objects are mutable, includeing arrays and functions.
+Primitive values are **immutable**, including `undefined`, `null`, booleans, numbers and strings, while objects are mutable, including arrays and functions.
 
-There is no way to mutate primitive values, and they are compared by value. Objects are different, they are compared by reference, that is, two object are equal only when they refer to the same object.
+There is no way to mutate primitive values, and they are compared by value. Objects are different, they are compared by reference, that is, two objects are equal only when they refer to the same object.
 
 ### Type Conversions
 ![](./img/typeconversion.png){: width=600px}
@@ -342,7 +342,8 @@ x + ""
 !!x
 ```
 
-从数到字符串的转换是在十进制下的。而可以加入参数 `toString(x)`，转换得到 x 进制（2 至 36）的字符串（无前缀）。  
+从数到字符串的转换是在十进制下的。而可以加入参数 `toString(x)`，转换得到 x 进制（2 至 36）的字符串（无前缀）。
+
 十进制数还有以下操作：
 ```js
 n.toFixed(x);       // 固定位小数
@@ -355,7 +356,7 @@ Parsing string into numbers:
 parseInt('3 objects');  // => 3
 parseFloat(' 1.72 x');  // => 1.72
 ```
-These two functions ignores leading whitespaces. Illegal leading characters like '.' and '$' will produce a `NaN`. Leading `0x` indicates hexademical and the number is converted into 10-base.
+These two functions ignores leading whitespaces. Illegal leading characters like '.' and '$' will produce a `NaN`. Leading `0x` indicates hexadecimal and the number is converted into 10-base.
 
 `parseInt()` accepts an optional second argument specifying the radix of the number to be parsed.
 
@@ -379,12 +380,13 @@ new Date(2010,0,1).toString()       // => "Fri Jan 01 2010 00:00:00 GMT-0800 (PS
 new Date(2010, 0, 1).valueOf()      // => 1262332800000 (ms since 1970/1/1)
 ```
 
-转换为字符串时，先调用 `toString()`，如果失败则调用 `valurOf()` 并转为字符串，如果仍失败则 `TypeError`。  
+转换为字符串时，先调用 `toString()`，如果失败则调用 `valurOf()` 并转为字符串，如果仍失败则 `TypeError`。
+
 转换为数则是将两个方法的顺序调换。
 
 `+`, `==`, `!=` and the relational operators are the ones that perform object-to-primitive conversions, while others convert more explicitly to a special type.
 
-### Varible Delcaration
+### Variable Declaration
 
 ```js
 var i;
@@ -400,7 +402,7 @@ for(var i=0, j=1; i<10; i++) console.log(i);
 
 重复的变量声明将被视为普通的赋值语句。
 
-In strict ECMAScript 5, it is illigal to assign a value to an undelared variable, but you can get away with it by not using strict ES5. In this case, the interpreter will create this variable as a property of the global object.
+In strict ECMAScript 5, it is illegal to assign a value to an undeclared variable, but you can get away with it by not using strict ES5. In this case, the interpreter will create this variable as a property of the global object.
 
 作为 global object 属性的变量是可删除的，而普通变量不可删除。
 ```js
@@ -414,8 +416,7 @@ delete this.fakevar;
 
 全局变量可以与局部变量重名，在局部变量作用域内，同名全局变量相当于被隐藏。
 
-不同于 C 的是，JS 没有所谓的 ‘block scope’，即一对花括号之间的范围作为一个作用域。在 JS 中，只有函数能作为局部作用域。一个函数当中声明的变量的作用域就是这个函数。  
-这样就产生了一个奇怪的特性：在函数中声明一个变量可以在声明之前调用，返回的是 `undefined` 而不会报错。
+不同于 C 的是，JS 没有所谓的 ‘block scope’，即一对花括号之间的范围作为一个作用域。在 JS 中，只有函数能作为局部作用域。一个函数当中声明的变量的作用域就是这个函数。这样就产生了一个奇怪的特性：在函数中声明一个变量可以在声明之前调用，返回的是 `undefined` 而不会报错。
 
 ## Expressions
 
@@ -427,15 +428,16 @@ delete this.fakevar;
 
 ### Initializers
 
-* Array initializers:  
-Empty array `[]`  
-Expressions `[1+2, 3+4]`  
-With `undefined` as entries `[1,,,,5]` == `[1,,,,5,]`
+* Array initializers:
+    * Empty array `[]`
+    * Expressions `[1+2, 3+4]`
+    * With `undefined` as entries `[1,,,,5]` == `[1,,,,5,]`
 
-* Object initializers:  
-`{x:1, y:2}`  
-The value may be any expression, and it can be nested.  
-Property names can be identifiers or strings. 
+* Object initializers:
+    * `{x:1, y:2}`
+
+The value may be any expression, and it can be nested.
+Property names can be identifiers or strings.
 
 ### Property Access Expressions
 
@@ -447,23 +449,27 @@ Property names can be identifiers or strings.
 ### Invocation
 ### Object Creation
 
-`new Point(1, 1.4)`  
+`new Point(1, 1.4)`
 
-If no argument is passed to the constructor, the parentheses can be omitted.  
+If no argument is passed to the constructor, the parentheses can be omitted.
+
 `new Date`
 
 ## Operators
 
-In this table, 'A' stands for associativity, which can be L (left-to-right) or R (right-to-left). 'N' specifies the numver of operands. The table is orgaized by operator precedence. 水平分割线之前的运算符优先级高于之后的。
+In this table, 'A' stands for associativity, which can be L (left-to-right) or R (right-to-left). 'N' specifies the number of operands. The table is organized by operator precedence. 水平分割线之前的运算符优先级高于之后的。
 
 ![](./img/operators.png){: width=570px}
 
 If the operand is not one that the operator expects, it will be converted into one.
 
-Left-to-right associativity:  
-`w = x - y - z` $\Longleftrightarrow$ `w = (x - y) - z`   
-Right-to-left associativity:  
-`w = x = y = z` $\Longleftrightarrow$ `w = (x = (y = z))`  
+Left-to-right associativity:
+
+`w = x - y - z` $\Longleftrightarrow$ `w = (x - y) - z`
+Right-to-left associativity:
+
+`w = x = y = z` $\Longleftrightarrow$ `w = (x = (y = z))`
+
 `a?b:c?d:e?f:g` $\Longleftrightarrow$ `a?b:(c?d:(e?f:g))`
 
 #### Binary `+` Operator
@@ -475,8 +481,9 @@ true + true // => 2
 ```
 
 #### Unary `+`, `-` Operator
-`+` 将操作数转换为数类型。  
-`-` 先转换为数，再变号。
+
+* `+` 将操作数转换为数类型。
+* `-` 先转换为数，再变号。
 
 #### Identical and Equality
 
@@ -518,7 +525,7 @@ var data = [7,8];    // An array with elements 0 and 1
 
 逻辑运算符 `&&`、`||` 和 `!` 并不要求操作数是布尔值，若不是，则先转换为布尔值。
 
-For AND (`&&`), if the left operand if falsy, the right operand WON'T be evaluated.
+For AND (`&&`), if the left operand is false, the right operand WON'T be evaluated.
 ```js
 if (a == b) foo();
 (a == b) && foo();  // They do the same thing!
@@ -552,10 +559,10 @@ Note that `typeof(null)` returns "object", and `typeof(NaN)` returns "number".
 `delete` 可被用于删除对象或者是数组的成员。注意使用 `var` 和 `function` 所定义的量是不可删除的。
 
 #### The `void` Operator
-`void` evaluates the operand and then discard the value and return `undefined`, so it only make sense when the operand has side effects.
+`void` evaluates the operand and then discard the value and return `undefined`, so it only makes sense when the operand has side effects.
 
 #### The Comma Operator
-`,` evaluates the left operand, then discards it, returns the value of the right operand. So it make sense only when the left operand has side effects.
+`,` evaluates the left operand, then discards it, returns the value of the right operand. So it makes sense only when the left operand has side effects.
 
 The comma operator is commonly used in `for` loop
 ```js
@@ -564,20 +571,22 @@ for(var i=0, j=10; i < j; i++, j--)
 
 ## Statements
 
-Expressions are *evaluated* to produce a value, while statements ar *executed* to make something happen.
+Expressions are *evaluated* to produce a value, while statements are *executed* to make something happen.
 
 #### Expression Statements
 最常用的就是赋值语句，还有函数调用和自增自减。
 
 #### Compound and Empty Statements
-Compound statements are used to execute multiple statements where JavaScript expects a single statement. The empty statement is the opposite, it is a single semicolon and does nothing. It is commonly used in loops；
+Compound statements are used to execute multiple statements where JavaScript expects a single statement. The empty statement is the opposite, it is a single semicolon and does nothing. It is commonly used in loops.
 ```js
 for (i = 0; i < a.length; a[i++] = 0);
 ```
 
 #### Declaration
-`var` and `function` define identifiers.   
-使用 `var` 声明变量时可以用表达式给出初值。  
+`var` and `function` define identifiers. 
+
+使用 `var` 声明变量时可以用表达式给出初值。
+
 函数定义可以不给出函数名，而将这个函数赋值给一个变量或者作为参数传入另一个函数。
 
 ### Conditionals
@@ -768,8 +777,8 @@ Objects are manipulated by reference. In `var y = x`, `x` and `y` refer to th
 Each property has *property attributes*:
 
 * The *writable* attribute specifies whether the value can be set.
-* The *enumerable* attribure specifies whether the property name is returned by a `for`/`in` loop.
-* The *configurable* attribure specifies whether the property can be deleted and whether its attributes can be altered.
+* The *enumerable* attribute specifies whether the property name is returned by a `for`/`in` loop.
+* The *configurable* attribute specifies whether the property can be deleted and whether its attributes can be altered.
 
 Every object has three associated *object attributes*:
 
@@ -779,7 +788,7 @@ Every object has three associated *object attributes*:
 
 ### Prototypes
 
-Every object has its *prototype* , or very few of them `null`. All object created by object literal share the common prototype called `Object.prototype`. `new Object()` or `{}` also share this prototype. Similarly, `new Array()` or `[]` has the prototype `Array.prototype`. This link a series of objects to form a *prototype chain*.
+Every object has its *prototype*, or very few of them `null`. All object created by object literal share the common prototype called `Object.prototype`. `new Object()` or `{}` also share this prototype. Similarly, `new Array()` or `[]` has the prototype `Array.prototype`. This link a series of objects to form a *prototype chain*.
 
 `Object.prototype` itself doesn't have a prototype, inheriting no properties.
 
@@ -825,7 +834,7 @@ object["property"]
 
 It is not an error to query a property that does not exist. That will return `undefined`. But it will raise a `TypeError` to attempt to query a property of an *object that does not exist*.
 
-Attempts to set read-only properties or add a property to a non-*existensible* object, curiously, however, fails silently, but a `TypeError` will be thrown in strict mode.
+Attempts to set read-only properties or add a property to a non-*extensible* object, curiously, however, fails silently, but a `TypeError` will be thrown in strict mode.
 
 An attempt to set a property `p` of an object `o` fails when:
 
@@ -861,15 +870,16 @@ o.x !== undefined
 
 Built-in methods that objects inherit are not enumerable, but properties that the codes add are, unless made nonenumerable manually.
 
-在 ES5 中，还有两个函数返回对象的属性名。  
-`Object.keys()` 接受一个对象作为参数，返回这个对象中可遍历的属性名。  
-`Object.getOwnPropertyNames()` 则返回对象所有的自有属性。
+在 ES5 中，还有两个函数返回对象的属性名。
+
+* `Object.keys()` 接受一个对象作为参数，返回这个对象中可遍历的属性名。
+* `Object.getOwnPropertyNames()` 则返回对象所有的自有属性。
 
 ### Property Getters and Setters
 
 The property value may be replaced by one or two methods, known as a *getter* and a *setter*. These properties are called *accessor properties* to distinguish them from normal *data properties*.
 
-The difinition of these two methods are like functions:
+The definition of these two methods are like functions:
 ```js
 var p = {
     x:1,
@@ -890,7 +900,7 @@ The existence of *setter* and *getter* determines the writability and readablity
 
 ### Property Attributes
 
-In ECMAScript 3, all properties are writeble, enumerable and configureable, and there is no way to change them. ESMCScript 5 allows querying and setting them.
+In ECMAScript 3, all properties are writable, enumerable and configurable, and there is no way to change them. ESMCScript 5 allows querying and setting them.
 
 The four attributes of a data property are
 
@@ -914,7 +924,7 @@ Object.getOwnPropertyDescriptor(p, "r");
 // => {get: <function>, set: <function>, ...}
 ```
 
-It returns `undefined` on inherited properties or properties that does not exist. To query the attributes of inherited properties, you must traverse the protopype chain using `Object.getPrototypeOf()`.
+It returns `undefined` on inherited properties or properties that does not exist. To query the attributes of inherited properties, you must traverse the prototype chain using `Object.getPrototypeOf()`.
 
 To modify the attributes, use `Object.defineProperty()` or `Object.defineProperties()`:
 ```js
@@ -927,7 +937,7 @@ Object.defineProperties(o, {
 ```
 Both the functions returns the processed object.
 
-The property desciptor you pass to these functions does not have to include all four attributes. If you are creating a new property, then omitted attributes are taken to be `false` or `undefined`. If you are modifying an existing property, then the omitted remain unchanged.
+The property descriptor you pass to these functions does not have to include all four attributes. If you are creating a new property, then omitted attributes are taken to be `false` or `undefined`. If you are modifying an existing property, then the omitted remain unchanged.
 
 使用 `Object.create()` 创建新对象时，第二个可选参数的声明 `Object.defineProperties()` 中的。
 
@@ -945,7 +955,7 @@ The `prototype` of an object is set when the object is created. In ECMAScript 5,
 
 #### The `class` Attribute
 
-The default `toString()` method (inherited from `Object.prototype`) returns a string of the from `[object class]`. To invoke the right version, we usually do
+The default `toString()` method (inherited from `Object.prototype`) returns a string of the form `[object class]`. To invoke the right version, we usually do
 ```js
 Object.protptype.toString.call(o).slice(8, -1)
 ```
@@ -953,11 +963,11 @@ This works for any value except `null` and `undefined`.
 
 #### The `extensible` Attribute
 
-ECMASctipt 5 defines functions to query and setting extensibility of an object. Pass an object to `Object.isExtensible()` to determine whether it is extensible, to `Object.preventExtensions()` to make it nonextensible. Note that making it nonextensible only affect the object itself, and it is irreverseable..
+ECMASctipt 5 defines functions to query and setting extensibility of an object. Pass an object to `Object.isExtensible()` to determine whether it is extensible, to `Object.preventExtensions()` to make it nonextensible. Note that making it nonextensible only affect the object itself, and it is irreversable.
 
 `Object.seal()` not only make the object nonextensible, but also make all properties nonconfigurable, that is, no properties can be added, deleted or configured. `Object.isSealed()` determines whether it is sealed.
 
-`Object.freeze()` locks the object down more tightly. It makes the object nonexistensible, and all its properties nonconfigurable and read-only. And `Object.isFrozen()` is its indicator function.
+`Object.freeze()` locks the object down more tightly. It makes the object nonextensible, and all its properties nonconfigurable and read-only. And `Object.isFrozen()` is its indicator function.
 
 `Object.preventExtensions()`, `Object.seal()` and `Object.freeze()` only affect the object itself, not its prototypes. Also, they return the modified object.
 
@@ -967,7 +977,7 @@ ECMAScript 5 provides conversions between JSON and strings. `JSON.stringify()` r
 
 ### Object Methods
 
-`toString()` method returns a string in the form of  `[object <class>]`. But it is not much useful, so there are some customized versions such as `Array.toString()`, `Date.toString()` and `Function.toString()`.
+`toString()` method returns a string in the form of `[object <class>]`. But it is not much useful, so there are some customized versions such as `Array.toString()`, `Date.toString()` and `Function.toString()`.
 
 `toLocaleString()` method returns a localized string.
 
@@ -976,7 +986,7 @@ ECMAScript 5 provides conversions between JSON and strings. `JSON.stringify()` r
 
 ## Arrays
 
-An array is an ordered collection of values. Each value is called a *element* and has its position called *index*. JavaScript arrays are untyped, and different elements of an array may be of different types. The indexes use 32-bit integer and are zero-based (highest $4294967294 = 2^{32}$).
+An array is an ordered collection of values. Each value is called an *element* and has its position called *index*. JavaScript arrays are untyped, and different elements of an array may be of different types. The indexes use 32-bit integer and are zero-based (highest $4294967294 = 2^{32}$).
 
 ### Creating Arrays
 
@@ -985,17 +995,17 @@ Array literal:
 var empty = [];
 var primes = [empty, true, 1.1, Math.PI+1, ];
 ```
-Array constuctor:
+Array constructor:
 ```js
 var a = new Array();
 var a = new Array(10);
 var a = new Array(1 ,2, 3, true, "this");
 ```
-The only patameter for `Array()` specifies the length. If there is more than one parameters, they are the array elements.
+The only parameter for `Array()` specifies the length. If there is more than one parameter, they are the array elements.
 
 ### Arrays as Objects
 
-JavaScript arrays are a special type of object. When accessing elements like `a[1]`, the index becomes a string `"1"`. You can index the array with non-index numbers like real number or even strings, and they are treated like normal object properties. There is no "Out Of Bound" error, and when accessing an nonexistent property, you simply get `undefined`. What is special about arrays is that they automatically update `length` property for you.
+JavaScript arrays are a special type of object. When accessing elements like `a[1]`, the index becomes a string `"1"`. You can index the array with non-index numbers like real number or even strings, and they are treated like normal object properties. There is no "Out Of Bound" error, and when accessing a nonexistent property, you simply get `undefined`. What is special about arrays is that they automatically update `length` property for you.
 
 ### Sparse Array
 
@@ -1042,9 +1052,9 @@ for (var i in a)
 
 由于数组是一个对象，若它有其它自定义的属性，则在使用 `for/in` 循环时一般是按照创建顺序来遍历，Implementations differ in how they handle this case, so if iteration matters for your algorithm it is best to use a regular `for` loop instead of `for/in`
 
-### Multidimentional Arrays
+### Multidimensional Arrays
 
-JavaScript does not support true multdimentional arrays but you can approximate them with arrays of arrays.
+JavaScript does not support true multdimensional arrays but you can approximate them with arrays of arrays.
 ```js
 var table = new Array(10);
 for (var i = 0; i < table.length; i++)
@@ -1170,7 +1180,7 @@ function findall(a, x)
     var results = [],
         len = a.length,
         pos = 0;
-    
+
     while(pos<len)
     {
         pos = a.indexOf(x, pos);
@@ -1253,10 +1263,10 @@ var o1 = new o.m();
 
 ### Function Arguments and Parameters
 
-JavaScript do not do any type checking, it even do not check the number of arguments being passed. 
+JavaScript do not do any type checking, it even does not check the number of arguments being passed.
 
 #### Optional Parameters
-When a function is invoked with fewer arguments thn delcared parameters, the additional parameters are set to `undefined`. To set default values to omitted parameters, we need to do it exliciptly:
+When a function is invoked with fewer arguments than declared parameters, the additional parameters are set to `undefined`. To set default values to omitted parameters, we need to do it explicitly:
 ```js
 function f(x, /* optional */ y){
     if (y === undefined) y = 0;
@@ -1265,9 +1275,9 @@ function f(x, /* optional */ y){
 ```
 
 #### The Arguments Object
-When a function is invoked with more argument values than there are parameter names, there if to direct way to refer to those unnamed values. An array-like object `arguments` provides a solution: its elements refer to the same values of the parameters passed into the function. For example, `arguments[0]` holds the first parameter. It has a `length` property too, which specifies the number of parameters. Also, `arguments` provides a way to construct a *vararg* function.
+When a function is invoked with more argument values than there are parameter names, there if to direct way to refer to those unnamed values. An array-like object `arguments` provides a solution: its elements refer to the same values of the parameters passed into the function. For example, `arguments[0]` holds the first parameter. It has a `length` property too, which specifies the number of parameters. Also, `arguments` provides a way to construct a `vararg` function.
 
-In non-strict mode, the array elements of `arguments` are aliases for the actual parameters. If you change the value of either of them, the other would change too. 
+In non-strict mode, the array elements of `arguments` are aliases for the actual parameters. If you change the value of either of them, the other would change too.
 
 `arguments` 还有两个属性：`callee` 和 `caller`。`callee` 就指向当前的函数，常用于匿名函数的递归。`caller` 则是返回调用该函数的函数，若函数在顶层代码被调用则返回 `null`。严格模式中访问这两个属性将造成 `TypeError`。
 
@@ -1404,13 +1414,13 @@ function Complex(real, imaginary){
 
 var c = new Complex(1, 1);
 ```
-Note that an constructor does not create or return the object. It just initializes `this`. And propertie values defined within a constructor is noninherited that are unique to this object.\
+Note that a constructor does not create or return the object. It just initializes `this`. And property values defined within a constructor is noninherited that are unique to this object.
 
 这样，构造函数名就成为了类名。一般这个函数首字母大写。由这个构造函数产生的对象自动继承自其原型。
 
 ### Prototypes
 
-The instances of an class inherits the properties of the prototype (even if the prototype changes after the instances is created!), and those properties serves as shared methods and members of the class.
+The instances of a class inherits the properties of the prototype (even if the prototype changes after the instances is created!), and those properties serves as shared methods and members of the class.
 ```js
 Complex.prototype = {
     add: function(that){
@@ -1448,8 +1458,9 @@ Complex.prototype.toString = function ...
 
 在不同位置定义的数据成员（JS 函数也属于数据）有不同的作用域。
 
-*Constructor* object  
-These properties serve as class fields and methods that are associated with the class rather than with instances. Note that constructor properties are NOT `this` properties! 
+#### *Constructor* object
+
+These properties serve as class fields and methods that are associated with the class rather than with instances. Note that constructor properties are NOT `this` properties!
 ```js
 // Constructor properties
 Complex.ZERO = new Complex(0, 0);
@@ -1467,10 +1478,10 @@ Complex.parse = function(s){
 }
 ```
 
-*Prototype* object  
+#### *Prototype* object
 每一个类实例都会继承其中的属性。这些属性中的函数就是每一个实例的方法。
 
-*Instance* object  
+#### *Instance* object
 在实例中定义的属性当然只对这个实例有效。
 
 ### Classes and Types
@@ -1485,19 +1496,19 @@ c instanceof Complex    // => true
 
 The `instanceof` operator check whether `c` inherits from `Complex.prototype` instead of whether it is initialized by the `Complex` constructor. This inheritance need not to be direct. Nevertheless, the `instanceof` syntax reinforces the use of constructors as the public identity of the class.
 
-Remember that constructor are the public identity of the class, but prototypes are the fundarmental identity. 
+Remember that constructor are the public identity of the class, but prototypes are the fundamental identity.
 
 ```js
 Complex.prototype.isProtytypeOf(c); // => true
 ```
 
-One shortcoming of these approaches is that they do not allow querying the class of an object. only to test an object against a class specified. A more serious shortcoming arises in client-side JavaScript where a web application uses more than one frame or window. Each frame or window is a distinct execution context, and each has its own global object and its own set of constructor functions. Two objects created in two different contexts inherits from two identical but distinct constructors.
+One shortcoming of these approaches is that they do not allow querying the class of an object, only to test an object against a class specified. A more serious shortcoming arises in client-side JavaScript where a web application uses more than one frame or window. Each frame or window is a distinct execution context, and each has its own global object and its own set of constructor functions. Two objects created in two different contexts inherits from two identical but distinct constructors.
 
 #### The `constructor` Property
 
 可以直接比较对象的构造函数。
 ```js
-o.constructor   // => Number, String, RegExp, Complex, etc. 
+o.constructor   // => Number, String, RegExp, Complex, etc.
 ```
 This expression evaluates to the constructor of the object, and note that `null` and `undefined` don't have constructors.
 
@@ -1574,7 +1585,7 @@ Set._v2s = function(val) {
         }
     }
     function objectId(o) {
-        var prop = '|**objectid**|';    
+        var prop = '|**objectid**|';
         // additional property name
         if(!o.hasOwnProperty(prop))
             o[prop] = ser._v2s.next++;
@@ -1598,8 +1609,8 @@ Range.prototype = {
 };
 ```
 
-#### Construcrtor Overloading and Factory Methods
-To overload a constructor, explicitly checking the arguments passed into it is needed. 
+#### Constructor Overloading and Factory Methods
+To overload a constructor, explicitly checking the arguments passed into it is needed.
 
 Another way to construct objects by different ways is that define factory function.
 ```js
@@ -1640,7 +1651,7 @@ To avoid creating global variables, use an object as its namespace, and function
 
 JavaScript's regular expression grammar is a fairly complete subset of the regular expression syntax used by Perl 5.
 
-### Defineing Regular Expressions
+### Defining Regular Expressions
 
 These statements are equivalent:
 ```js
@@ -1654,14 +1665,15 @@ Regex flags specify high-level pattern-matching rules.
 var pattern = /JavaScript/ig;
 var pattern = new RegExp('JavaScript', 'ig');
 ```
-`i`: case-insensitive;  
-`g`: global. find all matches instead of stopping after the first match;  
-`m`: multiline. `^`/`$` matches the beginning/end of a line or string.
+
+* `i`: case-insensitive;
+* `g`: global. find all matches instead of stopping after the first match;
+* `m`: multiline. `^`/`$` matches the beginning/end of a line or string.
 
 ### String Methods for Pattern Matching
 
 #### The `search()` Method
-`search()` returns the index of the first matching substring or -1 th there is no match. It ignores the `g` flag.
+`search()` returns the index of the first matching substring or -1 -th there is no match. It ignores the `g` flag.
 ```js
 "JavaScript".search(/script/i); // => 4
 ```
@@ -1685,7 +1697,7 @@ If the regular expression has the `g` flag, the method returns an array of all m
 ```
 
 #### The `split()` Method
-Besides a string, a regex can also be passed into the `split()` method as a seperator.
+Besides a string, a regex can also be passed into the `split()` method as a separator.
 ```js
 "1, 2, 3".split(/\s*,\s*/)  // => ['1', '2', '3']
 ```
@@ -1693,7 +1705,7 @@ Besides a string, a regex can also be passed into the `split()` method as a sepe
 ### RegExp Object
 
 #### RegExp Properties
-Read-only properties `source`, `global`, `ignoreCase`, `multiline` holds the value of the source text of the regex, the boolean values that specify the existence of the three flags. Read/write property `lastIndex` stores the position in the string ar which the next search is to begin.
+Read-only properties `source`, `global`, `ignoreCase`, `multiline` holds the value of the source text of the regex, the boolean values that specify the existence of the three flags. Read/write property `lastIndex` stores the position in the string where the next search is to begin.
 
 #### The `exec()` Method
 `exec()` returns the same kind of array of `match()` whether or not the regular expression has the global `g` flag. By contrast, it always returns a single match and provides complete information about that match. Each time it is called, it sets the `lastIndex` property to the position immediately following the matched substring. If no match is found, the `lastIndex` is reset to 0.
@@ -1812,7 +1824,7 @@ let {sin:sine, cos:cosine, tan:tangent} = Math;
 ```
 
 #### The `for each` loop
-The `for each` loop is much like the `for/in` loop. Instead of iterating through the properties, it iterates throught the values of those properties.
+The `for each` loop is much like the `for/in` loop. Instead of iterating through the properties, it iterates through the values of those properties.
 ```js
 let o = {one: 1, two: 2, three: 3};
 for each (let v in o) console.log(v);
@@ -1830,7 +1842,7 @@ function range(min, max) {
             return min++;
         }
     }
-}  
+}
 
 let r = range(1, 5);
 while(true) {
@@ -1873,7 +1885,7 @@ for(var [k,nv] in Iterator({a:1, b:2}))
 ```
 
 #### Generators
-Any function that uses `yield` keyword is a generator function. The `yield` return values, and a `return` ay be used as a termination, but `return` with a value is forbidden in a generator. A generator behaves completely different than a regular function: instead of executing the body of the generator function, the invocation returns a generator object, which represents teh current execution state of the generator function. It automatically defines the `next()` method and throws a `StopIteration` when ending the execution.
+Any function that uses `yield` keyword is a generator function. The `yield` return values, and a `return` can be used as a termination, but `return` with a value is forbidden in a generator. A generator behaves completely different to a regular function: instead of executing the body of the generator function, the invocation returns a generator object, which represents the current execution state of the generator function. It automatically defines the `next()` method and throws a `StopIteration` when ending the execution.
 
 ```js
 // No for node or V8

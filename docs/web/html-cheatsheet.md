@@ -2,45 +2,46 @@
 
 HTML stands for **H**yper**T**ext **M**arkup **L**anguage
 
-## Stucture
+## Structure
 
-`<html>` and `</html>` contain everything  
-`<head>` and `</head>` contain title  
-`<title>` and `</title>` include title  
-`<body>` and `</body>` contain the main parts  
+- `<html>` and `</html>` contain everything
+- `<head>` and `</head>` contain title
+- `<title>` and `</title>` include title
+- `<body>` and `</body>` contain the main parts
 
 ## Elements
 
-Paragraph: `<p>` and `</p>`  
-Line break: `<br/>`  
-Horizontal line: `<hr/>`  
-Comments: `<!-- Comments -->`  
-Image: `<img src="image.png"/>`  
-Link: `<a href="http://google.com">` and `</a>`  
-Form: `<form>` and `</form>`  
-Input: `<input/>` (in forms)  
-Color: `#FFFFFF`
+- Paragraph: `<p>` and `</p>`
+- Line break: `<br/>`
+- Horizontal line: `<hr/>`
+- Comments: `<!-- Comments -->`
+- Image: `<img src="image.png"/>`
+- Link: `<a href="http://google.com">` and `</a>`
+- Form: `<form>` and `</form>`
+- Input: `<input/>` (in forms)
+- Color: `#FFFFFF`
 
 
 #### Text Formatting
 
-bold `<b>` `</b>`  
-big `<big>` `</big>`  
-italic `<i>` `</i>`  
-small `<small>` `</small>`  
-strong `<strong>` `</strong>`  
-subscripted `<sub>` `</sub>`  
-superscripted `<sup>` `</sup>`  
-inserted (underlined) `<ins>` `</ins>`  
-deleted `<del>` `</del>`  
+- bold `<b>` `</b>`
+- big `<big>` `</big>`
+- italic `<i>` `</i>`
+- small `<small>` `</small>`
+- strong `<strong>` `</strong>`
+- subscripted `<sub>` `</sub>`
+- superscripted `<sup>` `</sup>`
+- inserted (underlined) `<ins>` `</ins>`
+- deleted `<del>` `</del>`
 
 #### Headings
 
-`<h1>` and `</h1>`  
-`<h2>` and `</h2>`  
-...  
-`<h6>` and `</h6>`  
-equals to \#'s in Markdown  
+- `<h1>` and `</h1>`
+- `<h2>` and `</h2>`
+- ...
+- `<h6>` and `</h6>`
+
+equals to \#'s in Markdown
 
 #### Lists
 
@@ -50,14 +51,14 @@ Ordered list
     <li> </li>
     <li> </li>
 </ol>
-```  
-Unordered List 
+```
+Unordered List
 ```html
 <ul>
     <li> </li>
     <li> </li>
 </ul>
-```  
+```
 
 #### Tables
 ```html
@@ -77,8 +78,9 @@ Unordered List
 
 #### Divisions
 
-`<div>` and `</div>` block division  
-`<span>` and `</span>` inline division  
+`<div>` and `</div>` block division
+
+`<span>` and `</span>` inline division
 
 #### Frames
 
@@ -90,15 +92,15 @@ Unordered List
 </frameset>
 ```
 
-## Attributes  
+## Attributes
 
 ```html
-<p align="center">  
-<hr width="50px"/>  
-<hr width="50%" align="left"/>  
-<img src="image.png" height="150px" width="50px" border="1px" alt=""/>  
-<a href="http://google.com" target="_blank">  
-<table border="2">  
+<p align="center">
+<hr width="50px"/>
+<hr width="50%" align="left"/>
+<img src="image.png" height="150px" width="50px" border="1px" alt=""/>
+<a href="http://google.com" target="_blank">
+<table border="2">
 <td colspan="2" bgcolor="red">
 <span style="color:red">
 <form action="http://google.com">
@@ -108,9 +110,9 @@ Unordered List
 ```
 
 
-# HTML5 Features  
+## HTML5 Features
 
-#### Structure  
+#### Structure
 ```html
 <!DOCTYPE HTML>
 <html>
@@ -129,20 +131,20 @@ Unordered List
 </html>
 ```
 
-#### Elements  
+#### Elements
 
-- audio  
+- audio
   ```html
   <audio src="audio.mp3" controls autoplay loop> </audio>
-  ```  
-- video  
+  ```
+- video
   ```html
   <video> </video>
-  ```  
-- progress  
+  ```
+- progress
   ```html
   <progress min="0" max="100" value="45"> </progress>
-  ```  
+  ```
 - SVG **S**calable **V**ector **G**raphics  
   ```html
   <svg width="1000" height="1000">
@@ -154,15 +156,15 @@ Unordered List
       <polygon points="100 100, 200 200, 300 0" style="fill: green; stroke:black;" />
   </svg>
   ```
-- canvas  
+- canvas
   ```html
   <canvas id="canvas1" width="200" height="100"> </canvas>
   ```
 - form
   ```html
   <form>
-    <label for="email">Your e-mail address: </label> 
-    <input type="text" name="email" placeholder="email@example.com" autofocus required/> 
+    <label for="email">Your e-mail address: </label>
+    <input type="text" name="email" placeholder="email@example.com" autofocus required/>
     <input id="car" type="text" list="colors" />
     <datalist id="colors">
       <option value="Red">
@@ -170,18 +172,18 @@ Unordered List
       <option value="Yellow">
     </datalist>
   </form>
-  ```  
-  **new input types**  
-    - color  
-    - date  
-    - datetime  
-    - datetime-local  
-    - email  
-    - month  
-    - number  
-    - range  
-    - search  
-    - tel  
-    - time  
-    - url  
-    - week  
+  ```
+  **new input types**
+    - color
+    - date
+    - datetime
+    - datetime-local
+    - email
+    - month
+    - number
+    - range
+    - search
+    - tel
+    - time
+    - url
+    - week
