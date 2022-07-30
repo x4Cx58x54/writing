@@ -3,7 +3,7 @@
 *1*  
 **14-3** 在半径为 $R$ 的圆柱形空间内有沿线方向均匀磁场 $\boldsymbol{B}$，已知磁感 $B$ 随时间增加的速率 $\cfrac{\mathrm{d}B}{\mathrm{d}t}$. 一金属棒 $ab$ 放在磁场外且垂直于圆柱轴线，两端点 $a$、$b$ 与圆心 $O$ 点连线 $ao$ 与 $bo$ 的夹角为 $\theta_0$，求 $ab$ 中的感生电动势.
 
-![](./img/030-induction-01-0.jpg){: width=220px}
+![](./img/induction-01.jpg){: width=220px}
 
 ??? note "Hint"
 
@@ -28,12 +28,12 @@
 *2*  
 **14-16** 如图所示，求长为 $l$ 的一段同轴电缆的自感. 设同轴电缆由半径为 $R_1$ 的内实心圆柱导体和半径为 $R_2$ 的外圆筒导体（厚度不计）组成，中间充以绝缘介质，绝缘介质的磁导率为 $\mu_0$.
 
-![](./img/030-induction-02-0.jpg){: width=280px}
+![](./img/induction-02.jpg){: width=280px}
 
 *3*  
 **14-17** 如图所示，由两块面积为 $S = 0.1\mathrm{m^2}$ 的圆形极板组成的电容器连接在电势差 $\mathscr{E} = \mathscr{E}_m\sin\omega t$ 的电源上，其中 $\mathscr{E}_m = 200\mathrm{V}$，而 $\omega = 200 \mathrm{rad/s}$，位移电流的最大值为 $I_d =8.9\times 10^{-6}\mathrm{A}$，略去极板边缘处的不规则电场，试求两极板之间的距离 $d$.
 
-![](./img/030-induction-03-0.jpg){:width=200px}
+![](./img/induction-03.jpg){:width=200px}
 
 ??? note "Hint"
 
@@ -60,7 +60,7 @@
 *4*  
 **14-19** 如图所示，电荷 $+q$ 以速度 $\boldsymbol{v}$ 向 $O$ 点运动，电荷到 $O$ 点的距离记为 $x$. 以 $O$ 点为圆心作一个半径为 $a$ 的圆，圆面与 $\boldsymbol{v}$ 垂直. 试计算通过此圆面的位移电流.
 
-![](./img/030-induction-04-0.jpg){: width=220px}
+![](./img/induction-04.jpg){: width=220px}
 
 ??? note "Hint"
 

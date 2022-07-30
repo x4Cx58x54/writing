@@ -195,7 +195,7 @@ For negative determinants, they are the result of inverting the orientation of s
 
 In a word, **the determinant equals to the factor by which the areas/volumes have been scaled**.
 
-![](./img/01_eola_06_det.png){: width=280px}
+![](./img/eola_06_det.png){: width=280px}
 
 $$
 \det \left(\begin{bmatrix}a & b \\ c & d \\ \end{bmatrix}\right)=(a+b)(c+d)-ac-bd-2bc=ad-bc.
@@ -356,7 +356,7 @@ $$
 
 Project $\hat{\imath}$ to $\hat{u}$, according to symmetry shown in the figure below, $\hat{\imath}_u=u_x$. Similarly, $\hat{\jmath}_u=u_y$.
 
-![](./img/01_eola_07_dot_1.png){: width=160px}
+![](./img/eola_07_dot_1.png){: width=160px}
 
 Therefore, projection of $\mathbf{v}$ on $\hat{u}$
 

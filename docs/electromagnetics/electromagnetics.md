@@ -4,7 +4,7 @@
 
 ### 无限大平板的电场
 
-![](./img/000-02-elecdistribution.png){: width=300px}
+![](./img/em-02-elecdistribution.png){: width=300px}
 
 假设平板上的电荷 $q = \sigma S$，左图的分析对应
 
@@ -94,7 +94,7 @@ $$
 C=\frac{\varepsilon S}{d}
 $$
 
-![](./img/000-03-capacitor.jpg){: width=290px}
+![](./img/em-03-capacitor.jpg){: width=290px}
 
 $$
 E = \frac{\sigma}{\varepsilon}
@@ -192,7 +192,7 @@ $$
 M=\frac{m}{\Delta V}=\frac{\alpha LS}{LS}=\alpha.
 $$
 
-![](./img/000-01-ampere.jpg){: width=300px}
+![](./img/em-01-ampere.jpg){: width=300px}
 
 $$
 \oint_L \vec{M}\cdot\text{d}\vec{l}=Ml=\alpha l=I'S

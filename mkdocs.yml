@@ -27,24 +27,24 @@ copyright: 'Copyright &copy; 2017 - 2022 <a href="https://github.com/x4Cx58x54" 
 nav:
   - Welcome: index.md
   - Mathematics:
-    - Essence of Linear Algebra: maths/linear-algebra/essence-of-linear-algebra.md
-    - Linear Algebra: maths/linear-algebra/linear-algebra.md
+    - Essence of Linear Algebra: maths/essence-of-linear-algebra.md
+    - Linear Algebra: maths/linear-algebra.md
     - Probability Theory:
-      - Probability Theory: maths/probability-theory/probability-theory.md
-      - Combinatorics Example Problems: maths/probability-theory/combinatorics.md
+      - Probability Theory: maths/probability-theory.md
+      - Combinatorics Example Problems: maths/combinatorics.md
       - Problemsets:
-        - Events and Probability: maths/probability-theory/events-and-probability.md
-        - Random Variables: maths/probability-theory/random-variables.md
-    - Statistics: maths/statistics/statistics.md
-    - Elements of Information Theory: maths/elements-of-information-theory/elements-of-information-theory.md
-    - Matrix Algebra: maths/matrix-algebra/matrix-algebra.md
-    - Discrete Maths: maths/discrete-maths/discrete-maths.md
-    - Calculus: maths/calculus/calculus.md
-    - Complex Analysis: maths/complex-analysis/complex-analysis.md
-    - Integral Transforms: maths/integral-transforms/integral-transforms.md
-    - Convex Optimization: maths/convex-optimization/convex-optimization.md
-    - 3Blue1Brown: maths/3b1b/3b1b.md
-    - Memos: maths/memos/memos.md
+        - Events and Probability: maths/events-and-probability.md
+        - Random Variables: maths/random-variables.md
+    - Statistics: maths/statistics.md
+    - Elements of Information Theory: maths/elements-of-information-theory.md
+    - Matrix Algebra: maths/matrix-algebra.md
+    - Discrete Maths: maths/discrete-maths.md
+    - Calculus: maths/calculus.md
+    - Complex Analysis: maths/complex-analysis.md
+    - Integral Transforms: maths/integral-transforms.md
+    - Convex Optimization: maths/convex-optimization.md
+    - 3Blue1Brown: maths/3b1b.md
+    - Memos: maths/memos.md
   - Languages:
     - C Primer Plus: c/c-primer-plus.md
     - C++ Notes: cpp/cpp-notes.md
@@ -52,7 +52,7 @@ nav:
     - LaTeX:
       - LaTeX Cheatsheet: latex/latex-cheatsheet.md
       - LaTeX Maths Symbols: latex/latex-maths.md
-    - Regex:
+    - Regular Expressions:
       - Introducing Regular Expressions: regex/introducing-regular-expressions.md
       - Regular Expressions Cookbook: regex/regular-expressions-cookbook.md
     - JavaScript the Definitive Guide: web/javascript-the-definitive-guide.md

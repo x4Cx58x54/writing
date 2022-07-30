@@ -7,7 +7,7 @@
 2. 该平面上电荷面密度为 $\sigma_\mathrm{e} = \cfrac{qa}{2\pi\sqrt{\left(r^2+a^2\right)^3}}$，式中 $r$ 为该平面上离开 $O$ 点的距离;
 3. 该平面上的总电荷等于 $-q$.
 
-![](./img/010-electricfield-01.jpg){: width=140px}
+![](./img/electricfield-01.jpg){: width=140px}
 
 ??? note "Hint"
     电像法：空间电场只在有真实电荷的一边相同.
@@ -15,7 +15,7 @@
 *2*  
 
 **11-1** 如图所示，两平行导体板间距离为 $d$，板的面积均为 $S$. 在两板间放入一块厚度为 $b$，相对电容为 $\varepsilon_r$ 的电介质板. 在电介质未加入前，导体板与电池相连，使其分别带正、负电荷，大小为 $q = 8.9\times10^{-10}\mathrm{C}$，然后将电池断开，再将电介质板插入. 假设 $S = 100\mathrm{cm^3}$，$d = 1.0\mathrm{cm}$，$\varepsilon_r = 7.0$，$b = 0.50\mathrm{cm}$，试计算：(1) 导体板与电介质之间空隙中的电场强度 $E_0$；(2) 电介质中的电场强度 $E$；(3) 两导体板间的电势差.
-![](./img/010-electricfield-02-1.jpg){: width=250px}
+![](./img/electricfield-02-1.jpg){: width=250px}
 
 ??? note "Hint"
 
@@ -85,7 +85,7 @@ B. 两部分中的电位移相等
 C. 两部分极板上的自由电荷面密度相等  
 D. 以上三量分别都不相等
 
-![](./img/010-electricfield-05-1.jpg){: width=150px}
+![](./img/electricfield-05-1.jpg){: width=150px}
 
 ??? note "Hint"
     可将电容器视作极板面积 $S$ 与间距 $d$ 均相等的两个相连电容器 $C_1$ 和 $C_2$，电容率分别为 $\varepsilon$ 和 $\varepsilon_0$，则 $C_1 = \cfrac{\varepsilon S}{2d}$，$C_2 = \cfrac{\varepsilon_0 S}{2d}$，而 $V_1 = V_2$，$Q = VC$，故 $Q_1 > Q_2$，进而 $\sigma_1 > \sigma_2$，又由于 $V = Ed$，有 $E_1 = E_2$.
@@ -118,7 +118,7 @@ D. $(V_1 + V_2)/2$
 *7*  
 如图所示，三块平行金属板 A、B 和 C，面积都是 $20\mathrm{cm^2}$，A 和 B 相距 $4.0\mathrm{mm}$，A 和 C 相距 $2.0\mathrm{mm}$，B 和 C 两板都接地，如果使 A 板带正电荷，电荷量为 $3.0\times 10^{-7}\mathrm{C}$，并忽略边缘效应，试求：(1) 金属板 B 和 C 上的感应电荷量；(2) A 板相对于地的电势.
 
-![](./img/010-electricfield-07.jpg){: width=135px}
+![](./img/electricfield-07.jpg){: width=135px}
 
 ??? note "Hint"
     作包围整个电容器的高斯面，若总电通量非零，则说明有电场线延伸至无限远，与接地条件矛盾. 故 B 与 C 总电荷量与 A 等量异号.
@@ -130,7 +130,7 @@ D. $(V_1 + V_2)/2$
 *8*  
 如图所示，两无限大平行导体板 A、B，板面积均为 $S$，电荷面密度 $\sigma_1 = \sigma_2 = -\sigma_3 = \sigma_4 = \cfrac{Q_0}{2S}$. 试证：B 板接地后，两板间电势差 $V_{\mathrm{AB}}$ 是不接地时的 2 倍.
 
-![](./img/010-electricfield-08.jpg){: width=120px}
+![](./img/electricfield-08.jpg){: width=120px}
 
 ??? note "Hint"
     相同地，B 接地后，两极板电荷量代数和应为 0，四个面从左到右的电荷面密度分别为 $0,\,2\sigma,\,2\sigma,\,0$

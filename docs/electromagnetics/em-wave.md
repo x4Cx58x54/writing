@@ -3,7 +3,7 @@
 *1*  
 如图所示，同轴电缆的内导体圆柱半径为 $a$，外导体圆筒半径为 $b$，电流由导体圆柱流出，由导体圆筒流回. 设电缆导体的电阻可忽略. 试证明单位时间内通过 $a$ 和 $b$ 之间绝缘介质的环形横截面的电磁能量正好等于电源提供的功率.
 
-![](./img/040-emwave-01-0.jpg){: width=280px}
+![](./img/emwave-01-0.jpg){: width=280px}
 
 ??? note "Hint"
 
@@ -44,7 +44,7 @@
 4. 证明进入圆筒内部体积的坡印廷矢量的通量等于 $\cfrac{\mathrm{d}}{\mathrm{d}t}\left(\cfrac{\pi R^2 L}{2\mu_0}B^2\right)$.
 
 ??? note "Hint"
-    ![](./img/040-emwave-02-1.jpg){: width=100}
+    ![](./img/emwave-02-1.jpg){: width=100}
 
     $$
     \varPhi_S = S\cdot 2\pi RL.
