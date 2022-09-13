@@ -2579,6 +2579,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_9_7">
@@ -2601,6 +2603,20 @@
     <li class="md-nav__item">
       <a href="scribbles/pytorch/pytorch-gpu-management/" class="md-nav__link">
         PyTorch GPU Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scribbles/pytorch/pytorch-loss-functions/" class="md-nav__link">
+        PyTorch Loss Functions
       </a>
     </li>
   
@@ -2808,7 +2824,8 @@ Section(title='Scribbles')
     Section(title='Python')
         Page(title='Python Type Hints', url='scribbles/python/python-type-hints/')
     Section(title='PyTorch')
-        Page(title='PyTorch GPU Management', url='scribbles/pytorch/pytorch-gpu-management/')`;
+        Page(title='PyTorch GPU Management', url='scribbles/pytorch/pytorch-gpu-management/')
+        Page(title='PyTorch Loss Functions', url='scribbles/pytorch/pytorch-loss-functions/')`;
   navigation = navigation.replace("Page(title='Welcome', url='/')\n", '');
   navigation = navigation.replace(/Section\(title='([^']*)'\)$/gm, '$1:');
   navigation = navigation.replace(/Page\(title=['\[]([^'\]]*)['\]], url='([^']*)'\)$/gm, '$2: $2');
