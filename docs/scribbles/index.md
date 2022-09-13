@@ -1,5 +1,6 @@
 # Scribbles
 
+- 2022.09.13 -- [PyTorch Loss Functions](./pytorch/pytorch-loss-functions.md)
 - 2022.07.21 -- [Python Type Hints](./python/python-type-hints.md)
 - 2022.07.06 -- [CUDA Basics](./cuda/cuda-basics.md)
 - 2022.05.25 -- [Chebyshev Center](./maths/chebyshev-center.md)

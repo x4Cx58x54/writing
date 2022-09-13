@@ -131,6 +131,7 @@ nav:
       - Python Type Hints: scribbles/python/python-type-hints.md
     - PyTorch:
       - PyTorch GPU Management: scribbles/pytorch/pytorch-gpu-management.md
+      - PyTorch Loss Functions: scribbles/pytorch/pytorch-loss-functions.md
 
 
 plugins:

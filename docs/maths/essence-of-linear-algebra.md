@@ -15,7 +15,7 @@ z_1 \\ z_2 \\ \vdots
 \end{bmatrix},\quad
 \text{a point:}
 \left(z_1, z_2, \cdots\right).
-$$ 
+$$
 
 ## 2 Linear Combinations, Span and Bases
 
