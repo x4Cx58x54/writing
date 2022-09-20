@@ -15,7 +15,7 @@
     
     
       
-        <title>Jacobian Matrix - Randomish Writing</title>
+        <title>Broadcasting - Randomish Writing</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jacobian-matrix" class="md-skip">
+        <a href="#broadcasting" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jacobian Matrix
+              Broadcasting
             
           </span>
         </div>
@@ -2395,14 +2395,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
       
       
       
@@ -2429,21 +2427,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../maths/jacobian-matrix/" class="md-nav__link">
         Jacobian Matrix
       </a>
-      
     </li>
   
 
@@ -2455,7 +2443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chebyshev-center/" class="md-nav__link">
+      <a href="../../maths/chebyshev-center/" class="md-nav__link">
         Chebyshev Center
       </a>
     </li>
@@ -2576,12 +2564,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7" type="checkbox" id="__nav_9_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7" type="checkbox" id="__nav_9_7" checked>
       
       
       
@@ -2612,7 +2602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pytorch/pytorch-gpu-management/" class="md-nav__link">
+      <a href="../pytorch-gpu-management/" class="md-nav__link">
         PyTorch GPU Management
       </a>
     </li>
@@ -2626,7 +2616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pytorch/pytorch-loss-functions/" class="md-nav__link">
+      <a href="../pytorch-loss-functions/" class="md-nav__link">
         PyTorch Loss Functions
       </a>
     </li>
@@ -2638,11 +2628,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../pytorch/broadcasting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Broadcasting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Broadcasting
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#broadcastability" class="md-nav__link">
+    Broadcastability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-as-views" class="md-nav__link">
+    Broadcast as views
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2681,6 +2726,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#broadcastability" class="md-nav__link">
+    Broadcastability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-as-views" class="md-nav__link">
+    Broadcast as views
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2696,79 +2770,71 @@
 
 
 
-<h1 id="jacobian-matrix">Jacobian Matrix<a class="headerlink" href="#jacobian-matrix" title="Permanent link">&para;</a></h1>
-<p>雅可比矩阵描述的是线性空间中变换的导数。以一个二维空间为例：设点 <span class="arithmatex">\(\boldsymbol{a} = (x_a, y_a)\)</span> 经过变换 <span class="arithmatex">\(f = (f_x, f_y)\)</span> 后映射到了 <span class="arithmatex">\(f(\boldsymbol{a}) = \boldsymbol{b} = (x_b, y_b)\)</span> 上，即</p>
-<div class="arithmatex">\[
-f_x(x_a, y_a) = x_b,\\
-f_y(x_a, y_a) = y_b.
-\]</div>
-<p>若无穷小量 <span class="arithmatex">\(\varepsilon_x\)</span> 和 <span class="arithmatex">\(\varepsilon_y\)</span> 带来的扰动使 <span class="arithmatex">\(\boldsymbol{a}\)</span> 偏移到了 <span class="arithmatex">\(\boldsymbol{a} + (\varepsilon_x, \varepsilon_y)\)</span>，分开考虑两个基底方向上的扰动：</p>
-<div class="arithmatex">\[
-\begin{aligned}
-&amp;f_x(x_a + \varepsilon_x , &amp;y_a&amp;&amp;\hspace{-1em}) = x_b + \tfrac{\partial f_x}{\partial x} \varepsilon_x,\\
-&amp;f_x(x_a , &amp;y_a&amp; + \varepsilon_y&amp;\hspace{-1em}) = x_b + \tfrac{\partial f_x}{\partial y} \varepsilon_y,\\
-&amp;f_y(x_a + \varepsilon_x , &amp;y_a&amp;&amp;\hspace{-1em}) = y_b + \tfrac{\partial f_y}{\partial x} \varepsilon_x,\\
-&amp;f_y(x_a , &amp;y_a&amp; + \varepsilon_y&amp;\hspace{-1em}) = y_b + \tfrac{\partial f_y}{\partial y} \varepsilon_y.
-\end{aligned}
-\]</div>
-<p>综上，有</p>
-<div class="arithmatex">\[
-f\left(\boldsymbol{a} +
-\begin{bmatrix}
-\varepsilon_x\\
-\varepsilon_y
-\end{bmatrix}\right) = f(\boldsymbol{a}) +
-\begin{bmatrix}
-\frac{\partial f_x}{\partial x} &amp; \frac{\partial f_x}{\partial y}\\[0.5em]
-\frac{\partial f_y}{\partial x} &amp; \frac{\partial f_y}{\partial y}
-\end{bmatrix}
-\begin{bmatrix}
-\varepsilon_x\\
-\varepsilon_y
-\end{bmatrix}.
-\]</div>
-<p>其中矩阵</p>
-<div class="arithmatex">\[
-\boldsymbol{J} = \begin{bmatrix}
-\dfrac{\partial f_x}{\partial x} &amp; \dfrac{\partial f_x}{\partial y}\\[1.2em]
-\dfrac{\partial f_y}{\partial x} &amp; \dfrac{\partial f_y}{\partial y}
-\end{bmatrix}
-\]</div>
-<p>即为 <span class="arithmatex">\(f\)</span> 的雅可比矩阵，很容易可以看到它的意义即为 <span class="arithmatex">\(f\)</span> 的导数</p>
-<div class="arithmatex">\[
-\boldsymbol{J} = \mathrm{D}f.
-\]</div>
-<p>特别地，当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}\)</span> 时，<span class="arithmatex">\(\mathrm{D}f\)</span> 为梯度 <span class="arithmatex">\(\nabla f\)</span>；当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}^m\)</span> 时，<span class="arithmatex">\(\mathrm{D}f\)</span> 为雅可比矩阵。</p>
-<p>定义：函数 <span class="arithmatex">\(f(x_1, x_2, \cdots, x_n) = (f_1, f_2, \cdots, f_m)\)</span> 的雅可比矩阵为以下元素组成的矩阵</p>
-<div class="arithmatex">\[
-J_{ij} = \frac{\partial f_i}{\partial x_j}.
-\]</div>
-<hr />
-<p>在对积分变量进行换元时，即需要使用雅可比矩阵。简单起见，先以一元积分为例：</p>
-<div class="arithmatex">\[
-\int_a^b f(x) \mathrm{d}x,
-\]</div>
-<p>将 <span class="arithmatex">\(x\)</span> 换元为 <span class="arithmatex">\(y\)</span>，满足关系 <span class="arithmatex">\(x = h(y)\)</span>，则原积分化为</p>
-<div class="arithmatex">\[
-\int_{h^{-1}(a)}^{h^{-1}(b)}f(h(y))\ \mathrm{d}(h(y)),
-\]</div>
-<p>其中的 <span class="arithmatex">\(\mathrm{d}x\)</span> 的转化可以理解为 <span class="arithmatex">\(\mathrm{d}(h(y)) \mapsto \det(\boldsymbol{J}_h)\mathrm{d}y = h'(y)\mathrm{d}y\)</span>（注意：行列式的意义在于空间被放缩的比例）。</p>
-<p>在二维区域上进行积分时，从直角坐标系到极坐标系的变换为</p>
-<div class="arithmatex">\[
-h(x, y) = (r\cos\theta, r\sin\theta)
-\]</div>
-<p>那么积分的转换为</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\iint_S f(x, y) \mathrm{d}x\mathrm{d}y
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\det(\boldsymbol{J}_h)\mathrm{d}r\mathrm{d}\theta\\
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\left|\frac{\partial(x, y)}{\partial(r, \theta)}\right|\mathrm{d}r\mathrm{d}\theta\\
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\begin{vmatrix}\frac{\partial x}{\partial r} &amp; \frac{\partial x}{\partial \theta}\\[0.3em]\frac{\partial y}{\partial r} &amp; \frac{\partial y}{\partial \theta}\end{vmatrix}\mathrm{d}r\mathrm{d}\theta\\
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\begin{vmatrix}\cos\theta &amp; -r\sin\theta\\ \sin\theta &amp; r\cos\theta\end{vmatrix}\mathrm{d}r\mathrm{d}\theta\\
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)r\mathrm{d}r\mathrm{d}\theta.
-\end{aligned}
-\]</div>
-<p>上式第二行使用的是雅可比行列式（Jacobian determinant）的一种写法。</p>
+<h1 id="broadcasting">Broadcasting<a class="headerlink" href="#broadcasting" title="Permanent link">&para;</a></h1>
+<p>Broadcasting of PyTorch tensors is very similar to that of NumPy arrays.</p>
+<h2 id="broadcastability">Broadcastability<a class="headerlink" href="#broadcastability" title="Permanent link">&para;</a></h2>
+<p>Two or more tensors are <strong>broadcastable</strong> if their shapes satisfy:</p>
+<ul>
+<li>none of them are empty;</li>
+<li>when iterated in reverse order, for one iteration, the dimension sizes are 1 or none, and the rest of them are equal.</li>
+</ul>
+<p>To broadcast these tensors,</p>
+<ul>
+<li>align the shapes to the right;</li>
+<li>unsqueeze the tensors of fewer dimensionalities to equalize the shape lengths;</li>
+<li>copy the tensor along each dimension, to equalize the shapes.</li>
+</ul>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="p">(</span>      <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+    <span class="p">(</span>   <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span>   <span class="n">np</span><span class="o">.</span><span class="n">broadcast_shapes</span><span class="p">(</span><span class="o">*</span><span class="n">shapes</span><span class="p">))</span>
+<span class="c1">#   (5, 3, 4, 6, 8, 9)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">broadcast_shapes</span><span class="p">(</span><span class="o">*</span><span class="n">shapes</span><span class="p">))</span>
+<span class="c1"># torch.Size([5, 3, 4, 6, 8, 9])</span>
+</code></pre></div>
+<p>Note that the <code>broadcast_shapes</code> methods raise an error if input shapes are not broadcastable.</p>
+<div class="highlight"><pre><span></span><code>(5, 3, 4, 6, 1, 9),
+(   3,    1, 1, 9),
+(   3, 1, 6, 8, 1),
+       ^ not aligned right
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>(5, 3, 4, 6, 1, 9),
+(      4, 1, 2, 9),
+(   3, 1, 6, 8, 1),
+             ^ 2 != 8 != 1
+</code></pre></div>
+<h2 id="broadcast-as-views">Broadcast as views<a class="headerlink" href="#broadcast-as-views" title="Permanent link">&para;</a></h2>
+<p>A broadcast tensor/array is a view of the original one. Writing to a broadcast PyTorch tensor may bring unexpected effect:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">x_b</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">x_b</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_b</span><span class="p">)</span>
+<span class="c1"># tensor([[4, 2, 3],</span>
+<span class="c1">#         [4, 2, 3]])</span>
+</code></pre></div>
+<p>A broadcast NumPy array is not writable, if writing is needed, create a new array by copying:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">x_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">broadcast_to</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_b</span><span class="o">.</span><span class="n">flags</span><span class="p">)</span>
+<span class="c1"># C_CONTIGUOUS : False</span>
+<span class="c1"># F_CONTIGUOUS : False</span>
+<span class="c1"># OWNDATA : False</span>
+<span class="c1"># WRITEABLE : False</span>
+<span class="c1"># ...</span>
+<span class="n">x_b_copy</span> <span class="o">=</span> <span class="n">x_b</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">x_b_copy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_b_copy</span><span class="p">)</span>
+<span class="c1"># [[4 2 3]</span>
+<span class="c1">#  [1 2 3]]</span>
+</code></pre></div>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://pytorch.org/docs/stable/notes/broadcasting.html">https://pytorch.org/docs/stable/notes/broadcasting.html</a></li>
+<li><a href="https://numpy.org/doc/stable/user/basics.broadcasting.html">https://numpy.org/doc/stable/user/basics.broadcasting.html</a></li>
+</ul>
 
               
             </article>
@@ -2784,7 +2850,7 @@ h(x, y) = (r\cos\theta, r\sin\theta)
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../cuda/cuda-basics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CUDA Basics" rel="prev">
+        <a href="../pytorch-loss-functions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PyTorch Loss Functions" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2793,26 +2859,11 @@ h(x, y) = (r\cos\theta, r\sin\theta)
               <span class="md-footer__direction">
                 Previous
               </span>
-              CUDA Basics
+              PyTorch Loss Functions
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../chebyshev-center/" class="md-footer__link md-footer__link--next" aria-label="Next: Chebyshev Center" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Chebyshev Center
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
