@@ -1,0 +1,18 @@
+% latex $fileNameWithoutExt; dvisvgm $fileNameWithoutExt --bbox=papersize --font-form=ttf --precision=3 --optimize=collapse-groups,group-attributes,simplify-text,simplify-transform
+\documentclass[tikz, border=2mm]{standalone}
+\usetikzlibrary{matrix}
+\begin{document}
+\begin{tikzpicture}
+  \matrix (m) [matrix of nodes, column sep=36px, row sep=16px]
+  {
+    0 & 0 \\
+      & e \\
+    1 & 1 \\
+  };
+  \path[->, font=\small]
+  (m-1-1) edge node [above=-2px] {$1-\alpha$} (m-1-2)
+  (m-1-1) edge node [below] {$\alpha$} (m-2-2)
+  (m-3-1) edge node [above] {$\alpha$} (m-2-2)
+  (m-3-1) edge node [below=-2px] {$1-\alpha$} (m-3-2);
+\end{tikzpicture}
+\end{document}

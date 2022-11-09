@@ -1,0 +1,45 @@
+% latex $fileNameWithoutExt; dvisvgm $fileNameWithoutExt --font-form=ttf --precision=3 --optimize=collapse-groups,group-attributes,simplify-text,simplify-transform
+\documentclass[tikz]{standalone}
+\begin{document}
+\begin{tikzpicture}
+  \tikzstyle{set}=[
+    circle,
+    thick,
+    draw opacity = .5,
+    fill opacity = .3,
+    text opacity = 1,
+  ]
+  \tikzstyle{arrow}=[{_[sep=-2px]}->, thick, opacity=1]
+  \def\r{25px}
+  \def\rc{36px}
+  \def\circlez{(90:\r) circle (\rc)}
+  \def\circley{(-30:\r) circle (\rc)}
+  \def\circlex{(-150:\r) circle (\rc)}
+  \def\outer{(-99,-99) rectangle (99,99)}
+
+  \draw[set, draw=green] \circlez node (z) {};
+  \draw[set, draw=blue] \circley node (y) {};
+  \draw[set, draw=red] \circlex node (x) {};
+
+  \begin{scope}[even odd rule]
+    \clip \circlez \circlex;
+    \fill[red, fill opacity=.3] \circlex;
+  \end{scope}
+  \begin{scope}[even odd rule]
+    \clip \outer \circlex;
+    \clip \outer \circlez;
+    \fill[blue, fill opacity=.3] \circley;
+  \end{scope}
+
+  \node at ([shift={(90:45px)}]z) {$H(Z)$};
+  \node at ([shift={(-50:50px)}]y) {$H(Y)$};
+  \node at ([shift={(-130:50px)}]x) {$H(X)$};
+
+  \node (hxz) at (-115:75px) {$H(X|Z)$};
+  \draw[arrow] (hxz.80) to [bend left=20] (-135:1.5*\r);
+
+  \node (hyxz) at (-75:65px) {$H(Y|X,Z)$};
+  \draw[arrow] (hyxz.60) to [bend right=20] (-30:1.65*\r);
+
+\end{tikzpicture}
+\end{document}

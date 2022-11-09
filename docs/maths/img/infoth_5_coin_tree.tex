@@ -1,0 +1,29 @@
+% latex $fileNameWithoutExt; dvisvgm $fileNameWithoutExt --bbox=papersize --font-form=ttf --precision=3 --optimize=collapse-groups,group-attributes,simplify-text,simplify-transform
+\documentclass[tikz, border=5mm]{standalone}
+\usetikzlibrary{trees}
+\begin{document}
+\begin{tikzpicture}[level distance=24px]
+  \tikzstyle{every node}=[
+    circle,
+  ]
+
+  \node  (root) {1}
+    child {node {$a$}}
+    child {
+    node {$\frac{1}{2}$}
+      child {node {$b$}}
+      child {
+      node {$\frac{1}{4}$}
+        child {node {$a$}}
+        child {
+        node {$\frac{1}{8}$}
+          child {node {$b$}}
+          child {
+          node {$\vdots$}
+          }
+        }
+      }
+    }
+  ;
+\end{tikzpicture}
+\end{document}
