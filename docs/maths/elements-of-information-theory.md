@@ -1331,6 +1331,8 @@ and it is the minimum achievable rate at distortion $D$.
 
     Next we prove $H(p) - H(D)$ is achievable. For the decoding shown in the graph, $r(1-D) + (1-r)D = p$, therefore $r = \frac{p-D}{1-2D}$.
 
+    ![](img/infoth_10_rdber.svg){style="transform: scale(1.4);"}
+
     * If $D \le p \le \frac{1}{2}$, $\Pr(\hat{X} = 1) \ge 0$, $\Pr(\hat{X} = 0) \ge 0$, and $I(X; \hat{X}) = H(p) - H(D)$ is reached.
     * If $D \ge p$, $R(D) = 0$ when $\Pr(\hat{X} = 0) = 1$.
     * If $D \ge 1 - p$, $R(D) = 0$ when $\Pr(\hat{X} = 1)$.

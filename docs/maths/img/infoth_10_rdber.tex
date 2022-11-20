@@ -1,0 +1,24 @@
+% latex $fileNameWithoutExt; dvisvgm $fileNameWithoutExt --bbox=papersize --font-form=ttf --precision=3 --optimize=collapse-groups,group-attributes,simplify-text,simplify-transform
+\documentclass[tikz, border=4mm]{standalone}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\begin{document}
+\begin{tikzpicture}
+  \matrix (m) [matrix of nodes, column sep=46px, row sep=22px]
+  {
+    0 & 0 \\
+    1 & 1 \\
+  };
+  \node[left of=m, left=0px] {$\hat{X}$};
+  \node[right of=m, right=0px] {$X$};
+  \node[left of=m-1-1, left=-16px] {$1-r$};
+  \node[left of=m-2-1, left=-16px] {$r$};
+  \node[right of=m-1-2, right=-16px] {$1-p$};
+  \node[right of=m-2-2, right=-16px] {$p$};
+  \path[->, font=\small]
+  (m-1-1) edge node [above=-2px] {$1-D$} (m-1-2)
+  (m-1-1) edge node [below right=4px and -1px] {$D$} (m-2-2)
+  (m-2-1) edge node [above right=4px and -1px] {$D$} (m-1-2)
+  (m-2-1) edge node [below=-2px] {$1-D$} (m-2-2);
+\end{tikzpicture}
+\end{document}
