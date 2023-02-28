@@ -1787,6 +1787,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4">
@@ -1823,6 +1825,20 @@
     <li class="md-nav__item">
       <a href="../../competitive-programming/nearest-point-pair/" class="md-nav__link">
         平面最近点对
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitive-programming/permutation-combination-subset/" class="md-nav__link">
+        排列、组合、子集问题与回溯
       </a>
     </li>
   
@@ -3697,12 +3713,12 @@
 <p>It returns the number of items it successfully reads. If it reads no items, it returns 0. If it reaches EOF, it returns EOF.</p>
 <h4 id="the-modifier">The <code>*</code> Modifier<a class="headerlink" href="#the-modifier" title="Permanent link">&para;</a></h4>
 <p>在 <code>printf()</code> 中，<code>*</code> 意味着可以用变量来指明 field width、precision 等 modifier 量。如下例。
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
-<span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.1415927</span><span class="p">;</span><span class="w"></span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%*.*f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.1415927</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%*.*f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
 </code></pre></div></p>
 <p>在 <code>scanf()</code> 中，<code>%</code> 和 转换标识符之间的 <code>*</code> 代表忽略对应的输入。如
-<div class="highlight"><pre><span></span><code><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%*d %*d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%*d %*d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
 当中第三个输入才有效。</p>
 <h2 id="operators-expressions-and-statements">Operators, Expressions and Statements<a class="headerlink" href="#operators-expressions-and-statements" title="Permanent link">&para;</a></h2>
@@ -3717,31 +3733,31 @@
 <p><code>_Bool</code> 类型的变量可被赋值为 0 或 1。如果向其赋非零值，则会自动转换为 1。但是并未定义 <code>true</code> 和 <code>false</code> 两个量。</p>
 <p>Furthermore, by including the <code>stdbool.h</code> file, you can use <code>bool</code> instead of the key word <code>_Bool</code> for the type and use the indentifiers <code>true</code> and <code>false</code>.</p>
 <h4 id="c-style-reading-loop">C-Style Reading Loop<a class="headerlink" href="#c-style-reading-loop" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
 <span class="w">    </span><span class="c1">// loop actions</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </code></pre></div>
 <p>可以使用 <code>n = getchar()</code> 代替。这样的效果完全一样，差别只在 <code>getchar()</code> 略快一些。对应的是 <code>putchar()</code> 函数。</p>
 <h4 id="for-loop"><code>for</code> Loop<a class="headerlink" href="#for-loop" title="Permanent link">&para;</a></h4>
 <p><code>for</code> 循环的过程：首次循环之前初始化，每次循环之前比对条件，每次循环结束后更新。</p>
 <h4 id="do-while-loop"><code>do-while</code> Loop<a class="headerlink" href="#do-while-loop" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">do</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">do</span>
+<span class="p">{</span>
 <span class="w">    </span><span class="c1">// loop actions</span>
-<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="p">(</span><span class="n">CONDITION</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="p">(</span><span class="n">CONDITION</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="_1">判断质数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">...</span>
 </code></pre></div>
 <h4 id="_2">读取每行第一个字符<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">())</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;#&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">while</span><span class="p">((</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">())</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;#&#39;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="k">continue</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="branching-and-jumps">Branching and Jumps<a class="headerlink" href="#branching-and-jumps" title="Permanent link">&para;</a></h2>
 <h4 id="ctypeh"><code>ctype.h</code><a class="headerlink" href="#ctypeh" title="Permanent link">&para;</a></h4>
@@ -3820,18 +3836,18 @@
 <h4 id="order-of-evaluation">Order of Evaluation<a class="headerlink" href="#order-of-evaluation" title="Permanent link">&para;</a></h4>
 <p>逻辑运算符保证从左到右运算。并且当前一项已经可以确定整个表达式的值时，后一项便会被忽略。</p>
 <h4 id="switch-case-statement"><code>switch</code>-<code>case</code> Statement<a class="headerlink" href="#switch-case-statement" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">VARIABLE</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="k">case</span><span class="w"> </span><span class="no">CONSTANT1</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">STATEMENT</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="k">case</span><span class="w"> </span><span class="no">CONSTANT2a</span><span class="p">:</span><span class="w"></span>
-<span class="k">case</span><span class="w"> </span><span class="no">CONSTANT2b</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">STATEMENT</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="k">default</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">STATEMENT</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">VARIABLE</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="k">case</span><span class="w"> </span><span class="no">CONSTANT1</span><span class="p">:</span>
+<span class="w">    </span><span class="n">STATEMENT</span><span class="p">;</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="k">case</span><span class="w"> </span><span class="no">CONSTANT2a</span><span class="p">:</span>
+<span class="k">case</span><span class="w"> </span><span class="no">CONSTANT2b</span><span class="p">:</span>
+<span class="w">    </span><span class="n">STATEMENT</span><span class="p">;</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="k">default</span><span class="o">:</span>
+<span class="w">    </span><span class="n">STATEMENT</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>若无 <code>break</code> 语句，则程序执行完一个 <code>case</code> 之后不会跳出而是执行下面的语句。当然 <code>continue</code> 不能作用于 <code>switch</code>。</p>
 <h2 id="character-io-and-input-validation">Character I/O and Input Validation<a class="headerlink" href="#character-io-and-input-validation" title="Permanent link">&para;</a></h2>
@@ -3842,12 +3858,12 @@
 当 <code>getchar()</code> 读到文件结束标志时返回 <code>EOF</code>。<code>EOF</code> 的具体值可能会有变化，但是通过符号化的定义屏蔽了这个细节。可用 <code>Ctrl+D</code>（Unix）或者 <code>Ctrl+Z</code>（Windows）输入。</p>
 <h4 id="input-validation">Input Validation<a class="headerlink" href="#input-validation" title="Permanent link">&para;</a></h4>
 <p>需要输入一个正整数时，可以使用
-<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
 </code></pre></div></p>
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <h4 id="equality-of-functions">Equality of Functions<a class="headerlink" href="#equality-of-functions" title="Permanent link">&para;</a></h4>
@@ -3869,66 +3885,66 @@
 <p>指针可以是常量或者变量，但是数组名一定是常量，不可以改变它的值。</p>
 <h4 id="_5">常量数组初始化<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>常量数组必须在定义时赋初值
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
 </code></pre></div></p>
 <h4 id="_6">指定元素初始化<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>C99 规定了指定元素初始化（designated initializers）
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="mi">212</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">=</span><span class="mi">212</span><span class="p">};</span>
 </code></pre></div>
 后初始化的元素可以覆盖之前初始化的结果。</p>
 <h4 id="_7">指定上限<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>C99 规定了使用正整数变量指定数字长度，如
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">];</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
 </code></pre></div></p>
 <h4 id="_8">数组形参<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[]);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[]);</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">arr</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">arr</span><span class="p">);</span>
 </code></pre></div></p>
 <p>在数组被定义的函数中，使用 <code>sizeof</code> 得到的是整个数组所占字节数，而经过参数传递到另一个函数中使用 <code>sizeof</code> 之后得到的是该指针的大小。</p>
 <h4 id="_9">常量参数<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p>向函数传递数组参数时，只能传送地址。这会导致函数对数组做意外修改的危险。为了保护参数不被修改，可以使用常量参数。</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[]);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[]);</span>
 </code></pre></div>
 <h4 id="_10">常量与指针<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <p>指向常量的指针定义为
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
 </code></pre></div>
 事实上他可以指向常量或者变量，但不可以通过指针来<strong>改变所指向的值</strong>。指针本身可以改变指向地址。这种用法经常用于函数形参，表明函数不能通过这个指针来改变所指向的值。</p>
 <p>注意普通指针不可以指向常量。</p>
 <p>常指针的定义为
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
 </code></pre></div>
 这种指针不可以<strong>改变所指的地址</strong>，但可以改变所指向的值。</p>
 <p>最后还有
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
 </code></pre></div>
 这个指针既不可以改变指向，也不可以改变指向的值。</p>
 <h4 id="_11">函数指针<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
 <p>函数指针常用于传参。函数的地址就是函数名。只要函数的参数列表类型相同，它们的地址类型就相同。
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">();</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">pf</span><span class="p">)();</span><span class="w"></span>
-<span class="n">pf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">();</span>
+<span class="kt">void</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">pf</span><span class="p">)();</span>
+<span class="n">pf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
 </code></pre></div>
 函数指针和函数名都可用于调用函数，即 <code>pf()</code> 和 <code>f()</code> 是一样的。</p>
 <h4 id="_12">指针与多维数组<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <p>以下面的数组为例讨论指针和多维数组
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span>
 </code></pre></div>
 多维数组就是数组的数组，<code>arr</code> 的元素，也就是 <code>arr[k]</code>，是包含两个 <code>int</code> 的数组。所以，<code>arr + 1</code> 移动了两个 <code>int</code> 单位，而 <code>arr[0] + 1</code> 只移动一个 <code>int</code> 单位。</p>
 <p>同样地，<code>*arr[0]</code> 是这个数组的第一个值。而 <code>*arr</code> 是数组 <code>arr[4]</code> 的第一个值，这个值是一个数组，也就是它本身又是一个指针，这样又能得到 <code>**arr</code>、<code>*&amp;arr[0][0]</code>、<code>arr[0][0]</code> 都是一回事。反过来看 <code>arr</code> 是地址的地址。</p>
 <h4 id="_13">指针数组与数组指针<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
 </code></pre></div>
 首先作用的下标运算符，表明 <code>p</code> 是一个数组。<code>*</code> 表示数组元素是指针，之后是 <code>int</code> 类型，所以定义的是指针组成的数组。</p>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">2</span><span class="p">];</span>
 </code></pre></div>
 首先 <code>*</code> 表明 <code>p</code> 是指针，下标运算符表示指向的是双元素的数组。</p>
 <p>这样的数组指针可以用来指向多维数组。以下面的代码为例：
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)[</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">;</span>
 </code></pre></div>
 这样 <code>p + 1</code> 后移两个整数空间，<code>p[0] +1</code> 后移一个整数空间。<code>arr[m][n]</code> 和 <code>p[m][n]</code> 是同一回事。</p>
 <h4 id="_14">指针类型兼容<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
@@ -3945,22 +3961,22 @@ void prd(int (*arr)[2]);
 <h4 id="variable-length-arrays-vlas">Variable-Length Arrays (VLAs)<a class="headerlink" href="#variable-length-arrays-vlas" title="Permanent link">&para;</a></h4>
 <p>顾名思义，这是用变量定义长度的数组。注意，这不是“变长数组”，在定义之后，数组的长度不可改变。</p>
 <p>首先，使用变量作为定义数组时的下标限。此时如果直接初始化，可能会出错。在函数形参中也可以使用 VLA，具体方法是
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
 </code></pre></div>
 如果在函数原型中省略变量名，则需要
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="o">*</span><span class="p">][</span><span class="o">*</span><span class="p">]);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="o">*</span><span class="p">][</span><span class="o">*</span><span class="p">]);</span>
 </code></pre></div>
 需要指出的是，这里的 VLA 形参仍是指针。</p>
 <h4 id="compound-literal">Compound Literal<a class="headerlink" href="#compound-literal" title="Permanent link">&para;</a></h4>
 <p>Literals are constants that are not symbolic.
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]){</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]){</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">};</span>
 </code></pre></div></p>
 <p>这样的常量可以使用于赋值，传参等等，和普通常量一样。</p>
 <h2 id="character-strings-and-string-functions">Character Strings and String Functions<a class="headerlink" href="#character-strings-and-string-functions" title="Permanent link">&para;</a></h2>
 <h4 id="character-string-literals">Character String Literals<a class="headerlink" href="#character-string-literals" title="Permanent link">&para;</a></h4>
 <p>双引号之间的字符就是字串常量，它们会自动在末尾附上一个 <code>\0</code>。若两个字串之间仅有空白字符，则它们会合并。这些字串存储在静态区，而且这个字段代表的就是指向它的指针。</p>
-<p><div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s, %p, %c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ghi&quot;</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s, %p, %c&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ghi&quot;</span><span class="p">);</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>abc, 0x100000f61, g
 </code></pre></div></p>
@@ -3969,8 +3985,8 @@ void prd(int (*arr)[2]);
 <p>如果数组下标比初始化所需的更大，则多余空间都会初始化为 <code>\0</code>。</p>
 <h4 id="_17">字符数组和字符指针<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
 <p>既然双引号是指针，那么就有两种初始化方法
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span>
 </code></pre></div>
 这两种定义方式很相似但是还是有细微区别。</p>
 <p>程序执行前，双引号内的字符先存入静态区，待到执行以数组方式定义字符数组时，再将其复制到数组所在内存单元中。但是指针形式只会复制此地址。</p>
@@ -3981,12 +3997,12 @@ void prd(int (*arr)[2]);
 <h3 id="_19">字符串输入<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <h4 id="_20">空间分配<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <p>输入字符串之前必须分配空间，下面是一种非常危险的做法：
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">;</span><span class="w"></span>
-<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">;</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">);</span>
 </code></pre></div></p>
 <h4 id="gets"><code>gets()</code> 函数<a class="headerlink" href="#gets" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="mi">15</span><span class="p">];</span><span class="w"></span>
-<span class="n">gets</span><span class="p">(</span><span class="n">str</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="mi">15</span><span class="p">];</span>
+<span class="n">gets</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </code></pre></div>
 <p><code>gets()</code> 函数读入一行数据，并截去末尾换行，再添加上 <code>\0</code>。这个函数并不安全，因为它不判断输入的字符是否超出分配的空间，导致可能会覆盖其他数据。C11 已经取消了该函数，但是大多数编译器为了向前兼容，还保留了这一函数。</p>
 <h4 id="fgets"><code>fgets()</code> 函数<a class="headerlink" href="#fgets" title="Permanent link">&para;</a></h4>
@@ -4012,15 +4028,15 @@ void prd(int (*arr)[2]);
 <h4 id="strcpy-strncpy"><code>strcpy()</code> 和 <code>strncpy()</code> 函数<a class="headerlink" href="#strcpy-strncpy" title="Permanent link">&para;</a></h4>
 <p>这一组函数相当于字符串的赋值。值得注意的是其中的参数并不一定要指向字符数组的开头</p>
 <h4 id="strchr-strrchr"><code>strchr()</code> 和 <code>strrchr()</code> 函数<a class="headerlink" href="#strchr-strrchr" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">strchr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">strchr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
 </code></pre></div>
 返回指向 <code>s</code> 第一次出现的字符 <code>c</code> 的指针。<code>strrchr()</code> 则对应最后一个出现的 <code>c</code>。未找到则返回 <code>NULL</code>。</p>
 <h4 id="strstr"><code>strstr()</code> 函数<a class="headerlink" href="#strstr" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">strstr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">strstr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span>
 </code></pre></div>
 返回指向 <code>s2</code> 在 <code>s1</code> 中第一次出现处的指针，未找到则返回 <code>NULL</code>。</p>
 <h4 id="strpbrk"><code>strpbrk()</code> 函数<a class="headerlink" href="#strpbrk" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">strpbrk</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">strpbrk</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span>
 </code></pre></div>
 <p>返回指向 <code>s2</code> 中任一字符在 <code>s1</code> 中第一次出现的位置的指针，未找到则返回 <code>NULL</code>。</p>
 <h4 id="sprintf"><code>sprintf()</code> 函数<a class="headerlink" href="#sprintf" title="Permanent link">&para;</a></h4>
@@ -4029,7 +4045,7 @@ void prd(int (*arr)[2]);
 <p><code>stdlib.h</code> 中包含一系列转换函数。</p>
 <p><code>atoi()</code> 函数（alphanumeric to integer）将字符串转换为整型，它返回字符串开头的纯数字部分所转换为的数字。如果参数开头不包含数字，则它的返回值未规定。同样地，还有返回 <code>double</code> 类型的 <code>atof()</code> 和返回 <code>long</code> 的 <code>atol()</code>。</p>
 <p><code>strtol()</code> 函数将字符串转换为 <code>long</code> 类型。
-<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="nf">strtol</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">endp</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">base</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="nf">strtol</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">endp</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">base</span><span class="p">);</span>
 </code></pre></div>
 首先将 <code>str</code> 开头可转换的部分转换为 <code>long</code> 并返回，可选择从 1 到 36 的基数。随后 <code>endp</code> 指向未得到转换的第一个字符的地址的地址。同理有 <code>strtoul()</code> 函数。</p>
 <p><code>strtod()</code> 函数则转换为 <code>double</code> 类型，但是没有基数选择，只接受两个参数。</p>
@@ -4113,46 +4129,46 @@ void prd(int (*arr)[2]);
 </table>
 <h4 id="automatic-variables">Automatic Variables<a class="headerlink" href="#automatic-variables" title="Permanent link">&para;</a></h4>
 <p>默认情况下，在代码块或者函数定义首部定义的变量为自动变量。还有一种定义方式是在类型之前加上关键字：
-<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 </code></pre></div></p>
 <p>但是 C++ 中关键字 <code>auto</code> 用于别的用途，所以为了兼容性，不建议使用。</p>
 <p>自动变量在所定义的代码块及其子代码块中有效。当这个代码块结束运行时，该变量就会被释放，若该代码块下一次运行，则这些变量会重新创建。若子代码块中定义了同名变量，则会将上一级代码块中的屏蔽。若在定义自动变量时没有初始化，则它的初始值不确定。</p>
 <p>C99 规定 <code>if</code> 和循环语句本身也是一个代码块，这些语句中的代码块是它的子代码块。比如
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
 <span class="w">    </span><span class="c1">// sub-block</span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">}</span>
 </code></pre></div>
 以上整个语句是一个块，而花括号当中是它的子代码块。</p>
 <h4 id="register-variables">Register Variables<a class="headerlink" href="#register-variables" title="Permanent link">&para;</a></h4>
 <p>寄存器变量使用 <code>register</code> 关键字定义：
-<div class="highlight"><pre><span></span><code><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">register</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
 </code></pre></div>
 这种变量大体和自动变量相同，但是由于它存储在寄存器中，所以速度较快，同时没有地址，不能取地址，不能被指针指向。定义一个寄存器变量并不一定让这个变量存储在寄存器中，编译器会做出衡量，最终决定是否存入寄存器。即使未存入寄存器，也不能取地址。</p>
 <p>寄存器变量可以用于声明函数形参。</p>
 <h4 id="static-variables-with-block-scope">Static Variables with Block Scope<a class="headerlink" href="#static-variables-with-block-scope" title="Permanent link">&para;</a></h4>
 <p>静态变量存储在内存的静态区内。在代码块中的静态变量又称为“局部静态变量（local static variable）”或者“内部静态变量（internal static storage class）”：
-<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
 </code></pre></div>
 这种变量只能在所在代码块中访问，但是其存储单元在整个程序运行时都有效。事实上定义静态变量所在的函数在重复执行时会跳过这一段对应的机器码，以防止重新声明造成的覆盖。</p>
 <h4 id="static-variables-with-external-linkage">Static Variables with External Linkage<a class="headerlink" href="#static-variables-with-external-linkage" title="Permanent link">&para;</a></h4>
 <p>外部链接静态变量在整个程序的多个文件中都有效。它直接在函数外部定义：
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
 </code></pre></div>
 这样的声明并不会直接使其他文件对此变量有访问权，若其它文件需要使用，则必须要使用的文件的函数外部加上 <code>extern</code> 声明以获得访问权。也就是说多个文件中，除了第一次定义处不使用 <code>extern</code>，其它需要使用该变量的文件均需要此声明。
-<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
 </code></pre></div></p>
 <p>C99 和 C11 标准规定编译器识别局部标识符前 63 个字符，外部标识符前 31 个字符，之前的规定是 31 和 6。</p>
 <p>函数中还可以可选地再加上 <code>extern</code> 声明
-<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
 </code></pre></div>
 注意此语句并没有定义变量，只是声明，称为 referencing declaration。而第一次的声明中包含了定义，称为 defining declaration。这种声明不需要重新表明数组的长度。如果缺少了 <code>extern</code> 关键字，则会导致创建一个将外部变量隐藏的同名自动变量。</p>
 <h4 id="static-variables-with-internal-linkage">Static Variables with Internal Linkage<a class="headerlink" href="#static-variables-with-internal-linkage" title="Permanent link">&para;</a></h4>
 <p>这种变量能在整个文件（translation unit）中访问，它曾经叫做外部静态变量（external static），但是为了避免混淆，我们弃用这一名称。这种变量在函数外部声明
-<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
 </code></pre></div>
 亦可以在函数中加上引用声明
-<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
 </code></pre></div>
 但是不会改变这个变量的链接种类。</p>
 <h4 id="storage-class-specifier">Storage-Class Specifier<a class="headerlink" href="#storage-class-specifier" title="Permanent link">&para;</a></h4>
@@ -4170,15 +4186,15 @@ void prd(int (*arr)[2]);
 <h3 id="allocated-memory">Allocated Memory<a class="headerlink" href="#allocated-memory" title="Permanent link">&para;</a></h3>
 <p><code>stdlib.h</code> 头文件中提供了动态内存分配函数。</p>
 <p><code>malloc()</code> 接受申请空间字节数作为参数，返回指向这个空间第一个字节的指针。若分配失败则返回 <code>NULL</code>。这个指针的类型，在 ANSI C 之前是 <code>char*</code>，现在为 <code>void*</code>。为了可读性，应该显式声明指针类型，但是不声明不会引起错误，即使是 ANSI C 之前。
-<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
 </code></pre></div>
 注意这个类型转换虽然在 C 中可省略，但是 C++ 要求使用。</p>
 <p>每一个 <code>malloc()</code> 都应与一个 <code>free()</code> 配对。<code>free()</code> 将参数指向的动态内存块释放。如果不将动态分配的内存释放，则它们会占用空间一直到程序结束。</p>
 <p><code>stdlib.h</code> 中的 <code>exit()</code> 使整个程序退出。其参数为退出返回值，一般用 <code>EXIT_SUCCESS</code>（== 0）或者 <code>EXIT_FAILURE</code>，也可以用其它整数来表明错误。</p>
 <p><code>calloc()</code> 函数用于分配一组内存空间，接受两个无符号数作为参数：
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">calloc</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">calloc</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
 </code></pre></div>
 它的返回值和 <code>malloc()</code> 完全一样，同样需要使用 <code>free()</code> 释放。有一点不同是它会将分配的内存中的每一位都初始化为 0（注意有一些系统中，每一位都是 0 所代表的浮点数并不是 0）。</p>
 <h3 id="type-qualifiers">Type Qualifiers<a class="headerlink" href="#type-qualifiers" title="Permanent link">&para;</a></h3>
@@ -4190,24 +4206,24 @@ void prd(int (*arr)[2]);
 <li><code>_Atomic</code>（C11）</li>
 </ul>
 <p>C99 之后限定词是幂等（idempotent）的，即连续的多个限定词相当于一个。
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="k">const</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </code></pre></div>
 两行代码效果完全相同。这样做的目的是使得以下代码有效：
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cint</span><span class="p">;</span><span class="w"></span>
-<span class="k">const</span><span class="w"> </span><span class="n">cint</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cint</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="n">cint</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </code></pre></div></p>
 <h4 id="the-const-type-qualifier">The <code>const</code> Type Qualifier<a class="headerlink" href="#the-const-type-qualifier" title="Permanent link">&para;</a></h4>
 <p>首先注意 <code>const</code> 限定词和指针。定义在指针时，若 <code>const</code> 在 <code>*</code> 之前，则说明指针指向常量，而若 <code>const</code> 在 <code>*</code> 之后，说明指针本身是常量。即
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pointer_to_const_a</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pointer_to_const_b</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">constant_pointer</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pointer_to_const_a</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pointer_to_const_b</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">constant_pointer</span><span class="p">;</span>
 </code></pre></div></p>
 <p>跨文件全局常量有两种处理方法。一种是采用外部链接的静态常量，即先在一个文件中定义
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
 </code></pre></div>
 在其它文件中声明
-<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">extern</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="p">;</span>
 </code></pre></div></p>
 <p>或者将常量写入头文件中，再在各个文件中引用。这样的常量一定要用 <code>static</code> 定义，否则会导致同一个变量定义多次，引起错误。这样各个文件中的常量事实上是完全独立的，但是由于它们不变化，所以没有影响。</p>
 <h4 id="the-volatile-type-qualifier">The <code>volatile</code> Type Qualifier<a class="headerlink" href="#the-volatile-type-qualifier" title="Permanent link">&para;</a></h4>
@@ -4215,7 +4231,7 @@ void prd(int (*arr)[2]);
 <p><code>volatile</code> 和 <code>const</code> 限定符不冲突，而且它们的顺序无关紧要。</p>
 <h4 id="the-restrict-type-qualifier">The <code>restrict</code> Type Qualifier<a class="headerlink" href="#the-restrict-type-qualifier" title="Permanent link">&para;</a></h4>
 <p><code>restrict</code> 也用于编译器优化，避免大量的冗余读取指针内容。它只能用于指针，它说明此指针是改变其所指单元内容的唯一、初始的方式。即不能通过其他方式改变其所指向的值，而且之前无法改变此值。
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">restrict</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">restrict</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
 </code></pre></div>
 亦可以在函数形参做 <code>restrict</code> 限定，这说明在函数中没有其他方式改变该值。</p>
 <p>有一些编译器并不会检查 <code>restrict</code> 变量是否满足要求。</p>
@@ -4280,11 +4296,11 @@ void prd(int (*arr)[2]);
 <h4 id="the-getc-and-putc-fucntion">The <code>getc()</code> and <code>putc()</code> Fucntion<a class="headerlink" href="#the-getc-and-putc-fucntion" title="Permanent link">&para;</a></h4>
 <p><code>getc()</code> 从所指定的文件指针中获取一个字节。事实上 <code>getchar()</code> 和 <code>getc(stdin)</code> 是等价的。同样地，<code>putchar(ch)</code> 和 <code>putchar(ch, stdout)</code> 是等价的。</p>
 <p><code>getc()</code> 在读到文件末尾时返回 <code>EOF</code>，所以一种常用的写法是
-<div class="highlight"><pre><span></span><code><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;temp.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getc</span><span class="p">(</span><span class="n">fp</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;temp.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">);</span>
+<span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getc</span><span class="p">(</span><span class="n">fp</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
 </code></pre></div></p>
 <h4 id="the-fclose-function">The <code>fclose()</code> Function<a class="headerlink" href="#the-fclose-function" title="Permanent link">&para;</a></h4>
 <p><code>fclose()</code> 的参数是一个文件指针，函数将其指向的文件关闭。如果关闭成功则返回 0，失败则返回 EOF。</p>
@@ -4294,7 +4310,7 @@ void prd(int (*arr)[2]);
 <p><a href="#fgets-函数"><code>fgets()</code> 函数</a><br />
 <a href="#fputs-函数"><code>fputs()</code> 函数</a></p>
 <h4 id="the-fseek-and-ftell-function">The <code>fseek()</code> and <code>ftell()</code> Function<a class="headerlink" href="#the-fseek-and-ftell-function" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fseek</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fromwhere</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fseek</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fromwhere</span><span class="p">);</span>
 </code></pre></div>
 <code>fseek()</code> 将 <code>fp</code> 移动到指定的位置，这是一种随机访问文件的方法。其中，<code>offset</code> 可正可负，但注意必须为 <code>long</code> 类型，在直接用数字表示时需要加上 <code>L</code> 后缀。<code>fromwhere</code> 有三种模式选择：</p>
 <ul>
@@ -4303,7 +4319,7 @@ void prd(int (*arr)[2]);
 <li><code>SEEK_END</code> 文件结束</li>
 </ul>
 <p>如果执行正常，返回 0，否则返回 -1（比如超出文件界限）。</p>
-<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="nf">ftell</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="nf">ftell</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
 <p><code>ftell()</code> 返回指针 <code>fp</code> 到文件开头的距离，用于和 <code>fseek()</code> 配合使用。</p>
 <p>在二进制模式中，这两个函数可以精确地根据字节数做相应的操作，但是在文本模式中，会有一些偏差。尽管如此，根据 ANSI C 中的规定，它们的配合是没有问题的。</p>
@@ -4312,22 +4328,22 @@ void prd(int (*arr)[2]);
 <p><code>rewind()</code> 接受一个文件指针，使其回到文件的开始位置。</p>
 <h4 id="the-fgetpos-and-fsetpos-function">The <code>fgetpos()</code> and <code>fsetpos()</code> Function<a class="headerlink" href="#the-fgetpos-and-fsetpos-function" title="Permanent link">&para;</a></h4>
 <p>前面两个函数限于使用 <code>long</code> 来指示文件位置，这样就将文件访问的范围限制在了二十亿字节左右。为了解决这个问题，引入了一种复合类型 <code>fpos_t</code>，用于表示文件指针位置。这种类型是一种复杂的结构，不能用于定义数组。</p>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fgetpos</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="kt">fpos_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fgetpos</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="kt">fpos_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span>
 </code></pre></div>
 <code>fgetpos()</code> 将当前 <code>fp</code> 指向的位置到文件起始的距离赋值给 <code>pos</code>。同时返回 0。若操作失败，则返回非零值。</p>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fsetpos</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">fpos_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fsetpos</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">fpos_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span>
 </code></pre></div>
 同样地，<code>fsetpos()</code> 将 <code>pos</code> 所表示的到文件开头的距离转换为文件指针，赋值给 <code>fp</code>，返回值同上。</p>
 <h4 id="the-ungetc-function">The <code>ungetc()</code> Function<a class="headerlink" href="#the-ungetc-function" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">ungetc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">ungetc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
 将字符 <code>ch</code> 压回 <code>fp</code> 的缓冲区中。</p>
 <h4 id="the-fflush-function">The <code>fflush()</code> Function<a class="headerlink" href="#the-fflush-function" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fflush</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fflush</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
 将输出缓冲区的内容写入 <code>fp</code> 中。若 <code>fp == NULL</code> 则清空所有输出缓冲区。它对输入缓冲区的作用未定义。</p>
 <h4 id="the-setvbuf-function">The <code>setvbuf()</code> Function<a class="headerlink" href="#the-setvbuf-function" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">setvbuf</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">setvbuf</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
 </code></pre></div>
 将 <code>buf</code> 处长度为 <code>size</code> 的空间设置为 <code>fp</code> 的缓冲区。模式 <code>mode</code> 有三种可选：</p>
 <ul>
@@ -4337,13 +4353,13 @@ void prd(int (*arr)[2]);
 </ul>
 <h4 id="the-fread-and-fwrite-function">The <code>fread()</code> and <code>fwrite()</code> Function<a class="headerlink" href="#the-fread-and-fwrite-function" title="Permanent link">&para;</a></h4>
 <p>存储浮点数时使用二进制形式，可以避免精度损失，而且占用空间小。
-<div class="highlight"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="nf">fwrite</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmem</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="nf">fwrite</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmem</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
 向 <code>fp</code> 处写入从地址 <code>p</code> 开始的 <code>nmem</code> 单元个，大小为 <code>size</code> 字节的数据。返回值是成功写入的数据个数，一般情况下等于 <code>nmem</code>。例如
-<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.4</span><span class="p">,</span><span class="w"> </span><span class="mf">5.6</span><span class="p">};</span><span class="w"></span>
-<span class="n">fwrite</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">),</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="mf">3.4</span><span class="p">,</span><span class="w"> </span><span class="mf">5.6</span><span class="p">};</span>
+<span class="n">fwrite</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">),</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div></p>
-<p><div class="highlight"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="nf">fread</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmem</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="nf">fread</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmem</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
 <code>fread()</code> 和 <code>fwrite()</code> 使用同一套参数，互为相反操作。</p>
 <h4 id="the-feof-and-ferror-function">The <code>feof()</code> and <code>ferror()</code> Function<a class="headerlink" href="#the-feof-and-ferror-function" title="Permanent link">&para;</a></h4>
@@ -4351,24 +4367,24 @@ void prd(int (*arr)[2]);
 <h2 id="structures-and-other-data-forms">Structures and Other Data Forms<a class="headerlink" href="#structures-and-other-data-forms" title="Permanent link">&para;</a></h2>
 <h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h3>
 <p>有多种方法定义结构体，一般的做法是首先声明结构体的形式（structure template），然后定义具体的变量。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">title</span><span class="p">[</span><span class="mi">60</span><span class="p">];</span><span class="w"></span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">title</span><span class="p">[</span><span class="mi">60</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="p">;</span>
 </code></pre></div>
 上例中声明了一种名称（tag）为 <code>book</code> 的结构体，这种声明使得 <code>struct book</code> 代指花括号内各成员的声明。亦可以此声明与定义合并，若只使用一次，还可以不给此结构体种类命名。</p>
 <p>结构体的初始化和数组相似：
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="s">&quot;C Primer Plus&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="mi">118</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s">&quot;C Primer Plus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">118</span>
+<span class="p">};</span>
 </code></pre></div>
 也可以采用指定成员的初始化
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;C Primer Plus&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="mi">118</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="n">lib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;C Primer Plus&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">118</span>
+<span class="p">};</span>
 </code></pre></div>
 或者更直接地，直接使用结构体变量初始化。</p>
 <p>结构体可以包含任意类型包括结构体，可以组成数组，可以作为函数参数，可以作为函数返回值。</p>
@@ -4377,121 +4393,121 @@ void prd(int (*arr)[2]);
 <p>注意 “<code>.</code>” 运算符的优先级比 “<code>&amp;</code>” 和 “<code>*</code>” 运算符高。</p>
 <p>指向结构体的指针到其成员的运算可以表示为 <code>(*p).m</code>，但显然写为 <code>p-&gt;m</code> 更加方便。</p>
 <p>由于结构体可能占用比较多空间，所以在向函数传递结构体参数时，为了速度，一般的做法是传递指针而非直接传参。
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="w"> </span><span class="o">*</span><span class="p">);</span>
 </code></pre></div></p>
 <p>结构体中不能包括自身，但是可以能包括指向自身的指针。这常在数据结构中使用到。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
 </code></pre></div></p>
 <h4 id="structure-compound-literals">Structure Compound Literals<a class="headerlink" href="#structure-compound-literals" title="Permanent link">&para;</a></h4>
 <p>Compound literals can be converted to structures, similar to arrays
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="p">){</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="p">){</span>
 <span class="w">    </span><span class="s">&quot;The Art of Computer Programming&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="s">&quot;100&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="p">){</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Introduction to Robotics&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;100&quot;</span>
+<span class="p">}</span>
+<span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="p">){</span>
+<span class="w">    </span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Introduction to Robotics&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span>
+<span class="p">}</span>
 </code></pre></div>
 如果定义在函数内，则为自动存储期，若在函数外，则有静态存储期。并且它们可以取地址。</p>
 <h4 id="flexible-array-members">Flexible Array Members<a class="headerlink" href="#flexible-array-members" title="Permanent link">&para;</a></h4>
 <p>C99 规定了一种特殊的成员数组。如果一种结构体的最后一个成员是数组，并且它不是唯一的成员，那么在定义时它的下标限可以留空，称为变长成员数组。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">flex</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">average</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">scores</span><span class="p">[];</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">flex</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">average</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">scores</span><span class="p">[];</span>
+<span class="p">}</span>
 </code></pre></div>
 这种类型的结构体变量在定义时，并不会分配任何空间给变长成员数组。这种结构体的使用方法是手动分配空间。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">flex</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">flex</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span><span class="w"></span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">scores</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.3</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">flex</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">flex</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">scores</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.3</span><span class="p">;</span>
 </code></pre></div>
 这样就给变长数组分配了空间。不同的变量可以分配不同长度的空间，因此称为变长数组。</p>
 <p>但是由于这一种结构体本身不包含变长数组的空间，所以它们在直接相互赋值时，只有非变长的部分有效。它们不可用于直接传参，不可作为数组元素，不可嵌套在其它结构体中。</p>
 <h4 id="anonymous-structures">Anonymous Structures<a class="headerlink" href="#anonymous-structures" title="Permanent link">&para;</a></h4>
 <p>C11 中规定了一种新特性，称为匿名结构体。在定义嵌套结构体的时候，可以省去内结构体的定义：
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">staff</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="kt">char</span><span class="w"> </span><span class="n">first</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">last</span><span class="p">[</span><span class="mi">20</span><span class="p">]};</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">staff</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="kt">char</span><span class="w"> </span><span class="n">first</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">last</span><span class="p">[</span><span class="mi">20</span><span class="p">]};</span>
+<span class="p">};</span>
 </code></pre></div>
 可以直接对其初始化，可以直接访问子结构体中的元素。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">staff</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Stephen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Prata&quot;</span><span class="p">}};</span><span class="w"></span>
-<span class="n">a</span><span class="p">.</span><span class="n">first</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">staff</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Stephen&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Prata&quot;</span><span class="p">}};</span>
+<span class="n">a</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
 </code></pre></div></p>
 <h3 id="union">Union<a class="headerlink" href="#union" title="Permanent link">&para;</a></h3>
 <p>共用体允许将不同种类的数据存放在同一段空间。其定义形式与结构体相同：
-<div class="highlight"><pre><span></span><code><span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">digit</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">letter</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">digit</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">letter</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 </code></pre></div>
 它可以有多种初始化形式：
-<div class="highlight"><pre><span></span><code><span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">};</span><span class="w"></span>
-<span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.1</span><span class="p">};</span><span class="w"></span>
-<span class="n">a</span><span class="p">.</span><span class="n">letter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;r&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
+<span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="k">union</span><span class="w"> </span><span class="nc">hold</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{.</span><span class="n">real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7.1</span><span class="p">};</span>
+<span class="n">a</span><span class="p">.</span><span class="n">letter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;r&#39;</span><span class="p">;</span>
 </code></pre></div>
 一个共用体是单个变量，在存储一种类型之后之前的数据随之被覆盖。它也可以使用 <code>-&gt;</code> 运算符。</p>
 <h4 id="anonymous-union">Anonymous Union<a class="headerlink" href="#anonymous-union" title="Permanent link">&para;</a></h4>
 <p>C11 规定了匿名共用体。用于共用体内嵌在结构体或者共用体中。</p>
 <h3 id="enumerated-types">Enumerated Types<a class="headerlink" href="#enumerated-types" title="Permanent link">&para;</a></h3>
 <p>枚举类型是一种将整数符号化，以增强程序可读性的类型。
-<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">spectrum</span><span class="w"> </span><span class="p">{</span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">orange</span><span class="p">,</span><span class="w"> </span><span class="n">yellow</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="p">,</span><span class="w"> </span><span class="n">violet</span><span class="p">};</span><span class="w"></span>
-<span class="k">enum</span><span class="w"> </span><span class="n">spectrum</span><span class="w"> </span><span class="n">color</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">spectrum</span><span class="w"> </span><span class="p">{</span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">orange</span><span class="p">,</span><span class="w"> </span><span class="n">yellow</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="p">,</span><span class="w"> </span><span class="n">violet</span><span class="p">};</span>
+<span class="k">enum</span><span class="w"> </span><span class="n">spectrum</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
 </code></pre></div>
 这样，一个枚举类型可取的值称为枚举常量，和其他常量一样使用。
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">red</span><span class="p">;</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">violet</span><span class="p">;</span><span class="w"> </span><span class="n">color</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">red</span><span class="p">;</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">violet</span><span class="p">;</span><span class="w"> </span><span class="n">color</span><span class="o">++</span><span class="p">)</span>
 </code></pre></div>
 但是 C++ 未继承枚举类型的一些特性，比如上例中的 <code>++</code> 运算符就和 C++ 不兼容。</p>
 <p>枚举常量是整数，其具体类型由系统决定，比如上例中可能为 <code>unsigned char</code>。这些常量默认按顺序从 0 开始计数，也可以手动改变其值：
-<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="p">{</span><span class="n">low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">medium</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="n">highplus</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">levels</span><span class="w"> </span><span class="p">{</span><span class="n">low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">medium</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="n">highplus</span><span class="p">};</span>
 </code></pre></div>
 未指明值的常量由上一项开始计数。</p>
 <p>枚举类型还可以用于定义符号化变量。使用一个匿名枚举类型，其中的元素代替宏或者常量。
-<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">ROW_START</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">COL_START</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">ROW_END</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">COL_END</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ROW_START</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COL_START</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ROW_END</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span>
+<span class="w">    </span><span class="n">COL_END</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80</span>
+<span class="p">};</span>
 
-<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ROW_START</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ROW_END</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ROW_START</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">ROW_END</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 </code></pre></div></p>
 <h4 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">&para;</a></h4>
 <p>C 语言中，结构体，共用体和枚举类型的名称（tags）使用同一个命名空间，变量名使用另一个命名空间。这使得在同一个作用域中重名的复合类型名和变量不会导致冲突。但是注意 C++ 中它们都使用一个命名空间。</p>
 <h3 id="typedef-keyword"><code>typedef</code> Keyword<a class="headerlink" href="#typedef-keyword" title="Permanent link">&para;</a></h3>
 <p><code>typedef</code> 的功能在于给自定义类型命名。
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">BYTE</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">BYTE</span><span class="p">;</span>
 </code></pre></div>
 注意它和 <code>#define</code> 的区别。首先 <code>typedef</code> 由编译器处理，<code>#define</code> 由预处理器处理。<code>typedef</code> 可以实现更复杂的定义，并且顺序不同，如
 <div class="highlight"><pre><span></span><code><span class="cp">#define STRING char *</span>
-<span class="n">STRING</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="n">STRING</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">STRING</span><span class="p">;</span><span class="w"></span>
-<span class="n">STRING</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">STRING</span><span class="p">;</span>
+<span class="n">STRING</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </code></pre></div>
 二者显然不同。</p>
 <p><code>typedef</code> 还有更复杂的用法，比如
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;}</span><span class="w"> </span><span class="n">point</span><span class="p">;</span><span class="w"></span>
-<span class="n">point</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;}</span><span class="w"> </span><span class="n">point</span><span class="p">;</span>
+<span class="n">point</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 </code></pre></div>
 所声明的新类型名不一定要在右端：
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">FPTRCHAR</span><span class="p">())[</span><span class="mi">5</span><span class="p">];</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">FPTRCHAR</span><span class="p">())[</span><span class="mi">5</span><span class="p">];</span>
 </code></pre></div>
 定义了一种返回五元素字符指针的函数类型。这是一种复杂的类型定义，下面再看几个例子：</p>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">])[</span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">])[</span><span class="mi">4</span><span class="p">];</span>
 </code></pre></div>
 根据运算符优先级分析有：</p>
 <ul>
@@ -4499,9 +4515,9 @@ void prd(int (*arr)[2]);
 <li><code>b</code> 是指针，指向的是一个二维数组；</li>
 <li><code>c</code> 是三元素数组，其元素是指针，指向四元素 <code>int</code> 数组。</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="kt">char</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">a</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="kt">char</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>
+<span class="kt">char</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">int</span><span class="p">);</span>
 </code></pre></div>
 <ul>
 <li><code>a</code> 是函数，返回值是字符指针；</li>
@@ -4557,12 +4573,12 @@ void prd(int (*arr)[2]);
 <p>移位运算符本身不会改变变量的值。左移运算右边补零。右移无符号类型左边补零。但是有一些机器上右移有符号数补 0，另一些补符号位。（MinGW-w64 补符号位）</p>
 <h3 id="bit-fields">Bit Fields<a class="headerlink" href="#bit-fields" title="Permanent link">&para;</a></h3>
 <p>位字段用于以比特为单位分配空间。它必须在结构体中使用 <code>signed int</code> 或者 <code>unsigned int</code> 类型。
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="p">};</span>
 </code></pre></div>
 这样分配了三个 1 位的空间。如果其中一位越界，则会存储到更高位的空间中。不同机器上存储它们的顺序可能不同。</p>
 <h2 id="the-c-preprocessor">The C Preprocessor<a class="headerlink" href="#the-c-preprocessor" title="Permanent link">&para;</a></h2>
@@ -4596,7 +4612,7 @@ void prd(int (*arr)[2]);
 <h4 id="_23">宏参数转换为字符串<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
 <p>在宏体中使用 <code>#</code> 运算符，将宏参数转换为字符串。
 <div class="highlight"><pre><span></span><code><span class="cp">#define PRINTSQ(x) printf(&quot;(&quot; #x &quot;)^2 = &quot; %d, (x)*(x));`</span>
-<span class="n">PRINTSQ</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">PRINTSQ</span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
 </code></pre></div>
 得到
 <div class="highlight"><pre><span></span><code>(2 * 4)^2 = 64
@@ -4609,7 +4625,7 @@ void prd(int (*arr)[2]);
 <h4 id="variadic-macros">Variadic Macros<a class="headerlink" href="#variadic-macros" title="Permanent link">&para;</a></h4>
 <p><code>...</code> 和 <code>__VA_ARGS__</code> 配合使用可以在宏中传递不定长参数：
 <div class="highlight"><pre><span></span><code><span class="cp">#define PRT(X, ...) printf(#X, __VA_ARGS__)</span>
-<span class="n">PRT</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span><span class="w"></span>
+<span class="n">PRT</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
 </code></pre></div>
 得到输出 <code>120</code>。注意 <code>...</code> 必须是最后一个参数。</p>
 <h3 id="the-undef-directive">The <code>#undef</code> Directive<a class="headerlink" href="#the-undef-directive" title="Permanent link">&para;</a></h3>
@@ -4633,29 +4649,29 @@ void prd(int (*arr)[2]);
 <p><code>#ifdef</code>、<code>#ifndef</code>、<code>#else</code> 和 <code>#endif</code> 配合，可以让预处理器选择执行一些预处理命令，甚至其中可以包含普通 C 语句。
 <div class="highlight"><pre><span></span><code><span class="cp">#define DEBUG</span>
 <span class="cp">#ifdef DEBUG</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
 <span class="cp">#endif</span>
 </code></pre></div></p>
 <p><code>#ifndef</code> 常用于防止重复引用头文件。如一般的做法是在一个头文件中写入
 <div class="highlight"><pre><span></span><code><span class="c1">// name.h</span>
 <span class="cp">#ifndef NAME_H_</span>
 <span class="cp">#define NAME_H_</span>
-<span class="p">...</span><span class="w"></span>
+<span class="p">...</span>
 <span class="cp">#endif</span>
 </code></pre></div>
 这里定义 <code>NAME_H_</code> 作为已经引入 <code>name.h</code> 的标志。这个标志一般使用大写文件名，点号换为下划线，在加上一个下划线后缀。</p>
 <p><code>#if</code> 和 <code>#elif</code> 更像 C 语言中的 <code>if</code> 语句。它判断之后的表达式，如
 <div class="highlight"><pre><span></span><code><span class="cp">#if SYS == 1</span>
-<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ibm.h&quot;</span><span class="cp"></span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ibm.h&quot;</span>
 <span class="cp">#elif SYS == 2</span>
-<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;mac.h&quot;</span><span class="cp"></span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;mac.h&quot;</span>
 <span class="cp">#else SYS == 3</span>
-<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;general.h&quot;</span><span class="cp"></span>
+<span class="w">    </span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;general.h&quot;</span>
 <span class="cp">#endif</span>
 </code></pre></div>
 有一些编译器允许使用另一种方式表达 <code>#ifdef</code>：
 <div class="highlight"><pre><span></span><code><span class="cp">#if defined (IBM_H)</span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">...</span>
 </code></pre></div></p>
 <h3 id="other-directives">Other Directives<a class="headerlink" href="#other-directives" title="Permanent link">&para;</a></h3>
 <h4 id="predefined-macros">Predefined Macros<a class="headerlink" href="#predefined-macros" title="Permanent link">&para;</a></h4>
@@ -4713,14 +4729,14 @@ void prd(int (*arr)[2]);
 <div class="highlight"><pre><span></span><code><span class="cp">#pragma c9x on</span>
 </code></pre></div></p>
 <p>C99 also provides the <code>_Pragma</code> operator, 
-<div class="highlight"><pre><span></span><code><span class="k">_Pragma</span><span class="p">(</span><span class="s">&quot;once&quot;</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">_Pragma</span><span class="p">(</span><span class="s">&quot;once&quot;</span><span class="p">)</span>
 </code></pre></div>
 is equivalent to
 <div class="highlight"><pre><span></span><code><span class="cp">#pragma once</span>
 </code></pre></div></p>
 <h4 id="generic-selection">Generic Selection<a class="headerlink" href="#generic-selection" title="Permanent link">&para;</a></h4>
 <p>C11 提供了一种判断类型的方法，虽然这并不是预处理命令，但是它定义于宏中。
-<div class="highlight"><pre><span></span><code><span class="k">_Generic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">_Generic</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 若 <code>x</code> 类型为 <code>int</code>，则此表达式值为 0，之后以此类推。<code>x</code> 可以是任何量。一般的用法是
 <div class="highlight"><pre><span></span><code><span class="cp">#define TYPE(X) _Generic((X), \</span>
@@ -4749,7 +4765,7 @@ is equivalent to
 <p><code>exit()</code> is implicitly when <code>main()</code> terminates. It executes the functions specified by <code>atexit()</code>, and then does some tidying.</p>
 <h4 id="the-qsort-function">The <code>qsort()</code> Function<a class="headerlink" href="#the-qsort-function" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">qsort</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span>\
-<span class="w">           </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cmp</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">));</span><span class="w"></span>
+<span class="w">           </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cmp</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">));</span>
 </code></pre></div>
 <code>base</code> 是要排序的数组的起始地址，<code>nmemb</code> 是要排序的元素个数，<code>size</code> 是每一个元素的大小（由于 <code>base</code> 被转换为 <code>void*</code> 类型，所以编译器无从得知元素大小），最后 <code>cmp</code> 是指向比较函数的指针。</p>
 <p><code>cmp</code> 的两个参数是指向两个比较项的指针，如果前一项应在后面，则返回正值；若两项等价，则返回 0；若前一项应在前，则返回负值。由于其参数类型为 <code>void*</code>，所以在函数定义内部进行实际比较时需要转换为原类型。</p>
@@ -4761,30 +4777,30 @@ is equivalent to
 <p><code>assert.h</code> 还将 <code>static_assert</code> 与 <code>_Static_assert</code> 等同起来。这是为了和 C++ 的兼容性。</p>
 <h3 id="the-memcpy-and-memmove-functions">The <code>memcpy()</code> and <code>memmove()</code> Functions<a class="headerlink" href="#the-memcpy-and-memmove-functions" title="Permanent link">&para;</a></h3>
 <p><code>string.h</code> 中声明了以下两个函数：
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">memcpy</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">memmove</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">memcpy</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">memmove</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
 两个函数的功能都是将 <code>s2</code> 起始处的 <code>n</code> 个字节复制到 <code>s1</code> 处，并返回 <code>s1</code>。其不同之处在于 <code>memcpy()</code> 的 <code>s1</code> 与 <code>s2</code> 有 <code>restrict</code> 修饰，这意味着两段内存空间没有重叠。<code>memmove()</code> 复制的方式是先复制到一段临时空间，再复制到目标。而 <code>memcpy()</code> 直接复制，它在两段空间有重叠时的行为没有定义。</p>
 <h3 id="variadic-functions">Variadic Functions<a class="headerlink" href="#variadic-functions" title="Permanent link">&para;</a></h3>
 <p><code>stdarg.h</code> 头文件提供了不定参数的功能。首先声明函数，其中不定部分用省略号 <code>...</code> 代替。
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
 </code></pre></div>
 注意不定部分必须是参数表的最后一部分，并且之前必须要有其它参数。</p>
 <p>接下来在函数定义中，使用 <code>va_list</code> 定义参数列表
-<div class="highlight"><pre><span></span><code><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">;</span>
 </code></pre></div>
 接下来使用 <code>va_start()</code> 初始化参数列表。此宏函数接受两个参量，一个是参数列表，另一个是不定参数之前紧接着的参数（此处为 <code>n</code>）。若不是 <code>n</code>，编译器会发出警告。在调用此函数时，<code>n</code> 应该是不定参数的个数。
-<div class="highlight"><pre><span></span><code><span class="n">va_start</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">va_start</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
 此时可以使用 <code>va_arg()</code> 来获取参数的值。其第一个参数是参数表名，第二个参数是当前要获取的参数的类型。重复调用此函数可依次获取参数。
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">va_arg</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">va_arg</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">);</span>
 </code></pre></div>
 最后释放为不定参数分配的动态空间。
-<div class="highlight"><pre><span></span><code><span class="n">va_end</span><span class="p">(</span><span class="n">ap</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">va_end</span><span class="p">(</span><span class="n">ap</span><span class="p">);</span>
 </code></pre></div></p>
 <p><code>va_args</code> 并没有读取上一个参数的机制。如果需要再次读取，则需要重新使用 <code>va_start()</code> 初始化。C99 提供了一个复制参数列表的函数
-<div class="highlight"><pre><span></span><code><span class="n">va_copy</span><span class="p">(</span><span class="n">apcopy</span><span class="p">,</span><span class="w"> </span><span class="n">ap</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">va_copy</span><span class="p">(</span><span class="n">apcopy</span><span class="p">,</span><span class="w"> </span><span class="n">ap</span><span class="p">);</span>
 </code></pre></div>
 可将 <code>apcopy</code> 复制到 <code>apcopy</code> 中。</p>
 

@@ -1429,6 +1429,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4">
@@ -1465,6 +1467,20 @@
     <li class="md-nav__item">
       <a href="../../../competitive-programming/nearest-point-pair/" class="md-nav__link">
         平面最近点对
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../competitive-programming/permutation-combination-subset/" class="md-nav__link">
+        排列、组合、子集问题与回溯
       </a>
     </li>
   
@@ -2836,7 +2852,7 @@
 <h3 id="set-available-gpus">Set available GPUs<a class="headerlink" href="#set-available-gpus" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CUDA_VISIBLE_DEVICES&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0,1,2,3&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s1">&#39;0,1,2,3&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s1">&#39;0,1,2,3&#39;</span>
 </code></pre></div>
 <h3 id="using-multiple-gpus">Using multiple GPUs<a class="headerlink" href="#using-multiple-gpus" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">DataParallel</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">device_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>

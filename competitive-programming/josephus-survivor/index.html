@@ -1431,6 +1431,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4">
@@ -1467,6 +1469,20 @@
     <li class="md-nav__item">
       <a href="../nearest-point-pair/" class="md-nav__link">
         平面最近点对
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permutation-combination-subset/" class="md-nav__link">
+        排列、组合、子集问题与回溯
       </a>
     </li>
   
@@ -2716,12 +2732,12 @@ m-1 &amp;\rightarrow m-k-1\\
 p_{m} = (p_{m-1} + k) \operatorname{\%} m
 \]</div>
 <p>则问题可转述为，记胜者为 <span class="arithmatex">\(p\)</span>，<span class="arithmatex">\(p_1 = 0\)</span>（最后一轮结束后仅剩胜者一人，其新编号将变为 <span class="arithmatex">\(0\)</span>），求 <span class="arithmatex">\(p_n\)</span>.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">josephus_survivor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="n">i</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">josephus_survivor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">res</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="o">%</span><span class="n">i</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 
               
@@ -2738,7 +2754,7 @@ p_{m} = (p_{m-1} + k) \operatorname{\%} m
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../nearest-point-pair/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 平面最近点对" rel="prev">
+        <a href="../permutation-combination-subset/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 排列、组合、子集问题与回溯" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -2747,7 +2763,7 @@ p_{m} = (p_{m-1} + k) \operatorname{\%} m
               <span class="md-footer__direction">
                 Previous
               </span>
-              平面最近点对
+              排列、组合、子集问题与回溯
             </div>
           </div>
         </a>

@@ -1548,6 +1548,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4">
@@ -1584,6 +1586,20 @@
     <li class="md-nav__item">
       <a href="../../competitive-programming/nearest-point-pair/" class="md-nav__link">
         平面最近点对
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitive-programming/permutation-combination-subset/" class="md-nav__link">
+        排列、组合、子集问题与回溯
       </a>
     </li>
   
@@ -2894,9 +2910,9 @@
 
 <h1 id="c">C++<a class="headerlink" href="#c" title="Permanent link">&para;</a></h1>
 <h4 id="pointers">Pointers<a class="headerlink" href="#pointers" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
 <span class="c1">//*p equals to a</span>
 </code></pre></div>
 A normal pointer cannot point to a constant for this constant can be modified through the pointer.  </p>
@@ -2904,20 +2920,20 @@ A normal pointer cannot point to a constant for this constant can be modified th
 <p><code>const float* p</code> pointer p is not a constant but it points to a constant.</p>
 <p><code>float *const p</code> address of p is a constant but the value is changable.</p>
 <h4 id="void-pointer">Void pointer<a class="headerlink" href="#void-pointer" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span><span class="w"></span>
-<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">p</span><span class="p">;</span>
 </code></pre></div>
 <h4 id="dynamic-memory">Dynamic Memory<a class="headerlink" href="#dynamic-memory" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span><span class="w"></span>
-<span class="k">delete</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w"></span>
-<span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span>
+<span class="k">delete</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="k">delete</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 </code></pre></div>
 <code>a</code> and <code>b</code> are two different names of one variable.</p>
 <p>Notify that:</p>
@@ -2930,11 +2946,11 @@ A normal pointer cannot point to a constant for this constant can be modified th
 <li>address of a reference: &amp;b=&amp;a</li>
 </ul>
 <h3 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">procedure</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">param1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">param2</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">statements</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">procedure</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">param1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">param2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">statements</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <h4 id="function-and-pointer">Function and Pointer<a class="headerlink" href="#function-and-pointer" title="Permanent link">&para;</a></h4>
 <p>The adress of a function is the name.</p>
@@ -2942,15 +2958,15 @@ A normal pointer cannot point to a constant for this constant can be modified th
 p is a pointer of a function.</p>
 <p>Calling: <code>(*p)(5)</code> or <code>p(5)</code></p>
 <p><em>note: <code>double *p(int)</code> is a normal function that returns a pointer</em> </p>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="n">f</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">...</span>
+<span class="n">f</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
 </code></pre></div>
 <h4 id="function-and-reference">Function and Reference<a class="headerlink" href="#function-and-reference" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
 The change of <code>a</code> is valid on the entire scoop of <code>a</code></p>
 <p><em>note: when calling, f(x+3) is invalid</em></p>
@@ -2961,113 +2977,113 @@ Replace the code where the function is called, save time at the cost of memory.<
 <h4 id="default-parameters">Default Parameters<a class="headerlink" href="#default-parameters" title="Permanent link">&para;</a></h4>
 <h4 id="function-overloading">Function Overloading<a class="headerlink" href="#function-overloading" title="Permanent link">&para;</a></h4>
 <h4 id="array-parameters">Array Parameters<a class="headerlink" href="#array-parameters" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">arrf</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">x</span><span class="p">];</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arrf</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">arrf</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">arr</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">arrf</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 <h3 id="const">Const<a class="headerlink" href="#const" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </code></pre></div>
 <h3 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">&para;</a></h3>
 <h4 id="function-templates">Function Templates<a class="headerlink" href="#function-templates" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
-<span class="n">T</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <h4 id="class-templates">Class Templates<a class="headerlink" href="#class-templates" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">circle</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
 </code></pre></div>
 <h4 id="template-specialization">Template Specialization<a class="headerlink" href="#template-specialization" title="Permanent link">&para;</a></h4>
 <p>To specify a different behavior for some data types.
-<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">circle</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
 </code></pre></div></p>
 <h3 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="n">expression</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="n">expression</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">expression</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">statements</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">try</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">expression</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">statements</span>
+<span class="p">}</span>
 </code></pre></div></p>
 <h3 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
 <h3 id="derived-data-types">Derived Data Types<a class="headerlink" href="#derived-data-types" title="Permanent link">&para;</a></h3>
 <h4 id="struct">Struct<a class="headerlink" href="#struct" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">struct1</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">varint</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vardouble</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="n">struct1</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
-<span class="n">x</span><span class="p">.</span><span class="n">varint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">struct1</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">varint</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vardouble</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="p">...</span>
+<span class="n">struct1</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="n">x</span><span class="p">.</span><span class="n">varint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="c1">//initialization</span>
-<span class="n">struct1</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span><span class="w"></span>
+<span class="n">struct1</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span>
 </code></pre></div>
 <h4 id="union">Union<a class="headerlink" href="#union" title="Permanent link">&para;</a></h4>
 <p><em>Union types can save memory</em>
-<div class="highlight"><pre><span></span><code><span class="k">union</span><span class="w"> </span><span class="nc">union1</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">varint</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vardouble</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">union</span><span class="w"> </span><span class="nc">union1</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">varint</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vardouble</span><span class="p">;</span>
+<span class="p">};</span>
 </code></pre></div></p>
 <h4 id="enum">Enum<a class="headerlink" href="#enum" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="nc">spectrum</span><span class="w"> </span><span class="p">{</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="nc">spectrum</span><span class="w"> </span><span class="p">{</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">};</span>
 </code></pre></div>
 <h2 id="object-oriented-programming">Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permanent link">&para;</a></h2>
 <p><em>Abstraction, Encapsulation, Inheritance, Polymorphism</em></p>
 <h3 id="object-basics-abstraction-and-encapsulation">Object Basics, <em>Abstraction</em> and <em>Encapsulation</em><a class="headerlink" href="#object-basics-abstraction-and-encapsulation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">r</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">showname</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="n">circle</span><span class="o">::</span><span class="n">showname</span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="nf">r</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">showname</span><span class="p">();</span>
+<span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="p">...</span>
+<span class="n">circle</span><span class="o">::</span><span class="n">showname</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <h4 id="access-specifiers">Access Specifiers<a class="headerlink" href="#access-specifiers" title="Permanent link">&para;</a></h4>
 <p><em><code>public, protected, private</code></em><br />
@@ -3075,19 +3091,19 @@ Replace the code where the function is called, save time at the cost of memory.<
 * <code>protected</code> methods can only be accessed by derived classes and the methods within the class;
 * <code>private</code> methods can only be viewed from within the class.</p>
 <h4 id="constructor-and-destructor">Constructor and Destructor<a class="headerlink" href="#constructor-and-destructor" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r0</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="o">~</span><span class="n">circle</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="o">~</span><span class="n">circle</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
 <h4 id="copy-constructor">Copy Constructor<a class="headerlink" href="#copy-constructor" title="Permanent link">&para;</a></h4>
 <p>calling:</p>
@@ -3098,58 +3114,58 @@ Replace the code where the function is called, save time at the cost of memory.<
 <li><strong>not</strong> when assigning value</li>
 </ul>
 <p>default: <code>classname obj1(obj)</code> copying all members of obj to obj1</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">classname</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">classname</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">classname</span><span class="o">&amp;</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">classname</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">        </span><span class="n">classname</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">classname</span><span class="o">&amp;</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="n">a</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="p">};</span>
 </code></pre></div>
 Reference is a <strong>must</strong>.</p>
 <p><code>const</code> ensures that obj is not modified.</p>
 <h4 id="object-array">Object Array<a class="headerlink" href="#object-array" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="n">classname</span><span class="w"> </span><span class="n">objname</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="n">classname</span><span class="w"> </span><span class="n">objname</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
 </code></pre></div>
 <em>parameters of constructor</em></p>
 <h4 id="constant-object">Constant Object<a class="headerlink" href="#constant-object" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">ClassName</span><span class="w"> </span><span class="n">ObjName</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">ClassName</span><span class="w"> </span><span class="n">ObjName</span><span class="p">;</span>
 </code></pre></div>
 <h4 id="constant-member-function">Constant Member Function<a class="headerlink" href="#constant-member-function" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ClassName::FunctionName</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">statements</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">ClassName::FunctionName</span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">statements</span>
+<span class="p">}</span>
 </code></pre></div>
 cannot change any values and cannot access non-static member functions</p>
 <p>calling:
-<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">FunctionName</span><span class="p">();</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">FunctionName</span><span class="p">();</span>
 </code></pre></div></p>
 <h4 id="constant-member-variables">Constant Member Variables<a class="headerlink" href="#constant-member-variables" title="Permanent link">&para;</a></h4>
 <p>must be initialized in constructor</p>
 <h4 id="member-initializers">Member Initializers<a class="headerlink" href="#member-initializers" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">color</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">circle</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">radius</span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">color</span><span class="p">;</span>
+<span class="w">        </span><span class="n">circle</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">radius</span><span class="p">(</span><span class="n">r</span><span class="p">),</span><span class="w"> </span><span class="n">color</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">};</span>
 </code></pre></div>
 <h4 id="friend">Friend<a class="headerlink" href="#friend" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">r</span><span class="p">(</span><span class="n">circle</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">r</span><span class="p">(</span><span class="n">circle</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">radius</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circle</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">r</span><span class="p">(</span><span class="n">circle</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">r</span><span class="p">(</span><span class="n">circle</span><span class="w"> </span><span class="o">&amp;</span><span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <h4 id="this">This<a class="headerlink" href="#this" title="Permanent link">&para;</a></h4>
 <h4 id="static-member">Static Member<a class="headerlink" href="#static-member" title="Permanent link">&para;</a></h4>
@@ -3166,53 +3182,53 @@ Notify that:</p>
 <h4 id="operator-overloading">Operator Overloading<a class="headerlink" href="#operator-overloading" title="Permanent link">&para;</a></h4>
 <p>5 operators that cannot be overloaded: <code>.  *  ::  sizeof  ?:</code></p>
 <p><div class="highlight"><pre><span></span><code><span class="c1">//As member function</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">Complex</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">imag</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c2</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="n">Complex</span><span class="w"> </span><span class="n">Complex</span><span class="o">::</span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c2</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">statements</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Complex</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">real</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">imag</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c2</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="n">Complex</span><span class="w"> </span><span class="n">Complex</span><span class="o">::</span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">statements</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">//As friend function</span>
-<span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c2</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">statements</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">c2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">statements</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">//prefix operator</span>
-<span class="k">friend</span><span class="w"> </span><span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p">(</span><span class="n">Complex</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
-<span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">++</span><span class="p">();</span><span class="w"></span>
+<span class="k">friend</span><span class="w"> </span><span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p">(</span><span class="n">Complex</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">++</span><span class="p">();</span>
 
 <span class="c1">//suffix operator</span>
-<span class="k">friend</span><span class="w"> </span><span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">--</span><span class="p">(</span><span class="n">Complex</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">--</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
+<span class="k">friend</span><span class="w"> </span><span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">--</span><span class="p">(</span><span class="n">Complex</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span>
+<span class="n">Complex</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">--</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">//data type convert</span>
 <span class="c1">//as member function, no parameter, no return</span>
-<span class="k">operator</span><span class="w"> </span><span class="kt">double</span><span class="p">()</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">real</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="k">operator</span><span class="w"> </span><span class="kt">double</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">real</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">//stream</span>
-<span class="n">istream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
+<span class="n">istream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">istream</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">Complex</span><span class="o">&amp;</span><span class="p">);</span>
 </code></pre></div></p>
 <h3 id="inheritance"><em>Inheritance</em><a class="headerlink" href="#inheritance" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="p">...</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
 </code></pre></div>
 A derived class inherits all base methods with the following exceptions:</p>
 <ul>
@@ -3251,7 +3267,7 @@ A derived class inherits all base methods with the following exceptions:</p>
 <li>Call base destructor.</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="c1">//Constructor</span>
-<span class="n">derived</span><span class="o">::</span><span class="n">derived</span><span class="p">(</span><span class="n">arglist</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">base</span><span class="p">(</span><span class="n">arglist</span><span class="p">);</span><span class="w"></span>
+<span class="n">derived</span><span class="o">::</span><span class="n">derived</span><span class="p">(</span><span class="n">arglist</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">base</span><span class="p">(</span><span class="n">arglist</span><span class="p">);</span>
 </code></pre></div>
 <h4 id="compatibility">Compatibility<a class="headerlink" href="#compatibility" title="Permanent link">&para;</a></h4>
 <p>In public inheritance, an object/reference/pointer of a derived class can be assigned to a base one.</p>
@@ -3259,28 +3275,28 @@ A derived class inherits all base methods with the following exceptions:</p>
 <p>A member of base class can be overloaded. The derived one will be called in default unless <code>base::</code> is used.</p>
 <h4 id="virtual-function">Virtual function<a class="headerlink" href="#virtual-function" title="Permanent link">&para;</a></h4>
 <p>Whether a derived or base one to call depends on the type of pointer/reference.
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">base</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">derived</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">base</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="n">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
-<span class="n">base</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="n">derived</span><span class="w"> </span><span class="n">d</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="p">;</span><span class="w"></span>
-<span class="n">p</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">base</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">derived</span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">base</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="p">...</span>
+<span class="n">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="n">base</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="n">derived</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">d</span><span class="p">;</span>
+<span class="n">p</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 </code></pre></div></p>
 <h4 id="virtual-destructor">Virtual Destructor<a class="headerlink" href="#virtual-destructor" title="Permanent link">&para;</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="n">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">derived</span><span class="p">;</span><span class="w"></span>
-<span class="k">delete</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><span class="n">base</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">derived</span><span class="p">;</span>
+<span class="k">delete</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 <span class="c1">//Only destructor of base called.</span>
 </code></pre></div>
 if <code>virtual ~base(){}</code>, derived destructor called.</p>

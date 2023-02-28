@@ -1429,6 +1429,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4">
@@ -1465,6 +1467,20 @@
     <li class="md-nav__item">
       <a href="../../competitive-programming/nearest-point-pair/" class="md-nav__link">
         平面最近点对
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../competitive-programming/permutation-combination-subset/" class="md-nav__link">
+        排列、组合、子集问题与回溯
       </a>
     </li>
   
@@ -3417,33 +3433,33 @@
 <p><strong>Use the natural form for expressions.</strong></p>
 <p><strong>Parenthesize to resolve ambiguity.</strong><br />
 即使不需要括号来改变运算顺序，但是还是可以加上括号来增加可读性，如</p>
-<div class="highlight"><pre><span></span><code><span class="n">leap_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">y</span><span class="o">%</span><span class="mi">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">%</span><span class="mi">100</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">%</span><span class="mi">400</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">leap_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">y</span><span class="o">%</span><span class="mi">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">%</span><span class="mi">100</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">%</span><span class="mi">400</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 </code></pre></div>
 <p><strong>Break up complex expressions.</strong></p>
 <p><strong>Be clear.</strong><br />
 可以通过一些运算简化表达式。尤其是使用 <code>?:</code> 运算符的时候要特别注意。这个运算符一般用于
-<div class="highlight"><pre><span></span><code><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The list has %d item%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;s&quot;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">printf</span><span class="p">(</span><span class="s">&quot;The list has %d item%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;s&quot;</span><span class="p">);</span>
 </code></pre></div></p>
 <p><strong>Be careful with side effects.</strong><br />
 当然 <code>++</code> 这类运算符是典型的例子。任何改变变量内容的复杂操作都需要注意，如
-<div class="highlight"><pre><span></span><code><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ip</span><span class="p">)</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ip</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">ip</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="n">f</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="p">));</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ip</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ip</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">*</span><span class="n">ip</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">f</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">),</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="p">));</span>
 </code></pre></div></p>
 <h3 id="consistency-and-idioms">Consistency and Idioms<a class="headerlink" href="#consistency-and-idioms" title="Permanent link">&para;</a></h3>
 <p><strong>Use a consistent indentation and brace style.</strong><br />
 还要注意 “dangling else” 的经典错误。</p>
 <p><strong>Use idioms for consistency.</strong><br />
 一些常用的操作有约定的的写法，比如遍历数组和链表、无限循环、读取字符。为字符数组开辟空间的写法是
-<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="n">strcpy</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">);</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">strcpy</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">);</span>
 </code></pre></div>
 这是由于 <code>strlen</code> 不会计入末尾 <code>\0</code>，而 <code>strcpy</code> 会复制之。</p>
 <p><strong>Use else-ifs for multiway decisions.</strong></p>
@@ -3503,12 +3519,12 @@ Visualize the statistic of errors.</p>
 <h2 id="last-resorts">Last Resorts<a class="headerlink" href="#last-resorts" title="Permanent link">&para;</a></h2>
 <p>If none of those advices above helps, it may be time to use a good debugger to step through the program. If your mental model of how something works is just plain wrong, so you're looking in the wrong place entirely, or looking in the right place but not seeing the problem, a debugger forces you to think differently.</p>
 <p>For example, one often forget that <code>&amp;</code> and <code>|</code> have lower precedence than <code>==</code> and <code>!=</code>:
-<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></p>
 <p>Sometimes it's the compiler vendor's fault:
 <div class="highlight"><pre><span></span><code><span class="cp">#define isprint(c) ((c) &gt;= 040 &amp;&amp; (c) &lt; 0177)</span>
-<span class="p">...</span><span class="w"></span>
-<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">isprint</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">()))</span><span class="w"></span>
+<span class="p">...</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">isprint</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getchar</span><span class="p">()))</span>
 </code></pre></div></p>
 <h3 id="non-reproducible-bugs">Non-reproducible Bugs<a class="headerlink" href="#non-reproducible-bugs" title="Permanent link">&para;</a></h3>
 <p>Check whether all variables have been initialized.</p>
@@ -3538,14 +3554,14 @@ Make sure that every statement has been executed during the test.</p>
 <h3 id="test-automation">Test Automation<a class="headerlink" href="#test-automation" title="Permanent link">&para;</a></h3>
 <p><strong>Automate regression testing.</strong><br />
 A testing script in Perl:
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="n">data</span><span class="o">.*</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">data</span><span class="o">.*</span>
 <span class="k">do</span>
-    <span class="n">old</span> <span class="nv">$i</span> <span class="o">&gt;</span> <span class="n">out1</span>
-    <span class="k">new</span> <span class="nv">$i</span> <span class="o">&gt;</span> <span class="n">out2</span>
-    <span class="k">if</span> <span class="o">!</span> <span class="ow">cmp</span> <span class="o">-</span><span class="n">s</span> <span class="n">out1</span> <span class="n">out2</span>
-    <span class="k">then</span>
-        <span class="n">echo</span> <span class="nv">$i:</span> <span class="n">BAD</span>
-    <span class="n">fi</span>
+<span class="w">    </span><span class="n">old</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">out1</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">out2</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="ow">cmp</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="n">out1</span><span class="w"> </span><span class="n">out2</span>
+<span class="w">    </span><span class="k">then</span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="nv">$i:</span><span class="w"> </span><span class="n">BAD</span>
+<span class="w">    </span><span class="n">fi</span>
 <span class="n">done</span>
 </code></pre></div></p>
 <h3 id="stress-test">Stress Test<a class="headerlink" href="#stress-test" title="Permanent link">&para;</a></h3>
