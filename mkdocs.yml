@@ -82,6 +82,7 @@ nav:
     - Basics:
       - 快速排序 / 第 k 小的数: competitive-programming/quicksort.md
       - 平面最近点对: competitive-programming/nearest-point-pair.md
+      - 排列、组合、子集问题与回溯: competitive-programming/permutation-combination-subset.md
     - Misc:
       - Josephus Survivor: competitive-programming/josephus-survivor.md
       - 找筷子: competitive-programming/chopsticks.md
@@ -178,7 +179,11 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.extra
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - markdown.extensions.sane_lists
   - pymdownx.tabbed:
       alternate_style: true
