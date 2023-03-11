@@ -21,7 +21,7 @@ theme:
     - navigation.instant
 
 
-copyright: 'Copyright &copy; 2017 - 2022 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
+copyright: 'Copyright &copy; 2017 - 2023 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
 
 
 nav:
@@ -59,8 +59,8 @@ nav:
     - HTML Cheatsheet: web/html-cheatsheet.md
     - CSS Cheatsheet: web/css-cheatsheet.md
   - AI:
-    - Deep Learning: ai/deep-learning/deep-learning.md
-    - Machine Learning: ai/machine-learning/machine-learning.md
+    - Deep Learning: ai/deep-learning.md
+    - Machine Learning: ai/machine-learning.md
   - Competitive Programming:
     - Mathematics:
       - 素数: competitive-programming/prime.md
