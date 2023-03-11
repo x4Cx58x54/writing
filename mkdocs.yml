@@ -60,6 +60,7 @@ nav:
     - CSS Cheatsheet: web/css-cheatsheet.md
   - AI:
     - Deep Learning: ai/deep-learning/deep-learning.md
+    - Machine Learning: ai/machine-learning/machine-learning.md
   - Competitive Programming:
     - Mathematics:
       - 素数: competitive-programming/prime.md
