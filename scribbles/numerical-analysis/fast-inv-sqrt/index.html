@@ -15,7 +15,7 @@
     
     
       
-        <title>快速平方根倒数算法，0x5F3759DF - Randomish Writing</title>
+        <title>Fast Inverse Square Root, 0x5F3759DF - Randomish Writing</title>
       
     
     
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              快速平方根倒数算法，0x5F3759DF
+              Fast Inverse Square Root, 0x5F3759DF
             
           </span>
         </div>
@@ -276,13 +276,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Scribbles
       </a>
     </li>
@@ -2269,12 +2271,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
       
       
       
@@ -2492,15 +2496,19 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" type="checkbox" id="__nav_9_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" type="checkbox" id="__nav_9_5" checked>
       
       
       
+        
+          
         
           
         
@@ -2527,6 +2535,89 @@
       <a href="." class="md-nav__link">
         Fast Inverse Square Root, 0x5F3759DF
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fast Inverse Square Root, 0x5F3759DF
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fast Inverse Square Root, 0x5F3759DF
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#float32-in-ieee-754" class="md-nav__link">
+    Float32 in IEEE 754
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快速平方根倒数算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    牛顿法求根
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0x5f3759df-the-magic-number" class="md-nav__link">
+    0x5F3759DF the Magic Number
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2823,11 +2914,13 @@
 \]</div>
 <div class="admonition note">
 <p class="admonition-title">Examples</p>
-</div>
 <ul>
-<li><span class="arithmatex">\(\texttt{0 011111111 00000000000000000000000} = +2^{127-127} \times 1.0 = +1\)</span></li>
-<li><span class="arithmatex">\(\texttt{1 100000000 00000000000000000000000} = -2^{128-127} \times 1.0 = -2\)</span></li>
+<li><span class="arithmatex">\(\texttt{0 01111111 00000000000000000000000} = +2^{127-127} \times 1.0 = +1\)</span></li>
+<li><span class="arithmatex">\(\texttt{1 10000000 00000000000000000000000} = -2^{128-127} \times 1.0 = -2\)</span></li>
+<li><span class="arithmatex">\(\texttt{0 10000000 11111111111111111111111} = +2^{128-127} \times (2.0 - 2^{-23}) \approx 4\)</span></li>
+<li><span class="arithmatex">\(\texttt{0 10111110 01101110101100111011111} \approx +2^{190-127} \times 1.432 \approx 1.321\times 10^{19}\)</span></li>
 </ul>
+</div>
 <div class="admonition info">
 <p class="admonition-title">Normal Numbers and Subnormal Numbers</p>
 <p>从表示上来说，非规格化数表示的是数量级非常小的数和 0，而规格化数表示的是绝对值更大的数. 非规格化数的指数位全为 0；而规格化的指数位非全 0（也非全 1）.</p>
@@ -3036,6 +3129,7 @@ y = \frac{1}{\sqrt{x}} &amp;= 2^{(127-E)/2}\cdot \frac{1}{\sqrt{1+M}} \\
 \end{aligned}
 \]</div>
 <p>对 <code>0x5f3759df</code>，对应指数 <span class="arithmatex">\(E\)</span> 的 8 位为 <code>1011 1110</code>，是十进制的 190；对应尾数 <span class="arithmatex">\(M\)</span> 的 23 位为 <code>011 0111 0101 1001 1101 1111</code>，对应十进制的约 0.432. 那么忽略尾数最后一位产生的误差，讨论 <code>0x5f3759df - (i &gt;&gt; 1)</code> 得到的结果：</p>
+<p>首先注意右移一位后指数最大值是 127，小于 190，故做减法时指数不会再向上借位.</p>
 <p><span class="arithmatex">\(E\)</span> 为奇数时：</p>
 <ul>
 <li>右移，<span class="arithmatex">\(E\)</span> 末尾的 1 移至 <span class="arithmatex">\(M\)</span> 的最高位：<ul>
@@ -3106,6 +3200,42 @@ y = \frac{1}{\sqrt{x}} &amp;= 2^{(127-E)/2}\cdot \frac{1}{\sqrt{1+M}} \\
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../maths/chebyshev-center/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chebyshev Center" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Chebyshev Center
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../opencv/opencv-basics/" class="md-footer__link md-footer__link--next" aria-label="Next: OpenCV Basics" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              OpenCV Basics
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
