@@ -1,5 +1,6 @@
 # Scribbles
 
+- 2023.03.15 -- [Fast Inverse Square Root, 0x5F3759DF](./numerical-analysis/fast-inv-sqrt.md)
 - 2022.09.20 -- [Broadcasting](./pytorch/broadcasting.md)
 - 2022.09.13 -- [PyTorch Loss Functions](./pytorch/pytorch-loss-functions.md)
 - 2022.07.21 -- [Python Type Hints](./python/python-type-hints.md)

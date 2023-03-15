@@ -53,7 +53,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = '0,1,2,3'
 export CUDA_VISIBLE_DEVICES='0,1,2,3'
 ```
 
-### Using multiple GPUs
+### Using multiple GPUs, single process
 
 ```py
 torch.nn.DataParallel(model, device_ids=None, output_device=None, dim=0)
@@ -62,3 +62,11 @@ torch.nn.DataParallel(model, device_ids=None, output_device=None, dim=0)
 Returns a model on multiple GPUs. [ᵈᵒᶜ](https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html)
 
 `device_ids` can be a list of `int`, a list of `torch.device` or `None` (for all devices).
+
+
+## Using multiple GPUs on one machine, multiple processes
+
+`DistributedDataParallel` runs over multiple processes, with each processes on a GPU.
+
+* **Process group**: 
+* **World size**: the number of processes 
