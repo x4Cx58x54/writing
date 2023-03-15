@@ -2299,6 +2299,8 @@
         
           
         
+          
+        
       
       
         
@@ -2509,12 +2511,63 @@
       
       
         <label class="md-nav__link" for="__nav_9_5">
+          Numerical Analysis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Numerical Analysis" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_5">
+          <span class="md-nav__icon md-icon"></span>
+          Numerical Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../numerical-analysis/fast-inv-sqrt" class="md-nav__link">
+        Fast Inverse Square Root, 0x5F3759DF
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6" type="checkbox" id="__nav_9_6" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9_6">
           OpenCV
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="OpenCV" data-md-level="2">
-        <label class="md-nav__title" for="__nav_9_5">
+        <label class="md-nav__title" for="__nav_9_6">
           <span class="md-nav__icon md-icon"></span>
           OpenCV
         </label>
@@ -2550,7 +2603,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6" type="checkbox" id="__nav_9_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7" type="checkbox" id="__nav_9_7" >
       
       
       
@@ -2559,13 +2612,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_9_6">
+        <label class="md-nav__link" for="__nav_9_7">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_9_6">
+        <label class="md-nav__title" for="__nav_9_7">
           <span class="md-nav__icon md-icon"></span>
           Python
         </label>
@@ -2603,7 +2656,7 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7" type="checkbox" id="__nav_9_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" type="checkbox" id="__nav_9_8" checked>
       
       
       
@@ -2616,13 +2669,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_9_7">
+        <label class="md-nav__link" for="__nav_9_8">
           PyTorch
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="PyTorch" data-md-level="2">
-        <label class="md-nav__title" for="__nav_9_7">
+        <label class="md-nav__title" for="__nav_9_8">
           <span class="md-nav__icon md-icon"></span>
           PyTorch
         </label>
@@ -2703,8 +2756,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-multiple-gpus" class="md-nav__link">
-    Using multiple GPUs
+  <a href="#using-multiple-gpus-single-process" class="md-nav__link">
+    Using multiple GPUs, single process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-multiple-gpus-on-one-machine-multiple-processes" class="md-nav__link">
+    Using multiple GPUs on one machine, multiple processes
   </a>
   
 </li>
@@ -2821,8 +2881,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-multiple-gpus" class="md-nav__link">
-    Using multiple GPUs
+  <a href="#using-multiple-gpus-single-process" class="md-nav__link">
+    Using multiple GPUs, single process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-multiple-gpus-on-one-machine-multiple-processes" class="md-nav__link">
+    Using multiple GPUs on one machine, multiple processes
   </a>
   
 </li>
@@ -2870,11 +2937,17 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s1">&#39;0,1,2,3&#39;</span>
 </code></pre></div>
-<h3 id="using-multiple-gpus">Using multiple GPUs<a class="headerlink" href="#using-multiple-gpus" title="Permanent link">&para;</a></h3>
+<h3 id="using-multiple-gpus-single-process">Using multiple GPUs, single process<a class="headerlink" href="#using-multiple-gpus-single-process" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">DataParallel</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">device_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
 <p>Returns a model on multiple GPUs. <a href="https://pytorch.org/docs/stable/generated/torch.nn.DataParallel.html">ᵈᵒᶜ</a></p>
 <p><code>device_ids</code> can be a list of <code>int</code>, a list of <code>torch.device</code> or <code>None</code> (for all devices).</p>
+<h2 id="using-multiple-gpus-on-one-machine-multiple-processes">Using multiple GPUs on one machine, multiple processes<a class="headerlink" href="#using-multiple-gpus-on-one-machine-multiple-processes" title="Permanent link">&para;</a></h2>
+<p><code>DistributedDataParallel</code> runs over multiple processes, with each processes on a GPU.</p>
+<ul>
+<li><strong>Process group</strong>: </li>
+<li><strong>World size</strong>: the number of processes </li>
+</ul>
 
               
             </article>

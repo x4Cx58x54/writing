@@ -15,7 +15,7 @@
     
     
       
-        <title>Jacobian Matrix - Randomish Writing</title>
+        <title>快速平方根倒数算法，0x5F3759DF - Randomish Writing</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jacobian-matrix" class="md-skip">
+        <a href="#0x5f3759df" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jacobian Matrix
+              快速平方根倒数算法，0x5F3759DF
             
           </span>
         </div>
@@ -276,15 +276,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link">
         Scribbles
       </a>
     </li>
@@ -2271,14 +2269,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
@@ -2429,14 +2425,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
       
       
       
@@ -2463,21 +2457,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../maths/jacobian-matrix/" class="md-nav__link">
         Jacobian Matrix
       </a>
-      
     </li>
   
 
@@ -2489,7 +2473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chebyshev-center/" class="md-nav__link">
+      <a href="../../maths/chebyshev-center/" class="md-nav__link">
         Chebyshev Center
       </a>
     </li>
@@ -2540,7 +2524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../numerical-analysis/fast-inv-sqrt" class="md-nav__link">
+      <a href="." class="md-nav__link">
         Fast Inverse Square Root, 0x5F3759DF
       </a>
     </li>
@@ -2766,6 +2750,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#float32-in-ieee-754" class="md-nav__link">
+    Float32 in IEEE 754
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快速平方根倒数算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    牛顿法求根
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0x5f3759df-the-magic-number" class="md-nav__link">
+    0x5F3759DF the Magic Number
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2781,79 +2808,294 @@
 
 
 
-<h1 id="jacobian-matrix">Jacobian Matrix<a class="headerlink" href="#jacobian-matrix" title="Permanent link">&para;</a></h1>
-<p>雅可比矩阵描述的是线性空间中变换的导数。以一个二维空间为例：设点 <span class="arithmatex">\(\boldsymbol{a} = (x_a, y_a)\)</span> 经过变换 <span class="arithmatex">\(f = (f_x, f_y)\)</span> 后映射到了 <span class="arithmatex">\(f(\boldsymbol{a}) = \boldsymbol{b} = (x_b, y_b)\)</span> 上，即</p>
+<h1 id="0x5f3759df">快速平方根倒数算法，0x5F3759DF<a class="headerlink" href="#0x5f3759df" title="Permanent link">&para;</a></h1>
+<h2 id="float32-in-ieee-754">Float32 in IEEE 754<a class="headerlink" href="#float32-in-ieee-754" title="Permanent link">&para;</a></h2>
+<p>首先介绍 IEEE 754 中规定的 32 位浮点数（float32/binary32）表示法，如下图<sup id="fnref:ieee754float"><a class="footnote-ref" href="#fn:ieee754float">1</a></sup>所示：</p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Float_example.svg" /></p>
+<ul>
+<li>第 31 位为符号位（sign）</li>
+<li>第 30 至 23 位的 8 位为指数（exponent）</li>
+<li>第 22 至 0 位的 23 位为尾数（significand/mantissa）</li>
+</ul>
+<p>那么这个浮点数的值为（指数非全 0，即规格数的情况下）</p>
 <div class="arithmatex">\[
-f_x(x_a, y_a) = x_b,\\
-f_y(x_a, y_a) = y_b.
+(-1)^S \cdot 2^{E-127} \cdot 1.M
 \]</div>
-<p>若无穷小量 <span class="arithmatex">\(\varepsilon_x\)</span> 和 <span class="arithmatex">\(\varepsilon_y\)</span> 带来的扰动使 <span class="arithmatex">\(\boldsymbol{a}\)</span> 偏移到了 <span class="arithmatex">\(\boldsymbol{a} + (\varepsilon_x, \varepsilon_y)\)</span>，分开考虑两个基底方向上的扰动：</p>
+<div class="admonition note">
+<p class="admonition-title">Examples</p>
+</div>
+<ul>
+<li><span class="arithmatex">\(\texttt{0 011111111 00000000000000000000000} = +2^{127-127} \times 1.0 = +1\)</span></li>
+<li><span class="arithmatex">\(\texttt{1 100000000 00000000000000000000000} = -2^{128-127} \times 1.0 = -2\)</span></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Normal Numbers and Subnormal Numbers</p>
+<p>从表示上来说，非规格化数表示的是数量级非常小的数和 0，而规格化数表示的是绝对值更大的数. 非规格化数的指数位全为 0；而规格化的指数位非全 0（也非全 1）.</p>
+<p>和规格数不同，非规格数的的指数固定为 -126，而且尾数部分不加上 1：</p>
+<div class="arithmatex">\[
+(-1)^S \cdot 2^{-126} \cdot 0.M
+\]</div>
+<ul>
+<li>
+<p>最小的正非规格数为</p>
+<p><span class="arithmatex">\(\texttt{0 00000000 00000000000000000000001} = 2^{-126} \times 2^{-23} \approx 1.401\times 10^{-45}\)</span></p>
+</li>
+<li>
+<p>最大的非规格数为</p>
+<p><span class="arithmatex">\(\texttt{0 00000000 11111111111111111111111} = 2^{-126} \times (1 - 2^{-23}) \approx 1.175\times 10^{-38}\)</span></p>
+</li>
+<li>
+<p>最小的正规格数为</p>
+<p><span class="arithmatex">\(\texttt{0 00000001 00000000000000000000000} = 2^{-126} \times 1 \approx 1.175\times 10^{-38}\)</span></p>
+</li>
+<li>
+<p>最大的规格数为</p>
+<p><span class="arithmatex">\(\texttt{0 11111110 11111111111111111111111} = 2^{127} \times (2 - 2^{-23}) \approx 3.403\times 10^{38}\)</span></p>
+</li>
+<li>
+<p>正负零为</p>
+<p><span class="arithmatex">\(\texttt{x 00000000 00000000000000000000000} = \pm 0\)</span></p>
+</li>
+</ul>
+<p>注意到最大的非规格数与最小的正规格数之间仅差 <span class="arithmatex">\(2^{-149}\)</span>，即这种设计实现了两种数之间的平滑过渡. 最重要的是，非规格数保证了两个不同的浮点数之差不会下溢至零，从而避免被零除的错误.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Non-Numbers</p>
+<p>IEEE 754 中还规定的无穷大和 NaN 的表示. 当指数位全为 1，尾数位全为 0 时表示数据溢出，为无穷大，由符号位决定正负；当指数位全为 1 且尾数位非全 0 时，表示 NaN.</p>
+<ul>
+<li>
+<p>正无穷为</p>
+<p><span class="arithmatex">\(\texttt{0 11111111 00000000000000000000000} = +\infty\)</span></p>
+</li>
+<li>
+<p>一种可能的 NaN 为</p>
+<p><span class="arithmatex">\(\texttt{0 11111111 00000000000000000000001} = \mathrm{NaN}\)</span></p>
+</li>
+</ul>
+</div>
+<details class="info">
+<summary>C Code</summary>
+<p>以下代码用于将 float32 与其存储形式字符串转换：</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">printFloat32Bits</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">bits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(((</span><span class="n">bits</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">23</span><span class="p">)</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; = %f = %e</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">printFloat32Bits</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">bits</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">fres</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">bits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">bits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ERROR: not a valid float32.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bits</span><span class="p">[</span><span class="mi">32</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ERROR: not ending in 32 bits.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bits</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">res</span><span class="w"> </span><span class="o">&lt;&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">fres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">res</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot; = %f = %e</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fres</span><span class="p">,</span><span class="w"> </span><span class="n">fres</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">printFloat32Bits</span><span class="p">(</span><span class="mf">0.15625f</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printFloat32Bits</span><span class="p">(</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="s">&quot;00000000&quot;</span><span class="w"> </span><span class="s">&quot;00000000000000000000001&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="_1">快速平方根倒数算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>这里直接给出算法代码</p>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="nf">fastInvSqrt</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">xhalf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="kt">int32_t</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">;</span><span class="w">         </span><span class="c1">// convert to int32</span>
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x5f3759df</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">          </span><span class="c1">// first guess</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w">                   </span><span class="c1">// convert back to float32</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">1.5f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">xhalf</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">));</span><span class="w">   </span><span class="c1">// Newton&#39;s method, 1st iter</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">1.5f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">xhalf</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">));</span><span class="w">   </span><span class="c1">// optional, 2nd iter</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<details class="info">
+<summary>Speed and Accuracy Test</summary>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;time.h&gt;</span>
+<span class="kt">float</span><span class="w"> </span><span class="nf">fastInvSqrt</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">xhalf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="kt">int32_t</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">;</span><span class="w">         </span><span class="c1">// convert to int32</span>
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x5f3759df</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">          </span><span class="c1">// first guess</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">i</span><span class="p">;</span><span class="w">                   </span><span class="c1">// convert back to float32</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mf">1.5f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">xhalf</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">));</span><span class="w">   </span><span class="c1">// Newton&#39;s method, 1st iter</span>
+<span class="w"> </span><span class="c1">// y = y * (1.5f - (xhalf * y * y));   // optional, 2nd iter</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">float</span><span class="w"> </span><span class="nf">invSqrt</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">1.0f</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">accuracyTest</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">xstart</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xend</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xstep</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">fasty</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">error</span><span class="p">,</span><span class="w"> </span><span class="n">maxerror</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">minerror</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xstart</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">xend</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">xstep</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">invSqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="n">fasty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fastInvSqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;invSqrt(%f) = %f, &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;fastInvSqrt(%f) = %f, &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">fasty</span><span class="p">);</span>
+<span class="w">        </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">fasty</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">y</span><span class="o">*</span><span class="mf">100.0f</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">maxerror</span><span class="p">)</span><span class="w"> </span><span class="n">maxerror</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">minerror</span><span class="p">)</span><span class="w"> </span><span class="n">minerror</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">error</span><span class="p">;</span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;error: %+f%%</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;max error: %f%%, min error: %f%%</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">maxerror</span><span class="p">,</span><span class="w"> </span><span class="n">minerror</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">speedTest</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">xstart</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xend</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">xstep</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">repeat</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">clock_t</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">end</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">sec</span><span class="p">,</span><span class="w"> </span><span class="n">fastsec</span><span class="p">;</span>
+<span class="w">    </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">repeat</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xstart</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">xend</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">xstep</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">invSqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">CLOCKS_PER_SEC</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">repeat</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xstart</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">xend</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">xstep</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">fastInvSqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clock</span><span class="p">();</span>
+<span class="w">    </span><span class="n">fastsec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">CLOCKS_PER_SEC</span><span class="p">;</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;vanilla inverse square root takes %f / %u secs on avg.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sec</span><span class="p">,</span><span class="w"> </span><span class="n">repeat</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;   fast inverse square root takes %f / %u secs on avg, &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fastsec</span><span class="p">,</span><span class="w"> </span><span class="n">repeat</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2f%% faster on avg.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">sec</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">fastsec</span><span class="p">)</span><span class="o">/</span><span class="n">sec</span><span class="o">*</span><span class="mf">100.0f</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">accuracyTest</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span>
+<span class="w">    </span><span class="n">speedTest</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">10000</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<h2 id="_2">牛顿法求根<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>牛顿法（Newton's method / Newton–Raphson method）求方程 <span class="arithmatex">\(f(x) = 0\)</span> 的解的思想在于先根据一个解的估计 <span class="arithmatex">\(x_n\)</span>，然后求 <span class="arithmatex">\(f(x)\)</span> 在此点上的切线与 <span class="arithmatex">\(x\)</span> 轴之交点作为下一个估计 <span class="arithmatex">\(x_{n+1}\)</span>，如此迭代求解.</p>
+<p>要求 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(x_n\)</span> 处的切线，只需在此做一阶泰勒展开</p>
+<div class="arithmatex">\[
+t_n(x) = f(x_n) + f'(x_n)(x - x_n),
+\]</div>
+<p>求此切线与 <span class="arithmatex">\(x\)</span> 轴之交点，即令 <span class="arithmatex">\(t_n(x_{n+1}) = 0\)</span>，得到牛顿法的迭代式：</p>
+<div class="arithmatex">\[
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
+\]</div>
+<iframe src="https://www.desmos.com/calculator/yr9oynlviw?embed" width="500" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+<p>求 <span class="arithmatex">\(y = 1/\sqrt{x}\)</span> 时，相当于解方程 <span class="arithmatex">\(f(y) = 1/y^2 - x = 0\)</span>，根据牛顿法有 <span class="arithmatex">\(y_{n+1} = y_n(\frac{3}{2} - \frac{1}{2}xy_n^2)\)</span>，这对应算法最后两行的迭代. 这说明 <code>i = 0x5f3759df - (i &gt;&gt; 1)</code> 给出的是一个相当好的初始估计.</p>
+<h2 id="0x5f3759df-the-magic-number">0x5F3759DF the Magic Number<a class="headerlink" href="#0x5f3759df-the-magic-number" title="Permanent link">&para;</a></h2>
+<p>现在唯一的疑问在于，为何算法先将 <span class="arithmatex">\(x\)</span> 的 32 位当作一个整数，然后用这个神奇数字减去这个整数右移一位，再重新视作浮点数就就可以得到 <span class="arithmatex">\(\sqrt{x}\)</span> 的初始估计. 这里不尝试寻找此数，而是解释算法的合理性.</p>
+<p>根据 float32 表示方法，由于 <span class="arithmatex">\(x &gt; 0\)</span>，符号位一定为 0，故</p>
+<div class="arithmatex">\[
+x = 2^{E-127}\cdot (1+M),
+\]</div>
 <div class="arithmatex">\[
 \begin{aligned}
-&amp;f_x(x_a + \varepsilon_x , &amp;y_a&amp;&amp;\hspace{-1em}) = x_b + \tfrac{\partial f_x}{\partial x} \varepsilon_x,\\
-&amp;f_x(x_a , &amp;y_a&amp; + \varepsilon_y&amp;\hspace{-1em}) = x_b + \tfrac{\partial f_x}{\partial y} \varepsilon_y,\\
-&amp;f_y(x_a + \varepsilon_x , &amp;y_a&amp;&amp;\hspace{-1em}) = y_b + \tfrac{\partial f_y}{\partial x} \varepsilon_x,\\
-&amp;f_y(x_a , &amp;y_a&amp; + \varepsilon_y&amp;\hspace{-1em}) = y_b + \tfrac{\partial f_y}{\partial y} \varepsilon_y.
+y = \frac{1}{\sqrt{x}} &amp;= 2^{(127-E)/2}\cdot \frac{1}{\sqrt{1+M}} \\
+&amp;= 2^{190.5 - E/2 - 127} \cdot \frac{1}{\sqrt{1+M}}.
 \end{aligned}
 \]</div>
-<p>综上，有</p>
-<div class="arithmatex">\[
-f\left(\boldsymbol{a} +
-\begin{bmatrix}
-\varepsilon_x\\
-\varepsilon_y
-\end{bmatrix}\right) = f(\boldsymbol{a}) +
-\begin{bmatrix}
-\frac{\partial f_x}{\partial x} &amp; \frac{\partial f_x}{\partial y}\\[0.5em]
-\frac{\partial f_y}{\partial x} &amp; \frac{\partial f_y}{\partial y}
-\end{bmatrix}
-\begin{bmatrix}
-\varepsilon_x\\
-\varepsilon_y
-\end{bmatrix}.
-\]</div>
-<p>其中矩阵</p>
-<div class="arithmatex">\[
-\boldsymbol{J} = \begin{bmatrix}
-\dfrac{\partial f_x}{\partial x} &amp; \dfrac{\partial f_x}{\partial y}\\[1.2em]
-\dfrac{\partial f_y}{\partial x} &amp; \dfrac{\partial f_y}{\partial y}
-\end{bmatrix}
-\]</div>
-<p>即为 <span class="arithmatex">\(f\)</span> 的雅可比矩阵，很容易可以看到它的意义即为 <span class="arithmatex">\(f\)</span> 的导数</p>
-<div class="arithmatex">\[
-\boldsymbol{J} = \mathrm{D}f.
-\]</div>
-<p>特别地，当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}\)</span> 时，<span class="arithmatex">\(\mathrm{D}f\)</span> 为梯度 <span class="arithmatex">\(\nabla f\)</span>；当 <span class="arithmatex">\(f: \mathbb{R}^n \mapsto \mathbb{R}^m\)</span> 时，<span class="arithmatex">\(\mathrm{D}f\)</span> 为雅可比矩阵。</p>
-<p>定义：函数 <span class="arithmatex">\(f(x_1, x_2, \cdots, x_n) = (f_1, f_2, \cdots, f_m)\)</span> 的雅可比矩阵为以下元素组成的矩阵</p>
-<div class="arithmatex">\[
-J_{ij} = \frac{\partial f_i}{\partial x_j}.
-\]</div>
+<p>对 <code>0x5f3759df</code>，对应指数 <span class="arithmatex">\(E\)</span> 的 8 位为 <code>1011 1110</code>，是十进制的 190；对应尾数 <span class="arithmatex">\(M\)</span> 的 23 位为 <code>011 0111 0101 1001 1101 1111</code>，对应十进制的约 0.432. 那么忽略尾数最后一位产生的误差，讨论 <code>0x5f3759df - (i &gt;&gt; 1)</code> 得到的结果：</p>
+<p><span class="arithmatex">\(E\)</span> 为奇数时：</p>
+<ul>
+<li>右移，<span class="arithmatex">\(E\)</span> 末尾的 1 移至 <span class="arithmatex">\(M\)</span> 的最高位：<ul>
+<li><span class="arithmatex">\(E \longrightarrow \frac{E-1}{2}\)</span></li>
+<li><span class="arithmatex">\(M \longrightarrow M/2 + 0.5\)</span></li>
+</ul>
+</li>
+<li>减法：<ul>
+<li><span class="arithmatex">\(E \longrightarrow 190 - \frac{E-1}{2}\)</span></li>
+<li><span class="arithmatex">\(M \longrightarrow 0.432 - \frac{M}{2} - 0.5\)</span></li>
+</ul>
+</li>
+<li>减法之前 <span class="arithmatex">\(M\)</span> 最高位是从 <span class="arithmatex">\(E\)</span> 右移而来的 1，而 <code>0x5f3759df</code> 对应位上是 0，故一定发生借位. 故修正为<ul>
+<li><span class="arithmatex">\(E \longrightarrow 190 - \frac{E-1}{2} - 1\)</span></li>
+<li><span class="arithmatex">\(M \longrightarrow 0.432 - \frac{M}{2} - 0.5 + 1\)</span></li>
+</ul>
+</li>
+<li>故在 <span class="arithmatex">\(M \in [0, 1)\)</span> 有：</li>
+<li><span class="arithmatex">\(y_0^\mathrm{odd} = 2^{190.5 - E/2 - 127 - 1}\cdot(1.932-\frac{M}{2}), M \in [0, 1)\)</span></li>
+<li><span class="arithmatex">\(y_0^\mathrm{odd}/y = \frac{1}{2}(1.932-\frac{M}{2})\sqrt{1+M}, M \in [0, 1)\)</span></li>
+</ul>
+<p><span class="arithmatex">\(E\)</span> 为偶数时：</p>
+<ul>
+<li><span class="arithmatex">\(E\)</span> 与 <span class="arithmatex">\(M\)</span> 均各自右移一位：<ul>
+<li><span class="arithmatex">\(E \longrightarrow \frac{E}{2}\)</span></li>
+<li><span class="arithmatex">\(M \longrightarrow \frac{M}{2}\)</span></li>
+</ul>
+</li>
+<li>当 <span class="arithmatex">\(0.432 &gt; \frac{M}{2}\)</span>，不借位<ul>
+<li><span class="arithmatex">\(E \longrightarrow 190 - \frac{E}{2}\)</span></li>
+<li><span class="arithmatex">\(M \longrightarrow 0.432 - \frac{M}{2}\)</span></li>
+<li>故在 <span class="arithmatex">\(M \in [0, 0.864]\)</span> 有：</li>
+<li><span class="arithmatex">\(y_0^\mathrm{even} = 2^{190-E/2-127}\cdot(1.432 - \frac{M}{2})\)</span></li>
+<li><span class="arithmatex">\(y_0^\mathrm{even}/y = \frac{1}{\sqrt{2}}(1.432-\frac{M}{2})\sqrt(1+M)\)</span></li>
+</ul>
+</li>
+<li>当 <span class="arithmatex">\(0.432 &lt; \frac{M}{2}\)</span>，借位，做相似修正<ul>
+<li><span class="arithmatex">\(E \longrightarrow 190 - \frac{E}{2} - 1\)</span></li>
+<li><span class="arithmatex">\(M \longrightarrow 0.432 - \frac{M}{2} + 1\)</span></li>
+<li>故在 <span class="arithmatex">\(M\in(0.864, 1)\)</span> 有：</li>
+<li><span class="arithmatex">\(y_0^\mathrm{even, c} = 2^{190-E/2-1-127}\cdot(2.432 - \frac{M}{2})\)</span></li>
+<li><span class="arithmatex">\(y_0^\mathrm{even, c}/y = \frac{1}{2\sqrt{2}}(2.432-\frac{M}{2})\sqrt{1+M}\)</span></li>
+</ul>
+</li>
+</ul>
+<p>各情况下 <span class="arithmatex">\(y_0/y\)</span> 随 <span class="arithmatex">\(M\)</span> 的变化如下图所示. 可见此比率始终很接近 1，故 <code>0x5f3759df - (i &gt;&gt; 1)</code> 确实能得到一个相当好的估计.</p>
+<iframe src="https://www.desmos.com/calculator/09exol9hja?embed" width="400" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://www.lomont.org/papers/2003/InvSqrt.pdf" target="_blank">http://www.lomont.org/papers/2003/InvSqrt.pdf</a></li>
+</ul>
+<div class="footnote">
 <hr />
-<p>在对积分变量进行换元时，即需要使用雅可比矩阵。简单起见，先以一元积分为例：</p>
-<div class="arithmatex">\[
-\int_a^b f(x) \mathrm{d}x,
-\]</div>
-<p>将 <span class="arithmatex">\(x\)</span> 换元为 <span class="arithmatex">\(y\)</span>，满足关系 <span class="arithmatex">\(x = h(y)\)</span>，则原积分化为</p>
-<div class="arithmatex">\[
-\int_{h^{-1}(a)}^{h^{-1}(b)}f(h(y))\ \mathrm{d}(h(y)),
-\]</div>
-<p>其中的 <span class="arithmatex">\(\mathrm{d}x\)</span> 的转化可以理解为 <span class="arithmatex">\(\mathrm{d}(h(y)) \mapsto \det(\boldsymbol{J}_h)\mathrm{d}y = h'(y)\mathrm{d}y\)</span>（注意：行列式的意义在于空间被放缩的比例）。</p>
-<p>在二维区域上进行积分时，从直角坐标系到极坐标系的变换为</p>
-<div class="arithmatex">\[
-h(x, y) = (r\cos\theta, r\sin\theta)
-\]</div>
-<p>那么积分的转换为</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\iint_S f(x, y) \mathrm{d}x\mathrm{d}y
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\det(\boldsymbol{J}_h)\mathrm{d}r\mathrm{d}\theta\\
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\left|\frac{\partial(x, y)}{\partial(r, \theta)}\right|\mathrm{d}r\mathrm{d}\theta\\
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\begin{vmatrix}\frac{\partial x}{\partial r} &amp; \frac{\partial x}{\partial \theta}\\[0.3em]\frac{\partial y}{\partial r} &amp; \frac{\partial y}{\partial \theta}\end{vmatrix}\mathrm{d}r\mathrm{d}\theta\\
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)\begin{vmatrix}\cos\theta &amp; -r\sin\theta\\ \sin\theta &amp; r\cos\theta\end{vmatrix}\mathrm{d}r\mathrm{d}\theta\\
-&amp;= \iint_{S'} f(r\cos\theta, r\sin\theta)r\mathrm{d}r\mathrm{d}\theta.
-\end{aligned}
-\]</div>
-<p>上式第二行使用的是雅可比行列式（Jacobian determinant）的一种写法。</p>
+<ol>
+<li id="fn:ieee754float">
+<p><a href="https://en.wikipedia.org/wiki/File:Float_example.svg" target="_blank">https://en.wikipedia.org/wiki/File:Float_example.svg</a>&#160;<a class="footnote-backref" href="#fnref:ieee754float" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -2864,42 +3106,6 @@ h(x, y) = (r\cos\theta, r\sin\theta)
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../../cuda/cuda-basics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CUDA Basics" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              CUDA Basics
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../chebyshev-center/" class="md-footer__link md-footer__link--next" aria-label="Next: Chebyshev Center" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Chebyshev Center
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
