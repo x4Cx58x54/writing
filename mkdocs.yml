@@ -128,7 +128,6 @@ nav:
       - Jacobian Matrix: scribbles/maths/jacobian-matrix.md
       - Chebyshev Center: scribbles/maths/chebyshev-center.md
     - Numerical Analysis:
-      - Fast Inverse Square Root, 0x5F3759DF: scribbles/numerical-analysis/fast-inv-sqrt
       - Fast Inverse Square Root, 0x5F3759DF: scribbles/numerical-analysis/fast-inv-sqrt.md
     - OpenCV:
       - OpenCV Basics: scribbles/opencv/opencv-basics.md

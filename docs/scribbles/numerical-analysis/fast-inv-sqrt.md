@@ -27,7 +27,7 @@ $$
 
 !!! Info "Normal Numbers and Subnormal Numbers"
 
-    从表示上来说，非规格化数表示的是数量级非常小的数和 0，而规格化数表示的是绝对值更大的数. 非规格化数的指数位全为 0；而规格化的指数位非全 0（也非全 1）.
+    从表示上来说，规格化数的指数位非全 0（也非全 1），对应非规格化数的指数位全为 0. 规格化数表示的是一般的非零数，而非规格化数表示的是绝对值比所有规格化数更小的数，包括 0.
 
     和规格数不同，非规格数的的指数固定为 -126，而且尾数部分不加上 1：
 
@@ -55,7 +55,7 @@ $$
 
         $\texttt{x 00000000 00000000000000000000000} = \pm 0$
 
-    注意到最大的非规格数与最小的正规格数之间仅差 $2^{-149}$，即这种设计实现了两种数之间的平滑过渡. 最重要的是，非规格数保证了两个不同的浮点数之差不会下溢至零，从而避免被零除的错误.
+    注意到最大的非规格数与最小的正规格数之间仅差 $2^{-149}$，即这种设计实现了两种数之间的平滑过渡. 最重要的是，非规格数的设计保证了两个不同的浮点数之差不会下溢至零，从而避免被零除的错误.
 
 
 !!! Info "Non-Numbers"
@@ -217,7 +217,7 @@ float fastInvSqrt(float x)
 
 ## 牛顿法求根
 
-牛顿法（Newton's method / Newton–Raphson method）求方程 $f(x) = 0$ 的解的思想在于先根据一个解的估计 $x_n$，然后求 $f(x)$ 在此点上的切线与 $x$ 轴之交点作为下一个估计 $x_{n+1}$，如此迭代求解.
+牛顿法（Newton's method / Newton–Raphson method）求方程 $f(x) = 0$ 的解的思想在于先估计一个近似解 $x_n$，然后求 $f(x)$ 在此点上的切线与 $x$ 轴之交点作为下一个估计 $x_{n+1}$，如此迭代求解.
 
 要求 $f(x)$ 在 $x_n$ 处的切线，只需在此做一阶泰勒展开
 
@@ -233,11 +233,11 @@ $$
 
 <iframe src="https://www.desmos.com/calculator/yr9oynlviw?embed" width="500" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
 
-求 $y = 1/\sqrt{x}$ 时，相当于解方程 $f(y) = 1/y^2 - x = 0$，根据牛顿法有 $y_{n+1} = y_n(\frac{3}{2} - \frac{1}{2}xy_n^2)$，这对应算法最后两行的迭代. 这说明 `i = 0x5f3759df - (i >> 1)` 给出的是一个相当好的初始估计.
+求 $y = 1/\sqrt{x}$ 时，相当于解方程 $f(y) = 1/y^2 - x = 0$，根据牛顿法有 $y_{n+1} = y_n(\frac{3}{2} - \frac{1}{2}xy_n^2)$，这对应算法最后两行的迭代. 反推可知 `i = 0x5f3759df - (i >> 1)` 应当能给出一个相当好的初始估计，使得算法仅需后续 1 至 2 步牛顿法迭代即可将误差控制到很小的范围内.
 
 ## 0x5F3759DF the Magic Number
 
-现在唯一的疑问在于，为何算法先将 $x$ 的 32 位当作一个整数，然后用这个神奇数字减去这个整数右移一位，再重新视作浮点数就就可以得到 $\sqrt{x}$ 的初始估计. 这里不尝试寻找此数，而是解释算法的合理性.
+现在唯一的疑问在于，为何算法先将 $x$ 的 32 位当作一个整数，右移一位，然后用这个神奇数字减去之，再重新视作浮点数，就可以得到 $\sqrt{x}$ 的初始估计. 这里不尝试寻找此数，而是解释算法的合理性.
 
 根据 float32 表示方法，由于 $x > 0$，符号位一定为 0，故
 
@@ -276,22 +276,22 @@ $E$ 为偶数时：
 * $E$ 与 $M$ 均各自右移一位：
     * $E \longrightarrow \frac{E}{2}$
     * $M \longrightarrow \frac{M}{2}$
-* 当 $0.432 > \frac{M}{2}$，不借位
+* 当 $\frac{M}{2} < 0.432$，不借位
     * $E \longrightarrow 190 - \frac{E}{2}$
     * $M \longrightarrow 0.432 - \frac{M}{2}$
     * 故在 $M \in [0, 0.864]$ 有：
     * $y_0^\mathrm{even} = 2^{190-E/2-127}\cdot(1.432 - \frac{M}{2})$
     * $y_0^\mathrm{even}/y = \frac{1}{\sqrt{2}}(1.432-\frac{M}{2})\sqrt(1+M)$
-* 当 $0.432 < \frac{M}{2}$，借位，做相似修正
+* 当 $\frac{M}{2} > 0.432$，借位，做相似修正
     * $E \longrightarrow 190 - \frac{E}{2} - 1$
     * $M \longrightarrow 0.432 - \frac{M}{2} + 1$
     * 故在 $M\in(0.864, 1)$ 有：
     * $y_0^\mathrm{even, c} = 2^{190-E/2-1-127}\cdot(2.432 - \frac{M}{2})$
     * $y_0^\mathrm{even, c}/y = \frac{1}{2\sqrt{2}}(2.432-\frac{M}{2})\sqrt{1+M}$
 
-各情况下 $y_0/y$ 随 $M$ 的变化如下图所示. 可见此比率始终很接近 1，故 `0x5f3759df - (i >> 1)` 确实能得到一个相当好的估计.
+各情况下 $y_0/y$ 随 $M$ 的变化如下图所示，红色为 $E$ 为奇数情况，蓝色为 $E$ 为偶数且不借位的情况，绿色为 $E$ 为偶数且借位的情况. 可见此比率始终很接近 1，故 `0x5f3759df - (i >> 1)` 确实能得到一个相当好的估计.
 
-<iframe src="https://www.desmos.com/calculator/09exol9hja?embed" width="400" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/09exol9hja?embed" width="500" height="360" style="border: 1px solid #ccc" frameborder=0></iframe>
 
 ## See Also
 
