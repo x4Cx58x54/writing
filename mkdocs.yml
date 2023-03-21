@@ -90,6 +90,7 @@ nav:
       - Double Cola: competitive-programming/double-cola.md
       - 字母计数: competitive-programming/alphabetical-coding.md
       - N! 末尾零数: competitive-programming/number-of-trailing-zeros-of-n!.md
+      - 坐标压缩: competitive-programming/coordinate-compression.md
   - CS:
     - Computer Organization: computer-organization/computer-organization.md
     - The Practice of Programming: computer-programming/the-practice-of-programming.md
