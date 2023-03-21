@@ -1672,7 +1672,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    相等元素并列但占用排名
+    相等元素并列但占用多个排名
   </a>
   
 </li>
@@ -2842,7 +2842,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    相等元素并列但占用排名
+    相等元素并列但占用多个排名
   </a>
   
 </li>
@@ -2871,22 +2871,22 @@
 
 
 
-<h1 id="coordinate-compression">Coordinate Compression<a class="headerlink" href="#coordinate-compression" title="Permanent link">&para;</a></h1>
-<p>坐标压缩指的将一组数据映射到它们的排名上，这样既保留了原数据中的排序关系，还将这些值压缩到了一个很小的范围中。这里统一讨论升序排名，显然降序排名的情况可同理推出。</p>
+<h1 id="coordinate-compression">坐标压缩 | Coordinate Compression<a class="headerlink" href="#coordinate-compression" title="Permanent link">&para;</a></h1>
+<p>坐标压缩指将一组数据映射到它们的排名上的算法。这样既保留了原数据中的排序关系，还将这些值压缩到了一个小范围中。这里统一讨论升序排名，显然降序排名的情况可同理推出。</p>
 <div class="highlight"><pre><span></span><code>compress([78, 98, -1, 4, 3, 9])
        = [ 5,  6,  1, 3, 2, 4]
 </code></pre></div>
-<p>最朴素的想法是使用一个存有元素值和元素在数组种位置结构体，根据原数组构造这个结构体数组后排序，就可以查询各元素的排名了。但是这种方法并不能解决有重复元素的情况。</p>
+<p>最朴素的想法是使用一个存有元素值及其在数组中位置的结构体，根据原数组构造这个结构体数组后排序，就可以查询各元素的排名了。但是这种方法并不能解决有重复元素的情况。</p>
 <div class="admonition info">
 <p class="admonition-title">关于算法名称</p>
-<p>中文资料中常见误导性地使用“离散化”这一名称来称呼本文中主要描述的算法。离散化实际指的是将连续数据转换为离散数据。英文资料中亦未见可信来源使用 “discretization” 或类似的词称呼该算法（可参考坐标压缩模板题的社区题解 <a href="https://leetcode.com/problems/rank-transform-of-an-array/solutions">1331. Rank Transform of an Array - LeetCode</a>）。除“离散化”，在杂乱无章的互相摘编中仍存在诸多名词误用误译，包括“匈牙利算法”等，亟待建立统一标准予以规范。<sup id="fnref:oikashinhoax"><a class="footnote-ref" href="#fn:oikashinhoax">1</a></sup></p>
+<p>中文资料中常见误导性地使用“离散化”称呼本文主要描述的算法。离散化应指将连续数据转换为离散数据。英文资料中亦未见可信来源使用 “discretization” 或类似词称呼该算法（可参考坐标压缩模板题的社区题解 <a href="https://leetcode.com/problems/rank-transform-of-an-array/solutions">1331. Rank Transform of an Array - LeetCode</a>）。除“离散化”，在杂乱无章的互相摘编中仍存在诸多名词误用误译，包括“匈牙利算法”等，亟待建立统一标准予以规范。<sup id="fnref:oikashinhoax"><a class="footnote-ref" href="#fn:oikashinhoax">1</a></sup></p>
 </div>
 <h3 id="_1">相等元素并列排名且仅占用一个排名<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>若需要将相等的元素映射到同一个排名上，而且靠后的数据不因此而顺延排名。本质上是在对每一个元素求数组中有多少<strong>种</strong>元素比它排名靠前。</p>
+<p>相等的元素映射到同一个排名上，而且靠后的数据不因此而顺延排名。本质上是在对每一个元素求数组中有多少<strong>种</strong>元素比它排名靠前。</p>
 <div class="highlight"><pre><span></span><code>compress([4, 4, 9, 9, 1, 1])
        = [2, 2, 3, 3, 1, 1]
 </code></pre></div>
-<p>以下算法二分查找每一元素在原数组对应的有序且去重的数组中最左边的位置。</p>
+<p>以下算法在原数组基础上建立一个有序且去重的数组，然后查询原数组每一元素在新数组中的左边界。</p>
 <div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">compress</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
@@ -2900,18 +2900,18 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="_2">相等元素并列但占用排名<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_2">相等元素并列但占用多个排名<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>这里指的是生活中排名一般使用的方法：如果有两个第二名，那么紧接着下一个人的排名应该是第四。问题本质上可以转化为对每一个元素求数组中有多少<strong>个</strong>元素个比它排名靠前。</p>
 <div class="highlight"><pre><span></span><code>compress([4, 4, 9, 9, 1, 1])
        = [3, 3, 5, 5, 1, 1]
 </code></pre></div>
-<p>此问题的解法和上面非常相似，只需要去掉去重的步骤即可。</p>
+<p>此问题的解法和前一种情况非常相似，只需要去掉去重的步骤即可。</p>
 <h3 id="_3">相等元素不并列<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>要使两个相等元素排名不并列，而是由其它因素（如位置）决定，那么这种离散化映射是一种从大小为 <span class="arithmatex">\(n\)</span> 的数组到 <span class="arithmatex">\(\{1, 2, \cdots, n\}\)</span> 的双射（一一对应）。如果规定相等元素的排名和原顺序相同，则：</p>
+<p>要使两个相等元素排名不并列，而是由其它因素（如位置）决定，那么这种离散化是一种从大小为 <span class="arithmatex">\(n\)</span> 的数组到 <span class="arithmatex">\(\{1, 2, \cdots, n\}\)</span> 的双射（一一对应）。如果规定相等元素的排名和原顺序相同，则：</p>
 <div class="highlight"><pre><span></span><code>compress([4, 4, 9, 9, 1, 1])
        = [3, 4, 5, 6, 1, 2]
 </code></pre></div>
-<p>这里沿用前述情况的思路。由于相等元素不并列，那么这里同样地不做 <code>unique</code> 操作。在找到原数组 <code>arr</code> 中某个元素 <span class="arithmatex">\(x\)</span> 在 <code>sorted</code> 的起始位置（<code>lower_bound</code>）后，<code>sorted</code> 数组中对应的元素就不可再使用了。那么下一次寻找 <span class="arithmatex">\(x\)</span> 时，应使 <code>lower_bound</code> 找到 <code>sorted</code> 数组中的下一个元素。</p>
+<p>这里沿用前述情况的思路。由于相等元素也需要占用多个排名，这里同样地不去重。在找到原数组中某个元素 <span class="arithmatex">\(x\)</span> 在 <code>sorted</code> 的起始位置（<code>lower_bound</code>）后，<code>sorted</code> 数组中对应的元素就不可再使用了。那么下一次寻找 <span class="arithmatex">\(x\)</span> 时，应使 <code>lower_bound</code> 找到 <code>sorted</code> 数组中的下一个元素。</p>
 <p>用以上例子来说明。当第一次寻找 <span class="arithmatex">\(x = 4\)</span> 的排名时，<code>sorted</code> 数组及寻找到的位置为：</p>
 <div class="highlight"><pre><span></span><code>[1, 1, 4, 4, 9, 9]
        ^
@@ -2922,12 +2922,12 @@
           ^
           lower bound = 3
 </code></pre></div>
-<p>其实只需要将这个值减 1 即可。这个将 <span class="arithmatex">\(x\)</span> 改为 <span class="arithmatex">\(x-1\)</span> 的操作：</p>
+<p>其实 <span class="arithmatex">\(x\)</span> 只需改为 <span class="arithmatex">\(x-1\)</span> 即可：</p>
 <ul>
 <li>将 <span class="arithmatex">\(x\)</span> 在 <code>sorted</code> 数组中的左边界右移一位，这正是此处要求的性质；</li>
 <li>保留 <code>sorted</code> 数组的有序结构，使 <code>lower_bound</code> 依然能够正常运行；</li>
 <li>不会影响寻找非 <span class="arithmatex">\(x\)</span> 或 <span class="arithmatex">\(x-1\)</span> 的元素的排名；</li>
-<li>由于 <code>sorted</code> 和 <code>array</code> 的元素是一一对应的，两数组中原本的所有 <span class="arithmatex">\(x-1\)</span> 会恰好同时耗尽，故也不会对 <span class="arithmatex">\(x-1\)</span> 造成任何影响。</li>
+<li>由于 <code>sorted</code> 和原数组中的元素是一一对应的，两数组中原本的所有 <span class="arithmatex">\(x-1\)</span> 会恰好同时耗尽，故也不会对 <span class="arithmatex">\(x-1\)</span> 造成任何影响。</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">compress</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span>
 <span class="p">{</span>
