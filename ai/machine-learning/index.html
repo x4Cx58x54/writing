@@ -1091,37 +1091,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#logistic-regression" class="md-nav__link">
-    Logistic Regression
+  <a href="#supervised-learning-algorithms" class="md-nav__link">
+    Supervised Learning Algorithms
   </a>
   
-    <nav class="md-nav" aria-label="Logistic Regression">
+    <nav class="md-nav" aria-label="Supervised Learning Algorithms">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logistic" class="md-nav__link">
-    Logistic?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regression" class="md-nav__link">
-    Regression?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logit" class="md-nav__link">
-    Logit?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    参数估计
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
   </a>
   
 </li>
@@ -1132,30 +1111,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    正则化
+  <a href="#optimizations" class="md-nav__link">
+    Optimizations
   </a>
   
-    <nav class="md-nav" aria-label="正则化">
+    <nav class="md-nav" aria-label="Optimizations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#l1" class="md-nav__link">
-    L1 正则化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#l2" class="md-nav__link">
-    L2 正则化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    几何解释
+  <a href="#_8" class="md-nav__link">
+    正则化
   </a>
   
 </li>
@@ -2940,37 +2905,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#logistic-regression" class="md-nav__link">
-    Logistic Regression
+  <a href="#supervised-learning-algorithms" class="md-nav__link">
+    Supervised Learning Algorithms
   </a>
   
-    <nav class="md-nav" aria-label="Logistic Regression">
+    <nav class="md-nav" aria-label="Supervised Learning Algorithms">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#logistic" class="md-nav__link">
-    Logistic?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regression" class="md-nav__link">
-    Regression?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#logit" class="md-nav__link">
-    Logit?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    参数估计
+  <a href="#logistic-regression" class="md-nav__link">
+    Logistic Regression
   </a>
   
 </li>
@@ -2981,30 +2925,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    正则化
+  <a href="#optimizations" class="md-nav__link">
+    Optimizations
   </a>
   
-    <nav class="md-nav" aria-label="正则化">
+    <nav class="md-nav" aria-label="Optimizations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#l1" class="md-nav__link">
-    L1 正则化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#l2" class="md-nav__link">
-    L2 正则化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    几何解释
+  <a href="#_8" class="md-nav__link">
+    正则化
   </a>
   
 </li>
@@ -3086,14 +3016,15 @@ F_\beta = \frac{(1+\beta^2)PR}{(\beta^2P + R)},
 <div class="arithmatex">\[
 \mathrm{FPR} = \frac{\mathrm{FP}}{\mathrm{TN} + \mathrm{FP}}.
 \]</div>
-<h2 id="logistic-regression">Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h2>
-<h3 id="logistic">Logistic?<a class="headerlink" href="#logistic" title="Permanent link">&para;</a></h3>
+<h2 id="supervised-learning-algorithms">Supervised Learning Algorithms<a class="headerlink" href="#supervised-learning-algorithms" title="Permanent link">&para;</a></h2>
+<h3 id="logistic-regression">Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h3>
+<h4 id="logistic">Logistic?<a class="headerlink" href="#logistic" title="Permanent link">&para;</a></h4>
 <p>Logistic 分布的概率累积函数定义为</p>
 <div class="arithmatex">\[
 F(x) = \frac{1}{1+\exp\left(-\dfrac{x-\mu}{\gamma}\right)}.
 \]</div>
 <p>这就是广为人知的“S 形曲线”. <span class="arithmatex">\(F\)</span> 取值范围为 <span class="arithmatex">\((0, 1)\)</span>，在 <span class="arithmatex">\(x = \mu\)</span> 处有值 <span class="arithmatex">\(1/2\)</span>，且以此点 <span class="arithmatex">\((\mu, 1/2)\)</span> 中心对称. <span class="arithmatex">\(\gamma &gt; 0\)</span> 时 <span class="arithmatex">\(F\)</span> 单调递增，反之则递减；<span class="arithmatex">\(\gamma\)</span> 绝对值越小，<span class="arithmatex">\(F\)</span> 在 <span class="arithmatex">\(x = \mu\)</span> 附近变化越快；<span class="arithmatex">\(\gamma = +\varepsilon\)</span> 时 <span class="arithmatex">\(F\)</span> 退化为阶跃函数.</p>
-<h3 id="regression">Regression?<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h3>
+<h4 id="regression">Regression?<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h4>
 <p>Logistic regression 实际上处理的是分类问题，而采用的手段是使用 logistic 曲线拟合概率. 为何不直接用阶跃函数拟合？因为阶跃函数并非处处可微，带来优化上的困难. 下图是一个当 <span class="arithmatex">\(x\)</span> 为 1 维向量时的简单例子.再曲线上的点 <span class="arithmatex">\(y\)</span> 值越大，说明该样本为蓝色的概率越高.</p>
 <iframe src="https://www.desmos.com/calculator/qmzqy5pdix?embed" width="500" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
 
@@ -3102,7 +3033,7 @@ F(x) = \frac{1}{1+\exp\left(-\dfrac{x-\mu}{\gamma}\right)}.
 \hat{p} = \frac{\exp(w\cdot x)}{1+\exp(w\cdot x)}
 \]</div>
 <p>最接近 <span class="arithmatex">\(p = P(Y = 1 \mid x)\)</span>.</p>
-<h3 id="logit">Logit?<a class="headerlink" href="#logit" title="Permanent link">&para;</a></h3>
+<h4 id="logit">Logit?<a class="headerlink" href="#logit" title="Permanent link">&para;</a></h4>
 <p>至此，这条曲线的拟合还并不直观. 这里做一个变换，将概率转换为 logit（称为对率）. 对于某事件的概率 <span class="arithmatex">\(p\)</span>，其对率为</p>
 <div class="arithmatex">\[
 \operatorname{logit}p = \log \mathrm{odds} = \log\frac{p}{1-p}.
@@ -3118,7 +3049,7 @@ F(x) = \frac{1}{1+\exp\left(-\dfrac{x-\mu}{\gamma}\right)}.
 \operatorname{logit} p = w\cdot x.
 \]</div>
 <p>即此时事件的对率是一个关于 <span class="arithmatex">\(x\)</span> 的线性函数.</p>
-<h3 id="_5">参数估计<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="_5">参数估计<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>再次强调，logistic regression 的目标是用一个 logistic 曲线 <span class="arithmatex">\(\hat{p} = \frac{\exp(w\cdot x)}{1+\exp(w\cdot x)}\)</span> 估计 <span class="arithmatex">\(p = P(Y = 1 \mid x)\)</span>，从而可以实现根据 <span class="arithmatex">\(x\)</span> 预测 <span class="arithmatex">\(y\)</span>. 由于 <span class="arithmatex">\(y_i \in \{0, 1\}\)</span>，有对数似然函数</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -3132,7 +3063,7 @@ F(x) = \frac{1}{1+\exp\left(-\dfrac{x-\mu}{\gamma}\right)}.
 <div class="arithmatex">\[
 \ell(w) = -\frac{1}{n}\log L(w).
 \]</div>
-<h4 id="_6">随机梯度下降<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<h5 id="_6">随机梯度下降<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
 <p>损失函数的一阶梯度</p>
 <div class="arithmatex">\[
 \frac{\partial \ell}{\partial w} = \left(\frac{\exp(w \cdot x_i)}{1 + \exp(w \cdot x_i)} - y_i\right)x_i,
@@ -3142,20 +3073,22 @@ F(x) = \frac{1}{1+\exp\left(-\dfrac{x-\mu}{\gamma}\right)}.
 w^{(k+1)} = w^{(k)} - \alpha \frac{\partial \ell}{\partial w},
 \]</div>
 <p>其中 <span class="arithmatex">\(\alpha\)</span> 为学习率.</p>
-<h4 id="_7">牛顿法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h5 id="_7">牛顿法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
 <p>对于一个二阶连续可微函数，牛顿法在当前估计的极小值点 <span class="arithmatex">\(w^{(k)}\)</span> 处进行二阶泰勒展开</p>
 <div class="arithmatex">\[
 \varphi(w) = \ell(w^{(k)}) + \ell'(w^{(k)})(w - w^{(k)}) + \frac{1}{2}\ell''(w^{(k)})(w - w^{(k)})^2.
 \]</div>
-<p>令 <span class="arithmatex">\(\varphi'(w^{(k+1)}) = 0\)</span>，有</p>
+<p>那么 <span class="arithmatex">\(\varphi(w)\)</span> 是 <span class="arithmatex">\(\ell(w)\)</span> 在 <span class="arithmatex">\(w^{(k)}\)</span> 附近的一个近似，所以 <span class="arithmatex">\(\varphi(w)\)</span> 的极小值点可用于近似 <span class="arithmatex">\(\ell(w)\)</span> 的极小值点. 令 <span class="arithmatex">\(\varphi'(w^{(k+1)}) = 0\)</span>，有</p>
 <div class="arithmatex">\[
 w^{(k+1)} = w^{(k)} - \frac{\ell'(w^{(k)})}{\ell''(w^{(k)})} = w^{(k)} - H_k^{-1} \ell'(w^{(k)}),
 \]</div>
 <p>其中 <span class="arithmatex">\(H_k\)</span> 为海森矩阵，<span class="arithmatex">\(H_{ij} = \dfrac{\partial^2 \ell(w)}{\partial w_i \partial w_j}\)</span>.</p>
-<h2 id="_8">正则化<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>这里以 logistic regression 为例说明 L1 与 L2 正则化.</p>
-<h3 id="l1">L1 正则化<a class="headerlink" href="#l1" title="Permanent link">&para;</a></h3>
-<p>使用 LASSO（least absolute shrinkage and selection operator）回归，即加入先验：<span class="arithmatex">\(w_i\)</span> 服从 0 均值的拉普拉斯分布：</p>
+<h2 id="optimizations">Optimizations<a class="headerlink" href="#optimizations" title="Permanent link">&para;</a></h2>
+<h3 id="_8">正则化<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h4 id="l0">L0 正则化<a class="headerlink" href="#l0" title="Permanent link">&para;</a></h4>
+<p>使用最优参数子集选择，即认为好的模型参数数量不应过多. 在损失函数中加入正则化项 <span class="arithmatex">\(\|w\|_0\)</span>，以使惩罚与非零参数数量成正比. 这样做的问题在于正则化项的梯度要么不存在，要么为 0，无法使用梯度下降优化，而遍历每一个参数子集的复杂度过高. 所以使用 L0 正则项的最优凸近似代替，这个最优凸近似就是 L1 正则项.</p>
+<h4 id="l1">L1 正则化<a class="headerlink" href="#l1" title="Permanent link">&para;</a></h4>
+<p>使用 LASSO（least absolute shrinkage and selection operator），即加入先验：<span class="arithmatex">\(w_i\)</span> 服从 0 均值的拉普拉斯分布：</p>
 <div class="arithmatex">\[
 f(w_i; \mu, b) = \frac{1}{2b}\exp\left(-\frac{|w_i - \mu|}{b}\right).
 \]</div>
@@ -3165,10 +3098,10 @@ L_1(w) = P(y| w, x)P(w) = L(w)\cdot\prod_{i=1}^d \frac{1}{2b}\exp\left(-\frac{|w
 \]</div>
 <p>那么相应地，负对数似然为</p>
 <div class="arithmatex">\[
-- \log L_1(w) = - \log L(w) + \frac{1}{2b} |w|_1.
+-\log L_1(w) = - \log L(w) + \frac{1}{2b} \|w\|_1.
 \]</div>
 <p>增加的这一项即为 L1 正则项.</p>
-<h3 id="l2">L2 正则化<a class="headerlink" href="#l2" title="Permanent link">&para;</a></h3>
+<h4 id="l2">L2 正则化<a class="headerlink" href="#l2" title="Permanent link">&para;</a></h4>
 <p>使用 ridge 回归，即加入先验：<span class="arithmatex">\(w_i\)</span> 服从零均值的正态分布：</p>
 <div class="arithmatex">\[
 f(w_i; 0, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{w_i^2}{2\sigma^2}\right).
@@ -3178,10 +3111,13 @@ f(w_i; 0, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{w_i^2}{2\sigma^2
 d\log (\sigma\sqrt{2\pi}) + \frac{1}{2\sigma^2}w^\top w,
 \]</div>
 <p>忽略常数项，那么等价于增加了 L2 正则项.</p>
-<h3 id="_9">几何解释<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h4 id="elastic-net">Elastic Net 正则化<a class="headerlink" href="#elastic-net" title="Permanent link">&para;</a></h4>
+<p>Elastic Net 正则化相当于同时加入了 L1 和 L2 正则项. 即正则项为 <span class="arithmatex">\(\lambda_1\|w\|_1 + \lambda_2\|w\|_2\)</span>.</p>
+<h4 id="_9">几何解释<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <p>简单起见图中以二维的 <span class="arithmatex">\(w\)</span> 举例<sup id="fnref:regularizations"><a class="footnote-ref" href="#fn:regularizations">1</a></sup>. 图中红色线条为原损失函数的等高线，蓝/灰色线条为正则项的等高线. 可见在原损失函数的等高线上，要使正则项最小，则 <span class="arithmatex">\(w\)</span> 取交点处，正则项的等高线上，要使原损失函数越小，<span class="arithmatex">\(w\)</span> 也取交点. 故正则化后的损失函数最小值点往往在两项各自的某等高线交点处取得.</p>
 <p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/L1_and_L2_balls.svg" /></p>
 <p>对于 L1 正则化，这样的点倾向于使 <span class="arithmatex">\(w\)</span> 的一些分量为 0，从而得到稀疏解；而 L2 正则化处处可微，而且倾向于使 <span class="arithmatex">\(w\)</span> 各分量都较小.</p>
+<p>从概率的角度解释，拉普拉斯分布在其期望处有一个显著的尖峰，所以 L1 正则化使 <span class="arithmatex">\(w\)</span> 分量为 0 的概率很高；正态分布的概率密度曲线则比较平缓，所以只使 <span class="arithmatex">\(w\)</span> 处于较小值时概率较大.</p>
 <div class="footnote">
 <hr />
 <ol>
