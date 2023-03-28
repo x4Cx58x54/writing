@@ -68,7 +68,7 @@ $$
 \mathrm{FPR} = \frac{\mathrm{FP}}{\mathrm{TN} + \mathrm{FP}}.
 $$
 
-## Supervised Learning Algorithms
+## Supervised Learning
 
 ### Logistic Regression
 
@@ -170,9 +170,160 @@ $$
 其中 $H_k$ 为海森矩阵，$H_{ij} = \dfrac{\partial^2 \ell(w)}{\partial w_i \partial w_j}$.
 
 
+### Regressions: Linear, LASSO and Ridge
+
+#### Linear Regression
+
+对于样本集
+
+$$
+\{(\boldsymbol{x}_i, y_i)\mid i = 1, \cdots N, \ \boldsymbol{x}_i \in \mathbb{R}^n, \ y_i \in \mathbb{R}\},
+$$
+
+在 $\boldsymbol{x}$ 末尾扩充一维为 $[\boldsymbol{x}^\top, 1]^\top$，以统一回归系数的形式. 那么线性回归模型为
+
+$$
+\hat{y}_i = \boldsymbol{w}^\top \boldsymbol{x}_i, \quad i = 1, \cdots, N,
+$$
+
+下面改写为矩阵形式：向量 $\hat{\boldsymbol{y}} \in \mathbb{R}^N$，其中第 $i$ 维为 $\hat{\boldsymbol{y}}_i = \hat{y}_i$；矩阵 $\boldsymbol{X}$ 的第 $i$ 行为 $\boldsymbol{x}_i^\top$，那么线性回归的矩阵形式为
+
+$$
+\hat{\boldsymbol{y}} = \boldsymbol{Xw}.
+$$
+
+#### Gaussian Error
+
+假定估计误差 $\hat{y} - y$ 各自独立且服从零均值的高斯分布，那么可以列出关于 $\boldsymbol{w}$ 的似然
+
+$$
+L(\boldsymbol{w}) = \prod_{i=1}^N \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(\boldsymbol{w}^\top \boldsymbol{x}_i - y_i)^2}{\sigma^2}\right).
+$$
+
+取负对数并化简后得到
+
+$$
+-\log L(\boldsymbol{w}) = N\log(\sigma\sqrt{2\pi}) + \frac{1}{\sigma^2}\sum_{i=1}^N (\boldsymbol{w}^\top \boldsymbol{x}_i - y_i)^2.
+$$
+
+那么最大化似然就相当于最小化 $\sum_{i=1}^N (\boldsymbol{w}^\top \boldsymbol{x}_i - y_i)^2$，即平方误差作为损失函数的根据. 换句话说，**假定样本中噪声独立且服从零均值高斯分布时，应使用平方误差**.
+
+这就是一般的线性回归，而基础资料中很少提及高斯分布这一重要角色. 这里再给出矩阵形式的求解过程. 将损失函数的最小化写为矩阵形式
+
+$$
+\begin{aligned}
+& \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2,\\
+& \text{subject to~~} \boldsymbol{w}\in\mathbb{R^n}.
+\end{aligned}
+$$
+
+只需令目标函数梯度为零：
+
+$$
+\frac{\partial}{\partial \boldsymbol{w}}\|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2 = 2\boldsymbol{X}^\top(\boldsymbol{Xw}-\boldsymbol{y}) = \boldsymbol{0},
+$$
+
+解得
+
+$$
+\boldsymbol{w} = (\boldsymbol{X}^\top\boldsymbol{X})^{-1}\boldsymbol{X}^\top\boldsymbol{y}.
+$$
+
+#### Laplacian Error
+
+假定估计误差独立且服从零均值的拉普拉斯分布，那么同理有似然
+
+$$
+L(\boldsymbol{w}) = \prod_{i=1}^N \frac{1}{2b}\exp\left(-\frac{|\boldsymbol{w}^\top\boldsymbol{x}_i-y_i|}{b}\right).
+$$
+
+同理可知最大化似然相当于最小化绝对值误差 $\sum_{i=1}^N |\boldsymbol{w}^\top \boldsymbol{x}_i - y_i|$.
+
+#### LASSO and Ridge Regression
+
+LASSO（least absolute shrinkage and selection operator）在线性回归时加入一个参数 $t$ 限制 $\boldsymbol{w}$ 的 L1 范数：
+
+$$
+\begin{aligned}
+& \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2,\\
+& \text{subject to~~} \|\boldsymbol{w}\|_1 \le t.
+\end{aligned}
+$$
+
+Ridge 回归在线性回归时加入一个参数 $t$ 限制 $\boldsymbol{w}$ 的 L2 范数：
+
+$$
+\begin{aligned}
+& \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2,\\
+& \text{subject to~~} \|\boldsymbol{w}\|_2^2 \le t.
+\end{aligned}
+$$
+
+其惩罚（正则化）形式为
+
+$$
+\text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2 + \|\boldsymbol{\Gamma w}\|_2^2,
+$$
+
+其中 $\boldsymbol{\Gamma}$ 称为 Tikhonov 矩阵，一般取单位矩阵的倍数 $\alpha\boldsymbol{I}$. 特别地，问题有解析的最优解
+
+$$
+\boldsymbol{w^*} = (\boldsymbol{X^\top X} + \boldsymbol{\Gamma^\top \Gamma})^{-1}\boldsymbol{X^\top y}.
+$$
+
+以上两种方法在广义模型上的推广同理.
+
+##### Penalty Form Equivalence
+
+记一般的损失函数为 $f(\boldsymbol{w})$，惩罚/约束方法为 $g(\boldsymbol{w})$，不再局限于平方误差、绝对值误差或 L1 范数、L2 范数. 下面证明惩罚形式的问题和约束形式的问题是等价的，即它们具有相同的最优解. [^penaltyconstraint]
+
+有惩罚形式的优化问题
+
+$$
+\text{minimize~~} f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}),
+$$
+
+记最优解为 $\boldsymbol{w}^*$.
+
+令 $t = g(\boldsymbol{w}^*)$，约束形式的问题为
+
+$$
+\begin{aligned}
+& \text{minimize~~} f(\boldsymbol{w}),\\
+& \text{subject to~~} g(\boldsymbol{w}) \le t.
+\end{aligned}
+$$
+
+记最优解为 $\boldsymbol{w}^{**}$.
+
+由于 $\boldsymbol{w}^*$ 是惩罚形式问题最优解，$\forall \boldsymbol{w}$
+
+$$
+f(\boldsymbol{w^*}) + \lambda g(\boldsymbol{w}^*) \le f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}).\tag{p}
+$$
+
+那么对于满足 $g(\boldsymbol{w}) \le t$ 的任意 $\boldsymbol{w}$ 有 $g(\boldsymbol{w}) \le g(\boldsymbol{w}^*)$，代入上式得
+
+$$
+f(\boldsymbol{w}^*) \le f(\boldsymbol{w}).
+$$
+
+所以 $\boldsymbol{w}^*$ 也是约束形式问题的最优解.
+
+由于 $\boldsymbol{w}^{**}$ 是约束形式问题的最优解，$g(\boldsymbol{w}^{**}) \le t = g(\boldsymbol{w}^*)$ 且 $f(\boldsymbol{w}^{**}) \le f(\boldsymbol{w}^*)$. 将两式代回 $\text{(p)}$ 式，得 $\forall\boldsymbol{w}$
+
+$$
+f(\boldsymbol{w}^{**}) + \lambda g(\boldsymbol{w}^{**}) \le f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}).
+$$
+
+故惩罚形式和约束形式的优化问题是等价的.
+
+[^penaltyconstraint]: [Constraint form equivalent to penalty form - Mathematics Stack Exchange](https://math.stackexchange.com/a/3577409)
+
+
 ## Optimizations
 
-### 正则化
+### Regularizations
 
 #### L0 正则化
 
@@ -180,7 +331,7 @@ $$
 
 #### L1 正则化
 
-使用 LASSO（least absolute shrinkage and selection operator），即加入先验：$w_i$ 服从 0 均值的拉普拉斯分布：
+使用 LASSO，即加入先验：$w_i$ 服从 0 均值的拉普拉斯分布：
 
 $$
 f(w_i; \mu, b) = \frac{1}{2b}\exp\left(-\frac{|w_i - \mu|}{b}\right).
