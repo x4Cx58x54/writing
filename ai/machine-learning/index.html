@@ -1091,16 +1091,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supervised-learning-algorithms" class="md-nav__link">
-    Supervised Learning Algorithms
+  <a href="#supervised-learning" class="md-nav__link">
+    Supervised Learning
   </a>
   
-    <nav class="md-nav" aria-label="Supervised Learning Algorithms">
+    <nav class="md-nav" aria-label="Supervised Learning">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#logistic-regression" class="md-nav__link">
     Logistic Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressions-linear-lasso-and-ridge" class="md-nav__link">
+    Regressions: Linear, LASSO and Ridge
   </a>
   
 </li>
@@ -1119,8 +1126,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    正则化
+  <a href="#regularizations" class="md-nav__link">
+    Regularizations
   </a>
   
 </li>
@@ -2905,16 +2912,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supervised-learning-algorithms" class="md-nav__link">
-    Supervised Learning Algorithms
+  <a href="#supervised-learning" class="md-nav__link">
+    Supervised Learning
   </a>
   
-    <nav class="md-nav" aria-label="Supervised Learning Algorithms">
+    <nav class="md-nav" aria-label="Supervised Learning">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#logistic-regression" class="md-nav__link">
     Logistic Regression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regressions-linear-lasso-and-ridge" class="md-nav__link">
+    Regressions: Linear, LASSO and Ridge
   </a>
   
 </li>
@@ -2933,8 +2947,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    正则化
+  <a href="#regularizations" class="md-nav__link">
+    Regularizations
   </a>
   
 </li>
@@ -3016,7 +3030,7 @@ F_\beta = \frac{(1+\beta^2)PR}{(\beta^2P + R)},
 <div class="arithmatex">\[
 \mathrm{FPR} = \frac{\mathrm{FP}}{\mathrm{TN} + \mathrm{FP}}.
 \]</div>
-<h2 id="supervised-learning-algorithms">Supervised Learning Algorithms<a class="headerlink" href="#supervised-learning-algorithms" title="Permanent link">&para;</a></h2>
+<h2 id="supervised-learning">Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permanent link">&para;</a></h2>
 <h3 id="logistic-regression">Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h3>
 <h4 id="logistic">Logistic?<a class="headerlink" href="#logistic" title="Permanent link">&para;</a></h4>
 <p>Logistic 分布的概率累积函数定义为</p>
@@ -3083,12 +3097,110 @@ w^{(k+1)} = w^{(k)} - \alpha \frac{\partial \ell}{\partial w},
 w^{(k+1)} = w^{(k)} - \frac{\ell'(w^{(k)})}{\ell''(w^{(k)})} = w^{(k)} - H_k^{-1} \ell'(w^{(k)}),
 \]</div>
 <p>其中 <span class="arithmatex">\(H_k\)</span> 为海森矩阵，<span class="arithmatex">\(H_{ij} = \dfrac{\partial^2 \ell(w)}{\partial w_i \partial w_j}\)</span>.</p>
+<h3 id="regressions-linear-lasso-and-ridge">Regressions: Linear, LASSO and Ridge<a class="headerlink" href="#regressions-linear-lasso-and-ridge" title="Permanent link">&para;</a></h3>
+<h4 id="linear-regression">Linear Regression<a class="headerlink" href="#linear-regression" title="Permanent link">&para;</a></h4>
+<p>对于样本集</p>
+<div class="arithmatex">\[
+\{(\boldsymbol{x}_i, y_i)\mid i = 1, \cdots N, \ \boldsymbol{x}_i \in \mathbb{R}^n, \ y_i \in \mathbb{R}\},
+\]</div>
+<p>在 <span class="arithmatex">\(\boldsymbol{x}\)</span> 末尾扩充一维为 <span class="arithmatex">\([\boldsymbol{x}^\top, 1]^\top\)</span>，以统一回归系数的形式. 那么线性回归模型为</p>
+<div class="arithmatex">\[
+\hat{y}_i = \boldsymbol{w}^\top \boldsymbol{x}_i, \quad i = 1, \cdots, N,
+\]</div>
+<p>下面改写为矩阵形式：向量 <span class="arithmatex">\(\hat{\boldsymbol{y}} \in \mathbb{R}^N\)</span>，其中第 <span class="arithmatex">\(i\)</span> 维为 <span class="arithmatex">\(\hat{\boldsymbol{y}}_i = \hat{y}_i\)</span>；矩阵 <span class="arithmatex">\(\boldsymbol{X}\)</span> 的第 <span class="arithmatex">\(i\)</span> 行为 <span class="arithmatex">\(\boldsymbol{x}_i^\top\)</span>，那么线性回归的矩阵形式为</p>
+<div class="arithmatex">\[
+\hat{\boldsymbol{y}} = \boldsymbol{Xw}.
+\]</div>
+<h4 id="gaussian-error">Gaussian Error<a class="headerlink" href="#gaussian-error" title="Permanent link">&para;</a></h4>
+<p>假定估计误差 <span class="arithmatex">\(\hat{y} - y\)</span> 各自独立且服从零均值的高斯分布，那么可以列出关于 <span class="arithmatex">\(\boldsymbol{w}\)</span> 的似然</p>
+<div class="arithmatex">\[
+L(\boldsymbol{w}) = \prod_{i=1}^N \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(\boldsymbol{w}^\top \boldsymbol{x}_i - y_i)^2}{\sigma^2}\right).
+\]</div>
+<p>取负对数并化简后得到</p>
+<div class="arithmatex">\[
+-\log L(\boldsymbol{w}) = N\log(\sigma\sqrt{2\pi}) + \frac{1}{\sigma^2}\sum_{i=1}^N (\boldsymbol{w}^\top \boldsymbol{x}_i - y_i)^2.
+\]</div>
+<p>那么最大化似然就相当于最小化 <span class="arithmatex">\(\sum_{i=1}^N (\boldsymbol{w}^\top \boldsymbol{x}_i - y_i)^2\)</span>，即平方误差作为损失函数的根据. 换句话说，<strong>假定样本中噪声独立且服从零均值高斯分布时，应使用平方误差</strong>.</p>
+<p>这就是一般的线性回归，而基础资料中很少提及高斯分布这一重要角色. 这里再给出矩阵形式的求解过程. 将损失函数的最小化写为矩阵形式</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2,\\
+&amp; \text{subject to~~} \boldsymbol{w}\in\mathbb{R^n}.
+\end{aligned}
+\]</div>
+<p>只需令目标函数梯度为零：</p>
+<div class="arithmatex">\[
+\frac{\partial}{\partial \boldsymbol{w}}\|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2 = 2\boldsymbol{X}^\top(\boldsymbol{Xw}-\boldsymbol{y}) = \boldsymbol{0},
+\]</div>
+<p>解得</p>
+<div class="arithmatex">\[
+\boldsymbol{w} = (\boldsymbol{X}^\top\boldsymbol{X})^{-1}\boldsymbol{X}^\top\boldsymbol{y}.
+\]</div>
+<h4 id="laplacian-error">Laplacian Error<a class="headerlink" href="#laplacian-error" title="Permanent link">&para;</a></h4>
+<p>假定估计误差独立且服从零均值的拉普拉斯分布，那么同理有似然</p>
+<div class="arithmatex">\[
+L(\boldsymbol{w}) = \prod_{i=1}^N \frac{1}{2b}\exp\left(-\frac{|\boldsymbol{w}^\top\boldsymbol{x}_i-y_i|}{b}\right).
+\]</div>
+<p>同理可知最大化似然相当于最小化绝对值误差 <span class="arithmatex">\(\sum_{i=1}^N |\boldsymbol{w}^\top \boldsymbol{x}_i - y_i|\)</span>.</p>
+<h4 id="lasso-and-ridge-regression">LASSO and Ridge Regression<a class="headerlink" href="#lasso-and-ridge-regression" title="Permanent link">&para;</a></h4>
+<p>LASSO（least absolute shrinkage and selection operator）在线性回归时加入一个参数 <span class="arithmatex">\(t\)</span> 限制 <span class="arithmatex">\(\boldsymbol{w}\)</span> 的 L1 范数：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2,\\
+&amp; \text{subject to~~} \|\boldsymbol{w}\|_1 \le t.
+\end{aligned}
+\]</div>
+<p>Ridge 回归在线性回归时加入一个参数 <span class="arithmatex">\(t\)</span> 限制 <span class="arithmatex">\(\boldsymbol{w}\)</span> 的 L2 范数：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2,\\
+&amp; \text{subject to~~} \|\boldsymbol{w}\|_2^2 \le t.
+\end{aligned}
+\]</div>
+<p>其惩罚（正则化）形式为</p>
+<div class="arithmatex">\[
+\text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2 + \|\boldsymbol{\Gamma w}\|_2^2,
+\]</div>
+<p>其中 <span class="arithmatex">\(\boldsymbol{\Gamma}\)</span> 称为 Tikhonov 矩阵，一般取单位矩阵的倍数 <span class="arithmatex">\(\alpha\boldsymbol{I}\)</span>. 特别地，问题有解析的最优解</p>
+<div class="arithmatex">\[
+\boldsymbol{w^*} = (\boldsymbol{X^\top X} + \boldsymbol{\Gamma^\top \Gamma})^{-1}\boldsymbol{X^\top y}.
+\]</div>
+<p>以上两种方法在广义模型上的推广同理.</p>
+<h5 id="penalty-form-equivalence">Penalty Form Equivalence<a class="headerlink" href="#penalty-form-equivalence" title="Permanent link">&para;</a></h5>
+<p>记一般的损失函数为 <span class="arithmatex">\(f(\boldsymbol{w})\)</span>，惩罚/约束方法为 <span class="arithmatex">\(g(\boldsymbol{w})\)</span>，不再局限于平方误差、绝对值误差或 L1 范数、L2 范数. 下面证明惩罚形式的问题和约束形式的问题是等价的，即它们具有相同的最优解. <sup id="fnref:penaltyconstraint"><a class="footnote-ref" href="#fn:penaltyconstraint">1</a></sup></p>
+<p>有惩罚形式的优化问题</p>
+<div class="arithmatex">\[
+\text{minimize~~} f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}),
+\]</div>
+<p>记最优解为 <span class="arithmatex">\(\boldsymbol{w}^*\)</span>.</p>
+<p>令 <span class="arithmatex">\(t = g(\boldsymbol{w}^*)\)</span>，约束形式的问题为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; \text{minimize~~} f(\boldsymbol{w}),\\
+&amp; \text{subject to~~} g(\boldsymbol{w}) \le t.
+\end{aligned}
+\]</div>
+<p>记最优解为 <span class="arithmatex">\(\boldsymbol{w}^{**}\)</span>.</p>
+<p>由于 <span class="arithmatex">\(\boldsymbol{w}^*\)</span> 是惩罚形式问题最优解，<span class="arithmatex">\(\forall \boldsymbol{w}\)</span></p>
+<div class="arithmatex">\[
+f(\boldsymbol{w^*}) + \lambda g(\boldsymbol{w}^*) \le f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}).\tag{p}
+\]</div>
+<p>那么对于满足 <span class="arithmatex">\(g(\boldsymbol{w}) \le t\)</span> 的任意 <span class="arithmatex">\(\boldsymbol{w}\)</span> 有 <span class="arithmatex">\(g(\boldsymbol{w}) \le g(\boldsymbol{w}^*)\)</span>，代入上式得</p>
+<div class="arithmatex">\[
+f(\boldsymbol{w}^*) \le f(\boldsymbol{w}).
+\]</div>
+<p>所以 <span class="arithmatex">\(\boldsymbol{w}^*\)</span> 也是约束形式问题的最优解.</p>
+<p>由于 <span class="arithmatex">\(\boldsymbol{w}^{**}\)</span> 是约束形式问题的最优解，<span class="arithmatex">\(g(\boldsymbol{w}^{**}) \le t = g(\boldsymbol{w}^*)\)</span> 且 <span class="arithmatex">\(f(\boldsymbol{w}^{**}) \le f(\boldsymbol{w}^*)\)</span>. 将两式代回 <span class="arithmatex">\(\text{(p)}\)</span> 式，得 <span class="arithmatex">\(\forall\boldsymbol{w}\)</span></p>
+<div class="arithmatex">\[
+f(\boldsymbol{w}^{**}) + \lambda g(\boldsymbol{w}^{**}) \le f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}).
+\]</div>
+<p>故惩罚形式和约束形式的优化问题是等价的.</p>
 <h2 id="optimizations">Optimizations<a class="headerlink" href="#optimizations" title="Permanent link">&para;</a></h2>
-<h3 id="_8">正则化<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="regularizations">Regularizations<a class="headerlink" href="#regularizations" title="Permanent link">&para;</a></h3>
 <h4 id="l0">L0 正则化<a class="headerlink" href="#l0" title="Permanent link">&para;</a></h4>
 <p>使用最优参数子集选择，即认为好的模型参数数量不应过多. 在损失函数中加入正则化项 <span class="arithmatex">\(\|w\|_0\)</span>，以使惩罚与非零参数数量成正比. 这样做的问题在于正则化项的梯度要么不存在，要么为 0，无法使用梯度下降优化，而遍历每一个参数子集的复杂度过高. 所以使用 L0 正则项的最优凸近似代替，这个最优凸近似就是 L1 正则项.</p>
 <h4 id="l1">L1 正则化<a class="headerlink" href="#l1" title="Permanent link">&para;</a></h4>
-<p>使用 LASSO（least absolute shrinkage and selection operator），即加入先验：<span class="arithmatex">\(w_i\)</span> 服从 0 均值的拉普拉斯分布：</p>
+<p>使用 LASSO，即加入先验：<span class="arithmatex">\(w_i\)</span> 服从 0 均值的拉普拉斯分布：</p>
 <div class="arithmatex">\[
 f(w_i; \mu, b) = \frac{1}{2b}\exp\left(-\frac{|w_i - \mu|}{b}\right).
 \]</div>
@@ -3113,16 +3225,19 @@ d\log (\sigma\sqrt{2\pi}) + \frac{1}{2\sigma^2}w^\top w,
 <p>忽略常数项，那么等价于增加了 L2 正则项.</p>
 <h4 id="elastic-net">Elastic Net 正则化<a class="headerlink" href="#elastic-net" title="Permanent link">&para;</a></h4>
 <p>Elastic Net 正则化相当于同时加入了 L1 和 L2 正则项. 即正则项为 <span class="arithmatex">\(\lambda_1\|w\|_1 + \lambda_2\|w\|_2\)</span>.</p>
-<h4 id="_9">几何解释<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<p>简单起见图中以二维的 <span class="arithmatex">\(w\)</span> 举例<sup id="fnref:regularizations"><a class="footnote-ref" href="#fn:regularizations">1</a></sup>. 图中红色线条为原损失函数的等高线，蓝/灰色线条为正则项的等高线. 可见在原损失函数的等高线上，要使正则项最小，则 <span class="arithmatex">\(w\)</span> 取交点处，正则项的等高线上，要使原损失函数越小，<span class="arithmatex">\(w\)</span> 也取交点. 故正则化后的损失函数最小值点往往在两项各自的某等高线交点处取得.</p>
+<h4 id="_8">几何解释<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>简单起见图中以二维的 <span class="arithmatex">\(w\)</span> 举例<sup id="fnref:regularizations"><a class="footnote-ref" href="#fn:regularizations">2</a></sup>. 图中红色线条为原损失函数的等高线，蓝/灰色线条为正则项的等高线. 可见在原损失函数的等高线上，要使正则项最小，则 <span class="arithmatex">\(w\)</span> 取交点处，正则项的等高线上，要使原损失函数越小，<span class="arithmatex">\(w\)</span> 也取交点. 故正则化后的损失函数最小值点往往在两项各自的某等高线交点处取得.</p>
 <p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/L1_and_L2_balls.svg" /></p>
 <p>对于 L1 正则化，这样的点倾向于使 <span class="arithmatex">\(w\)</span> 的一些分量为 0，从而得到稀疏解；而 L2 正则化处处可微，而且倾向于使 <span class="arithmatex">\(w\)</span> 各分量都较小.</p>
 <p>从概率的角度解释，拉普拉斯分布在其期望处有一个显著的尖峰，所以 L1 正则化使 <span class="arithmatex">\(w\)</span> 分量为 0 的概率很高；正态分布的概率密度曲线则比较平缓，所以只使 <span class="arithmatex">\(w\)</span> 处于较小值时概率较大.</p>
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:penaltyconstraint">
+<p><a href="https://math.stackexchange.com/a/3577409">Constraint form equivalent to penalty form - Mathematics Stack Exchange</a>&#160;<a class="footnote-backref" href="#fnref:penaltyconstraint" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:regularizations">
-<p><a href="https://en.wikipedia.org/wiki/File:L1_and_L2_balls.svg" target="_blank">https://en.wikipedia.org/wiki/File:L1_and_L2_balls.svg</a>&#160;<a class="footnote-backref" href="#fnref:regularizations" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://en.wikipedia.org/wiki/File:L1_and_L2_balls.svg" target="_blank">https://en.wikipedia.org/wiki/File:L1_and_L2_balls.svg</a>&#160;<a class="footnote-backref" href="#fnref:regularizations" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
