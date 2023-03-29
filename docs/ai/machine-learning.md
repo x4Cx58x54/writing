@@ -383,3 +383,155 @@ Elastic Net 正则化相当于同时加入了 L1 和 L2 正则项. 即正则项�
 
 从概率的角度解释，拉普拉斯分布在其期望处有一个显著的尖峰，所以 L1 正则化使 $w$ 分量为 0 的概率很高；正态分布的概率密度曲线则比较平缓，所以只使 $w$ 处于较小值时概率较大.
 
+
+### Gradient Descent Optimizers
+
+```mermaid
+graph TD
+    SGD --+Momentum<br/>+Exponential Decay--> SGDM
+    SGDM --+Nesterov--> NAG
+    SGD --+Adaptive LR--> AdaGrad
+    AdaGrad --+Exponential Decay-->RMSProp
+    SGDM --> Adam
+    RMSProp --> Adam
+    RMSProp --+Fully<br/>Adaptive LR--> AdaDelta
+    Adam --+Nesterov--> NAdam
+    Adam --+Decoupled<br/>Weight Decay--> AdamW
+```
+
+做以下一般约定，如有必要会在具体算法中说明更多细节：
+
+* $t$：当前迭代次数
+* $m$：当前训练 mini-batch 容量
+* $\boldsymbol{\theta}$：模型参数
+* $\Delta\boldsymbol{\theta}$：参数迭代变化量，$\boldsymbol{\theta}_{t+1} = \boldsymbol{\theta}_t + \Delta{\boldsymbol{\theta}}_t$
+* $L(\boldsymbol{\theta})$：损失函数
+* $\eta$：学习率
+* $\delta$：某个很小的正数，保证数值稳定性
+* $\boldsymbol{g}$：损失函数的梯度，默认 $\boldsymbol{g} = \boldsymbol{g}(\boldsymbol{\theta}) = \frac{1}{m}\nabla_{\boldsymbol{\theta}}L(\boldsymbol{\theta})$
+* $\boldsymbol{v}$：梯度 $\boldsymbol{g}$ 的历史加权平均
+* $\alpha$：关于 $\boldsymbol{v}$ 的权值（衰减系数）
+* $\boldsymbol{r}$：梯度各维平方 $\boldsymbol{g}\odot\boldsymbol{g}$ 的历史加权平均
+* $\rho$：关于 $\boldsymbol{r}$ 的权值（衰减系数）
+* 各种历史加权平均初始值均取 $\boldsymbol{0}$
+
+这些优化算法均由迭代求解，达到一定的条件时停止. 简洁起见，下面仅列出各算法迭代一次的过程.
+
+#### SGD, Stochastic Gradient Descent
+
+Mini-batch 版本的 SGD 每次计算一个 mini-batch 的平均梯度，然后沿梯度反方向下降.
+
+1. $\Delta\boldsymbol{\theta} = -\eta\boldsymbol{g}$
+
+#### SGDM, Stochastic Gradient Descent with Momentum
+
+所谓动量，指的是参数变化量的历史平均. 衰减系数 $\alpha$ 保证了越远的历史更新对当前的影响越小.
+
+1. $\boldsymbol{v} = \alpha\boldsymbol{v} + \eta\boldsymbol{g}$
+2. $\Delta\boldsymbol{\theta} = -\boldsymbol{v}$
+
+#### NAG, Nesterov Accelerated Gradient (SGD with Nesterov Momentum)
+
+Nesterov 动量中，先根据当前速度初步更新参数，再根据此位置的梯度进一步更新参数.
+
+1. $\boldsymbol{v} = \alpha\boldsymbol{v} + \eta\boldsymbol{g}(\boldsymbol{\theta}-\alpha\boldsymbol{v})$
+2. $\Delta\boldsymbol{\theta} = -\boldsymbol{v}$
+
+实现时使用以下等价算法：
+
+1. $\boldsymbol{v} = \alpha\boldsymbol{v} + \eta\boldsymbol{g}$
+2. $\Delta\boldsymbol{\theta} = -(\alpha\boldsymbol{v} + \eta\boldsymbol{g})$
+
+可推出两种算法中虽然每次更新的参数有一定偏差，但是计算梯度的位置是一致的，故两种算法沿着相同的路径进行优化，而第二种只是在写法上将 $\Delta\boldsymbol{\theta}$ 计算式中的 $\boldsymbol{v}_{t}$ 换成了 $\boldsymbol{v}_{t+1}$.
+
+#### AdaGrad, Adaptive Gradient
+
+$\boldsymbol{r}$ 记录的是历史中梯度每一维各自平方的总和. 那么更新时 $\Delta\boldsymbol{\theta}$ 中每一维的学习率与根号下历史平方和成反比. 这样总变化较大的维度学习率减小得更快.
+
+1. $\boldsymbol{r} = \boldsymbol{r} + \boldsymbol{g}\odot\boldsymbol{g}$
+2. $\Delta\boldsymbol{\theta} = -\dfrac{\eta}{\delta+\sqrt{\boldsymbol{r}}}\odot \boldsymbol{g}$
+
+#### RMSProp, Root Mean Squared Propagation
+
+在 AdaGrad 中，由于 $\boldsymbol{r}$ 随时间增长不会减小，故可能使得学习率不受控制地降到非常小的值，而且远期和近期的梯度对当前学习率影响是平等的. RMSProp 加入了 $\boldsymbol{r}$ 的衰减系数，以解决这两个问题.
+
+PyTorch 中 $\rho$ 默认取 0.99.
+
+1. $\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}$
+2. $\Delta\boldsymbol{\theta} = -\dfrac{\eta}{\delta+\sqrt{\boldsymbol{r}}}\odot \boldsymbol{g}$
+
+#### AdaDelta
+
+$\boldsymbol{s}$ 记录带衰减的参数变化值各维平方和，$\boldsymbol{r}$ 记录带衰减的梯度各维平方和. 参数各维的学习率直接由两者之比的平方根决定，这样使学习率完全由算法决定而不是作为超参数. 若参数具有单位 $\mathrm{u}$，而损失函数和学习率无单位，则梯度的单位是 $\mathrm{u}^{-1}$. 那么在 AdaGrad 中参数更新式两边单位并不相等，但 AdaDelta 将此式两边单位均统一为 $\mathrm{u}$.
+
+PyTorch 中 $\rho$ 默认取 0.9.
+
+1. $\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}$
+2. $\Delta\boldsymbol{\theta} = -\dfrac{\sqrt{\delta+\boldsymbol{s}}}{\sqrt{\delta+\boldsymbol{r}}}\odot\boldsymbol{g}$
+3. $\boldsymbol{s} = \rho\boldsymbol{s} + (1-\rho)\Delta\boldsymbol{\theta}\odot\Delta\boldsymbol{\theta}$
+
+#### Adam, Adaptive Moment Estimator
+
+Adam 结合了动量和 RMSProp 的思想，使低频的参数分量学习率大，高频的参数分量学习率小.
+
+PyTorch 中 $\alpha$ 默认取 0.9，$\rho$ 默认取 0.999.
+
+1. $\boldsymbol{v} = \alpha\boldsymbol{v} + (1-\alpha)\boldsymbol{g}$
+2. $\hat{\boldsymbol{v}} = \boldsymbol{v}/(1-\alpha^t)$
+3. $\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}$
+4. $\hat{\boldsymbol{r}} = \boldsymbol{r}/(1-\rho^t)$
+5. $\Delta\boldsymbol{\theta} = -\eta\cdot\dfrac{1}{\delta + \sqrt{\hat{\boldsymbol{r}}}}\odot\hat{\boldsymbol{v}}$
+
+!!! Note "$\hat{\boldsymbol{v}}$ 和 $\hat{\boldsymbol{r}}$ 的期望修正"
+
+    递推地
+
+    $$
+    \begin{aligned}
+    \boldsymbol{v}_0 &= \boldsymbol{0} \\
+    \boldsymbol{v}_1 &= (1-\alpha)\boldsymbol{g}_1 \\
+    \boldsymbol{v}_2 &= \alpha(1-\alpha)\boldsymbol{g}_1 + (1-\alpha)\boldsymbol{g}_2 \\
+    \boldsymbol{v}_3 &= \alpha^2(1-\alpha)\boldsymbol{g}_1 + \alpha(1-\alpha)\boldsymbol{g}_2 + (1-\alpha)\boldsymbol{g}_3,
+    \end{aligned}
+    $$
+
+    易得
+
+    $$
+    \boldsymbol{v}_t = (1-\alpha)\sum_{i=1}^t\alpha^{t-i}\boldsymbol{g}_i.
+    $$
+
+    那么其期望
+
+    $$
+    \begin{aligned}
+    \operatorname{E}\boldsymbol{v}_t &\approx (1-\alpha)\operatorname{E}\boldsymbol{g}_t\sum_{i=0}^{t-1}\alpha^i \\
+    &= (1-\alpha)\operatorname{E}\boldsymbol{g}_t\cdot\frac{1-\alpha^t}{1-\alpha} \\
+    &= (1-\alpha^t)\operatorname{E}\boldsymbol{g}_t.
+    \end{aligned}
+    $$
+
+    这里使用 $\operatorname{E}\boldsymbol{g}_t$ 来近似 $\operatorname{E}\sum_{i-1}^t\boldsymbol{g}_i$，理由是 $\alpha$ 使距离较远的 $\boldsymbol{g}$ 逐渐衰减，估计误差不会过大.
+
+    所以，使用 $\hat{\boldsymbol{v}} = \boldsymbol{v}/(1-\alpha^t)$ 进行修正使得 $\operatorname{E}\hat{\boldsymbol{v}}$ 和梯度的一阶原点矩 $\operatorname{E}\boldsymbol{g}_t$ 保持一致. 对于 $\boldsymbol{r}$ 的修正同理.
+
+#### NAdam, Adam with Nesterov Momentum
+
+若直接将 Nesterov 动量应用到 Adam 算法中可以得到梯度的迭代式 $\boldsymbol{g} = \frac{1}{m}\nabla L(\boldsymbol{\theta} - \eta\frac{1}{\delta+\sqrt{\boldsymbol{r}}}\odot\alpha\boldsymbol{v})$. 但为了方便实现，和 NAG 类似地有以下等价算法：
+
+1. $\boldsymbol{v} = \alpha\boldsymbol{v} + (1-\alpha)\boldsymbol{g}$
+2. $\hat{\boldsymbol{v}} = \boldsymbol{v}/(1-\alpha^t)$，带迭代数下标展开得到 $\hat{\boldsymbol{v}}_t = \dfrac{\alpha\boldsymbol{v}_{t-1}}{1-\alpha^t} + \dfrac{(1-\alpha)\boldsymbol{g}_t}{1-\alpha^t}$
+3. $\bar{\boldsymbol{v}} = \dfrac{\alpha\boldsymbol{v}}{1-\alpha^{t+1}} + \dfrac{(1-\alpha)\boldsymbol{g}}{1-\alpha^t}$，与上式比较，将 $\boldsymbol{v}_{t-1}$ 替换为 $\boldsymbol{v}_t$，且对分母做相应修正
+4. $\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}$
+5. $\hat{\boldsymbol{r}} = \boldsymbol{r}/(1-\rho^t)$
+6. $\Delta\boldsymbol{\theta} = -\eta\cdot\dfrac{1}{\delta + \sqrt{\hat{\boldsymbol{r}}}}\odot\bar{\boldsymbol{v}}$
+
+#### AdamW, Adam with Decoupled Weight Decay
+
+一般来说以上算法加入正则项时，都是在计算梯度后直接插入一步 $\boldsymbol{g} = \boldsymbol{g} + \lambda\boldsymbol{\theta}$. 但是这一项在 Adam 中会与 $\boldsymbol{v}$ 和 $\boldsymbol{r}$ 耦合，导致最优解产生偏移. 例如含正则项的 $\boldsymbol{v}$ 被 $\sqrt{\boldsymbol{r}}$ 除时就失去了正则化在各维度上的各向同性. 为此，AdamW 将正则化项后移至参数更新式中.
+
+1. $\boldsymbol{v} = \alpha\boldsymbol{v} + (1-\alpha)\boldsymbol{g}$
+2. $\hat{\boldsymbol{v}} = \boldsymbol{v}/(1-\alpha^t)$
+3. $\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}$
+4. $\hat{\boldsymbol{r}} = \boldsymbol{r}/(1-\rho^t)$
+5. $\Delta\boldsymbol{\theta} = -\eta\cdot\dfrac{1}{\delta + \sqrt{\hat{\boldsymbol{r}}}} \odot \hat{\boldsymbol{v}} - \eta\lambda\boldsymbol{\theta}$
