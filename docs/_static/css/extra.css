@@ -17,11 +17,7 @@ pre, code, kbd {
   font-size: 1.1em !important;
 }
 
-.katex-display {
-  margin: 0 !important;
-}
-
-/* Align all images at the center */
+/* Center all images */
 .md-content img {
   display: block;
   margin: auto;

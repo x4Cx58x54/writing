@@ -167,8 +167,6 @@ extra_javascript:
 
 
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
   - admonition
   - footnotes
   - meta
@@ -179,6 +177,9 @@ markdown_extensions:
   - markdown.extensions.sane_lists
   - attr_list
   - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+      block_tag: p
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.tasklist:
