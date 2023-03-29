@@ -1096,7 +1096,7 @@
         
           <li class="md-nav__item">
   <a href="#the-memcpy-and-memmove-functions" class="md-nav__link">
-    The memcpy() and memmove() Functions
+    The memcpy and memmove Functions
   </a>
   
 </li>
@@ -3437,7 +3437,7 @@
         
           <li class="md-nav__item">
   <a href="#the-memcpy-and-memmove-functions" class="md-nav__link">
-    The memcpy() and memmove() Functions
+    The memcpy and memmove Functions
   </a>
   
 </li>
@@ -3511,7 +3511,7 @@
 </tbody>
 </table>
 <h2 id="character-strings-and-formatted-io">Character Strings and Formatted I/O<a class="headerlink" href="#character-strings-and-formatted-io" title="Permanent link">&para;</a></h2>
-<h4 id="printf-formatters"><code>printf()</code> Formatters<a class="headerlink" href="#printf-formatters" title="Permanent link">&para;</a></h4>
+<h4 id="printf-formatters"><code>printf</code> Formatters<a class="headerlink" href="#printf-formatters" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -3538,12 +3538,12 @@
 </tr>
 <tr>
 <td align="center"><code>%x</code>, <code>%X</code></td>
-<td align="center">hexademical</td>
+<td align="center">hexadecimal</td>
 <td align="center"><code>7f</code>, <code>7F</code></td>
 </tr>
 <tr>
 <td align="center"><code>%#x</code>, <code>%#X</code></td>
-<td align="center">hexademical with prefix</td>
+<td align="center">hexadecimal with prefix</td>
 <td align="center"><code>0x7f</code>, <code>0X7F</code></td>
 </tr>
 <tr>
@@ -3564,11 +3564,11 @@
 <tr>
 <td align="center"><code>%e</code>, <code>%E</code></td>
 <td align="center">exponential notation</td>
-<td align="center"><code>6.366198e-001</code>, ...</td>
+<td align="center"><code>6.366198e-001</code></td>
 </tr>
 <tr>
 <td align="center"><code>%a</code>, <code>%A</code></td>
-<td align="center">hexademical</td>
+<td align="center">hexadecimal</td>
 <td align="center"><code>0x1.45f307p-1</code></td>
 </tr>
 <tr>
@@ -3593,7 +3593,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="printf-modifiers"><code>printf()</code> Modifiers<a class="headerlink" href="#printf-modifiers" title="Permanent link">&para;</a></h4>
+<h4 id="printf-modifiers"><code>printf</code> Modifiers<a class="headerlink" href="#printf-modifiers" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -3656,7 +3656,7 @@
 <tr>
 <td align="center"><code>+</code></td>
 <td align="center">print plus sign if positive</td>
-<td align="center"><code>%6.2f</code></td>
+<td align="center"><code>%+6.2f</code></td>
 </tr>
 <tr>
 <td align="center"><em>space</em></td>
@@ -3676,9 +3676,9 @@
 </tbody>
 </table>
 <p>When <code>.digit</code> is applied to <code>%s</code>, for example, <code>%.5s</code>, only the first 5 characters will be displayed. <code>.f</code> is equivalent to <code>.0f</code>.</p>
-<h4 id="return-value-of-printf">Return Value of <code>printf()</code><a class="headerlink" href="#return-value-of-printf" title="Permanent link">&para;</a></h4>
-<p>It returns the number of characters it printed. Returns a negative value on error.</p>
-<h4 id="conversion-specifiers-of-scanf">Conversion Specifiers of <code>scanf()</code><a class="headerlink" href="#conversion-specifiers-of-scanf" title="Permanent link">&para;</a></h4>
+<h4 id="return-value-of-printf">Return Value of <code>printf</code><a class="headerlink" href="#return-value-of-printf" title="Permanent link">&para;</a></h4>
+<p>It returns the number of characters it printed or a negative value on error.</p>
+<h4 id="conversion-specifiers-of-scanf">Conversion Specifiers of <code>scanf</code><a class="headerlink" href="#conversion-specifiers-of-scanf" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -3721,11 +3721,11 @@
 </tr>
 <tr>
 <td align="center"><code>%x</code>, <code>%X</code></td>
-<td align="center">signed hexademical integer</td>
+<td align="center">signed hexadecimal integer</td>
 </tr>
 </tbody>
 </table>
-<h4 id="modifiers-of-scanf">Modifiers of <code>Scanf()</code><a class="headerlink" href="#modifiers-of-scanf" title="Permanent link">&para;</a></h4>
+<h4 id="modifiers-of-scanf">Modifiers of <code>scanf</code><a class="headerlink" href="#modifiers-of-scanf" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -3737,7 +3737,7 @@
 <tbody>
 <tr>
 <td align="center"><code>*</code></td>
-<td align="center">supress assignment</td>
+<td align="center">suppress assignment</td>
 <td align="center"></td>
 </tr>
 <tr>
@@ -3787,28 +3787,28 @@
 </tr>
 </tbody>
 </table>
-<h4 id="scanf"><code>scanf()</code> 的工作方式<a class="headerlink" href="#scanf" title="Permanent link">&para;</a></h4>
-<p>假设使用的是 <code>%d</code> 模式，<code>scanf()</code> 开始读字符，忽略开始出现的空白字符直到输入中有了数字或者符号（<code>+</code>、<code>-</code>），<code>scanf()</code> 将它们保存下来，直到又遇到一个非数字字符。这时候这个字符会被放回<strong>输入缓冲区</strong>。这意味着程序下一次读入字符的时候，这个被放回的字符会作为第一个字符出现。接下来 <code>scanf()</code> 会根据 <code>%d</code> 将接受的字符转换为带符整数，存入所给出的地址处。</p>
-<p>如果第一个非空白字符非数字非符号，那么 <code>scanf()</code> 不会给任何变量赋值并且把这个字符退回输入缓冲区，所以下一个输入遇到的第一个字符还是这个字符。如果下一个 <code>scanf()</code> 也使用 <code>%d</code>，那么它也不会有任何反应。</p>
-<p>其它的数字模式和 <code>%d</code> 相似，只是 <code>scanf()</code> 能接受更多的合法字符，比如十六进制中的 <code>A</code>-<code>F</code>，十六进制小数的 <code>p</code> 记号。</p>
-<p>在 <code>%s</code> 模式下，<code>scanf()</code> 从读到的第一个非空白字符开始保存，直到又遇到的第一个空白字符。</p>
+<h4 id="scanf"><code>scanf</code> 的工作方式<a class="headerlink" href="#scanf" title="Permanent link">&para;</a></h4>
+<p>假设使用的是 <code>%d</code> 模式，<code>scanf</code> 开始读字符，忽略开始出现的空白字符直到输入中有了数字或者符号（<code>+</code>/<code>-</code>），<code>scanf</code> 将它们保存下来，直到又遇到一个非数字字符。这个字符会被放回<strong>输入缓冲区</strong>。这意味着程序下一次读入字符的时候，这个被放回的字符会作为第一个字符出现。接下来 <code>scanf</code> 会根据 <code>%d</code> 将接受的字符转换为带符整数，存入所给出的地址处。</p>
+<p>如果第一个非空白字符非数字非符号，那么 <code>scanf</code> 不会给任何变量赋值并且把这个字符退回输入缓冲区，所以下一个输入遇到的第一个字符还是这个字符。如果下一个 <code>scanf</code> 也使用 <code>%d</code>，那么它也不会有任何反应。</p>
+<p>其它的数字模式和 <code>%d</code> 相似，只是 <code>scanf</code> 能接受更多的合法字符，比如十六进制中的 <code>A</code>-<code>F</code>，十六进制小数的 <code>p</code> 记号。</p>
+<p>在 <code>%s</code> 模式下，<code>scanf</code> 从读到的第一个非空白字符开始保存，直到又遇到的第一个空白字符。</p>
 <p>在 <code>%c</code> 模式下，所有的字符都是平等的，都会被保存下来。</p>
 <p>转换标识符之间还可以有普通字符，比如 <code>%d,%d</code> 。这样的情况下，输入完第一个整数之后必须紧跟逗号，否则第二个整数输入无效。但是逗号之后又要输入一个整数，所以这里输入的空白字符会被跳过。</p>
-<h4 id="return-value-of-scanf">Return Value of <code>scanf()</code><a class="headerlink" href="#return-value-of-scanf" title="Permanent link">&para;</a></h4>
+<h4 id="return-value-of-scanf">Return Value of <code>scanf</code><a class="headerlink" href="#return-value-of-scanf" title="Permanent link">&para;</a></h4>
 <p>It returns the number of items it successfully reads. If it reads no items, it returns 0. If it reaches EOF, it returns EOF.</p>
 <h4 id="the-modifier">The <code>*</code> Modifier<a class="headerlink" href="#the-modifier" title="Permanent link">&para;</a></h4>
-<p>在 <code>printf()</code> 中，<code>*</code> 意味着可以用变量来指明 field width、precision 等 modifier 量。如下例。
+<p>在 <code>printf</code> 中，<code>*</code> 意味着可以用变量来指明 field width 或 precision 等 modifier 量。如下例。
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 <span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.1415927</span><span class="p">;</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%*.*f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
 </code></pre></div></p>
-<p>在 <code>scanf()</code> 中，<code>%</code> 和 转换标识符之间的 <code>*</code> 代表忽略对应的输入。如
+<p>在 <code>scanf</code> 中，<code>%</code> 和 转换标识符之间的 <code>*</code> 代表忽略对应的输入。如
 <div class="highlight"><pre><span></span><code><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%*d %*d %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
 当中第三个输入才有效。</p>
 <h2 id="operators-expressions-and-statements">Operators, Expressions and Statements<a class="headerlink" href="#operators-expressions-and-statements" title="Permanent link">&para;</a></h2>
 <h4 id="sizeof-operator"><code>sizeof</code> Operator<a class="headerlink" href="#sizeof-operator" title="Permanent link">&para;</a></h4>
-<p><code>sizeof</code> returns a size_t type value. It has a <code>printf()</code> specifier <code>%zd</code>. But actually it is the same to unsigned int or unsigned long int. If the compiler does not support <code>%zd</code>, try <code>%u</code> or <code>%lu</code> instead.</p>
+<p><code>sizeof</code> returns a <code>size_t</code> type value. It has a <code>printf</code> specifier <code>%zd</code>. But actually it is the same to unsigned int or unsigned long int. If the compiler does not support <code>%zd</code>, try <code>%u</code> or <code>%lu</code> instead.</p>
 <h4 id="and-"><code>++</code> and <code>--</code><a class="headerlink" href="#and-" title="Permanent link">&para;</a></h4>
 <p>在同一表达式中，<code>++</code> 具体何时执行并不确定，比如 <code>n+n++</code> 的值是不确定的。但是逗号表达式一定是从左到右执行的，<code>n, n++</code> 的各项之值均确定。</p>
 <h4 id="precedence">Precedence<a class="headerlink" href="#precedence" title="Permanent link">&para;</a></h4>
@@ -3816,14 +3816,14 @@
 <h2 id="looping">Looping<a class="headerlink" href="#looping" title="Permanent link">&para;</a></h2>
 <h4 id="boolean">Boolean<a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h4>
 <p><code>_Bool</code> 类型的变量可被赋值为 0 或 1。如果向其赋非零值，则会自动转换为 1。但是并未定义 <code>true</code> 和 <code>false</code> 两个量。</p>
-<p>Furthermore, by including the <code>stdbool.h</code> file, you can use <code>bool</code> instead of the key word <code>_Bool</code> for the type and use the indentifiers <code>true</code> and <code>false</code>.</p>
+<p>Furthermore, by including the <code>stdbool.h</code> file, you can use <code>bool</code> instead of the key word <code>_Bool</code> for the type and use the identifiers <code>true</code> and <code>false</code>.</p>
 <h4 id="c-style-reading-loop">C-Style Reading Loop<a class="headerlink" href="#c-style-reading-loop" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// loop actions</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>可以使用 <code>n = getchar()</code> 代替。这样的效果完全一样，差别只在 <code>getchar()</code> 略快一些。对应的是 <code>putchar()</code> 函数。</p>
+<p>可以使用 <code>n = getchar()</code> 代替。这样的效果完全一样，差别只在 <code>getchar</code> 略快一些。对应的是 <code>putchar</code> 函数。</p>
 <h4 id="for-loop"><code>for</code> Loop<a class="headerlink" href="#for-loop" title="Permanent link">&para;</a></h4>
 <p><code>for</code> 循环的过程：首次循环之前初始化，每次循环之前比对条件，每次循环结束后更新。</p>
 <h4 id="do-while-loop"><code>do-while</code> Loop<a class="headerlink" href="#do-while-loop" title="Permanent link">&para;</a></h4>
@@ -3855,59 +3855,59 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>isalpha()</code></td>
+<td align="left"><code>isalpha</code></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left"><code>isalnum()</code></td>
+<td align="left"><code>isalnum</code></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left"><code>isblank()</code></td>
+<td align="left"><code>isblank</code></td>
 <td align="left">standard blank character (<em>space</em>, <code>\t</code>, <code>\n</code>)</td>
 </tr>
 <tr>
-<td align="left"><code>isspace()</code></td>
+<td align="left"><code>isspace</code></td>
 <td align="left">whitespace character</td>
 </tr>
 <tr>
-<td align="left"><code>iscntrl()</code></td>
+<td align="left"><code>iscntrl</code></td>
 <td align="left">control character</td>
 </tr>
 <tr>
-<td align="left"><code>isdigit()</code></td>
+<td align="left"><code>isdigit</code></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left"><code>isxdigit()</code></td>
-<td align="left">hexademical-digit character</td>
+<td align="left"><code>isxdigit</code></td>
+<td align="left">hexadecimal-digit character</td>
 </tr>
 <tr>
-<td align="left"><code>isprint()</code></td>
+<td align="left"><code>isprint</code></td>
 <td align="left">printing character</td>
 </tr>
 <tr>
-<td align="left"><code>isgraph()</code></td>
+<td align="left"><code>isgraph</code></td>
 <td align="left">printing character other than space</td>
 </tr>
 <tr>
-<td align="left"><code>islower()</code></td>
+<td align="left"><code>islower</code></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left"><code>isupper()</code></td>
+<td align="left"><code>isupper</code></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left"><code>ispunct()</code></td>
+<td align="left"><code>ispunct</code></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left"><code>tolower()</code></td>
+<td align="left"><code>tolower</code></td>
 <td align="left"></td>
 </tr>
 <tr>
-<td align="left"><code>toupper()</code></td>
+<td align="left"><code>toupper</code></td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -3940,7 +3940,7 @@
 <p><code>EOF</code> is defined in the <code>stdio.h</code> file as follows:
 <div class="highlight"><pre><span></span><code><span class="cp">#define EOF -1</span>
 </code></pre></div>
-当 <code>getchar()</code> 读到文件结束标志时返回 <code>EOF</code>。<code>EOF</code> 的具体值可能会有变化，但是通过符号化的定义屏蔽了这个细节。可用 <code>Ctrl+D</code>（Unix）或者 <code>Ctrl+Z</code>（Windows）输入。</p>
+当 <code>getchar</code> 读到文件结束标志时返回 <code>EOF</code>。<code>EOF</code> 的具体值可能会有变化，但是通过符号化的定义屏蔽了这个细节。可用 <code>Ctrl+D</code>（Unix）或者 <code>Ctrl+Z</code>（Windows）输入。</p>
 <h4 id="input-validation">Input Validation<a class="headerlink" href="#input-validation" title="Permanent link">&para;</a></h4>
 <p>需要输入一个正整数时，可以使用
 <div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
@@ -3952,11 +3952,11 @@
 </code></pre></div></p>
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <h4 id="equality-of-functions">Equality of Functions<a class="headerlink" href="#equality-of-functions" title="Permanent link">&para;</a></h4>
-<p>任何函数都可以被另外的任何函数调用，包括 <code>main()</code>。</p>
+<p>任何函数都可以被另外的任何函数调用，包括 <code>main</code>。</p>
 <h4 id="inline-function">Inline Function<a class="headerlink" href="#inline-function" title="Permanent link">&para;</a></h4>
 <p>C99 引入了内联函数。和 C++ 一样，这只是一种建议性的指令，编译器将视情况将函数内联。内联函数没有地址，因此如果源代码中出现了对其取地址的操作，则函数不会被内联。</p>
 <h4 id="_noreturn-functions"><code>_Noreturn</code> Functions<a class="headerlink" href="#_noreturn-functions" title="Permanent link">&para;</a></h4>
-<p>C11 引入无返回函数，即函数执行完毕后不会回到调用它的地方。<code>exit()</code> 就是一种无返回函数。</p>
+<p>C11 引入无返回函数，即函数执行完毕后不会回到调用它的地方。<code>exit</code> 就是一种无返回函数。</p>
 <h4 id="_3">编译多文件源码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>使用 gcc 编译器，只需要执行
 <div class="highlight"><pre><span></span><code>gcc file1.c file2.c
@@ -3964,7 +3964,7 @@
 即可。如果其中有文件已经编译为目标文件，还可以
 <div class="highlight"><pre><span></span><code>gcc file1.c file2.o
 </code></pre></div></p>
-<p>一般将 <code>main()</code> 函数和函数定义分别置于不同的文件，但此时 <code>main()</code> 还是需要函数原型。一般的做法是将函数原型和预处理语句放在头文件中，而在每一个文件中使用 <code>#include</code> 包含使用到的头文件。</p>
+<p>一般将 <code>main</code> 函数和函数定义分别置于不同的文件，但此时 <code>main</code> 还是需要函数原型。一般的做法是将函数原型和预处理语句放在头文件中，而在每一个文件中使用 <code>#include</code> 包含使用到的头文件。</p>
 <h2 id="arrays-and-pointers">Arrays and Pointers<a class="headerlink" href="#arrays-and-pointers" title="Permanent link">&para;</a></h2>
 <h4 id="_4">数组名和指针的不同<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p>指针可以是常量或者变量，但是数组名一定是常量，不可以改变它的值。</p>
@@ -4085,56 +4085,56 @@ void prd(int (*arr)[2]);
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">;</span>
 <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">);</span>
 </code></pre></div></p>
-<h4 id="gets"><code>gets()</code> 函数<a class="headerlink" href="#gets" title="Permanent link">&para;</a></h4>
+<h4 id="gets"><code>gets</code> 函数<a class="headerlink" href="#gets" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="n">str</span><span class="p">[</span><span class="mi">15</span><span class="p">];</span>
 <span class="n">gets</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
 </code></pre></div>
-<p><code>gets()</code> 函数读入一行数据，并截去末尾换行，再添加上 <code>\0</code>。这个函数并不安全，因为它不判断输入的字符是否超出分配的空间，导致可能会覆盖其他数据。C11 已经取消了该函数，但是大多数编译器为了向前兼容，还保留了这一函数。</p>
-<h4 id="fgets"><code>fgets()</code> 函数<a class="headerlink" href="#fgets" title="Permanent link">&para;</a></h4>
-<p><code>fgets()</code> 用于从文件输入。第一个参数是字符数组名（指针），第二个参数是字符上限，第三个参数是源文件指针。它从源文件读入字符串，直到 <code>\n</code> 出现或者达到上限。如果是从控制台输入，则源文件为 <code>stdin</code>。此函数不会丢弃末尾换行符。</p>
+<p><code>gets</code> 函数读入一行数据，并截去末尾换行，再添加上 <code>\0</code>。这个函数并不安全，因为它不判断输入的字符是否超出分配的空间，导致可能会覆盖其他数据。C11 已经取消了该函数，但是大多数编译器为了向前兼容，还保留了这一函数。</p>
+<h4 id="fgets"><code>fgets</code> 函数<a class="headerlink" href="#fgets" title="Permanent link">&para;</a></h4>
+<p><code>fgets</code> 用于从文件输入。第一个参数是字符数组名（指针），第二个参数是字符上限，第三个参数是源文件指针。它从源文件读入字符串，直到 <code>\n</code> 出现或者达到上限。如果是从控制台输入，则源文件为 <code>stdin</code>。此函数不会丢弃末尾换行符。</p>
 <p>函数返回一个 <code>char*</code> 指针，一般情况下和第一个参数一致，但是如果函数读到了 <code>EOF</code>，则返回 <code>NULL</code> 指针。</p>
-<p>多个 <code>fgets()</code> 可以处理比上限长的字符串，首先第一个 <code>fgets(str, n, stdin)</code> 从缓冲区读入 <code>n-1</code> 个字符，之后附上 <code>\0</code>，下一次读入时，再断点处继续，重复前一过程。</p>
-<h4 id="gets_s"><code>gets_s()</code> 函数<a class="headerlink" href="#gets_s" title="Permanent link">&para;</a></h4>
-<p>C11 加入了可选的 <code>gets_s()</code> 函数，它接受两个参数，首先是字符数组名称，然后是字符数上限。它从控制台读入字符，读到换行符时停止并丢弃换行符。如果字符超限，那么它会将目标字符数组的第一个字符设为 <code>\0</code>，然后丢弃剩下的输入，并且可能会导致程序退出。</p>
+<p>多个 <code>fgets</code> 可以处理比上限长的字符串，首先第一个 <code>fgets(str, n, stdin)</code> 从缓冲区读入 <code>n-1</code> 个字符，之后附上 <code>\0</code>，下一次读入时，再断点处继续，重复前一过程。</p>
+<h4 id="gets_s"><code>gets_s</code> 函数<a class="headerlink" href="#gets_s" title="Permanent link">&para;</a></h4>
+<p>C11 加入了可选的 <code>gets_s</code> 函数，它接受两个参数，首先是字符数组名称，然后是字符数上限。它从控制台读入字符，读到换行符时停止并丢弃换行符。如果字符超限，那么它会将目标字符数组的第一个字符设为 <code>\0</code>，然后丢弃剩下的输入，并且可能会导致程序退出。</p>
 <h3 id="_21">字符串输出<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
-<h4 id="puts"><code>puts()</code> 函数<a class="headerlink" href="#puts" title="Permanent link">&para;</a></h4>
+<h4 id="puts"><code>puts</code> 函数<a class="headerlink" href="#puts" title="Permanent link">&para;</a></h4>
 <p>输出一个字符串，并附上换行符。这里有一个用法是直接传入参数 <code>&amp;str[n]</code> 以从第 <code>n+1</code> 个字符开始显示。</p>
-<h4 id="fputs"><code>fputs()</code> 函数<a class="headerlink" href="#fputs" title="Permanent link">&para;</a></h4>
+<h4 id="fputs"><code>fputs</code> 函数<a class="headerlink" href="#fputs" title="Permanent link">&para;</a></h4>
 <p>此函数接受两个参数，第一个是要输出的字符数组名，第二个是输出目标文件指针，如果从控制台输出，则为 <code>stdout</code>。它不会自动加上换行符。</p>
-<p>如果没有合适的标准输入输出函数，可以使用 <code>getchar()</code> 和 <code>putchar()</code> 自定义。</p>
+<p>如果没有合适的标准输入输出函数，可以使用 <code>getchar</code> 和 <code>putchar</code> 自定义。</p>
 <h3 id="_22">字符串函数<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
 <p>以下函数声明于 <code>string.h</code> 头文件。</p>
-<h4 id="strcat-strncat"><code>strcat()</code> 和 <code>strncat()</code> 函数<a class="headerlink" href="#strcat-strncat" title="Permanent link">&para;</a></h4>
+<h4 id="strcat-strncat"><code>strcat</code> 和 <code>strncat</code> 函数<a class="headerlink" href="#strcat-strncat" title="Permanent link">&para;</a></h4>
 <p>它接受两个字符串数组，将第二个拼接到第一个末尾（第二个本身保持不变），然后返回第一个参数。这个函数不检查是否溢出，因此可能导致覆盖其他数据。</p>
-<p><code>strncat()</code> 在 <code>strcat()</code> 的基础上再接受第三个参数，标明拼接时增加的字符串长度上限。</p>
-<h4 id="strcmp-strcmp"><code>strcmp()</code> 和 <code>strcmp()</code> 函数<a class="headerlink" href="#strcmp-strcmp" title="Permanent link">&para;</a></h4>
-<p>直接比较字符数组名称是在比较它们的地址而非其内容。因此需要 <code>strcmp()</code> 函数，它在两个字符串相等时返回 0，若不相等，则返回值的符号和第一个字符串减第二个字符串在第一处差异处的差符号相同。</p>
-<p>同样地 <code>strncmp()</code> 加上了上限。</p>
-<h4 id="strcpy-strncpy"><code>strcpy()</code> 和 <code>strncpy()</code> 函数<a class="headerlink" href="#strcpy-strncpy" title="Permanent link">&para;</a></h4>
+<p><code>strncat</code> 在 <code>strcat</code> 的基础上再接受第三个参数，标明拼接时增加的字符串长度上限。</p>
+<h4 id="strcmp-strcmp"><code>strcmp</code> 和 <code>strcmp</code> 函数<a class="headerlink" href="#strcmp-strcmp" title="Permanent link">&para;</a></h4>
+<p>直接比较字符数组名称是在比较它们的地址而非其内容。因此需要 <code>strcmp</code> 函数，它在两个字符串相等时返回 0，若不相等，则返回值的符号和第一个字符串减第二个字符串在第一处差异处的差符号相同。</p>
+<p>同样地 <code>strncmp</code> 加上了上限。</p>
+<h4 id="strcpy-strncpy"><code>strcpy</code> 和 <code>strncpy</code> 函数<a class="headerlink" href="#strcpy-strncpy" title="Permanent link">&para;</a></h4>
 <p>这一组函数相当于字符串的赋值。值得注意的是其中的参数并不一定要指向字符数组的开头</p>
-<h4 id="strchr-strrchr"><code>strchr()</code> 和 <code>strrchr()</code> 函数<a class="headerlink" href="#strchr-strrchr" title="Permanent link">&para;</a></h4>
+<h4 id="strchr-strrchr"><code>strchr</code> 和 <code>strrchr</code> 函数<a class="headerlink" href="#strchr-strrchr" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">strchr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
 </code></pre></div>
-返回指向 <code>s</code> 第一次出现的字符 <code>c</code> 的指针。<code>strrchr()</code> 则对应最后一个出现的 <code>c</code>。未找到则返回 <code>NULL</code>。</p>
-<h4 id="strstr"><code>strstr()</code> 函数<a class="headerlink" href="#strstr" title="Permanent link">&para;</a></h4>
+返回指向 <code>s</code> 第一次出现的字符 <code>c</code> 的指针。<code>strrchr</code> 则对应最后一个出现的 <code>c</code>。未找到则返回 <code>NULL</code>。</p>
+<h4 id="strstr"><code>strstr</code> 函数<a class="headerlink" href="#strstr" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">strstr</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span>
 </code></pre></div>
 返回指向 <code>s2</code> 在 <code>s1</code> 中第一次出现处的指针，未找到则返回 <code>NULL</code>。</p>
-<h4 id="strpbrk"><code>strpbrk()</code> 函数<a class="headerlink" href="#strpbrk" title="Permanent link">&para;</a></h4>
+<h4 id="strpbrk"><code>strpbrk</code> 函数<a class="headerlink" href="#strpbrk" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">strpbrk</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">);</span>
 </code></pre></div>
 <p>返回指向 <code>s2</code> 中任一字符在 <code>s1</code> 中第一次出现的位置的指针，未找到则返回 <code>NULL</code>。</p>
-<h4 id="sprintf"><code>sprintf()</code> 函数<a class="headerlink" href="#sprintf" title="Permanent link">&para;</a></h4>
-<p>此函数定义在 <code>stdio.h</code> 中，它和 <code>printf()</code> 非常相似，区别在于它输出到字符串而非控制台。<code>sprintf()</code> 的第一个参数是目标字符数组，之后的参数和 <code>printf()</code> 一样，根据这些生成的字符串存入之前的字符数组中。</p>
+<h4 id="sprintf"><code>sprintf</code> 函数<a class="headerlink" href="#sprintf" title="Permanent link">&para;</a></h4>
+<p>此函数定义在 <code>stdio.h</code> 中，它和 <code>printf</code> 非常相似，区别在于它输出到字符串而非控制台。<code>sprintf</code> 的第一个参数是目标字符数组，之后的参数和 <code>printf</code> 一样，根据这些生成的字符串存入之前的字符数组中。</p>
 <h3 id="-">字符串-数字转换<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
 <p><code>stdlib.h</code> 中包含一系列转换函数。</p>
-<p><code>atoi()</code> 函数（alphanumeric to integer）将字符串转换为整型，它返回字符串开头的纯数字部分所转换为的数字。如果参数开头不包含数字，则它的返回值未规定。同样地，还有返回 <code>double</code> 类型的 <code>atof()</code> 和返回 <code>long</code> 的 <code>atol()</code>。</p>
-<p><code>strtol()</code> 函数将字符串转换为 <code>long</code> 类型。
+<p><code>atoi</code> 函数（alphanumeric to integer）将字符串转换为整型，它返回字符串开头的纯数字部分所转换为的数字。如果参数开头不包含数字，则它的返回值未规定。同样地，还有返回 <code>double</code> 类型的 <code>atof</code> 和返回 <code>long</code> 的 <code>atol</code>。</p>
+<p><code>strtol</code> 函数将字符串转换为 <code>long</code> 类型。
 <div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="nf">strtol</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">endp</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">base</span><span class="p">);</span>
 </code></pre></div>
-首先将 <code>str</code> 开头可转换的部分转换为 <code>long</code> 并返回，可选择从 1 到 36 的基数。随后 <code>endp</code> 指向未得到转换的第一个字符的地址的地址。同理有 <code>strtoul()</code> 函数。</p>
-<p><code>strtod()</code> 函数则转换为 <code>double</code> 类型，但是没有基数选择，只接受两个参数。</p>
-<p>一些编译器提供数字向字符串的转换函数如 <code>itoa()</code> 和 <code>ftoa()</code>，但是它们不是 C 标准。一般使用 <code>sprintf()</code> 函数。</p>
+首先将 <code>str</code> 开头可转换的部分转换为 <code>long</code> 并返回，可选择从 1 到 36 的基数。随后 <code>endp</code> 指向未得到转换的第一个字符的地址的地址。同理有 <code>strtoul</code> 函数。</p>
+<p><code>strtod</code> 函数则转换为 <code>double</code> 类型，但是没有基数选择，只接受两个参数。</p>
+<p>一些编译器提供数字向字符串的转换函数如 <code>itoa</code> 和 <code>ftoa</code>，但是它们不是 C 标准。一般使用 <code>sprintf</code> 函数。</p>
 <h2 id="storage-classes-linkage-and-memory-management">Storage Classes, Linkage, and Memory Management<a class="headerlink" href="#storage-classes-linkage-and-memory-management" title="Permanent link">&para;</a></h2>
 <h3 id="storage-classes">Storage Classes<a class="headerlink" href="#storage-classes" title="Permanent link">&para;</a></h3>
 <h4 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h4>
@@ -4270,18 +4270,18 @@ void prd(int (*arr)[2]);
 <p>函数同样也有存储类型，除了 C99 的内联函数，只有外部函数和静态函数。默认的外部函数可以在多文件访问，而加上 <code>static</code> 关键字的函数只能在该文件中使用。其 <code>extern</code> 关键字的使用方法和变量相同。</p>
 <h3 id="allocated-memory">Allocated Memory<a class="headerlink" href="#allocated-memory" title="Permanent link">&para;</a></h3>
 <p><code>stdlib.h</code> 头文件中提供了动态内存分配函数。</p>
-<p><code>malloc()</code> 接受申请空间字节数作为参数，返回指向这个空间第一个字节的指针。若分配失败则返回 <code>NULL</code>。这个指针的类型，在 ANSI C 之前是 <code>char*</code>，现在为 <code>void*</code>。为了可读性，应该显式声明指针类型，但是不声明不会引起错误，即使是 ANSI C 之前。
+<p><code>malloc</code> 接受申请空间字节数作为参数，返回指向这个空间第一个字节的指针。若分配失败则返回 <code>NULL</code>。这个指针的类型，在 ANSI C 之前是 <code>char*</code>，现在为 <code>void*</code>。为了可读性，应该显式声明指针类型，但是不声明不会引起错误，即使是 ANSI C 之前。
 <div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 <span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
 </code></pre></div>
 注意这个类型转换虽然在 C 中可省略，但是 C++ 要求使用。</p>
-<p>每一个 <code>malloc()</code> 都应与一个 <code>free()</code> 配对。<code>free()</code> 将参数指向的动态内存块释放。如果不将动态分配的内存释放，则它们会占用空间一直到程序结束。</p>
-<p><code>stdlib.h</code> 中的 <code>exit()</code> 使整个程序退出。其参数为退出返回值，一般用 <code>EXIT_SUCCESS</code>（== 0）或者 <code>EXIT_FAILURE</code>，也可以用其它整数来表明错误。</p>
-<p><code>calloc()</code> 函数用于分配一组内存空间，接受两个无符号数作为参数：
+<p>每一个 <code>malloc</code> 都应与一个 <code>free</code> 配对。<code>free</code> 将参数指向的动态内存块释放。如果不将动态分配的内存释放，则它们会占用空间一直到程序结束。</p>
+<p><code>stdlib.h</code> 中的 <code>exit</code> 使整个程序退出。其参数为退出返回值，一般用 <code>EXIT_SUCCESS</code>（== 0）或者 <code>EXIT_FAILURE</code>，也可以用其它整数来表明错误。</p>
+<p><code>calloc</code> 函数用于分配一组内存空间，接受两个无符号数作为参数：
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 <span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">calloc</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
 </code></pre></div>
-它的返回值和 <code>malloc()</code> 完全一样，同样需要使用 <code>free()</code> 释放。有一点不同是它会将分配的内存中的每一位都初始化为 0（注意有一些系统中，每一位都是 0 所代表的浮点数并不是 0）。</p>
+它的返回值和 <code>malloc</code> 完全一样，同样需要使用 <code>free</code> 释放。有一点不同是它会将分配的内存中的每一位都初始化为 0（注意有一些系统中，每一位都是 0 所代表的浮点数并不是 0）。</p>
 <h3 id="type-qualifiers">Type Qualifiers<a class="headerlink" href="#type-qualifiers" title="Permanent link">&para;</a></h3>
 <p>C 语言有四种类型限定词：</p>
 <ul>
@@ -4329,8 +4329,8 @@ void prd(int (*arr)[2]);
 <p>The text mode and the binary mode are two ways that C accesses files. The binary mode access every byte of the file, while the text mode is a little bit different. For example, <code>\r\n</code> will be converted to <code>\n</code> in text mode on Windows.</p>
 <h4 id="standard-files">Standard Files<a class="headerlink" href="#standard-files" title="Permanent link">&para;</a></h4>
 <p>C 程序自动地打开三个文件：standard input、standard output、standard error output。它们都通过控制台输入，而独立出标准错误输出的目的是为了有逻辑上独立的错误报告。</p>
-<h4 id="the-fopen-function">The <code>fopen()</code> Function<a class="headerlink" href="#the-fopen-function" title="Permanent link">&para;</a></h4>
-<p><code>fopen()</code> 接受两个参数，第一个是代表文件路径的字符串，第二个是打开文件模式的字符串。</p>
+<h4 id="the-fopen-function">The <code>fopen</code> Function<a class="headerlink" href="#the-fopen-function" title="Permanent link">&para;</a></h4>
+<p><code>fopen</code> 接受两个参数，第一个是代表文件路径的字符串，第二个是打开文件模式的字符串。</p>
 <table>
 <thead>
 <tr>
@@ -4377,27 +4377,27 @@ void prd(int (*arr)[2]);
 </tbody>
 </table>
 <p>注意含有 <code>a</code> 和 <code>+</code> 的模式中，可以读整个文件，但是只能以追加模式写入。<code>x</code> 为 C11 标准规定，只能用于 <code>w</code> 及其扩展。</p>
-<p><code>fopen()</code> 返回的是 <code>FILE*</code> 指针。</p>
-<h4 id="the-getc-and-putc-fucntion">The <code>getc()</code> and <code>putc()</code> Fucntion<a class="headerlink" href="#the-getc-and-putc-fucntion" title="Permanent link">&para;</a></h4>
-<p><code>getc()</code> 从所指定的文件指针中获取一个字节。事实上 <code>getchar()</code> 和 <code>getc(stdin)</code> 是等价的。同样地，<code>putchar(ch)</code> 和 <code>putchar(ch, stdout)</code> 是等价的。</p>
-<p><code>getc()</code> 在读到文件末尾时返回 <code>EOF</code>，所以一种常用的写法是
+<p><code>fopen</code> 返回的是 <code>FILE*</code> 指针。</p>
+<h4 id="the-getc-and-putc-fucntion">The <code>getc</code> and <code>putc</code> Fucntion<a class="headerlink" href="#the-getc-and-putc-fucntion" title="Permanent link">&para;</a></h4>
+<p><code>getc</code> 从所指定的文件指针中获取一个字节。事实上 <code>getchar()</code> 和 <code>getc(stdin)</code> 是等价的。同样地，<code>putchar(ch)</code> 和 <code>putchar(ch, stdout)</code> 是等价的。</p>
+<p><code>getc</code> 在读到文件末尾时返回 <code>EOF</code>，所以一种常用的写法是
 <div class="highlight"><pre><span></span><code><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;temp.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">);</span>
 <span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getc</span><span class="p">(</span><span class="n">fp</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">EOF</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="p">...</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<h4 id="the-fclose-function">The <code>fclose()</code> Function<a class="headerlink" href="#the-fclose-function" title="Permanent link">&para;</a></h4>
-<p><code>fclose()</code> 的参数是一个文件指针，函数将其指向的文件关闭。如果关闭成功则返回 0，失败则返回 EOF。</p>
-<h4 id="the-fprintf-and-fscanf-function">The <code>fprintf()</code> and <code>fscanf()</code> Function<a class="headerlink" href="#the-fprintf-and-fscanf-function" title="Permanent link">&para;</a></h4>
-<p>这两个函数和和 <code>printf()</code> 与 <code>scanf()</code> 非常相像，不同的是在要在之前加上一个文件指针参数。</p>
-<h4 id="the-fgets-and-fputs-function">The <code>fgets()</code> and <code>fputs()</code> Function<a class="headerlink" href="#the-fgets-and-fputs-function" title="Permanent link">&para;</a></h4>
-<p><a href="#fgets-函数"><code>fgets()</code> 函数</a><br />
-<a href="#fputs-函数"><code>fputs()</code> 函数</a></p>
-<h4 id="the-fseek-and-ftell-function">The <code>fseek()</code> and <code>ftell()</code> Function<a class="headerlink" href="#the-fseek-and-ftell-function" title="Permanent link">&para;</a></h4>
+<h4 id="the-fclose-function">The <code>fclose</code> Function<a class="headerlink" href="#the-fclose-function" title="Permanent link">&para;</a></h4>
+<p><code>fclose</code> 的参数是一个文件指针，函数将其指向的文件关闭。如果关闭成功则返回 0，失败则返回 EOF。</p>
+<h4 id="the-fprintf-and-fscanf-function">The <code>fprintf</code> and <code>fscanf</code> Function<a class="headerlink" href="#the-fprintf-and-fscanf-function" title="Permanent link">&para;</a></h4>
+<p>这两个函数和和 <code>printf</code> 与 <code>scanf</code> 非常相像，不同的是在要在之前加上一个文件指针参数。</p>
+<h4 id="the-fgets-and-fputs-function">The <code>fgets</code> and <code>fputs</code> Function<a class="headerlink" href="#the-fgets-and-fputs-function" title="Permanent link">&para;</a></h4>
+<p><a href="#fgets-函数"><code>fgets</code> 函数</a><br />
+<a href="#fputs-函数"><code>fputs</code> 函数</a></p>
+<h4 id="the-fseek-and-ftell-function">The <code>fseek</code> and <code>ftell</code> Function<a class="headerlink" href="#the-fseek-and-ftell-function" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fseek</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">offset</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fromwhere</span><span class="p">);</span>
 </code></pre></div>
-<code>fseek()</code> 将 <code>fp</code> 移动到指定的位置，这是一种随机访问文件的方法。其中，<code>offset</code> 可正可负，但注意必须为 <code>long</code> 类型，在直接用数字表示时需要加上 <code>L</code> 后缀。<code>fromwhere</code> 有三种模式选择：</p>
+<code>fseek</code> 将 <code>fp</code> 移动到指定的位置，这是一种随机访问文件的方法。其中，<code>offset</code> 可正可负，但注意必须为 <code>long</code> 类型，在直接用数字表示时需要加上 <code>L</code> 后缀。<code>fromwhere</code> 有三种模式选择：</p>
 <ul>
 <li><code>SEEK_SET</code> 文件开头</li>
 <li><code>SEEK_CUR</code> 当前位置</li>
@@ -4406,28 +4406,28 @@ void prd(int (*arr)[2]);
 <p>如果执行正常，返回 0，否则返回 -1（比如超出文件界限）。</p>
 <div class="highlight"><pre><span></span><code><span class="kt">long</span><span class="w"> </span><span class="nf">ftell</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
-<p><code>ftell()</code> 返回指针 <code>fp</code> 到文件开头的距离，用于和 <code>fseek()</code> 配合使用。</p>
+<p><code>ftell</code> 返回指针 <code>fp</code> 到文件开头的距离，用于和 <code>fseek</code> 配合使用。</p>
 <p>在二进制模式中，这两个函数可以精确地根据字节数做相应的操作，但是在文本模式中，会有一些偏差。尽管如此，根据 ANSI C 中的规定，它们的配合是没有问题的。</p>
 <p>这两个函数为 UNIX 文件而设计，在其它操作系统上不一定可以完全正常运行，比如二进制模式 <code>SEEK_END</code> 模式可能出错。但文本模式中，只要 <code>offset</code> 为 <code>0L</code>，或者模式为 <code>SEEK_SET</code>，就一定可以正常工作。</p>
-<h4 id="the-rewind-function">The <code>rewind()</code> Function<a class="headerlink" href="#the-rewind-function" title="Permanent link">&para;</a></h4>
-<p><code>rewind()</code> 接受一个文件指针，使其回到文件的开始位置。</p>
-<h4 id="the-fgetpos-and-fsetpos-function">The <code>fgetpos()</code> and <code>fsetpos()</code> Function<a class="headerlink" href="#the-fgetpos-and-fsetpos-function" title="Permanent link">&para;</a></h4>
+<h4 id="the-rewind-function">The <code>rewind</code> Function<a class="headerlink" href="#the-rewind-function" title="Permanent link">&para;</a></h4>
+<p><code>rewind</code> 接受一个文件指针，使其回到文件的开始位置。</p>
+<h4 id="the-fgetpos-and-fsetpos-function">The <code>fgetpos</code> and <code>fsetpos</code> Function<a class="headerlink" href="#the-fgetpos-and-fsetpos-function" title="Permanent link">&para;</a></h4>
 <p>前面两个函数限于使用 <code>long</code> 来指示文件位置，这样就将文件访问的范围限制在了二十亿字节左右。为了解决这个问题，引入了一种复合类型 <code>fpos_t</code>，用于表示文件指针位置。这种类型是一种复杂的结构，不能用于定义数组。</p>
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fgetpos</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="kt">fpos_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span>
 </code></pre></div>
-<code>fgetpos()</code> 将当前 <code>fp</code> 指向的位置到文件起始的距离赋值给 <code>pos</code>。同时返回 0。若操作失败，则返回非零值。</p>
+<code>fgetpos</code> 将当前 <code>fp</code> 指向的位置到文件起始的距离赋值给 <code>pos</code>。同时返回 0。若操作失败，则返回非零值。</p>
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fsetpos</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">fpos_t</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pos</span><span class="p">);</span>
 </code></pre></div>
-同样地，<code>fsetpos()</code> 将 <code>pos</code> 所表示的到文件开头的距离转换为文件指针，赋值给 <code>fp</code>，返回值同上。</p>
-<h4 id="the-ungetc-function">The <code>ungetc()</code> Function<a class="headerlink" href="#the-ungetc-function" title="Permanent link">&para;</a></h4>
+同样地，<code>fsetpos</code> 将 <code>pos</code> 所表示的到文件开头的距离转换为文件指针，赋值给 <code>fp</code>，返回值同上。</p>
+<h4 id="the-ungetc-function">The <code>ungetc</code> Function<a class="headerlink" href="#the-ungetc-function" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">ungetc</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
 将字符 <code>ch</code> 压回 <code>fp</code> 的缓冲区中。</p>
-<h4 id="the-fflush-function">The <code>fflush()</code> Function<a class="headerlink" href="#the-fflush-function" title="Permanent link">&para;</a></h4>
+<h4 id="the-fflush-function">The <code>fflush</code> Function<a class="headerlink" href="#the-fflush-function" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">fflush</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
 将输出缓冲区的内容写入 <code>fp</code> 中。若 <code>fp == NULL</code> 则清空所有输出缓冲区。它对输入缓冲区的作用未定义。</p>
-<h4 id="the-setvbuf-function">The <code>setvbuf()</code> Function<a class="headerlink" href="#the-setvbuf-function" title="Permanent link">&para;</a></h4>
+<h4 id="the-setvbuf-function">The <code>setvbuf</code> Function<a class="headerlink" href="#the-setvbuf-function" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">setvbuf</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
 </code></pre></div>
 将 <code>buf</code> 处长度为 <code>size</code> 的空间设置为 <code>fp</code> 的缓冲区。模式 <code>mode</code> 有三种可选：</p>
@@ -4436,7 +4436,7 @@ void prd(int (*arr)[2]);
 <li><code>_IOLBF</code>（line-buffered）</li>
 <li><code>_IONBF</code>（non-buffered）</li>
 </ul>
-<h4 id="the-fread-and-fwrite-function">The <code>fread()</code> and <code>fwrite()</code> Function<a class="headerlink" href="#the-fread-and-fwrite-function" title="Permanent link">&para;</a></h4>
+<h4 id="the-fread-and-fwrite-function">The <code>fread</code> and <code>fwrite</code> Function<a class="headerlink" href="#the-fread-and-fwrite-function" title="Permanent link">&para;</a></h4>
 <p>存储浮点数时使用二进制形式，可以避免精度损失，而且占用空间小。
 <div class="highlight"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="nf">fwrite</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmem</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
@@ -4446,8 +4446,8 @@ void prd(int (*arr)[2]);
 </code></pre></div></p>
 <p><div class="highlight"><pre><span></span><code><span class="kt">size_t</span><span class="w"> </span><span class="nf">fread</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmem</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">);</span>
 </code></pre></div>
-<code>fread()</code> 和 <code>fwrite()</code> 使用同一套参数，互为相反操作。</p>
-<h4 id="the-feof-and-ferror-function">The <code>feof()</code> and <code>ferror()</code> Function<a class="headerlink" href="#the-feof-and-ferror-function" title="Permanent link">&para;</a></h4>
+<code>fread</code> 和 <code>fwrite</code> 使用同一套参数，互为相反操作。</p>
+<h4 id="the-feof-and-ferror-function">The <code>feof</code> and <code>ferror</code> Function<a class="headerlink" href="#the-feof-and-ferror-function" title="Permanent link">&para;</a></h4>
 <p>它们都接受一个 <code>FILE*</code> 参数，若检测到 EOF/错误，则返回非零值，正常则返回 0。</p>
 <h2 id="structures-and-other-data-forms">Structures and Other Data Forms<a class="headerlink" href="#structures-and-other-data-forms" title="Permanent link">&para;</a></h2>
 <h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h3>
@@ -4489,7 +4489,7 @@ void prd(int (*arr)[2]);
 <h4 id="structure-compound-literals">Structure Compound Literals<a class="headerlink" href="#structure-compound-literals" title="Permanent link">&para;</a></h4>
 <p>Compound literals can be converted to structures, similar to arrays
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="p">){</span>
-<span class="w">    </span><span class="s">&quot;The Art of Computer Programming&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="s">&quot;The Art of Computer Programming&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="s">&quot;100&quot;</span>
 <span class="p">}</span>
 <span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">book</span><span class="p">){</span>
@@ -4596,7 +4596,7 @@ void prd(int (*arr)[2]);
 </code></pre></div>
 根据运算符优先级分析有：</p>
 <ul>
-<li><code>a</code> 首先是二维数组，其元素是 <code>int</code> 指针； </li>
+<li><code>a</code> 首先是二维数组，其元素是 <code>int</code> 指针；</li>
 <li><code>b</code> 是指针，指向的是一个二维数组；</li>
 <li><code>c</code> 是三元素数组，其元素是指针，指向四元素 <code>int</code> 数组。</li>
 </ul>
@@ -4813,7 +4813,7 @@ void prd(int (*arr)[2]);
 <p>The <code>#pragma</code> lets you place command-line compiler instructions in the source code. For example, to enable C99 support:
 <div class="highlight"><pre><span></span><code><span class="cp">#pragma c9x on</span>
 </code></pre></div></p>
-<p>C99 also provides the <code>_Pragma</code> operator, 
+<p>C99 also provides the <code>_Pragma</code> operator,
 <div class="highlight"><pre><span></span><code><span class="k">_Pragma</span><span class="p">(</span><span class="s">&quot;once&quot;</span><span class="p">)</span>
 </code></pre></div>
 is equivalent to
@@ -4845,10 +4845,10 @@ is equivalent to
 事实上 <code>tgmath.h</code>（type-generic math）中定义了类似的宏。如果想要强制调用其中的 <code>double</code> 类型函数，可以在函数名上加上括号 <code>(sqrt)(x)</code> 或者 <code>*(sqrt)(x)</code>，因为当含参宏名后不是左括号时，便不会被调用。</p>
 <h3 id="the-gerneral-utilities-library">The Gerneral Utilities Library<a class="headerlink" href="#the-gerneral-utilities-library" title="Permanent link">&para;</a></h3>
 <p><code>stdlib.h</code> 提供了一系列随机数函数、查找函数、排序函数、转换函数以及内存管理函数等。</p>
-<h4 id="the-exit-and-atexit-functions">The <code>exit()</code> and <code>atexit()</code> Functions<a class="headerlink" href="#the-exit-and-atexit-functions" title="Permanent link">&para;</a></h4>
-<p><code>atexit()</code> takes one function pointer as its argument. It registers the function in a list to be executed when <code>exit()</code> is called. ANSI C guarentees at least 32 functions can be added on that list. And the last function added is to be executed first.</p>
-<p><code>exit()</code> is implicitly when <code>main()</code> terminates. It executes the functions specified by <code>atexit()</code>, and then does some tidying.</p>
-<h4 id="the-qsort-function">The <code>qsort()</code> Function<a class="headerlink" href="#the-qsort-function" title="Permanent link">&para;</a></h4>
+<h4 id="the-exit-and-atexit-functions">The <code>exit</code> and <code>atexit</code> Functions<a class="headerlink" href="#the-exit-and-atexit-functions" title="Permanent link">&para;</a></h4>
+<p><code>atexit</code> takes one function pointer as its argument. It registers the function in a list to be executed when <code>exit</code> is called. ANSI C guarantees at least 32 functions can be added on that list. And the last function added is to be executed first.</p>
+<p><code>exit</code> is implicitly when <code>main</code> terminates. It executes the functions specified by <code>atexit</code>, and then does some tidying.</p>
+<h4 id="the-qsort-function">The <code>qsort</code> Function<a class="headerlink" href="#the-qsort-function" title="Permanent link">&para;</a></h4>
 <p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">qsort</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nmemb</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">size</span><span class="p">,</span>\
 <span class="w">           </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">cmp</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">));</span>
 </code></pre></div>
@@ -4856,16 +4856,16 @@ is equivalent to
 <p><code>cmp</code> 的两个参数是指向两个比较项的指针，如果前一项应在后面，则返回正值；若两项等价，则返回 0；若前一项应在前，则返回负值。由于其参数类型为 <code>void*</code>，所以在函数定义内部进行实际比较时需要转换为原类型。</p>
 <p>注意将 <code>void*</code> 类型转换为其它指针类型时，不一定需要先显式地转换为目标类型。但是 C++ 中必须必须显式转换。</p>
 <h3 id="the-assert-library">The Assert Library<a class="headerlink" href="#the-assert-library" title="Permanent link">&para;</a></h3>
-<p><code>assert.h</code> 中定义了宏 <code>assert()</code>。它接受一个整数参数，若其值为 0，即其中断言为假，则调用 <code>abort()</code> 函数，从 <code>stderr</code> 输出此假断言，与所在文件与行号，并停止执行程序。</p>
-<p>这是一种方便地 debug 方法，并且有一种很方便的方法可以直接退出这种 debug 模式，只需在引入 <code>assert.h</code> 之前加入 <code>#define NDEBUG</code> 即可使所有 <code>assert()</code> 失效。</p>
+<p><code>assert.h</code> 中定义了宏 <code>assert</code>。它接受一个整数参数，若其值为 0，即其中断言为假，则调用 <code>abort</code> 函数，从 <code>stderr</code> 输出此假断言，与所在文件与行号，并停止执行程序。</p>
+<p>这是一种方便地 debug 方法，并且有一种很方便的方法可以直接退出这种 debug 模式，只需在引入 <code>assert.h</code> 之前加入 <code>#define NDEBUG</code> 即可使所有 <code>assert</code> 失效。</p>
 <p>C11 又提供了一种编译时退出的机制。<code>_Static_assert</code> 接受两个参数，第一个是整数表达式，若此断言为假，则停止编译，输出第二个参数（字符串）。注意这里的断言表达式必须是能在编译时求值的，比如 <code>sizeof(int)</code>。</p>
 <p><code>assert.h</code> 还将 <code>static_assert</code> 与 <code>_Static_assert</code> 等同起来。这是为了和 C++ 的兼容性。</p>
-<h3 id="the-memcpy-and-memmove-functions">The <code>memcpy()</code> and <code>memmove()</code> Functions<a class="headerlink" href="#the-memcpy-and-memmove-functions" title="Permanent link">&para;</a></h3>
+<h3 id="the-memcpy-and-memmove-functions">The <code>memcpy</code> and <code>memmove</code> Functions<a class="headerlink" href="#the-memcpy-and-memmove-functions" title="Permanent link">&para;</a></h3>
 <p><code>string.h</code> 中声明了以下两个函数：
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">memcpy</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 <span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">memmove</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s1</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s2</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
-两个函数的功能都是将 <code>s2</code> 起始处的 <code>n</code> 个字节复制到 <code>s1</code> 处，并返回 <code>s1</code>。其不同之处在于 <code>memcpy()</code> 的 <code>s1</code> 与 <code>s2</code> 有 <code>restrict</code> 修饰，这意味着两段内存空间没有重叠。<code>memmove()</code> 复制的方式是先复制到一段临时空间，再复制到目标。而 <code>memcpy()</code> 直接复制，它在两段空间有重叠时的行为没有定义。</p>
+两个函数的功能都是将 <code>s2</code> 起始处的 <code>n</code> 个字节复制到 <code>s1</code> 处，并返回 <code>s1</code>。其不同之处在于 <code>memcpy</code> 的 <code>s1</code> 与 <code>s2</code> 有 <code>restrict</code> 修饰，这意味着两段内存空间没有重叠。<code>memmove</code> 复制的方式是先复制到一段临时空间，再复制到目标。而 <code>memcpy</code> 直接复制，它在两段空间有重叠时的行为没有定义。</p>
 <h3 id="variadic-functions">Variadic Functions<a class="headerlink" href="#variadic-functions" title="Permanent link">&para;</a></h3>
 <p><code>stdarg.h</code> 头文件提供了不定参数的功能。首先声明函数，其中不定部分用省略号 <code>...</code> 代替。
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
@@ -4874,17 +4874,17 @@ is equivalent to
 <p>接下来在函数定义中，使用 <code>va_list</code> 定义参数列表
 <div class="highlight"><pre><span></span><code><span class="kt">va_list</span><span class="w"> </span><span class="n">ap</span><span class="p">;</span>
 </code></pre></div>
-接下来使用 <code>va_start()</code> 初始化参数列表。此宏函数接受两个参量，一个是参数列表，另一个是不定参数之前紧接着的参数（此处为 <code>n</code>）。若不是 <code>n</code>，编译器会发出警告。在调用此函数时，<code>n</code> 应该是不定参数的个数。
+接下来使用 <code>va_start</code> 初始化参数列表。此宏函数接受两个参量，一个是参数列表，另一个是不定参数之前紧接着的参数（此处为 <code>n</code>）。若不是 <code>n</code>，编译器会发出警告。在调用此函数时，<code>n</code> 应该是不定参数的个数。
 <div class="highlight"><pre><span></span><code><span class="n">va_start</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
 </code></pre></div>
-此时可以使用 <code>va_arg()</code> 来获取参数的值。其第一个参数是参数表名，第二个参数是当前要获取的参数的类型。重复调用此函数可依次获取参数。
+此时可以使用 <code>va_arg</code> 来获取参数的值。其第一个参数是参数表名，第二个参数是当前要获取的参数的类型。重复调用此函数可依次获取参数。
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">va_arg</span><span class="p">(</span><span class="n">ap</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">);</span>
 </code></pre></div>
 最后释放为不定参数分配的动态空间。
 <div class="highlight"><pre><span></span><code><span class="n">va_end</span><span class="p">(</span><span class="n">ap</span><span class="p">);</span>
 </code></pre></div></p>
-<p><code>va_args</code> 并没有读取上一个参数的机制。如果需要再次读取，则需要重新使用 <code>va_start()</code> 初始化。C99 提供了一个复制参数列表的函数
+<p><code>va_args</code> 并没有读取上一个参数的机制。如果需要再次读取，则需要重新使用 <code>va_start</code> 初始化。C99 提供了一个复制参数列表的函数
 <div class="highlight"><pre><span></span><code><span class="n">va_copy</span><span class="p">(</span><span class="n">apcopy</span><span class="p">,</span><span class="w"> </span><span class="n">ap</span><span class="p">);</span>
 </code></pre></div>
 可将 <code>apcopy</code> 复制到 <code>apcopy</code> 中。</p>
