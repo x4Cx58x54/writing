@@ -1132,6 +1132,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gradient-descent-optimizers" class="md-nav__link">
+    Gradient Descent Optimizers
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2953,6 +2960,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#gradient-descent-optimizers" class="md-nav__link">
+    Gradient Descent Optimizers
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3230,6 +3244,133 @@ d\log (\sigma\sqrt{2\pi}) + \frac{1}{2\sigma^2}w^\top w,
 <p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/L1_and_L2_balls.svg" /></p>
 <p>对于 L1 正则化，这样的点倾向于使 <span class="arithmatex">\(w\)</span> 的一些分量为 0，从而得到稀疏解；而 L2 正则化处处可微，而且倾向于使 <span class="arithmatex">\(w\)</span> 各分量都较小.</p>
 <p>从概率的角度解释，拉普拉斯分布在其期望处有一个显著的尖峰，所以 L1 正则化使 <span class="arithmatex">\(w\)</span> 分量为 0 的概率很高；正态分布的概率密度曲线则比较平缓，所以只使 <span class="arithmatex">\(w\)</span> 处于较小值时概率较大.</p>
+<h3 id="gradient-descent-optimizers">Gradient Descent Optimizers<a class="headerlink" href="#gradient-descent-optimizers" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph TD
+    SGD --+Momentum&lt;br/&gt;+Exponential Decay--&gt; SGDM
+    SGDM --+Nesterov--&gt; NAG
+    SGD --+Adaptive LR--&gt; AdaGrad
+    AdaGrad --+Exponential Decay--&gt;RMSProp
+    SGDM --&gt; Adam
+    RMSProp --&gt; Adam
+    RMSProp --+Fully&lt;br/&gt;Adaptive LR--&gt; AdaDelta
+    Adam --+Nesterov--&gt; NAdam
+    Adam --+Decoupled&lt;br/&gt;Weight Decay--&gt; AdamW</code></pre>
+<p>做以下一般约定，如有必要会在具体算法中说明更多细节：</p>
+<ul>
+<li><span class="arithmatex">\(t\)</span>：当前迭代次数</li>
+<li><span class="arithmatex">\(m\)</span>：当前训练 mini-batch 容量</li>
+<li><span class="arithmatex">\(\boldsymbol{\theta}\)</span>：模型参数</li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta}\)</span>：参数迭代变化量，<span class="arithmatex">\(\boldsymbol{\theta}_{t+1} = \boldsymbol{\theta}_t + \Delta{\boldsymbol{\theta}}_t\)</span></li>
+<li><span class="arithmatex">\(L(\boldsymbol{\theta})\)</span>：损失函数</li>
+<li><span class="arithmatex">\(\eta\)</span>：学习率</li>
+<li><span class="arithmatex">\(\delta\)</span>：某个很小的正数，保证数值稳定性</li>
+<li><span class="arithmatex">\(\boldsymbol{g}\)</span>：损失函数的梯度，默认 <span class="arithmatex">\(\boldsymbol{g} = \boldsymbol{g}(\boldsymbol{\theta}) = \frac{1}{m}\nabla_{\boldsymbol{\theta}}L(\boldsymbol{\theta})\)</span></li>
+<li><span class="arithmatex">\(\boldsymbol{v}\)</span>：梯度 <span class="arithmatex">\(\boldsymbol{g}\)</span> 的历史加权平均</li>
+<li><span class="arithmatex">\(\alpha\)</span>：关于 <span class="arithmatex">\(\boldsymbol{v}\)</span> 的权值（衰减系数）</li>
+<li><span class="arithmatex">\(\boldsymbol{r}\)</span>：梯度各维平方 <span class="arithmatex">\(\boldsymbol{g}\odot\boldsymbol{g}\)</span> 的历史加权平均</li>
+<li><span class="arithmatex">\(\rho\)</span>：关于 <span class="arithmatex">\(\boldsymbol{r}\)</span> 的权值（衰减系数）</li>
+<li>各种历史加权平均初始值均取 <span class="arithmatex">\(\boldsymbol{0}\)</span></li>
+</ul>
+<p>这些优化算法均由迭代求解，达到一定的条件时停止. 简洁起见，下面仅列出各算法迭代一次的过程.</p>
+<h4 id="sgd-stochastic-gradient-descent">SGD, Stochastic Gradient Descent<a class="headerlink" href="#sgd-stochastic-gradient-descent" title="Permanent link">&para;</a></h4>
+<p>Mini-batch 版本的 SGD 每次计算一个 mini-batch 的平均梯度，然后沿梯度反方向下降.</p>
+<ol>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -\eta\boldsymbol{g}\)</span></li>
+</ol>
+<h4 id="sgdm-stochastic-gradient-descent-with-momentum">SGDM, Stochastic Gradient Descent with Momentum<a class="headerlink" href="#sgdm-stochastic-gradient-descent-with-momentum" title="Permanent link">&para;</a></h4>
+<p>所谓动量，指的是参数变化量的历史平均. 衰减系数 <span class="arithmatex">\(\alpha\)</span> 保证了越远的历史更新对当前的影响越小.</p>
+<ol>
+<li><span class="arithmatex">\(\boldsymbol{v} = \alpha\boldsymbol{v} + \eta\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -\boldsymbol{v}\)</span></li>
+</ol>
+<h4 id="nag-nesterov-accelerated-gradient-sgd-with-nesterov-momentum">NAG, Nesterov Accelerated Gradient (SGD with Nesterov Momentum)<a class="headerlink" href="#nag-nesterov-accelerated-gradient-sgd-with-nesterov-momentum" title="Permanent link">&para;</a></h4>
+<p>Nesterov 动量中，先根据当前速度初步更新参数，再根据此位置的梯度进一步更新参数.</p>
+<ol>
+<li><span class="arithmatex">\(\boldsymbol{v} = \alpha\boldsymbol{v} + \eta\boldsymbol{g}(\boldsymbol{\theta}-\alpha\boldsymbol{v})\)</span></li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -\boldsymbol{v}\)</span></li>
+</ol>
+<p>实现时使用以下等价算法：</p>
+<ol>
+<li><span class="arithmatex">\(\boldsymbol{v} = \alpha\boldsymbol{v} + \eta\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -(\alpha\boldsymbol{v} + \eta\boldsymbol{g})\)</span></li>
+</ol>
+<p>可推出两种算法中虽然每次更新的参数有一定偏差，但是计算梯度的位置是一致的，故两种算法沿着相同的路径进行优化，而第二种只是在写法上将 <span class="arithmatex">\(\Delta\boldsymbol{\theta}\)</span> 计算式中的 <span class="arithmatex">\(\boldsymbol{v}_{t}\)</span> 换成了 <span class="arithmatex">\(\boldsymbol{v}_{t+1}\)</span>.</p>
+<h4 id="adagrad-adaptive-gradient">AdaGrad, Adaptive Gradient<a class="headerlink" href="#adagrad-adaptive-gradient" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(\boldsymbol{r}\)</span> 记录的是历史中梯度每一维各自平方的总和. 那么更新时 <span class="arithmatex">\(\Delta\boldsymbol{\theta}\)</span> 中每一维的学习率与根号下历史平方和成反比. 这样总变化较大的维度学习率减小得更快.</p>
+<ol>
+<li><span class="arithmatex">\(\boldsymbol{r} = \boldsymbol{r} + \boldsymbol{g}\odot\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -\dfrac{\eta}{\delta+\sqrt{\boldsymbol{r}}}\odot \boldsymbol{g}\)</span></li>
+</ol>
+<h4 id="rmsprop-root-mean-squared-propagation">RMSProp, Root Mean Squared Propagation<a class="headerlink" href="#rmsprop-root-mean-squared-propagation" title="Permanent link">&para;</a></h4>
+<p>在 AdaGrad 中，由于 <span class="arithmatex">\(\boldsymbol{r}\)</span> 随时间增长不会减小，故可能使得学习率不受控制地降到非常小的值，而且远期和近期的梯度对当前学习率影响是平等的. RMSProp 加入了 <span class="arithmatex">\(\boldsymbol{r}\)</span> 的衰减系数，以解决这两个问题.</p>
+<p>PyTorch 中 <span class="arithmatex">\(\rho\)</span> 默认取 0.99.</p>
+<ol>
+<li><span class="arithmatex">\(\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -\dfrac{\eta}{\delta+\sqrt{\boldsymbol{r}}}\odot \boldsymbol{g}\)</span></li>
+</ol>
+<h4 id="adadelta">AdaDelta<a class="headerlink" href="#adadelta" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(\boldsymbol{s}\)</span> 记录带衰减的参数变化值各维平方和，<span class="arithmatex">\(\boldsymbol{r}\)</span> 记录带衰减的梯度各维平方和. 参数各维的学习率直接由两者之比的平方根决定，这样使学习率完全由算法决定而不是作为超参数. 若参数具有单位 <span class="arithmatex">\(\mathrm{u}\)</span>，而损失函数和学习率无单位，则梯度的单位是 <span class="arithmatex">\(\mathrm{u}^{-1}\)</span>. 那么在 AdaGrad 中参数更新式两边单位并不相等，但 AdaDelta 将此式两边单位均统一为 <span class="arithmatex">\(\mathrm{u}\)</span>.</p>
+<p>PyTorch 中 <span class="arithmatex">\(\rho\)</span> 默认取 0.9.</p>
+<ol>
+<li><span class="arithmatex">\(\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -\dfrac{\sqrt{\delta+\boldsymbol{s}}}{\sqrt{\delta+\boldsymbol{r}}}\odot\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\boldsymbol{s} = \rho\boldsymbol{s} + (1-\rho)\Delta\boldsymbol{\theta}\odot\Delta\boldsymbol{\theta}\)</span></li>
+</ol>
+<h4 id="adam-adaptive-moment-estimator">Adam, Adaptive Moment Estimator<a class="headerlink" href="#adam-adaptive-moment-estimator" title="Permanent link">&para;</a></h4>
+<p>Adam 结合了动量和 RMSProp 的思想，使低频的参数分量学习率大，高频的参数分量学习率小.</p>
+<p>PyTorch 中 <span class="arithmatex">\(\alpha\)</span> 默认取 0.9，<span class="arithmatex">\(\rho\)</span> 默认取 0.999.</p>
+<ol>
+<li><span class="arithmatex">\(\boldsymbol{v} = \alpha\boldsymbol{v} + (1-\alpha)\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\hat{\boldsymbol{v}} = \boldsymbol{v}/(1-\alpha^t)\)</span></li>
+<li><span class="arithmatex">\(\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\hat{\boldsymbol{r}} = \boldsymbol{r}/(1-\rho^t)\)</span></li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -\eta\cdot\dfrac{1}{\delta + \sqrt{\hat{\boldsymbol{r}}}}\odot\hat{\boldsymbol{v}}\)</span></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(\hat{\boldsymbol{v}}\)</span> 和 <span class="arithmatex">\(\hat{\boldsymbol{r}}\)</span> 的期望修正</p>
+<p>递推地</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\boldsymbol{v}_0 &amp;= \boldsymbol{0} \\
+\boldsymbol{v}_1 &amp;= (1-\alpha)\boldsymbol{g}_1 \\
+\boldsymbol{v}_2 &amp;= \alpha(1-\alpha)\boldsymbol{g}_1 + (1-\alpha)\boldsymbol{g}_2 \\
+\boldsymbol{v}_3 &amp;= \alpha^2(1-\alpha)\boldsymbol{g}_1 + \alpha(1-\alpha)\boldsymbol{g}_2 + (1-\alpha)\boldsymbol{g}_3,
+\end{aligned}
+\]</div>
+<p>易得</p>
+<div class="arithmatex">\[
+\boldsymbol{v}_t = (1-\alpha)\sum_{i=1}^t\alpha^{t-i}\boldsymbol{g}_i.
+\]</div>
+<p>那么其期望</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\operatorname{E}\boldsymbol{v}_t &amp;\approx (1-\alpha)\operatorname{E}\boldsymbol{g}_t\sum_{i=0}^{t-1}\alpha^i \\
+&amp;= (1-\alpha)\operatorname{E}\boldsymbol{g}_t\cdot\frac{1-\alpha^t}{1-\alpha} \\
+&amp;= (1-\alpha^t)\operatorname{E}\boldsymbol{g}_t.
+\end{aligned}
+\]</div>
+<p>这里使用 <span class="arithmatex">\(\operatorname{E}\boldsymbol{g}_t\)</span> 来近似 <span class="arithmatex">\(\operatorname{E}\sum_{i-1}^t\boldsymbol{g}_i\)</span>，理由是 <span class="arithmatex">\(\alpha\)</span> 使距离较远的 <span class="arithmatex">\(\boldsymbol{g}\)</span> 逐渐衰减，估计误差不会过大.</p>
+<p>所以，使用 <span class="arithmatex">\(\hat{\boldsymbol{v}} = \boldsymbol{v}/(1-\alpha^t)\)</span> 进行修正使得 <span class="arithmatex">\(\operatorname{E}\hat{\boldsymbol{v}}\)</span> 和梯度的一阶原点矩 <span class="arithmatex">\(\operatorname{E}\boldsymbol{g}_t\)</span> 保持一致. 对于 <span class="arithmatex">\(\boldsymbol{r}\)</span> 的修正同理.</p>
+</div>
+<h4 id="nadam-adam-with-nesterov-momentum">NAdam, Adam with Nesterov Momentum<a class="headerlink" href="#nadam-adam-with-nesterov-momentum" title="Permanent link">&para;</a></h4>
+<p>若直接将 Nesterov 动量应用到 Adam 算法中可以得到梯度的迭代式 <span class="arithmatex">\(\boldsymbol{g} = \frac{1}{m}\nabla L(\boldsymbol{\theta} - \eta\frac{1}{\delta+\sqrt{\boldsymbol{r}}}\odot\alpha\boldsymbol{v})\)</span>. 但为了方便实现，和 NAG 类似地有以下等价算法：</p>
+<ol>
+<li><span class="arithmatex">\(\boldsymbol{v} = \alpha\boldsymbol{v} + (1-\alpha)\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\hat{\boldsymbol{v}} = \boldsymbol{v}/(1-\alpha^t)\)</span>，带迭代数下标展开得到 <span class="arithmatex">\(\hat{\boldsymbol{v}}_t = \dfrac{\alpha\boldsymbol{v}_{t-1}}{1-\alpha^t} + \dfrac{(1-\alpha)\boldsymbol{g}_t}{1-\alpha^t}\)</span></li>
+<li><span class="arithmatex">\(\bar{\boldsymbol{v}} = \dfrac{\alpha\boldsymbol{v}}{1-\alpha^{t+1}} + \dfrac{(1-\alpha)\boldsymbol{g}}{1-\alpha^t}\)</span>，与上式比较，将 <span class="arithmatex">\(\boldsymbol{v}_{t-1}\)</span> 替换为 <span class="arithmatex">\(\boldsymbol{v}_t\)</span>，且对分母做相应修正</li>
+<li><span class="arithmatex">\(\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\hat{\boldsymbol{r}} = \boldsymbol{r}/(1-\rho^t)\)</span></li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -\eta\cdot\dfrac{1}{\delta + \sqrt{\hat{\boldsymbol{r}}}}\odot\bar{\boldsymbol{v}}\)</span></li>
+</ol>
+<h4 id="adamw-adam-with-decoupled-weight-decay">AdamW, Adam with Decoupled Weight Decay<a class="headerlink" href="#adamw-adam-with-decoupled-weight-decay" title="Permanent link">&para;</a></h4>
+<p>一般来说以上算法加入正则项时，都是在计算梯度后直接插入一步 <span class="arithmatex">\(\boldsymbol{g} = \boldsymbol{g} + \lambda\boldsymbol{\theta}\)</span>. 但是这一项在 Adam 中会与 <span class="arithmatex">\(\boldsymbol{v}\)</span> 和 <span class="arithmatex">\(\boldsymbol{r}\)</span> 耦合，导致最优解产生偏移. 例如含正则项的 <span class="arithmatex">\(\boldsymbol{v}\)</span> 被 <span class="arithmatex">\(\sqrt{\boldsymbol{r}}\)</span> 除时就失去了正则化在各维度上的各向同性. 为此，AdamW 将正则化项后移至参数更新式中.</p>
+<ol>
+<li><span class="arithmatex">\(\boldsymbol{v} = \alpha\boldsymbol{v} + (1-\alpha)\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\hat{\boldsymbol{v}} = \boldsymbol{v}/(1-\alpha^t)\)</span></li>
+<li><span class="arithmatex">\(\boldsymbol{r} = \rho\boldsymbol{r} + (1-\rho)\boldsymbol{g}\odot\boldsymbol{g}\)</span></li>
+<li><span class="arithmatex">\(\hat{\boldsymbol{r}} = \boldsymbol{r}/(1-\rho^t)\)</span></li>
+<li><span class="arithmatex">\(\Delta\boldsymbol{\theta} = -\eta\cdot\dfrac{1}{\delta + \sqrt{\hat{\boldsymbol{r}}}} \odot \hat{\boldsymbol{v}} - \eta\lambda\boldsymbol{\theta}\)</span></li>
+</ol>
 <div class="footnote">
 <hr />
 <ol>
