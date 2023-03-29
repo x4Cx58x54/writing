@@ -26,51 +26,51 @@ Suffix | Type
 
 ## Character Strings and Formatted I/O
 
-#### `printf()` Formatters
+#### `printf` Formatters
 
 Formatter | Format | Example Output
 :---: | :---: | :---:
 `%d`, `%i` | decimal | `127`
 `%o` | octal | `177`
 `%#o` | octal with prefix | `0177`
-`%x`, `%X` | hexademical | `7f`, `7F`
-`%#x`, `%#X` | hexademical with prefix | `0x7f`, `0X7F`
+`%x`, `%X` | hexadecimal | `7f`, `7F`
+`%#x`, `%#X` | hexadecimal with prefix | `0x7f`, `0X7F`
 `%u` | unsigned decimal
 `%c` | `char` |
 `%f` | `float` and `double` | `0.636620`
-`%e`, `%E` | exponential notation | `6.366198e-001`, ...
-`%a`, `%A` | hexademical | `0x1.45f307p-1`
+`%e`, `%E` | exponential notation | `6.366198e-001`
+`%a`, `%A` | hexadecimal | `0x1.45f307p-1`
 `%g`, `%G` | use `%f` or `%e` ( `%F` or `%E` )
 `%p` | pointer
 `%s` | character string
 `%%` | a percent sign
 
-#### `printf()` Modifiers
+#### `printf` Modifiers
 
 Modifier | Meaning | Example
 :---: | :---: | :---:
 *digit(s)* | min field width | `%4d`
 .*digits* | precision | `%.2f`, `%5.2f`
 `h` | `short int` or `unsigned short int` | `%hu`, `%6.4hd`
-`hh` | `signed char` or `unsigned char` 
+`hh` | `signed char` or `unsigned char`
 `j` | `intmax_t` or `uintmax_t`
 `l` | `long int` or `unsigned long int` | `%ld`, `%lu`
 `ll` | `long long int` or `unsigned long long int`
 `L` | `long double` | `%Lf`, `%10.6Le`
 `z` | `size_t` (returned by `sizeof`)
 `-` | begin at the left of the field | `%-20s`
-`+` | print plus sign if positive | `%6.2f`
-*space* | leading space if positive 
+`+` | print plus sign if positive | `%+6.2f`
+*space* | leading space if positive
 `#` | conversion specification
 `0` | fill with leading zeros
 
 When `.digit` is applied to `%s`, for example, `%.5s`, only the first 5 characters will be displayed. `.f` is equivalent to `.0f`.
 
-#### Return Value of `printf()`
+#### Return Value of `printf`
 
-It returns the number of characters it printed. Returns a negative value on error.
+It returns the number of characters it printed or a negative value on error.
 
-#### Conversion Specifiers of `scanf()`
+#### Conversion Specifiers of `scanf`
 
 Cnv. Spcfr. | Meaning
 :---: | :---:
@@ -82,13 +82,13 @@ Cnv. Spcfr. | Meaning
 `%p` | pointer
 `%s` | string
 `%u` | unsigned decimal integer
-`%x`, `%X` | signed hexademical integer
+`%x`, `%X` | signed hexadecimal integer
 
-#### Modifiers of `Scanf()`
+#### Modifiers of `scanf`
 
 Modifier | Meaning | Example
 :---: | :---: | :---:
-`*` | supress assignment 
+`*` | suppress assignment
 *digits(s)* | maximum field width | `%10s`
 `hh` | `signed char` or `unsigned char` | `%hhd`, `%hhu`
 `ll` | `long long` or `unsigned long long` | `%lld`, `%llu`
@@ -99,34 +99,34 @@ Modifier | Meaning | Example
 `%le`, `%lf`, `%lg` | `double`
 `%Le`, `%Lf`, `%Lg` | `long double`
 
-#### `scanf()` 的工作方式
+#### `scanf` 的工作方式
 
-假设使用的是 `%d` 模式，`scanf()` 开始读字符，忽略开始出现的空白字符直到输入中有了数字或者符号（`+`、`-`），`scanf()` 将它们保存下来，直到又遇到一个非数字字符。这时候这个字符会被放回**输入缓冲区**。这意味着程序下一次读入字符的时候，这个被放回的字符会作为第一个字符出现。接下来 `scanf()` 会根据 `%d` 将接受的字符转换为带符整数，存入所给出的地址处。
+假设使用的是 `%d` 模式，`scanf` 开始读字符，忽略开始出现的空白字符直到输入中有了数字或者符号（`+`/`-`），`scanf` 将它们保存下来，直到又遇到一个非数字字符。这个字符会被放回**输入缓冲区**。这意味着程序下一次读入字符的时候，这个被放回的字符会作为第一个字符出现。接下来 `scanf` 会根据 `%d` 将接受的字符转换为带符整数，存入所给出的地址处。
 
-如果第一个非空白字符非数字非符号，那么 `scanf()` 不会给任何变量赋值并且把这个字符退回输入缓冲区，所以下一个输入遇到的第一个字符还是这个字符。如果下一个 `scanf()` 也使用 `%d`，那么它也不会有任何反应。
+如果第一个非空白字符非数字非符号，那么 `scanf` 不会给任何变量赋值并且把这个字符退回输入缓冲区，所以下一个输入遇到的第一个字符还是这个字符。如果下一个 `scanf` 也使用 `%d`，那么它也不会有任何反应。
 
-其它的数字模式和 `%d` 相似，只是 `scanf()` 能接受更多的合法字符，比如十六进制中的 `A`-`F`，十六进制小数的 `p` 记号。
+其它的数字模式和 `%d` 相似，只是 `scanf` 能接受更多的合法字符，比如十六进制中的 `A`-`F`，十六进制小数的 `p` 记号。
 
-在 `%s` 模式下，`scanf()` 从读到的第一个非空白字符开始保存，直到又遇到的第一个空白字符。
+在 `%s` 模式下，`scanf` 从读到的第一个非空白字符开始保存，直到又遇到的第一个空白字符。
 
 在 `%c` 模式下，所有的字符都是平等的，都会被保存下来。
 
 转换标识符之间还可以有普通字符，比如 `%d,%d` 。这样的情况下，输入完第一个整数之后必须紧跟逗号，否则第二个整数输入无效。但是逗号之后又要输入一个整数，所以这里输入的空白字符会被跳过。
 
-#### Return Value of `scanf()`
+#### Return Value of `scanf`
 
 It returns the number of items it successfully reads. If it reads no items, it returns 0. If it reaches EOF, it returns EOF.
 
 #### The `*` Modifier
 
-在 `printf()` 中，`*` 意味着可以用变量来指明 field width、precision 等 modifier 量。如下例。
+在 `printf` 中，`*` 意味着可以用变量来指明 field width 或 precision 等 modifier 量。如下例。
 ```c
 int width = 4, precision = 2;
 float f = 3.1415927;
 printf("%*.*f", width, precision, f);
 ```
 
-在 `scanf()` 中，`%` 和 转换标识符之间的 `*` 代表忽略对应的输入。如
+在 `scanf` 中，`%` 和 转换标识符之间的 `*` 代表忽略对应的输入。如
 ```c
 scanf("%*d %*d %d", &n);
 ```
@@ -136,7 +136,7 @@ scanf("%*d %*d %d", &n);
 
 #### `sizeof` Operator
 
-`sizeof` returns a size_t type value. It has a `printf()` specifier `%zd`. But actually it is the same to unsigned int or unsigned long int. If the compiler does not support `%zd`, try `%u` or `%lu` instead.
+`sizeof` returns a `size_t` type value. It has a `printf` specifier `%zd`. But actually it is the same to unsigned int or unsigned long int. If the compiler does not support `%zd`, try `%u` or `%lu` instead.
 
 #### `++` and `--`
 
@@ -152,7 +152,7 @@ scanf("%*d %*d %d", &n);
 
 `_Bool` 类型的变量可被赋值为 0 或 1。如果向其赋非零值，则会自动转换为 1。但是并未定义 `true` 和 `false` 两个量。
 
-Furthermore, by including the `stdbool.h` file, you can use `bool` instead of the key word `_Bool` for the type and use the indentifiers `true` and `false`.
+Furthermore, by including the `stdbool.h` file, you can use `bool` instead of the key word `_Bool` for the type and use the identifiers `true` and `false`.
 
 #### C-Style Reading Loop
 
@@ -163,7 +163,7 @@ while (scanf("%d", &n) == 1)
 }
 ```
 
-可以使用 `n = getchar()` 代替。这样的效果完全一样，差别只在 `getchar()` 略快一些。对应的是 `putchar()` 函数。
+可以使用 `n = getchar()` 代替。这样的效果完全一样，差别只在 `getchar` 略快一些。对应的是 `putchar` 函数。
 
 #### `for` Loop
 
@@ -202,20 +202,20 @@ while((c = getchar()) == '#')
 
 Function | Test
 :--- | :---
-`isalpha()` | 
-`isalnum()` |
-`isblank()` | standard blank character (*space*, `\t`, `\n`)
-`isspace()` | whitespace character
-`iscntrl()` | control character
-`isdigit()` |
-`isxdigit()` | hexademical-digit character
-`isprint()` | printing character
-`isgraph()` | printing character other than space
-`islower()` |
-`isupper()` |
-`ispunct()` | 
-`tolower()` |
-`toupper()` |
+`isalpha` |
+`isalnum` |
+`isblank` | standard blank character (*space*, `\t`, `\n`)
+`isspace` | whitespace character
+`iscntrl` | control character
+`isdigit` |
+`isxdigit` | hexadecimal-digit character
+`isprint` | printing character
+`isgraph` | printing character other than space
+`islower` |
+`isupper` |
+`ispunct` |
+`tolower` |
+`toupper` |
 
 #### `iso646.h`
 
@@ -258,7 +258,7 @@ default:
 ```c
 #define EOF -1
 ```
-当 `getchar()` 读到文件结束标志时返回 `EOF`。`EOF` 的具体值可能会有变化，但是通过符号化的定义屏蔽了这个细节。可用 `Ctrl+D`（Unix）或者 `Ctrl+Z`（Windows）输入。
+当 `getchar` 读到文件结束标志时返回 `EOF`。`EOF` 的具体值可能会有变化，但是通过符号化的定义屏蔽了这个细节。可用 `Ctrl+D`（Unix）或者 `Ctrl+Z`（Windows）输入。
 
 #### Input Validation
 
@@ -276,7 +276,7 @@ while (scanf("%d", &n) == 1 && n >= 0)
 
 #### Equality of Functions
 
-任何函数都可以被另外的任何函数调用，包括 `main()`。
+任何函数都可以被另外的任何函数调用，包括 `main`。
 
 #### Inline Function
 
@@ -284,7 +284,7 @@ C99 引入了内联函数。和 C++ 一样，这只是一种建议性的指令�
 
 #### `_Noreturn` Functions
 
-C11 引入无返回函数，即函数执行完毕后不会回到调用它的地方。`exit()` 就是一种无返回函数。
+C11 引入无返回函数，即函数执行完毕后不会回到调用它的地方。`exit` 就是一种无返回函数。
 
 #### 编译多文件源码
 
@@ -297,7 +297,7 @@ gcc file1.c file2.c
 gcc file1.c file2.o
 ```
 
-一般将 `main()` 函数和函数定义分别置于不同的文件，但此时 `main()` 还是需要函数原型。一般的做法是将函数原型和预处理语句放在头文件中，而在每一个文件中使用 `#include` 包含使用到的头文件。
+一般将 `main` 函数和函数定义分别置于不同的文件，但此时 `main` 还是需要函数原型。一般的做法是将函数原型和预处理语句放在头文件中，而在每一个文件中使用 `#include` 包含使用到的头文件。
 
 ## Arrays and Pointers
 
@@ -501,74 +501,74 @@ char * str;
 scanf("%s", str);
 ```
 
-#### `gets()` 函数
+#### `gets` 函数
 
 ```c
 char str[15];
 gets(str);
 ```
 
-`gets()` 函数读入一行数据，并截去末尾换行，再添加上 `\0`。这个函数并不安全，因为它不判断输入的字符是否超出分配的空间，导致可能会覆盖其他数据。C11 已经取消了该函数，但是大多数编译器为了向前兼容，还保留了这一函数。
+`gets` 函数读入一行数据，并截去末尾换行，再添加上 `\0`。这个函数并不安全，因为它不判断输入的字符是否超出分配的空间，导致可能会覆盖其他数据。C11 已经取消了该函数，但是大多数编译器为了向前兼容，还保留了这一函数。
 
-#### `fgets()` 函数
+#### `fgets` 函数
 
-`fgets()` 用于从文件输入。第一个参数是字符数组名（指针），第二个参数是字符上限，第三个参数是源文件指针。它从源文件读入字符串，直到 `\n` 出现或者达到上限。如果是从控制台输入，则源文件为 `stdin`。此函数不会丢弃末尾换行符。
+`fgets` 用于从文件输入。第一个参数是字符数组名（指针），第二个参数是字符上限，第三个参数是源文件指针。它从源文件读入字符串，直到 `\n` 出现或者达到上限。如果是从控制台输入，则源文件为 `stdin`。此函数不会丢弃末尾换行符。
 
 函数返回一个 `char*` 指针，一般情况下和第一个参数一致，但是如果函数读到了 `EOF`，则返回 `NULL` 指针。
 
-多个 `fgets()` 可以处理比上限长的字符串，首先第一个 `fgets(str, n, stdin)` 从缓冲区读入 `n-1` 个字符，之后附上 `\0`，下一次读入时，再断点处继续，重复前一过程。
+多个 `fgets` 可以处理比上限长的字符串，首先第一个 `fgets(str, n, stdin)` 从缓冲区读入 `n-1` 个字符，之后附上 `\0`，下一次读入时，再断点处继续，重复前一过程。
 
-#### `gets_s()` 函数
+#### `gets_s` 函数
 
-C11 加入了可选的 `gets_s()` 函数，它接受两个参数，首先是字符数组名称，然后是字符数上限。它从控制台读入字符，读到换行符时停止并丢弃换行符。如果字符超限，那么它会将目标字符数组的第一个字符设为 `\0`，然后丢弃剩下的输入，并且可能会导致程序退出。
+C11 加入了可选的 `gets_s` 函数，它接受两个参数，首先是字符数组名称，然后是字符数上限。它从控制台读入字符，读到换行符时停止并丢弃换行符。如果字符超限，那么它会将目标字符数组的第一个字符设为 `\0`，然后丢弃剩下的输入，并且可能会导致程序退出。
 
 ### 字符串输出
 
-#### `puts()` 函数
+#### `puts` 函数
 
 输出一个字符串，并附上换行符。这里有一个用法是直接传入参数 `&str[n]` 以从第 `n+1` 个字符开始显示。
 
-#### `fputs()` 函数
+#### `fputs` 函数
 
 此函数接受两个参数，第一个是要输出的字符数组名，第二个是输出目标文件指针，如果从控制台输出，则为 `stdout`。它不会自动加上换行符。
 
-如果没有合适的标准输入输出函数，可以使用 `getchar()` 和 `putchar()` 自定义。
+如果没有合适的标准输入输出函数，可以使用 `getchar` 和 `putchar` 自定义。
 
 ### 字符串函数
 
 以下函数声明于 `string.h` 头文件。
 
-#### `strcat()` 和 `strncat()` 函数
+#### `strcat` 和 `strncat` 函数
 
 它接受两个字符串数组，将第二个拼接到第一个末尾（第二个本身保持不变），然后返回第一个参数。这个函数不检查是否溢出，因此可能导致覆盖其他数据。
 
-`strncat()` 在 `strcat()` 的基础上再接受第三个参数，标明拼接时增加的字符串长度上限。
+`strncat` 在 `strcat` 的基础上再接受第三个参数，标明拼接时增加的字符串长度上限。
 
-#### `strcmp()` 和 `strcmp()` 函数
+#### `strcmp` 和 `strcmp` 函数
 
-直接比较字符数组名称是在比较它们的地址而非其内容。因此需要 `strcmp()` 函数，它在两个字符串相等时返回 0，若不相等，则返回值的符号和第一个字符串减第二个字符串在第一处差异处的差符号相同。
+直接比较字符数组名称是在比较它们的地址而非其内容。因此需要 `strcmp` 函数，它在两个字符串相等时返回 0，若不相等，则返回值的符号和第一个字符串减第二个字符串在第一处差异处的差符号相同。
 
-同样地 `strncmp()` 加上了上限。
+同样地 `strncmp` 加上了上限。
 
-#### `strcpy()` 和 `strncpy()` 函数
+#### `strcpy` 和 `strncpy` 函数
 
 这一组函数相当于字符串的赋值。值得注意的是其中的参数并不一定要指向字符数组的开头
 
-#### `strchr()` 和 `strrchr()` 函数
+#### `strchr` 和 `strrchr` 函数
 
 ```c
 char * strchr(const char * s, int c);
 ```
-返回指向 `s` 第一次出现的字符 `c` 的指针。`strrchr()` 则对应最后一个出现的 `c`。未找到则返回 `NULL`。
+返回指向 `s` 第一次出现的字符 `c` 的指针。`strrchr` 则对应最后一个出现的 `c`。未找到则返回 `NULL`。
 
-#### `strstr()` 函数
+#### `strstr` 函数
 
 ```c
 char * strstr(const char * s1, const char * s2);
 ```
 返回指向 `s2` 在 `s1` 中第一次出现处的指针，未找到则返回 `NULL`。
 
-#### `strpbrk()` 函数
+#### `strpbrk` 函数
 
 ```c
 char * strpbrk(const char * s1, const char * s2);
@@ -576,25 +576,25 @@ char * strpbrk(const char * s1, const char * s2);
 
 返回指向 `s2` 中任一字符在 `s1` 中第一次出现的位置的指针，未找到则返回 `NULL`。
 
-#### `sprintf()` 函数
+#### `sprintf` 函数
 
-此函数定义在 `stdio.h` 中，它和 `printf()` 非常相似，区别在于它输出到字符串而非控制台。`sprintf()` 的第一个参数是目标字符数组，之后的参数和 `printf()` 一样，根据这些生成的字符串存入之前的字符数组中。
+此函数定义在 `stdio.h` 中，它和 `printf` 非常相似，区别在于它输出到字符串而非控制台。`sprintf` 的第一个参数是目标字符数组，之后的参数和 `printf` 一样，根据这些生成的字符串存入之前的字符数组中。
 
 ### 字符串-数字转换
 
 `stdlib.h` 中包含一系列转换函数。
 
-`atoi()` 函数（alphanumeric to integer）将字符串转换为整型，它返回字符串开头的纯数字部分所转换为的数字。如果参数开头不包含数字，则它的返回值未规定。同样地，还有返回 `double` 类型的 `atof()` 和返回 `long` 的 `atol()`。
+`atoi` 函数（alphanumeric to integer）将字符串转换为整型，它返回字符串开头的纯数字部分所转换为的数字。如果参数开头不包含数字，则它的返回值未规定。同样地，还有返回 `double` 类型的 `atof` 和返回 `long` 的 `atol`。
 
-`strtol()` 函数将字符串转换为 `long` 类型。
+`strtol` 函数将字符串转换为 `long` 类型。
 ```c
 long strtol(const char * str, char ** endp, int base);
 ```
-首先将 `str` 开头可转换的部分转换为 `long` 并返回，可选择从 1 到 36 的基数。随后 `endp` 指向未得到转换的第一个字符的地址的地址。同理有 `strtoul()` 函数。
+首先将 `str` 开头可转换的部分转换为 `long` 并返回，可选择从 1 到 36 的基数。随后 `endp` 指向未得到转换的第一个字符的地址的地址。同理有 `strtoul` 函数。
 
-`strtod()` 函数则转换为 `double` 类型，但是没有基数选择，只接受两个参数。
+`strtod` 函数则转换为 `double` 类型，但是没有基数选择，只接受两个参数。
 
-一些编译器提供数字向字符串的转换函数如 `itoa()` 和 `ftoa()`，但是它们不是 C 标准。一般使用 `sprintf()` 函数。
+一些编译器提供数字向字符串的转换函数如 `itoa` 和 `ftoa`，但是它们不是 C 标准。一般使用 `sprintf` 函数。
 
 
 ## Storage Classes, Linkage, and Memory Management
@@ -737,23 +737,23 @@ C 语言一共有六种存储类型关键字：
 
 `stdlib.h` 头文件中提供了动态内存分配函数。
 
-`malloc()` 接受申请空间字节数作为参数，返回指向这个空间第一个字节的指针。若分配失败则返回 `NULL`。这个指针的类型，在 ANSI C 之前是 `char*`，现在为 `void*`。为了可读性，应该显式声明指针类型，但是不声明不会引起错误，即使是 ANSI C 之前。
+`malloc` 接受申请空间字节数作为参数，返回指向这个空间第一个字节的指针。若分配失败则返回 `NULL`。这个指针的类型，在 ANSI C 之前是 `char*`，现在为 `void*`。为了可读性，应该显式声明指针类型，但是不声明不会引起错误，即使是 ANSI C 之前。
 ```c
 double * p;
 p = (double * p) malloc(30*sizeof(double));
 ```
 注意这个类型转换虽然在 C 中可省略，但是 C++ 要求使用。
 
-每一个 `malloc()` 都应与一个 `free()` 配对。`free()` 将参数指向的动态内存块释放。如果不将动态分配的内存释放，则它们会占用空间一直到程序结束。
+每一个 `malloc` 都应与一个 `free` 配对。`free` 将参数指向的动态内存块释放。如果不将动态分配的内存释放，则它们会占用空间一直到程序结束。
 
-`stdlib.h` 中的 `exit()` 使整个程序退出。其参数为退出返回值，一般用 `EXIT_SUCCESS`（== 0）或者 `EXIT_FAILURE`，也可以用其它整数来表明错误。
+`stdlib.h` 中的 `exit` 使整个程序退出。其参数为退出返回值，一般用 `EXIT_SUCCESS`（== 0）或者 `EXIT_FAILURE`，也可以用其它整数来表明错误。
 
-`calloc()` 函数用于分配一组内存空间，接受两个无符号数作为参数：
+`calloc` 函数用于分配一组内存空间，接受两个无符号数作为参数：
 ```c
 int * p;
 p = (int *) calloc(100, sizeof(int));
 ```
-它的返回值和 `malloc()` 完全一样，同样需要使用 `free()` 释放。有一点不同是它会将分配的内存中的每一位都初始化为 0（注意有一些系统中，每一位都是 0 所代表的浮点数并不是 0）。
+它的返回值和 `malloc` 完全一样，同样需要使用 `free` 释放。有一点不同是它会将分配的内存中的每一位都初始化为 0（注意有一些系统中，每一位都是 0 所代表的浮点数并不是 0）。
 
 ### Type Qualifiers
 
@@ -830,9 +830,9 @@ The text mode and the binary mode are two ways that C accesses files. The binary
 
 C 程序自动地打开三个文件：standard input、standard output、standard error output。它们都通过控制台输入，而独立出标准错误输出的目的是为了有逻辑上独立的错误报告。
 
-#### The `fopen()` Function
+#### The `fopen` Function
 
-`fopen()` 接受两个参数，第一个是代表文件路径的字符串，第二个是打开文件模式的字符串。
+`fopen` 接受两个参数，第一个是代表文件路径的字符串，第二个是打开文件模式的字符串。
 
 模式 | 含义
 :---|:---
@@ -850,13 +850,13 @@ C 程序自动地打开三个文件：standard input、standard output、standar
 
 注意含有 `a` 和 `+` 的模式中，可以读整个文件，但是只能以追加模式写入。`x` 为 C11 标准规定，只能用于 `w` 及其扩展。
 
-`fopen()` 返回的是 `FILE*` 指针。
+`fopen` 返回的是 `FILE*` 指针。
 
-#### The `getc()` and `putc()` Fucntion
+#### The `getc` and `putc` Fucntion
 
-`getc()` 从所指定的文件指针中获取一个字节。事实上 `getchar()` 和 `getc(stdin)` 是等价的。同样地，`putchar(ch)` 和 `putchar(ch, stdout)` 是等价的。
+`getc` 从所指定的文件指针中获取一个字节。事实上 `getchar()` 和 `getc(stdin)` 是等价的。同样地，`putchar(ch)` 和 `putchar(ch, stdout)` 是等价的。
 
-`getc()` 在读到文件末尾时返回 `EOF`，所以一种常用的写法是
+`getc` 在读到文件末尾时返回 `EOF`，所以一种常用的写法是
 ```c
 FILE * fp = fopen("temp.txt", "r");
 while ((ch = getc(fp)) != EOF)
@@ -865,25 +865,25 @@ while ((ch = getc(fp)) != EOF)
 }
 ```
 
-#### The `fclose()` Function
+#### The `fclose` Function
 
-`fclose()` 的参数是一个文件指针，函数将其指向的文件关闭。如果关闭成功则返回 0，失败则返回 EOF。
+`fclose` 的参数是一个文件指针，函数将其指向的文件关闭。如果关闭成功则返回 0，失败则返回 EOF。
 
-#### The `fprintf()` and `fscanf()` Function
+#### The `fprintf` and `fscanf` Function
 
-这两个函数和和 `printf()` 与 `scanf()` 非常相像，不同的是在要在之前加上一个文件指针参数。
+这两个函数和和 `printf` 与 `scanf` 非常相像，不同的是在要在之前加上一个文件指针参数。
 
-#### The `fgets()` and `fputs()` Function
+#### The `fgets` and `fputs` Function
 
-[`fgets()` 函数](#fgets-函数)  
-[`fputs()` 函数](#fputs-函数)
+[`fgets` 函数](#fgets-函数)  
+[`fputs` 函数](#fputs-函数)
 
-#### The `fseek()` and `ftell()` Function
+#### The `fseek` and `ftell` Function
 
 ```c
 int fseek(FILE * fp, long offset, int fromwhere);
-``` 
-`fseek()` 将 `fp` 移动到指定的位置，这是一种随机访问文件的方法。其中，`offset` 可正可负，但注意必须为 `long` 类型，在直接用数字表示时需要加上 `L` 后缀。`fromwhere` 有三种模式选择：
+```
+`fseek` 将 `fp` 移动到指定的位置，这是一种随机访问文件的方法。其中，`offset` 可正可负，但注意必须为 `long` 类型，在直接用数字表示时需要加上 `L` 后缀。`fromwhere` 有三种模式选择：
 
 * `SEEK_SET` 文件开头
 * `SEEK_CUR` 当前位置
@@ -895,45 +895,45 @@ int fseek(FILE * fp, long offset, int fromwhere);
 long ftell(FILE * fp);
 ```
 
-`ftell()` 返回指针 `fp` 到文件开头的距离，用于和 `fseek()` 配合使用。
+`ftell` 返回指针 `fp` 到文件开头的距离，用于和 `fseek` 配合使用。
 
 在二进制模式中，这两个函数可以精确地根据字节数做相应的操作，但是在文本模式中，会有一些偏差。尽管如此，根据 ANSI C 中的规定，它们的配合是没有问题的。
 
 这两个函数为 UNIX 文件而设计，在其它操作系统上不一定可以完全正常运行，比如二进制模式 `SEEK_END` 模式可能出错。但文本模式中，只要 `offset` 为 `0L`，或者模式为 `SEEK_SET`，就一定可以正常工作。
 
-#### The `rewind()` Function
+#### The `rewind` Function
 
-`rewind()` 接受一个文件指针，使其回到文件的开始位置。
+`rewind` 接受一个文件指针，使其回到文件的开始位置。
 
-#### The `fgetpos()` and `fsetpos()` Function
+#### The `fgetpos` and `fsetpos` Function
 
 前面两个函数限于使用 `long` 来指示文件位置，这样就将文件访问的范围限制在了二十亿字节左右。为了解决这个问题，引入了一种复合类型 `fpos_t`，用于表示文件指针位置。这种类型是一种复杂的结构，不能用于定义数组。
 
 ```c
 int fgetpos(FILE * fp, fpos_t * pos);
-``` 
-`fgetpos()` 将当前 `fp` 指向的位置到文件起始的距离赋值给 `pos`。同时返回 0。若操作失败，则返回非零值。
+```
+`fgetpos` 将当前 `fp` 指向的位置到文件起始的距离赋值给 `pos`。同时返回 0。若操作失败，则返回非零值。
 
 ```c
 int fsetpos(FILE * fp, const fpos_t * pos);
 ```
-同样地，`fsetpos()` 将 `pos` 所表示的到文件开头的距离转换为文件指针，赋值给 `fp`，返回值同上。
+同样地，`fsetpos` 将 `pos` 所表示的到文件开头的距离转换为文件指针，赋值给 `fp`，返回值同上。
 
-#### The `ungetc()` Function
+#### The `ungetc` Function
 
 ```c
 int ungetc(int c, FILE * fp);
 ```
 将字符 `ch` 压回 `fp` 的缓冲区中。
 
-#### The `fflush()` Function
+#### The `fflush` Function
 
 ```c
 int fflush(FILE * fp);
 ```
 将输出缓冲区的内容写入 `fp` 中。若 `fp == NULL` 则清空所有输出缓冲区。它对输入缓冲区的作用未定义。
 
-#### The `setvbuf()` Function
+#### The `setvbuf` Function
 
 ```c
 int setvbuf(FILE * fp, char * buf, int mode, size_t size);
@@ -944,7 +944,7 @@ int setvbuf(FILE * fp, char * buf, int mode, size_t size);
 * `_IOLBF`（line-buffered）
 * `_IONBF`（non-buffered）
 
-#### The `fread()` and `fwrite()` Function
+#### The `fread` and `fwrite` Function
 
 存储浮点数时使用二进制形式，可以避免精度损失，而且占用空间小。
 ```c
@@ -960,9 +960,9 @@ fwrite(buf, sizeof(double), 3, fp);
 ```c
 size_t fread(void * p, size_t size, size_t nmem, FILE * fp);
 ```
-`fread()` 和 `fwrite()` 使用同一套参数，互为相反操作。
+`fread` 和 `fwrite` 使用同一套参数，互为相反操作。
 
-#### The `feof()` and `ferror()` Function
+#### The `feof` and `ferror` Function
 
 它们都接受一个 `FILE*` 参数，若检测到 EOF/错误，则返回非零值，正常则返回 0。
 
@@ -978,7 +978,7 @@ struct book {
     float value;
 };
 struct book lib;
-``` 
+```
 上例中声明了一种名称（tag）为 `book` 的结构体，这种声明使得 `struct book` 代指花括号内各成员的声明。亦可以此声明与定义合并，若只使用一次，还可以不给此结构体种类命名。
 
 结构体的初始化和数组相似：
@@ -1025,7 +1025,7 @@ struct node {
 Compound literals can be converted to structures, similar to arrays
 ```c
 (struct book){
-    "The Art of Computer Programming", 
+    "The Art of Computer Programming",
     "100"
 }
 (struct book){
@@ -1167,7 +1167,7 @@ int (* c[3])[4];
 ```
 根据运算符优先级分析有：
 
-* `a` 首先是二维数组，其元素是 `int` 指针； 
+* `a` 首先是二维数组，其元素是 `int` 指针；
 * `b` 是指针，指向的是一个二维数组；
 * `c` 是三元素数组，其元素是指针，指向四元素 `int` 数组。
 
@@ -1189,7 +1189,7 @@ char (* c[3])(int);
 C 语言的位运算符有：
 
 运算符 | 名称 | 运算符 | 名称
-:---:|:---|:---:|:--- 
+:---:|:---|:---:|:---
 `&` | 按位与 | `&=` | 按位与赋值
 `|` | 按位或 | `|=` | 按位或赋值
 `^` | 按位异或 | `^=` | 按位异或赋值
@@ -1392,7 +1392,7 @@ The `#pragma` lets you place command-line compiler instructions in the source co
 #pragma c9x on
 ```
 
-C99 also provides the `_Pragma` operator, 
+C99 also provides the `_Pragma` operator,
 ```c
 _Pragma("once")
 ```
@@ -1441,13 +1441,13 @@ _Generic(x, int: 0, float: 1, int*: 2, default: 3)
 
 `stdlib.h` 提供了一系列随机数函数、查找函数、排序函数、转换函数以及内存管理函数等。
 
-#### The `exit()` and `atexit()` Functions
+#### The `exit` and `atexit` Functions
 
-`atexit()` takes one function pointer as its argument. It registers the function in a list to be executed when `exit()` is called. ANSI C guarentees at least 32 functions can be added on that list. And the last function added is to be executed first.
+`atexit` takes one function pointer as its argument. It registers the function in a list to be executed when `exit` is called. ANSI C guarantees at least 32 functions can be added on that list. And the last function added is to be executed first.
 
-`exit()` is implicitly when `main()` terminates. It executes the functions specified by `atexit()`, and then does some tidying.
+`exit` is implicitly when `main` terminates. It executes the functions specified by `atexit`, and then does some tidying.
 
-#### The `qsort()` Function
+#### The `qsort` Function
 
 ```c
 void qsort(void * base, size_t nmemb, size_t size,\
@@ -1461,22 +1461,22 @@ void qsort(void * base, size_t nmemb, size_t size,\
 
 ### The Assert Library
 
-`assert.h` 中定义了宏 `assert()`。它接受一个整数参数，若其值为 0，即其中断言为假，则调用 `abort()` 函数，从 `stderr` 输出此假断言，与所在文件与行号，并停止执行程序。
+`assert.h` 中定义了宏 `assert`。它接受一个整数参数，若其值为 0，即其中断言为假，则调用 `abort` 函数，从 `stderr` 输出此假断言，与所在文件与行号，并停止执行程序。
 
-这是一种方便地 debug 方法，并且有一种很方便的方法可以直接退出这种 debug 模式，只需在引入 `assert.h` 之前加入 `#define NDEBUG` 即可使所有 `assert()` 失效。
+这是一种方便地 debug 方法，并且有一种很方便的方法可以直接退出这种 debug 模式，只需在引入 `assert.h` 之前加入 `#define NDEBUG` 即可使所有 `assert` 失效。
 
 C11 又提供了一种编译时退出的机制。`_Static_assert` 接受两个参数，第一个是整数表达式，若此断言为假，则停止编译，输出第二个参数（字符串）。注意这里的断言表达式必须是能在编译时求值的，比如 `sizeof(int)`。
 
 `assert.h` 还将 `static_assert` 与 `_Static_assert` 等同起来。这是为了和 C++ 的兼容性。
 
-### The `memcpy()` and `memmove()` Functions
+### The `memcpy` and `memmove` Functions
 
 `string.h` 中声明了以下两个函数：
 ```c
 void * memcpy(void * s1, void * s2, size_t n);
 void * memmove(void * s1, void * s2, size_t n);
 ```
-两个函数的功能都是将 `s2` 起始处的 `n` 个字节复制到 `s1` 处，并返回 `s1`。其不同之处在于 `memcpy()` 的 `s1` 与 `s2` 有 `restrict` 修饰，这意味着两段内存空间没有重叠。`memmove()` 复制的方式是先复制到一段临时空间，再复制到目标。而 `memcpy()` 直接复制，它在两段空间有重叠时的行为没有定义。
+两个函数的功能都是将 `s2` 起始处的 `n` 个字节复制到 `s1` 处，并返回 `s1`。其不同之处在于 `memcpy` 的 `s1` 与 `s2` 有 `restrict` 修饰，这意味着两段内存空间没有重叠。`memmove` 复制的方式是先复制到一段临时空间，再复制到目标。而 `memcpy` 直接复制，它在两段空间有重叠时的行为没有定义。
 
 ### Variadic Functions
 
@@ -1490,11 +1490,11 @@ void f(int n, ...);
 ```c
 va_list ap;
 ```
-接下来使用 `va_start()` 初始化参数列表。此宏函数接受两个参量，一个是参数列表，另一个是不定参数之前紧接着的参数（此处为 `n`）。若不是 `n`，编译器会发出警告。在调用此函数时，`n` 应该是不定参数的个数。
+接下来使用 `va_start` 初始化参数列表。此宏函数接受两个参量，一个是参数列表，另一个是不定参数之前紧接着的参数（此处为 `n`）。若不是 `n`，编译器会发出警告。在调用此函数时，`n` 应该是不定参数的个数。
 ```c
 va_start(ap, n);
 ```
-此时可以使用 `va_arg()` 来获取参数的值。其第一个参数是参数表名，第二个参数是当前要获取的参数的类型。重复调用此函数可依次获取参数。
+此时可以使用 `va_arg` 来获取参数的值。其第一个参数是参数表名，第二个参数是当前要获取的参数的类型。重复调用此函数可依次获取参数。
 ```c
 for (int i = 0; i < n; i++)
     a[i] = va_arg(ap, double);
@@ -1504,7 +1504,7 @@ for (int i = 0; i < n; i++)
 va_end(ap);
 ```
 
-`va_args` 并没有读取上一个参数的机制。如果需要再次读取，则需要重新使用 `va_start()` 初始化。C99 提供了一个复制参数列表的函数
+`va_args` 并没有读取上一个参数的机制。如果需要再次读取，则需要重新使用 `va_start` 初始化。C99 提供了一个复制参数列表的函数
 ```c
 va_copy(apcopy, ap);
 ```

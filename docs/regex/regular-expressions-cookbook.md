@@ -1,6 +1,6 @@
 # Regular Expressions Cookbook
 
-*Second Edition*  
+> *Second Edition*  
 *Jan Goyvaerts, Steven Levithan*  
 *正则表达式 Cookbook（第二版 影印版）*  
 *2012, O'Reilly, 2013, 东南大学出版社*  
