@@ -19,6 +19,7 @@ theme:
     - navigation.tabs
     - navigation.indexes
     - navigation.instant
+    - content.code.copy
 
 
 copyright: 'Copyright &copy; 2017 - 2023 <a href="https://github.com/x4Cx58x54" target="_blank">x4Cx58x54</a> </br> Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
@@ -169,27 +170,29 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - admonition
-  - codehilite:
-      guess_lang: false
   - footnotes
   - meta
   - tables
   - toc:
       permalink: true
       toc_depth: 3
+  - markdown.extensions.sane_lists
+  - attr_list
+  - md_in_html
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.extra
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_lang_class: true
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - markdown.extensions.sane_lists
   - pymdownx.tabbed:
       alternate_style: true
-  - attr_list
-  - md_in_html
