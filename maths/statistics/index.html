@@ -3031,75 +3031,75 @@
 <h1 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h1>
 <h2 id="_1">统计量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">样本均值<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \overline{X} = \frac{1}{n}\sum_{i=1}^nX_i
-\]</div>
+\]</p>
 <h3 id="_3">样本方差<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 S^2 &amp;= \frac{1}{n-1}\sum_{i=1}^n\left(X_i - \overline{X}\right)^2\\
 &amp;=\frac{1}{n-1}\left(\sum_{i=1}^nX_i^2-n\overline{X}^2\right)
 \end{aligned}
-\]</div>
+\]</p>
 <h3 id="k"><span class="arithmatex">\(k\)</span> 阶原点矩<a class="headerlink" href="#k" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A_k = \frac{1}{n}\sum_{i=1}^n X_i^k
-\]</div>
+\]</p>
 <h3 id="k_1"><span class="arithmatex">\(k\)</span> 阶中心矩<a class="headerlink" href="#k_1" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 B_k = \frac{1}{n}\sum_{i=1}^n\left(X_i - \overline{X}\right)^k
-\]</div>
+\]</p>
 <p>特别地，有 <span class="arithmatex">\(B_2 = S_n^2\)</span>.</p>
 <h2 id="_4">抽样分布<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="chi2"><span class="arithmatex">\(\chi^2\)</span> 分布<a class="headerlink" href="#chi2" title="Permanent link">&para;</a></h3>
 <p>若随机变量 <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> 相互独立且均服从 <span class="arithmatex">\(N(0, 1)\)</span>，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \chi^2 = \sum_{i=1}^nX_i^2
-\]</div>
+\]</p>
 <p>服从自由度为 <span class="arithmatex">\(n\)</span> 的 <span class="arithmatex">\(\chi^2\)</span> 分布，记为 <span class="arithmatex">\(\chi^2\sim\chi^2(n)\)</span>. 其概率密度函数如下图所示.</p>
 <p><img alt="" src="../img/chi-square-distribution.jpg" width="280px" /></p>
 <h3 id="t">t 分布<a class="headerlink" href="#t" title="Permanent link">&para;</a></h3>
 <p>若两个随机变量 <span class="arithmatex">\(X\sim N(0, 1)\)</span>，<span class="arithmatex">\(Y\sim\chi^2(n)\)</span>，且相互独立，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 T = \frac{X}{\sqrt{\dfrac{Y}{n}}}
-\]</div>
+\]</p>
 <p>服从自由度为 <span class="arithmatex">\(n\)</span> 的 t 分布，记为 <span class="arithmatex">\(T\sim t(n)\)</span>. 其概率密度函数如下图所示.</p>
 <p><img alt="" src="../img/t-distribution.jpg" width="320px" /></p>
 <p>t 分布和标准正态分布很接近，在 <span class="arithmatex">\(n\)</span> 足够大时，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \lim_{n\rightarrow\infty} f(t) = \sqrt{\frac{1}{2\pi}}\exp\left(-\frac{t^2}{2}\right)
-\]</div>
+\]</p>
 <p>事实上，当 <span class="arithmatex">\(n&gt;30\)</span> 时就可以将 t 分布近似视为标准正态分布了.</p>
 <h3 id="f">F 分布<a class="headerlink" href="#f" title="Permanent link">&para;</a></h3>
 <p>若两个随机变量 <span class="arithmatex">\(U\sim\chi^2(m)\)</span>，<span class="arithmatex">\(V\sim\chi^2(n)\)</span>，且相互独立，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 F = \frac{U/m}{V/n}
-\]</div>
+\]</p>
 <p>服从自由度为 <span class="arithmatex">\((m, n)\)</span> 的 F 分布，记作 <span class="arithmatex">\(F\sim F(m, n)\)</span>. 其概率密度函数如下如所示.</p>
 <p><img alt="" src="../img/f-distribution.jpg" width="320px" /></p>
 <h3 id="_5">正态分布总体下的抽样分布<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>设正态总体 <span class="arithmatex">\(X\sim N(\mu, \sigma^2)\)</span>，从中独立地抽取规模为 <span class="arithmatex">\(n\)</span> 的样本，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{\overline{X}-\mu}{\sigma/\sqrt{n}} \sim N(0, 1);
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1);
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \frac{\overline{X}-\mu}{S/\sqrt{n}} \sim t(n-1).
-\]</div>
+\]</p>
 <p>设正态总体 <span class="arithmatex">\(X\sim N(\mu_X, \sigma_X^2)\)</span>，<span class="arithmatex">\(Y\sim N(\mu_Y, \sigma_Y^2)\)</span>，分别从中独立地抽取规模为 <span class="arithmatex">\(m\)</span> 和 <span class="arithmatex">\(n\)</span> 的样本，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{(\overline{X}-\overline{Y})-(\mu_X - \mu_Y)}{\sqrt{\dfrac{\sigma_X^2}{m}+\dfrac{\sigma_Y^2}{n}}} \sim N(0, 1);
-\]</div>
+\]</p>
 <p>若 <span class="arithmatex">\(\sigma_X = \sigma_Y = \sigma\)</span>，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{(\overline{X}-\overline{Y})-(\mu_X - \mu_Y)}{S_\omega\sqrt{\dfrac{1}{m}+\dfrac{1}{n}}} \sim t(m+n-2),
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(S_\omega = \sqrt{\cfrac{(m-1)S_X^2 + (n-1)S_Y^2}{m+n-2}};\)</span></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{S_X^2/S_Y^2}{\sigma_X^2/\sigma_Y^2} \sim F(m-1, n-1).
-\]</div>
+\]</p>
 
 
   

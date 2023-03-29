@@ -2836,14 +2836,14 @@
 
 <h1 id="fibonacci-like-sequence">类斐波那契数列 | Fibonacci(-like) Sequence<a class="headerlink" href="#fibonacci-like-sequence" title="Permanent link">&para;</a></h1>
 <p>计算斐波那契数列中的某一项 <span class="arithmatex">\(F_n\)</span> 可以使用矩阵快速幂加速至 <span class="arithmatex">\(O(\log n)\)</span>. 由</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 F_n &amp;= 1 \cdot F_{n-1} + 1 \cdot F_{n-2},\\
 F_{n-1} &amp;= 1 \cdot F_{n-1} + 0 \cdot F_{n-2},
 \end{aligned}
-\]</div>
+\]</p>
 <p>构造矩阵，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 1 &amp; 1\\
 1 &amp; 0
@@ -2853,23 +2853,23 @@ F_{n-1} &amp;= 1 \cdot F_{n-1} + 0 \cdot F_{n-2},
 F_{n+1} &amp; F_n\\
 F_n &amp; F_{n-1}
 \end{bmatrix}
-\]</div>
+\]</p>
 <p><a href="https://www.luogu.com.cn/problem/P1939" target="_blank">矩阵加速数列 - 洛谷</a></p>
 <p>对于</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 F_x= \begin{cases} 1 &amp; x \in\{1,2,3\}\\
 F_{x-1}+F_{x-3} &amp; x \geq 4 \end{cases}
-\]</div>
+\]</p>
 <p>这样的类斐波那契数列，我们可以通过同样的原理来构造矩阵：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 F_n &amp;= 1 \cdot F_{n-1} + 0 \cdot F_{n-2} + 1 \cdot F_{n-3},\\
 F_{n-1} &amp;= 1 \cdot F_{n-1} + 0 \cdot F_{n-2} + 0 \cdot F_{n-3},\\
 F_{n-2} &amp;= 0 \cdot F_{n-1} + 1 \cdot F_{n-2} + 0 \cdot F_{n-3},\\
 \end{aligned}
-\]</div>
+\]</p>
 <p>由此得到</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 1 &amp; 0 &amp; 1\\
 1 &amp; 0 &amp; 0\\
@@ -2881,7 +2881,7 @@ F_{n-2} &amp;= 0 \cdot F_{n-1} + 1 \cdot F_{n-2} + 0 \cdot F_{n-3},\\
 F_n &amp; \cdot &amp; \cdot\;\\
 \cdot &amp; \cdot &amp; \cdot\;
 \end{bmatrix}
-\]</div>
+\]</p>
 
 
   

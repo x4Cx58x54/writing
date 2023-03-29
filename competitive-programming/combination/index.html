@@ -2836,9 +2836,9 @@
 
 <h1 id="_1">组合数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>组合数的定义为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathrm{C}_n^k = \frac{n!}{k!\cdot(n-k)!}.
-\]</div>
+\]</p>
 <p>当 <span class="arithmatex">\(n\)</span> 与 <span class="arithmatex">\(k\)</span> 较小时，或需要计算组合数表时，可以使用递推公式计算。</p>
 <p>但是有时候需要计算非常大的组合数，再对某个数 <span class="arithmatex">\(p\)</span> 取余。此时可以将除法转化为乘法逆元，使用费马小定理求解。但是要注意到费马小定理成立的条件：<span class="arithmatex">\(p\)</span> 是素数并且输入值不是 <span class="arithmatex">\(p\)</span> 的整数倍。故当 <span class="arithmatex">\(p\)</span> 非常大时，可以直接通过费马小定理直接求解。</p>
 <p>若 <span class="arithmatex">\(p\)</span> 与 <span class="arithmatex">\(n\)</span>、<span class="arithmatex">\(k\)</span> 较接近，则需要考虑 <span class="arithmatex">\(k!\)</span> 和 <span class="arithmatex">\((n-k)!\)</span> 成为 <span class="arithmatex">\(p\)</span> 的整数倍的可能性。事实上，由于 <span class="arithmatex">\(p\)</span> 是质数，只需要满足 <span class="arithmatex">\(k &lt; p\)</span> 且 <span class="arithmatex">\(n-k&lt;p\)</span> 时，还是可以直接求逆解决。</p>
@@ -2847,9 +2847,9 @@
 <p>Lucas 定理：</p>
 <blockquote>
 <p>当 <span class="arithmatex">\(p\)</span> 为素数时，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
  \binom{n}{k}\bmod p = \binom{\left\lfloor n/p \right\rfloor}{\left\lfloor k/p\right\rfloor}\cdot\binom{n\bmod p}{k\bmod p}\bmod p .
-\]</div>
+\]</p>
 </blockquote>
 <p>由此可以递归实现：</p>
 <div class="language-cpp highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// long long f[i] = i! % p;</span>

@@ -2840,21 +2840,21 @@
 <p>三个字符串分别记为 <code>a</code>、<code>b</code>、<code>c</code>，下标均起始于 1。对三个字符串中的每一个字符，计算它之前一次出现的位置，存入对应的 <code>last</code> 数组中（若该字符之前未出现过则存入 0）。</p>
 <p><code>f[i][j][k]</code> 代表 <code>a[1..i]</code>、<code>b[1..j]</code> 和 <code>c[1..k]</code> 上互不相同的公共子串数目（即子问题的解）。下面动态规划计算 <code>f</code>。</p>
 <p>当 <code>a[i] == b[j] == c[k] == ch</code> 时，会产生新的公共子串。此时考虑将 <code>ch</code> 接到之前出现的所有公共子串之后，这样就产生了与之前数量相同的新公共子串，再加上 <code>ch</code> 本身也是新公共子串，故此时有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f_{i,\,j,\,k} = 2\cdot f_{i-1,\,j-1,\,k-1} + 1.
-\]</div>
+\]</p>
 <p>但是上面没有考虑重复的情况。哪一部分公共子串是重复的呢？为了方便，我们先将 <code>ch</code> 在三个字符串中上一次出现的位置 <code>lasta[a[i]]</code>、<code>lastb[b[j]]</code> 和 <code>lastc[c[k]]</code> 分别记为 <code>li</code>、<code>lj</code>、<code>lk</code>。那么在计算 <code>f[li][lj][lk]</code> 和 <code>f[i][j][k]</code> 时均会在 <code>f[li-1][lj-1][lk-1]</code> 所代表的公共子串末尾接上 <code>ch</code>，这部分就是重复的。还有 <code>ch</code> 本身亦重复，故当 <code>li</code>、<code>lj</code> 和 <code>lk</code> 均不为 0 时，需要考虑重复数。</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f_{i,\,j,\,k} = 2\cdot f_{i-1,\,j-1,\,k-1} - f_{li-1,\,lj-1,\,lk-1}.
-\]</div>
+\]</p>
 <p>若 <code>a[i]</code>、<code>b[j]</code>、<code>c[k]</code> 不相等，那么没有新的公共子串产生，此时直接将之前的值继承过来即可。但问题在于，如何定义“之前”呢？直接复制 <code>f[i-1][j-1][k-1]</code> 显然是错的，因为未考虑在 <code>f[i-1][j][k]</code> 等处产生的新公共子串。很容易可以想到容斥原理：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 f_{i,\,j,\,k} = &amp;\phantom{+} f_{i-1,\,j,\,k} + f_{i,\,j-1,\,k} + f_{i,\,j,\,k-1}\\
 &amp;- f_{i-1,\,j-1,\,k} - f_{i,\,j-1,\,k-1} - f_{i-1,\,j,\,k-1}\\
 &amp;+ f_{i-1,\,j-1,\,k-1}.
 \end{aligned}
-\]</div>
+\]</p>
 <div class="language-cpp highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">char</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">128</span><span class="p">],</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">128</span><span class="p">],</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>

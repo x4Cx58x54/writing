@@ -2841,40 +2841,40 @@
 </blockquote>
 <p>故求解上述不定方程 <span class="arithmatex">\(ax+by=c\)</span> 时，只要首先求出 <span class="arithmatex">\(ax+by = \gcd(a, b)\)</span> 的一组解 <span class="arithmatex">\(x_0, y_0\)</span>，若 <span class="arithmatex">\(c = k_0\gcd(a, b)\)</span>，则 <span class="arithmatex">\(x = k_0x_0,\ y = k_0y_0\)</span> 即为原方程的一组解（特解）。</p>
 <p>下面求方程的通解。设整数 <span class="arithmatex">\(p, q\)</span> 满足 <span class="arithmatex">\(a(k_0x_0+p)+b(k_0y_0-q) = c\)</span>，可得 <span class="arithmatex">\(ap = bq\)</span>，即 <span class="arithmatex">\(p\)</span> 与 <span class="arithmatex">\(a\)</span> 相乘得到 <span class="arithmatex">\(b\)</span> 的整数倍，同时它又是 <span class="arithmatex">\(a\)</span> 的整数倍，由此有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 p = k\cdot\cfrac{\operatorname{lcm}(a, b)}{a} = k\cdot\cfrac{b}{\gcd(a, b)},\\
 q = k\cdot\cfrac{\operatorname{lcm}(a, b)}{b} = k\cdot\cfrac{a}{\gcd(a, b)},
-\]</div>
+\]</p>
 <p>故通解为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{cases}
 x = \cfrac{c \cdot x_0}{\gcd(a, b)} + k\cdot\cfrac{b}{\gcd(a, b)}\\
 y = \cfrac{c \cdot y_0}{\gcd(a, b)} - k\cdot\cfrac{a}{\gcd(a, b)}
 \end{cases},\quad k \in \mathbb{Z}
-\]</div>
+\]</p>
 <p>特别地，<span class="arithmatex">\(a, b\)</span> 互质时 <span class="arithmatex">\(x = \dfrac{c \cdot x_0}{\gcd(a, b)} + kb,\ y = \dfrac{c \cdot y_0}{\gcd(a, b)} + ka\)</span> .</p>
 <p>如何求出特解 <span class="arithmatex">\(x_0, y_0\)</span> 呢？</p>
 <p>构造两个方程</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 ax_1+by_1 = \gcd(a, b),\tag{1}
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 bx_2+(a \operatorname{mod} b)y_2 = \gcd(b, a \operatorname{mod} b),\tag{2}
-\]</div>
+\]</p>
 <p>由欧几里得定理 <span class="arithmatex">\(\gcd(a, b) = \gcd(b, a \operatorname{mod} b)\)</span>，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 ax_1 + by_1 &amp;= bx_2 + \left(a - b\left\lfloor\frac{a}{b}\right\rfloor\right)y_2,\\
 &amp;= ay_2 + b \left(x_2 - \left\lfloor\frac{a}{b}\right\rfloor y_2\right)
 \end{aligned}
-\]</div>
+\]</p>
 <p>得到递推式</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{cases}
 x_1 = y_2, \\
 y_1 = x_2 - \left\lfloor\dfrac{a}{b}\right\rfloor y_2.
 \end{cases}
-\]</div>
+\]</p>
 <p>故方程 <span class="arithmatex">\((1)\)</span> 的解可由 <span class="arithmatex">\((2)\)</span> 的解推出，又由于 <span class="arithmatex">\((2)\)</span> 中的系数比 <span class="arithmatex">\((1)\)</span> 中小，并会收敛到 <span class="arithmatex">\(b = 0\)</span> 的情况，此时 <span class="arithmatex">\(ax+0y = \gcd(a, 0) = a\)</span> 的解是 <span class="arithmatex">\(x = 1, y = 0\)</span>，故可以递归求解。这就是扩展欧几里得算法的原理。扩展欧几里得接受两个输入 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span>，得到 <span class="arithmatex">\(ax+by = \gcd(a, b)\)</span> 的解，并返回 <span class="arithmatex">\(\gcd(a, b)\)</span>.</p>
 <div class="language-cpp highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">exgcd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>

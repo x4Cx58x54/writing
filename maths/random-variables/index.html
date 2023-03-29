@@ -2839,83 +2839,83 @@
 <h1 id="random-variables">Random Variables<a class="headerlink" href="#random-variables" title="Permanent link">&para;</a></h1>
 <h4 id="deriving-the-pdf-of-x2-when-x-has-an-uniform-distribution-example-3811">Deriving the p.d.f. of <span class="arithmatex">\(X^2\)</span> When <span class="arithmatex">\(X\)</span> Has an Uniform Distribution (Example 3.8.1<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>)<a class="headerlink" href="#deriving-the-pdf-of-x2-when-x-has-an-uniform-distribution-example-3811" title="Permanent link">&para;</a></h4>
 <p>Suppose that <span class="arithmatex">\(X\)</span> has a uniform distribution on the interval <span class="arithmatex">\([-1, 1]\)</span>, so</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(x) = \begin{cases}
     1/2 &amp; -1\le x \le 1,\\
     0 &amp; \text{otherwise}.
 \end{cases}
-\]</div>
+\]</p>
 <p>We shall determine the p.d.f of the random variable <span class="arithmatex">\(Y = X^2\)</span>.</p>
 <p>Since <span class="arithmatex">\(Y = X^2\)</span>, then <span class="arithmatex">\(Y\)</span> must belong to the interval <span class="arithmatex">\(0\le Y \le 1\)</span>. Thus, for each value of <span class="arithmatex">\(Y\)</span> such that <span class="arithmatex">\(0 \le y \le 1\)</span>, the d.f. <span class="arithmatex">\(G(y)\)</span> of <span class="arithmatex">\(Y\)</span> is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
     G(y) =&amp; \Pr(Y \le y) = \Pr(X^2 \le y) \\
     =&amp; \Pr\big(-y^{1/2}\le X \le y^{1/2}\big) \\
     =&amp; \int_{-y^{1/2}}^{y^{1/2}}f(x)\mathrm{d}x = y^{1/2}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>For <span class="arithmatex">\(0 &lt; y &lt; 1\)</span>, it follows that the p.d.f. <span class="arithmatex">\(g(y)\)</span> of <span class="arithmatex">\(Y\)</span> is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 g(y) = \frac{\mathrm{d}G(y)}{\mathrm{d}y} = \frac{1}{2y^{1/2}}.
-\]</div>
+\]</p>
 <h4 id="choosing-points-from-uniform-distributions-example-3651">Choosing Points from Uniform Distributions (Example 3.6.5<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup>)<a class="headerlink" href="#choosing-points-from-uniform-distributions-example-3651" title="Permanent link">&para;</a></h4>
 <p>Suppose that a point <span class="arithmatex">\(X\)</span> is chosen from a uniform distribution on the interval <span class="arithmatex">\([0, 1]\)</span>; and that after the value <span class="arithmatex">\(X = x\)</span> has been observed (<span class="arithmatex">\(0 &lt; x &lt; 1\)</span>), a point <span class="arithmatex">\(Y\)</span> is then chosen from a uniform distribution on the interval <span class="arithmatex">\([x, 1]\)</span>. We shall derive the marginal p.d.f. of <span class="arithmatex">\(Y\)</span>.</p>
 <p>Since <span class="arithmatex">\(X\)</span> has a uniform distribution, the marginal p.d.f. of <span class="arithmatex">\(X\)</span> is as follows:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f_1(x) = \begin{cases}
 1, &amp; 0 &lt; x &lt; 1, \\
 0, &amp; \mathrm{otherwise}.
 \end{cases}
-\]</div>
+\]</p>
 <p>Similarly, for each value <span class="arithmatex">\(X = x\)</span> (<span class="arithmatex">\(0 &lt; a &lt; 1\)</span>), the conditional distribution of <span class="arithmatex">\(Y\)</span> is a uniform distribution on the interval <span class="arithmatex">\([x, 1]\)</span>. Since the length of this interval is <span class="arithmatex">\(1 - x\)</span>, the conditional p.d.f. of <span class="arithmatex">\(Y\)</span> given that <span class="arithmatex">\(X = x\)</span> will be</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 g_2(y|x) = \begin{cases}
 \cfrac{1}{1-x}, &amp; x &lt; y &lt; 1, \\
 0, &amp; \mathrm{otherwise}.
 \end{cases}
-\]</div>
+\]</p>
 <p>It follows that the joint p.d.f. of <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> will be</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(x, y) = \begin{cases}
 \cfrac{1}{1-x}, &amp; 0 &lt; x &lt; y &lt; 1, \\
 0, &amp; \mathrm{otherwise}.
 \end{cases}
-\]</div>
+\]</p>
 <p>Thus, for <span class="arithmatex">\(0 &lt; y &lt; 1\)</span>, the value of the marginal p.d.f. <span class="arithmatex">\(f_2(y)\)</span> of <span class="arithmatex">\(Y\)</span> will be</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f_2(y) = \int_{-\infty}^{\infty} f(x, y) \mathrm{d}x = \int_0^y \frac{1}{1-x} \mathrm{d}x = -\log(1-y).
-\]</div>
+\]</p>
 <p>Furthermore, since <span class="arithmatex">\(Y\)</span> cannot be outside the interval <span class="arithmatex">\(0 &lt; y &lt; 1\)</span>, then <span class="arithmatex">\(f_2(y) = 0\)</span> for <span class="arithmatex">\(y \le 0\)</span> or <span class="arithmatex">\(y \ge 1\)</span>. This marginal p.d.f. <span class="arithmatex">\(f_2\)</span> is sketched in the figure below. It is interesting to note that in this example the function <span class="arithmatex">\(f_2\)</span> is unbounded.</p>
 <p><img alt="" src="../img/random_variables_margin_f2.png" width="190px" /></p>
 <h4 id="cauchy-schwarz-inequality1">Cauchy-Schwarz Inequality<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup><a class="headerlink" href="#cauchy-schwarz-inequality1" title="Permanent link">&para;</a></h4>
 <p>For all random variables <span class="arithmatex">\(U\)</span> and <span class="arithmatex">\(V\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \big[E(UV)\big]^2 \le E(U^2)E(V^2). \tag{1}
-\]</div>
+\]</p>
 <p>If, in addition, the right-hand side of Eq. (1) is finite, then the two sides of Eq. (1) equal the same value if and only if there are constants <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span> such that <span class="arithmatex">\(aU+bV=0\)</span> with probability 1.</p>
 <p><strong>Proof.</strong> If <span class="arithmatex">\(E(U^2)=0\)</span>, then <span class="arithmatex">\(\Pr(U=0)=1\)</span>. Therefore, it must also be true that <span class="arithmatex">\(\Pr(UV=0)=1\)</span>. Hence, <span class="arithmatex">\(E(UV)=0\)</span>, and the relation (1) is satisfied. Similarly, if <span class="arithmatex">\(E(V^2)=0\)</span>, then the relation (1) will be satisfied. We can assume, therefore, that <span class="arithmatex">\(E(U^2)&gt;0\)</span> and <span class="arithmatex">\(E(V^2)&gt;0\)</span>. Moreover, if either <span class="arithmatex">\(E(U^2)\)</span> or <span class="arithmatex">\(E(V^2)\)</span> is infinite, then the right side of the relation (1) will be infinite. In this case, the relation (1) will surely be satisfied.</p>
 <p>For the rest of the proof, assume that <span class="arithmatex">\(0&lt;E(U^2)&lt;\infty\)</span> and <span class="arithmatex">\(0&lt;E(V^2)&lt;\infty\)</span>. For all numbers <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(b\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 0 \le E\big[(aU+bV)^2\big] = a^2E(U^2) + b^2E(V^2) + 2abE(UV)\tag{2}
-\]</div>
+\]</p>
 <p>and</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 0 \le E\big[(aU-bV)^2\big] = a^2E(U^2) + b^2E(V^2) - 2abE(UV).\tag{3}
-\]</div>
+\]</p>
 <p>If we let <span class="arithmatex">\(a = \big[E(V^2)\big]^{1/2}\)</span> and <span class="arithmatex">\(b = \big[E(U^2)\big]^{1/2}\)</span>, then it follows from the relation (2) that</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 E(UV) \ge -\big[E(U^2)E(V^2)\big]^{1/2}.
-\]</div>
+\]</p>
 <p>It also follows from the relation (3) that</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 E(UV) \le \big[E(U^2)E(V^2)\big]^{1/2}.
-\]</div>
+\]</p>
 <p>These two relations together imply that the relation (1) is satisfied.</p>
 <p><em>1</em><br />
 设随机变量 <span class="arithmatex">\(X\)</span> 服从柯西分布，其概率分布为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f_X(x) = \frac{1}{\pi(1+x^2)},\ x \in \mathbb{R}
-\]</div>
+\]</p>
 <p>求 <span class="arithmatex">\(Y = \dfrac{1}{X}\)</span> 的概率密度.</p>
 <details class="note">
 <summary>Hint</summary>

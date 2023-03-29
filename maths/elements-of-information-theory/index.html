@@ -2999,23 +2999,23 @@
 <hr />
 <h2 id="ch-2-entropy-relative-entropy-mutual-information">Ch. 2: Entropy, relative entropy, mutual information<a class="headerlink" href="#ch-2-entropy-relative-entropy-mutual-information" title="Permanent link">&para;</a></h2>
 <p><strong>Entropy</strong> measures uncertainty of a discrete random variable. Let <span class="arithmatex">\(X\)</span> be a discrete r.v. with alphabet <span class="arithmatex">\(\mathcal{X} = \{x: \Pr(X=x)&gt;0\}\)</span> and probability mass function <span class="arithmatex">\(p(x) = \Pr(X=x)\)</span>. The entropy of <span class="arithmatex">\(X\)</span> is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(X) = \sum_{x \in \mathcal{X}} p(x)\log\frac{1}{p(x)} = \operatorname{E}_{p}\left[\log\frac{1}{p(X)}\right],
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(\log\)</span> denotes logarithm base 2 unless specified, thus the entropy value is in bits. Also, if the base of the logarithm is <span class="arithmatex">\(\mathrm{e}\)</span>, the entropy is measured in nats, and entropy of any base can convert to another according to the change of base rule.</p>
 <p><strong>Joint entropy</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(X, Y) = \sum_{x\in \mathcal{X}}\sum_{y\in \mathcal{Y}} p(x, y)\log\frac{1}{p(x, y)} = \mathrm{E}_{p(X, Y)}\left[\frac{1}{p(X, Y)}\right].
-\]</div>
+\]</p>
 <p><strong>Conditional entropy</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 H(Y|X) &amp;= \sum_{x\in\mathcal{X}} p(x)H(Y|X = x) \\
 &amp;= \sum_{x\in \mathcal{X}}p(x)\sum_{y\in \mathcal{Y}}p(y|x)\log\frac{1}{p(y|x)}\\
 &amp;= \sum_{x\in \mathcal{X}}\sum_{y\in \mathcal{Y}}p(x, y)\log\frac{1}{p(y|x)}\\
 &amp;= \mathrm{E}\left[\frac{1}{\log p(Y|X)}\right].
 \end{aligned}
-\]</div>
+\]</p>
 <p><strong>Chain rules</strong>:</p>
 <p><span class="arithmatex">\(H(X, Y) = H(X) + H(Y|X)\)</span>.</p>
 <p><img alt="" src="../img/infoth_2_chainrule1.svg" style="transform: scale(1.2);" /></p>
@@ -3023,59 +3023,59 @@ H(Y|X) &amp;= \sum_{x\in\mathcal{X}} p(x)H(Y|X = x) \\
 <p><img alt="" src="../img/infoth_2_chainrule2.svg" style="transform: scale(1.2); padding: 1em;" /></p>
 <p>Commas have higher priority than conditionings.</p>
 <p><strong>Relative entropy (KL Distance)</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 D(p\|q) = \sum_{x\in \mathcal{X}}p(x)\log\frac{p(x)}{q(x)} = \mathrm{E}_p\left[\log\frac{p(X)}{q(X)}\right].
-\]</div>
+\]</p>
 <p><strong>Mutual information</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 I(X;Y) = D(p(x, y) \| p(x)p(y)) = \mathrm{E}_{p(X, Y)}\left[\log\frac{p(X, Y)}{p(X)p(Y)}\right].
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \begin{aligned}
 I(X; Y) &amp;= H(X) - H(X|Y) \\
 &amp;= H(Y) - H(Y|X)\\
 &amp;= H(X) + H(Y) - H(X, Y).
 \end{aligned}
-\]</div>
+\]</p>
 <p><img alt="" src="../img/infoth_2_i.svg" style="transform: scale(1.2);" /></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 I(X; X) = H(X),\quad H(X|X) = 0.
-\]</div>
+\]</p>
 <p><strong>Chain rule for entropy</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 H(X_1, X_2, \cdots, X_n) &amp;= \sum_{i=1}^n H(X_i | X_{i-1}, \cdots, X_1) \\
 &amp;= H(X_1) + H(X_2|X_1) + H(X_3|X_2, X_1), \cdots.
 \end{aligned}
-\]</div>
+\]</p>
 <p>It is very obvious graphically.</p>
 <p><strong>Conditional mutual information</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 I(X; Y | Z) = H(X | Z) - H(X | Y, Z) = \mathrm{E}\left[\log\frac{p(X, Y | Z)}{p(X|Z)p(Y| Z)}\right].
-\]</div>
+\]</p>
 <p><img alt="" src="../img/infoth_2_cond_i.svg" style="transform: scale(1.2);" /></p>
 <p>Semicolons have higher priority than conditionings.</p>
 <p><strong>Chain rule for information</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 I(X_1, X_2, \cdots, X_n ; Y) &amp;= \sum_{i=1}^n I(X_i; Y | X_{i-1}, X_{i-2}, X_1) \\
 &amp;= I(X_1; Y) + I(X_2; Y | X_1) + I(X_3; Y | X_2, X_1), \cdots.
 \end{aligned}
-\]</div>
+\]</p>
 <p>It is obvious graphically.</p>
 <p><strong>Conditional relative entropy</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 D(p(y|x)\|q(y|x)) = \mathrm{E}_{p(X, Y)}\left[\log\frac{p(Y|X)}{q(Y|X)}\right].
-\]</div>
+\]</p>
 <p><strong>Chain rule for relative entropy</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 D(p(x, y)\|q(x, y)) = D(p(x)\|q(x)) + D(p(y|x) \| q(y|x)).
-\]</div>
+\]</p>
 <p><strong>Independence bound on entropy</strong>: <span class="arithmatex">\(H(X_1, X_2, \cdots, X_n)\le \sum H(X_i)\)</span>, with equality iff all <span class="arithmatex">\(X_i\)</span> are independent.</p>
 <p><strong>Log sum inequality</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \sum a_i \log\frac{a_i}{b_i} \ge \sum a_i \log \frac{\sum a_i}{\sum b_i}.
-\]</div>
+\]</p>
 <p><strong>Relative entropy</strong> <span class="arithmatex">\(D(p\| q)\)</span> is <strong>convex</strong> in the pair <span class="arithmatex">\((p, q)\)</span>.</p>
 <p><strong>Entropy</strong> is <strong>concave</strong>, as <span class="arithmatex">\(H(p) = \log|\mathcal{X}| - D(p \| u)\)</span>, where <span class="arithmatex">\(u\)</span> is the uniform distribution on <span class="arithmatex">\(\mathcal{X}\)</span> and <span class="arithmatex">\(\log|\mathcal{X}| = \mathrm{E}\left[\log\frac{1}{u(x)}\right]\)</span>.</p>
 <p><strong>Mutual information</strong> <span class="arithmatex">\(I(X; Y)\)</span> is <strong>concave</strong> with respect to <span class="arithmatex">\(p(x)\)</span> for fixed <span class="arithmatex">\(p(y|x)\)</span>; <strong>convex</strong> with respect to <span class="arithmatex">\(p(y|x)\)</span> for fixed <span class="arithmatex">\(p(x)\)</span>.</p>
@@ -3090,16 +3090,16 @@ D(p(x, y)\|q(x, y)) = D(p(x)\|q(x)) + D(p(y|x) \| q(y|x)).
 </ul>
 <p><strong>Data processing inequality</strong>: in a Markov chain <span class="arithmatex">\(X\rightarrow Y \rightarrow Z\)</span>, <span class="arithmatex">\(I(X; Y) \ge I(X; Z)\)</span>. Also, observation of <span class="arithmatex">\(Z\)</span> reduces dependence between <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span>: <span class="arithmatex">\(I(X; Y | Z) \le I(X; Y)\)</span>, which might be the opposite when they do not form a Markov chain: <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> independently observes Bernoulli distribution with <span class="arithmatex">\(p=0.5\)</span>, and <span class="arithmatex">\(Z = X + Y\)</span>.</p>
 <p><strong>Fano's inequality</strong>: <span class="arithmatex">\(Y\)</span> is related to <span class="arithmatex">\(X\)</span> by <span class="arithmatex">\(p(y|x)\)</span>, and an estimator of <span class="arithmatex">\(Y\)</span> is <span class="arithmatex">\(g(Y) = X\)</span>. Therefore, <span class="arithmatex">\(X \rightarrow Y \rightarrow \hat{X}\)</span>. The probability of error is defined as <span class="arithmatex">\(P_e = \Pr\{X\neq \hat{X}\}\)</span>. Fano's inequality is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(P_e) + P_e \log |\mathcal{X}| \ge H(X|\hat{X}) \ge H(X|Y).
-\]</div>
+\]</p>
 <div class="admonition info">
 <p class="admonition-title">Notation <span class="arithmatex">\(H(p)\)</span></p>
 <p>Since a random variable is essentially a probability distribution. Entropy of a r.v. is the entropy of this distribution. That is, <span class="arithmatex">\(H(p_1, p_2, \cdots, p_k) = -\sum_{i=1}^k p_i\log p_i\)</span>. Furthermore, <span class="arithmatex">\(H(p)\)</span> denotes the entropy of an r.v. that follows the distribution <span class="arithmatex">\(\{p, 1-p\}\)</span>.</p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 H(E, X|\hat{X})
 &amp;= H(X|\hat{X}) + H(E|X, \hat{X}) \\
@@ -3107,9 +3107,9 @@ H(E, X|\hat{X})
 &amp;= H(E|\hat{X}) + H(X | E, \hat{X}) \\
 &amp;\le H(E) + H(X | E, \hat{X}),
 \end{aligned}
-\]</div>
+\]</p>
 <p>where</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 H(X|E, \hat{X})
 &amp;= H((X | \hat{X}) | E) \\
@@ -3119,25 +3119,25 @@ H(X|E, \hat{X})
 &amp;\le P_e H(X) \\
 &amp;\le P_e \log |\mathcal{X}|.
 \end{aligned}
-\]</div>
+\]</p>
 <p>If <span class="arithmatex">\(\hat{X}\in \mathcal{X}\)</span>, since <span class="arithmatex">\(X \neq \hat{X}\)</span> in the <span class="arithmatex">\(E=1\)</span> case, <span class="arithmatex">\(H(X|E, \hat{X}) \le P_e \log (|\mathcal{X}|-1)\)</span>, and Fano's inequality changes accordingly.</p>
 </div>
 <p>If <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(X'\)</span> are i.i.d. with entropy <span class="arithmatex">\(H(X)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(X = X') \ge 2^{-H(X)},
-\]</div>
+\]</p>
 <p>with equality iff uniformly distributed.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(X = X') = \sum p^2(x) = \sum p(x)2^{\log p(x)} = \operatorname{E}2^{\log p(x)} \overset{\text{convex}}{\ge} 2^{\operatorname{E}\log p(x)} = 2^{-H(x)}.
-\]</div>
+\]</p>
 </div>
 <p>If <span class="arithmatex">\(X \sim p(x)\)</span>, <span class="arithmatex">\(X' \sim r(x)\)</span> independently,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(X = X') \ge 2^{-H(p) - D(p \| r)}, \\
 \Pr(X = X') \ge 2^{-H(r) - D(r \| p)}. \\
-\]</div>
+\]</p>
 <h2 id="ch-3-asymptotic-equipartition-property">Ch. 3: Asymptotic equipartition property<a class="headerlink" href="#ch-3-asymptotic-equipartition-property" title="Permanent link">&para;</a></h2>
 <p><strong>Convergence of random variables</strong>: <span class="arithmatex">\(\{X_n\} \rightarrow X\)</span> is said to be</p>
 <ul>
@@ -3146,35 +3146,35 @@ H(X|E, \hat{X})
 <li>with probability 1, if <span class="arithmatex">\(\Pr\left\{\lim\limits_{n\rightarrow \infty} X_n = X\right\} = 1\)</span>.</li>
 </ul>
 <p><strong>Asymptotic equipartition property</strong>: if <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> are i.i.d. <span class="arithmatex">\(\sim p(x)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 -\frac{1}{n} \log p(X_1, X_2, \cdots, X_n) \rightarrow H(X) \quad \text{in probability.}
-\]</div>
+\]</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
 <p>A few derivations lead to</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 -\frac{1}{n}\sum\log p(X_i) \rightarrow -\operatorname{E}\log p(X),
-\]</div>
+\]</p>
 <p>and the law of large numbers finishes the proof.</p>
 </div>
 <p><span class="arithmatex">\(A_\epsilon^{(n)}\)</span> is the <strong>typical set</strong> with respect to <span class="arithmatex">\(p(x)\)</span> iff every element <span class="arithmatex">\((x_1, x_2, \cdots, x_n)\in \mathcal{X}^n\)</span>, and</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 2^{-n(H(X) + \epsilon)} \le p(x_1, x_2, \cdots, x_n) \le 2^{-n(H(X) - \epsilon)}.
-\]</div>
+\]</p>
 <p>The equation above is equivalent to</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \left|-\frac{1}{n}\log p(x_1, x_2, \cdots, x_n) - H(X)\right| \le \epsilon.
-\]</div>
+\]</p>
 <p>According to AEP, <span class="arithmatex">\(\forall\delta &gt; 0\)</span>, <span class="arithmatex">\(\exists n_0\in\mathbb{R}\)</span>, <span class="arithmatex">\(\forall n \ge n_0\)</span>, <span class="arithmatex">\(\Pr\left\{\left|-\frac{1}{n}\log p(x_1, x_2, \cdots, x_n) - H(X)\right|&lt; \epsilon\right\} &gt; 1 - \delta\)</span>. We can set <span class="arithmatex">\(\delta\)</span> to <span class="arithmatex">\(\epsilon\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 2^{-n(H(X) + \epsilon)}\left|A_\epsilon^{(n)}\right| \le \sum_{A_\epsilon^{(n)}} p(x_1, x_2, \cdots, x_n) \le \sum_{\mathcal{X}^n} p(x_1, x_2, \cdots, x_n) = 1.
-\]</div>
+\]</p>
 <p>For <span class="arithmatex">\(n\)</span> sufficiently large,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 2^{-n(H(X) - \epsilon)}\left|A_\epsilon^{(n)}\right| \ge \sum_{A_\epsilon^{(n)}} p(x_1, x_2, \cdots, x_n) \ge \Pr\{A_\epsilon^{(n)}\} &gt; 1 - \epsilon.
-\]</div>
+\]</p>
 <p>Therefore, indexing elements in the typical set <span class="arithmatex">\(A_\epsilon^{(n)}\)</span> requires no more than <span class="arithmatex">\(n(H + \epsilon) + 1\)</span> bits, and indexing elements in <span class="arithmatex">\(A_\epsilon^{(n)\mathrm{C}}\)</span> requires no more than <span class="arithmatex">\(n\log |\mathcal{X}| + 1\)</span> bits. To index all the elements in <span class="arithmatex">\(\mathcal{X}^n\)</span>, there is an additional bit to indicate whether in the typical set.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \operatorname{E}l(X^n)
 &amp;= \sum_{A_\epsilon^{(n)}}p(x^n)l(x^n) + \sum_{A_\epsilon^{(n)\mathrm{C}}}p(x^n)l(x^n) \\
@@ -3183,32 +3183,32 @@ H(X|E, \hat{X})
 &amp;= n\left(H + \epsilon + \frac{2}{n} + \delta\log|\mathcal{X}| + \frac{2}{n}\right) \\
 &amp;= n(H + \epsilon').
 \end{aligned}
-\]</div>
+\]</p>
 <p>For <span class="arithmatex">\(X^n\)</span> i.i.d. <span class="arithmatex">\(\sim p(x)\)</span>, <span class="arithmatex">\(\operatorname{E}\left[\frac{1}{n}l(x^n)\right] \le H(X) + \epsilon\)</span>. We can encode <span class="arithmatex">\(X^n\)</span> using <span class="arithmatex">\(nH(X)\)</span> bits on average.</p>
 <p>A <strong>high probability set</strong> <span class="arithmatex">\(B_\delta^{(n)} \subset \mathcal{X}^n\)</span> is the smallest set with <span class="arithmatex">\(\Pr(B_\delta^{(n)}) \ge 1 - \delta\)</span>. <span class="arithmatex">\(B_\delta^{(n)}\)</span> must have at least <span class="arithmatex">\(2^{nH}\)</span> elements.</p>
 <h2 id="ch-4-entropy-rates-of-a-stochastic-process">Ch. 4: Entropy rates of a stochastic process<a class="headerlink" href="#ch-4-entropy-rates-of-a-stochastic-process" title="Permanent link">&para;</a></h2>
 <p>A stochastic process <span class="arithmatex">\(\{X_i\}\)</span> is said to be <strong>stationary</strong> if</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 &amp;\Pr(X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n) \\
 = &amp;\Pr(X_{1+l} = x_1, X_{2+l} = x_2, \cdots, X_{n+l} = x_n).
 \end{aligned}
-\]</div>
+\]</p>
 <p>A discrete stationary process is said to be a <strong>Markov process</strong> (<strong>Markov chain</strong>) if</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 &amp;\Pr(X_{n+1} = x_{n+1} \mid X_n = x_n, \cdots, X_1 = x_1) \\
 = &amp;\Pr(X_{n+1} = x_{n+1} \mid X_n = x_n).
 \end{aligned}
-\]</div>
+\]</p>
 <p>And the joint distribution for a Markov process</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 p(x_1, x_2, \cdots, x_n) = p(x_1)p(x_2|x_1)p(x_3|x_2)\cdots p(x_n|x_{n-1}).
-\]</div>
+\]</p>
 <p>A Markov process is said to be <strong>time invariant</strong> if for any <span class="arithmatex">\(n\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(X_{n+1}=b \mid X_n = a) = \Pr(X_2 = b \mid X_1 = a).
-\]</div>
+\]</p>
 <p>We always assume a Markov process is time invariant unless otherwise stated.</p>
 <p>A Markov process that can go from any state to any other state with positive probability in a finite number of steps is said to be <strong>irreducible</strong>.</p>
 <p>A Markov process that for every state, lengths of all loops it sits on has the greatest common divisor 1, is said to be <strong>aperiodic</strong>.</p>
@@ -3216,11 +3216,11 @@ p(x_1, x_2, \cdots, x_n) = p(x_1)p(x_2|x_1)p(x_3|x_2)\cdots p(x_n|x_{n-1}).
 <div class="admonition note">
 <p class="admonition-title">Example</p>
 <p>Derive the stationary distribution for a Markov process with transition matrix</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P = \begin{bmatrix} 1-\alpha &amp; \alpha \\ \beta &amp; 1-\beta \end{bmatrix}.
-\]</div>
+\]</p>
 <p>Solution: Let the stationary distribution be <span class="arithmatex">\((\mu_1, \mu_2)\)</span>. The distribution at time 1 and 2 are</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{cases}
 \Pr(X_1 = 1) = \mu_1, \\
 \Pr(X_1 = 1) = \mu_2,
@@ -3229,23 +3229,23 @@ P = \begin{bmatrix} 1-\alpha &amp; \alpha \\ \beta &amp; 1-\beta \end{bmatrix}.
 \Pr(X_2 = 1) = \mu_1(1-\alpha) + \mu_2\beta, \\
 \Pr(X_2 = 1) = \mu_1\alpha + \mu_2(1-\beta),
 \end{cases}
-\]</div>
+\]</p>
 <p>Let those 2 distributions be equal, we obtain <span class="arithmatex">\(\alpha \mu_1 = \beta \mu_2\)</span>. Since <span class="arithmatex">\(\mu_1 + \mu_2 = 1\)</span>, the stationary distribution is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mu_1 = \frac{\beta}{\alpha + \beta}, \quad \mu_2 = \frac{\alpha}{\alpha + \beta}.
-\]</div>
+\]</p>
 </div>
 <p>For an irreducible and aperiodic finite-state Markov chain, its stationary distribution is unique, and from any starting distribution, the distribution at time <span class="arithmatex">\(t\)</span> tends to be stationary as <span class="arithmatex">\(t \rightarrow \infty\)</span>.</p>
 <p><strong>Entropy rate</strong>, as per symbol entropy on average:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(\mathcal{X}) = \lim_{n\rightarrow\infty} \frac{1}{n}H(X_1, X_2, \cdots, X_n).
-\]</div>
+\]</p>
 <p>If <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> are i.i.d., <span class="arithmatex">\(H(\mathcal{X}) = H(X_i)\)</span>.</p>
 <p>If <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> are independent, <span class="arithmatex">\(H(X_1, X_2, \cdots, X_n) = \sum H(X_i)\)</span>, but the existence of limit need to be confirmed.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
 <p>For simplicity, <span class="arithmatex">\(x_1, x_2, \cdots, x_n\)</span> is denoted by <span class="arithmatex">\(x^n\)</span>, and <span class="arithmatex">\(\sum\limits_{x_i \in \mathcal{X}_i}\)</span> is denoted by <span class="arithmatex">\(\sum\limits_{x_i}\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 H(X_1, X_2, \cdots, X_{n+1}) &amp;= \sum_{x^{n+1}}p(x^{n+1})\log\frac{1}{p(x^{n+1})} \\
 \text{\footnotesize(seperate $x_{n+1}$, independence)} &amp;= \sum_{x_{n+1}} \sum_{x^n} p(x^n)p(x_{n+1})\log\frac{1}{p(x^n)p(x_{n+1})} \\
@@ -3253,19 +3253,19 @@ H(X_1, X_2, \cdots, X_{n+1}) &amp;= \sum_{x^{n+1}}p(x^{n+1})\log\frac{1}{p(x^{n+
 &amp;= \sum_{x^n}p(x^n)\log\frac{1}{p(x^n)} + \sum_{x_{n+1}}p(x_{n+1})\log\frac{1}{p(x_{n+1})} \\
 &amp;= H(X_1, X_2, \cdots, X_n) + H(X_{n+1}).
 \end{aligned}
-\]</div>
+\]</p>
 </div>
 <p><strong>Entropy rate</strong>, as conditional entropy of the last symbol given history:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H'(\mathcal{X}) = \lim_{n\rightarrow\infty} H(X_n \mid X_{n-1}, X_{n-2}, \cdots, X_1).
-\]</div>
+\]</p>
 <p>For a stationary process, <span class="arithmatex">\(H(\mathcal{X}) = H'(\mathcal{X})\)</span>, and <span class="arithmatex">\(H'(X)\)</span> is non-increasing as <span class="arithmatex">\(H(X_{n+1} \mid X_n, \cdots, X_1) \le H(X_{n+1} \mid X_n, \cdots, X_2) = H(X_n \mid X_{n-1}, \cdots, X_1)\)</span>.</p>
 <p><strong>Cesaro mean</strong>: If <span class="arithmatex">\(a_n \rightarrow a\)</span> and <span class="arithmatex">\(b_n = \dfrac{1}{n}\sum\limits_{i=1}^n a_i\)</span>, <span class="arithmatex">\(b_n \rightarrow a\)</span>.</p>
 <p>For a stationary Markov process, <span class="arithmatex">\(H'(\mathcal{X}) = H'(\mathcal{X}) = \lim H(X_n | X_{n-1}) = H(X_2 | X_1)\)</span>.</p>
 <p>The entropy rate of a stationary Markov chain with transition matrix <span class="arithmatex">\(P\)</span>, and stationary distribution <span class="arithmatex">\(\mu\)</span>, the entropy rate is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(\mathcal{X}) = H(X_2|X_1) = \sum_i \mu_i H(X_2 | X_1 = x_i) = \sum_i \mu_i\left(\sum_j P_{ij} \log\frac{1}{P_{ij}}\right).
-\]</div>
+\]</p>
 <h2 id="ch-5-data-compression">Ch. 5: Data compression<a class="headerlink" href="#ch-5-data-compression" title="Permanent link">&para;</a></h2>
 <p>A <strong>nonsingular code</strong> is a code of which every element maps to a different code. <span class="arithmatex">\(x \neq x' \Rightarrow C(x) \neq C(x')\)</span>.</p>
 <p>The extension of a code <span class="arithmatex">\(C\)</span> is the concatenation of codewords: <span class="arithmatex">\(C(x_1x_2\cdots x_n) = C(x_1)C(x_2)\cdots C(x_n)\)</span>.</p>
@@ -3273,49 +3273,49 @@ H(\mathcal{X}) = H(X_2|X_1) = \sum_i \mu_i H(X_2 | X_1 = x_i) = \sum_i \mu_i\lef
 <p>A <strong>prefix code</strong> or an <strong>instantaneous code</strong> is a code of which no codeword is a prefix of any other prefix of any other codeword (can be decoded without reference to future codewords, self-punctuating).</p>
 <p>All <span class="arithmatex">\(\supset\)</span> nonsingular <span class="arithmatex">\(\supset\)</span> uniquely decodable <span class="arithmatex">\(\supset\)</span> instantaneous.</p>
 <p><strong>Kraft inequality</strong>: for any instantaneous code over an alphabet of size <span class="arithmatex">\(D\)</span>, the codeword lengths <span class="arithmatex">\(l_1, l_2, \cdots\)</span> satisfies</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \sum_i D^{-l_i} \le 1.
-\]</div>
+\]</p>
 <p>Conversely, from a set of codewords lengths that satisfy Kraft inequality, one can construct an instantaneous code.</p>
 <p><strong>Extended Kraft inequality</strong>: for any prefix code that has countably infinite codewords with length <span class="arithmatex">\(l_1, l_2, \cdots\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \sum_{i=1}^\infty D^{-l_i} \le 1.
-\]</div>
+\]</p>
 <p>To find the <strong>optimal code lengths</strong>, that is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \operatorname{minimize~~}&amp; L = \sum p_i l_i \\
 \operatorname{s.t.~~}&amp; \sum_i D^{-l_i} \le 1, \\
 &amp; l_i \in \mathbb{Z}^+.
 \end{aligned}
-\]</div>
+\]</p>
 <p>Removing the integer constraint leads to results</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 l_i^* = \log_D p_i, \quad L^* = H_D(X).
-\]</div>
+\]</p>
 <p>The <strong>expected length</strong> <span class="arithmatex">\(L\)</span> of any prefix <span class="arithmatex">\(D\)</span>-ary code</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 L \ge H_D(X),
-\]</div>
+\]</p>
 <p>with equality iff <span class="arithmatex">\(D^{-l_i} = p_i\)</span> for every symbol, that is, each of the probability equals to <span class="arithmatex">\(D^{-n}\)</span> for some integer <span class="arithmatex">\(n\)</span>, and in this case the distribution is said to be <strong><span class="arithmatex">\(D\)</span>-adic</strong>.</p>
 <p>When the distribution is not <span class="arithmatex">\(D\)</span>-adic, we choose <span class="arithmatex">\(l_i = \left\lceil\log_D \dfrac{1}{p_i}\right\rceil\)</span>, and that means <span class="arithmatex">\(\log_D \dfrac{1}{p_i} \le l_i &lt; \log_D \dfrac{1}{p_i}+1\)</span>, finally</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H_D(X) \le L &lt; H_D(X) + 1.
-\]</div>
+\]</p>
 <p>For a sequence of symbols <span class="arithmatex">\((x_1, x_2, \cdots, x_n) \in \mathcal{X}^n\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(X_1, X_2, \cdots, X_n) \le \operatorname{E}l(X_1, X_2, \cdots, X_n) &lt; H(X_1, X_2, \cdots, X_n) + 1.
-\]</div>
+\]</p>
 <p>therefore <strong>the expected per symbol length</strong> <span class="arithmatex">\(L_n\)</span> satisfies</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{H(X_1, X_2, \cdots, X_n)}{n} \le L_n^* &lt; \frac{H(X_1, X_2, \cdots, X_n)}{n} + \frac{1}{n}.
-\]</div>
+\]</p>
 <p>If <span class="arithmatex">\(X_1, X_2, \cdots X_n\)</span> is a stationary stochastic process, <span class="arithmatex">\(L_n^* \rightarrow H(\mathcal{X})\)</span>. The expected number of bits required per symbol to describe the process is the entropy rate.</p>
 <p>If <span class="arithmatex">\(X_i\)</span> are i.i.d., <span class="arithmatex">\(H(\mathcal{X}) \le L_n &lt; H(\mathcal{X}) + \dfrac{1}{n}\)</span>.</p>
 <p>If we estimate the distribution of <span class="arithmatex">\(X\)</span> to be <span class="arithmatex">\(q(x)\)</span>, but the true distribution is <span class="arithmatex">\(p(x)\)</span>, the code assignment <span class="arithmatex">\(l(x) = \left\lceil\log\frac{1}{q(x)}\right\rceil\)</span>, the penalty for expected length is the relative entropy:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(p) + D(p\|q) \le \operatorname{E}_p l(X) &lt; H(p) + D(p\|q) + 1.
-\]</div>
+\]</p>
 <p><strong>McMillan theorem</strong>: any uniquely decodable <span class="arithmatex">\(D\)</span>-ary code also satisfies Kraft inequality, and the converse holds too.</p>
 <p><strong>Shannon code</strong> assigns a symbol of probability <span class="arithmatex">\(p_i\)</span> with codeword length <span class="arithmatex">\(\left\lceil\log\frac{1}{p_i}\right\rceil\)</span>, but it is not necessarily optimal.</p>
 <div class="admonition note">
@@ -3330,31 +3330,31 @@ H(p) + D(p\|q) \le \operatorname{E}_p l(X) &lt; H(p) + D(p\|q) + 1.
 <p><strong>Fano code</strong> orders symbols in decreasing order of probabilities, and each time divide the set into almost equal parts. It is suboptimal.</p>
 <p><span class="arithmatex">\(F(x)\)</span> denotes the cumulative distribution function, and a modified one <span class="arithmatex">\(\bar{F}(x) = \sum_{a&lt;x}p(a) + \frac{1}{2}p(x)\)</span>, is the probability of less than middle of <span class="arithmatex">\(x\)</span>. Write <span class="arithmatex">\(\bar{F}(x)\)</span> in binary and truncate to <span class="arithmatex">\(\left\lceil\log\frac{1}{p(x)}\right\rceil + 1\)</span> after decimal. This prefix code is called <strong>Shannon-Fano-Elias code</strong> and has expected length <span class="arithmatex">\(L &lt; H(X) + 2\)</span></p>
 <p><strong>Competitive optimality of Shannon code</strong> (<span class="arithmatex">\(l(x) = \left\lceil\log\frac{1}{p(x)}\right\rceil\)</span>): for any uniquely decodable code with codeword lengths <span class="arithmatex">\(l'(x)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(l(x) \ge l'(x) + c) \le \frac{1}{2^{c-1}},
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \Pr(l(x) &lt; l'(x)) \ge \Pr(l(x) &gt; l'(x)).
-\]</div>
+\]</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
 <p>For the first inequality, extend then use McMillan ineq.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \text{LHS} \le \sum_{x:p(x)\le 2^{-l'(x) - c + 1}} p(x) \le 2^{-(c-1)}.
-\]</div>
+\]</p>
 <p>For the second inequality, prove</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{E}\operatorname{sgn}(l(x) - l'(x)) \le 0,
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(\operatorname{sgn}(x) \le 2^x - 1\)</span> for <span class="arithmatex">\(x\in\mathbb{Z}\)</span>.</p>
 <p>Also, for any <span class="arithmatex">\(f(x) \le 2^x - 1\)</span> for <span class="arithmatex">\(x\in\mathbb{Z}\)</span>, <span class="arithmatex">\(\operatorname{E}\operatorname{sgn}f(l(x) &lt; l'(x)) \le 0\)</span>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Example: generation of discrete distributions <span class="arithmatex">\(X\)</span> from fair coins:</p>
 <p>Algorithm: generate a tree, of which each leaf is assigned to a symbol <span class="arithmatex">\(y\)</span>. This tree should be binary complete. Leaf <span class="arithmatex">\(y\)</span> at depth <span class="arithmatex">\(t\)</span> has probability <span class="arithmatex">\(2^{-t}\)</span>, and the path from root to it represents its codeword. This tree has expected depth of each leaf</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{E}T = \sum_{y\in\mathcal{Y}}t(y)2^{-t(y)} = H(Y).
-\]</div>
+\]</p>
 <p>Now, map <span class="arithmatex">\(Y\)</span> to <span class="arithmatex">\(X\)</span> by aggregating groups of proper <span class="arithmatex">\(y\)</span> and assign each group/single symbol to <span class="arithmatex">\(X\)</span>. This is a many-to-one mapping.</p>
 <p>This is equivalent to expanding each <span class="arithmatex">\(p(x) = \sum_i2^{-k}\)</span>.</p>
 <p><span class="arithmatex">\(H(X) \le H(Y)\)</span>, therefore <span class="arithmatex">\(H(X) \le \operatorname{E}T\)</span>.</p>
@@ -3362,48 +3362,48 @@ H(p) + D(p\|q) \le \operatorname{E}_p l(X) &lt; H(p) + D(p\|q) + 1.
 <p><img alt="" src="../img/infoth_5_coin_tree.svg" style="transform: scale(1.3);" /></p>
 <p>When <span class="arithmatex">\(X\)</span> is dyadic, <span class="arithmatex">\(\operatorname{E}T = H(X)\)</span>.</p>
 <p>Finally, the expected number of bits required <span class="arithmatex">\(\operatorname{E}T\)</span> satisfies</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(X) \le \operatorname{E}T &lt; H(X)+2.
-\]</div>
+\]</p>
 </div>
 <h2 id="ch-7-channel-capacity">Ch. 7: Channel capacity<a class="headerlink" href="#ch-7-channel-capacity" title="Permanent link">&para;</a></h2>
 <p>A <strong>communication system</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \underset{\text{message}} W \xrightarrow{\text{encoder}} X^n \xrightarrow[p(y|x)]{\text{channel}}Y^n \xrightarrow{\text{decoder}} \underset{\text{estimate of } W} W
-\]</div>
+\]</p>
 <p>A channel is said to be <strong>memoryless</strong> if its probability distribution of output depends only on the input at that time, that is, conditionally independent of previous input/output.</p>
 <p>The "information" <strong>channel capacity</strong> of a discrete memoryless channel is defined as</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 C = \max_{p(x)} I(X;Y),
-\]</div>
+\]</p>
 <p>that is the maximum number of distinguishable signals can be transmitted per use of this channel.</p>
 <p>By this we have that the noiseless binary channel has capacity of 1 bit, which is achieved by <span class="arithmatex">\(p = \{0.5, 0.5\}\)</span></p>
 <p>A <strong>noiseless binary channel</strong> has capacity of 1 bit, which is achieved by <span class="arithmatex">\(p = \{0.5, 0.5\}\)</span>. In this channel <span class="arithmatex">\(H(Y|X) = 0\)</span> since the knowledge of <span class="arithmatex">\(X\)</span> completely eliminates uncertainty of <span class="arithmatex">\(Y\)</span>, and it also holds for noisy channel with nonoverlapping outputs.</p>
 <p><strong>Binary symmetric channel</strong>:</p>
 <p><img alt="" src="../img/infoth_7_bsc.svg" style="transform: scale(1.4);" /></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 C &amp;= \max_{p(x)} H(Y) - H(Y|X) \\
 &amp;= 1 - H(p).
 \end{aligned}
-\]</div>
+\]</p>
 <p><strong>Binary erasure channel</strong>:</p>
 <p><img alt="" src="../img/infoth_7_bec.svg" style="transform: scale(1.4);" /></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 C = \max_{p(x)} H(Y) - H(\alpha).
-\]</div>
+\]</p>
 <p>The distribution of <span class="arithmatex">\(Y\)</span> is <span class="arithmatex">\(\{(1-\pi)(1-\alpha), \alpha, \pi(1-\alpha)\}\)</span>, assuming <span class="arithmatex">\(\Pr(X = 1) = \pi\)</span>, thus maximum is reached at <span class="arithmatex">\(\pi = 1/2\)</span>, <span class="arithmatex">\(C = 1-\alpha\)</span>. That is, a proportion of <span class="arithmatex">\(\alpha\)</span> bits are lost per transmit.</p>
 <p>In a <strong>transition matrix</strong>, item on <span class="arithmatex">\(x\)</span>-th row and <span class="arithmatex">\(y\)</span>-th col is <span class="arithmatex">\(p(y|x)\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 p(y|x) = \begin{bmatrix}
 .3 &amp; .2 &amp; .5 \\
 .5 &amp; .3 &amp; .2 \\
 .2 &amp; .5 &amp; .3
 \end{bmatrix}
-\]</div>
+\]</p>
 <p><img alt="" src="../img/infoth_7_tranmat.svg" style="transform: scale(1.4);" /></p>
 <p><span class="arithmatex">\(x\)</span>-th row is the conditional distribution <span class="arithmatex">\(P(Y|X = x)\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 p(Y = y_0)
 &amp;= \sum_x p(Y = y_0, X = x) \\
@@ -3411,7 +3411,7 @@ p(Y = y_0)
 &amp;= \sum_{r \in \mathrm{rows}} p(r) p(Y = y_0, r) \\
 &amp;= \text{weighted sum along the column of } y_0.
 \end{aligned}
-\]</div>
+\]</p>
 <p>In a <strong>symmetric channel</strong>, transition matrix rows are permutations of each other and cols are permutations of each other.</p>
 <p>In a <strong>weakly symmetric channel</strong>, transition matrix rows are permutations of each other and all col sums are equal. It achieves uniform <span class="arithmatex">\(Y\)</span> when <span class="arithmatex">\(X\)</span> is uniformly distributed. Therefore <span class="arithmatex">\(C = \log|\mathcal{Y}| - H(r)\)</span>, <span class="arithmatex">\(r\)</span> in any row.</p>
 <p>Properties of channel capacity:</p>
@@ -3422,39 +3422,39 @@ p(Y = y_0)
 </ul>
 <p>A <strong>discrete channel</strong> is denoted by <span class="arithmatex">\((\mathcal{X}, p(y|x), \mathcal{Y})\)</span>, where <span class="arithmatex">\(\forall x \forall y, p(y|x) \in [0, 1]\)</span>, and <span class="arithmatex">\(\forall x \sum\limits_y p(y|x) = 1\)</span>.</p>
 <p>A <strong>discrete memoryless channel</strong> (DMC) has its <span class="arithmatex">\(n\)</span>-th extension <span class="arithmatex">\((\mathcal{X}^n, p(y^n|x^n), \mathcal{Y}^n)\)</span>. Memorylessness is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 p(y_k \mid x^k, y^{k-1}) = p(y_k \mid x_k),
-\]</div>
+\]</p>
 <p>where subscript <span class="arithmatex">\(\cdot_k\)</span> denotes the <span class="arithmatex">\(k\)</span>-th element, and superscript <span class="arithmatex">\(\cdot^k\)</span> denotes the sequence of the first <span class="arithmatex">\(k\)</span> elements.</p>
 <p>A DMC is said to be <strong>without feedback</strong>, when its inputs do not depend on past outputs:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 p(x_k \mid x^{k-1}, y^{k-1}) = p(x_k \mid x^{k-1}).
-\]</div>
+\]</p>
 <p>It satisfies</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 p(y^n | x^n) = \prod_{i=1}^n p(y_i | x_i).
-\]</div>
+\]</p>
 <p>An <span class="arithmatex">\((M, n)\)</span> code has the codebook (the set of codewords) <span class="arithmatex">\(\{x^n(1), x^n(2), \cdots, x^n(M)\}\)</span>. Its decoding function <span class="arithmatex">\(g:\mathcal{Y}^n\rightarrow\{1, 2, \cdots, M\}\)</span> is deterministic.</p>
 <p>Given message index <span class="arithmatex">\(i\)</span>, the <strong>conditional probability of error</strong> of a channel is defined by</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \lambda_i = \Pr(g(Y^n) \neq i \mid X^n = x^n(i)).
-\]</div>
+\]</p>
 <p>The <strong>maximal probability of error</strong> of a channel is defined by</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \lambda^{(n)} = \max_{i \in \{1, 2, \cdots, M\}} \lambda_i.
-\]</div>
+\]</p>
 <p>The <strong>average probability of error</strong> of a channel is defined by</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P_e^{(n)} = \frac{1}{M}\sum_{i=1}^M\lambda_i.
-\]</div>
+\]</p>
 <p>The rate of a <span class="arithmatex">\((M, n)\)</span> code is defined by</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R = \frac{\log M}{n}
-\]</div>
+\]</p>
 <p>in bits per transmission, and it is said to be <strong>achievable</strong> if there exists a sequence of <span class="arithmatex">\((\lceil2^{nR}\rceil, n)\)</span> codes (to specify among <span class="arithmatex">\(M\)</span> messages, <span class="arithmatex">\(\log M\)</span> bits are required), such that <span class="arithmatex">\(\lim\limits_{n\rightarrow \infty} \lambda^{(n)} = 0\)</span>.</p>
 <p>The <strong>capacity</strong> of a channel is the supremum of all achievable rates.</p>
 <p>The set of <strong>joint typical sequences</strong> is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 A_\epsilon^{(n)} = \{ &amp;(x^n, y^n) \in \mathcal{X}^n \times \mathcal{Y}^n: \\
 &amp;\left|-\frac{1}{n}\log p(x^n) - H(X)\right| &lt; \epsilon, \\
@@ -3462,43 +3462,43 @@ A_\epsilon^{(n)} = \{ &amp;(x^n, y^n) \in \mathcal{X}^n \times \mathcal{Y}^n: \\
 &amp;\left|-\frac{1}{n}\log p(x^n, y^n) - H(X, Y)\right| &lt; \epsilon
 \},
 \end{aligned}
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(p(x^n, y^n) = \prod\limits_{i=1}^n p(x_i, y_i)\)</span>.</p>
 <p><strong>Joint AEP</strong>: if <span class="arithmatex">\((X^n, Y^n)\)</span> are i.i.d. drawn from <span class="arithmatex">\(p(x^n, y^n) = \prod\limits_{i=1}^n p(x_i, y_i)\)</span>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr\left((X^n, Y^n) \in A_\epsilon^{(n)}\right) \rightarrow 1,
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \left|A_\epsilon^{(n)}\right| \le 2^{n(H(X, Y) + \epsilon)},
-\]</div>
+\]</p>
 <p>and if <span class="arithmatex">\((\tilde{X}^n, \tilde{Y}^n) \sim p(x^n)p(y^n)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr\left((\tilde{X}^n, \tilde{Y}^n)\in A_\epsilon^{(n)}\right) \le 2^{-n(I(X;Y) - 3\epsilon)},
-\]</div>
+\]</p>
 <p>and for sufficiently large <span class="arithmatex">\(n\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr\left((\tilde{X}^n, \tilde{Y}^n)\in A_\epsilon^{(n)}\right) \ge (1-\epsilon)2^{-n(I(X;Y) + 3\epsilon)}.
-\]</div>
+\]</p>
 <p><strong>Channel coding theorem</strong>: for a DMC, and rate <span class="arithmatex">\(R &lt; C\)</span> is achievable. That is, there exists a sequence of <span class="arithmatex">\((2^{nR}, n)\)</span> codes, for <span class="arithmatex">\(\forall R &lt; C\)</span>, <span class="arithmatex">\(\lambda^{(n)} \rightarrow 0\)</span>.</p>
 <p>Conversely, any sequence of <span class="arithmatex">\((2^{nR}, n)\)</span> codes with <span class="arithmatex">\(\lambda^{(n)} \rightarrow 0\)</span> must have <span class="arithmatex">\(R \le C\)</span>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
 <p>Generate <span class="arithmatex">\((2^{nR}, n)\)</span> codes according to <span class="arithmatex">\(p(x^n) = \prod\limits_{i=1}^np(x_i)\)</span>, and the <span class="arithmatex">\(2^{nR}\)</span> codewords are</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathcal{C} = \begin{bmatrix}
 x_1(1), x_2(1), \cdots, x_n(1) \\
 x_1(2), x_2(2), \cdots, x_n(2) \\
 \vdots \\
 x_1(2^{nR}), x_2(2^{nR}), \cdots, x_n(2^{nR})
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(w\)</span>-th row is the codeword for message <span class="arithmatex">\(w\)</span>. Therefore <span class="arithmatex">\(\Pr(\mathcal{C}) = \prod\limits_{w=1}^{2^{nR}}\prod\limits_{i=1}^{n} p(x_i(w))\)</span>,</p>
 <p>In this channel, both sender and receiver knows <span class="arithmatex">\(\mathcal{C}\)</span> and <span class="arithmatex">\(p(y|x)\)</span>.</p>
 <p>Choose a message <span class="arithmatex">\(W\)</span> uniformly, that is <span class="arithmatex">\(\Pr(W = w) = 2^{-nR}\)</span>, and send over the channel.</p>
 <p><span class="arithmatex">\(Y^n\)</span> is received and <span class="arithmatex">\(p(y^n | x^n(w)) = \prod\limits_{i=1}^{n} p(y_i | x_i(w))\)</span></p>
 <p>Receiver guesses <span class="arithmatex">\(W\)</span> by joint typical decoding: a unique <span class="arithmatex">\((X^n(\hat{W}), Y^n)\)</span> is joint typical. If not, error.</p>
 <p>Let <span class="arithmatex">\(\mathcal{E}\)</span> be the event <span class="arithmatex">\(\hat{W} \neq W\)</span>, and <span class="arithmatex">\(E_i\)</span> be the event <span class="arithmatex">\((X^n(i), Y^n) \in A_\epsilon^{(n)}\)</span>. Since error spread equally on all messages, without loss of generality,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 P(\mathcal{E})
 &amp;= \sum_\mathcal{C} \Pr(\mathcal{C})\overline{\lambda_w(\mathcal{C})} \\
@@ -3508,21 +3508,21 @@ P(\mathcal{E})
 &amp;= \Pr\left(E_i^C \cup \bigcup_{i=2}^{2^{nR}} E_i \mid w = 1\right) \\
 &amp;\le \Pr(E_1^C \mid w=1) + \sum_{i=2}^{2^{nR}}\Pr(E_i \mid w=1)
 \end{aligned}
-\]</div>
+\]</p>
 <p>By joint AEP, for sufficiently large <span class="arithmatex">\(n\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(E_1^C \mid w=1) = \Pr((X_1^n, Y^n) \not\in A_\epsilon^{(n)} \mid w=1) \le \epsilon,
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \sum_{i=2}^{2^{nR}}\Pr(E_i \mid w=1) \le \sum_{i=2}^{2^{nR}}2^{-n(I(X;Y) - 2\epsilon)}\le 2^{3n\epsilon}2^{-n(I(X;Y) - R)} \le \epsilon.
-\]</div>
+\]</p>
 <p>therefore <span class="arithmatex">\(\Pr(\mathcal{E} \mid w=1) = 2\epsilon\)</span>, that is, average error probability can be arbitrarily small.</p>
 <p>Choose the best codebook <span class="arithmatex">\(\mathcal{C}^*\)</span> such that <span class="arithmatex">\(\Pr(\mathcal{E} \mid \mathcal{C}^*) \le 2\epsilon\)</span>, and that implies at least half codewords <span class="arithmatex">\(i\)</span> in <span class="arithmatex">\(\mathcal{C}^*\)</span> have <span class="arithmatex">\(\lambda_i &lt; 4\epsilon\)</span>. Reindex these <span class="arithmatex">\(2^{nR-1}\)</span> codewords have rate <span class="arithmatex">\(R-\frac{1}{n}\)</span>. This new code of rate arbitrarily close to capacity, has its maximum error probability <span class="arithmatex">\(\lambda^{(n)} &lt; 4\epsilon\)</span>.</p>
 </div>
 <p><strong>Zero error codes</strong>: <span class="arithmatex">\(P_e^{(n)} = 0 \Rightarrow R \le C\)</span>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 nR &amp;\le H(W) \\
 &amp;= H(W|Y^n) + I(W;Y^n) \\
@@ -3531,13 +3531,13 @@ nR &amp;\le H(W) \\
 &amp;= \sum_{i=1}^n I(X_i; Y_i) \\
 \text{\footnotesize(see below)} &amp;\le nC
 \end{aligned}
-\]</div>
+\]</p>
 </div>
 <p><strong>Converse to the coding theorem</strong>: any sequence of <span class="arithmatex">\((2^{nR}, n)\)</span> codes with <span class="arithmatex">\(\lambda^{(n)} \rightarrow 0\)</span> must have <span class="arithmatex">\(R \le C\)</span>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
 <p><span class="arithmatex">\(\lambda^{(n)} \rightarrow 0\)</span> implies <span class="arithmatex">\(P_e^{(n)} \rightarrow 0\)</span>. By Fano's inequality, <span class="arithmatex">\(H(W|\hat{W}) \le 1 + P_e^{(n)}nR\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 I(X^n; Y^n) &amp;= H(Y^n) - H(Y^n | X^n) \\
 &amp;= H(Y^n) - \sum_{i=1}^n H(Y_i \mid Y_1, Y_2, \cdots, Y_i-1, X^n) \\
@@ -3546,10 +3546,10 @@ I(X^n; Y^n) &amp;= H(Y^n) - H(Y^n | X^n) \\
 &amp;\le \sum_{i=1}^n I(X_i ; Y_i) \\
 &amp;\le nC.
 \end{aligned}
-\]</div>
+\]</p>
 <p>That is, capacity per transmission do not increase when channel used multiple times.</p>
 <p>Hence,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 nR &amp;= H(W) \\
 &amp;= H(W|\hat{W}) + I(W;\hat{W}) \\
@@ -3557,24 +3557,24 @@ nR &amp;= H(W) \\
 &amp;\le 1 + P_e^{(n)}nR + I(X^n;Y^n) \\
 &amp;\le 1 + P_e^{(n)}nR + nC.
 \end{aligned}
-\]</div>
+\]</p>
 <p>That leads to <span class="arithmatex">\(R \le P_e^{(n)}R + \dfrac{1}{n} + C\)</span> then <span class="arithmatex">\(R \le C\)</span>.</p>
 <p>At <span class="arithmatex">\(R \le C\)</span>, <span class="arithmatex">\(P_e^{(n)} \rightarrow 0\)</span> exponentially; at <span class="arithmatex">\(R &gt; C\)</span>, <span class="arithmatex">\(P_e^{(n)} \rightarrow 1\)</span> exponentially.</p>
 </div>
 <p>The feedback capacity is the capacity when all received symbols are immediately sent back noiselessly, and used to determine what to send next:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 C_{\mathrm{FB}} = C.
-\]</div>
+\]</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
 <p>Let <span class="arithmatex">\(R\)</span> be the rate with feedback.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 nR &amp;\le 1 + P_e^{(n)}nR + I(W;\hat{W}) \\
 &amp;\le 1 + P_e^{(n)}nR + I(W;Y^n).
 \end{aligned}
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \begin{aligned}
 I(W;Y^n)
 &amp;= H(Y^n) - H(Y^n \mid W) \\
@@ -3584,14 +3584,14 @@ I(W;Y^n)
 &amp;= \sum_{i=1}^nI(X_i; Y_i) \\
 &amp;\le nC,
 \end{aligned}
-\]</div>
+\]</p>
 <p>therefore <span class="arithmatex">\(R \le C\)</span>. And because any rate achieved by non-feedback code is achievable by feedback code, <span class="arithmatex">\(C_{\mathrm{FB}} \ge C\)</span>, thus <span class="arithmatex">\(C_{\mathrm{FB}} = C\)</span>.</p>
 </div>
 <h2 id="ch-8-differential-entropy">Ch. 8: Differential entropy<a class="headerlink" href="#ch-8-differential-entropy" title="Permanent link">&para;</a></h2>
 <p>The <strong>differential entropy</strong> of a continuous variable <span class="arithmatex">\(X\)</span> is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 h(X) = -\int_S f(x)\log f(x) \mathrm{d}x.
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(f(x)\)</span> is the probability density function of <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(S\)</span> is the support set of <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(S = \{x: f(x) &gt; 0\}\)</span>.</p>
 <ul>
 <li>Uniform distribution: <span class="arithmatex">\(X \sim U(a, b)\)</span>, <span class="arithmatex">\(\displaystyle h(X) = -\int_a^b \frac{1}{b-a}\log\frac{1}{b-a}\mathrm{d}x = \log (b-a)\)</span>.</li>
@@ -3600,43 +3600,43 @@ h(X) = -\int_S f(x)\log f(x) \mathrm{d}x.
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{E}g(x) = \int g(x)p(x)\mathrm{d}x.
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \int_{-\infty}^{+\infty} N(x; 0, \sigma^2)\, x^2\mathrm{d}x = \sigma^2.
-\]</div>
+\]</p>
 </div>
 <p><strong>AEP</strong>: for i.i.d. <span class="arithmatex">\(X_i\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 -\frac{1}{n}\log f(X_1, X_2, \cdots, X_n) \rightarrow \operatorname{E}[-\log f(X)] = h(X) \quad \text{in probability}.
-\]</div>
+\]</p>
 <p>The <strong>volume</strong> of a set <span class="arithmatex">\(A \in \mathbb{R}^n\)</span></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{Vol}(A) = \int_A \mathrm{d}x_1 \mathrm{d}x_2 \cdots \mathrm{d}x_n.
-\]</div>
+\]</p>
 <p><strong>Typical set</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A_\epsilon^{(n)} = \left\{(x_1, x_2, \cdots, x_n) \in S^n: \left|-\frac{1}{n}\log f(x_1, x_2, \cdots, x_n) - h(X)\right| \le \epsilon \right\},
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(f(x_1, x_2, \cdots, x_n) = \prod_i f(x_i)\)</span>.</p>
 <p>For <span class="arithmatex">\(n\)</span> sufficiently large,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr\left(A_\epsilon^{(n)}\right) &gt; 1 - \epsilon.
-\]</div>
+\]</p>
 <p>For all <span class="arithmatex">\(n\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{Vol}\left(A_\epsilon^{(n)}\right) \le 2^{n(h(X)+\epsilon)}.
-\]</div>
+\]</p>
 <p>For <span class="arithmatex">\(n\)</span> sufficiently large,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{Vol}\left(A_\epsilon^{(n)}\right) \ge (1 - \epsilon)2^{n(h(X)-\epsilon)}.
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(A_\epsilon^{(n)}\)</span> is the smallest volume set with probability <span class="arithmatex">\(\ge 1 - \epsilon\)</span>, to the first order in exponential.</p>
 <p><strong>Relation to discrete entropy</strong>: quantize <span class="arithmatex">\(X\)</span> into equal bins with length <span class="arithmatex">\(\varDelta\)</span>. According to mean value theorem, <span class="arithmatex">\(p_i = \int_{i\varDelta}^{(i+1)\varDelta}f(x)\mathrm{d}x = f(x_i)\varDelta\)</span>. Entropy of the quantized version</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 h(X^\varDelta) = \sum_i \varDelta f(x_i)\log\frac{1}{f(x_i)} - \log\varDelta.
-\]</div>
+\]</p>
 <p>Therefore, <span class="arithmatex">\(H(X^\varDelta) + \log\varDelta \rightarrow h(X)\)</span> as <span class="arithmatex">\(\varDelta \rightarrow 0\)</span>. Quantize <span class="arithmatex">\(X\)</span> into 2^n equal sections, the entropy is approximately <span class="arithmatex">\(h(X) + n\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Example</p>
@@ -3644,172 +3644,172 @@ h(X^\varDelta) = \sum_i \varDelta f(x_i)\log\frac{1}{f(x_i)} - \log\varDelta.
 <p>In general, <span class="arithmatex">\(h(X) + n\)</span> is the number of bits required on average to describe an continuous random variable to <span class="arithmatex">\(n\)</span> bits accuracy.</p>
 </div>
 <p><strong>Joint differential entropy</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 h(X_1, X_2, \cdots, X_n)
 &amp;= -\int f(x_1, x_2, \cdots, x_n)\log f(x_1, x_2, \cdots, x_n)\mathrm{d}x_1\mathrm{d}x_2\cdots\mathrm{d}x_n \\
 &amp;= -\operatorname{E} \log f(x_1, x_2, \cdots, x_n).
 \end{aligned}
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(h(X_1, X_2, \cdots, X_n) \le \sum h(X_i)\)</span>, with equality iff all <span class="arithmatex">\(X_i\)</span> are independent.</p>
 <p><strong>Conditional differential entropy</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 h(X|Y) &amp;= - \int f(x, y)\log f(x | y)\mathrm{d}x\mathrm{d}y \\
 &amp;= -\operatornamewithlimits{E}_{f(x,y)}\log f(x|y) \\
 &amp;= h(X, Y) - h(Y).
 \end{aligned}
-\]</div>
+\]</p>
 <p>The last equality holds if both items are finite.</p>
 <p><span class="arithmatex">\(h(X | Y) \le h(X)\)</span>, with equality iff <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are independent.</p>
 <p><strong>Relative entropy</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 D(f \| g) = \int_{S_f} f \log \frac{f}{g},
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(S_f \subseteq S_g\)</span> if the relative entropy is finite.</p>
 <p><span class="arithmatex">\(D(f\|g) \ge 0\)</span>, with equality iff <span class="arithmatex">\(f = g\)</span> almost everywhere.</p>
 <p><strong>Mutual information</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 I(X;Y) &amp;= D(f(x, y) \| f(x)f(y)) \\
 &amp;= \int f(x, y)\log\frac{f(x, y)}{f(x)f(y)} \mathrm{d}x\mathrm{d}y.
 \end{aligned}
-\]</div>
+\]</p>
 <p>If there are two finite partitions <span class="arithmatex">\(P\)</span> and <span class="arithmatex">\(Q\)</span> that quantize <span class="arithmatex">\(X\)</span> into discrete random variables <span class="arithmatex">\([X]_P\)</span> and <span class="arithmatex">\([X]_Q\)</span> respectively,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 I(X;Y) = \sup_{P, Q} I([X]_P, [X]_Q).
-\]</div>
+\]</p>
 <p>This applies to even distributions with singular density parts.</p>
 <p><span class="arithmatex">\(I(X; Y) \ge 0\)</span>, with equality iff <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are independent.</p>
 <div class="admonition note">
 <p class="admonition-title">Example: correlated Gaussian random variables</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 (X, Y) \sim N(\boldsymbol{0}, K), \quad K =
 \begin{bmatrix}
 \sigma^2 &amp; \rho\sigma^2 \\
 \rho\sigma^2 &amp; \sigma^2
 \end{bmatrix}.
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 h(X, Y) = \frac{1}{2}\log(2\pi\mathrm{e})^2(1-\rho^2)\sigma^4.
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 I(X; Y) = h(X) + h(Y) - h(X, Y) = -\frac{1}{2}\log(1 - \rho^2).
-\]</div>
+\]</p>
 <p>When <span class="arithmatex">\(\rho = 0\)</span>, <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are independent, <span class="arithmatex">\(I = 0\)</span>.</p>
 <p>When <span class="arithmatex">\(\rho = \pm 1\)</span>, <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are perfectly correlated, <span class="arithmatex">\(I = +\infty\)</span>. While in discrete cases, <span class="arithmatex">\(I(X; Y) = H(X) = H(Y)\)</span>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Joint differential entropy of fully dependent r.v.s: <span class="arithmatex">\(X \sim U(0, 1), Y = X, H(X, Y) = \ ?\)</span></p>
 <p>First we derive the joint probability density of <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> step by step. The probability density of <span class="arithmatex">\(X\)</span> is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 p(x) = \begin{cases}
 1, &amp; x \in (0, 1), \\
 0, &amp; \text{otherwise}.
 \end{cases}
-\]</div>
+\]</p>
 <p>And the conditional probability density <span class="arithmatex">\(p(y|x) = \delta(y-x)\)</span>, where <span class="arithmatex">\(\delta\)</span> is the Dirac delta function. Therefore,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 p(x, y) = p(y|x)p(x) = \delta(y-x)p(x).
-\]</div>
+\]</p>
 <p>Check unit measure property: <span class="arithmatex">\(\int_0^1 \delta(y-x)\mathrm{d}x = p(y) = p(x)\)</span>, or, <span class="arithmatex">\(\forall y\in (0, 1), 0 \in \{y - x: x\in (0, 1)\}\)</span>, thus <span class="arithmatex">\(\int_0^1 \delta(y-x)\mathrm{d}x = 1\)</span>. Then <span class="arithmatex">\(\int_\mathbb{R} p(x, y) \mathrm{d}x\mathrm{d}y = \int_0^1\int_0^1 \delta(y-x)p(x) \mathrm{d}x\mathrm{d}y = 1\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 h(X, Y) &amp;= -\int_0^1\int_0^1 \delta(y-x)p(x)\log(\delta(y-x)p(x))\mathrm{d}x\mathrm{d}y\\
 &amp;= -\int_0^1\int_0^1 \delta(y-x)\log\delta(y-x)\mathrm{d}x\mathrm{d}y.\\
 \end{aligned}
-\]</div>
+\]</p>
 <p>Let <span class="arithmatex">\(u(y) = \int_0^1 \delta(y-x)\log\delta(y-x)\mathrm{d}x\)</span> for <span class="arithmatex">\(x \in (0, 1)\)</span>, with domain <span class="arithmatex">\(y \in (0, 1)\)</span>.</p>
 <p>Dirac delta function can be represented by <span class="arithmatex">\(\displaystyle\delta(x) = \lim_{a\rightarrow 0} \delta_a(x)\)</span>, where</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \delta_a(x) = \begin{cases}
 \dfrac{1}{2a}, &amp; x\in (-a, a) \\
 0, &amp;\text{otherwise}.
 \end{cases}
-\]</div>
+\]</p>
 <p>Thus, for any <span class="arithmatex">\(x_0 \in (0, 1)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 u(y) &amp;= \lim_{a\rightarrow 0} \int_0^1 \delta_a(y-x_0)\log\delta_a(y-x_0)\mathrm{d}y \\
 &amp;= \lim_{a\rightarrow 0} \int_{x_0 - a}^{x_0 + a} \frac{1}{2a}\log\frac{1}{2a}\mathrm{d}y \\
 &amp;= \lim_{a\rightarrow 0} \log\frac{1}{2a} \\
 &amp;= +\infty.
 \end{aligned}
-\]</div>
+\]</p>
 <p>The joint differential entropy <span class="arithmatex">\(h(X, Y) = -\int_0^1 u(y) \mathrm{d}y = -\infty\)</span>, and mutual information <span class="arithmatex">\(I(X, Y) = h(X) + h(Y) - h(X, Y) = +\infty\)</span>. In general, if probability distribution occupies manifold of less dimension than the space, its differential entropy is <span class="arithmatex">\(-\infty\)</span>.</p>
 </div>
 <p><strong>Chain rule for differential entropy</strong>: same as that in the discrete scenarios,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 h(X_1, X_2, \cdots, X_n) = \sum_{i=1}^n h(X_i \mid X_1, X_2, \cdots, X_{i-1}).
-\]</div>
+\]</p>
 <p><strong>Hadamard's inequality</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 |K| \le \prod K_{ii}.
-\]</div>
+\]</p>
 <p><strong>Entropy of linear function of <span class="arithmatex">\(X\)</span></strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 h(X + c) = h(X).
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 h(aX) = h(X) + \log |a|.
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 h(AX) = h(X) + \log \left|\det A \right|.
-\]</div>
+\]</p>
 <p>For <span class="arithmatex">\(X\in \mathbb{R}^n\)</span> that have mean <span class="arithmatex">\(\boldsymbol{0}_n\)</span> and covariance <span class="arithmatex">\(\operatorname{E}XX^\top = K\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 h(X) \le \frac{1}{2}\log(2\pi\mathrm{e})^n |K|,
-\]</div>
+\]</p>
 <p>with equality iff <span class="arithmatex">\(X \sim N(\boldsymbol{0}, K)\)</span>. That is, <strong>Gaussian maximizes entropy</strong> over all distributions with the same variance.</p>
 <p>Let <span class="arithmatex">\(\hat{X}\)</span> be any estimator of <span class="arithmatex">\(X\in\mathbb{R}\)</span>, (<span class="arithmatex">\(X\)</span> is estimated to be some known value <span class="arithmatex">\(\hat{X}\)</span>),</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{E}(X - \hat{X})^2 \ge \frac{1}{2\pi\mathrm{e}} \mathrm{e}^{2h(X)},
-\]</div>
+\]</p>
 <p>with equality iff <span class="arithmatex">\(X \sim N(\hat{X}, \sigma^2)\)</span>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \operatorname{E}(X - \hat{X})^2 &amp;\ge \min_{\hat{X}} \operatorname{E}(X - \hat{X})^2, \\
 &amp;= \operatorname{E}(X - \operatorname{E}(X))^2 \\
 &amp;= \operatorname{Var}(X) \\
 &amp;\ge \frac{1}{2\pi\mathrm{e}} \mathrm{e}^{2h(X)}.
 \end{aligned}
-\]</div>
+\]</p>
 </div>
 <p>Generally, given side information <span class="arithmatex">\(Y\)</span>, estimator <span class="arithmatex">\(\hat{X}(Y)\)</span> satisfies</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{E}(X - \hat{X}(Y))^2 \ge \frac{1}{2\pi\mathrm{e}}\mathrm{e}^{2h(X|Y)}.
-\]</div>
+\]</p>
 <h2 id="ch-9-gaussian-channel">Ch. 9: Gaussian channel<a class="headerlink" href="#ch-9-gaussian-channel" title="Permanent link">&para;</a></h2>
 <p>A <strong>Gaussian channel</strong> is a time-discrete channel with output <span class="arithmatex">\(Y_i\)</span>, input <span class="arithmatex">\(X_i\)</span> and Gaussian noise <span class="arithmatex">\(Z_i\)</span> at time <span class="arithmatex">\(i\)</span></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 Y_i = X_i + Z_i,\quad Z \sim N(0, N).
-\]</div>
+\]</p>
 <p>With power constraint <span class="arithmatex">\(P\)</span>, the information capacity is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 C = \max_{f(x):\ \operatorname{E}X^2 \le P} I(X; Y) = \frac{1}{2}\log\left(1 + \frac{P}{N}\right).
-\]</div>
+\]</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 I(X;Y) &amp;= h(Y) - h(X + Z \mid X) \\
 &amp;= h(Y) - h(Z \mid X) \\
 \text{\footnotesize(independence)} &amp;= h(Y) - h(Z).
 \end{aligned}
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \operatorname{E}Y^2 = \operatorname{E}X^2 + 2\operatorname{E}X\operatorname{E}Z + \operatorname{E}Z^2 \le P + N.
-\]</div>
+\]</p>
 <p>Note that <span class="arithmatex">\(\dfrac{Z}{\sqrt{n}} \sim \chi^2(1)\)</span> therefore <span class="arithmatex">\(\operatorname{E}\dfrac{Z}{\sqrt{n}} = 1\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 I(X;Y)
 &amp;\le \frac{1}{2}\log 2\pi\mathrm{e}(P+N) - \frac{1}{2}\log 2\pi\mathrm{e}N \\
 &amp;= \frac{1}{2}\log \left(1 + \frac{P}{N}\right)
 \end{aligned}
-\]</div>
+\]</p>
 </div>
 <p>An <strong><span class="arithmatex">\((M, n)\)</span> code</strong> for a Gaussian channel consists of</p>
 <ul>
@@ -3818,30 +3818,30 @@ I(X;Y)
 <li>decoding function <span class="arithmatex">\(g: \mathcal{Y} \mapsto \{1, 2, \cdots M\}\)</span>.</li>
 </ul>
 <p><strong>The capacity of Gaussian channel</strong> with power constraint <span class="arithmatex">\(P\)</span> and noise variance <span class="arithmatex">\(N\)</span> achievable is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 C = \frac{1}{2}\log\left(1 + \frac{P}{N}\right).
-\]</div>
+\]</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
 <p>Generate a codebook <span class="arithmatex">\(X_i(w)\)</span> i.i.d. <span class="arithmatex">\(\sim N(0, P-\epsilon)\)</span>, <span class="arithmatex">\(i = 1, 2, \cdots n\)</span>, <span class="arithmatex">\(w = 1, 2, \cdots, 2^{nR}\)</span> and encode into codewords <span class="arithmatex">\(X^n(w)\)</span>. These codewords are decoded to <span class="arithmatex">\(\hat{W} = w\)</span>, or error. Without loss of generality, <span class="arithmatex">\(w = 1\)</span> was sent, thus <span class="arithmatex">\(Y^n = X^n(1) + Z^n\)</span>.</p>
 <p>Define <span class="arithmatex">\(E_0 = \left\{\frac{1}{n}\sum X_i^2(1) &gt; P\right\}\)</span>, <span class="arithmatex">\(E_i = (X^n(i), Y^n) \in A_\epsilon^{(n)}\)</span>. Error occurs if <span class="arithmatex">\(E_0\)</span> or <span class="arithmatex">\(E_1^C\)</span> or <span class="arithmatex">\(E_2 \cup E_3 \cup \cdots \cup E_{2^{nR}}\)</span>, denoted by <span class="arithmatex">\(\mathcal{E}\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(\mathcal{E} \mid W = 1) \le P(E_0) + P(E_1^C) + \sum_{i=2}^{2^{nR}} P(E_i).
-\]</div>
+\]</p>
 <p>Law of large numbers indicates that <span class="arithmatex">\(P(E_0) \rightarrow 0\)</span> as <span class="arithmatex">\(n \rightarrow 0\)</span>. And <span class="arithmatex">\(P(E_1^C) \le \epsilon\)</span> for <span class="arithmatex">\(n\)</span> sufficiently large by joint AEP.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P_e^{(n)} = \Pr(\mathcal{E}\mid W = 1) \le \epsilon + \epsilon + \sum_{i=2}^{2^{nR}} 2^{-n(I(X;Y)-3\epsilon)} \le 3\epsilon
-\]</div>
+\]</p>
 <p>for <span class="arithmatex">\(n\)</span> sufficiently large. Thus, <span class="arithmatex">\(R &lt; I(X;Y) -3\epsilon\)</span>.</p>
 </div>
 <p><strong>Converse to the coding theorem for Gaussian channels</strong>: if <span class="arithmatex">\(P_e^{(n)} \rightarrow 0\)</span> for a sequence of <span class="arithmatex">\((2^{nR}, n)\)</span> codes, then</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R\le C = \frac{1}{2}\log \left(1 + \frac{P}{N}\right)
-\]</div>
+\]</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
 <p>By Fano's inequality, <span class="arithmatex">\(H(W|\hat{W}) \le 1 + nRP_e^{(n)}\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 nR &amp;= H(W) \\
 &amp;= I(W; \hat{W}) + H(W | \hat{W}) \\
@@ -3850,30 +3850,30 @@ nR &amp;= H(W) \\
 &amp;\le \sum h(Y_i) - \sum h(Z_i) + 1 + nRP_e^{(n)} \\
 &amp;= \sum I(X_i; Y_i) + 1 + nRP_e^{(n)}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>Let <span class="arithmatex">\(P_i\)</span> be the average power of <span class="arithmatex">\(i\)</span>th column in the codebook, thus <span class="arithmatex">\(h(Y_i) \le \frac{1}{2}\log 2\pi\mathrm{e}(P_i+N)\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 R &amp;\le \frac{1}{n} \sum \frac{1}{2} \log \left(1 + \frac{P_{i}}{N}\right) + 1 + nRP_{e}^{(n)} \\
 \text{\footnotesize(Jensen)} &amp;\le \frac{1}{2} \log \left(1 + \frac{1}{n} \sum \frac{P_{i}}{N}\right) + 1 + nRP_{e}^{(n)}\\
 {\footnotesize (\bar{P}_{i} \le P)}  &amp;\le \frac{1}{2}\log \left(1 + \frac{P}{N}\right) + 1 + nRP_{e}^{(n)}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>Therefore <span class="arithmatex">\(R \le \frac{1}{2} \log \left(1 + \frac{P}{N}\right) + \frac{1}{n} + RP_{e}^{(n)}\)</span>, <span class="arithmatex">\(R \le C\)</span>.</p>
 </div>
 <p><strong>Parallel Gaussian channels</strong>: distribute the total power among the <span class="arithmatex">\(k\)</span> independent channels to maximize capacity. For channel <span class="arithmatex">\(j = 1, 2, \cdots, k\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 Y_j = X_j + Z_j, \quad Z_j \sim N(0, N_j) \text{ independently}.
-\]</div>
+\]</p>
 <p>The total power constraint is <span class="arithmatex">\(\operatorname{E}\sum X_j^2 \le P\)</span>. The optimal distribution of powers is identical to water-filling powers into channels.</p>
 <p><img alt="" src="../img/infoth_9_waterfilling.svg" /></p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
 <p>The information capacity</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 C = \max_{f(x_1, \cdots, x_k)} I(X_1, X_2, \cdots, X_k; Y_1, Y_2, \cdots Y_k).
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \begin{aligned}
 I\left(X_{1}, \ldots, X_{k}; Y_{1}, \ldots, Y_{k}\right)
 &amp;= h\left(Y_{1}, \ldots, Y_{k}\right)-h\left(Z_{1}, \ldots, Z_{k}\right) \\
@@ -3881,75 +3881,75 @@ I\left(X_{1}, \ldots, X_{k}; Y_{1}, \ldots, Y_{k}\right)
 &amp;\le \sum h\left(Y_{i}\right)-h\left(Z_{i}\right) \\
 &amp;\le \sum \frac{1}{2} \log \left(1+\frac{P_{i}}{N_{i}}\right),
 \end{aligned}
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(P_i = \operatorname{E}X_i^2\)</span>, <span class="arithmatex">\(\sum P_i = P\)</span>, with equality when <span class="arithmatex">\((X_1, X_2, \cdots, X_k) \sim N\left(\boldsymbol{0}, \left[\begin{smallmatrix}
 P_1 &amp; &amp; &amp; \\ &amp; P_2 &amp; &amp; \\ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; P_k
 \end{smallmatrix}\right]\right)\)</span>.</p>
 <p>With constraint on <span class="arithmatex">\(P_i\)</span> that <span class="arithmatex">\(\sum P_i = P\)</span>, allot those powers to maximize capacity, using Lagrange multipliers</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 J(P_1, P_2, \cdots, P_k) = \sum_{i=1}^k\frac{1}{2}\log\left(1+\frac{P_{i}}{N_{i}}\right) + \lambda \sum_{i=1}^k P_i,
-\]</div>
+\]</p>
 <p>and with the additional nonnegative constraint <span class="arithmatex">\(P_i \ge 0\)</span>, results in</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P_i = \max(0, \nu - N_i),
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(\nu\)</span> is chosen so that <span class="arithmatex">\(\sum P_i = P\)</span>.</p>
 </div>
 <h2 id="ch-10-rate-distortion-theory">Ch. 10: Rate distortion theory<a class="headerlink" href="#ch-10-rate-distortion-theory" title="Permanent link">&para;</a></h2>
 <p>A source produces a sequence <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> i.i.d. <span class="arithmatex">\(\sim p(x)\)</span>, <span class="arithmatex">\(x \in \mathcal{X}\)</span>. The encoder describes each <span class="arithmatex">\(X^n\)</span> by an index <span class="arithmatex">\(f_n(X^n) \in \{1, 2, \cdots, 2^{nR}\}\)</span>. The decoder estimates <span class="arithmatex">\(X^n\)</span> by <span class="arithmatex">\(\hat{X}^n \in \hat{\mathcal{X}}\)</span>.</p>
 <p>A <strong>distortion function/measure</strong> is a measure of the cost (nonnegative) representing symbol <span class="arithmatex">\(x\)</span> by symbol <span class="arithmatex">\(\hat{x}\)</span>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 d: \mathcal{X} \times \hat{\mathcal{X}} \mapsto \mathbb{R}^+.
-\]</div>
+\]</p>
 <p>It is said to be bounded if <span class="arithmatex">\(\displaystyle d_{\max} = \max_{\mathcal{X} \times \hat{\mathcal{X}}} d &lt; \infty\)</span>.</p>
 <p><strong>Hamming distortion</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 d(x, \hat{x}) = I(x \neq \hat{x}),
-\]</div>
+\]</p>
 <p>thus <span class="arithmatex">\(\operatorname{E}d = \Pr\{X \neq \hat{X}\}\)</span>.</p>
 <p><strong>Squared-error distortion</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 d(x, \hat{x}) = (x - \hat{x})^2.
-\]</div>
+\]</p>
 <p><strong>Distortion between sequences</strong>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 d(x^n, \hat{x}^n) = \frac{1}{n}\sum d(x_i, \hat{x}_i).
-\]</div>
+\]</p>
 <p>A <strong><span class="arithmatex">\((2^{nR}, n)\)</span>-rate distortion code</strong> consists of</p>
 <ul>
 <li>encoding function <span class="arithmatex">\(f_n: \mathcal{X}^n \mapsto \{1, 2, \cdots, 2^{nR}\}\)</span>,</li>
 <li>decoding function <span class="arithmatex">\(g_n: \{1, 2, \cdots, 2^{nR}\} \mapsto \hat{\mathcal{X}}^n\)</span>.</li>
 </ul>
 <p>The distortion is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 D = \operatorname{E}d(X^n, g_nf_n(X^n)) = \sum_{x^n}p(x^n)d(X^n, g_nf_n(X^n)).
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(g_n(1) = \hat{X}_n(1), g_n(2) = \hat{X}_n(2), \cdots\)</span> constitute the codebook, and <span class="arithmatex">\(f_n^{-1}(1), f_n^{-1}(2)\)</span> constitute the assignment region.</p>
 <p>A rate distortion pair is <strong>achievable</strong> if there exists a sequence of <span class="arithmatex">\((2^{nR}, n)\)</span>-rate distortion codes <span class="arithmatex">\((f_n, g_n)\)</span>, with <span class="arithmatex">\(\displaystyle \lim_{n\rightarrow \infty}\operatorname{E}d \le D\)</span>.</p>
 <p>The <strong>rate distortion region</strong> is the closure of the achievable <span class="arithmatex">\((R, D)\)</span>.</p>
 <p>The <strong>rate distortion function</strong> <span class="arithmatex">\(R(D)\)</span> is the infimum of <span class="arithmatex">\(R\)</span> such that <span class="arithmatex">\((R, D)\)</span> is in the rate distortion region given <span class="arithmatex">\(D\)</span>.</p>
 <p>The <strong>distortion rate function</strong> <span class="arithmatex">\(D(R)\)</span> is the infimum of <span class="arithmatex">\(D\)</span> such that <span class="arithmatex">\((R, D)\)</span> is in the rate distortion region given <span class="arithmatex">\(R\)</span>.</p>
 <p>The information rate distortion function <span class="arithmatex">\(R^{(I)}(D)\)</span> is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R^{(I)}(D) = \min_{p(\hat{x}|x):\ \sum\limits_{(x, \hat{x})}p(x)p(\hat{x}|x)d(x,\hat{x}) \le D } I(X; \hat{X}),
-\]</div>
+\]</p>
 <p>that is the minimum <span class="arithmatex">\(I\)</span> over all <span class="arithmatex">\(p(\hat{x}|x)\)</span>, for which the distortion expected on the joint distribution satisfies constraint.</p>
 <p>For an i.i.d. source <span class="arithmatex">\(X\)</span> and a bounded distortion,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R(D) = R^{(I)}(D),
-\]</div>
+\]</p>
 <p>and it is the minimum achievable rate at distortion <span class="arithmatex">\(D\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Example</p>
 <p>The rate distortion function for <span class="arithmatex">\(\operatorname{Bernoulli}(p)\)</span> with Hamming distortion</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R(D) = \begin{cases}
 H(p) - H(D), &amp; 0 \le D \le \min(p, 1-p), \\
 0, &amp; D \ge \min(p, 1-p).
 \end{cases}
-\]</div>
+\]</p>
 <p>Proof: Assume <span class="arithmatex">\(p &lt; \frac{1}{2}\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 I(X; \hat{X})
 &amp;= H(X) - H(X\mid\hat{X}) \\
@@ -3957,7 +3957,7 @@ I(X; \hat{X})
 &amp;\ge H(p) - H(X\oplus\hat{X}) \\
 &amp;\ge H(p) - H(D),
 \end{aligned}
-\]</div>
+\]</p>
 <p>since <span class="arithmatex">\(\Pr(X\neq\hat{X}) = \Pr(X\oplus\hat{X} = 1) \le D\)</span>, and <span class="arithmatex">\(H(D)\)</span> decreases on <span class="arithmatex">\(D \le \frac{1}{2}\)</span>.</p>
 <p>Next we prove <span class="arithmatex">\(H(p) - H(D)\)</span> is achievable. For the decoding shown in the graph, <span class="arithmatex">\(r(1-D) + (1-r)D = p\)</span>, therefore <span class="arithmatex">\(r = \frac{p-D}{1-2D}\)</span>.</p>
 <p><img alt="" src="../img/infoth_10_rdber.svg" style="transform: scale(1.4);" /></p>
@@ -3970,17 +3970,17 @@ I(X; \hat{X})
 <div class="admonition note">
 <p class="admonition-title">Example</p>
 <p>The rate distortion function for a <span class="arithmatex">\(N(0, \sigma^2)\)</span> source with squared error distortion is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R(D) = \begin{cases}
 \displaystyle \frac{1}{2}\log\frac{\sigma^2}{D}, &amp; 0 \le D \le \sigma^2, \\
 0, &amp; D &gt; \sigma^2.
 \end{cases}
-\]</div>
+\]</p>
 <p>Proof:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R(D) = \min_{f(\hat{x}|x):\ \operatorname{E}(\hat{x}-x)^2\le D} I(X; Y)
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \begin{aligned}
 I(X; \hat{X})
 &amp;= h(X) - h(X\mid \hat{X}) \\
@@ -3991,45 +3991,45 @@ I(X; \hat{X})
 &amp;\ge \frac{1}{2}\log 2\pi\mathrm{e}\sigma^2 - \frac{1}{2}\log 2\pi\mathrm{e}D \\
 &amp;= \frac{1}{2}\log\frac{\sigma^2}{D}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>To achieve this lower bound, construct test channel <span class="arithmatex">\(f(\hat{x}|x)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 X = \hat{X} + Z,
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(\hat{X}\sim N(0, \sigma^2 - D)\)</span> and <span class="arithmatex">\(Z \sim N(0, D)\)</span> independently. Note that <span class="arithmatex">\(N(\mu_1, \sigma_1^2) + N(\mu_2, \sigma_2^2) = N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2)\)</span>. In this scenario, <span class="arithmatex">\(I(X; \hat{X}) = \frac{1}{2}\log\frac{\sigma^2}{D}\)</span>.</p>
 <p>If <span class="arithmatex">\(D &gt; \sigma^2\)</span>, choose <span class="arithmatex">\(\Pr(\hat{X} = 0) = 1\)</span>, thus <span class="arithmatex">\(R(D) = 0\)</span>.</p>
 <p>The distortion rate function <span class="arithmatex">\(D(R) = \sigma^2 2^{-2R}\)</span>.</p>
 </div>
 <p><strong>Parallel Gaussian sources</strong> of independent Gaussian random variables</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 X_i \sim N(0, \sigma_i^2), \quad i = 1, 2, \cdots, m.
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \begin{aligned}
 R(D)
 &amp;= \min_{f(\hat{x}^m | x^m):\ \operatorname{E}d(\hat{X}^m | X^m) \le D} I(X^m; \hat{X}^m) \\
 &amp;= \sum_{i=1}^m \frac{1}{2}\log\frac{\sigma_i^2}{D_i},
 \end{aligned}
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(D_i = \min(\lambda, \sigma_i^2)\)</span>, and <span class="arithmatex">\(\lambda\)</span> is chosen so that <span class="arithmatex">\(\sum D_i = D\)</span>. This is similar to a reverse water-filling, choosing a constant <span class="arithmatex">\(\lambda\)</span> and only describe random variables with variance less than <span class="arithmatex">\(\lambda\)</span>.</p>
 <p><img alt="" src="../img/infoth_10_revwaterfilling.svg" /></p>
 <p><span class="arithmatex">\(R(D)\)</span> is a convex function of <span class="arithmatex">\(D\)</span> and it is nonincreasing.</p>
 <p>For any source drawn i.i.d. from <span class="arithmatex">\(p(x)\)</span> with distortion <span class="arithmatex">\(d(x, \hat{x})\)</span> and any <span class="arithmatex">\((2^{nR}, n)\)</span> rate distortion code, as long as <span class="arithmatex">\(f_n\)</span> takes on at most <span class="arithmatex">\(2^{nR}\)</span> values and the distortion is less than <span class="arithmatex">\(D\)</span>, the rate is bound to satisfy <span class="arithmatex">\(R \ge R(D)\)</span>.</p>
 <p>A pair of sequences <span class="arithmatex">\((x^n, \hat{x}^n)\)</span> is said to be <strong>distortion <span class="arithmatex">\(\epsilon\)</span>-typical</strong> if</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \left|-\frac{1}{n}\log p(x^n) - H(X) \right| &lt; \epsilon, \\
 \left|-\frac{1}{n}\log p(\hat{x}^n) - H(\hat{X}) \right| &lt; \epsilon, \\
 \left|-\frac{1}{n}\log p(x^n, \hat{x}^n) - H(X, \hat{X}) \right| &lt; \epsilon, \\
 \left|d(x^n, \hat{x}^n) - \operatorname{E}d(X, \hat{X})\right| &lt; \epsilon.
 \end{aligned}
-\]</div>
+\]</p>
 <p>The set of distortion typical sequences is called <strong>distortion typical set</strong> <span class="arithmatex">\(A_{d, \epsilon}^{(n)}\)</span>.</p>
 <p>For <span class="arithmatex">\((X_i, \hat{X}_i)\)</span> drawn i.i.d. <span class="arithmatex">\(\sim p(x, \hat{x})\)</span>, <span class="arithmatex">\(\Pr(A_{d, \epsilon}^{(n)}) \rightarrow 1\)</span> as <span class="arithmatex">\(n \rightarrow \infty\)</span>.</p>
 <p>For <span class="arithmatex">\((x^n, \hat{x}^n)\in A_{d, \epsilon}^{(n)}\)</span>, <span class="arithmatex">\(p(\hat{x}^n) \ge p(\hat{x}^n|x^n)2^{-n(I(X; \hat{X})+3\epsilon)}\)</span>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 p(\hat{x}^n|x^n)
 &amp;= \frac{p(x^n, \hat{x}^n)}{p(x^n)} \\
@@ -4037,17 +4037,17 @@ p(\hat{x}^n|x^n)
 &amp;\le p(\hat{x}^n) \frac{2^{-n(H(X, \hat{X}) - \epsilon)}}{2^{-n(H(X) + \epsilon)}2^{-n(H(\hat{X}) + \epsilon)}} \\
 &amp;= p(\hat{x}^n) 2^{n(I(X;\hat{X})+3\epsilon)}.
 \end{aligned}
-\]</div>
+\]</p>
 </div>
 <h2 id="ch-11-information-theory-and-statistics">Ch. 11: Information theory and statistics<a class="headerlink" href="#ch-11-information-theory-and-statistics" title="Permanent link">&para;</a></h2>
 <p>The <strong>type</strong> of a sequence <span class="arithmatex">\(x^n\)</span> is an empirical probability distribution,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P_{x^n}(x) = \frac{N(x \text{ in } x^n)}{n}.
-\]</div>
+\]</p>
 <p>The <strong>probability simplex</strong> in <span class="arithmatex">\(\mathbb{R}^m\)</span> is an <span class="arithmatex">\((m-1)\)</span>-dim manifold,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \left\{x^m \in \mathbb{R}^m: x_i \ge 0, \sum x_i = 1\right\}.
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(\mathcal{P}_n\)</span> denotes the set of types with denominator <span class="arithmatex">\(n\)</span>.</p>
 <p>The <strong>type class</strong> <span class="arithmatex">\(T(P) = \{x^n \in \mathcal{X}^n: P_{x^n} = P \in \mathcal{P}_n\}\)</span> is the set of sequence of length <span class="arithmatex">\(n\)</span> and type <span class="arithmatex">\(P\)</span>.</p>
 <div class="admonition note">
@@ -4062,17 +4062,17 @@ P_{x^n}(x) = \frac{N(x \text{ in } x^n)}{n}.
 <p><span class="arithmatex">\(\mathcal{X} = \{0, 1\}\)</span>.</p>
 <p><span class="arithmatex">\(\displaystyle \mathcal{P}_n = \left\{(P(0), P(1)): \left(\frac{0}{n}, \frac{n}{n}\right), \left(\frac{1}{n}, \frac{n-1}{n}\right), \cdots, \left(\frac{n}{n}, \frac{0}{n}\right)\right\}\)</span></p>
 </div>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 |\mathcal{P}_n| \le (n+1)^{|\mathcal{X}|},
-\]</div>
+\]</p>
 <p>where the right hand side of the inequality is the scenario where the items in the tuple <span class="arithmatex">\((P(a_1), P(a_2), \cdots, P(a_{|\mathcal{X}|}))\)</span> each takes <span class="arithmatex">\(n+1\)</span> values.</p>
 <p>If <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> are drawn i.i.d. from <span class="arithmatex">\(Q(x)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 Q(x^n) = 2^{-n(H(P_{x^n}) + D(P_{x^n} \| Q))}
-\]</div>
+\]</p>
 <div class="admonition abstract">
 <p class="admonition-title">Proof</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 Q(x^n)
 &amp;= \prod_{a\in\mathcal{X}}Q(a)^{N(a\text{ in }x^n)} \\
@@ -4080,35 +4080,35 @@ Q(x^n)
 &amp;= \prod_{a\in\mathcal{X}}2^{nP_{x^n}(a)\log Q(a)} \\
 &amp;= 2^{n(-H(P_{x^n}) + D(P_{x^n} || Q))}
 \end{aligned}
-\]</div>
+\]</p>
 </div>
 <p>If <span class="arithmatex">\(x^n \in T(Q)\)</span>, <span class="arithmatex">\(P_{x^n} = Q \Rightarrow Q^n(x^n) = 2^{-nH(Q)}\)</span>.</p>
 <p><strong>Size of type class</strong>: for any <span class="arithmatex">\(P \in \mathcal{P}_n\)</span>, <span class="arithmatex">\(T(P) = \dbinom{n}{nP(a_1), \cdots, nP(a_{|\mathcal{X}|})} = \dfrac{n!}{(nP(a_1))!\cdots(nP(a_{|\mathcal{X}|}))!}\)</span>, its bound</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{1}{(n+1)^{|\mathcal{X}|}}2^{nH(P)} \le |T(P)| \le 2^{nH(P)}.
-\]</div>
+\]</p>
 <p>If the alphabet is binary, the type is defined by number of 1's in the sequence, <span class="arithmatex">\(|T(P)| = \dbinom{n}{k, n-k} = \dbinom{n}{k}\)</span>, <span class="arithmatex">\(P_{x^n} = \left(\dfrac{n-k}{n}, \dfrac{k}{n}\right)\)</span>. In this case, a stronger bound for <span class="arithmatex">\(|T(P)|\)</span> is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{1}{n+1}2^{nH\left(\frac{k}{n}\right)} \le \binom{n}{k} \le 2^{nH\left(\frac{k}{n}\right)},
-\]</div>
+\]</p>
 <p>that is, set <span class="arithmatex">\(|\mathcal{X}|\)</span> to 1.</p>
 <p><strong>Stirling's approximation</strong>: for all <span class="arithmatex">\(n \ge 1\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \sqrt{2\pi n}\left(\frac{n}{\mathrm{e}}\right)^n &lt; \sqrt{2\pi n}\left(\frac{n}{\mathrm{e}}\right)^n \mathrm{e}^{\frac{1}{12n + 1}} &lt; n! &lt; \sqrt{2\pi n}\left(\frac{n}{\mathrm{e}}\right)^n \mathrm{e}^{\frac{1}{12n}}.
-\]</div>
+\]</p>
 <p><strong>Probability of type class</strong>: for <span class="arithmatex">\(P \in \mathcal{P}_n\)</span>:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{1}{(n+1)^{|\mathcal{X}|}}2^{-nD(P||Q)} \le Q^n(T(P)) \le 2^{-nD(P||Q)}.
-\]</div>
+\]</p>
 <p>Given distribution <span class="arithmatex">\(Q\)</span>, the <strong>typical set</strong> is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 T_Q^\epsilon = \{x^n: D(P_{x^n} \| Q) \le \epsilon \}.
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \Pr(D(P_{x^n} \| Q) \ge \epsilon) \le 2^{-n\left(\epsilon - |\mathcal{X}|\frac{\log(n+1)}{n}\right)}.
-\]</div>
+\]</p>
 <p>The <strong>strongly typical set</strong> <span class="arithmatex">\(A^{*(n)}_\epsilon\)</span> is the set of sequences in <span class="arithmatex">\(\mathcal{X}^n\)</span> for which the sample frequencies are close to true values:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^{*(n)}_\epsilon =
 \left\{ x^n \in \mathcal{X}^n:
 \begin{aligned}
@@ -4116,62 +4116,62 @@ A^{*(n)}_\epsilon =
 &amp;N(a \text{ in } x^n) = 0, &amp; P(a) = 0
 \end{aligned}
 \right\}
-\]</div>
+\]</p>
 <p>A <strong>fixed-rate block code</strong> of rate <span class="arithmatex">\(R\)</span> for source <span class="arithmatex">\(X_i\)</span> of unknown distribution <span class="arithmatex">\(Q\)</span>, has</p>
 <ul>
 <li>encoder <span class="arithmatex">\(f_n: \mathcal{X}^n \mapsto \{1, 2, \cdots, 2^{nR}\}\)</span>,</li>
 <li>decoder <span class="arithmatex">\(\phi_n: \{1, 2, \cdots, 2^{nR}\} \mapsto \mathcal{X}^n\)</span>.</li>
 </ul>
 <p>Its probability of error</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P_e^{(n)} = Q^n(X^n: \phi_n f_n(X^n) \neq X^n)
-\]</div>
+\]</p>
 <p>A rate <span class="arithmatex">\(R\)</span> block code is called <strong>universal</strong> if <span class="arithmatex">\(f_n\)</span> and <span class="arithmatex">\(\phi_n\)</span> do not depend on <span class="arithmatex">\(Q\)</span>, and if <span class="arithmatex">\(P_e^{(n)} \rightarrow 0\)</span> as <span class="arithmatex">\(n \rightarrow 0\)</span> if <span class="arithmatex">\(R &gt; H(Q)\)</span>.</p>
 <p><strong>Universal source coding</strong>: for any distribution <span class="arithmatex">\(Q\)</span> with <span class="arithmatex">\(H(Q) &lt; R\)</span>, let <span class="arithmatex">\(R_n = R - |\mathcal{X}|\frac{\log(n+1)}{n}\)</span>, <span class="arithmatex">\(A = \{x^n\in \mathcal{X}^n: H(P_{x^n}) \le R_n\}\)</span>, then <span class="arithmatex">\(|A| \le 2^{nR}\)</span>. Encode and decode codewords/messages in <span class="arithmatex">\(A\)</span> only, then</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P_e^{(n)} = 1 - Q^n(A) \le (n+1)^{|\mathcal{X}|}2^{-n\min\limits_{P: H(P) &gt; R_n}D(P\|Q)}.
-\]</div>
+\]</p>
 <p>Since <span class="arithmatex">\(R_n \rightarrow R\)</span> as <span class="arithmatex">\(n \rightarrow \infty\)</span>, and <span class="arithmatex">\(H(Q) &lt; R\)</span> thus <span class="arithmatex">\(R_n &gt; H(Q)\)</span> for <span class="arithmatex">\(n\)</span> sufficiently large.</p>
 <p><strong>Sanov's theorem</strong>: <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> i.i.d. drawn <span class="arithmatex">\(\sim Q(x)\)</span>, <span class="arithmatex">\(E\subseteq \mathcal{P}\)</span> is a set of probability distributions,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 Q^n(E) = Q^n(E \cap P_n) \le (n+1)^{|\mathcal{X}|}2^{-nD(P^*\|Q)},
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(P^* = \argmin\limits_{P\in E} D(P \| Q)\)</span>. If <span class="arithmatex">\(E\)</span> is the closure of its interior,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 Q^n(E) \rightarrow 2^{-nD(P^*\|Q)}.
-\]</div>
+\]</p>
 <div class="admonition note">
 <p class="admonition-title">Example: Dice</p>
 <p>Toss a die <span class="arithmatex">\(n\)</span> times, derive the probability of the average points <span class="arithmatex">\(\ge 4\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \sum_{i=1}^6 iP(i) \ge 4,
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 P^*(x) = \frac{2^{\lambda x}}{\sum\limits_{i=1}^6 2^{\lambda i}}.
-\]</div>
+\]</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Example: Coin</p>
 <p>Toss a coin <span class="arithmatex">\(n\)</span> times, derive the probability of resulting in more than 7 heads.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P(\bar{X}_n \ge 0.7) \approx 2^{-nD(P^*\|Q)},
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(P^* = (0.7, 0.3)\)</span>, <span class="arithmatex">\(Q = (0.5, 0.5)\)</span>.</p>
 </div>
 <p>For a closed convex set <span class="arithmatex">\(E\subset \mathcal{P}\)</span> and distribution <span class="arithmatex">\(Q \not\in E\)</span>, if <span class="arithmatex">\(D(P^*\| Q) = \min\limits_{P \in E} D(P \| Q)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 D(P \| Q) \ge D(P \| P^*) + D(P^* \| Q), \quad P \in E.
-\]</div>
+\]</p>
 <p>Suppose <span class="arithmatex">\(P_n \in E\)</span> yields <span class="arithmatex">\(D(P_n \| Q) \rightarrow D(P^* \| Q)\)</span> then <span class="arithmatex">\(D(P_n \| P) \rightarrow 0\)</span>.</p>
 <p><span class="arithmatex">\(L_i\)</span> <strong>distance</strong> between two distributions</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \|P_1 - P_2\|_1 = \sum_{a\in\mathcal{X}} |P_1(a) - P_2(a)|.
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(D(P_1 \| P_2) \ge \dfrac{1}{2\ln 2}\|P_1 - P_2\|_1^2\)</span>.</p>
 <p><strong>Conditional limit theorem</strong>: by definitions above,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(X_1 = a \mid P_{x^n} \in E)\rightarrow P^*(a) \quad \text{in probability, as } n\rightarrow \infty.
-\]</div>
+\]</p>
 <div class="admonition note">
 <p class="admonition-title">Sanov's th. and conditional limit th.</p>
 <p>Sanov's th.: probability of <span class="arithmatex">\(E\)</span> is essentially the same as that of the closest type <span class="arithmatex">\(P^*\)</span> in <span class="arithmatex">\(E\)</span> to <span class="arithmatex">\(Q\)</span>.</p>
@@ -4187,30 +4187,30 @@ D(P \| Q) \ge D(P \| P^*) + D(P^* \| Q), \quad P \in E.
 <li>The decision function <span class="arithmatex">\(g(X_1, X_2, \cdots, X_n) = i \in \{1, 2\}\)</span> indicates which hypothesis is accepted.</li>
 </ul>
 <p><span class="arithmatex">\(A = \{x^n\in \mathcal{X}^n: g(x^n) = 1\}\)</span>, the two probabilities of error:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \alpha = \Pr(g(X^n) = 2 \mid H_1) = P_1^n(A^C),
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \beta = \Pr(g(X^n) = 1 \mid H_2) = P_2^n(A).
-\]</div>
+\]</p>
 <p><strong>Neyman-Pearson lemma</strong>: for <span class="arithmatex">\(T\ge 0\)</span>, decision region</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A_n(T) = \left\{x^n: \frac{P_1(x^n)}{P_2(x^n)} &gt; T \right\}
-\]</div>
+\]</p>
 <p>has corresponding probability of error <span class="arithmatex">\(\alpha^*\)</span> and <span class="arithmatex">\(\beta^*\)</span>, and <span class="arithmatex">\(B_n\)</span> be any other decision region with associated <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span>. If <span class="arithmatex">\(\alpha \le \alpha^*\)</span>, <span class="arithmatex">\(\beta \ge \beta^*\)</span>.</p>
 <p>Therefore, the optimum test for two hypotheses is of the form</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{P_1(x^n)}{P_2(x^n)} &gt; T,
-\]</div>
+\]</p>
 <p>where the left hand side is called the likelihood ratio.</p>
 <p><strong>AEP for relative entropy</strong>: <span class="arithmatex">\(X^n\)</span> i.i.d. drawn from <span class="arithmatex">\(P_1\)</span> and <span class="arithmatex">\(P_2\)</span> is any other distribution,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{1}{n}\log \frac{P_1(x^n)}{P_2(x^n)} \rightarrow D(P_1 \| P_2) \quad \text{in probability}.
-\]</div>
+\]</p>
 <p>A <strong>relative entropy typical set</strong> <span class="arithmatex">\(A_\epsilon^{(n)}(P_1 \| P_2)\)</span> consists of <span class="arithmatex">\(x^n \in \mathcal{X}^n\)</span> such that</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 D(P_1 \| P_2) - \epsilon \le \frac{1}{n}\log \frac{P_1(x^n)}{P_2(x^n)} \le D(P_1 \| P_2) + \epsilon.
-\]</div>
+\]</p>
 <ul>
 <li><span class="arithmatex">\(P_1(x^n)2^{-n(D(P_1\|P_2) + \epsilon)} \le P_2(x^n) \le P_1(x^n)2^{-n(D(P_1\|P_2) - \epsilon)}\)</span>, for all <span class="arithmatex">\(x^n \in A_\epsilon^{(n)}(P_1 \| P_2)\)</span>.</li>
 <li><span class="arithmatex">\(P_1(A_\epsilon^{(n)}(P_1 \| P_2)) &gt; 1 - \epsilon\)</span>, for <span class="arithmatex">\(n\)</span> sufficiently large.</li>
@@ -4218,9 +4218,9 @@ D(P_1 \| P_2) - \epsilon \le \frac{1}{n}\log \frac{P_1(x^n)}{P_2(x^n)} \le D(P_1
 <li><span class="arithmatex">\(P_2(A_\epsilon^{(n)}(P_1 \| P_2)) &gt; (1 - \epsilon)2^{-n(D(P_1\|P_2) + \epsilon)}\)</span>, for <span class="arithmatex">\(n\)</span> sufficiently large.</li>
 </ul>
 <p><strong>Chernoff-Stein lemma</strong>: let <span class="arithmatex">\(X^n\)</span> be i.i.d. <span class="arithmatex">\(\sim Q\)</span>, hypotheses <span class="arithmatex">\(Q = P_1\)</span> and <span class="arithmatex">\(Q = P_2\)</span>, where <span class="arithmatex">\(D(P_1 \| P_2) &lt; \infty\)</span>. Let <span class="arithmatex">\(A_n \subseteq \mathcal{X}^n\)</span> be an acceptance region for <span class="arithmatex">\(H_1\)</span>. For <span class="arithmatex">\(0 &lt; \epsilon &lt; 1/2\)</span>, define <span class="arithmatex">\(\beta_n^\epsilon = \min\limits_{A_n \subseteq \mathcal{X}^n,\ \alpha_n \le \epsilon} \beta_n\)</span>, then</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \lim_{n\rightarrow \infty} \frac{1}{n}\log \beta_n^\epsilon = -D(P_1 \| P_2).
-\]</div>
+\]</p>
 <p>An estimator for <span class="arithmatex">\(\theta\)</span> for sample size <span class="arithmatex">\(n\)</span> is a function <span class="arithmatex">\(T: \mathcal{X}^n \mapsto \varTheta\)</span>. Denote true distribution of <span class="arithmatex">\(X\)</span> by <span class="arithmatex">\(f(x; \theta)\)</span>.</p>
 <ul>
 <li>The bias is <span class="arithmatex">\(\operatornamewithlimits{E}\limits_{f(\cdot; \theta)}(T(X^n) - \theta)\)</span>. The estimator is <strong>unbiased</strong> if bias is zero for all <span class="arithmatex">\(\theta\)</span>.</li>
@@ -4228,49 +4228,49 @@ D(P_1 \| P_2) - \epsilon \le \frac{1}{n}\log \frac{P_1(x^n)}{P_2(x^n)} \le D(P_1
 <li><span class="arithmatex">\(T_1\)</span> <strong>dominates</strong> <span class="arithmatex">\(T_2\)</span> if <span class="arithmatex">\(\operatorname{E}(T_1(X^n) - \theta)^2 \le \operatorname{E}(T_2(X^n) - \theta)^2\)</span>.</li>
 </ul>
 <p>The <strong>score/informant</strong></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 V = \frac{\partial}{\partial \theta}\ln f(X; \theta) = \frac{\dfrac{\partial}{\partial \theta} f(X; \theta)}{f(X; \theta)}.
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(\operatorname{E}V = 0\)</span>, and <span class="arithmatex">\(\operatorname{E}V^2 = \operatorname{Var}(V)\)</span>.</p>
 <p>The <strong>Fisher information</strong></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 J(\theta) = \operatorname{E}_\theta V^2 = \operatorname{E}_\theta\left[\frac{\partial}{\partial \theta}\ln f(X; \theta)\right]^2.
-\]</div>
+\]</p>
 <p>If <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> are i.i.d. drawn from <span class="arithmatex">\(f(x; \theta)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 V(X^n) = \sum_{i=1}^n V(X_i), \quad J_n(\theta) = nJ(\theta).
-\]</div>
+\]</p>
 <p><strong>Cramer-Rao inequality</strong>: the mean-squared error of any unbiased estimator <span class="arithmatex">\(T\)</span> of parameter <span class="arithmatex">\(\theta\)</span> satisfies</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{Var}(T) \ge \frac{1}{J(\theta)}.
-\]</div>
+\]</p>
 <p>An unbiased estimator <span class="arithmatex">\(T\)</span> is said to be <strong>efficient</strong> if <span class="arithmatex">\(\operatorname{Var}(T) = \dfrac{1}{J(\theta)}\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Example</p>
 <p>Let <span class="arithmatex">\(X_1, X_2, \cdots, X_n\)</span> be i.i.d. <span class="arithmatex">\(\sim N(\theta, \sigma^2)\)</span>, <span class="arithmatex">\(\sigma^2\)</span> known.</p>
 <p>The score</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 V
 &amp;= \frac{\partial}{\partial \theta}\ln N(x; \theta, \sigma^2) \\
 &amp;= \frac{\partial}{\partial \theta}\ln \left( \frac{1}{\sigma\sqrt{2\pi\mathrm{e}}}\mathrm{e}^{-\frac{1}{2}\left(\frac{x - \theta}{\sigma}\right)^2}\right) \\
 &amp;= \frac{x - \theta}{\sigma^2}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>Fisher information</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 J(\theta)
 &amp;= \operatorname{E}V^2 \\
 &amp;= \frac{1}{\sigma^4}\left(\operatorname{E}X^2 - 2\operatorname{E}(\theta X) + \operatorname{E}\theta^2 \right) \\
 &amp;= \frac{1}{\sigma^2}.
 \end{aligned}
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 J_n(\theta) = nJ(\theta) = \dfrac{n}{\theta^2}.
-\]</div>
+\]</p>
 <p>One estimator for <span class="arithmatex">\(\theta\)</span> is <span class="arithmatex">\(T = \sum\limits_{i=1}^n X_i\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \operatorname{Var}(T)
 &amp;= \operatorname{E}\left(\bar{X}_n\right)^2 - \left(\operatorname{E}\bar{X}_n\right)^2 \\
@@ -4279,7 +4279,7 @@ J_n(\theta) = nJ(\theta) = \dfrac{n}{\theta^2}.
 &amp;= \frac{n\sigma^2 + (n\theta)^2}{n^2} - \theta^2 \\
 &amp;= \frac{\sigma^2}{n}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>Therefore, <span class="arithmatex">\(\operatorname{Var}(T) = \dfrac{1}{J_n(\theta)}\)</span>, <span class="arithmatex">\(T\)</span> is the minimum variance unbiased (efficient) estimator of <span class="arithmatex">\(\theta\)</span>.</p>
 <div class="admonition info">
 <p>Note that <span class="arithmatex">\(\operatorname{E}X^2 = \operatorname{Var}(X) + (\operatorname{E}X)^2\)</span>, and for <span class="arithmatex">\(X \sim N(\mu, \sigma^2)\)</span>, <span class="arithmatex">\(\operatorname{E}X^2 = \mu^2 + \sigma^2\)</span>.</p>

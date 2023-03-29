@@ -2896,41 +2896,41 @@
 <h2 id="_1">极限<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><em>1</em><br />
 求极限</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \lim_{x\rightarrow 0}\frac{\sqrt[3]{1+x}-\sqrt[3]{1-x}}{x}.
-\]</div>
+\]</p>
 <details class="note">
 <summary>Hint</summary>
 <p>利用立方差公式 <span class="arithmatex">\(a^3-b^3 = (a-b)(a^2+ab+b^2)\)</span>，先将无理式有理化，消去零因子，再利用极限的四则运算法则进行计算.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \lim_{x\rightarrow 0}\frac{(1+x)-(1-x)}{\left[
 \left(\sqrt[3]{1+x}\right)^2+
 \left(\sqrt[3]{1+x}\right)
 \left(\sqrt[3]{1-x}\right)+
 \left(\sqrt[3]{1-x}\right)^2
 \right]} = \frac{2}{3}
-\]</div>
+\]</p>
 </details>
 <p><em>2</em><br />
 已知</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \lim_{x\rightarrow\infty}\left(\frac{x^2}{1+x}-ax-b\right)=0,
-\]</div>
+\]</p>
 <p>求常数 <span class="arithmatex">\(a\)</span>、<span class="arithmatex">\(b\)</span>.</p>
 <details class="note">
 <summary>Hint</summary>
 <p>解法一：</p>
 <p>由已知极限存在且 <span class="arithmatex">\(\lim\limits_{x\rightarrow\infty} x\left(\cfrac{\cfrac{x^2}{1+x}}{x}-a-\cfrac{b}{x}\right) = 0\)</span> 知 <span class="arithmatex">\(\lim\limits_{x\rightarrow\infty} x\left(\cfrac{\cfrac{x^2}{1+x}}{x}-a-\cfrac{b}{x}\right) = 0\)</span>，故</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 a = \lim_{x\rightarrow\infty} \cfrac{\cfrac{x^2}{1+x}}{x} = \lim_{x\rightarrow\infty} \cfrac{x}{1+x} = 1,
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 b = \lim_{x\rightarrow\infty} \left(\cfrac{x^2}{1+x}-x\right) = \lim_{x\rightarrow\infty} \cfrac{-x}{1+x} = -1.
-\]</div>
+\]</p>
 <p>解法二：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \lim_{x\rightarrow\infty} \left[\cfrac{x^2 - a(1+x)x - b(1+x)}{1+x}\right] = \lim_{x\rightarrow\infty} \left[\cfrac{(1-a)x^2 - (a+b)x - b}{1+x}\right] = 0,
-\]</div>
+\]</p>
 <p>故 <span class="arithmatex">\(\begin{cases}1-a = 0, \\ a+b = 0, \end{cases}\)</span>, 即 <span class="arithmatex">\(\begin{cases}a = 1, \\ b = -1. \end{cases}\)</span></p>
 </details>
 <p><em>3</em><br />
@@ -2944,29 +2944,29 @@ b = \lim_{x\rightarrow\infty} \left(\cfrac{x^2}{1+x}-x\right) = \lim_{x\rightarr
 <details class="note">
 <summary>Hint</summary>
 <p>令 <span class="arithmatex">\(g(x) = x(x-1)(x-1)\cdots(x-49)(x-51)\cdots(x-100)\)</span>，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(x) = (x-50)g(x).
-\]</div>
+\]</p>
 <p>因此</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f'(x) = g(x) + (x-50)g'(x),
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 f'(50) = g(50) = (50!)(-1)^{50}(50!) = (50!)^2.
-\]</div>
+\]</p>
 </details>
 <h2 id="_2">单变量微分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><em>1</em><br />
 求 <span class="arithmatex">\(\lim\limits_{x\rightarrow0^+}\left(\cos\sqrt{x}\right)^{1/x}\)</span></p>
 <details class="note">
 <summary>Hint</summary>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 &amp; \lim_{x\rightarrow0^+}\left(\cos\sqrt{x}\right)^{1/x}\\
 =&amp; \lim_{x\rightarrow0^+}\left(1+\cos\sqrt{x}-1\right)^{\frac{1}{\cos\sqrt{x}-1}\cdot\frac{\cos\sqrt{x}-1}{x}}\\
 =&amp;\ \mathrm{e}^{-1/2}
 \end{aligned}
-\]</div>
+\]</p>
 </details>
 <p><em>2</em><br />
 试用拉格朗日中值定理证明：</p>

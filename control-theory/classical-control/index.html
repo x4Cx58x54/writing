@@ -3042,38 +3042,38 @@
 <p>开环增益的实质（FCDS, 210）</p>
 <p>二阶与三阶系统的赫尔维茨判据（胡寿松, 107）</p>
 <p>标准二阶欠阻尼系统的阶跃响应：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 c(t) = 1-\frac{1}{\sqrt{1-\zeta^2}}\mathrm{e}^{-\sigma t}\sin(\omega_d t + \beta)
-\]</div>
+\]</p>
 <h3 id="partial-fraction-decomposition">部分分式分解 | Partial Fraction Decomposition<a class="headerlink" href="#partial-fraction-decomposition" title="Permanent link">&para;</a></h3>
 <p>对于各异的 <span class="arithmatex">\(z_i\)</span>，且分母次数高于分子时，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(z) = \frac{g(z)}{\prod\limits_{i = 1}^{n}(z-z_i)}=\sum_{i=1}^n\frac{k_i}{z-z_i},
-\]</div>
+\]</p>
 <p>其中</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 k_i = \lim_{z\rightarrow z_i}(z-z_i)f(z).
-\]</div>
+\]</p>
 <p>对有重根的情况，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 F(s) = \frac{s+3}{(s+1)(s+2)^2} = \frac{C_1}{s+1} + \frac{C_2}{s+2} + \frac{C_3}{(s+2)^2}.
-\]</div>
+\]</p>
 <p>则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 &amp;C_1 = (s+1)F(s)\vert_{s = -1}=2,\\
 &amp;C_2 = \frac{\mathrm{d}}{\mathrm{d}s}\big[(s+2)^2F(s)\big]\vert_{s=-2}=-2,\\
 &amp;C_3 = (s+2)^2F(s)\vert_{s=-2}=-1.
 \end{aligned}
-\]</div>
+\]</p>
 <h3 id="_2">单位反馈系统的开环与闭环传递函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>对于单位反馈系统，即反馈增益为 <span class="arithmatex">\(H(s) = 1\)</span>，若前向增益为 <span class="arithmatex">\(G(s) = \frac{A}{B}\)</span> 的系统，则传递函数</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \varPhi(s) = \frac{\cfrac{A}{B}}{1+\cfrac{A}{B}}=\frac{A}{A+B}.
-\]</div>
+\]</p>
 <h3 id="system-type-and-tracking">System Type and Tracking<a class="headerlink" href="#system-type-and-tracking" title="Permanent link">&para;</a></h3>
 <p>对开环传递函数为 <span class="arithmatex">\(G(s)\)</span> 的单位反馈控制系统，其传递函数为 <span class="arithmatex">\(\varPhi = \frac{G}{1+G}\)</span>。现假设其稳定。则有误差</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 E(s) 
 &amp;= R-B \\
@@ -3081,26 +3081,26 @@ E(s)
 &amp;= R-\varPhi R \\
 &amp;=\frac{1}{1+G}R.
 \end{aligned}
-\]</div>
+\]</p>
 <p>若 <span class="arithmatex">\(G\)</span> 在 <span class="arithmatex">\(s=0\)</span> 处有 <span class="arithmatex">\(n\)</span> 阶极点，则称</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 K = \lim_{s\rightarrow0}s^nG
-\]</div>
+\]</p>
 <p>为开环增益（即约去分母中的 <span class="arithmatex">\(s\)</span> 因式）。另一种定义的方法是</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 G = K\cdot\frac{\prod\limits_i(a_is+1)}{\prod\limits_j(b_js+1)}.
-\]</div>
+\]</p>
 <p>由终值定理，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 e_{\mathrm{ss}}
 &amp;= \lim_{t\rightarrow+\infty}e(t)\\
 &amp;= \lim_{s\rightarrow0}sE(s)\\
 &amp;= \lim_{s\rightarrow0}s\frac{1}{1+G}R(s).
 \end{aligned}
-\]</div>
+\]</p>
 <p>设 <span class="arithmatex">\(r(t) = t^k/k!\)</span> 即 <span class="arithmatex">\(R(s) = 1/s^{k+1}\)</span>，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 e_{\mathrm{ss}}
 &amp;= \lim_{s\rightarrow0}\cfrac{s}{1+G}\frac{1}{s^{k+1}}\\
@@ -3113,13 +3113,13 @@ e_{\mathrm{ss}}
 \infty&amp;, n &lt; k
 \end{cases}
 \end{aligned}
-\]</div>
+\]</p>
 <p>开环增益在 <span class="arithmatex">\(n = 0, 1, 2\)</span> 时分别为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 K = \lim_{s\rightarrow0}G = K_p,\\
 K = \lim_{s\rightarrow0}sG = K_v,\\
 K = \lim_{s\rightarrow0}s^2G = K_a.
-\]</div>
+\]</p>
 <h2 id="root-locus-method">Root-Locus Method<a class="headerlink" href="#root-locus-method" title="Permanent link">&para;</a></h2>
 <p>根轨迹方程、传递函数与特征方程的区别（FCDS, 257, 260）</p>
 <p>根轨迹与阻尼系数（FCDS, 258）</p>

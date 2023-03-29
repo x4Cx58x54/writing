@@ -3039,70 +3039,70 @@
 <ul>
 <li>错误率（error rate）：若分类错误样本有 <span class="arithmatex">\(a\)</span> 个，总样本数 <span class="arithmatex">\(m\)</span> 个，则错误率为</li>
 </ul>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 E = \frac{a}{m}.
-\]</div>
+\]</p>
 <ul>
 <li>精度（accuracy）：</li>
 </ul>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathrm{acc} = 1 - \frac{a}{m}.
-\]</div>
+\]</p>
 <ul>
 <li>查准率（precision）：分类结果为正例的样本中，真正例之占比：</li>
 </ul>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FP}}.
-\]</div>
+\]</p>
 <ul>
 <li>查全率（recall）：在全部正样本中，识别为正之占比：</li>
 </ul>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}}.
-\]</div>
+\]</p>
 <p>平衡点（Break-Even Point，BEP）根据 <span class="arithmatex">\(P = R\)</span> 时的值评价分类器，一个更常用的综合 <span class="arithmatex">\(P\)</span> 与 <span class="arithmatex">\(R\)</span> 的评价指标是 <span class="arithmatex">\(F_1\)</span> 值，定义为 <span class="arithmatex">\(P\)</span> 与 <span class="arithmatex">\(R\)</span> 的调和平均</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 F_1 = \frac{2PR}{P+R}.
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(F_\beta\)</span> 则是 <span class="arithmatex">\(P\)</span> 与 <span class="arithmatex">\(R\)</span> 的调和平均</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 F_\beta = \frac{(1+\beta^2)PR}{(\beta^2P + R)},
-\]</div>
+\]</p>
 <p>即</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{1}{F_\beta} = \frac{1}{1+\beta^2}\left(\frac{1}{P} + \frac{\beta^2}{R}\right).
-\]</div>
+\]</p>
 <p>由于调和平均更重视较小值， <span class="arithmatex">\(\beta\)</span> 代表了 <span class="arithmatex">\(R\)</span> 的相对重要性.</p>
 <p>当有多个二分类混淆矩阵时，可计算各混淆矩阵上的 <span class="arithmatex">\(P\)</span> 与 <span class="arithmatex">\(R\)</span>，然后进行平均得到 <span class="arithmatex">\(\text{macro-}P\)</span> 与 <span class="arithmatex">\(\text{macro-}R\)</span>，进而计算 <span class="arithmatex">\(\text{macro-}F_1\)</span>；或平均混淆矩阵当中的各元素，得到 <span class="arithmatex">\(\overline{\mathrm{TP}}\)</span>、<span class="arithmatex">\(\overline{\mathrm{FP}}\)</span>、<span class="arithmatex">\(\overline{\mathrm{TN}}\)</span>、<span class="arithmatex">\(\overline{\mathrm{FN}}\)</span>，从而计算 <span class="arithmatex">\(\text{micro-}P\)</span> 与 <span class="arithmatex">\(\text{micro-}R\)</span> 与 <span class="arithmatex">\(\text{micro-}F_1\)</span>.</p>
 <p>ROC 曲线的纵轴是真正例率（TPR），横轴是假正例率（FPR），分别定义为正例中正确识别为正的占比与负例中误识别为正的占比：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathrm{TPR} = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}},
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \mathrm{FPR} = \frac{\mathrm{FP}}{\mathrm{TN} + \mathrm{FP}}.
-\]</div>
+\]</p>
 <h2 id="supervised-learning">Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permanent link">&para;</a></h2>
 <h3 id="logistic-regression">Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permanent link">&para;</a></h3>
 <h4 id="logistic">Logistic?<a class="headerlink" href="#logistic" title="Permanent link">&para;</a></h4>
 <p>Logistic 分布的概率累积函数定义为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 F(x) = \frac{1}{1+\exp\left(-\dfrac{x-\mu}{\gamma}\right)}.
-\]</div>
+\]</p>
 <p>这就是广为人知的“S 形曲线”. <span class="arithmatex">\(F\)</span> 取值范围为 <span class="arithmatex">\((0, 1)\)</span>，在 <span class="arithmatex">\(x = \mu\)</span> 处有值 <span class="arithmatex">\(1/2\)</span>，且以此点 <span class="arithmatex">\((\mu, 1/2)\)</span> 中心对称. <span class="arithmatex">\(\gamma &gt; 0\)</span> 时 <span class="arithmatex">\(F\)</span> 单调递增，反之则递减；<span class="arithmatex">\(\gamma\)</span> 绝对值越小，<span class="arithmatex">\(F\)</span> 在 <span class="arithmatex">\(x = \mu\)</span> 附近变化越快；<span class="arithmatex">\(\gamma = +\varepsilon\)</span> 时 <span class="arithmatex">\(F\)</span> 退化为阶跃函数.</p>
 <h4 id="regression">Regression?<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h4>
 <p>Logistic regression 实际上处理的是分类问题，而采用的手段是使用 logistic 曲线拟合概率. 为何不直接用阶跃函数拟合？因为阶跃函数并非处处可微，带来优化上的困难. 下图是一个当 <span class="arithmatex">\(x\)</span> 为 1 维向量时的简单例子.再曲线上的点 <span class="arithmatex">\(y\)</span> 值越大，说明该样本为蓝色的概率越高.</p>
 <iframe src="https://www.desmos.com/calculator/qmzqy5pdix?embed" width="500" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
 
 <p>假设有样本集 <span class="arithmatex">\(\{(x_i, y_i): x_i\in\mathbb{R}^m, \ y_i\in\{0, 1\}, \ i = 1, \cdots, n\}\)</span>，那么要估计的就是概率 <span class="arithmatex">\(p = P(Y = 1 \mid x)\)</span>. 为了方便计算，这里用 <span class="arithmatex">\(\hat{p} = 1 - F(x)\)</span> 估计这个概率，也就是估计曲线的参数 <span class="arithmatex">\(\mu\)</span> 和 <span class="arithmatex">\(\gamma\)</span>. 这里再把这两个参数换成更常用的形式：<span class="arithmatex">\(-\frac{x-\mu}{\gamma} = w\cdot x'\)</span>，其中 <span class="arithmatex">\(x' = [x, 1]^\top\)</span>. 以下均用 <span class="arithmatex">\(x\)</span> 代替 <span class="arithmatex">\(x'\)</span>. 此时问题就已经初步形式化为：求最优的 <span class="arithmatex">\(w\)</span>，使</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \hat{p} = \frac{\exp(w\cdot x)}{1+\exp(w\cdot x)}
-\]</div>
+\]</p>
 <p>最接近 <span class="arithmatex">\(p = P(Y = 1 \mid x)\)</span>.</p>
 <h4 id="logit">Logit?<a class="headerlink" href="#logit" title="Permanent link">&para;</a></h4>
 <p>至此，这条曲线的拟合还并不直观. 这里做一个变换，将概率转换为 logit（称为对率）. 对于某事件的概率 <span class="arithmatex">\(p\)</span>，其对率为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{logit}p = \log \mathrm{odds} = \log\frac{p}{1-p}.
-\]</div>
+\]</p>
 <p>Logit 变换使得</p>
 <ul>
 <li><span class="arithmatex">\(p = 1\)</span> 时，<span class="arithmatex">\(\operatorname{logit}p = +\infty\)</span>,</li>
@@ -3110,141 +3110,141 @@ F(x) = \frac{1}{1+\exp\left(-\dfrac{x-\mu}{\gamma}\right)}.
 <li><span class="arithmatex">\(p = 1\)</span> 时，<span class="arithmatex">\(\operatorname{logit}p = -\infty\)</span>.</li>
 </ul>
 <p>但是最重要的是 logit 和 logistic 曲线两者性质的完美配合使曲线变为了线性：当 <span class="arithmatex">\(p\)</span> 是 logistic 曲线时，代入 <span class="arithmatex">\(p = \frac{\exp(w\cdot x)}{1+\exp(w\cdot x)}\)</span>，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{logit} p = w\cdot x.
-\]</div>
+\]</p>
 <p>即此时事件的对率是一个关于 <span class="arithmatex">\(x\)</span> 的线性函数.</p>
 <h4 id="_5">参数估计<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>再次强调，logistic regression 的目标是用一个 logistic 曲线 <span class="arithmatex">\(\hat{p} = \frac{\exp(w\cdot x)}{1+\exp(w\cdot x)}\)</span> 估计 <span class="arithmatex">\(p = P(Y = 1 \mid x)\)</span>，从而可以实现根据 <span class="arithmatex">\(x\)</span> 预测 <span class="arithmatex">\(y\)</span>. 由于 <span class="arithmatex">\(y_i \in \{0, 1\}\)</span>，有对数似然函数</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \log L(w) &amp;= \log\prod_{i=1}^n \hat{P}(Y = 1\mid x)^{y_i} \hat{P}(Y = 0 \mid x)^{1-y_i} \\
 &amp;= \sum_{i=1}^n (y_i\log \hat{p} + (1-y_i)\log (1-\hat{p})) \\
 &amp;= \sum_{i=1}^n \left(y_i\log \frac{\hat{p}}{1-\hat{p}} + \log (1-\hat{p})\right) \\
 &amp;= \sum_{i=1}^n \left(y_i (w\cdot x_i) - \log (1+\exp(w\cdot x_i))\right).
 \end{aligned}
-\]</div>
+\]</p>
 <p>求解的目标是使 <span class="arithmatex">\(\log L(w)\)</span> 最大，那么定义损失函数样本平均的负对数似然</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \ell(w) = -\frac{1}{n}\log L(w).
-\]</div>
+\]</p>
 <h5 id="_6">随机梯度下降<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h5>
 <p>损失函数的一阶梯度</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{\partial \ell}{\partial w} = \left(\frac{\exp(w \cdot x_i)}{1 + \exp(w \cdot x_i)} - y_i\right)x_i,
-\]</div>
+\]</p>
 <p>迭代下降</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 w^{(k+1)} = w^{(k)} - \alpha \frac{\partial \ell}{\partial w},
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(\alpha\)</span> 为学习率.</p>
 <h5 id="_7">牛顿法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h5>
 <p>对于一个二阶连续可微函数，牛顿法在当前估计的极小值点 <span class="arithmatex">\(w^{(k)}\)</span> 处进行二阶泰勒展开</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \varphi(w) = \ell(w^{(k)}) + \ell'(w^{(k)})(w - w^{(k)}) + \frac{1}{2}\ell''(w^{(k)})(w - w^{(k)})^2.
-\]</div>
+\]</p>
 <p>那么 <span class="arithmatex">\(\varphi(w)\)</span> 是 <span class="arithmatex">\(\ell(w)\)</span> 在 <span class="arithmatex">\(w^{(k)}\)</span> 附近的一个近似，所以 <span class="arithmatex">\(\varphi(w)\)</span> 的极小值点可用于近似 <span class="arithmatex">\(\ell(w)\)</span> 的极小值点. 令 <span class="arithmatex">\(\varphi'(w^{(k+1)}) = 0\)</span>，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 w^{(k+1)} = w^{(k)} - \frac{\ell'(w^{(k)})}{\ell''(w^{(k)})} = w^{(k)} - H_k^{-1} \ell'(w^{(k)}),
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(H_k\)</span> 为海森矩阵，<span class="arithmatex">\(H_{ij} = \dfrac{\partial^2 \ell(w)}{\partial w_i \partial w_j}\)</span>.</p>
 <h3 id="regressions-linear-lasso-and-ridge">Regressions: Linear, LASSO and Ridge<a class="headerlink" href="#regressions-linear-lasso-and-ridge" title="Permanent link">&para;</a></h3>
 <h4 id="linear-regression">Linear Regression<a class="headerlink" href="#linear-regression" title="Permanent link">&para;</a></h4>
 <p>对于样本集</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \{(\boldsymbol{x}_i, y_i)\mid i = 1, \cdots N, \ \boldsymbol{x}_i \in \mathbb{R}^n, \ y_i \in \mathbb{R}\},
-\]</div>
+\]</p>
 <p>在 <span class="arithmatex">\(\boldsymbol{x}\)</span> 末尾扩充一维为 <span class="arithmatex">\([\boldsymbol{x}^\top, 1]^\top\)</span>，以统一回归系数的形式. 那么线性回归模型为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \hat{y}_i = \boldsymbol{w}^\top \boldsymbol{x}_i, \quad i = 1, \cdots, N,
-\]</div>
+\]</p>
 <p>下面改写为矩阵形式：向量 <span class="arithmatex">\(\hat{\boldsymbol{y}} \in \mathbb{R}^N\)</span>，其中第 <span class="arithmatex">\(i\)</span> 维为 <span class="arithmatex">\(\hat{\boldsymbol{y}}_i = \hat{y}_i\)</span>；矩阵 <span class="arithmatex">\(\boldsymbol{X}\)</span> 的第 <span class="arithmatex">\(i\)</span> 行为 <span class="arithmatex">\(\boldsymbol{x}_i^\top\)</span>，那么线性回归的矩阵形式为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \hat{\boldsymbol{y}} = \boldsymbol{Xw}.
-\]</div>
+\]</p>
 <h4 id="gaussian-error">Gaussian Error<a class="headerlink" href="#gaussian-error" title="Permanent link">&para;</a></h4>
 <p>假定估计误差 <span class="arithmatex">\(\hat{y} - y\)</span> 各自独立且服从零均值的高斯分布，那么可以列出关于 <span class="arithmatex">\(\boldsymbol{w}\)</span> 的似然</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 L(\boldsymbol{w}) = \prod_{i=1}^N \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{(\boldsymbol{w}^\top \boldsymbol{x}_i - y_i)^2}{\sigma^2}\right).
-\]</div>
+\]</p>
 <p>取负对数并化简后得到</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 -\log L(\boldsymbol{w}) = N\log(\sigma\sqrt{2\pi}) + \frac{1}{\sigma^2}\sum_{i=1}^N (\boldsymbol{w}^\top \boldsymbol{x}_i - y_i)^2.
-\]</div>
+\]</p>
 <p>那么最大化似然就相当于最小化 <span class="arithmatex">\(\sum_{i=1}^N (\boldsymbol{w}^\top \boldsymbol{x}_i - y_i)^2\)</span>，即平方误差作为损失函数的根据. 换句话说，<strong>假定样本中噪声独立且服从零均值高斯分布时，应使用平方误差</strong>.</p>
 <p>这就是一般的线性回归，而基础资料中很少提及高斯分布这一重要角色. 这里再给出矩阵形式的求解过程. 将损失函数的最小化写为矩阵形式</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 &amp; \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2,\\
 &amp; \text{subject to~~} \boldsymbol{w}\in\mathbb{R^n}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>只需令目标函数梯度为零：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{\partial}{\partial \boldsymbol{w}}\|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2 = 2\boldsymbol{X}^\top(\boldsymbol{Xw}-\boldsymbol{y}) = \boldsymbol{0},
-\]</div>
+\]</p>
 <p>解得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{w} = (\boldsymbol{X}^\top\boldsymbol{X})^{-1}\boldsymbol{X}^\top\boldsymbol{y}.
-\]</div>
+\]</p>
 <h4 id="laplacian-error">Laplacian Error<a class="headerlink" href="#laplacian-error" title="Permanent link">&para;</a></h4>
 <p>假定估计误差独立且服从零均值的拉普拉斯分布，那么同理有似然</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 L(\boldsymbol{w}) = \prod_{i=1}^N \frac{1}{2b}\exp\left(-\frac{|\boldsymbol{w}^\top\boldsymbol{x}_i-y_i|}{b}\right).
-\]</div>
+\]</p>
 <p>同理可知最大化似然相当于最小化绝对值误差 <span class="arithmatex">\(\sum_{i=1}^N |\boldsymbol{w}^\top \boldsymbol{x}_i - y_i|\)</span>.</p>
 <h4 id="lasso-and-ridge-regression">LASSO and Ridge Regression<a class="headerlink" href="#lasso-and-ridge-regression" title="Permanent link">&para;</a></h4>
 <p>LASSO（least absolute shrinkage and selection operator）在线性回归时加入一个参数 <span class="arithmatex">\(t\)</span> 限制 <span class="arithmatex">\(\boldsymbol{w}\)</span> 的 L1 范数：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 &amp; \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2,\\
 &amp; \text{subject to~~} \|\boldsymbol{w}\|_1 \le t.
 \end{aligned}
-\]</div>
+\]</p>
 <p>Ridge 回归在线性回归时加入一个参数 <span class="arithmatex">\(t\)</span> 限制 <span class="arithmatex">\(\boldsymbol{w}\)</span> 的 L2 范数：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 &amp; \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2,\\
 &amp; \text{subject to~~} \|\boldsymbol{w}\|_2^2 \le t.
 \end{aligned}
-\]</div>
+\]</p>
 <p>其惩罚（正则化）形式为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \text{minimize~~} \|\boldsymbol{Xw}-\boldsymbol{y}\|_2^2 + \|\boldsymbol{\Gamma w}\|_2^2,
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(\boldsymbol{\Gamma}\)</span> 称为 Tikhonov 矩阵，一般取单位矩阵的倍数 <span class="arithmatex">\(\alpha\boldsymbol{I}\)</span>. 特别地，问题有解析的最优解</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{w^*} = (\boldsymbol{X^\top X} + \boldsymbol{\Gamma^\top \Gamma})^{-1}\boldsymbol{X^\top y}.
-\]</div>
+\]</p>
 <p>以上两种方法在广义模型上的推广同理.</p>
 <h5 id="penalty-form-equivalence">Penalty Form Equivalence<a class="headerlink" href="#penalty-form-equivalence" title="Permanent link">&para;</a></h5>
 <p>记一般的损失函数为 <span class="arithmatex">\(f(\boldsymbol{w})\)</span>，惩罚/约束方法为 <span class="arithmatex">\(g(\boldsymbol{w})\)</span>，不再局限于平方误差、绝对值误差或 L1 范数、L2 范数. 下面证明惩罚形式的问题和约束形式的问题是等价的，即它们具有相同的最优解. <sup id="fnref:penaltyconstraint"><a class="footnote-ref" href="#fn:penaltyconstraint">1</a></sup></p>
 <p>有惩罚形式的优化问题</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \text{minimize~~} f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}),
-\]</div>
+\]</p>
 <p>记最优解为 <span class="arithmatex">\(\boldsymbol{w}^*\)</span>.</p>
 <p>令 <span class="arithmatex">\(t = g(\boldsymbol{w}^*)\)</span>，约束形式的问题为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 &amp; \text{minimize~~} f(\boldsymbol{w}),\\
 &amp; \text{subject to~~} g(\boldsymbol{w}) \le t.
 \end{aligned}
-\]</div>
+\]</p>
 <p>记最优解为 <span class="arithmatex">\(\boldsymbol{w}^{**}\)</span>.</p>
 <p>由于 <span class="arithmatex">\(\boldsymbol{w}^*\)</span> 是惩罚形式问题最优解，<span class="arithmatex">\(\forall \boldsymbol{w}\)</span></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(\boldsymbol{w^*}) + \lambda g(\boldsymbol{w}^*) \le f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}).\tag{p}
-\]</div>
+\]</p>
 <p>那么对于满足 <span class="arithmatex">\(g(\boldsymbol{w}) \le t\)</span> 的任意 <span class="arithmatex">\(\boldsymbol{w}\)</span> 有 <span class="arithmatex">\(g(\boldsymbol{w}) \le g(\boldsymbol{w}^*)\)</span>，代入上式得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(\boldsymbol{w}^*) \le f(\boldsymbol{w}).
-\]</div>
+\]</p>
 <p>所以 <span class="arithmatex">\(\boldsymbol{w}^*\)</span> 也是约束形式问题的最优解.</p>
 <p>由于 <span class="arithmatex">\(\boldsymbol{w}^{**}\)</span> 是约束形式问题的最优解，<span class="arithmatex">\(g(\boldsymbol{w}^{**}) \le t = g(\boldsymbol{w}^*)\)</span> 且 <span class="arithmatex">\(f(\boldsymbol{w}^{**}) \le f(\boldsymbol{w}^*)\)</span>. 将两式代回 <span class="arithmatex">\(\text{(p)}\)</span> 式，得 <span class="arithmatex">\(\forall\boldsymbol{w}\)</span></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(\boldsymbol{w}^{**}) + \lambda g(\boldsymbol{w}^{**}) \le f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}).
-\]</div>
+\]</p>
 <p>故惩罚形式和约束形式的优化问题是等价的.</p>
 <h2 id="optimizations">Optimizations<a class="headerlink" href="#optimizations" title="Permanent link">&para;</a></h2>
 <h3 id="regularizations">Regularizations<a class="headerlink" href="#regularizations" title="Permanent link">&para;</a></h3>
@@ -3252,27 +3252,27 @@ f(\boldsymbol{w}^{**}) + \lambda g(\boldsymbol{w}^{**}) \le f(\boldsymbol{w}) + 
 <p>使用最优参数子集选择，即认为好的模型参数数量不应过多. 在损失函数中加入正则化项 <span class="arithmatex">\(\|w\|_0\)</span>，以使惩罚与非零参数数量成正比. 这样做的问题在于正则化项的梯度要么不存在，要么为 0，无法使用梯度下降优化，而遍历每一个参数子集的复杂度过高. 所以使用 L0 正则项的最优凸近似代替，这个最优凸近似就是 L1 正则项.</p>
 <h4 id="l1">L1 正则化<a class="headerlink" href="#l1" title="Permanent link">&para;</a></h4>
 <p>使用 LASSO，即加入先验：<span class="arithmatex">\(w_i\)</span> 服从 0 均值的拉普拉斯分布：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(w_i; \mu, b) = \frac{1}{2b}\exp\left(-\frac{|w_i - \mu|}{b}\right).
-\]</div>
+\]</p>
 <p>故似然函数为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 L_1(w) = P(y| w, x)P(w) = L(w)\cdot\prod_{i=1}^d \frac{1}{2b}\exp\left(-\frac{|w_j|}{b}\right).
-\]</div>
+\]</p>
 <p>那么相应地，负对数似然为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 -\log L_1(w) = - \log L(w) + \frac{1}{2b} \|w\|_1.
-\]</div>
+\]</p>
 <p>增加的这一项即为 L1 正则项.</p>
 <h4 id="l2">L2 正则化<a class="headerlink" href="#l2" title="Permanent link">&para;</a></h4>
 <p>使用 ridge 回归，即加入先验：<span class="arithmatex">\(w_i\)</span> 服从零均值的正态分布：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(w_i; 0, \sigma) = \frac{1}{\sigma\sqrt{2\pi}}\exp\left(-\frac{w_i^2}{2\sigma^2}\right).
-\]</div>
+\]</p>
 <p>通过与上面相似的计算，可以得到在损失函数中额外增加的项为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 d\log (\sigma\sqrt{2\pi}) + \frac{1}{2\sigma^2}w^\top w,
-\]</div>
+\]</p>
 <p>忽略常数项，那么等价于增加了 L2 正则项.</p>
 <h4 id="elastic-net">Elastic Net 正则化<a class="headerlink" href="#elastic-net" title="Permanent link">&para;</a></h4>
 <p>Elastic Net 正则化相当于同时加入了 L1 和 L2 正则项. 即正则项为 <span class="arithmatex">\(\lambda_1\|w\|_1 + \lambda_2\|w\|_2\)</span>.</p>
@@ -3366,26 +3366,26 @@ d\log (\sigma\sqrt{2\pi}) + \frac{1}{2\sigma^2}w^\top w,
 <div class="admonition note">
 <p class="admonition-title"><span class="arithmatex">\(\hat{\boldsymbol{v}}\)</span> 和 <span class="arithmatex">\(\hat{\boldsymbol{r}}\)</span> 的期望修正</p>
 <p>递推地</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \boldsymbol{v}_0 &amp;= \boldsymbol{0} \\
 \boldsymbol{v}_1 &amp;= (1-\alpha)\boldsymbol{g}_1 \\
 \boldsymbol{v}_2 &amp;= \alpha(1-\alpha)\boldsymbol{g}_1 + (1-\alpha)\boldsymbol{g}_2 \\
 \boldsymbol{v}_3 &amp;= \alpha^2(1-\alpha)\boldsymbol{g}_1 + \alpha(1-\alpha)\boldsymbol{g}_2 + (1-\alpha)\boldsymbol{g}_3,
 \end{aligned}
-\]</div>
+\]</p>
 <p>易得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{v}_t = (1-\alpha)\sum_{i=1}^t\alpha^{t-i}\boldsymbol{g}_i.
-\]</div>
+\]</p>
 <p>那么其期望</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \operatorname{E}\boldsymbol{v}_t &amp;\approx (1-\alpha)\operatorname{E}\boldsymbol{g}_t\sum_{i=0}^{t-1}\alpha^i \\
 &amp;= (1-\alpha)\operatorname{E}\boldsymbol{g}_t\cdot\frac{1-\alpha^t}{1-\alpha} \\
 &amp;= (1-\alpha^t)\operatorname{E}\boldsymbol{g}_t.
 \end{aligned}
-\]</div>
+\]</p>
 <p>这里使用 <span class="arithmatex">\(\operatorname{E}\boldsymbol{g}_t\)</span> 来近似 <span class="arithmatex">\(\operatorname{E}\sum_{i-1}^t\boldsymbol{g}_i\)</span>，理由是 <span class="arithmatex">\(\alpha\)</span> 使距离较远的 <span class="arithmatex">\(\boldsymbol{g}\)</span> 逐渐衰减，估计误差不会过大.</p>
 <p>所以，使用 <span class="arithmatex">\(\hat{\boldsymbol{v}} = \boldsymbol{v}/(1-\alpha^t)\)</span> 进行修正使得 <span class="arithmatex">\(\operatorname{E}\hat{\boldsymbol{v}}\)</span> 和梯度的一阶原点矩 <span class="arithmatex">\(\operatorname{E}\boldsymbol{g}_t\)</span> 保持一致. 对于 <span class="arithmatex">\(\boldsymbol{r}\)</span> 的修正同理.</p>
 </div>

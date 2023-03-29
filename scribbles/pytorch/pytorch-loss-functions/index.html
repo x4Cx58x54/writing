@@ -2925,27 +2925,27 @@
 <h1 id="pytorch-loss-functions">PyTorch Loss Functions<a class="headerlink" href="#pytorch-loss-functions" title="Permanent link">&para;</a></h1>
 <h2 id="cross-entropy-loss">Cross entropy loss<a class="headerlink" href="#cross-entropy-loss" title="Permanent link">&para;</a></h2>
 <p>Cross entropy of the predicted distribution <span class="arithmatex">\(q\)</span> and target distribution <span class="arithmatex">\(p\)</span> is defined by</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(p, q) = -\sum_x p(x) \log q(x).
-\]</div>
+\]</p>
 <p>A <code>torch.nn.CrossEntropyLoss</code> instance takes parameters <code>input</code> and <code>target</code>. The <code>input</code> is expected to be unnormalized outputs of a model (logits), and <code>target</code> can be distributions or class indices.</p>
 <p>For unbatched data, if the target <span class="arithmatex">\(t = 0, 1, \cdots, N_\mathrm{class} -1\)</span> is a class index and input <span class="arithmatex">\(y\)</span> is a <span class="arithmatex">\((N_{\mathrm{class}},)\)</span> tensor, each class weighted by <span class="arithmatex">\(w\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 l = - w_t\ln \frac{\exp y_t}{\sum_{i=0}^{N_{\mathrm{class}}}\exp y_i}.
-\]</div>
+\]</p>
 <p>If the target <span class="arithmatex">\(t\)</span> is a distribution, with shape <span class="arithmatex">\((N_{\mathrm{class}},)\)</span>,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 l = -\sum_{k=0}^{N_\mathrm{class}} w_k t_k \ln \frac{\exp y_t}{\sum_{i=0}^{N_{\mathrm{class}}}\exp y_i}.
-\]</div>
+\]</p>
 <p>For batched data, the input shape becomes <span class="arithmatex">\((N_\mathrm{minibatch}, N_\mathrm{class})\)</span>, and the target shape becomes <span class="arithmatex">\((N_\mathrm{minibatch},)\)</span> or <span class="arithmatex">\((N_\mathrm{minibatch}, N_\mathrm{class})\)</span>. Resulting loss has in <span class="arithmatex">\(N_\mathrm{minibatch}\)</span> elements. The default <code>reduction</code> method is <code>mean</code>, that is the final result is the mean loss over the minibatch. This parameter can also be <code>sum</code> or <code>none</code>.</p>
 <p>In the case where target contains only class indices, the loss where target is <code>ignore_index</code> is zero.</p>
 <div class="admonition note">
 <p class="admonition-title">Logits</p>
 <p>Logits are the unnormalized predicted scores of a model.</p>
 <p>For binary logit,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{logit} p = \ln \frac{p}{1-p}, \quad p \in (0, 1),
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(p\)</span> is the probability. Logit is also called the log-odds for it is the logarithm of the odds <span class="arithmatex">\(\frac{p}{1-p}\)</span>.</p>
 <p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Logit.svg" width="250px" /></p>
 <p>Binary logit is the reverse of the sigmoid function <span class="arithmatex">\(\displaystyle \sigma(x) = \frac{1}{1 + \mathrm{e}^{-x}} \in (0, 1)\)</span>.</p>
@@ -2953,17 +2953,17 @@ l = -\sum_{k=0}^{N_\mathrm{class}} w_k t_k \ln \frac{\exp y_t}{\sum_{i=0}^{N_{\m
 </div>
 <h2 id="negative-log-likelihood-loss">Negative log likelihood loss<a class="headerlink" href="#negative-log-likelihood-loss" title="Permanent link">&para;</a></h2>
 <p>The likelihood for predicted distribution <span class="arithmatex">\(p\)</span> and target distribution <span class="arithmatex">\(q\)</span> is defined to be</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 L(p, q) = \prod_x q(x)^{p(x)}.
-\]</div>
+\]</p>
 <p>So the negative log likelihood is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 -\log L(p, q) = -\sum_x p(x) \log q(x) = H(p, q).
-\]</div>
+\]</p>
 <p><code>torch.nn.NLLLoss</code> takes log probabilities <span class="arithmatex">\(\log q\)</span> as <code>input</code> and class indices as <code>target</code>. And the rest of the computation is the same as cross entropy as proved above.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{NLLLoss}(x, \mathrm{target}) = \operatorname{CELoss}(\log\operatorname{softmax}(x), \mathrm{target}).
-\]</div>
+\]</p>
 <p>This can be verified by the script below.</p>
 <div class="language-python highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">torch</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -2986,17 +2986,17 @@ L(p, q) = \prod_x q(x)^{p(x)}.
 <h2 id="kl-divergence-loss">KL divergence loss<a class="headerlink" href="#kl-divergence-loss" title="Permanent link">&para;</a></h2>
 <p>The input a <code>torch.nn.KLDivLoss</code> instance takes are log probabilities, and the target is in a tensor of the same shape of input, in or not in log space determined by <code>log_target</code>.</p>
 <p>In the default case, <code>log_target</code> is false, and target is a tensor of probabilities,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 l = \mathrm{target} \cdot (\log \mathrm{target} - \mathrm{input}),
-\]</div>
+\]</p>
 <p>where all the operations are element-wise. If <code>log_target</code> is true,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 l = \exp\mathrm{target} \cdot (\mathrm{target} - \mathrm{input}),
-\]</div>
+\]</p>
 <p>As for PyTorch 1.12, parameter <code>reduction</code> can be <code>batchmean</code>, <code>mean</code>, <code>sum</code> or <code>none</code>. If <code>none</code>, the output is of the same shape as input and target; if <code>mean</code>, <span class="arithmatex">\(\operatorname{output} = \sum l / \operatorname{size}(l)\)</span>; if <code>batchmean</code>, <span class="arithmatex">\(\operatorname{output} = \sum l / \operatorname{size}(l)[0]\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 D(p \parallel q) = \sum p\log\frac{p}{q} = -H(p) + H(p, q),
-\]</div>
+\]</p>
 <p>this can be verified by the script below.</p>
 <div class="language-python highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">torch</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -3019,13 +3019,13 @@ D(p \parallel q) = \sum p\log\frac{p}{q} = -H(p) + H(p, q),
 </code></pre></div>
 <h2 id="binary-cross-entropy-loss">Binary cross entropy loss<a class="headerlink" href="#binary-cross-entropy-loss" title="Permanent link">&para;</a></h2>
 <p>A <code>torch.nn.BCELoss</code> instance takes <code>input</code> and <code>target</code> probabilities of the same shape, and the output is also of the same shape:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 l = - w (y \ln x + (1-y)\ln(1-x)).
-\]</div>
+\]</p>
 <p>A <code>torch.nn.BCEWithLogitsLoss</code> instance combines a sigmoid layer and an BCELoss layer, and takes logits as inputs.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 l = - w (y \ln \sigma(x) + (1-y)\ln(1-\sigma(x))).
-\]</div>
+\]</p>
 
 
   

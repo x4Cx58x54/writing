@@ -2837,21 +2837,21 @@
 <h1 id="gcd-inverse">最小公倍数的逆问题 | GCD Inverse<a class="headerlink" href="#gcd-inverse" title="Permanent link">&para;</a></h1>
 <p><a href="https://www.luogu.com.cn/problem/P1072" target="_blank">Hankson 的趣味题 - 洛谷</a></p>
 <p>满足 <span class="arithmatex">\(\gcd(x, a_0) = a_1\)</span> 的 <span class="arithmatex">\(x\)</span> 必然使得下式成立：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{cases}
 x \bmod a_1 = 0\\
 a_0 \bmod a_1 = 0\\
 \gcd(x, a_0/a_1) = 1
 \end{cases}
-\]</div>
+\]</p>
 <p>类似地，<span class="arithmatex">\(\operatorname{lcm}(x, b_0) = b_1\)</span> 则可以推出</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{cases}
 b_1 \bmod x = 0\\
 b_1 \bmod b_0 = 0\\
 \gcd(x, b_1/b_0) = 1
 \end{cases}
-\]</div>
+\]</p>
 <p>按照以上条件搜索符合的 <span class="arithmatex">\(x\)</span> 即可。</p>
 <div class="language-cpp highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>

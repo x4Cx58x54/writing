@@ -2838,13 +2838,13 @@
 <p>This starts with another question: what are the corner points of the feasible region of a set of linear inequalities? It is called vertex enumeration problem<sup id="fnref:wikivertexenumeration"><a class="footnote-ref" href="#fn:wikivertexenumeration">3</a></sup>.</p>
 <p>Since we already know the linear inequalities <span class="arithmatex">\(a_i^\top x \le b_i, ~i = 1, \cdots, m\)</span>, It can be easily solved by <code>scipy.spatial.HalfspaceIntersection</code><sup id="fnref:scipyhalfspaceintersection"><a class="footnote-ref" href="#fn:scipyhalfspaceintersection">4</a></sup>, if we specify an interior point of the feasible region.</p>
 <p>The Chebyshev center is such interior point, and can be easily calculated with the known linear inequalities. It is the solution <span class="arithmatex">\(x^*\)</span> of the following linear programming problem:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
     \operatorname{maximize}~~&amp; R \\
     \operatorname{subject~to}~~&amp; a_i^\top x + R \|a_i\| \le b_i, \quad i = 1, \cdots, m \\
     &amp; R \ge 0.
 \end{aligned}
-\]</div>
+\]</p>
 <p>Code for vertex enumeration:</p>
 <div class="language-python highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">HalfspaceIntersection</span>

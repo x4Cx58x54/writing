@@ -2983,31 +2983,31 @@
 <p><span class="arithmatex">\(f\)</span> is quasiconvex iff <span class="arithmatex">\(\operatorname{\mathbf{dom}}f\)</span> is convex, and <span class="arithmatex">\(\forall x, y \in \operatorname{\mathbf{dom}}f\)</span>, <span class="arithmatex">\(\forall \theta \in [0, 1]\)</span>, <span class="arithmatex">\(f(\theta x + (1 - \theta)y) \le \max\{f(x, f(y)\}\)</span>, this inequality is called <strong>Jensen's inequality for quasiconvex functions</strong>.</p>
 <h2 id="convex-optimization-problems">Convex Optimization Problems<a class="headerlink" href="#convex-optimization-problems" title="Permanent link">&para;</a></h2>
 <p>A <strong>optimization problem</strong> has the following form. Its domain <span class="arithmatex">\(\mathcal{D} = \bigcap \operatorname{\mathbf{dom}}f_i \cap \bigcap \operatorname{\mathbf{dom}}h_i\)</span>. Its optimal value is denoted by <span class="arithmatex">\(p^* = f_0(x^*)\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \operatorname{minimize~~}&amp; f_0(x)\\
 \operatorname{s.t.~~}&amp; f_i(x) \le 0, \quad i = 1, 2, \cdots, m\\
 &amp; h_i(x) = 0, \quad i = 1, 2, \cdots, p.
 \end{aligned}
-\]</div>
+\]</p>
 <p>A <strong>convex optimization problem</strong> is a minimization problem with the objective function and inequality constraints are convex, and equality constraints are affine.</p>
 <p><strong>Optimality criterion</strong> for differentiable objective functions: <span class="arithmatex">\(x_0\)</span> is optimal iff <span class="arithmatex">\(\nabla f_0(x_0)^\top (y-x) \ge 0\)</span> for all <span class="arithmatex">\(y\)</span> in feasible set.</p>
 <h2 id="duality">Duality<a class="headerlink" href="#duality" title="Permanent link">&para;</a></h2>
 <p><strong>Lagrange function</strong> <span class="arithmatex">\(L(x, \lambda, \nu) = f_0(x) + \sum \lambda_i f_i(x) + \sum \nu_i h_i(x)\)</span>.</p>
 <p><strong>Lagrange dual function</strong> <span class="arithmatex">\(g(\lambda, \nu) = \inf\limits_{x\in \mathcal{D}} L(x, \lambda, \nu)\)</span>. It is the infimum of a set of affine function therefore it is concave. For any <span class="arithmatex">\(\lambda \succeq 0\)</span> and any <span class="arithmatex">\(\nu\)</span>, it always holds that <span class="arithmatex">\(g(\lambda, \nu) \le p^*\)</span>.</p>
 <p>The <strong>Lagrange dual problem</strong> associated to the <strong>primal problem</strong> is shown as follows, and its optimal value is denoted by <span class="arithmatex">\(d^* = g(\lambda^*, \nu^*)\)</span>.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \operatorname{maximize~~}&amp; g(\lambda, \nu)\\
 \operatorname{s.t.~~}&amp; \lambda \succeq 0.
 \end{aligned}
-\]</div>
+\]</p>
 <p><strong>Weak duality</strong> always holds, even if the problem is not convex: <span class="arithmatex">\(d^* \le p^*\)</span>.</p>
 <p><strong>Strong duality</strong> usually holds: <span class="arithmatex">\(d^* = p^*\)</span> for convex optimization problems.</p>
 <p><strong>Slater's condition</strong>: <span class="arithmatex">\(\exists x \in \operatorname{\mathbf{relint}}D\)</span>, <span class="arithmatex">\(f_i(x) &lt; 0\)</span>, <span class="arithmatex">\(i = 1, 2, \cdots, m\)</span>, <span class="arithmatex">\(Ax = b\)</span> (Strictly feasible point). If it holds for a convex optimization problem, the strong duality holds.</p>
 <p>If some of the inequality constraints are affine, they do not need to hold with strict inequality in the refined Slater's condition.</p>
 <p><strong>KKT optimality conditions</strong>: <span class="arithmatex">\(L^*(x) = L(x,\lambda^*, \nu^*)\)</span> has zero derivative at <span class="arithmatex">\(x^*\)</span>, namely</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \nabla f_0(x^*) + \sum \lambda_i^* \nabla f_i(x^*) + \sum \nu_i^* \nabla h(x^*) = 0&amp; \text{ (zero derivative)},\\
 f_i(x^*) \le 0&amp; \text{ (primal problem constraints)},\\
@@ -3015,7 +3015,7 @@ h_i(x^*) = 0&amp; \text{ (primal problem constraints)},\\
 \lambda_i \ge 0&amp; \text{ (dual problem constraints)},\\
 \lambda_i f_i(x_i^*) = 0&amp; \text{ (zero optimal duality gap)}.\\
 \end{aligned}
-\]</div>
+\]</p>
 <p>For any optimization problem with differentiable objective and constraint functions for which strong duality obtains, any primal optimal and dual optimal points must satisfy KKT conditions, that is, KKT conditions are necessary for optimality.</p>
 <p>For any convex optimization problem, any pair of points that satisfy KKT conditions are primal optimal and dual optimal, that is, KKT conditions are sufficient for optimality.</p>
 

@@ -3335,31 +3335,31 @@
 <h1 id="linear-algebra">Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permanent link">&para;</a></h1>
 <h2 id="_1">矩阵与行列式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \left(A^\top\right)^{-1} = \left(A^{-1}\right)^\top
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 (AB)^{-1} = B^{-1}A^{-1}
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 (AB)^\top = B^\top A^\top
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \det A = \prod_i \lambda_i
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \det AB = \det A\cdot \det B
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \operatorname{Tr}(A) = \sum_i \lambda_i
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \operatorname{Tr}(AB) = \operatorname{Tr}(BA)
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \operatorname{Tr}(ABC) = \operatorname{Tr}(BCA) =  \operatorname{Tr}(CAB)
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 A_{2\times 2}^{-1} =
 \begin{bmatrix}
 a &amp; b\\
@@ -3370,7 +3370,7 @@ c &amp; d
 d &amp; -b\\
 -c &amp; a
 \end{bmatrix}
-\]</div>
+\]</p>
 <h3 id="derivatives">Derivatives<a class="headerlink" href="#derivatives" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\(a\)</span> 为标量，<span class="arithmatex">\(\boldsymbol{b}\)</span> 与 <span class="arithmatex">\(\boldsymbol{x}\)</span> 均为列向量，<span class="arithmatex">\(A\)</span> 为矩阵，且维数使得运算合法，则</p>
 <table>
@@ -3426,16 +3426,16 @@ d &amp; -b\\
 <h3 id="_2">矩阵乘法的计算<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(M_{m\times n}\)</span> 代表矩阵 <span class="arithmatex">\(M\)</span> 有 <span class="arithmatex">\(m\)</span> 行、<span class="arithmatex">\(n\)</span> 列. 设 <span class="arithmatex">\(A_{m\times n}B_{n\times p}=C_{m\times p}\)</span>：</p>
 <h4 id="_3">点积<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 c_{ij} = \sum_k a_{ik}b_{kj} = A_{i,:}\cdot B_{:,j}.
-\]</div>
+\]</p>
 <p>即 <span class="arithmatex">\(C\)</span> 中第 <span class="arithmatex">\(i\)</span> 行，第 <span class="arithmatex">\(j\)</span> 列的元素恰好是 <span class="arithmatex">\(A\)</span> 的第 <span class="arithmatex">\(i\)</span> 行与 <span class="arithmatex">\(B\)</span> 的第 <span class="arithmatex">\(j\)</span> 列之内积.</p>
 <h4 id="_4">矩阵乘以列向量<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(C\)</span> 的第 <span class="arithmatex">\(j\)</span> 列是 <span class="arithmatex">\(A\)</span> 各列的线性组合，其系数为 <span class="arithmatex">\(B\)</span> 的第 <span class="arithmatex">\(j\)</span> 列. 这一列与 <span class="arithmatex">\(B\)</span> 的其它列无关. 这样看来，<span class="arithmatex">\(C\)</span> 的每一列都是 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 中对应列的乘积.</p>
 <h4 id="_5">行向量乘以矩阵<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(C\)</span> 的第 <span class="arithmatex">\(i\)</span> 行是 <span class="arithmatex">\(B\)</span> 各行的线性组合，其系数为 <span class="arithmatex">\(A\)</span> 的第 <span class="arithmatex">\(i\)</span> 行. 这一行与 <span class="arithmatex">\(A\)</span> 的其它行无关. 这样看来，<span class="arithmatex">\(C\)</span> 的每一行都是 <span class="arithmatex">\(A\)</span> 中对应行与 <span class="arithmatex">\(B\)</span> 的乘积.</p>
 <p>换一种说法，左乘一个矩阵相当于对右矩阵的各行进行线性组合. 积矩阵和左矩阵的行数相同，且积矩阵中每一行都是左矩阵中对应位置的行中各元素作为系数，将右矩阵每一行组合相加得到的结果，即左矩阵对应行与右矩阵的乘积. 相应地，右乘对应的是列变换.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 \\
 -----\\
@@ -3454,7 +3454,7 @@ c_{ij} = \sum_k a_{ik}b_{kj} = A_{i,:}\cdot B_{:,j}.
 ---\\
 \\
 \end{bmatrix}
-\]</div>
+\]</p>
 <h4 id="_6">列向量乘以行向量<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>将 <span class="arithmatex">\(A\)</span> 中各列和 <span class="arithmatex">\(B\)</span> 中各行对应相乘，得到的矩阵全部相加即得 <span class="arithmatex">\(C\)</span>. 值得一提的是，列向量乘以行向量得到的矩阵中，每一列都是列向量的倍数，每一行都是行向量的倍数.</p>
 <h3 id="_7">关于行列式的变换<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
@@ -3463,7 +3463,7 @@ c_{ij} = \sum_k a_{ik}b_{kj} = A_{i,:}\cdot B_{:,j}.
 <li>用 <span class="arithmatex">\(k\)</span> 乘以某行/列，行列式的值亦变为其 <span class="arithmatex">\(k\)</span> 倍；</li>
 <li>将某行/列视为两数之和，则行列式可根据该行/列拆分：</li>
 </ul>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{vmatrix}
 a + a' &amp; b + b' \\
 c &amp; d
@@ -3478,7 +3478,7 @@ c &amp; d
 a' &amp; b' \\
 c &amp; d
 \end{vmatrix};
-\]</div>
+\]</p>
 <ul>
 <li>某行/列的 <span class="arithmatex">\(k\)</span> 倍加至另一行/列，行列式的值不变.</li>
 </ul>
@@ -3498,26 +3498,26 @@ c &amp; d
 </ul>
 <p>若 <span class="arithmatex">\(A\)</span> 的逆存在，则 <span class="arithmatex">\(A^{-1}A\boldsymbol{x} = A^{-1}\boldsymbol{0}\)</span> 将意味着 <span class="arithmatex">\(\boldsymbol{x}=\boldsymbol{0}\)</span>，矛盾.</p>
 <h4 id="gauss-jordan">Gauss-Jordan 法求逆<a class="headerlink" href="#gauss-jordan" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \big[A ~~ I\big] \xRightarrow{\mathrm{r}} \big[I ~~ A^{-1}\big]
-\]</div>
+\]</p>
 <p>本质是求解 <span class="arithmatex">\(n\)</span> 个 <span class="arithmatex">\(n\)</span> 元线性方程组，其中第 <span class="arithmatex">\(k\)</span> 个方程组的常数项向量是 <span class="arithmatex">\(I\)</span> 的第 <span class="arithmatex">\(k\)</span> 列，将得到的解向量依次排列即得到逆. 如第一个方程组是 <span class="arithmatex">\(A\boldsymbol{x}_1=\big[1, 0, 0, \cdots\big]^\top\)</span>. 将这些方程组直接合成一个矩阵，进行 Gauss-Jordan 消元就成为了上面的式子所表示的过程.</p>
 <p>宏观地来看，G-J 消元所使用的是初等行变换，相当于左乘一个矩阵. 左乘某矩阵使得 <span class="arithmatex">\(A\)</span> 变为 <span class="arithmatex">\(I\)</span>，那么该矩阵就是 <span class="arithmatex">\(A^{-1}\)</span>，它左乘 <span class="arithmatex">\(I\)</span> 得到自身. 这一步即右矩阵的每一列决定了左矩阵各列的线性组合，并得到积矩阵中对应位置的列.</p>
 <h4 id="_10">初等变换矩阵的逆<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <p>对于将某一行/列乘以 <span class="arithmatex">\(k\)</span> 倍，加至另一行/列的情况，对应的矩阵的形式为单位矩阵中的某一个零换为 <span class="arithmatex">\(k\)</span>. 如矩阵</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 1 &amp; 0 &amp; 0 \\
 2 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1
 \end{bmatrix}
-\]</div>
+\]</p>
 <p>代表的是将第一行的 2 倍加至第二行，或第二列的 2 倍加至第一列. 按照这个思想，它的逆就是将 2 反号.</p>
 <p>对于交换行/列的情况，这样的矩阵形式为相应地重新排列单位矩阵的行/列所得结果，称为置换矩阵. 置换矩阵的逆是它的转置（正交矩阵），并且任意同阶的所有置换矩阵，在乘法上具有封闭性，且构成一个乘法群.</p>
 <h3 id="lu">LU 分解<a class="headerlink" href="#lu" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = LU
-\]</div>
+\]</p>
 <p>对可逆矩阵 <span class="arithmatex">\(A\)</span> 进行 Gauss 消元，可以得到上三角矩阵 <span class="arithmatex">\(U\)</span>，消元的过程相当于将一系列初等行变换矩阵左乘至 <span class="arithmatex">\(A\)</span>，将它们作为整体求逆即得到下三角矩阵 <span class="arithmatex">\(L\)</span>.</p>
 <p>若消元中会出现主元为零的情况，则需要进行行交换，此时 LU 分解的形式变为 <span class="arithmatex">\(PA=LU\)</span>.</p>
 <h2 id="_11">向量空间与线性方程组<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
@@ -3544,20 +3544,20 @@ A = LU
 <p>对于齐次线性方程组 <span class="arithmatex">\(A\boldsymbol{x} = \boldsymbol{0}\)</span>，首先进行 Gauss-Jordan 消元，将系数矩阵 <span class="arithmatex">\(A\)</span> 变换为上三角矩阵（行阶梯形矩阵，row echelon form）<span class="arithmatex">\(U\)</span>、最简行阶梯形矩阵（reduced row echelon form，rref）<span class="arithmatex">\(R\)</span>.</p>
 <p>此时每次选出一个自由变量，设其值为 1，其余自由变量为 0，解出主元. 对每一个自由变量均进行这样的处理，得到的解的集合即为解空间的一组基. 这个方法经过整理后可以得到以下的矩阵方法.</p>
 <p><span class="arithmatex">\(R\)</span> 中主元所在的行列交集会正好组成一个单位矩阵. 可以通过列交换将这部分移动到矩阵左上方. 此时的系数矩阵的形式表现为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R' = \begin{bmatrix}
 I &amp; F \\
 0 &amp; 0
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(F\)</span> 是由自由变量的系数组成的矩阵. 经过这样的列交换，解的各分量就按照主元和自由变量分开为 <span class="arithmatex">\(\boldsymbol{x} = \begin{bmatrix}\boldsymbol{x}_{\mathrm{pivot}} \\ \boldsymbol{x}_{\mathrm{free}}\end{bmatrix}\)</span> 的形式. 每次选出一个自由变量设为 1，其余为 0 的步骤可以合为一步：将 <span class="arithmatex">\(\boldsymbol{x}_{\mathrm{free}}\)</span> 替换为 <span class="arithmatex">\(I\)</span>. 观察也可以得到，以上得到的每一组解中主元正好是 <span class="arithmatex">\(F\)</span> 中某一列反号的结果，合起来就是将 <span class="arithmatex">\(\boldsymbol{x}_{\mathrm{pivot}}\)</span> 替换为 <span class="arithmatex">\(-F\)</span>. 由此得到的矩阵</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 N' = \begin{bmatrix}
 -F \\ I
 \end{bmatrix}
-\]</div>
+\]</p>
 <p>称为零空间矩阵，其各列为零空间的一组基. 容易验证，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R'N' =
 \begin{bmatrix}
 I &amp; F \\
@@ -3567,43 +3567,43 @@ I &amp; F \\
 -F \\ I
 \end{bmatrix}
 = O.
-\]</div>
+\]</p>
 <details class="abstract">
 <summary>E.g.</summary>
 <p>解线性方程组</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 1 &amp; 2 &amp; 2 &amp; 2 \\
 2 &amp; 4 &amp; 6 &amp; 8 \\
 3 &amp; 6 &amp; 8 &amp; 10
 \end{bmatrix}
 \boldsymbol{x} = \boldsymbol{0}.
-\]</div>
+\]</p>
 <p>系数矩阵</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = \begin{bmatrix}
 1 &amp; 2 &amp; 2 &amp; 2 \\
 2 &amp; 4 &amp; 6 &amp; 8 \\
 3 &amp; 6 &amp; 8 &amp; 10
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>进行 Gauss-Jordan 消元，得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 U = \begin{bmatrix}
 1 &amp; 2 &amp; 2 &amp; 2 \\
 0 &amp; 0 &amp; 2 &amp; 4 \\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{bmatrix},
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 R = \begin{bmatrix}
 1 &amp; 2 &amp; 0 &amp; -2 \\
 0 &amp; 0 &amp; 1 &amp; 2 \\
 0 &amp; 0 &amp; 0 &amp; 0
 \end{bmatrix} = \operatorname{rref}(A).
-\]</div>
+\]</p>
 <p>列交换，得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R' = \begin{bmatrix}
 1 &amp; 0 &amp; 2 &amp; -2 \\
 0 &amp; 1 &amp; 0 &amp; 2 \\
@@ -3617,27 +3617,27 @@ F = \begin{bmatrix}
 2 &amp; -2 \\
 0 &amp; 2
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>列交换后的零空间矩阵</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 N' = \begin{bmatrix}
 -2 &amp; 2 \\
 0 &amp; -2 \\
 1 &amp; 0 \\
 0 &amp; 1
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>恢复到原来的变元顺序，得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 N = \begin{bmatrix}
 -2 &amp; 2 \\
 1 &amp; 0 \\
 0 &amp; -2 \\
 0 &amp; 1
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>故解为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{x} = c_1
 \begin{bmatrix}
 -2 \\
@@ -3652,29 +3652,29 @@ N = \begin{bmatrix}
 1
 \end{bmatrix}, \quad
 c_1, c_2 \in \mathbb{R}.
-\]</div>
+\]</p>
 </details>
 <p>对于非齐次方程组 <span class="arithmatex">\(A\boldsymbol{x} = \boldsymbol{b}\)</span>，G-J 消元后将所有自由变量设为零，解出特解. 特解与零空间之和即为通解.</p>
 <h3 id="_15">秩<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p>矩阵 <span class="arithmatex">\(A\)</span> 的秩即为 <span class="arithmatex">\(A\)</span> 的行阶梯式中非全零行数.</p>
 <p>乘以一个矩阵不可能使得结果的秩更大，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R(AB) \le \min\{(R(A), R(B)\}.
-\]</div>
+\]</p>
 <p>若 <span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 的方阵，且 <span class="arithmatex">\(B\)</span> 是任意可以与之相乘的矩阵，则有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 R(AB) \ge R(A) + R(B) - n.
-\]</div>
+\]</p>
 <p>对于两矩阵之和的秩，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 |R(A) - R(B)| \le R(A+B) \le R(A) + R(B).
-\]</div>
+\]</p>
 <details class="note" open="open">
 <summary>Circuit in Matrix Form</summary>
 <p>电路拓扑结构与参考方向如图所示.</p>
 <p><img alt="" src="../img/la_circuit.png" width="200px" /></p>
 <p>使用矩阵表示此结构. 矩阵第 <span class="arithmatex">\(k\)</span> 行表示边 <span class="arithmatex">\(e_k\)</span>，始点序号对应的列上为 -1，终点序号对应的列上为 1，得到矩阵</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = \begin{bmatrix}
 -1 &amp; 1 &amp; 0 &amp; 0 \\
 0 &amp; -1 &amp; 1 &amp; 0 \\
@@ -3682,10 +3682,10 @@ A = \begin{bmatrix}
 -1 &amp; 0 &amp; 0 &amp; 1 \\
 0 &amp; 0 &amp; -1 &amp; 1
 \end{bmatrix}.
-\]</div>
+\]</p>
 <h4 id="_16">电势、零空间<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
 <p>设结点 <span class="arithmatex">\(v_k\)</span> 电势为 <span class="arithmatex">\(u_k\)</span>，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A\boldsymbol{u} =
 \begin{bmatrix}
 u_2 - u_1 \\
@@ -3694,11 +3694,11 @@ u_3 - u_1 \\
 u_4 - u_1 \\
 u_4 - u_3 \\
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>各分量对应各边上的电势差. <span class="arithmatex">\(A\)</span> 的零空间为 <span class="arithmatex">\(N(A) = \left\{\big[k~~k~~k~~k\big]^\top\right\}, k\in\mathbb{R}\)</span>，说明各边电势差为零时，各结点必然等电势.</p>
 <h4 id="_17">电流、左零空间<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(e_k\)</span> 上的电流为 <span class="arithmatex">\(i_k\)</span>，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A\boldsymbol{i} =
 \begin{bmatrix}
 -i_1 - i_3 - i_4 \\
@@ -3706,35 +3706,35 @@ i_1 - i_2 \\
 i_2 + i_3 - i_5 \\
 i_4 + i_5 \\
 \end{bmatrix}
-\]</div>
+\]</p>
 <p>各分量对应各点流入的净电流. 此外，欧姆定律可表示为 <span class="arithmatex">\(\boldsymbol{v} = R\boldsymbol{i}\)</span>，其中 <span class="arithmatex">\(\boldsymbol{v} = A\boldsymbol{u}\)</span> 为电势差向量，<span class="arithmatex">\(R\)</span> 为电阻矩阵.</p>
 <p>基尔霍夫（Кирхгоф，Kirchhoff）电流定律：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^\top\boldsymbol{i} = \boldsymbol{0}.
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(A\)</span> 的左零空间 <span class="arithmatex">\(N(A^\top)\)</span> 维数为 2，这说明满足 KCL 的电流取值空间是 2 个基底的线性组合. 这也和电路中有 2 个独立回路相符合. 如使用回路 <span class="arithmatex">\(\big\{e_1, e_2, -e_3\big\}\)</span> 和 <span class="arithmatex">\(\big\{e_3, e_5, -e_4\big\}\)</span> 可表示任意合法电流取值</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{i} =
 c_1\begin{bmatrix}1 \\ 1 \\ -1 \\ 0 \\ 0\end{bmatrix} +
 c_2\begin{bmatrix}0 \\ 0 \\ 1 \\ -1 \\ 1\end{bmatrix},
 \quad c_1, c_2 \in \mathbb{R}.
-\]</div>
+\]</p>
 <h4 id="_18">行、回路、线性相关<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
 <p><span class="arithmatex">\(A\)</span> 中某行向量组线性相关的充要条件是该向量组所表示的边包含回路. 即回路是产生线性相关性的原因.</p>
 <h4 id="_19">列、秩<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
 <p>显然，当 <span class="arithmatex">\(n-1\)</span> 个结点的出入情况确定后，最后一个点的出入情况也随之确定. 这在矩阵 <span class="arithmatex">\(A\)</span> 中表现为所有列之和为 <span class="arithmatex">\(\boldsymbol{0}\)</span>，并且 <span class="arithmatex">\(A\)</span> 的秩比结点数少 1，即 <span class="arithmatex">\(r = n-1\)</span>. 零空间的维数为 1，与此结果相符合.</p>
 <h4 id="_20">欧拉公式<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
 <p>根据之前的讨论</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \dim N(A^\top) &amp;= m - r \\
 N_\mathrm{indep.\ loop} &amp;= N_\mathrm{edge} - (N_\mathrm{node} - 1),
 \end{aligned}
-\]</div>
+\]</p>
 <p>由此得到</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 N_\mathrm{node} - N_\mathrm{edge} + N_\mathrm{indep.\ loop} = 1.
-\]</div>
+\]</p>
 <p>这是欧拉公式的更一般的形式，且在连通非平面图上也成立. 从另一角度看，任意连通图中，考虑某生成树，任一非树边都对应一个独立回路，即 <span class="arithmatex">\(L = E - (V - 1)\)</span>，和上面的公式是一致的.</p>
 </details>
 <h3 id="_21">线性方程组的解<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
@@ -3799,96 +3799,96 @@ N_\mathrm{node} - N_\mathrm{edge} + N_\mathrm{indep.\ loop} = 1.
 <p><img alt="" src="../img/la_projection.png" width="320px" /></p>
 <p>设 <span class="arithmatex">\(\mathbb{R}^m\)</span> 中一向量空间（过原点的超平面）<span class="arithmatex">\(\alpha\)</span> 的一组基底为 <span class="arithmatex">\(\{\boldsymbol{a}_1, \boldsymbol{a}_2,\cdots, \boldsymbol{a}_n\}\)</span>，向量 <span class="arithmatex">\(\boldsymbol{b}\)</span> 在 <span class="arithmatex">\(\alpha\)</span> 上的投影为 <span class="arithmatex">\(\boldsymbol{p}\)</span>，差值为 <span class="arithmatex">\(\boldsymbol{e} = \boldsymbol{b} - \boldsymbol{p}\)</span>. 下面讨论投影矩阵 <span class="arithmatex">\(P\)</span>，该矩阵满足 <span class="arithmatex">\(\boldsymbol{p} = P\boldsymbol{b}\)</span>.</p>
 <p>设矩阵 <span class="arithmatex">\(A = \big[\boldsymbol{a}_1, \boldsymbol{a}_2,\cdots, \boldsymbol{a}_n\big]\)</span>，则其列空间即为 <span class="arithmatex">\(\alpha\)</span>. 由于投影 <span class="arithmatex">\(\boldsymbol{p}\)</span> 必然位于 <span class="arithmatex">\(\alpha\)</span> 上，故 <span class="arithmatex">\(\boldsymbol{p}\)</span> 可表达为 <span class="arithmatex">\(\boldsymbol{a}\)</span> 的线性组合</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{p} = \sum_{i=1}^n x_i\boldsymbol{a}_i,\quad x_i\in \mathbb{R},
-\]</div>
+\]</p>
 <p>写成矩阵的形式为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{p} = A\boldsymbol{x}.
-\]</div>
+\]</p>
 <p>由投影的性质有 <span class="arithmatex">\(\alpha\perp\boldsymbol{e}\)</span>，即 <span class="arithmatex">\(\boldsymbol{a}_i\cdot\boldsymbol{e} = 0\)</span>，<span class="arithmatex">\(i = 1, 2, \cdots, n\)</span>. 写成矩阵形式，得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^\top\boldsymbol{e} = \boldsymbol{0}.
-\]</div>
+\]</p>
 <details class="note" open="open">
 <summary>Note</summary>
 <p>以上方程表明 <span class="arithmatex">\(\boldsymbol{e}\)</span> 在 <span class="arithmatex">\(A\)</span> 的左零空间 <span class="arithmatex">\(N(A^\top)\)</span> 当中，而 <span class="arithmatex">\(\boldsymbol{e}\)</span> 与 <span class="arithmatex">\(A\)</span> 的列空间 <span class="arithmatex">\(C(A) = \alpha\)</span> 垂直，这也表明了左零空间和列空间的正交关系.</p>
 </details>
 <p>继续化简，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 A^\top(\boldsymbol{b}-\boldsymbol{p}) &amp;= \boldsymbol{0} \\
 A^\top(\boldsymbol{b}-A\boldsymbol{x}) &amp;= \boldsymbol{0} \\
 A^\top A\boldsymbol{x} &amp;= A^\top\boldsymbol{b},
 \end{aligned}
-\]</div>
+\]</p>
 <p>最后得到</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{x} = \left(A^\top A\right)^{-1}A^\top\boldsymbol{b},
-\]</div>
+\]</p>
 <p>投影</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{p} = A\left(A^\top A\right)^{-1}A^\top\boldsymbol{b},
-\]</div>
+\]</p>
 <p>投影矩阵</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P = A\left(A^\top A\right)^{-1}A^\top.
-\]</div>
+\]</p>
 <p>这个投影矩阵必然是对称的 (<span class="arithmatex">\(P^\top = P\)</span>)，并且满足幂等律 (<span class="arithmatex">\(P^2 = P\)</span>). 幂等律的几何解释是：无论将 <span class="arithmatex">\(\boldsymbol{b}\)</span> 向 <span class="arithmatex">\(\alpha\)</span> 投影多少次，得到的结果都相同.</p>
 <p>特别地，当 <span class="arithmatex">\(\alpha\)</span> 为一维时，<span class="arithmatex">\(P\)</span> 与 <span class="arithmatex">\(\boldsymbol{p}\)</span> 退化为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P = \frac{\boldsymbol{a}\boldsymbol{a}^\top}{\boldsymbol{a}^\top\boldsymbol{a}},
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \boldsymbol{p} = \boldsymbol{a}~\frac{\boldsymbol{a}^\top\boldsymbol{b}}{\boldsymbol{a}^\top\boldsymbol{a}} = \frac{|\boldsymbol{b}|}{|\boldsymbol{a}|}\cos\langle\boldsymbol{a}, \boldsymbol{b}\rangle~\boldsymbol{a}.
-\]</div>
+\]</p>
 <p>当 <span class="arithmatex">\(A\)</span> 为可逆矩阵时，这意味着张成 <span class="arithmatex">\(\alpha\)</span> 的一组基底包含 <span class="arithmatex">\(m\)</span> 个 <span class="arithmatex">\(\mathbb{R}^m\)</span> 中的向量，故 <span class="arithmatex">\(\alpha = \mathbb{R}^m\)</span>，此时 <span class="arithmatex">\(\boldsymbol{b}\)</span> 必然已经在 <span class="arithmatex">\(\alpha\)</span> 上，投影后还在原来的位置. 相应地，投影矩阵退化为 <span class="arithmatex">\(R = I\)</span>.</p>
 <p>当 <span class="arithmatex">\(\boldsymbol{b}\perp\alpha\)</span> 时，即 <span class="arithmatex">\(\boldsymbol{b}\perp C(A)\)</span>，故 <span class="arithmatex">\(\boldsymbol{b}\in N(A^\top)\)</span>，此时 <span class="arithmatex">\(\boldsymbol{p} = A\left(A^\top A\right)^{-1}\left(A^\top\boldsymbol{b}\right) = \boldsymbol{0}\)</span>.</p>
 <h3 id="_27">最小二乘法<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
 <p>当线性方程组 <span class="arithmatex">\(A\boldsymbol{x} = \boldsymbol{b}\)</span> 无解时，<span class="arithmatex">\(\boldsymbol{b}\)</span> 不在 <span class="arithmatex">\(A\)</span> 的列空间内. 为了找到一个尽可能近似满足方程的解 <span class="arithmatex">\(\hat{\boldsymbol{x}}\)</span>，需要在 <span class="arithmatex">\(A\)</span> 的列空间内找到一个与 <span class="arithmatex">\(\boldsymbol{b}\)</span> 最接近的向量 <span class="arithmatex">\(\boldsymbol{p}\)</span>，将原方程变为 <span class="arithmatex">\(A\hat{\boldsymbol{x}} = \boldsymbol{p}\)</span>.</p>
 <p>所谓“最接近”，即为最小化 <span class="arithmatex">\(\|A\boldsymbol{x}-\boldsymbol{b}\|\)</span>，使方程两边的向量间距最小. 根据几何性质，<span class="arithmatex">\(\boldsymbol{p}\)</span> 即为 <span class="arithmatex">\(\boldsymbol{b}\)</span> 在 <span class="arithmatex">\(A\)</span> 的列空间上的投影. 根据前面讨论的投影矩阵，投影后的方程为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^\top A\hat{\boldsymbol{x}} = A^\top\boldsymbol{b}.
-\]</div>
+\]</p>
 <p>在统计学当中，这个方法正是最小二乘法. 原方程组中的每一个方程均代表一个样本点，<span class="arithmatex">\(\boldsymbol{b}\)</span> 中的每一个分量是样本点的因变量值，<span class="arithmatex">\(\boldsymbol{p}\)</span> 的每一个分量是各样本点拟合后的值，<span class="arithmatex">\(\boldsymbol{x}\)</span> 是拟合直线的系数向量.</p>
 <p>当 <span class="arithmatex">\(A\)</span> 的各列线性无关时，<span class="arithmatex">\(A^\top A\)</span> 一定是可逆的. 这也是上面的方程应用的条件. 要证明这个结论，只需要证方程 <span class="arithmatex">\(A^\top A\boldsymbol{x} = \boldsymbol{0}\)</span> 只有零解. 方程左乘 <span class="arithmatex">\(\boldsymbol{x}^\top\)</span> 得 <span class="arithmatex">\(\boldsymbol{x}^\top A^\top A\boldsymbol{x}=\boldsymbol{0}\)</span>，等价于 <span class="arithmatex">\(A\boldsymbol{x} = \boldsymbol{0}\)</span>，从而 <span class="arithmatex">\(\boldsymbol{x}\)</span> 必然为零. 事实上 <span class="arithmatex">\(A^\top A\)</span> 和 <span class="arithmatex">\(A\)</span> 的零空间和秩都是相同的.</p>
 <p>以上方法的实质是使用左逆解方程. 当左逆不存在时，可使用伪逆.</p>
 <h3 id="_28">正交矩阵<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
 <p>An orthogonal matrix is a square matrix whose rows and columns are respectively mutually orthonormal.</p>
 <p>设正交矩阵 <span class="arithmatex">\(Q = \big[\boldsymbol{q}_1, \boldsymbol{q}_2, \cdots, \boldsymbol{q}_n\big]\)</span>，由于其各列互相正交，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{q}_i^\top\boldsymbol{q}_j =
 \begin{cases}
 0, &amp; i \neq j,\\
 1, &amp; i = j,
 \end{cases}
-\]</div>
+\]</p>
 <p>故</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 Q^\top Q = I.
-\]</div>
+\]</p>
 <p>同理，由于其各行互相正交，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 QQ^\top = I.
-\]</div>
+\]</p>
 <p>综上，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 Q^\top = Q^{-1}.
-\]</div>
+\]</p>
 <p>正交矩阵所对应的线性变换不会改变空间中向量的长度，即 <span class="arithmatex">\(|\lambda| = 1\)</span>.</p>
 <p>若 <span class="arithmatex">\(Q\)</span> 为方阵，则 <span class="arithmatex">\(|Q| = \pm 1\)</span>.</p>
 <p><span class="arithmatex">\(Q_{m\times n}\cdot Q_{m\times n} = n\)</span>.</p>
 <p><span class="arithmatex">\(Q_1 \otimes Q_2\)</span> 仍为正交矩阵.</p>
 <h3 id="gram-schmidt-orthonormalization">Gram-Schmidt Orthonormalization<a class="headerlink" href="#gram-schmidt-orthonormalization" title="Permanent link">&para;</a></h3>
 <p>逐个处理需要正交化的向量 <span class="arithmatex">\(\boldsymbol{v}\)</span>. 将向量 <span class="arithmatex">\(\boldsymbol{v}_k\)</span> 分别减去其在已正交化的向量 <span class="arithmatex">\(\boldsymbol{u}_i\)</span> 上的投影，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{u}_k = \boldsymbol{v}_k - \sum_{i &lt; k} |\boldsymbol{v}_k| \cos(\boldsymbol{v}_k, \boldsymbol{u}_i),
-\]</div>
+\]</p>
 <p>最后将所有向量归一化.</p>
 <p>过程演示如下<sup id="fnref:gramschmidt"><a class="footnote-ref" href="#fn:gramschmidt">3</a></sup>.</p>
 <p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Gram-Schmidt_orthonormalization_process.gif" /></p>
 <p>将 <span class="arithmatex">\(A\)</span> 各列向量的 G-S 正交化写为矩阵形式，可以将其分解为一个正交矩阵 <span class="arithmatex">\(Q\)</span> 和一个上三角矩阵 <span class="arithmatex">\(R\)</span>，即 QR 分解</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 | &amp; | &amp;  &amp; | \\
 \boldsymbol{a}_1 &amp; \boldsymbol{a}_2 &amp; \cdots &amp; \boldsymbol{a_n} \\
@@ -3905,34 +3905,34 @@ r_{11} &amp; r_{12} &amp; \cdots &amp; r_{1n} \\
 &amp; &amp; \ddots &amp; \vdots \\
 &amp; &amp; &amp; r_{mn} \\
 \end{bmatrix}.
-\]</div>
+\]</p>
 <h2 id="_29">特征值与特征向量<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
 <h3 id="_30">对角化<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(n\)</span> 阶方阵 <span class="arithmatex">\(A\)</span> 的各特征向量 <span class="arithmatex">\(\boldsymbol{v}\)</span> 作为列，组成特征向量矩阵 <span class="arithmatex">\(V\)</span>. 若特征向量有 <span class="arithmatex">\(n\)</span> 个且线性无关，则 <span class="arithmatex">\(V\)</span> 是可逆的. 此时</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 AV = \big[ \lambda_1\boldsymbol{v}_1 ~~ \lambda_2\boldsymbol{v}_2 ~~ \cdots ~~ \lambda_n\boldsymbol{v}_n \big] = V\Lambda,
-\]</div>
+\]</p>
 <p>即</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = V\Lambda V^{-1}.
-\]</div>
+\]</p>
 <p>若 <span class="arithmatex">\(A\)</span> 的各特征值均不同，则可以保证有 <span class="arithmatex">\(n\)</span> 个特征向量，且线性无关.</p>
 <p>将矩阵对角化后，可以计算其幂</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^k = V\Lambda^k V^{-1}.
-\]</div>
+\]</p>
 <details class="note" open="open">
 <summary>Fibonacci Sequence</summary>
 <p>递推方程 <span class="arithmatex">\(F_{k+2} = F_{k+1} + F_k\)</span> 构造了斐波那契数列，其初始条件为 <span class="arithmatex">\(F_0 = 0\)</span>，<span class="arithmatex">\(F_1 = 1\)</span>. 现求其通项公式.</p>
 <p>由于以上递推方程是二阶的，故构造二维向量 <span class="arithmatex">\(u_k = \big[F_{k+1} ~~ F_k\big]^\top\)</span>，并将递推方程根据 <span class="arithmatex">\(u_k\)</span> 的形式补充为（这种方法也可以用于二阶微分方程）</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 &amp; F_{k+2} = F_{k+1} + F_k, \\
 &amp; F_{k+1} = F_{k+1}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>这个方程可以写成矩阵形式</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 F_{k+2} \\ F_{k+1}
 \end{bmatrix} =
@@ -3943,17 +3943,17 @@ F_{k+2} \\ F_{k+1}
 \begin{bmatrix}
 F_{k+1} \\ F_k
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>将上面的变换矩阵记为 <span class="arithmatex">\(A\)</span>，则可以写为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 u_{k+1} = Au_k,
-\]</div>
+\]</p>
 <p>于是有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 u_k = A^ku_0.
-\]</div>
+\]</p>
 <p>将 <span class="arithmatex">\(A\)</span> 特征值分解，得到特征值 <span class="arithmatex">\(\lambda_1 = \frac{1+\sqrt{5}}{2}\)</span>，<span class="arithmatex">\(\lambda_2 = \frac{1-\sqrt{5}}{2}\)</span> 以及对应的特征向量矩阵 <span class="arithmatex">\(V\)</span>，则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 F_{k+1} \\ F_{k}
 \end{bmatrix} =
@@ -3966,58 +3966,58 @@ V
 \begin{bmatrix}
 1 \\ 0
 \end{bmatrix}.
-\]</div>
+\]</p>
 </details>
 <details class="note" open="open">
 <summary>Differential Equation</summary>
 <p>解微分方程</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{\mathrm{d}\boldsymbol{u}}{\mathrm{d}t} = A\boldsymbol{u},
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(\boldsymbol{u}\)</span> 为 <span class="arithmatex">\(n\)</span> 维向量，<span class="arithmatex">\(A\)</span> 为 <span class="arithmatex">\(n\)</span> 阶方阵.</p>
 <p>将 <span class="arithmatex">\(A\)</span> 特征分解得到特征值 <span class="arithmatex">\(\lambda_i\)</span> 和对应的特征向量 <span class="arithmatex">\(\boldsymbol{v}_i\)</span>，<span class="arithmatex">\(i = 1, 2, \cdots, n\)</span>. 则方程通解为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{y} = \sum_{i=0}^n c_i\mathrm{e}^{\lambda_i}.
-\]</div>
+\]</p>
 </details>
 <h3 id="_31">解耦<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
 <p>以一微分方程演示解耦的作用. 沿用上例中的微分方程</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{\mathrm{d}\boldsymbol{u}}{\mathrm{d}t} = A\boldsymbol{u},
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(A\)</span> 的特征向量矩阵记为 <span class="arithmatex">\(V\)</span>. 设 <span class="arithmatex">\(\boldsymbol{u} = V\boldsymbol{x}\)</span>，代入换元得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{\mathrm{d}\boldsymbol{x}}{\mathrm{d}t} = V^{-1}AV\boldsymbol{x} = \Lambda V.
-\]</div>
+\]</p>
 <p>这样，方程就被解耦为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{cases}
 \mathrm{d}x_1 / \mathrm{d}t = \lambda_1 x_1, \\
 \mathrm{d}x_2 / \mathrm{d}t = \lambda_2 x_2, \\
 \qquad \quad \vdots \\
 \mathrm{d}x_n / \mathrm{d}t = \lambda_n x_n.
 \end{cases}
-\]</div>
+\]</p>
 <h3 id="hermite-hermitian-matrix">实对称矩阵与 Hermite 矩阵 | Hermitian Matrix<a class="headerlink" href="#hermite-hermitian-matrix" title="Permanent link">&para;</a></h3>
 <p>Hermite 矩阵指的是满足下列条件的矩阵</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = A^\mathrm{H} = \overline{A}^\top,
-\]</div>
+\]</p>
 <p>在实矩阵中 <span class="arithmatex">\(A^\mathrm{H} = A^\top\)</span> 该条件退化，仅表现为对称 <span class="arithmatex">\(A = A^\top\)</span>.</p>
 <p>实对称矩阵的特征值均为实数，且特征向量矩阵可以选取为正交矩阵，即</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = Q\Lambda Q^{-1} = Q\Lambda Q^\top.
-\]</div>
+\]</p>
 <p>复向量 <span class="arithmatex">\(\boldsymbol{x}\)</span> 与 <span class="arithmatex">\(\boldsymbol{y}\)</span> 的内积为 <span class="arithmatex">\(\boldsymbol{x}^\mathrm{H}\boldsymbol{y}\)</span>.</p>
 <p>故以上实对称性质扩展到复域时表述为 Hermite 矩阵特征值均为实数，且特征向量矩阵可以选为酉矩阵（幺正矩阵，unitary matrix），即</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = Q\Lambda Q^{-1} = Q\Lambda Q^\mathrm{H}.
-\]</div>
+\]</p>
 <p>Hermite 矩阵的主元和特征值在符号上保持一致，即正主元数和正特征值数量相等.</p>
 <details class="note" open="open">
 <summary>Fast Fourier Transform</summary>
 <p><span class="arithmatex">\(n\)</span> 阶 Fourier 矩阵定义为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 F_n = \begin{bmatrix}
 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\
 1 &amp; \omega &amp; \omega ^2 &amp; \cdots &amp; \omega^{n-1} \\
@@ -4025,14 +4025,14 @@ F_n = \begin{bmatrix}
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 1 &amp; \omega^{n-1} &amp; \omega^{2(n-1)} &amp; \cdots &amp; \omega^{(n-1)^2}\\
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(\omega\)</span> 为第 1 个 <span class="arithmatex">\(n\)</span> 次单位根 <span class="arithmatex">\(\mathrm{e}^{2\pi i/n}\)</span>. 等价地有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 (F_n)_{ij} = \omega^{(i-1)(j-1)}.
-\]</div>
+\]</p>
 <p>Fourier 矩阵的各列互相正交，即 <span class="arithmatex">\(\frac{1}{\sqrt{n}}F_n\)</span> 为幺正矩阵.</p>
 <p>FFT 给出了递归关系</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 F_{2n} = \begin{bmatrix}
 I &amp; D \\
 I &amp; -D
@@ -4041,9 +4041,9 @@ I &amp; -D
 F_n &amp; \\
 &amp; F_n
 \end{bmatrix}P,
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(D = \operatorname{diag}(1, \omega, \omega^2, \cdots, \omega^{n-1})\)</span>，<span class="arithmatex">\(P\)</span> 为将奇序号向量和偶序号向量分开的置换矩阵</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P = \begin{bmatrix}
 1 &amp;   &amp;   &amp;   &amp; \cdots &amp;   &amp;   \\
 &amp;   &amp; 1 &amp;   &amp; \cdots &amp;   &amp;   \\
@@ -4054,7 +4054,7 @@ P = \begin{bmatrix}
 &amp;   &amp;   &amp;   &amp; \vdots &amp;   &amp;   \\
 &amp;   &amp;   &amp;   &amp; \cdots &amp;   &amp; 1 \\
 \end{bmatrix}.
-\]</div>
+\]</p>
 </details>
 <h3 id="_32">正定矩阵<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
 <p>实对称矩阵 <span class="arithmatex">\(A\)</span> 正定的充要条件主要有：</p>
@@ -4069,23 +4069,23 @@ P = \begin{bmatrix}
 <p><span class="arithmatex">\(A^\top A\)</span> 半正定（可由 <span class="arithmatex">\(\boldsymbol{x}^\top A^\top A\boldsymbol{x}\)</span> 证明）. 特别地，当 <span class="arithmatex">\(A\)</span> 各列线性无关时，<span class="arithmatex">\(A^\top A\)</span> 正定.</p>
 <h3 id="_33">相似矩阵<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
 <p>若存在矩阵 <span class="arithmatex">\(P\)</span> 使得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 P^{-1}AP = B,
-\]</div>
+\]</p>
 <p>则称 <span class="arithmatex">\(A\)</span> 与 <span class="arithmatex">\(B\)</span> 相似.</p>
 <p>相似矩阵具有相同的特征值. 实际上，相似矩阵和<a href="../essence-of-linear-algebra/#9-change-of-basis">基变换</a>的形式是完全一致的，即相似矩阵是在不同基底下，对相同的线性变换的描述.</p>
 <h3 id="jordan">Jordan 标准型<a class="headerlink" href="#jordan" title="Permanent link">&para;</a></h3>
 <p>任意方阵 <span class="arithmatex">\(A\)</span> 均相似于一个 Jordan 矩阵 <span class="arithmatex">\(J\)</span>，称为 <span class="arithmatex">\(A\)</span> 的 Jordan 标准型：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 J = \begin{bmatrix}
 \boxed{J_1}\phantom{\boxed{J_2}}\phantom{\ddots}\phantom{\boxed{J_d}} \\
 \phantom{\boxed{J_1}}\boxed{J_2}\phantom{\ddots}\phantom{\boxed{J_d}} \\
 \phantom{\boxed{J_1}}\phantom{\boxed{J_2}}\ddots\phantom{\boxed{J_d}} \\
 \phantom{\boxed{J_1}}\phantom{\boxed{J_2}}\phantom{\ddots}\boxed{J_d}
 \end{bmatrix}.
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(J\)</span> 的对角线上为各 Jordan 块，每一 Jordan 块的对角线上分布着 <span class="arithmatex">\(A\)</span> 的某一特征值，对角线上方的斜线均为 1：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 J_i = \begin{bmatrix}
 \lambda_i &amp; 1 &amp; &amp; &amp; \\
 &amp; \lambda_i &amp; 1 &amp; &amp; \\
@@ -4093,57 +4093,57 @@ J_i = \begin{bmatrix}
 &amp; &amp; &amp; \lambda_i &amp; 1 \\
 &amp; &amp; &amp; &amp; \lambda_i \\
 \end{bmatrix}.
-\]</div>
+\]</p>
 <p>Jordan 块和特征向量是对应的. 特别地，当特征值各异时，各 Jordan 块均退化为对应的特征值，这样 <span class="arithmatex">\(J\)</span> 退化为特征值组成的对角阵，即对角化.</p>
 <h3 id="_34">奇异值分解<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
 <p>对任意实矩阵 <span class="arithmatex">\(A_{m\times n}\)</span>，其 SVD 为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = U\Sigma V^\top,
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(U_{m\times m}\)</span> 为左奇异向量 <span class="arithmatex">\(\boldsymbol{u}_i\)</span> 组成的正交矩阵，<span class="arithmatex">\(\Sigma_{m\times n}\)</span> 为各奇异值 <span class="arithmatex">\(\sigma_i\)</span> 组成的对角阵，<span class="arithmatex">\(V_{n\times n}\)</span> 为右奇异向量 <span class="arithmatex">\(\boldsymbol{v}_i\)</span> 组成的正交矩阵.</p>
 <p>考虑</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^\top A = V\Sigma^\top\Sigma V^\top = V\Lambda V^\top,
-\]</div>
+\]</p>
 <p>故将 <span class="arithmatex">\(A^\top A\)</span> 特征分解，得到各个特征值的算术平方根 <span class="arithmatex">\(\sqrt{\lambda_i}\)</span> 即为各奇异值 <span class="arithmatex">\(\sigma_i\)</span>（<span class="arithmatex">\(A^\top A\)</span> 必然是半正定的，<span class="arithmatex">\(\lambda_i \ge 0\)</span>），对应的特征向量组成 <span class="arithmatex">\(V\)</span>.</p>
 <p>设 <span class="arithmatex">\(A\)</span> 的秩为 <span class="arithmatex">\(r\)</span>，则 <span class="arithmatex">\(\boldsymbol{v}_1, \boldsymbol{v}_2, \cdots, \boldsymbol{v}_r\)</span> 为行空间中的一组正交基，<span class="arithmatex">\(\boldsymbol{u}_1, \boldsymbol{u}_2, \cdots, \boldsymbol{u}_r\)</span> 为列空间中的一组正交基. <span class="arithmatex">\(A\)</span> 作为线性变换，将行空间的正交基变换到列空间中，且保持其正交性：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A\boldsymbol{v}_i = \sigma_i\boldsymbol{u}_i.
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(\boldsymbol{v}_{r+1}, \cdots, \boldsymbol{v}_n\)</span> 和 <span class="arithmatex">\(\boldsymbol{u}_{r+1}, \cdots, \boldsymbol{u}_m\)</span> 分别是零空间和左零空间的正交基，显然它们所对应的奇异值均为 0. 它们补全了之前的两组正交基，使其张成整个空间.</p>
 <h3 id="_35">左右逆<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
 <p>各列线性无关的矩阵 <span class="arithmatex">\(A_{m\times n}\)</span>（列满秩，<span class="arithmatex">\(r = n\)</span>）存在左逆</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^{-1}_{\mathrm{left}} = (A^\top A)^{-1}A^\top
-\]</div>
+\]</p>
 <p>使得 <span class="arithmatex">\(A^{-1}_{\mathrm{left}}A = I_n\)</span>.</p>
 <p>同样地，当 <span class="arithmatex">\(A\)</span> 行满秩时，有右逆</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^{-1}_{\mathrm{right}} = A^\top(AA^\top)^{-1}
-\]</div>
+\]</p>
 <p>使得 <span class="arithmatex">\(AA^{-1}_{\mathrm{right}} = I_m\)</span>.</p>
 <h3 id="moore-penrose">Moore-Penrose 伪逆<a class="headerlink" href="#moore-penrose" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\(A\)</span> 的伪逆 <span class="arithmatex">\(A^+\)</span> 满足</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{cases}
 AA^+A = A,\\
 A^+AA^+ = A^+,
 \end{cases}
-\]</div>
+\]</p>
 <p>且 <span class="arithmatex">\(AA^+\)</span> 与 <span class="arithmatex">\(A^+A\)</span> 均对称. <span class="arithmatex">\(A^+\)</span> 有且仅有一个. Moore-Penrose 伪逆定义为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{A}^+=\lim_{\alpha\rightarrow0}(\boldsymbol{A}^\top\boldsymbol{A}+\alpha\boldsymbol{I})^{-1}\boldsymbol{A}^\top.
-\]</div>
+\]</p>
 <p>实际计算中，将 <span class="arithmatex">\(A\)</span> 奇异值分解，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = U\Sigma V^\top,
-\]</div>
+\]</p>
 <p>则</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^+ = V\Sigma^+U^\top,
-\]</div>
+\]</p>
 <p>其中 <span class="arithmatex">\(\Sigma^+\)</span> 是将 <span class="arithmatex">\(\Sigma\)</span> 各非零元素取倒数，然后转置而得到的，即</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Sigma^+ =
 \begin{bmatrix}
 \sigma_1\!\! &amp; &amp; &amp; &amp; \\
@@ -4160,7 +4160,7 @@ A^+ = V\Sigma^+U^\top,
 &amp; &amp; &amp; \!\!\!1/\sigma_r&amp; \\
 &amp; &amp; &amp; &amp; \!\! O \\
 \end{bmatrix}
-\]</div>
+\]</p>
 <p>若 <span class="arithmatex">\(\boldsymbol{Ax}=\boldsymbol{y}\)</span> 有多解，则由 <span class="arithmatex">\(\boldsymbol{x}=\boldsymbol{A}^+\boldsymbol{y}\)</span> 得到的解是使得 <span class="arithmatex">\(\Vert\boldsymbol{x}\Vert_2\)</span> 最小的那一个；若无解，则得到的解使得 <span class="arithmatex">\(\Vert\boldsymbol{Ax}-\boldsymbol{y}\Vert_2\)</span> 最小.</p>
 <div class="footnote">
 <hr />

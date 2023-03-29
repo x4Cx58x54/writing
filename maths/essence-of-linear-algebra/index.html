@@ -3076,31 +3076,31 @@
 <h2 id="1-vectors-what-even-are-they">1 Vectors, What Even Are They?<a class="headerlink" href="#1-vectors-what-even-are-they" title="Permanent link">&para;</a></h2>
 <p>Vectors are the extension of numbers.</p>
 <p>Difference between a vector and a point:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \text{a vector:}
 \begin{bmatrix}
 z_1 \\ z_2 \\ \vdots
 \end{bmatrix},\quad
 \text{a point:}
 \left(z_1, z_2, \cdots\right).
-\]</div>
+\]</p>
 <h2 id="2-linear-combinations-span-and-bases">2 Linear Combinations, Span and Bases<a class="headerlink" href="#2-linear-combinations-span-and-bases" title="Permanent link">&para;</a></h2>
 <p>Linear independent <span class="arithmatex">\(\Leftrightarrow\)</span> Any one of the vectors is outside the span of the others.</p>
 <h2 id="3-matrices-as-linear-transformations">3 Matrices as Linear Transformations<a class="headerlink" href="#3-matrices-as-linear-transformations" title="Permanent link">&para;</a></h2>
 <p><em>Transformation</em> is a fancy word for function, but it suggests <strong>movement</strong>.</p>
 <p><em>Linear transformation</em>: all straight lines remain straight, and the origin remains its place.</p>
 <p>In the lingo,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathscr{A}(m\mathbf{u}+n\mathbf{v})=m\mathscr{A}(\mathbf{u})+n\mathscr{A}(\mathbf{v}),
-\]</div>
+\]</p>
 <p>which suggests that, <strong>a vector remains the same linear combination of the transformed bases</strong>.</p>
 <p>Therefore, in two-dimensional space, suppose</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbf{v}=x\hat{\imath}+y\hat{\jmath},
-\]</div>
+\]</p>
 <p>when applied linear transformation <span class="arithmatex">\(\mathscr{A}\)</span>, $
 \hat{\imath}$ lands at <span class="arithmatex">\([\,a_{11}\ \ a_{21}\,]^\top\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> lands at <span class="arithmatex">\([\,a_{12}\ \ a_{22}\,]^\top\)</span>. That is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathscr{A}(\mathbf{v})=x
 \begin{bmatrix}
 a_{11} \\ a_{21}
@@ -3118,16 +3118,16 @@ a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
 \begin{bmatrix}
 x \\ y
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>namely</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathscr{A}(\mathbf{v})=
 \begin{bmatrix}
 a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
 \end{bmatrix}\mathbf{v}.
-\]</div>
+\]</p>
 <p>For the bases,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathscr{A}(\hat{\imath})=
 \begin{bmatrix}
 a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
@@ -3141,8 +3141,8 @@ a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
 \begin{bmatrix}
 a_{11} \\ a_{21}
 \end{bmatrix},
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \mathscr{A}(\hat{\jmath})=
 \begin{bmatrix}
 a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
@@ -3156,22 +3156,22 @@ a_{11}&amp;a_{12} \\ a_{21}&amp;a_{22}
 \begin{bmatrix}
 a_{12} \\ a_{22}
 \end{bmatrix}.
-\]</div>
+\]</p>
 <p>It is the relation between linear transformation and matrix-vector multiplication.</p>
 <p>By recording where the bases land when applying a linear transformation and packaging them into a matrix, we have all the information about this transformation.</p>
 <p>Starting from a specified matrix, we can imagine what the whole space and all the vectors inside look like after the transformation. Conversely, intuitive knowledge of a transformation itself can be expressed as a matrix.</p>
 <p>Particularly, if <span class="arithmatex">\(\mathscr{A}(\hat{\imath}),\,\mathscr{A}(\hat{\jmath})\)</span> are linearly dependent, the whole 2-D space is squished onto the line where those two vectors sit, a.k.a. the span of them.</p>
 <h2 id="4-matrix-multiplication-as-composition">4 Matrix Multiplication as Composition<a class="headerlink" href="#4-matrix-multiplication-as-composition" title="Permanent link">&para;</a></h2>
 <p>Applying two successive linear transformations <span class="arithmatex">\(\mathscr{A}_1\)</span> and <span class="arithmatex">\(\mathscr{A}_2\)</span> on a vector/space, we get a composition of linear transformations. Numerically, it is the multiplication of matrices corresponding to these transformations respectively.</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 M_2M_1\mathbf{v}=M\mathbf{v},
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 M=M_2M_1.
-\]</div>
+\]</p>
 <p>Therefore, (square) matrix multiplication can be viewed as a series of linear transformations.</p>
 <p>In 2-D space,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 M&amp;=M_2M_1
 \\&amp;=
@@ -3217,7 +3217,7 @@ b_{12} \\ b_{22}
 \;\right]
 \\&amp;=\cdots.
 \end{aligned}
-\]</div>
+\]</p>
 <h2 id="5-the-determinant">5 The Determinant<a class="headerlink" href="#5-the-determinant" title="Permanent link">&para;</a></h2>
 <p>The determinant of a matrix represents in what scale the transformation squeezes or stretches the space.</p>
 <ul>
@@ -3231,15 +3231,15 @@ b_{12} \\ b_{22}
 </ul>
 <p>In a word, <strong>the determinant equals to the factor by which the areas/volumes have been scaled</strong>.</p>
 <p><img alt="" src="../img/eola_06_det.png" width="280px" /></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \det \left(\begin{bmatrix}a &amp; b \\ c &amp; d \\ \end{bmatrix}\right)=(a+b)(c+d)-ac-bd-2bc=ad-bc.
-\]</div>
+\]</p>
 <p>If we apply two successive linear transformations, it is obvious that the factor by which the space have been scaled equals to the multiplication of the two determinants, namely</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \det(M_1M_2)=\det(M_1)\det(M_2)=\det(M_2M_1).
-\]</div>
+\]</p>
 <p>行阶梯式（row echelon form）具有以下形式:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A=
 \begin{bmatrix}
 a_{11} &amp; a_{12} &amp; a_{13} &amp; \cdots &amp; a_{1n} \\
@@ -3248,32 +3248,32 @@ a_{11} &amp; a_{12} &amp; a_{13} &amp; \cdots &amp; a_{1n} \\
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 0 &amp;  0 &amp; 0 &amp; 0 &amp; a_{nn}
 \end{bmatrix}
-\]</div>
+\]</p>
 <p>其对空间的缩放比例即其行列式，等于其对原空间中单位超立方体的变换结果（对应矩阵任意前 <span class="arithmatex">\(k\)</span> 列的 <span class="arithmatex">\(k\)</span> 维图形均为将对应矩阵 <span class="arithmatex">\(k-1\)</span> 列之图形沿第 <span class="arithmatex">\(k\)</span> 列向量扫过的超柱体）之体积，等于每一列垂直于其之前诸列张成空间的分量的乘积，即主对角线诸项之乘积</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \det(A)=\prod\limits_{i=j}a_{ij}.
-\]</div>
+\]</p>
 <p>高斯消元法（Gaussian elimination）可视为用行列式为 1 的矩阵与原矩阵相乘，故行列式的值未改变，通过高斯消元得到行阶梯式即可求出行列式.</p>
 <h2 id="6-inverse-matrices-column-space-and-null-space">6 Inverse Matrices, Column Space and Null Space<a class="headerlink" href="#6-inverse-matrices-column-space-and-null-space" title="Permanent link">&para;</a></h2>
 <p>A system of linear equations</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A\mathbf{x}=\mathbf{v}
-\]</div>
+\]</p>
 <p>has its geometric interpretation that we are looking for a vector <span class="arithmatex">\(\mathbf{x}\)</span> which lands on <span class="arithmatex">\(\mathbf{v}\)</span> when applying the transformation <span class="arithmatex">\(A\)</span> on it.</p>
 <p>The solution for <span class="arithmatex">\(\mathbf{x}\)</span> depends on whether the transformation <span class="arithmatex">\(A\)</span> squishes space into a lower dimensional one, i.e., whether <span class="arithmatex">\(\det(A)\)</span> equals to 0 or not.</p>
 <p>In the case where <span class="arithmatex">\(\det(A)\neq 0\)</span>, there will always be one and only one solution and the finding process is actually playing the transformation in inverse. The inverse transformation corresponds to matrix <span class="arithmatex">\(A^{-1}\)</span> which satisfies that</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^{-1}A\mathbf{x}=A^{-1}\mathbf{v},
-\]</div>
+\]</p>
 <p>where</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A^{-1}A=I,
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(I\)</span> is called identity matrix, corresponding to identity transformation, which "does nothing".</p>
 <p>Therefore, we have</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbf{x}=A^{-1}\mathbf{v}.
-\]</div>
+\]</p>
 <p>And when we play this inverse transformation and follow <span class="arithmatex">\(\mathbf{v}\)</span>, the single unique solution for <span class="arithmatex">\(\mathbf{x}\)</span> is obtained.</p>
 <p>When <span class="arithmatex">\(\det(A)= 0\)</span>, the transformation squishes the space into a lower dimension, but there is no transformation that can unsquish space into a higher one, for a function cannot map a vector to multiple ones. That is to say, <span class="arithmatex">\(A^{-1}\)</span> does not exist in this case. If vector <span class="arithmatex">\(\mathbf{v}\)</span> is lucky enough to live on that lower-dimensional space, there will be infinite solutions for <span class="arithmatex">\(\mathbf{x}\)</span>, otherwise there won't be any solutions.</p>
 <p>The number of dimensions in the output of the transformation is called the <strong>rank</strong> of the matrix.</p>
@@ -3283,14 +3283,14 @@ A^{-1}A=I,
 <p>When <span class="arithmatex">\(\det(A)\neq 0\)</span>, i.e. <span class="arithmatex">\(A\)</span> is full rank, only <span class="arithmatex">\(\mathbf{0}\)</span> lands on the origin.</p>
 <p>When <span class="arithmatex">\(\det(A_{n\times n})= 0\)</span>, a space will land on the origin, its number of dimensions being <span class="arithmatex">\(n-\mathrm{rank}(A)\)</span>.</p>
 <p>For a system of linear equations</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A\mathbf{x}=\mathbf{0},
-\]</div>
+\]</p>
 <p>its solution is the null space of <span class="arithmatex">\(A\)</span>.</p>
 <h2 id="6-nonsquare-matrices">6+ Nonsquare Matrices<a class="headerlink" href="#6-nonsquare-matrices" title="Permanent link">&para;</a></h2>
 <p>Nonsquare matrices are transformations between dimensions.</p>
 <p>For a <span class="arithmatex">\(m\times n\)</span> matrix</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A_{m\times n}=
 \begin{bmatrix}
 a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
@@ -3300,10 +3300,10 @@ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
 \end{bmatrix}\; m \text{ rows},\\
 \space\\
 n \text{ columns}
-\]</div>
+\]</p>
 <p>the inputs are <span class="arithmatex">\(n\)</span> bases, and the outputs are <span class="arithmatex">\(n\)</span> <span class="arithmatex">\(m\)</span>-dimensional vectors, which can be interpreted as a linear transformation from an <span class="arithmatex">\(n\)</span>-dimensional space to an <span class="arithmatex">\(m\)</span> (or lower)-dimensional space.</p>
 <h2 id="7-dot-products-and-duality">7 Dot Products and Duality<a class="headerlink" href="#7-dot-products-and-duality" title="Permanent link">&para;</a></h2>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbf{a}\cdot\mathbf{b}=
 \begin{bmatrix}
 a_1 \\ a_2 \\ \vdots \\ a_n
@@ -3318,25 +3318,25 @@ a_1\hspace{10mu}a_2\hspace{8mu}\cdots\hspace{8mu}a_n
 \begin{bmatrix}
 b_1 \\ b_2 \\ \vdots \\ b_n
 \end{bmatrix}=\sum_{i=1}^n a_ib_i.
-\]</div>
+\]</p>
 <p>Matrix <span class="arithmatex">\([a_1, a_2, \cdots , a_n]\)</span> corresponds to a transformation from <span class="arithmatex">\(n\)</span>-dimensional to one-dimensional, where <span class="arithmatex">\(\hat{e}_1\)</span> lands on <span class="arithmatex">\(a_1\)</span>, <span class="arithmatex">\(\hat{e}_2\)</span> lands on <span class="arithmatex">\(a_2\)</span>, ... ,  <span class="arithmatex">\(\hat{e}_n\)</span> lands on <span class="arithmatex">\(a_n\)</span>.</p>
 <h3 id="relation-between-matrix-vector-product-and-dot-product">Relation between matrix-vector product and dot product<a class="headerlink" href="#relation-between-matrix-vector-product-and-dot-product" title="Permanent link">&para;</a></h3>
 <p>Suppose there is a tilted number line in a space, and for simplicity, the space is 2-dimensional. The number 0 on that line remains in the origin and the base (with the same length of the bases in the original space) being</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \hat{u}=
 \begin{bmatrix}
 u_x \\ u_y
 \end{bmatrix}.
-\]</div>
+\]</p>
 <h4 id="for-matrix-vector-product">For matrix-vector product:<a class="headerlink" href="#for-matrix-vector-product" title="Permanent link">&para;</a></h4>
 <p>Imagine a linear transformation that squishes the plane is onto that number line and <span class="arithmatex">\(\hat{\imath}\)</span> lands at <span class="arithmatex">\(u_x\)</span>, <span class="arithmatex">\(\hat{\jmath}\)</span> lands at <span class="arithmatex">\(u_y\)</span>. In this transformation, vector <span class="arithmatex">\(\mathbf{v} = \big[x\quad  y\big]^\top\)</span> lands on</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \big[u_x\quad u_y\big]
 \begin{bmatrix}
 x \\ y
 \end{bmatrix}
 =u_x \cdotp x+u_y \cdotp y.
-\]</div>
+\]</p>
 <details class="note" open="open">
 <summary>Note</summary>
 <p>Yes, <span class="arithmatex">\(\big[u_x\quad u_y\big]\)</span> itself corresponds to another linear transformation where all points in the space are squished onto <span class="arithmatex">\(x\)</span> axis, but the calculation above also integrates a change of bases, which rotates the <span class="arithmatex">\(x\)</span> axis to the tilted number line. Without this change of bases, the transformation described would be <span class="arithmatex">\(\begin{bmatrix}u_x^2 &amp; u_x u_y \\ u_x u_y &amp; u_y^2\end{bmatrix}\)</span>. Next, we rotate the space back to horizontal, namely by <span class="arithmatex">\(\operatorname{rot}(-\arg \hat{u}) = \begin{bmatrix}\cos (-\arg\hat{u}) &amp; - \sin (-\arg\hat{u}) \\ -\sin (-\arg\hat{u}) &amp; \cos (-\arg\hat{u})\end{bmatrix} = \begin{bmatrix}u_x &amp; u_y \\ -u_y &amp; u_x\end{bmatrix}\)</span>. Multiply this rotation matrix to the former transformation matrix, and the composition is <span class="arithmatex">\(\begin{bmatrix}u_x &amp; u_y \\ 0 &amp; 0\end{bmatrix}\)</span>.</p>
@@ -3345,9 +3345,9 @@ x \\ y
 <p>Project <span class="arithmatex">\(\hat{\imath}\)</span> to <span class="arithmatex">\(\hat{u}\)</span>, according to symmetry shown in the figure below, <span class="arithmatex">\(\hat{\imath}_u=u_x\)</span>. Similarly, <span class="arithmatex">\(\hat{\jmath}_u=u_y\)</span>.</p>
 <p><img alt="" src="../img/eola_07_dot_1.png" width="160px" /></p>
 <p>Therefore, projection of <span class="arithmatex">\(\mathbf{v}\)</span> on <span class="arithmatex">\(\hat{u}\)</span></p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbf{v}_u = x\cdot\hat{\imath}_u+y\cdot\hat{\jmath}_u=x \cdot u_x+y \cdot u_y = \hat{u}\cdot\mathbf{v}.
-\]</div>
+\]</p>
 <p>This is why the dot product with a unit vector can be interpreted as projecting the vector onto to the span of that unit vector and taking the (directed) length.</p>
 <h3 id="duality">Duality<a class="headerlink" href="#duality" title="Permanent link">&para;</a></h3>
 <p><strong>A vector is the physical embodiment of a linear transformation.</strong></p>
@@ -3355,7 +3355,7 @@ x \\ y
 <h2 id="8-cross-product-in-the-light-of-linear-transformations">8 Cross Product in the Light of Linear Transformations<a class="headerlink" href="#8-cross-product-in-the-light-of-linear-transformations" title="Permanent link">&para;</a></h2>
 <p>In 2-D space, <span class="arithmatex">\(|\mathbf{v\times w}|\)</span> equals to area of the parallelogram determined by these vectors.</p>
 <p>In the light of linear transformation, when <span class="arithmatex">\(\hat{\imath}\)</span> lands on <span class="arithmatex">\(\mathbf{v}\)</span> and <span class="arithmatex">\(\hat{\jmath}\)</span> lands on <span class="arithmatex">\(\mathbf{w}\)</span>, area of the parallelogram equals to the determinant, therefore,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbf{v\times w}=
 \begin{vmatrix}
 v_x &amp; w_x \\
@@ -3365,9 +3365,9 @@ v_y &amp; w_y
 v_x &amp; v_y \\
 w_x &amp; w_y
 \end{vmatrix}\hat{k}.
-\]</div>
+\]</p>
 <p>In 3-D space,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 v_x \\ v_y \\ v_z
 \end{bmatrix}\times
@@ -3379,19 +3379,19 @@ w_x \\ w_y \\ w_z
 \hat{\jmath} &amp; v_y &amp; w_y \\
 \hat{k} &amp; v_z &amp; w_z
 \end{vmatrix}.
-\]</div>
+\]</p>
 <p>Since function</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f\left(\begin{bmatrix}x\\y\\z\end{bmatrix}\right)=
 \begin{vmatrix}
 x &amp; v_x &amp; w_x \\
 y &amp; v_y &amp; w_y \\
 z &amp; v_z &amp; w_z
 \end{vmatrix}
-\]</div>
+\]</p>
 <p>is linear, and its output is a number. It necessarily associates with a linear transformation whose correspondent is a vector, according to duality.</p>
 <p>It is computationally evident that</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 \begin{vmatrix}v_y &amp; w_y \\ v_z &amp; w_z\end{vmatrix}\\
 \\
@@ -3411,9 +3411,9 @@ x &amp; v_x &amp; w_x \\
 y &amp; v_y &amp; w_y \\
 z &amp; v_z &amp; w_z
 \end{vmatrix}.
-\]</div>
+\]</p>
 <p>For convenience, define</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 \begin{vmatrix}v_y &amp; w_y \\ v_z &amp; w_z\end{vmatrix}\\
 \\
@@ -3422,9 +3422,9 @@ z &amp; v_z &amp; w_z
 \begin{vmatrix}v_x &amp; w_x \\ v_y &amp; w_y\end{vmatrix}
 \end{bmatrix}
 \triangleq\mathbf{p},
-\]</div>
+\]</p>
 <p>therefore, the vector <span class="arithmatex">\(\mathbf{p}\)</span> satisfies that</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \mathbf{p}\cdot
 \begin{bmatrix}x \\ y \\ z \end{bmatrix}
@@ -3438,9 +3438,9 @@ z &amp; v_z &amp; w_z
 &amp; = \text{Volume of parallelpiped spanned on }\begin{bmatrix}x \\ y \\ z \end{bmatrix},\mathbf{v,w}\\
 &amp; = (\text{Area of parallelogram spanned on }\mathbf{v,w}) \cdot \left\Vert\begin{bmatrix}x \\ y \\ z \end{bmatrix}_{\perp(\mathbf{v,w})}\right\Vert,
 \end{aligned}
-\]</div>
+\]</p>
 <p>and geometrically,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \mathbf{p}\cdot
 \begin{bmatrix}x \\ y \\ z\end{bmatrix}
@@ -3448,13 +3448,13 @@ z &amp; v_z &amp; w_z
 &amp; = \|\mathbf{p}\|\cdot
 \left\Vert\begin{bmatrix}x \\ y \\ z\end{bmatrix}_{\mathbf{p}\perp(\mathbf{v,w})}\right\Vert.
 \end{aligned}
-\]</div>
+\]</p>
 <p>Therefore <span class="arithmatex">\(\|\mathbf{p}\|\)</span> equals to area of parallelogram spanned on <span class="arithmatex">\(\mathbf{v,w}\)</span>, and <span class="arithmatex">\(\mathbf{p}\)</span> obeys the right-hand rule. So it becomes evident that</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbf{p}=\mathbf{v}\times\mathbf{w}.
-\]</div>
+\]</p>
 <p>Note that</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbf{p}=
 \begin{bmatrix}
 v_x \\ v_y \\ v_z
@@ -3474,33 +3474,33 @@ w_x \\ w_y \\ w_z
 \hat{\jmath} &amp; v_y &amp; w_y \\
 \hat{k} &amp; v_z &amp; w_z
 \end{vmatrix}.
-\]</div>
+\]</p>
 <h2 id="9-change-of-basis">9 Change of Basis<a class="headerlink" href="#9-change-of-basis" title="Permanent link">&para;</a></h2>
 <p>A change of basis is equivalent to a linear transformation.</p>
 <p>Suppose in coordinate system <span class="arithmatex">\(S\)</span>, the bases are</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \hat{\imath}=\begin{bmatrix}1 \\ 0\end{bmatrix}, \;
 \hat{\jmath}=\begin{bmatrix}0 \\ 1\end{bmatrix},
-\]</div>
+\]</p>
 <p>and another group of bases that span coordinate system <span class="arithmatex">\(S'\)</span>, from the perspective of <span class="arithmatex">\(S\)</span>, are</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \hat{u}=\begin{bmatrix}u_1 \\ u_2\end{bmatrix}, \;
 \hat{v}=\begin{bmatrix}v_1 \\ v_2\end{bmatrix}.
-\]</div>
+\]</p>
 <p>In coordinate system <span class="arithmatex">\(S'\)</span>, vector</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbf{w}'=
 \begin{bmatrix}
 w'_x\\w'_y
 \end{bmatrix}=
 w'_x \hat{u}+w'_y \hat{v}.
-\]</div>
+\]</p>
 <p>If we apply linear transformation</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A=\begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}
-\]</div>
+\]</p>
 <p>on <span class="arithmatex">\(S\)</span>, some vector <span class="arithmatex">\(\mathbf{w}=w_x \hat{\imath}+w_y \hat{\jmath}\)</span> will land on <span class="arithmatex">\(\mathbf{w}'\)</span>. According to linearity, <span class="arithmatex">\(\mathbf{w}\)</span> will remain the same combination of the bases, which is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix}\mathbf{w} &amp;= \mathbf{w}'\\
 w_x \hat{u}+w_y \hat{v} &amp;= w'_x \hat{u}+w'_y \hat{v}\\
@@ -3510,24 +3510,24 @@ w_x=w'_x\\
 w_y=w'_y
 \end{cases}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>That is, <span class="arithmatex">\(\mathbf{w}\)</span> in <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(\mathbf{w}'\)</span> in <span class="arithmatex">\(S'\)</span> has the same representation. And from the perspective of each coordinate system,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \mathbf{w'} &amp;= w'_x \hat{u} + w'_y \hat{v} \qquad\left(= \begin{bmatrix}w'_x \\ w'_y\end{bmatrix}_{(S')}\right)\\
 &amp;= w'_x \begin{bmatrix}u_1\\ u_2 \end{bmatrix} \hat{\imath} + w'_y \begin{bmatrix}u_1 \\ u_2 \end{bmatrix}\hat{\jmath}\\
 &amp;= \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix} \begin{bmatrix}w'_x \\ w'_y\end{bmatrix}_{(S)}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>So a translation from <span class="arithmatex">\(S'\)</span> to <span class="arithmatex">\(S\)</span> is obtained:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbf{w}'_{(S)} = \begin{bmatrix}u_1 &amp; v_1 \\ u_2 &amp; v_2 \end{bmatrix} \mathbf{w}'_{(S')}.
-\]</div>
+\]</p>
 <p>In the simplest case, <span class="arithmatex">\(\hat{u} = \begin{bmatrix}u_1\\ u_2\end{bmatrix}_{(S)} = \begin{bmatrix}1\\ 0\end{bmatrix}_{(S')}\)</span>.</p>
 <p>这样，我们能将两个坐标系之间的关系记为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 S = AS'.
-\]</div>
+\]</p>
 <p>In terms of linear transformations, how a transformation is expressed is related to the bases. Here are the steps to describe the same transformation in a different coordinate systems:</p>
 <p>Suppose a linear transformation <span class="arithmatex">\(M\)</span> in coordinate system <span class="arithmatex">\(S\)</span> is applied to some vector <span class="arithmatex">\(\mathbf{w}\)</span> in <span class="arithmatex">\(S'\)</span>,</p>
 <ol>
@@ -3537,29 +3537,29 @@ S = AS'.
 <li>finally we got <span class="arithmatex">\(A^{-1}MA\mathbf{w}\)</span>.</li>
 </ol>
 <p>To sum up,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 M_{(S)} = A^{-1}MA_{(S')}.
-\]</div>
+\]</p>
 <h2 id="10-eigenvectors-and-eigenvalues">10 Eigenvectors and Eigenvalues<a class="headerlink" href="#10-eigenvectors-and-eigenvalues" title="Permanent link">&para;</a></h2>
 <p>An eigenvector of a linear transformation is a <strong>non-zero</strong> vector that changes only a scalar factor when that transformation is applied to it. It is defined as</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A\mathbf{v}=\lambda\mathbf{v},
-\]</div>
+\]</p>
 <p>where non-zero vector <span class="arithmatex">\(\mathbf{v}\)</span> is an eigenvector of <span class="arithmatex">\(A\)</span>, and <span class="arithmatex">\(\lambda\in\mathbb{R}\)</span> is the eigenvalue associated to it.</p>
 <p>When applying the transformation, each eigenvector is scaled by the factor of its associated eigenvalue, while other vectors are all knocked off their original directions.</p>
 <p>An equivalence of the equation above</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 (A-\lambda I)\mathbf{v} = \mathbf{0}
-\]</div>
+\]</p>
 <p>is called the <em>characteristic equation</em>.</p>
 <p>In other words, non-zero vector <span class="arithmatex">\(\mathbf{v}\)</span> becomes zero when applying linear transformation <span class="arithmatex">\(A-\lambda I\)</span> to it, and the only way to do it is that matrix squeezes the space into a lower-dimensional one, therefore</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \det(A-\lambda I)=0.
-\]</div>
+\]</p>
 <p>Solve this equation, and if an eigenvector exists, all the vectors on the line spanned by it would be eigenvectors too.</p>
 <p>When all the basis vectors happen to be eigenvectors, they are called eigenbases, and the corresponding transformation matrix would be diagonal. Therefore a way to interpret a diagonal matrix is that all the bases are eigenvectors, with the diagonal entries of this matrix being their eigenvalues.</p>
 <p>A diagonal matrix has a nice property that</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{bmatrix}
 a_{1} &amp; &amp; &amp;  \\
 &amp; a_{2} &amp; &amp;  \\
@@ -3578,49 +3578,49 @@ a_{2}^k v_2 \\
 \vdots \\
 a_{n}^k v_n
 \end{bmatrix},
-\]</div>
+\]</p>
 <p>which indicates that if the eigenvectors of matrix <span class="arithmatex">\(M\)</span> span the whole space, we can change the bases to the eigenvectors, and the change-of-basis matrix is</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A=
 \big[
 \mathbf{v}_1\hspace{10mu}\mathbf{v}_2\hspace{8mu}\cdots\hspace{8mu}\mathbf{v}_n
 \big],
-\]</div>
+\]</p>
 <p>where <span class="arithmatex">\(\mathbf{v}_i\)</span> are the eigenvectors.</p>
 <p>Matrix <span class="arithmatex">\(A^{-1}MA\)</span> would express the same transformation in the eigenbasis coordinate system, and it is guaranteed to be diagonal with its corresponding eigenvalues down that diagonal, because the vectors are only scaled from the perspective of that coordinate system.</p>
 <p>When raising a non-diagonal matrix to some power, first change it into its eigenbases, and then compute that power in the new system, then convert back to the original system.</p>
 <p>When a matrix does not have enough eigenvectors to span the full space, this approach fails to work.</p>
 <h2 id="11-abstract-vector-spaces">11 Abstract Vector Spaces<a class="headerlink" href="#11-abstract-vector-spaces" title="Permanent link">&para;</a></h2>
 <p>Since functions also have linear properties:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 (\lambda f)(x)=\lambda f(x),\\
 (f+g)(x)=f(x)+g(x),
-\]</div>
+\]</p>
 <p>the concept of vectors can be expanded to functions.</p>
 <p>The derivative is an example of linear transformation (function) of a function, because it is linear,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{\text{d}}{\text{d}x}(\lambda f)=
 \lambda \frac{\text{d}}{\text{d}x}f,
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \frac{\text{d}}{\text{d}x}(f+g)=
 \frac{\text{d}}{\text{d}x}f+\frac{\text{d}}{\text{d}x}g,
-\]</div>
+\]</p>
 <p>and it transforms one function into another.</p>
 <p>In other words, the differential operator and the derivative operator are linear.</p>
 <p>To express derivatives in the form of matrices, for example in the space of polynomials, we choose</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 b_0(x)=1,\; b_1(x)=x,\; b_2(x)=x^2,\; \cdots,\; b_n(x)=x^n ,\; \cdots
-\]</div>
+\]</p>
 <p>as <em>basis functions</em>, and all polynomials can be described as the linear combinations of the basis functions:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(x)=a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n =
 \begin{bmatrix}
 a_0 \\ a_1 \\ a_2 \\ \vdots \\ a_n \\ \vdots
 \end{bmatrix}.
-\]</div>
+\]</p>
 <p>Since</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{\text{d}}{\text{d}x}b_0(x)=
 \begin{bmatrix}
 0 \\ 0 \\ 0 \\ \vdots
@@ -3633,9 +3633,9 @@ a_0 \\ a_1 \\ a_2 \\ \vdots \\ a_n \\ \vdots
 \begin{bmatrix}
 0 \\ 2 \\ 0 \\ \vdots
 \end{bmatrix},\;\cdots
-\]</div>
+\]</p>
 <p>the derivative operator matrix</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{\text{d}}{\text{d}x}=
 \begin{bmatrix}
 0 &amp; 1 &amp; 0 &amp; 0 &amp; \cdots \\
@@ -3644,9 +3644,9 @@ a_0 \\ a_1 \\ a_2 \\ \vdots \\ a_n \\ \vdots
 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\
 \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots
 \end{bmatrix}.
-\]</div>
+\]</p>
 <p>Therefore,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \frac{\text{d}}{\text{d}x}f(x) &amp; =
 \begin{bmatrix}
@@ -3664,16 +3664,16 @@ a_0 \\ a_1 \\ a_2 \\ a_3 \\ \vdots
 \end{bmatrix}\\ \\ &amp; =
 1a_1+2a_2x+3a_3x^2+4a_4x^3+\cdots.
 \end{aligned}
-\]</div>
+\]</p>
 <p>Almost all linear algebra concepts have their alternate names when applied to functions:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{aligned}
 \text{Linear transformations} &amp; \longleftrightarrow \text{Linear operators}\\
 \text{Dot products} &amp; \longleftrightarrow \text{Inner products}\\
 \text{Eigenvectors} &amp; \longleftrightarrow \text{Eigenfunctions}\\
 \cdots &amp; \longleftrightarrow \cdots
 \end{aligned}
-\]</div>
+\]</p>
 <p>In conclusion, <em>vectors</em> can be far more abstract, the forms they take do not matter. It is an intangible notion that maths abstracts all its embodiments into.</p>
 <div class="footnote">
 <hr />

@@ -2887,18 +2887,18 @@
 <p>如图所示，将每一个点 <span class="arithmatex">\((x_i, y_i)\)</span> 在 <span class="arithmatex">\(x\)</span> 轴上的投影 <span class="arithmatex">\((x_i, 0)\)</span> 记为 <span class="arithmatex">\(H_i\)</span>。对每一个 <span class="arithmatex">\(i\)</span>，我们选择一个点集 <span class="arithmatex">\(\lbrace P_i\rbrace \cup \lbrace H_j \vert 1 \le i\le n, j \neq i\rbrace\)</span>，作过这 <span class="arithmatex">\(n\)</span> 个点的至多 <span class="arithmatex">\(n-1\)</span> 次的线 <span class="arithmatex">\(g_i(x)\)</span>。图中 <span class="arithmatex">\(f(x)\)</span> 用黑线表示，<span class="arithmatex">\(g_i(x)\)</span> 用彩色线表示。</p>
 <p><img alt="" src="../img/lagrange-interpolation.png" width="600px" /></p>
 <p>这样，我们得到了 <span class="arithmatex">\(n\)</span> 个 <span class="arithmatex">\(g_i(x)\;(1 \le i \le n)\)</span>，它们都在各自对应的 <span class="arithmatex">\(x_i\)</span> 处的值为 <span class="arithmatex">\(y_i\)</span>，并且在其它 <span class="arithmatex">\(x_j\ (j \neq i)\)</span> 处值为 <span class="arithmatex">\(0\)</span>。所以很容易构造出 <span class="arithmatex">\(g_i(x)\)</span> 的表达式：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 g_i(x) = y_i\prod_{j\neq i }\frac{x-x_j}{x_i-x_j}.
-\]</div>
+\]</p>
 <p>很容易通过将每一个 <span class="arithmatex">\(x_i\)</span> 代入上式以验证此其正确性。最后，我们所求的 <span class="arithmatex">\(f(x)=\sum_{i=1}^{n}g_i(x)\)</span>，即各 <span class="arithmatex">\(g_i(x)\)</span> 之和。因为对于每一个 <span class="arithmatex">\(i\)</span>，都只有一条 <span class="arithmatex">\(g_i\)</span> 经过 <span class="arithmatex">\(P_i\)</span>，其余 <span class="arithmatex">\(g_j\)</span> 都经过 <span class="arithmatex">\(H_i\)</span>，故它们相加后在 <span class="arithmatex">\(x_i\)</span> 的取值仍为 <span class="arithmatex">\(y_i\)</span>，即最后的和函数总是过所有 <span class="arithmatex">\(P_i\)</span> 的。</p>
 <p>公式整理得：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(x)=\sum_{i=1}^{n} y_i\prod_{j\neq i }\frac{x-x_j}{x_i-x_j}
-\]</div>
+\]</p>
 <p>如果要将每一项的系数都算出来，时间复杂度仍为 <span class="arithmatex">\(O(n^2)\)</span>，但是本题中只用求出 <span class="arithmatex">\(f(k)\)</span> 的值，所以在计算上式的过程中直接将 <span class="arithmatex">\(k\)</span> 代入即可。</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(k)=\sum_{i=1}^{n} y_i\prod_{j\neq i }\frac{k-x_j}{x_i-x_j}
-\]</div>
+\]</p>
 <p>本题中，还需要求解逆元。如果先分别计算出分子和分母，再将分子乘进分母的逆元，累加进最后的答案，时间复杂度的瓶颈就不会在求逆元上，时间复杂度为 <span class="arithmatex">\(O(n^2)\)</span> 。</p>
 <h3 id="_1">代码实现<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="language-cpp highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>

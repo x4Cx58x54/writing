@@ -3025,75 +3025,75 @@
 <h2 id="applied-maths">Applied Maths<a class="headerlink" href="#applied-maths" title="Permanent link">&para;</a></h2>
 <h3 id="norms">Norms<a class="headerlink" href="#norms" title="Permanent link">&para;</a></h3>
 <p>The <span class="arithmatex">\(L^p\)</span> norm is given by</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \|\boldsymbol{x}\|_p = \left(\sum_i|x_i|^p\right)^{\frac{1}{p}}
-\]</div>
+\]</p>
 <p>for <span class="arithmatex">\(p\in\mathbb{R}\)</span>, <span class="arithmatex">\(p\ge1\)</span>.</p>
 <p>当零和非零值之间的区别非常重要时，常用 <span class="arithmatex">\(L^1\)</span> 范数.</p>
 <p>Analogous to <span class="arithmatex">\(L^2\)</span> norm (Euclidean distance), the <em>Frobenius norm</em> measures the size of a matrix:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \|\boldsymbol{A}\|_F = \sqrt{\sum_{i,j}A_{i,j}^2}.
-\]</div>
+\]</p>
 <h3 id="trace">Trace<a class="headerlink" href="#trace" title="Permanent link">&para;</a></h3>
 <p>The trace provides another way of writing the Frobenius norm</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \|\boldsymbol{A}\|_F=\sqrt{\operatorname{Tr}(\boldsymbol{A}\boldsymbol{A}^\top)}.
-\]</div>
+\]</p>
 <p>若各因子的形状使得乘积是方阵，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \operatorname{Tr}(\boldsymbol{A}^{(1)}\boldsymbol{A}^{(2)}\cdots\boldsymbol{A}^{(n)})=\operatorname{Tr}(\boldsymbol{A}^{(n)}\boldsymbol{A}^{(1)}\cdots\boldsymbol{A}^{(n-1)}).
-\]</div>
+\]</p>
 <h3 id="useful-properties-of-common-functions">Useful Properties of Common Functions<a class="headerlink" href="#useful-properties-of-common-functions" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \text{Softplus:}\quad \zeta(x) = \ln(1+\mathrm{e}^x)
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \text{Sigmoid:}\quad \sigma(x) = \frac{1}{1+\mathrm{e}^{-x}}
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \sigma(x) = \frac{\mathrm{e}^x}{\mathrm{e}^0+\mathrm{e}^x}
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \frac{\mathrm{d}}{\mathrm{d}x}\sigma(x) = \sigma(x)(1-\sigma(x))
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 1-\sigma(x) = \sigma(-x)
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \zeta(x) = \int_{-\infty}^{x}\sigma(x)\mathrm{d}x, \quad \frac{\mathrm{d}}{\mathrm{d}x}\zeta(x) = \sigma(x)
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \ln\sigma(x)=-\zeta(-x)
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \zeta(x)-\zeta(-x)=x
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \sigma^{-1}(x)=\ln\left(\frac{x}{1-x}\right)
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \zeta^{-1}(x)=\ln(\mathrm{e}^x-1)
-\]</div>
+\]</p>
 <h3 id="information-theory">Information Theory<a class="headerlink" href="#information-theory" title="Permanent link">&para;</a></h3>
 <p>信息的含量取决于此信息代表的事件发生的可能性. 低概率事件包含的信息值高，高概率事件的信息则低，同时独立事件的信息值具有可加性. 由上面的性质，可以得到事件 <span class="arithmatex">\(\mathrm{x}=x\)</span> 的自信息（self-informaion）为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 I(x) = -\ln P(x).
-\]</div>
+\]</p>
 <p>由于使用自然对数，此处 <span class="arithmatex">\(I(x)\)</span> 的单位为 nats，一个 nat 对应概率为 <span class="arithmatex">\(\mathrm{e}^{-1}\)</span> 的事件. 如果使用以 <span class="arithmatex">\(2\)</span> 为底的对数，则单位为比特.</p>
 <p>香农熵用于衡量一个概率分布的不确定性：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(P)=H(\mathrm{x}) = \operatorname{E}\big[I(x)\big],
-\]</div>
+\]</p>
 <p>也就是从一个概率分布中得到的信息量的期望. 比较集中的分布熵值低，分散的分布熵值高.</p>
 <p>KL 距离（Kullback-Leibler divergence）衡量两个分布之间的差异：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 D_{\mathrm{KL}}(P\Vert Q)=\operatorname{E}_P \ln\frac{P(x)}{Q(x)}.
-\]</div>
+\]</p>
 <p>KL 距离总是非负的，而且它并不对称，即 <span class="arithmatex">\(D_{\mathrm{KL}}(P\Vert Q)\ne D_{\mathrm{KL}}(Q\Vert P)\)</span>.</p>
 <p>交叉熵（cross-entropy）的定义是</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H(P,Q) = H(P) + D_{\mathrm{KL}}(P\Vert Q) =  -\operatorname{E}_P\ln Q(x).
-\]</div>
+\]</p>
 <p>若以 <span class="arithmatex">\(Q(x)\)</span> 为参数，则交叉熵和 KL 距离同时有最值.</p>
 <h3 id="overflow-and-underflow">Overflow and Underflow<a class="headerlink" href="#overflow-and-underflow" title="Permanent link">&para;</a></h3>
 <p>数值处理的根本困难在于用有限位的计算机处理连续的实数，这导致了舍入误差（rounding error）.</p>
@@ -3102,79 +3102,79 @@ H(P,Q) = H(P) + D_{\mathrm{KL}}(P\Vert Q) =  -\operatorname{E}_P\ln Q(x).
 <p>这种误差指的是微小的输入扰动导致输出大幅变化. 这会让之前产生的误差放大. 例如函数 <span class="arithmatex">\(f(\boldsymbol{x}) = \boldsymbol{A}^{-1}\boldsymbol{x}\)</span>，当 <span class="arithmatex">\(\boldsymbol{A}\)</span> 可以做奇异值分解时，它的条件数（condition number）为 <span class="arithmatex">\(\max\limits_{i,j}|\lambda_i/\lambda_j|\)</span>. 如果这个数非常大，就会导致这个函数非常敏感.</p>
 <h3 id="jacobian-and-hessian-matrices">Jacobian and Hessian Matrices<a class="headerlink" href="#jacobian-and-hessian-matrices" title="Permanent link">&para;</a></h3>
 <p>函数 <span class="arithmatex">\(f: \mathbb{R}^m\rightarrow\mathbb{R}^n\)</span> 的雅可比矩阵 <span class="arithmatex">\(\boldsymbol{J}\in\mathbb{R}^{m\times n}\)</span> 由下式决定：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 J_{i,j} = \frac{\partial}{\partial x_j}f(\boldsymbol{x})_i.
-\]</div>
+\]</p>
 <p><span class="arithmatex">\(f\)</span> 的海森矩阵</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{H} = \boldsymbol{J}(\nabla f),
-\]</div>
+\]</p>
 <p>即</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 H_{i,j} = \frac{\partial^2}{\partial x_i x_j}f(\boldsymbol{x}).
-\]</div>
+\]</p>
 <p>由克莱罗定理（Clairaut's Th.），对于具有连续一阶偏导的实函数，<span class="arithmatex">\(\boldsymbol{H}\)</span> 是实对称的. 所以可以将其分解为实特征值与规范正交的特征向量 <span class="arithmatex">\(\boldsymbol{d}\)</span>. 对于每一个 <span class="arithmatex">\(\boldsymbol{d}^{(i)}\)</span>，它所指方向上有 <span class="arithmatex">\(f''(\boldsymbol{x})=\lambda^{(i)}\)</span>，在其它方向上，<span class="arithmatex">\(f\)</span> 的二阶导数可以由特征值加权平均求得.</p>
 <p>对于单位向量，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f''(\boldsymbol{x})=\boldsymbol{d}^{\top}\boldsymbol{Hd}.
-\]</div>
+\]</p>
 <p>二阶方向导数可以衡量这里的梯度下降的效果. 记 <span class="arithmatex">\(\boldsymbol{g}=\nabla f\)</span>，有泰勒展开</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(\boldsymbol{x})\approx f(\boldsymbol{x}^{(0)})+(\boldsymbol{x}-\boldsymbol{x}^{(0)})^\top\boldsymbol{g}+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{x}^{(0)})^\top\boldsymbol{H}(\boldsymbol{x}-\boldsymbol{x}^{(0)}).
-\]</div>
+\]</p>
 <p>设学习率为 <span class="arithmatex">\(\varepsilon\)</span>，则 <span class="arithmatex">\(\boldsymbol{x} = \boldsymbol{x}^{(0)}-\varepsilon\boldsymbol{g}\)</span>，代入得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(\boldsymbol{x}^{(0)}-\varepsilon\boldsymbol{g})\approx f(\boldsymbol{x}^{(0)})-\varepsilon\boldsymbol{g}^\top\boldsymbol{g}+\frac{1}{2}\varepsilon^2\boldsymbol{g}^\top\boldsymbol{Hg}.
-\]</div>
+\]</p>
 <p>若 <span class="arithmatex">\(\boldsymbol{g}^\top\boldsymbol{Hg}&lt;0\)</span>，则在某个 <span class="arithmatex">\(\varepsilon\)</span> 范围内，<span class="arithmatex">\(f\)</span> 都是下降的. 如果 <span class="arithmatex">\(\boldsymbol{g}^\top\boldsymbol{Hg}&gt;0\)</span>，则可以直接得到</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \varepsilon^*=\frac{\boldsymbol{g}^\top\boldsymbol{g}}{\boldsymbol{g}^\top\boldsymbol{Hg}}.
-\]</div>
+\]</p>
 <p>在高维空间，可以使用海森矩阵来判断驻点的极性. 当驻点的海森矩阵正定时，此处为极小值. 相反如果为负定，则有极大值. 若特征值有正有负，则函数在某一个截面是极大值，在另一个截面极小.</p>
 <p>当海森矩阵的条件数很大时，梯度下降会受到很大影响. 这是因为会有两个方向上梯度变化速率一个过快而另一个过慢，故很难选择合适的步长. 由于最大曲率在右下到左上的方向取得，而事实上极值正好在垂直方向，导致梯度下降的路径非常曲折，沿着山谷摇摆下降.</p>
 <p><img alt="" src="../img/dl-4.6-gradient-descent.jpg" width="200px" /></p>
 <p>最简单的解决办法是牛顿法. 首先泰勒展开</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 f(\boldsymbol{x})\approx f(\boldsymbol{x}^{(0)})+(\boldsymbol{x}-\boldsymbol{x}^{(0)})^\top\nabla f(\boldsymbol{x}^{(0)})+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{x}^{(0)})^\top\boldsymbol{H}(\boldsymbol{x}^{(0)})(\boldsymbol{x}-\boldsymbol{x}^{(0)}),
-\]</div>
+\]</p>
 <p>得驻点</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \boldsymbol{x}^* = \boldsymbol{x}^{(0)}-\boldsymbol{H}^{-1}\nabla f(\boldsymbol{x}^{(0)}).
-\]</div>
+\]</p>
 <p>若 <span class="arithmatex">\(f\)</span> 在附近可以近似为正定二次函数，则迭代上式便可以得到极值. 这个方法在鞍点处则会失效.</p>
 <h3 id="constrained-optimization">Constrained Optimization<a class="headerlink" href="#constrained-optimization" title="Permanent link">&para;</a></h3>
 <p>KKT 法（Karush-Kuhn-Tucker approach）是一种约束优化的一般方法，是拉格朗日乘数法的推广. 首先描述限制区域</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \mathbb{S} = \big\{\boldsymbol{x}\ |\ \forall i,g^{(i)}(\boldsymbol{x})=0\ \mathrm{and}\ \forall j,h^{(j)}(\boldsymbol{x})\le0\big\}.
-\]</div>
+\]</p>
 <p>广义拉格朗日函数（generalized Lagrangian）为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 L(\boldsymbol{x}, \boldsymbol{\lambda},\boldsymbol{\alpha}) = \sum_i\lambda_ig^{(i)}(\boldsymbol{x})+\sum_j\alpha_jh^{(j)}(\boldsymbol{x}),
-\]</div>
+\]</p>
 <p>那么优化问题 <span class="arithmatex">\(\min\limits_{\boldsymbol{x}\in\mathbb{S}}f(\boldsymbol{x})\)</span> 就转化为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \min_{\boldsymbol{x}}\max_{\boldsymbol{\lambda}}\max_{\boldsymbol{\alpha}, \boldsymbol{\alpha}\ge0} L(\boldsymbol{x}, \boldsymbol{\lambda},\boldsymbol{\alpha}).
-\]</div>
+\]</p>
 <h3 id="example-linear-least-squares">Example: Linear Least Squares<a class="headerlink" href="#example-linear-least-squares" title="Permanent link">&para;</a></h3>
 <p>求 <span class="arithmatex">\(f(\boldsymbol{x})=\dfrac{1}{2}\Vert\boldsymbol{Ax}-\boldsymbol{b}\Vert_2^2\)</span> 的最小值. 可以使用梯度下降和牛顿法，并且由于此函数是正定二次的，牛顿法可以直接得到解. 如果加上限制 <span class="arithmatex">\(\boldsymbol{x}^\top\boldsymbol{x}=1\)</span>，使用拉格朗日乘数法，</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 L(\boldsymbol{x},\lambda)=f(\boldsymbol{x})+\lambda\big(\boldsymbol{x}^\top\boldsymbol{x}-1\big).
-\]</div>
+\]</p>
 <p>极值点处，有</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{cases}
 \dfrac{\partial}{\partial\boldsymbol{x}}L=\boldsymbol{A}^\top\boldsymbol{Ax}-\boldsymbol{A}^\top\boldsymbol{b}+2\lambda\boldsymbol{x}=0,\\
 \\
 \dfrac{\partial}{\partial\lambda}L=\boldsymbol{x}^\top\boldsymbol{x}-1=0,
 \end{cases}
-\]</div>
+\]</p>
 <p>得</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \begin{cases}
 \boldsymbol{x} = \big(\boldsymbol{A}^\top\boldsymbol{A}+2\lambda\boldsymbol{I}\big)^{-1}\boldsymbol{A}^\top\boldsymbol{b},\\
 \boldsymbol{x}^\top\boldsymbol{x}=1.
 \end{cases}
-\]</div>
+\]</p>
 
 
   

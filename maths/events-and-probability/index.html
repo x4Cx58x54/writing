@@ -2841,23 +2841,23 @@
 <details class="note">
 <summary>Hint</summary>
 <p>我们来考察最初 <span class="arithmatex">\(2n+1-m\)</span> 次抽用的情况，每次抽用时有 2 种方法（抽出甲盒或乙盒），故总的不同的抽法有 <span class="arithmatex">\(2^{2n+1-m}\)</span> 种. 有利于所述时间的抽法可计算如下：先看“最后一次（即第 <span class="arithmatex">\(2n+1-m\)</span> 次）抽出甲盒”的情况. 为使所述事件发生，在前 <span class="arithmatex">\(2n-m\)</span> 次中，必须有 <span class="arithmatex">\(n\)</span> 次抽用甲盒，实现这一点不同的抽法为 <span class="arithmatex">\(\mathrm{C}_{2n-m}^{n}\)</span>. 类似的，“最后一次抽出乙盒”的抽法也有这么多. 故有利于所述时间的全部抽法为 <span class="arithmatex">\(2\mathrm{C}_{2n-m}^{n}\)</span>，而事件的概率为</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \frac{2\mathrm{C}_{2n-m}^{n}}{2^{2n+1-m}} = \frac{\mathrm{C}_{2n-m}^{n}}{2^{2n-m}}.
-\]</div>
+\]</p>
 </details>
 <h4 id="pairwise-independence2">Pairwise Independence<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><a class="headerlink" href="#pairwise-independence2" title="Permanent link">&para;</a></h4>
 <p>Consider an experiment in which the sample space <span class="arithmatex">\(S\)</span> contains four outcomes <span class="arithmatex">\(\{s_1, s_2, s_3, s_4\}\)</span>, and suppose that the probability of each outcome is <span class="arithmatex">\(1/4\)</span>. Let the three events <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> be defined as follows:</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 A = \{s_1, s_2\},\ \ B = \{s_1, s_3\},\ \ \mathrm{and}\ \ C = \{s_1, s_4\}.
-\]</div>
+\]</p>
 <p>Then <span class="arithmatex">\(AB = AC = BC = ABC = \{s_1\}\)</span>. Hence,</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(A) = \Pr(B) = \Pr(C) = 1/2
-\]</div>
+\]</p>
 <p>and</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 \Pr(AB) = \Pr(AC) = \Pr(BC) = \Pr(ABC) = 1/4.
-\]</div>
+\]</p>
 <p>These results can be summarized by saying that the events <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> are <em>pairwise independent</em>, but all three events are not independent.</p>
 <div class="footnote">
 <hr />

@@ -2946,9 +2946,9 @@
 <li>第 22 至 0 位的 23 位为尾数（significand/mantissa）</li>
 </ul>
 <p>那么这个浮点数的值为（指数非全 0，即规格数的情况下）</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 (-1)^S \cdot 2^{E-127} \cdot 1.M
-\]</div>
+\]</p>
 <div class="admonition note">
 <p class="admonition-title">Examples</p>
 <ul>
@@ -2962,9 +2962,9 @@
 <p class="admonition-title">Normal Numbers and Subnormal Numbers</p>
 <p>从表示上来说，规格化数的指数位非全 0（也非全 1），对应非规格化数的指数位全为 0. 规格化数表示的是一般的非零数，而非规格化数表示的是绝对值比所有规格化数更小的数，包括 0.</p>
 <p>和规格数不同，非规格数的的指数固定为 -126，而且尾数部分不加上 1：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 (-1)^S \cdot 2^{-126} \cdot 0.M
-\]</div>
+\]</p>
 <ul>
 <li>
 <p>最小的正非规格数为</p>
@@ -3143,28 +3143,28 @@
 <h2 id="_2">牛顿法求根<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>牛顿法（Newton's method / Newton–Raphson method）求方程 <span class="arithmatex">\(f(x) = 0\)</span> 的解的思想在于先估计一个近似解 <span class="arithmatex">\(x_n\)</span>，然后求 <span class="arithmatex">\(f(x)\)</span> 在此点上的切线与 <span class="arithmatex">\(x\)</span> 轴之交点作为下一个估计 <span class="arithmatex">\(x_{n+1}\)</span>，如此迭代求解.</p>
 <p>要求 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(x_n\)</span> 处的切线，只需在此做一阶泰勒展开</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 t_n(x) = f(x_n) + f'(x_n)(x - x_n),
-\]</div>
+\]</p>
 <p>求此切线与 <span class="arithmatex">\(x\)</span> 轴之交点，即令 <span class="arithmatex">\(t_n(x_{n+1}) = 0\)</span>，得到牛顿法的迭代式：</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.
-\]</div>
+\]</p>
 <iframe src="https://www.desmos.com/calculator/yr9oynlviw?embed" width="500" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
 
 <p>求 <span class="arithmatex">\(y = 1/\sqrt{x}\)</span> 时，相当于解方程 <span class="arithmatex">\(f(y) = 1/y^2 - x = 0\)</span>，根据牛顿法有 <span class="arithmatex">\(y_{n+1} = y_n(\frac{3}{2} - \frac{1}{2}xy_n^2)\)</span>，这对应算法最后两行的迭代. 反推可知 <code>i = 0x5f3759df - (i &gt;&gt; 1)</code> 应当能给出一个相当好的初始估计，使得算法仅需后续 1 至 2 步牛顿法迭代即可将误差控制到很小的范围内.</p>
 <h2 id="0x5f3759df-the-magic-number">0x5F3759DF the Magic Number<a class="headerlink" href="#0x5f3759df-the-magic-number" title="Permanent link">&para;</a></h2>
 <p>现在唯一的疑问在于，为何算法先将 <span class="arithmatex">\(x\)</span> 的 32 位当作一个整数，右移一位，然后用这个神奇数字减去之，再重新视作浮点数，就可以得到 <span class="arithmatex">\(\sqrt{x}\)</span> 的初始估计. 这里不尝试寻找此数，而是解释算法的合理性.</p>
 <p>根据 float32 表示方法，由于 <span class="arithmatex">\(x &gt; 0\)</span>，符号位一定为 0，故</p>
-<div class="arithmatex">\[
+<p class="arithmatex">\[
 x = 2^{E-127}\cdot (1+M),
-\]</div>
-<div class="arithmatex">\[
+\]</p>
+<p class="arithmatex">\[
 \begin{aligned}
 y = \frac{1}{\sqrt{x}} &amp;= 2^{(127-E)/2}\cdot \frac{1}{\sqrt{1+M}} \\
 &amp;= 2^{190.5 - E/2 - 127} \cdot \frac{1}{\sqrt{1+M}}.
 \end{aligned}
-\]</div>
+\]</p>
 <p>对 <code>0x5f3759df</code>，对应指数 <span class="arithmatex">\(E\)</span> 的 8 位为 <code>1011 1110</code>，是十进制的 190；对应尾数 <span class="arithmatex">\(M\)</span> 的 23 位为 <code>011 0111 0101 1001 1101 1111</code>，对应十进制的约 0.432. 那么忽略尾数最后一位产生的误差，讨论 <code>0x5f3759df - (i &gt;&gt; 1)</code> 得到的结果：</p>
 <p>首先注意右移一位后指数最大值是 127，小于 190，故做减法时指数不会再向上借位.</p>
 <p><span class="arithmatex">\(E\)</span> 为奇数时：</p>
