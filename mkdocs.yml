@@ -75,6 +75,7 @@ nav:
       - 树状数组: competitive-programming/fenwick.md
       - 线段树: competitive-programming/segment-tree.md
       - 堆: competitive-programming/heap.md
+      - 对顶堆: competitive-programming/two-heaps.md
       - ST 表: competitive-programming/sparse-table.md
       - 并查集: competitive-programming/ufds.md
     - Dynamic Programming:
