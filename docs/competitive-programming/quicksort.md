@@ -57,3 +57,35 @@ void quicksort(int a[], int l, int r)
 在确定递归子问题的处理范围时，以上是仅有的写法，任何对语义的改动都会导致出错。由于 pivot 的取值会在数组正中间或偏左一位的位置，而在外层 `while` 循环结束时有 $i = j$ 或 $j+1 = i$，故这样的子问题处理范围是合理的。这里不做证明，但简单的 2 至 3 元素的数组可以作为反例排除其它方案。
 
 值得注意的是这种写法中 pivot 最后出现的位置不确定。求第 k 小的数时需要这一信息，应使用第一种写法。
+
+## 算法退化
+
+若选择的 pivot 是当前处理区间中的最值，那么快速排序在这一步就会出现明显的退化。以下几种极端情况中，pivot 几乎每次都会取得区间最值，于是算法时间复杂度退化到 $O(n^2)$：
+
+* 数组基本有序且 pivot 每次取端点值：先将整个数组随机打乱，可以极大概率避免这种情况；
+* 数组中有大量相同元素：这是数组有序的特殊情况，但无法用打乱避免退化，应检查子问题新端点处值是否与 pivot 相同，若是则说明此端点已在其排序后的位置上，应跳过。
+
+下面给出优化后的快速排序代码：
+
+```cpp
+void quicksort(vector<int>& a, int l, int r) {
+    if (l >= r) return;
+    int i = l, j = r, pivot = a[l];
+    while (i < j) {
+        while (i < j && a[j] >= pivot) j--;
+        a[i] = a[j];
+        while (i < j && a[i] <= pivot) i++;
+        a[j] = a[i];
+    }
+    a[i] = pivot;
+    while (i >= l && a[i] == pivot) i--;
+    quicksort(a, l, i);
+    while (j <= r && a[j] == pivot) j++;
+    quicksort(a, j, r);
+}
+vector<int> sortArray(vector<int>& nums) {
+    random_shuffle(nums.begin(), nums.end());
+    quicksort(nums, 0, nums.size()-1);
+    return nums;
+}
+```
