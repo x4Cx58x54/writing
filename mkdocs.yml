@@ -78,6 +78,7 @@ nav:
       - 对顶堆: competitive-programming/two-heaps.md
       - ST 表: competitive-programming/sparse-table.md
       - 并查集: competitive-programming/ufds.md
+      - 二叉查找树: competitive-programming/binary-search-tree.md
     - Dynamic Programming:
       - 直线交点数: competitive-programming/intersection-points.md
       - 最长上升序列: competitive-programming/lis.md
