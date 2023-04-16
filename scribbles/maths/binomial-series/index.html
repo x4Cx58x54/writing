@@ -11,24 +11,24 @@
       
       
       
-        <link rel="prev" href="../javascript-the-definitive-guide/">
+        <link rel="prev" href="../chebyshev-center/">
       
       
-        <link rel="next" href="../css-cheatsheet/">
+        <link rel="next" href="../../numerical-analysis/fast-inv-sqrt/">
       
-      <link rel="icon" href="../../none">
+      <link rel="icon" href="../../../none">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
-        <title>HTML Cheatsheet - Randomish Writing</title>
+        <title>Binomial Series, Generalized Binomial Coefficient - Randomish Writing</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.240905d7.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -40,9 +40,9 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../_static/css/extra.css">
+      <link rel="stylesheet" href="../../../_static/css/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#html-cheatsheet" class="md-skip">
+        <a href="#binomial-series-generalized-binomial-coefficients" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Randomish Writing" class="md-header__button md-logo" aria-label="Randomish Writing" data-md-component="logo">
+    <a href="../../.." title="Randomish Writing" class="md-header__button md-logo" aria-label="Randomish Writing" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 9h16v2H4V9m0 4h10v2H4v-2Z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              HTML Cheatsheet
+              Binomial Series, Generalized Binomial Coefficient
             
           </span>
         </div>
@@ -140,7 +140,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Welcome
     </a>
   </li>
@@ -155,7 +155,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../maths/essence-of-linear-algebra/" class="md-tabs__link">
+      <a href="../../../maths/essence-of-linear-algebra/" class="md-tabs__link">
         Mathematics
       </a>
     </li>
@@ -165,15 +165,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../c/c-primer-plus/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../c/c-primer-plus/" class="md-tabs__link">
         Languages
       </a>
     </li>
@@ -189,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../ai/deep-learning/" class="md-tabs__link">
+      <a href="../../../ai/deep-learning/" class="md-tabs__link">
         AI
       </a>
     </li>
@@ -210,7 +208,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../competitive-programming/prime/" class="md-tabs__link">
+      <a href="../../../competitive-programming/prime/" class="md-tabs__link">
         Competitive Programming
       </a>
     </li>
@@ -228,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../computer-organization/computer-organization/" class="md-tabs__link">
+      <a href="../../../computer-organization/computer-organization/" class="md-tabs__link">
         CS
       </a>
     </li>
@@ -249,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../guides/linux/linux-initial-setup/" class="md-tabs__link">
+      <a href="../../../guides/linux/linux-initial-setup/" class="md-tabs__link">
         Guides
       </a>
     </li>
@@ -272,7 +270,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../electromagnetics/electromagnetics/" class="md-tabs__link">
+      <a href="../../../electromagnetics/electromagnetics/" class="md-tabs__link">
         Misc
       </a>
     </li>
@@ -284,13 +282,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../scribbles/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Scribbles
       </a>
     </li>
@@ -318,7 +318,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing" data-md-component="logo">
+    <a href="../../.." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 9h16v2H4V9m0 4h10v2H4v-2Z"/></svg>
@@ -337,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Welcome
       </a>
     </li>
@@ -407,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/essence-of-linear-algebra/" class="md-nav__link">
+      <a href="../../../maths/essence-of-linear-algebra/" class="md-nav__link">
         Essence of Linear Algebra
       </a>
     </li>
@@ -421,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/linear-algebra/" class="md-nav__link">
+      <a href="../../../maths/linear-algebra/" class="md-nav__link">
         Linear Algebra
       </a>
     </li>
@@ -470,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/probability-theory/" class="md-nav__link">
+      <a href="../../../maths/probability-theory/" class="md-nav__link">
         Probability Theory
       </a>
     </li>
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/combinatorics/" class="md-nav__link">
+      <a href="../../../maths/combinatorics/" class="md-nav__link">
         Combinatorics Example Problems
       </a>
     </li>
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/events-and-probability/" class="md-nav__link">
+      <a href="../../../maths/events-and-probability/" class="md-nav__link">
         Events and Probability
       </a>
     </li>
@@ -545,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/random-variables/" class="md-nav__link">
+      <a href="../../../maths/random-variables/" class="md-nav__link">
         Random Variables
       </a>
     </li>
@@ -573,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/statistics/" class="md-nav__link">
+      <a href="../../../maths/statistics/" class="md-nav__link">
         Statistics
       </a>
     </li>
@@ -587,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/elements-of-information-theory/" class="md-nav__link">
+      <a href="../../../maths/elements-of-information-theory/" class="md-nav__link">
         Elements of Information Theory
       </a>
     </li>
@@ -601,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/matrix-algebra/" class="md-nav__link">
+      <a href="../../../maths/matrix-algebra/" class="md-nav__link">
         Matrix Algebra
       </a>
     </li>
@@ -615,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/discrete-maths/" class="md-nav__link">
+      <a href="../../../maths/discrete-maths/" class="md-nav__link">
         Discrete Maths
       </a>
     </li>
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/calculus/" class="md-nav__link">
+      <a href="../../../maths/calculus/" class="md-nav__link">
         Calculus
       </a>
     </li>
@@ -643,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/complex-analysis/" class="md-nav__link">
+      <a href="../../../maths/complex-analysis/" class="md-nav__link">
         Complex Analysis
       </a>
     </li>
@@ -657,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/integral-transforms/" class="md-nav__link">
+      <a href="../../../maths/integral-transforms/" class="md-nav__link">
         Integral Transforms
       </a>
     </li>
@@ -671,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/convex-optimization/" class="md-nav__link">
+      <a href="../../../maths/convex-optimization/" class="md-nav__link">
         Convex Optimization
       </a>
     </li>
@@ -685,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/3b1b/" class="md-nav__link">
+      <a href="../../../maths/3b1b/" class="md-nav__link">
         3Blue1Brown
       </a>
     </li>
@@ -699,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/memos/" class="md-nav__link">
+      <a href="../../../maths/memos/" class="md-nav__link">
         Memos
       </a>
     </li>
@@ -719,16 +719,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
         
@@ -755,7 +753,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Languages
@@ -768,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/c-primer-plus/" class="md-nav__link">
+      <a href="../../../c/c-primer-plus/" class="md-nav__link">
         C Primer Plus
       </a>
     </li>
@@ -782,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/cpp-notes/" class="md-nav__link">
+      <a href="../../../cpp/cpp-notes/" class="md-nav__link">
         C++ Notes
       </a>
     </li>
@@ -796,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/python-3-object-oriented-programming/" class="md-nav__link">
+      <a href="../../../python/python-3-object-oriented-programming/" class="md-nav__link">
         Python 3 OOP
       </a>
     </li>
@@ -843,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../latex/latex-cheatsheet/" class="md-nav__link">
+      <a href="../../../latex/latex-cheatsheet/" class="md-nav__link">
         LaTeX Cheatsheet
       </a>
     </li>
@@ -857,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../latex/latex-maths/" class="md-nav__link">
+      <a href="../../../latex/latex-maths/" class="md-nav__link">
         LaTeX Maths Symbols
       </a>
     </li>
@@ -911,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regex/introducing-regular-expressions/" class="md-nav__link">
+      <a href="../../../regex/introducing-regular-expressions/" class="md-nav__link">
         Introducing Regular Expressions
       </a>
     </li>
@@ -925,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regex/regular-expressions-cookbook/" class="md-nav__link">
+      <a href="../../../regex/regular-expressions-cookbook/" class="md-nav__link">
         Regular Expressions Cookbook
       </a>
     </li>
@@ -946,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../javascript-the-definitive-guide/" class="md-nav__link">
+      <a href="../../../web/javascript-the-definitive-guide/" class="md-nav__link">
         JavaScript the Definitive Guide
       </a>
     </li>
@@ -958,73 +956,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          HTML Cheatsheet
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../web/html-cheatsheet/" class="md-nav__link">
         HTML Cheatsheet
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
-    Structure
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#elements" class="md-nav__link">
-    Elements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#html5-features" class="md-nav__link">
-    HTML5 Features
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1036,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../css-cheatsheet/" class="md-nav__link">
+      <a href="../../../web/css-cheatsheet/" class="md-nav__link">
         CSS Cheatsheet
       </a>
     </li>
@@ -1091,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/deep-learning/" class="md-nav__link">
+      <a href="../../../ai/deep-learning/" class="md-nav__link">
         Deep Learning
       </a>
     </li>
@@ -1105,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/machine-learning/" class="md-nav__link">
+      <a href="../../../ai/machine-learning/" class="md-nav__link">
         Machine Learning
       </a>
     </li>
@@ -1209,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/prime/" class="md-nav__link">
+      <a href="../../../competitive-programming/prime/" class="md-nav__link">
         素数
       </a>
     </li>
@@ -1223,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/exgcd/" class="md-nav__link">
+      <a href="../../../competitive-programming/exgcd/" class="md-nav__link">
         扩展欧几里得
       </a>
     </li>
@@ -1237,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/combination/" class="md-nav__link">
+      <a href="../../../competitive-programming/combination/" class="md-nav__link">
         组合数
       </a>
     </li>
@@ -1251,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/binexp/" class="md-nav__link">
+      <a href="../../../competitive-programming/binexp/" class="md-nav__link">
         快速幂
       </a>
     </li>
@@ -1265,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/fibonacci/" class="md-nav__link">
+      <a href="../../../competitive-programming/fibonacci/" class="md-nav__link">
         类斐波那契数列
       </a>
     </li>
@@ -1279,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/gcd-inverse/" class="md-nav__link">
+      <a href="../../../competitive-programming/gcd-inverse/" class="md-nav__link">
         GCD Inverse
       </a>
     </li>
@@ -1293,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/lagrange-interpolation/" class="md-nav__link">
+      <a href="../../../competitive-programming/lagrange-interpolation/" class="md-nav__link">
         拉格朗日插值
       </a>
     </li>
@@ -1357,7 +1293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/fenwick/" class="md-nav__link">
+      <a href="../../../competitive-programming/fenwick/" class="md-nav__link">
         树状数组
       </a>
     </li>
@@ -1371,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/segment-tree/" class="md-nav__link">
+      <a href="../../../competitive-programming/segment-tree/" class="md-nav__link">
         线段树
       </a>
     </li>
@@ -1385,7 +1321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/heap/" class="md-nav__link">
+      <a href="../../../competitive-programming/heap/" class="md-nav__link">
         堆
       </a>
     </li>
@@ -1399,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/two-heaps/" class="md-nav__link">
+      <a href="../../../competitive-programming/two-heaps/" class="md-nav__link">
         对顶堆
       </a>
     </li>
@@ -1413,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/sparse-table/" class="md-nav__link">
+      <a href="../../../competitive-programming/sparse-table/" class="md-nav__link">
         ST 表
       </a>
     </li>
@@ -1427,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/ufds/" class="md-nav__link">
+      <a href="../../../competitive-programming/ufds/" class="md-nav__link">
         并查集
       </a>
     </li>
@@ -1441,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/binary-search-tree/" class="md-nav__link">
+      <a href="../../../competitive-programming/binary-search-tree/" class="md-nav__link">
         二叉查找树
       </a>
     </li>
@@ -1497,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/intersection-points/" class="md-nav__link">
+      <a href="../../../competitive-programming/intersection-points/" class="md-nav__link">
         直线交点数
       </a>
     </li>
@@ -1511,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/lis/" class="md-nav__link">
+      <a href="../../../competitive-programming/lis/" class="md-nav__link">
         最长上升序列
       </a>
     </li>
@@ -1525,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/number-of-common-substrings/" class="md-nav__link">
+      <a href="../../../competitive-programming/number-of-common-substrings/" class="md-nav__link">
         公共子序列
       </a>
     </li>
@@ -1583,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/quicksort/" class="md-nav__link">
+      <a href="../../../competitive-programming/quicksort/" class="md-nav__link">
         快速排序 / 第 k 小的数
       </a>
     </li>
@@ -1597,7 +1533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/nearest-point-pair/" class="md-nav__link">
+      <a href="../../../competitive-programming/nearest-point-pair/" class="md-nav__link">
         平面最近点对
       </a>
     </li>
@@ -1611,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/permutation-combination-subset/" class="md-nav__link">
+      <a href="../../../competitive-programming/permutation-combination-subset/" class="md-nav__link">
         排列、组合、子集问题与回溯
       </a>
     </li>
@@ -1625,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/reverse-linked-list/" class="md-nav__link">
+      <a href="../../../competitive-programming/reverse-linked-list/" class="md-nav__link">
         反转链表
       </a>
     </li>
@@ -1687,7 +1623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/josephus-survivor/" class="md-nav__link">
+      <a href="../../../competitive-programming/josephus-survivor/" class="md-nav__link">
         Josephus Survivor
       </a>
     </li>
@@ -1701,7 +1637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/chopsticks/" class="md-nav__link">
+      <a href="../../../competitive-programming/chopsticks/" class="md-nav__link">
         找筷子
       </a>
     </li>
@@ -1715,7 +1651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/double-cola/" class="md-nav__link">
+      <a href="../../../competitive-programming/double-cola/" class="md-nav__link">
         Double Cola
       </a>
     </li>
@@ -1729,7 +1665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/alphabetical-coding/" class="md-nav__link">
+      <a href="../../../competitive-programming/alphabetical-coding/" class="md-nav__link">
         字母计数
       </a>
     </li>
@@ -1743,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/number-of-trailing-zeros-of-n%21/" class="md-nav__link">
+      <a href="../../../competitive-programming/number-of-trailing-zeros-of-n%21/" class="md-nav__link">
         N! 末尾零数
       </a>
     </li>
@@ -1757,7 +1693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../competitive-programming/coordinate-compression/" class="md-nav__link">
+      <a href="../../../competitive-programming/coordinate-compression/" class="md-nav__link">
         坐标压缩
       </a>
     </li>
@@ -1819,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../computer-organization/computer-organization/" class="md-nav__link">
+      <a href="../../../computer-organization/computer-organization/" class="md-nav__link">
         Computer Organization
       </a>
     </li>
@@ -1833,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../computer-programming/the-practice-of-programming/" class="md-nav__link">
+      <a href="../../../computer-programming/the-practice-of-programming/" class="md-nav__link">
         The Practice of Programming
       </a>
     </li>
@@ -1925,7 +1861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux/linux-initial-setup/" class="md-nav__link">
+      <a href="../../../guides/linux/linux-initial-setup/" class="md-nav__link">
         Linux Initial Setup
       </a>
     </li>
@@ -1939,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux/ubuntu-beautify/" class="md-nav__link">
+      <a href="../../../guides/linux/ubuntu-beautify/" class="md-nav__link">
         Ubuntu Beautify
       </a>
     </li>
@@ -1953,7 +1889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux/wsl-initial-setup/" class="md-nav__link">
+      <a href="../../../guides/linux/wsl-initial-setup/" class="md-nav__link">
         WSL Initial Setup
       </a>
     </li>
@@ -2007,7 +1943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux-tools/tmux/" class="md-nav__link">
+      <a href="../../../guides/linux-tools/tmux/" class="md-nav__link">
         Tmux
       </a>
     </li>
@@ -2021,7 +1957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux-tools/vim/" class="md-nav__link">
+      <a href="../../../guides/linux-tools/vim/" class="md-nav__link">
         Vim
       </a>
     </li>
@@ -2075,7 +2011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/networking/remote-access-and-port-forwarding/" class="md-nav__link">
+      <a href="../../../guides/networking/remote-access-and-port-forwarding/" class="md-nav__link">
         Remote Access and Port Forwarding
       </a>
     </li>
@@ -2089,7 +2025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/networking/ssh-through-nat/" class="md-nav__link">
+      <a href="../../../guides/networking/ssh-through-nat/" class="md-nav__link">
         SSH through NAT
       </a>
     </li>
@@ -2186,7 +2122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/electromagnetics/" class="md-nav__link">
+      <a href="../../../electromagnetics/electromagnetics/" class="md-nav__link">
         Electromagnetics
       </a>
     </li>
@@ -2237,7 +2173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/electric-field/" class="md-nav__link">
+      <a href="../../../electromagnetics/electric-field/" class="md-nav__link">
         Electric Field
       </a>
     </li>
@@ -2251,7 +2187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/magnetic-field/" class="md-nav__link">
+      <a href="../../../electromagnetics/magnetic-field/" class="md-nav__link">
         Magnetic Field
       </a>
     </li>
@@ -2265,7 +2201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/induction/" class="md-nav__link">
+      <a href="../../../electromagnetics/induction/" class="md-nav__link">
         Induction
       </a>
     </li>
@@ -2279,7 +2215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/em-wave/" class="md-nav__link">
+      <a href="../../../electromagnetics/em-wave/" class="md-nav__link">
         EM Wave
       </a>
     </li>
@@ -2307,7 +2243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control-theory/classical-control/" class="md-nav__link">
+      <a href="../../../control-theory/classical-control/" class="md-nav__link">
         Classical Control Theory
       </a>
     </li>
@@ -2358,7 +2294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/" class="md-nav__link">
+      <a href="../../../reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/" class="md-nav__link">
         如何阅读一本书
       </a>
     </li>
@@ -2372,7 +2308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/" class="md-nav__link">
+      <a href="../../../reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/" class="md-nav__link">
         中国哲学简史
       </a>
     </li>
@@ -2386,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/" class="md-nav__link">
+      <a href="../../../reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/" class="md-nav__link">
         惊人的假说
       </a>
     </li>
@@ -2400,7 +2336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/" class="md-nav__link">
+      <a href="../../../reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/" class="md-nav__link">
         未来简史
       </a>
     </li>
@@ -2427,14 +2363,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
       
       
         
@@ -2461,7 +2399,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../scribbles/">Scribbles</a>
+          <a href="../../">Scribbles</a>
           
             <label for="__nav_9">
               <span class="md-nav__icon md-icon"></span>
@@ -2469,7 +2407,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Scribbles
@@ -2515,7 +2453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/automobile/wheel-alignment/" class="md-nav__link">
+      <a href="../../automobile/wheel-alignment/" class="md-nav__link">
         Wheel Alignment
       </a>
     </li>
@@ -2567,7 +2505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/cuda/cuda-basics/" class="md-nav__link">
+      <a href="../../cuda/cuda-basics/" class="md-nav__link">
         CUDA Basics
       </a>
     </li>
@@ -2586,14 +2524,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" checked>
       
       
         
@@ -2610,7 +2550,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_4">
           <span class="md-nav__icon md-icon"></span>
           Maths
@@ -2623,7 +2563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/maths/jacobian-matrix/" class="md-nav__link">
+      <a href="../jacobian-matrix/" class="md-nav__link">
         Jacobian Matrix
       </a>
     </li>
@@ -2637,7 +2577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/maths/chebyshev-center/" class="md-nav__link">
+      <a href="../chebyshev-center/" class="md-nav__link">
         Chebyshev Center
       </a>
     </li>
@@ -2649,11 +2589,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../scribbles/maths/binomial-series/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Binomial Series, Generalized Binomial Coefficient
       </a>
+      
     </li>
   
 
@@ -2703,7 +2653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/numerical-analysis/fast-inv-sqrt/" class="md-nav__link">
+      <a href="../../numerical-analysis/fast-inv-sqrt/" class="md-nav__link">
         Fast Inverse Square Root, 0x5F3759DF
       </a>
     </li>
@@ -2755,7 +2705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/opencv/opencv-basics/" class="md-nav__link">
+      <a href="../../opencv/opencv-basics/" class="md-nav__link">
         OpenCV Basics
       </a>
     </li>
@@ -2807,7 +2757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/python/python-type-hints/" class="md-nav__link">
+      <a href="../../python/python-type-hints/" class="md-nav__link">
         Python Type Hints
       </a>
     </li>
@@ -2863,7 +2813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/pytorch/pytorch-gpu-management/" class="md-nav__link">
+      <a href="../../pytorch/pytorch-gpu-management/" class="md-nav__link">
         PyTorch GPU Management
       </a>
     </li>
@@ -2877,7 +2827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/pytorch/pytorch-loss-functions/" class="md-nav__link">
+      <a href="../../pytorch/pytorch-loss-functions/" class="md-nav__link">
         PyTorch Loss Functions
       </a>
     </li>
@@ -2891,7 +2841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/pytorch/broadcasting/" class="md-nav__link">
+      <a href="../../pytorch/broadcasting/" class="md-nav__link">
         Broadcasting
       </a>
     </li>
@@ -2932,42 +2882,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
-    Structure
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#elements" class="md-nav__link">
-    Elements
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#html5-features" class="md-nav__link">
-    HTML5 Features
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2984,169 +2898,65 @@
 
 
 
-<h1 id="html-cheatsheet">HTML Cheatsheet<a class="headerlink" href="#html-cheatsheet" title="Permanent link">&para;</a></h1>
-<p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</p>
-<h2 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h2>
+<h1 id="binomial-series-generalized-binomial-coefficients">Binomial Series, Generalized Binomial Coefficients<a class="headerlink" href="#binomial-series-generalized-binomial-coefficients" title="Permanent link">&para;</a></h1>
+<p>The binomial theorem states that for <span class="arithmatex">\(n\in \mathbb{N}\)</span>,</p>
+<p class="arithmatex">\[
+(x+y)^n = \sum_{k=0}^n\binom{n}{k}x^k y^{n-k},
+\]</p>
+<p>where the binomial coefficients can be computed by</p>
+<p class="arithmatex">\[
+\binom{n}{k} = \frac{n!}{k!(n-k)!} = \frac{(n-k+1)\cdots(n-1)\cdot n}{1\cdot 2\cdots(k-1)\cdot k}.
+\]</p>
+<p>To generalize binomial coefficients to <span class="arithmatex">\(n \in \mathbb{C}\)</span>, we rewrite the principal branch of binomial power in exponential form</p>
+<p class="arithmatex">\[
+f(z) = (1+z)^\alpha = \exp(\alpha\ln(1+z)), \quad \alpha, z \in \mathbb{C}.
+\]</p>
+<p>The binomial series is the Taylor series for <span class="arithmatex">\(f\)</span> centered at <span class="arithmatex">\(z_0 = 0\)</span>, which converges for all <span class="arithmatex">\(|z| &lt; 1\)</span>:</p>
+<p class="arithmatex">\[
+f(z) = \sum_{k=0}^\infty \frac{1}{k!}f^{(k)}(z_0)(z-z_0)^k.
+\]</p>
+<p>And the derivatives of <span class="arithmatex">\(f\)</span> are</p>
+<p class="arithmatex">\[
+\begin{aligned}
+f^{(0)}(z) &amp;= \exp(\alpha\ln(1+z)), \\
+f^{(1)}(z) &amp;= \exp(\alpha\ln(1+z))\cdot\alpha\frac{1}{1+z} \\
+&amp;= \exp(\alpha\ln(1+z))\cdot\alpha\frac{1}{\exp\ln(1+z)}  \\
+&amp;= \alpha\cdot\exp((\alpha-1)\ln(1+z)), \\
+f^{(2)}(z) &amp;= \alpha(\alpha-1)\cdot\exp((\alpha-2)\ln(1+z)), \\
+&amp;\qquad\vdots \\
+f^{(k)}(z) &amp;= \alpha(\alpha-1)\cdots(\alpha-k+1)\cdot\exp((\alpha-k)\ln(1+z)),
+\end{aligned}
+\]</p>
+<p>Within the disk of convergence, the binomial series expands to</p>
+<p class="arithmatex">\[
+(1+z)^\alpha = \sum_{k=0}^\infty\frac{\alpha(\alpha-1)\cdots(\alpha-k+1)}{k!}z^k. \tag{*}
+\]</p>
+<p>As a result, for <span class="arithmatex">\(\alpha \in \mathbb{C}\)</span>, the binomial coefficients can be generalized to</p>
+<p class="arithmatex">\[
+\binom{\alpha}{k} = \frac{\alpha(\alpha-1)\cdots(\alpha-k+1)}{k!}.
+\]</p>
+<p>The convergence of binomial series <span class="arithmatex">\(\text{(*)}\)</span> depends on <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(z\)</span>:</p>
 <ul>
-<li><code>&lt;html&gt;</code> and <code>&lt;/html&gt;</code> contain everything</li>
-<li><code>&lt;head&gt;</code> and <code>&lt;/head&gt;</code> contain title</li>
-<li><code>&lt;title&gt;</code> and <code>&lt;/title&gt;</code> include title</li>
-<li><code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> contain the main parts</li>
-</ul>
-<h2 id="elements">Elements<a class="headerlink" href="#elements" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Paragraph: <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code></li>
-<li>Line break: <code>&lt;br/&gt;</code></li>
-<li>Horizontal line: <code>&lt;hr/&gt;</code></li>
-<li>Comments: <code>&lt;!-- Comments --&gt;</code></li>
-<li>Image: <code>&lt;img src="image.png"/&gt;</code></li>
-<li>Link: <code>&lt;a href="http://google.com"&gt;</code> and <code>&lt;/a&gt;</code></li>
-<li>Form: <code>&lt;form&gt;</code> and <code>&lt;/form&gt;</code></li>
-<li>Input: <code>&lt;input/&gt;</code> (in forms)</li>
-<li>Color: <code>#FFFFFF</code></li>
-</ul>
-<h4 id="text-formatting">Text Formatting<a class="headerlink" href="#text-formatting" title="Permanent link">&para;</a></h4>
-<ul>
-<li>bold <code>&lt;b&gt;</code> <code>&lt;/b&gt;</code></li>
-<li>big <code>&lt;big&gt;</code> <code>&lt;/big&gt;</code></li>
-<li>italic <code>&lt;i&gt;</code> <code>&lt;/i&gt;</code></li>
-<li>small <code>&lt;small&gt;</code> <code>&lt;/small&gt;</code></li>
-<li>strong <code>&lt;strong&gt;</code> <code>&lt;/strong&gt;</code></li>
-<li>subscripted <code>&lt;sub&gt;</code> <code>&lt;/sub&gt;</code></li>
-<li>superscripted <code>&lt;sup&gt;</code> <code>&lt;/sup&gt;</code></li>
-<li>inserted (underlined) <code>&lt;ins&gt;</code> <code>&lt;/ins&gt;</code></li>
-<li>deleted <code>&lt;del&gt;</code> <code>&lt;/del&gt;</code></li>
-</ul>
-<h4 id="headings">Headings<a class="headerlink" href="#headings" title="Permanent link">&para;</a></h4>
-<ul>
-<li><code>&lt;h1&gt;</code> and <code>&lt;/h1&gt;</code></li>
-<li><code>&lt;h2&gt;</code> and <code>&lt;/h2&gt;</code></li>
-<li>...</li>
-<li><code>&lt;h6&gt;</code> and <code>&lt;/h6&gt;</code></li>
-</ul>
-<p>equals to #'s in Markdown</p>
-<h4 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h4>
-<p>Ordered list
-<div class="language-html highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
-</code></pre></div>
-Unordered List
-<div class="language-html highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</code></pre></div></p>
-<h4 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">&para;</a></h4>
-<p><div class="language-html highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-</code></pre></div>
-<code>tr</code> for <em>table row</em> and <code>td</code> for <em>table data</em></p>
-<h4 id="divisions">Divisions<a class="headerlink" href="#divisions" title="Permanent link">&para;</a></h4>
-<p><code>&lt;div&gt;</code> and <code>&lt;/div&gt;</code> block division</p>
-<p><code>&lt;span&gt;</code> and <code>&lt;/span&gt;</code> inline division</p>
-<h4 id="frames">Frames<a class="headerlink" href="#frames" title="Permanent link">&para;</a></h4>
-<div class="language-html highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">frameset</span> <span class="na">cols</span><span class="o">=</span><span class="s">&quot;25%,50%,25&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="p">&lt;</span><span class="nt">frame</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;a.html&quot;</span><span class="p">/&gt;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="p">&lt;</span><span class="nt">frame</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;b.html&quot;</span><span class="p">/&gt;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="p">&lt;</span><span class="nt">frame</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;c.html&quot;</span><span class="p">/&gt;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">&lt;/</span><span class="nt">frameset</span><span class="p">&gt;</span>
-</code></pre></div>
-<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
-<div class="language-html highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">&lt;</span><span class="nt">hr</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;50px&quot;</span><span class="p">/&gt;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">&lt;</span><span class="nt">hr</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;50%&quot;</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;left&quot;</span><span class="p">/&gt;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;image.png&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;150px&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;50px&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1px&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">/&gt;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://google.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="na">bgcolor</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:red&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;http://google.com&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span><span class="p">/&gt;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span><span class="p">&gt;</span>
-</code></pre></div>
-<h2 id="html5-features">HTML5 Features<a class="headerlink" href="#html5-features" title="Permanent link">&para;</a></h2>
-<h4 id="structure_1">Structure<a class="headerlink" href="#structure_1" title="Permanent link">&para;</a></h4>
-<div class="language-html highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="p">&lt;</span><span class="nt">aside</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">aside</span><span class="p">&gt;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<h4 id="elements_1">Elements<a class="headerlink" href="#elements_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li>audio
-  <div class="language-html highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;audio.mp3&quot;</span> <span class="na">controls</span> <span class="na">autoplay</span> <span class="na">loop</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
-</code></pre></div></li>
-<li>video
-  <div class="language-html highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">video</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
-</code></pre></div></li>
-<li>progress
-  <div class="language-html highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">progress</span> <span class="na">min</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">max</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;45&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">progress</span><span class="p">&gt;</span>
-</code></pre></div></li>
-<li>SVG <strong>S</strong>calable <strong>V</strong>ector <strong>G</strong>raphics<br />
-  <div class="language-html highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;1000&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;1000&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">cx</span><span class="o">=</span><span class="s">&quot;80&quot;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&quot;80&quot;</span> <span class="na">r</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;green&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;150&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;green&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;stroke:#000000; stroke-linecap:round; stroke-width:20&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="p">&lt;</span><span class="nt">polyline</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;stroke-linejoin:miter; stroke:black; stroke-width:12; fill: none;&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;100 100, 150 150, 200 100&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="p">&lt;</span><span class="nt">ellipse</span> <span class="na">cx</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&quot;100&quot;</span> <span class="na">rx</span><span class="o">=</span><span class="s">&quot;150&quot;</span> <span class="na">ry</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;fill:green&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;100 100, 200 200, 300 0&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;fill: green; stroke:black;&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
-</code></pre></div></li>
-<li>canvas
-  <div class="language-html highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;canvas1&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
-</code></pre></div></li>
-<li>form
-  <div class="language-html highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span><span class="p">&gt;</span>Your e-mail address: <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;email@example.com&quot;</span> <span class="na">autofocus</span> <span class="na">required</span><span class="p">/&gt;</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;car&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">list</span><span class="o">=</span><span class="s">&quot;colors&quot;</span> <span class="p">/&gt;</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  <span class="p">&lt;</span><span class="nt">datalist</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;colors&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Red&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Green&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Yellow&quot;</span><span class="p">&gt;</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>  <span class="p">&lt;/</span><span class="nt">datalist</span><span class="p">&gt;</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</code></pre></div>
-  <strong>new input types</strong><ul>
-<li>color</li>
-<li>date</li>
-<li>datetime</li>
-<li>datetime-local</li>
-<li>email</li>
-<li>month</li>
-<li>number</li>
-<li>range</li>
-<li>search</li>
-<li>tel</li>
-<li>time</li>
-<li>url</li>
-<li>week</li>
+<li>if <span class="arithmatex">\(|z| &lt; 1\)</span>, it converges absolutely for all <span class="arithmatex">\(\alpha \in \mathbb{C}\)</span>,</li>
+<li>if <span class="arithmatex">\(|z| &gt; 1\)</span>, it diverges for all <span class="arithmatex">\(\alpha \in \mathbb{C} \setminus\mathbb{N}\)</span>,</li>
+<li>if <span class="arithmatex">\(|z| = 1\)</span>,<ul>
+<li>if <span class="arithmatex">\(\operatorname{Re}(\alpha) &gt; 0\)</span>, it converges absolutely,</li>
+<li>if <span class="arithmatex">\(\operatorname{Re}(\alpha) \le -1\)</span>, it diverges,</li>
+<li>if <span class="arithmatex">\(-1 &lt; \operatorname{Re}(\alpha) \le 0\)</span>,<ul>
+<li>if <span class="arithmatex">\(x = -1\)</span>, it diverges,</li>
+<li>if <span class="arithmatex">\(x \neq -1\)</span>, it converges conditionally.</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<p>For any <span class="arithmatex">\(\alpha \in \mathbb{C}\)</span>, it still holds that</p>
+<p class="arithmatex">\[
+\binom{\alpha}{0} = 1,
+\]</p>
+<p class="arithmatex">\[
+\binom{\alpha}{k-1} + \binom{\alpha}{k} = \binom{\alpha+1}{k}.
+\]</p>
 
 
   
@@ -3205,16 +3015,16 @@ Unordered List
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.instant", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.instant", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.19047be9.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
       
-        <script src="../../_static/js/extra.js"></script>
+        <script src="../../../_static/js/extra.js"></script>
       
     
   </body>
