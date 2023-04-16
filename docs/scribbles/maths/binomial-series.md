@@ -58,8 +58,10 @@ The convergence of binomial series $\text{(*)}$ depends on $\alpha$ and $z$:
     * if $\operatorname{Re}(\alpha) > 0$, it converges absolutely,
     * if $\operatorname{Re}(\alpha) \le -1$, it diverges,
     * if $-1 < \operatorname{Re}(\alpha) \le 0$,
-        * if $x = -1$, it diverges,
-        * if $x \neq -1$, it converges conditionally.
+        * if $z = -1$, it diverges,
+        * if $z \neq -1$, it converges conditionally.
+
+<iframe src="https://www.desmos.com/calculator/m5t4nlarnz?embed" width="100%" height="600" frameborder=0></iframe>
 
 For any $\alpha \in \mathbb{C}$, it still holds that
 
