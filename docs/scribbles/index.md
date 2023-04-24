@@ -1,5 +1,6 @@
 # Scribbles
 
+- 2023.04.24 -- [Catalan Number](./maths/catalan-number.md)
 - 2023.04.15 -- [Binomial Series, Generalized Binomial Coefficient](./maths/binomial-series.md)
 - 2023.03.15 -- [Fast Inverse Square Root, 0x5F3759DF](./numerical-analysis/fast-inv-sqrt.md)
 - 2022.09.20 -- [Broadcasting](./pytorch/broadcasting.md)

@@ -133,6 +133,7 @@ nav:
       - Jacobian Matrix: scribbles/maths/jacobian-matrix.md
       - Chebyshev Center: scribbles/maths/chebyshev-center.md
       - Binomial Series, Generalized Binomial Coefficient: scribbles/maths/binomial-series.md
+      - Catalan Number: scribbles/maths/catalan-number.md
     - Numerical Analysis:
       - Fast Inverse Square Root, 0x5F3759DF: scribbles/numerical-analysis/fast-inv-sqrt.md
     - OpenCV:
