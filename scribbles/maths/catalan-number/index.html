@@ -11,24 +11,24 @@
       
       
       
-        <link rel="prev" href="../quicksort/">
+        <link rel="prev" href="../binomial-series/">
       
       
-        <link rel="next" href="../permutation-combination-subset/">
+        <link rel="next" href="../../numerical-analysis/fast-inv-sqrt/">
       
-      <link rel="icon" href="../../none">
+      <link rel="icon" href="../../../none">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
-        <title>平面最近点对 - Randomish Writing</title>
+        <title>Catalan Number - Randomish Writing</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.240905d7.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.240905d7.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -40,9 +40,9 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../_static/css/extra.css">
+      <link rel="stylesheet" href="../../../_static/css/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#catalan-number" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Randomish Writing" class="md-header__button md-logo" aria-label="Randomish Writing" data-md-component="logo">
+    <a href="../../.." title="Randomish Writing" class="md-header__button md-logo" aria-label="Randomish Writing" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 9h16v2H4V9m0 4h10v2H4v-2Z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              平面最近点对
+              Catalan Number
             
           </span>
         </div>
@@ -140,7 +140,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Welcome
     </a>
   </li>
@@ -155,7 +155,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../maths/essence-of-linear-algebra/" class="md-tabs__link">
+      <a href="../../../maths/essence-of-linear-algebra/" class="md-tabs__link">
         Mathematics
       </a>
     </li>
@@ -171,7 +171,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../c/c-primer-plus/" class="md-tabs__link">
+      <a href="../../../c/c-primer-plus/" class="md-tabs__link">
         Languages
       </a>
     </li>
@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../ai/deep-learning/" class="md-tabs__link">
+      <a href="../../../ai/deep-learning/" class="md-tabs__link">
         AI
       </a>
     </li>
@@ -196,8 +196,6 @@
       
         
   
-  
-    
   
 
 
@@ -210,7 +208,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../prime/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../competitive-programming/prime/" class="md-tabs__link">
         Competitive Programming
       </a>
     </li>
@@ -228,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../computer-organization/computer-organization/" class="md-tabs__link">
+      <a href="../../../computer-organization/computer-organization/" class="md-tabs__link">
         CS
       </a>
     </li>
@@ -249,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../guides/linux/linux-initial-setup/" class="md-tabs__link">
+      <a href="../../../guides/linux/linux-initial-setup/" class="md-tabs__link">
         Guides
       </a>
     </li>
@@ -272,7 +270,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../electromagnetics/electromagnetics/" class="md-tabs__link">
+      <a href="../../../electromagnetics/electromagnetics/" class="md-tabs__link">
         Misc
       </a>
     </li>
@@ -284,13 +282,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../scribbles/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Scribbles
       </a>
     </li>
@@ -318,7 +318,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing" data-md-component="logo">
+    <a href="../../.." title="Randomish Writing" class="md-nav__button md-logo" aria-label="Randomish Writing" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 9h16v2H4V9m0 4h10v2H4v-2Z"/></svg>
@@ -337,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Welcome
       </a>
     </li>
@@ -407,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/essence-of-linear-algebra/" class="md-nav__link">
+      <a href="../../../maths/essence-of-linear-algebra/" class="md-nav__link">
         Essence of Linear Algebra
       </a>
     </li>
@@ -421,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/linear-algebra/" class="md-nav__link">
+      <a href="../../../maths/linear-algebra/" class="md-nav__link">
         Linear Algebra
       </a>
     </li>
@@ -470,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/probability-theory/" class="md-nav__link">
+      <a href="../../../maths/probability-theory/" class="md-nav__link">
         Probability Theory
       </a>
     </li>
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/combinatorics/" class="md-nav__link">
+      <a href="../../../maths/combinatorics/" class="md-nav__link">
         Combinatorics Example Problems
       </a>
     </li>
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/events-and-probability/" class="md-nav__link">
+      <a href="../../../maths/events-and-probability/" class="md-nav__link">
         Events and Probability
       </a>
     </li>
@@ -545,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/random-variables/" class="md-nav__link">
+      <a href="../../../maths/random-variables/" class="md-nav__link">
         Random Variables
       </a>
     </li>
@@ -573,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/statistics/" class="md-nav__link">
+      <a href="../../../maths/statistics/" class="md-nav__link">
         Statistics
       </a>
     </li>
@@ -587,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/elements-of-information-theory/" class="md-nav__link">
+      <a href="../../../maths/elements-of-information-theory/" class="md-nav__link">
         Elements of Information Theory
       </a>
     </li>
@@ -601,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/matrix-algebra/" class="md-nav__link">
+      <a href="../../../maths/matrix-algebra/" class="md-nav__link">
         Matrix Algebra
       </a>
     </li>
@@ -615,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/discrete-maths/" class="md-nav__link">
+      <a href="../../../maths/discrete-maths/" class="md-nav__link">
         Discrete Maths
       </a>
     </li>
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/calculus/" class="md-nav__link">
+      <a href="../../../maths/calculus/" class="md-nav__link">
         Calculus
       </a>
     </li>
@@ -643,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/complex-analysis/" class="md-nav__link">
+      <a href="../../../maths/complex-analysis/" class="md-nav__link">
         Complex Analysis
       </a>
     </li>
@@ -657,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/integral-transforms/" class="md-nav__link">
+      <a href="../../../maths/integral-transforms/" class="md-nav__link">
         Integral Transforms
       </a>
     </li>
@@ -671,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/convex-optimization/" class="md-nav__link">
+      <a href="../../../maths/convex-optimization/" class="md-nav__link">
         Convex Optimization
       </a>
     </li>
@@ -685,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/3b1b/" class="md-nav__link">
+      <a href="../../../maths/3b1b/" class="md-nav__link">
         3Blue1Brown
       </a>
     </li>
@@ -699,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../maths/memos/" class="md-nav__link">
+      <a href="../../../maths/memos/" class="md-nav__link">
         Memos
       </a>
     </li>
@@ -766,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../c/c-primer-plus/" class="md-nav__link">
+      <a href="../../../c/c-primer-plus/" class="md-nav__link">
         C Primer Plus
       </a>
     </li>
@@ -780,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cpp/cpp-notes/" class="md-nav__link">
+      <a href="../../../cpp/cpp-notes/" class="md-nav__link">
         C++ Notes
       </a>
     </li>
@@ -794,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/python-3-object-oriented-programming/" class="md-nav__link">
+      <a href="../../../python/python-3-object-oriented-programming/" class="md-nav__link">
         Python 3 OOP
       </a>
     </li>
@@ -841,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../latex/latex-cheatsheet/" class="md-nav__link">
+      <a href="../../../latex/latex-cheatsheet/" class="md-nav__link">
         LaTeX Cheatsheet
       </a>
     </li>
@@ -855,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../latex/latex-maths/" class="md-nav__link">
+      <a href="../../../latex/latex-maths/" class="md-nav__link">
         LaTeX Maths Symbols
       </a>
     </li>
@@ -909,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regex/introducing-regular-expressions/" class="md-nav__link">
+      <a href="../../../regex/introducing-regular-expressions/" class="md-nav__link">
         Introducing Regular Expressions
       </a>
     </li>
@@ -923,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regex/regular-expressions-cookbook/" class="md-nav__link">
+      <a href="../../../regex/regular-expressions-cookbook/" class="md-nav__link">
         Regular Expressions Cookbook
       </a>
     </li>
@@ -944,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web/javascript-the-definitive-guide/" class="md-nav__link">
+      <a href="../../../web/javascript-the-definitive-guide/" class="md-nav__link">
         JavaScript the Definitive Guide
       </a>
     </li>
@@ -958,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web/html-cheatsheet/" class="md-nav__link">
+      <a href="../../../web/html-cheatsheet/" class="md-nav__link">
         HTML Cheatsheet
       </a>
     </li>
@@ -972,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web/css-cheatsheet/" class="md-nav__link">
+      <a href="../../../web/css-cheatsheet/" class="md-nav__link">
         CSS Cheatsheet
       </a>
     </li>
@@ -1027,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/deep-learning/" class="md-nav__link">
+      <a href="../../../ai/deep-learning/" class="md-nav__link">
         Deep Learning
       </a>
     </li>
@@ -1041,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/machine-learning/" class="md-nav__link">
+      <a href="../../../ai/machine-learning/" class="md-nav__link">
         Machine Learning
       </a>
     </li>
@@ -1061,16 +1061,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
         
@@ -1091,7 +1089,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Competitive Programming
@@ -1147,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prime/" class="md-nav__link">
+      <a href="../../../competitive-programming/prime/" class="md-nav__link">
         素数
       </a>
     </li>
@@ -1161,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exgcd/" class="md-nav__link">
+      <a href="../../../competitive-programming/exgcd/" class="md-nav__link">
         扩展欧几里得
       </a>
     </li>
@@ -1175,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../combination/" class="md-nav__link">
+      <a href="../../../competitive-programming/combination/" class="md-nav__link">
         组合数
       </a>
     </li>
@@ -1189,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../binexp/" class="md-nav__link">
+      <a href="../../../competitive-programming/binexp/" class="md-nav__link">
         快速幂
       </a>
     </li>
@@ -1203,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fibonacci/" class="md-nav__link">
+      <a href="../../../competitive-programming/fibonacci/" class="md-nav__link">
         类斐波那契数列
       </a>
     </li>
@@ -1217,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gcd-inverse/" class="md-nav__link">
+      <a href="../../../competitive-programming/gcd-inverse/" class="md-nav__link">
         GCD Inverse
       </a>
     </li>
@@ -1231,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lagrange-interpolation/" class="md-nav__link">
+      <a href="../../../competitive-programming/lagrange-interpolation/" class="md-nav__link">
         拉格朗日插值
       </a>
     </li>
@@ -1295,7 +1293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fenwick/" class="md-nav__link">
+      <a href="../../../competitive-programming/fenwick/" class="md-nav__link">
         树状数组
       </a>
     </li>
@@ -1309,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../segment-tree/" class="md-nav__link">
+      <a href="../../../competitive-programming/segment-tree/" class="md-nav__link">
         线段树
       </a>
     </li>
@@ -1323,7 +1321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../heap/" class="md-nav__link">
+      <a href="../../../competitive-programming/heap/" class="md-nav__link">
         堆
       </a>
     </li>
@@ -1337,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../two-heaps/" class="md-nav__link">
+      <a href="../../../competitive-programming/two-heaps/" class="md-nav__link">
         对顶堆
       </a>
     </li>
@@ -1351,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sparse-table/" class="md-nav__link">
+      <a href="../../../competitive-programming/sparse-table/" class="md-nav__link">
         ST 表
       </a>
     </li>
@@ -1365,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ufds/" class="md-nav__link">
+      <a href="../../../competitive-programming/ufds/" class="md-nav__link">
         并查集
       </a>
     </li>
@@ -1379,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../binary-search-tree/" class="md-nav__link">
+      <a href="../../../competitive-programming/binary-search-tree/" class="md-nav__link">
         二叉查找树
       </a>
     </li>
@@ -1435,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../intersection-points/" class="md-nav__link">
+      <a href="../../../competitive-programming/intersection-points/" class="md-nav__link">
         直线交点数
       </a>
     </li>
@@ -1449,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lis/" class="md-nav__link">
+      <a href="../../../competitive-programming/lis/" class="md-nav__link">
         最长上升序列
       </a>
     </li>
@@ -1463,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../number-of-common-substrings/" class="md-nav__link">
+      <a href="../../../competitive-programming/number-of-common-substrings/" class="md-nav__link">
         公共子序列
       </a>
     </li>
@@ -1482,16 +1480,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
       
       
         
@@ -1510,7 +1506,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5_4">
           <span class="md-nav__icon md-icon"></span>
           Basics
@@ -1523,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quicksort/" class="md-nav__link">
+      <a href="../../../competitive-programming/quicksort/" class="md-nav__link">
         快速排序 / 第 k 小的数
       </a>
     </li>
@@ -1535,21 +1531,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../competitive-programming/nearest-point-pair/" class="md-nav__link">
         平面最近点对
       </a>
-      
     </li>
   
 
@@ -1561,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../permutation-combination-subset/" class="md-nav__link">
+      <a href="../../../competitive-programming/permutation-combination-subset/" class="md-nav__link">
         排列、组合、子集问题与回溯
       </a>
     </li>
@@ -1575,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reverse-linked-list/" class="md-nav__link">
+      <a href="../../../competitive-programming/reverse-linked-list/" class="md-nav__link">
         反转链表
       </a>
     </li>
@@ -1637,7 +1623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../josephus-survivor/" class="md-nav__link">
+      <a href="../../../competitive-programming/josephus-survivor/" class="md-nav__link">
         Josephus Survivor
       </a>
     </li>
@@ -1651,7 +1637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chopsticks/" class="md-nav__link">
+      <a href="../../../competitive-programming/chopsticks/" class="md-nav__link">
         找筷子
       </a>
     </li>
@@ -1665,7 +1651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../double-cola/" class="md-nav__link">
+      <a href="../../../competitive-programming/double-cola/" class="md-nav__link">
         Double Cola
       </a>
     </li>
@@ -1679,7 +1665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alphabetical-coding/" class="md-nav__link">
+      <a href="../../../competitive-programming/alphabetical-coding/" class="md-nav__link">
         字母计数
       </a>
     </li>
@@ -1693,7 +1679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../number-of-trailing-zeros-of-n%21/" class="md-nav__link">
+      <a href="../../../competitive-programming/number-of-trailing-zeros-of-n%21/" class="md-nav__link">
         N! 末尾零数
       </a>
     </li>
@@ -1707,7 +1693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coordinate-compression/" class="md-nav__link">
+      <a href="../../../competitive-programming/coordinate-compression/" class="md-nav__link">
         坐标压缩
       </a>
     </li>
@@ -1769,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../computer-organization/computer-organization/" class="md-nav__link">
+      <a href="../../../computer-organization/computer-organization/" class="md-nav__link">
         Computer Organization
       </a>
     </li>
@@ -1783,7 +1769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../computer-programming/the-practice-of-programming/" class="md-nav__link">
+      <a href="../../../computer-programming/the-practice-of-programming/" class="md-nav__link">
         The Practice of Programming
       </a>
     </li>
@@ -1875,7 +1861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux/linux-initial-setup/" class="md-nav__link">
+      <a href="../../../guides/linux/linux-initial-setup/" class="md-nav__link">
         Linux Initial Setup
       </a>
     </li>
@@ -1889,7 +1875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux/ubuntu-beautify/" class="md-nav__link">
+      <a href="../../../guides/linux/ubuntu-beautify/" class="md-nav__link">
         Ubuntu Beautify
       </a>
     </li>
@@ -1903,7 +1889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux/wsl-initial-setup/" class="md-nav__link">
+      <a href="../../../guides/linux/wsl-initial-setup/" class="md-nav__link">
         WSL Initial Setup
       </a>
     </li>
@@ -1957,7 +1943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux-tools/tmux/" class="md-nav__link">
+      <a href="../../../guides/linux-tools/tmux/" class="md-nav__link">
         Tmux
       </a>
     </li>
@@ -1971,7 +1957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/linux-tools/vim/" class="md-nav__link">
+      <a href="../../../guides/linux-tools/vim/" class="md-nav__link">
         Vim
       </a>
     </li>
@@ -2025,7 +2011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/networking/remote-access-and-port-forwarding/" class="md-nav__link">
+      <a href="../../../guides/networking/remote-access-and-port-forwarding/" class="md-nav__link">
         Remote Access and Port Forwarding
       </a>
     </li>
@@ -2039,7 +2025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/networking/ssh-through-nat/" class="md-nav__link">
+      <a href="../../../guides/networking/ssh-through-nat/" class="md-nav__link">
         SSH through NAT
       </a>
     </li>
@@ -2136,7 +2122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/electromagnetics/" class="md-nav__link">
+      <a href="../../../electromagnetics/electromagnetics/" class="md-nav__link">
         Electromagnetics
       </a>
     </li>
@@ -2187,7 +2173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/electric-field/" class="md-nav__link">
+      <a href="../../../electromagnetics/electric-field/" class="md-nav__link">
         Electric Field
       </a>
     </li>
@@ -2201,7 +2187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/magnetic-field/" class="md-nav__link">
+      <a href="../../../electromagnetics/magnetic-field/" class="md-nav__link">
         Magnetic Field
       </a>
     </li>
@@ -2215,7 +2201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/induction/" class="md-nav__link">
+      <a href="../../../electromagnetics/induction/" class="md-nav__link">
         Induction
       </a>
     </li>
@@ -2229,7 +2215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../electromagnetics/em-wave/" class="md-nav__link">
+      <a href="../../../electromagnetics/em-wave/" class="md-nav__link">
         EM Wave
       </a>
     </li>
@@ -2257,7 +2243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control-theory/classical-control/" class="md-nav__link">
+      <a href="../../../control-theory/classical-control/" class="md-nav__link">
         Classical Control Theory
       </a>
     </li>
@@ -2308,7 +2294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/" class="md-nav__link">
+      <a href="../../../reading-notes/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/" class="md-nav__link">
         如何阅读一本书
       </a>
     </li>
@@ -2322,7 +2308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/" class="md-nav__link">
+      <a href="../../../reading-notes/%E4%B8%AD%E5%9B%BD%E5%93%B2%E5%AD%A6%E7%AE%80%E5%8F%B2/" class="md-nav__link">
         中国哲学简史
       </a>
     </li>
@@ -2336,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/" class="md-nav__link">
+      <a href="../../../reading-notes/%E6%83%8A%E4%BA%BA%E7%9A%84%E5%81%87%E8%AF%B4/" class="md-nav__link">
         惊人的假说
       </a>
     </li>
@@ -2350,7 +2336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/" class="md-nav__link">
+      <a href="../../../reading-notes/%E6%9C%AA%E6%9D%A5%E7%AE%80%E5%8F%B2%EF%BC%9A%E4%BB%8E%E6%99%BA%E4%BA%BA%E5%88%B0%E6%99%BA%E7%A5%9E/" class="md-nav__link">
         未来简史
       </a>
     </li>
@@ -2377,14 +2363,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
       
       
         
@@ -2411,7 +2399,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../scribbles/">Scribbles</a>
+          <a href="../../">Scribbles</a>
           
             <label for="__nav_9">
               <span class="md-nav__icon md-icon"></span>
@@ -2419,7 +2407,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Scribbles
@@ -2465,7 +2453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/automobile/wheel-alignment/" class="md-nav__link">
+      <a href="../../automobile/wheel-alignment/" class="md-nav__link">
         Wheel Alignment
       </a>
     </li>
@@ -2517,7 +2505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/cuda/cuda-basics/" class="md-nav__link">
+      <a href="../../cuda/cuda-basics/" class="md-nav__link">
         CUDA Basics
       </a>
     </li>
@@ -2536,14 +2524,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_4" checked>
       
       
         
@@ -2562,7 +2552,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_9_4">
           <span class="md-nav__icon md-icon"></span>
           Maths
@@ -2575,7 +2565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/maths/jacobian-matrix/" class="md-nav__link">
+      <a href="../jacobian-matrix/" class="md-nav__link">
         Jacobian Matrix
       </a>
     </li>
@@ -2589,7 +2579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/maths/chebyshev-center/" class="md-nav__link">
+      <a href="../chebyshev-center/" class="md-nav__link">
         Chebyshev Center
       </a>
     </li>
@@ -2603,7 +2593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/maths/binomial-series/" class="md-nav__link">
+      <a href="../binomial-series/" class="md-nav__link">
         Binomial Series, Generalized Binomial Coefficient
       </a>
     </li>
@@ -2615,11 +2605,93 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../scribbles/maths/catalan-number/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Catalan Number
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Catalan Number
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alternate-forms" class="md-nav__link">
+    Alternate forms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-in-combinatorics" class="md-nav__link">
+    Applications in combinatorics
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications in combinatorics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary-trees-with-n-nodes" class="md-nav__link">
+    Binary trees with \(n\) nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-pairs-of-correctly-matched-parentheses" class="md-nav__link">
+    \(n\) pairs of correctly matched parentheses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divisions-of-a-convex-polygon-into-n-triangles" class="md-nav__link">
+    Divisions of a convex polygon into \(n\) triangles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2669,7 +2741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/numerical-analysis/fast-inv-sqrt/" class="md-nav__link">
+      <a href="../../numerical-analysis/fast-inv-sqrt/" class="md-nav__link">
         Fast Inverse Square Root, 0x5F3759DF
       </a>
     </li>
@@ -2721,7 +2793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/opencv/opencv-basics/" class="md-nav__link">
+      <a href="../../opencv/opencv-basics/" class="md-nav__link">
         OpenCV Basics
       </a>
     </li>
@@ -2773,7 +2845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/python/python-type-hints/" class="md-nav__link">
+      <a href="../../python/python-type-hints/" class="md-nav__link">
         Python Type Hints
       </a>
     </li>
@@ -2829,7 +2901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/pytorch/pytorch-gpu-management/" class="md-nav__link">
+      <a href="../../pytorch/pytorch-gpu-management/" class="md-nav__link">
         PyTorch GPU Management
       </a>
     </li>
@@ -2843,7 +2915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/pytorch/pytorch-loss-functions/" class="md-nav__link">
+      <a href="../../pytorch/pytorch-loss-functions/" class="md-nav__link">
         PyTorch Loss Functions
       </a>
     </li>
@@ -2857,7 +2929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scribbles/pytorch/broadcasting/" class="md-nav__link">
+      <a href="../../pytorch/broadcasting/" class="md-nav__link">
         Broadcasting
       </a>
     </li>
@@ -2898,6 +2970,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alternate-forms" class="md-nav__link">
+    Alternate forms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-in-combinatorics" class="md-nav__link">
+    Applications in combinatorics
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications in combinatorics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binary-trees-with-n-nodes" class="md-nav__link">
+    Binary trees with \(n\) nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-pairs-of-correctly-matched-parentheses" class="md-nav__link">
+    \(n\) pairs of correctly matched parentheses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#divisions-of-a-convex-polygon-into-n-triangles" class="md-nav__link">
+    Divisions of a convex polygon into \(n\) triangles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2914,73 +3042,133 @@
 
 
 
-<h1 id="_1">平面最接近点对<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><a href="https://www.luogu.com.cn/problem/P1429" target="_blank">平面最接近点对 - 洛谷</a></p>
-<p>采用分治方法解决。将点集分为左右两份，且两份的点数大致相等。这可以由按横坐标值排序轻易做到。之后递归地计算左右两子集中最接近点对，再计算跨左右点对中的最小值，然后三个值取最小。</p>
-<p>递归的边界是点集规模在 3 个以内时，直接计算距离。</p>
-<p>这里主要的问题是如何计算跨左右点对中的最小值。首先假设左右点集中点对距离最小值为 <span class="arithmatex">\(d\)</span>。若跨某左右点对距离小于 <span class="arithmatex">\(d\)</span>，那么这两个点一定出现在中线左右各 <span class="arithmatex">\(d\)</span> 宽的带状区域中。此时如果直接枚举这个区域中的点对计算距离，那么整个算法的复杂度仍是 <span class="arithmatex">\(O(n^2)\)</span> 的，所以我们需要继续优化。</p>
-<p>进一步观察可知，由于 <span class="arithmatex">\(d\)</span> 的限制，中间的带状区域中的点的分布不可能太密，事实上如果中间带某点对距离比 <span class="arithmatex">\(d\)</span> 更小，那么它们在纵向上不可能相隔超过 6 个点。所以在这里的做法是将中间带的点复制到一个临时数组中，对纵坐标进行排序，然后计算每一个点与其之后 6 个点之间的距离，取最小值。</p>
-<div class="language-c++ highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">cmpx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">cmpy</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kr">inline</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">dist</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">{</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">sqrt</span><span class="p">((</span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="o">-</span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">x</span><span class="o">-</span><span class="n">b</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="o">-</span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">y</span><span class="o">-</span><span class="n">b</span><span class="p">.</span><span class="n">y</span><span class="p">));</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">Point</span><span class="w"> </span><span class="n">point</span><span class="p">[</span><span class="mi">200010</span><span class="p">],</span><span class="w"> </span><span class="n">temp</span><span class="p">[</span><span class="mi">200010</span><span class="p">];</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kt">double</span><span class="w"> </span><span class="nf">shortest</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">{</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mind</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="n">mind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1e38</span><span class="p">;</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">point</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mind</span><span class="p">)</span><span class="w"> </span><span class="n">mind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="n">l</span><span class="p">],</span><span class="w"> </span><span class="n">point</span><span class="p">[</span><span class="n">r</span><span class="p">]);</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mind</span><span class="p">)</span><span class="w"> </span><span class="n">mind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">mind</span><span class="p">;</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shortest</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">),</span><span class="w"> </span><span class="n">dr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shortest</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">liml</span><span class="p">,</span><span class="w"> </span><span class="n">limr</span><span class="p">;</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lp</span><span class="p">,</span><span class="w"> </span><span class="n">rp</span><span class="p">;</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="n">mind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">dl</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">dr</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">dl</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">dr</span><span class="p">);</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="c1">// merge</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="n">liml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">point</span><span class="p">[</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mind</span><span class="p">;</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="n">limr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">point</span><span class="p">[</span><span class="n">mid</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">mind</span><span class="p">;</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">lp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">[</span><span class="n">lp</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">liml</span><span class="p">;</span><span class="w"> </span><span class="o">--</span><span class="n">lp</span><span class="p">)</span>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="n">temp</span><span class="p">[</span><span class="n">p</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">point</span><span class="p">[</span><span class="n">lp</span><span class="p">];</span><span class="w"> </span><span class="c1">//improve: binsearch</span>
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">rp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">rp</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">[</span><span class="n">rp</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">limr</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">rp</span><span class="p">)</span>
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">        </span><span class="n">temp</span><span class="p">[</span><span class="n">p</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">point</span><span class="p">[</span><span class="n">rp</span><span class="p">];</span>
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="w"> </span><span class="n">temp</span><span class="o">+</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">cmpy</span><span class="p">);</span>
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i</span><span class="o">+</span><span class="mi">7</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">            </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">temp</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">mind</span><span class="p">)</span><span class="w"> </span><span class="n">mind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">;</span>
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">mind</span><span class="p">;</span>
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="p">}</span>
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="p">{</span>
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span>
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">    </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf %lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">point</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">point</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">cmpx</span><span class="p">);</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">    </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">shortest</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="mi">-1</span><span class="p">);</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.4f&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ans</span><span class="p">);</span>
-<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="p">}</span>
-</code></pre></div>
+<h1 id="catalan-number">Catalan Number<a class="headerlink" href="#catalan-number" title="Permanent link">&para;</a></h1>
+<p>The Catalan numbers are a sequence of integers named after the mathematician Eugène Charles Catalan.</p>
+<p>The <span class="arithmatex">\(n\)</span>th Catalan number is</p>
+<p class="arithmatex">\[
+C_n = \frac{1}{n+1}\binom{2n}{n}, \quad n \ge 0. \tag 1
+\]</p>
+<p>The fist Catalan numbers are listed below.<sup id="fnref:A000108"><a class="footnote-ref" href="#fn:A000108">1</a></sup></p>
+<p class="arithmatex">\[
+\begin{matrix*}[r]
+n &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 \\
+C_n &amp; 1 &amp; 1 &amp; 2 &amp; 5 &amp; 14 &amp; 42 &amp; 132
+\end{matrix*}
+\]</p>
+<h2 id="alternate-forms">Alternate forms<a class="headerlink" href="#alternate-forms" title="Permanent link">&para;</a></h2>
+<p>The definition immediately derives that</p>
+<p class="arithmatex">\[
+C_n = \frac{(2n)!}{n!(n+1)!}, \quad n \ge 0. \tag 2
+\]</p>
+<p>For <span class="arithmatex">\(n &gt; 1\)</span>, expanding the equation above,</p>
+<p class="arithmatex">\[
+\begin{aligned}
+C_n &amp;= \frac{(2n)!}{n!(n+1)!} \\
+&amp;= \frac{\prod_{k=1}^{2n}k}{\prod_{k=1}^{n}k\prod_{k=1}^{n+1}k} \\
+&amp;= \frac{(n+1)(n+2)(n+3)\cdots(2n-1)(2n)}{1\cdot 2\cdot 3\cdots (n-1)\cdot n\cdot (n+1)} \\
+&amp;= \frac{(n+2)(n+3)\cdots(2n-1)(2n)}{2\cdot 3\cdots (n-1)\cdot n} \\
+&amp;= \prod_{k=2}^n \frac{n+k}{k}.
+\end{aligned} \tag 3
+\]</p>
+<p>For a recurrence relation</p>
+<p class="arithmatex">\[
+\begin{aligned}
+C_n/C_{n-1} &amp;= \frac{(2n)!/(2n-2)!}{(n!(n+1)!)/((n-1)!n!)} \\
+&amp;= \frac{2(2n-1)}{n+1}.
+\end{aligned}
+\]</p>
+<p>therefore</p>
+<p class="arithmatex">\[
+\begin{aligned}
+C_0 &amp;= 1 \\
+C_n &amp;= \frac{2(2n-1)}{n+1}C_{n-1},\quad n &gt; 0. \tag 4
+\end{aligned}
+\]</p>
+<p>Another important recurrence relation is</p>
+<p class="arithmatex">\[
+\begin{aligned}
+C_0 &amp;= 1 \\
+C_n &amp;= \sum_{i=0}^{n-1}C_iC_{n-i-1},\quad n &gt; 0, \tag 5
+\end{aligned}
+\]</p>
+<p>and it can be proved by the generating function<sup id="fnref:wikicatalanproof"><a class="footnote-ref" href="#fn:wikicatalanproof">2</a></sup><sup id="fnref:secatalanrecur"><a class="footnote-ref" href="#fn:secatalanrecur">3</a></sup>.</p>
+<h2 id="applications-in-combinatorics">Applications in combinatorics<a class="headerlink" href="#applications-in-combinatorics" title="Permanent link">&para;</a></h2>
+<h3 id="binary-trees-with-n-nodes">Binary trees with <span class="arithmatex">\(n\)</span> nodes<a class="headerlink" href="#binary-trees-with-n-nodes" title="Permanent link">&para;</a></h3>
+<p>There are <span class="arithmatex">\(C_n\)</span> structurally different binary trees with <span class="arithmatex">\(n\)</span> nodes.</p>
+<p>If the left subtree of the root has <span class="arithmatex">\(i\)</span> nodes, the right subtree has <span class="arithmatex">\(n-1-i\)</span> nodes. This immediately leads to the recurrence relation <span class="arithmatex">\((5)\)</span>. It is essentially the same for the number of associations of <span class="arithmatex">\(n\)</span> applications of a binary operator.</p>
+<h3 id="n-pairs-of-correctly-matched-parentheses"><span class="arithmatex">\(n\)</span> pairs of correctly matched parentheses<a class="headerlink" href="#n-pairs-of-correctly-matched-parentheses" title="Permanent link">&para;</a></h3>
+<p>There are <span class="arithmatex">\(C_n\)</span> different sequences of <span class="arithmatex">\(n\)</span> pairs of parentheses that are correctly matched.</p>
+<p class="arithmatex">\[
+\large ()()()\quad (())() \quad ()(()) \quad (()()) \quad ((()))
+\]</p>
+<p>A sequence of parentheses is correctly matched if and only if:</p>
+<ul>
+<li>any prefix of the sequence contains no more close parentheses than open parentheses,</li>
+<li>total number of open and close parentheses are equal.</li>
+</ul>
+<p>Re-interpreting an open parenthesis as a step rightwards and a close parenthesis as a step rightwards, <span class="arithmatex">\(C_n\)</span> counts the number of different monotonic lattice paths in <span class="arithmatex">\(n\times n\)</span> square cells from bottom left corner to top right corner that do not cross above the diagonal, as shown below.</p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Catalan_number_4x4_grid_example.svg" /></p>
+<p>It is obvious that there are <span class="arithmatex">\(\binom{2n}{n}\)</span> monotonic lattice paths without constraint of the diagonal, because one can choose arbitrary <span class="arithmatex">\(n\)</span> steps upwards from <span class="arithmatex">\(2n\)</span> steps in a path.</p>
+<p>We define <em>exceedance</em> of a path to be the number of steps upwards in the path, and the set of all paths of exceedance <span class="arithmatex">\(k\)</span> in a <span class="arithmatex">\(n\times n\)</span> grid are denoted by <span class="arithmatex">\(P_n^k\)</span>. All possible exceedances are <span class="arithmatex">\(k = 0, 1, 2, \cdots, n\)</span>, as in <span class="arithmatex">\(P_n^0\)</span> are the desired ones, and the paths in <span class="arithmatex">\(P_n^n\)</span> stays above the diagonal.</p>
+<p>By showing that there is a bijection between <span class="arithmatex">\(P_n^i\)</span> and <span class="arithmatex">\(P_n^{i-1}\)</span> for any <span class="arithmatex">\(i = 1, 2, \cdots, n\)</span>, we can prove that all <span class="arithmatex">\(P_n^k\)</span> for <span class="arithmatex">\(k = 0, 1, 2, \cdots, n\)</span> have the same size. Because there are <span class="arithmatex">\(n+1\)</span> possible exceedances, the desired paths, i.e. the paths of zero exceedance <span class="arithmatex">\(P_n^0\)</span>, account for <span class="arithmatex">\((n+1)\)</span>th of all possible <span class="arithmatex">\(\binom{2n}{n}\)</span> monotonic lattice paths. Therefore there are <span class="arithmatex">\(C_n\)</span> desired paths according to formula <span class="arithmatex">\((1)\)</span>.</p>
+<p>The forward part of the bijection from <span class="arithmatex">\(P_n^k\)</span> to <span class="arithmatex">\(P_n^{k-1}\)</span> can be established by swapping the sections before and after the first step rightwards ending on the diagonal of a bad path (the black one) in all paths in <span class="arithmatex">\(P_n^k\)</span>, thus reducing the exceedance by 1.</p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/1/13/Catalan_number_swapping_example.png" /></p>
+<p>Similarly, the backward part of the bijection from <span class="arithmatex">\(P_n^{k-1}\)</span> to <span class="arithmatex">\(P_n^k\)</span> is swapping the sections before and after the last step rightwards starting from the diagonal, increasing the exceedance by 1. The following diagram shows all possible swapping in a <span class="arithmatex">\(3\times 3\)</span> grid.</p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/6/65/Catalan_number_algorithm_table.png" /></p>
+<h3 id="divisions-of-a-convex-polygon-into-n-triangles">Divisions of a convex polygon into <span class="arithmatex">\(n\)</span> triangles<a class="headerlink" href="#divisions-of-a-convex-polygon-into-n-triangles" title="Permanent link">&para;</a></h3>
+<p>The Catalan numbers are the answer for Euler's polygon division problem. Explicitly, a triangulation of a convex <span class="arithmatex">\((n+2)\)</span>-gon divides the polygon into <span class="arithmatex">\(n\)</span> triangles by <span class="arithmatex">\(n-1\)</span> lines, and <span class="arithmatex">\(C_n\)</span> counts the number of different triangulations of a convex <span class="arithmatex">\((n+2)\)</span>-gon. All possible triangulations of a convex 4-gon (quadrilateral), 5-gon (pentagon) and 6-gon (hexagon) are listed below<sup id="fnref:wolframpolygon"><a class="footnote-ref" href="#fn:wolframpolygon">4</a></sup>.</p>
+<p><img alt="" src="https://mathworld.wolfram.com/images/eps-svg/CatalanPolygons_700.svg" /></p>
+<p>We denote the number of triangulations of a convex <span class="arithmatex">\((n+2)\)</span>-gon by <span class="arithmatex">\(t_n\)</span>. Next, we will prove this sequence for <span class="arithmatex">\(n\in N\)</span> is the Catalan numbers, that is, <span class="arithmatex">\(t_n = C_n\)</span>. In the following proof, we view a triangulation of a convex <span class="arithmatex">\((n+2)\)</span>-gon as a graph</p>
+<p class="arithmatex">\[
+T_{n+2} = \langle V(T_{n+2}), E(T_{n+2}) \rangle,
+\]</p>
+<p>where <span class="arithmatex">\(T_{n+2}\)</span> is the triangulation, <span class="arithmatex">\(V(T_{n+2})\)</span> is the set of <span class="arithmatex">\(n+2\)</span> vertices in this polygon and <span class="arithmatex">\(E(T_{n+2})\)</span> is the set of <span class="arithmatex">\(2n+1\)</span> edges, comprising <span class="arithmatex">\(n+2\)</span> sides and <span class="arithmatex">\(n-1\)</span> internal edges.</p>
+<p>For a convex <span class="arithmatex">\((n+2)\)</span>-gon, <span class="arithmatex">\(A\)</span> is defined to be the set of triples <span class="arithmatex">\(\langle T_{n+2}, e, d \rangle\)</span>, where</p>
+<ul>
+<li><span class="arithmatex">\(T_{n+2}\)</span> is one of the triangulations of this polygon, with a total of <span class="arithmatex">\(t_n\)</span> possible choices;</li>
+<li><span class="arithmatex">\(e \in E(T_{n+2})\)</span> is one of the edges in <span class="arithmatex">\(T_{n+2}\)</span>, with a total of <span class="arithmatex">\(2n+1\)</span> possible choices for each <span class="arithmatex">\(T_{n+2}\)</span>;</li>
+<li><span class="arithmatex">\(d \in \{1, -1\}\)</span> is one of the possible directions of <span class="arithmatex">\(e\)</span>, with a total of 2 possible choices for each <span class="arithmatex">\(e\)</span>.</li>
+</ul>
+<p>The size of <span class="arithmatex">\(A\)</span> is the product of number of choices of each item in the triple</p>
+<p class="arithmatex">\[
+|A| = 2(2n+1)t_n.
+\]</p>
+<p>For the triangulations of a convex <span class="arithmatex">\((n+3)\)</span>-gon, we select one of its sides to be the "base", and <span class="arithmatex">\(B\)</span> is defined to be the set of pairs <span class="arithmatex">\(\langle T_{n+3}, e' \rangle\)</span>, where</p>
+<ul>
+<li><span class="arithmatex">\(T_{n+3}\)</span> is one of the triangulations of this polygon, with a total of <span class="arithmatex">\(t_{n+1}\)</span> possible choices;</li>
+<li><span class="arithmatex">\(e'\)</span> is one of the sides of this polygon, except the base, with <span class="arithmatex">\(n+2\)</span> possible choices.</li>
+</ul>
+<p>Similarly, the size of <span class="arithmatex">\(B\)</span> is</p>
+<p class="arithmatex">\[
+|B| = (n+2)t_{n+1}.
+\]</p>
+<p>We show that there is a bijection between <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. For any element in <span class="arithmatex">\(A\)</span>, split the selected edge <span class="arithmatex">\(e\)</span> into two along its direction <span class="arithmatex">\(d\)</span>, resulting in two different edges sharing the start point. Connecting the two end points, the original edge is expanded into a triangle. Thus, <span class="arithmatex">\(T_{n+2}\)</span> is transformed into <span class="arithmatex">\(T_{n+3}\)</span> with a newly formed side <span class="arithmatex">\(e'\)</span>.</p>
+<p>The other direction of the bijection collapses the selected edge <span class="arithmatex">\(e'\)</span> in <span class="arithmatex">\(T_{n+3}\)</span>, thus the triangle that comprises <span class="arithmatex">\(e'\)</span> shrinks into an edge <span class="arithmatex">\(e\)</span>, with the direction <span class="arithmatex">\(d\)</span> points to the disappeared side.</p>
+<p>The base edge serves as a standard for comparison, which remains unchanged during the transformation in the bijection and do not disappear when going from <span class="arithmatex">\(T_{n+2}\)</span> to <span class="arithmatex">\(T_{n+3}\)</span>.</p>
+<p>The diagram below illustrates this bijection in the case <span class="arithmatex">\(n = 2\)</span>. The base edges are depicted in thicker lines. The newly formed triangles and edges are shown in green.</p>
+<p><img alt="" src="../../img/catalan-euler-triangulation-bijection.svg" width="375px" /></p>
+<p>Hence <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are of equal sizes, that is, <span class="arithmatex">\(2(2n+1)t_n = (n+2)t_{n+1}\)</span>. Applying <span class="arithmatex">\(t_1 = 1\)</span> we have <span class="arithmatex">\(t_n = C_n\)</span> according to equation <span class="arithmatex">\((4)\)</span>.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://math.mit.edu/~rstan/ec/catadd.pdf" target="_blank">Catalan Addendum</a></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:A000108">
+<p><a href="https://oeis.org/A000108" target="_blank">A000108 - OEIS</a>&#160;<a class="footnote-backref" href="#fnref:A000108" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:wikicatalanproof">
+<p><a href="https://en.wikipedia.org/wiki/Catalan_number#First_proof" target="_blank">Catalan number - Wikipedia</a>&#160;<a class="footnote-backref" href="#fnref:wikicatalanproof" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:secatalanrecur">
+<p><a href="https://math.stackexchange.com/a/338385" target="_blank">Simplifying Catalan number recurrence relation</a>&#160;<a class="footnote-backref" href="#fnref:secatalanrecur" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:wolframpolygon">
+<p><a href="https://mathworld.wolfram.com/CatalanNumber.html">Catalan Number -- from Wolfram MathWorld</a>&#160;<a class="footnote-backref" href="#fnref:wolframpolygon" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
   
@@ -3039,16 +3227,16 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.instant", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.instant", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.19047be9.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.19047be9.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
       
-        <script src="../../_static/js/extra.js"></script>
+        <script src="../../../_static/js/extra.js"></script>
       
     
   </body>
