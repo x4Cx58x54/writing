@@ -24,6 +24,9 @@ jobs:
           pip install mkdocs-macros-plugin==0.7.0
 
       - name: Deploy
+        env:
+          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
         run: |
           git pull
+          sed -i "s/GA_TRACKING_ID/$GA_TRACKING_ID/" mkdocs.yml
           mkdocs gh-deploy --clean

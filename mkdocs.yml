@@ -157,7 +157,7 @@ extra:
       link: https://github.com/x4Cx58x54
   analytics:
     provider: google
-    property: ${{ secrets.GOOGLE_ANALYTICS_TRACKING_ID }}
+    property: GA_TRACKING_ID
 
 
 extra_css:
