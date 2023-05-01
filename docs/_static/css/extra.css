@@ -47,3 +47,11 @@ a.md-nav__link {
 .md-ellipsis {
   font-weight: 500 !important;
 }
+
+/* Temporary solution, https://github.com/squidfunk/mkdocs-material/issues/5416 */
+.md-nav--secondary .md-nav__link {
+  display: block;
+}
+.md-nav--secondary .md-nav__link > * {
+  display: initial;
+}
