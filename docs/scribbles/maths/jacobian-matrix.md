@@ -95,3 +95,13 @@ $$
 $$
 
 上式第二行使用的是雅可比行列式（Jacobian determinant）的一种写法。
+
+---
+
+利用以上换元计算高斯积分的过程如下所示[^gaussint]：
+
+<video width="100%" style="display:block;margin:auto;" muted controls autoplay loop>
+    <source src="https://packaged-media.redd.it/697dv7n4cmg81/pb/m2-res_480p.mp4?m=DASHPlaylist.mpd&v=1&e=1684143600&s=eb872482e9ef80364ec3cecf9b54d4a19d3be8d1#t=0" type="video/mp4" >
+</video>
+
+[^gaussint]: [The Gaussian Integral : r/mathmemes](https://www.reddit.com/r/mathmemes/comments/snleob/the_gaussian_integral/){: target="_blank"}
