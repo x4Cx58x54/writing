@@ -321,6 +321,66 @@ $$
 [^penaltyconstraint]: [Constraint form equivalent to penalty form - Mathematics Stack Exchange](https://math.stackexchange.com/a/3577409)
 
 
+### Naive Bayes
+
+对于在联合分布 $P(X, Y)$ 上独立采样得到的训练集 $T = \{(x_i, y_i): i = 1, \cdots, N\}$, 朴素贝叶斯通过估计先验分布 $P(Y=y)$ 和条件分布 $P(X=x \mid Y=y)$ 从而间接地估计联合分布.
+
+所谓朴素，指的是此方法假设 $X$ 的各维分布是独立的，即
+
+$$
+P(X=x \mid Y=y) = \prod_j P(X^{(j)} = x^{(j)}\mid Y=y).
+$$
+
+给定样本特征 $x$，朴素贝叶斯分类器将其归类至 $y^*$ 的过程为
+
+$$
+\begin{aligned}
+y^*
+&= \arg \max_y P(Y=y \mid X=x) \\
+&= \arg \max_y \frac{P(Y=y)P(X=x \mid Y=y)}{\displaystyle\sum_y P(Y=y)P(X=x \mid Y=y)} \\
+&= \arg \max_y \frac{P(Y=y)\displaystyle\prod_j P(X^{(j)} = x^{(j)} \mid Y=y)}{\displaystyle\sum_y P(Y=y)\displaystyle\prod_j P(X^{(j)} = x^{(j)} \mid Y=y)} \\
+&= \arg \max_y P(Y=y)\displaystyle\prod_j P(X^{(j)} = x^{(j)} \mid Y=y).
+\end{aligned}
+$$
+
+要计算上式，还需要估计开头所述的 $Y$ 的先验分布和给定 $Y$ 时各维 $X^{(j)}$ 的条件分布. 依具体情况可使用以下估计方法：
+
+#### Categorical Maximum Likelihood Estimation
+
+对于离散特征，两个分布的最大似然估计即为对应的频率：
+
+$$
+P(Y=y) = \frac{n(Y=y)}{N},
+$$
+
+$$
+P(X^{(j)} = x^{(j)}\mid Y=y) = \frac{n(X^{(j)} = x^{(j)}, Y = y)}{n(Y=y)}.
+$$
+
+#### Bayesian Estimation with Laplacian Smoothing
+
+以上最大似然估计得到的条件概率可能在某些 $X$ 上取值为 0. 为了避免这种现象，使用拉普拉斯平滑：在最大似然估计的基础上，给每一个频数加上平滑参数 $\lambda$，一般取 1.
+
+$$
+P(Y=y) = \frac{n(Y=y) + \lambda}{N + \lambda n(Y)},
+$$
+
+$$
+P(X^{(j)} = x^{(j)}\mid Y=y) = \frac{n(X^{(j)} = x^{(j)}, Y = y)}{n(Y=y) + \lambda |\mathcal{X}^{(j)}|}.
+$$
+
+#### Gaussian
+
+若 $X$ 服从正态分布，依据最大似然估计可得到
+
+$$
+P(X^{(j)} = x^{(j)}\mid Y=y) = \mathcal{N}(x^{(j)}; \mu_{jy}, \sigma^2_{jy}),
+$$
+
+$$
+\mu_{jy} = \frac{\displaystyle\sum_{Y=y}x^{(j)}}{n(Y=y)} ,\quad \sigma^2_{jy} = \frac{\displaystyle\sum_{Y=y}(x^{(j)}-\mu_{jy})^2}{n(Y=y)}.
+$$
+
 ## Optimizations
 
 ### Regularizations
