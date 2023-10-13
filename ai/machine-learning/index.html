@@ -17,7 +17,7 @@
         <link rel="next" href="../../competitive-programming/prime/">
       
       <link rel="icon" href="../../none">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.4">
     
     
       
@@ -1123,6 +1123,13 @@
           <li class="md-nav__item">
   <a href="#regressions-linear-lasso-and-ridge" class="md-nav__link">
     Regressions: Linear, LASSO and Ridge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naive-bayes" class="md-nav__link">
+    Naive Bayes
   </a>
   
 </li>
@@ -3058,6 +3065,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#naive-bayes" class="md-nav__link">
+    Naive Bayes
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3328,6 +3342,47 @@ f(\boldsymbol{w}^*) \le f(\boldsymbol{w}).
 f(\boldsymbol{w}^{**}) + \lambda g(\boldsymbol{w}^{**}) \le f(\boldsymbol{w}) + \lambda g(\boldsymbol{w}).
 \]</p>
 <p>故惩罚形式和约束形式的优化问题是等价的.</p>
+<h3 id="naive-bayes">Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permanent link">&para;</a></h3>
+<p>对于在联合分布 <span class="arithmatex">\(P(X, Y)\)</span> 上独立采样得到的训练集 <span class="arithmatex">\(T = \{(x_i, y_i): i = 1, \cdots, N\}\)</span>, 朴素贝叶斯通过估计先验分布 <span class="arithmatex">\(P(Y=y)\)</span> 和条件分布 <span class="arithmatex">\(P(X=x \mid Y=y)\)</span> 从而间接地估计联合分布.</p>
+<p>所谓朴素，指的是此方法假设 <span class="arithmatex">\(X\)</span> 的各维分布是独立的，即</p>
+<p class="arithmatex">\[
+P(X=x \mid Y=y) = \prod_j P(X^{(j)} = x^{(j)}\mid Y=y).
+\]</p>
+<p>给定样本特征 <span class="arithmatex">\(x\)</span>，朴素贝叶斯分类器将其归类至 <span class="arithmatex">\(y^*\)</span> 的过程为</p>
+<p class="arithmatex">\[
+\begin{aligned}
+y^*
+&amp;= \arg \max_y P(Y=y \mid X=x) \\
+&amp;= \arg \max_y \frac{P(Y=y)P(X=x \mid Y=y)}{\displaystyle\sum_y P(Y=y)P(X=x \mid Y=y)} \\
+&amp;= \arg \max_y \frac{P(Y=y)\displaystyle\prod_j P(X^{(j)} = x^{(j)} \mid Y=y)}{\displaystyle\sum_y P(Y=y)\displaystyle\prod_j P(X^{(j)} = x^{(j)} \mid Y=y)} \\
+&amp;= \arg \max_y P(Y=y)\displaystyle\prod_j P(X^{(j)} = x^{(j)} \mid Y=y).
+\end{aligned}
+\]</p>
+<p>要计算上式，还需要估计开头所述的 <span class="arithmatex">\(Y\)</span> 的先验分布和给定 <span class="arithmatex">\(Y\)</span> 时各维 <span class="arithmatex">\(X^{(j)}\)</span> 的条件分布. 依具体情况可使用以下估计方法：</p>
+<h4 id="categorical-maximum-likelihood-estimation">Categorical Maximum Likelihood Estimation<a class="headerlink" href="#categorical-maximum-likelihood-estimation" title="Permanent link">&para;</a></h4>
+<p>对于离散特征，两个分布的最大似然估计即为对应的频率：</p>
+<p class="arithmatex">\[
+P(Y=y) = \frac{n(Y=y)}{N},
+\]</p>
+<p class="arithmatex">\[
+P(X^{(j)} = x^{(j)}\mid Y=y) = \frac{n(X^{(j)} = x^{(j)}, Y = y)}{n(Y=y)}.
+\]</p>
+<h4 id="bayesian-estimation-with-laplacian-smoothing">Bayesian Estimation with Laplacian Smoothing<a class="headerlink" href="#bayesian-estimation-with-laplacian-smoothing" title="Permanent link">&para;</a></h4>
+<p>以上最大似然估计得到的条件概率可能在某些 <span class="arithmatex">\(X\)</span> 上取值为 0. 为了避免这种现象，使用拉普拉斯平滑：在最大似然估计的基础上，给每一个频数加上平滑参数 <span class="arithmatex">\(\lambda\)</span>，一般取 1.</p>
+<p class="arithmatex">\[
+P(Y=y) = \frac{n(Y=y) + \lambda}{N + \lambda n(Y)},
+\]</p>
+<p class="arithmatex">\[
+P(X^{(j)} = x^{(j)}\mid Y=y) = \frac{n(X^{(j)} = x^{(j)}, Y = y)}{n(Y=y) + \lambda |\mathcal{X}^{(j)}|}.
+\]</p>
+<h4 id="gaussian">Gaussian<a class="headerlink" href="#gaussian" title="Permanent link">&para;</a></h4>
+<p>若 <span class="arithmatex">\(X\)</span> 服从正态分布，依据最大似然估计可得到</p>
+<p class="arithmatex">\[
+P(X^{(j)} = x^{(j)}\mid Y=y) = \mathcal{N}(x^{(j)}; \mu_{jy}, \sigma^2_{jy}),
+\]</p>
+<p class="arithmatex">\[
+\mu_{jy} = \frac{\displaystyle\sum_{Y=y}x^{(j)}}{n(Y=y)} ,\quad \sigma^2_{jy} = \frac{\displaystyle\sum_{Y=y}(x^{(j)}-\mu_{jy})^2}{n(Y=y)}.
+\]</p>
 <h2 id="optimizations">Optimizations<a class="headerlink" href="#optimizations" title="Permanent link">&para;</a></h2>
 <h3 id="regularizations">Regularizations<a class="headerlink" href="#regularizations" title="Permanent link">&para;</a></h3>
 <h4 id="l0">L0 正则化<a class="headerlink" href="#l0" title="Permanent link">&para;</a></h4>
