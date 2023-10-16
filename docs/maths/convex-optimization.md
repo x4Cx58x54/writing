@@ -10,7 +10,9 @@ The **affine hull** of set $C$ is the set of all the affine combinations of all 
 
 For any affine set $C$, and $\forall x_0 \in C$, $C - x_0$ is a **subspace**.
 
-The **relative interior** of $C$ is $\operatorname{\mathbf{relint}} C = \{x \in C \mid B(x, r) \cap \operatorname{\mathbf{aff}} C \subseteq C\}$.
+The **relative interior** of a set $C$ is $\operatorname{\mathbf{relint}} C = \{x \in C \mid B(x, r) \cap \operatorname{\mathbf{aff}} C \subseteq C \text{ for some }r > 0\}$, where $B(x, r)$ is the ball of radius $r$ and center $x$ in any norm $\|\cdot\|$ (any norm defines the same relative interior).
+
+The **relative boundary** of a set $C$ is $\operatorname{\mathbf{cl}}C\setminus\operatorname{\mathbf{relint}}C$, where $\operatorname{\mathbf{relint}}C$ is the closure of $C$.
 
 The **convex combination** of $x_1$ and $x_2$ is $\theta_1 x_1 + \theta_2 + x_2$ where $\sum \theta_i = 1$, $\theta_i \ge 0$, and this idea can be generalized to more than two points.
 
@@ -103,11 +105,21 @@ $$
 \begin{aligned}
 \operatorname{minimize~~}& f_0(x)\\
 \operatorname{s.t.~~}& f_i(x) \le 0, \quad i = 1, 2, \cdots, m\\
-& h_i(x) = 0, \quad i = 1, 2, \cdots, p.
-\end{aligned}
+& h_i(x) = 0, \quad i = 1, 2, \cdots, p,
+\end{aligned}\tag{op}
 $$
 
-A **convex optimization problem** is a minimization problem with the objective function and inequality constraints are convex, and equality constraints are affine.
+where $x$ is called the optimization variable, $f_0$ is called the objective function or cost function, $f_i \le 0$ are called inequality constraints, $h_i(x) = 0$ are called equality constraints.
+
+A **convex optimization problem** is a minimization problem with the objective function and inequality constraints are convex, and equality constraints are affine:
+
+$$
+\begin{aligned}
+\operatorname{minimize~~}& f_0(x)\\
+\operatorname{s.t.~~}& f_i(x) \le 0, \quad i = 1, 2, \cdots, m\\
+& Ax = b.
+\end{aligned}\tag{cop}
+$$
 
 **Optimality criterion** for differentiable objective functions: $x_0$ is optimal iff $\nabla f_0(x_0)^\top (y-x) \ge 0$ for all $y$ in feasible set.
 
@@ -130,9 +142,19 @@ $$
 
 **Strong duality** usually holds: $d^* = p^*$ for convex optimization problems.
 
-**Slater's condition**: $\exists x \in \operatorname{\mathbf{relint}}D$, $f_i(x) < 0$, $i = 1, 2, \cdots, m$, $Ax = b$ (Strictly feasible point). If it holds for a convex optimization problem, the strong duality holds.
+**Slater's condition**: For a convex optimization problem, i.e. the primal problem of the form in $\text{(cop)}$, strong duality hold, if there exists a strictly feasible point for the non-affine inequality constraints, that is, there exists an $x \in \operatorname{\mathbf{relint}}D$ that
 
-If some of the inequality constraints are affine, they do not need to hold with strict inequality in the refined Slater's condition.
+$$
+\begin{aligned}
+&\begin{cases}
+f_i(x) \le 0, & f_i(x) \text{ is affine},\\
+f_i(x) < 0, & f_i(x) \text{ is not affine},\\
+\end{cases} \quad i = 1, 2, \cdots, m, \\
+&\quad Ax = b.
+\end{aligned}
+$$
+
+Slater's conditions reduces to feasibility (there exists an feasible point) when the constraints are all linear equalities and inequalities, and $\operatorname{\mathbf{dom}}f_0$ is open.
 
 **KKT optimality conditions**: $L^*(x) = L(x,\lambda^*, \nu^*)$ has zero derivative at $x^*$, namely
 
