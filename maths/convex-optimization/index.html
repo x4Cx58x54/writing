@@ -3008,7 +3008,8 @@
 <p>An <strong>affine set</strong> <span class="arithmatex">\(C\)</span> is a set such that contains all the affine combinations of the points in <span class="arithmatex">\(C\)</span>.</p>
 <p>The <strong>affine hull</strong> of set <span class="arithmatex">\(C\)</span> is the set of all the affine combinations of all points in <span class="arithmatex">\(C\)</span>, denoted by <span class="arithmatex">\(\operatorname{\mathbf{aff}} C\)</span>.</p>
 <p>For any affine set <span class="arithmatex">\(C\)</span>, and <span class="arithmatex">\(\forall x_0 \in C\)</span>, <span class="arithmatex">\(C - x_0\)</span> is a <strong>subspace</strong>.</p>
-<p>The <strong>relative interior</strong> of <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(\operatorname{\mathbf{relint}} C = \{x \in C \mid B(x, r) \cap \operatorname{\mathbf{aff}} C \subseteq C\}\)</span>.</p>
+<p>The <strong>relative interior</strong> of a set <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(\operatorname{\mathbf{relint}} C = \{x \in C \mid B(x, r) \cap \operatorname{\mathbf{aff}} C \subseteq C \text{ for some }r &gt; 0\}\)</span>, where <span class="arithmatex">\(B(x, r)\)</span> is the ball of radius <span class="arithmatex">\(r\)</span> and center <span class="arithmatex">\(x\)</span> in any norm <span class="arithmatex">\(\|\cdot\|\)</span> (any norm defines the same relative interior).</p>
+<p>The <strong>relative boundary</strong> of a set <span class="arithmatex">\(C\)</span> is <span class="arithmatex">\(\operatorname{\mathbf{cl}}C\setminus\operatorname{\mathbf{relint}}C\)</span>, where <span class="arithmatex">\(\operatorname{\mathbf{relint}}C\)</span> is the closure of <span class="arithmatex">\(C\)</span>.</p>
 <p>The <strong>convex combination</strong> of <span class="arithmatex">\(x_1\)</span> and <span class="arithmatex">\(x_2\)</span> is <span class="arithmatex">\(\theta_1 x_1 + \theta_2 + x_2\)</span> where <span class="arithmatex">\(\sum \theta_i = 1\)</span>, <span class="arithmatex">\(\theta_i \ge 0\)</span>, and this idea can be generalized to more than two points.</p>
 <p>A <strong>convex set</strong> <span class="arithmatex">\(C\)</span> is a set such that contains all the convex combinations of all points in <span class="arithmatex">\(C\)</span>.</p>
 <p>The <strong>convex hull</strong> of <span class="arithmatex">\(C\)</span> is the set of all the convex combinations of all points in <span class="arithmatex">\(C\)</span>, denoted by <span class="arithmatex">\(\operatorname{\mathbf{conv}} C\)</span>.</p>
@@ -3069,10 +3070,18 @@
 \begin{aligned}
 \operatorname{minimize~~}&amp; f_0(x)\\
 \operatorname{s.t.~~}&amp; f_i(x) \le 0, \quad i = 1, 2, \cdots, m\\
-&amp; h_i(x) = 0, \quad i = 1, 2, \cdots, p.
-\end{aligned}
+&amp; h_i(x) = 0, \quad i = 1, 2, \cdots, p,
+\end{aligned}\tag{op}
 \]</p>
-<p>A <strong>convex optimization problem</strong> is a minimization problem with the objective function and inequality constraints are convex, and equality constraints are affine.</p>
+<p>where <span class="arithmatex">\(x\)</span> is called the optimization variable, <span class="arithmatex">\(f_0\)</span> is called the objective function or cost function, <span class="arithmatex">\(f_i \le 0\)</span> are called inequality constraints, <span class="arithmatex">\(h_i(x) = 0\)</span> are called equality constraints.</p>
+<p>A <strong>convex optimization problem</strong> is a minimization problem with the objective function and inequality constraints are convex, and equality constraints are affine:</p>
+<p class="arithmatex">\[
+\begin{aligned}
+\operatorname{minimize~~}&amp; f_0(x)\\
+\operatorname{s.t.~~}&amp; f_i(x) \le 0, \quad i = 1, 2, \cdots, m\\
+&amp; Ax = b.
+\end{aligned}\tag{cop}
+\]</p>
 <p><strong>Optimality criterion</strong> for differentiable objective functions: <span class="arithmatex">\(x_0\)</span> is optimal iff <span class="arithmatex">\(\nabla f_0(x_0)^\top (y-x) \ge 0\)</span> for all <span class="arithmatex">\(y\)</span> in feasible set.</p>
 <h2 id="duality">Duality<a class="headerlink" href="#duality" title="Permanent link">&para;</a></h2>
 <p><strong>Lagrange function</strong> <span class="arithmatex">\(L(x, \lambda, \nu) = f_0(x) + \sum \lambda_i f_i(x) + \sum \nu_i h_i(x)\)</span>.</p>
@@ -3086,8 +3095,17 @@
 \]</p>
 <p><strong>Weak duality</strong> always holds, even if the problem is not convex: <span class="arithmatex">\(d^* \le p^*\)</span>.</p>
 <p><strong>Strong duality</strong> usually holds: <span class="arithmatex">\(d^* = p^*\)</span> for convex optimization problems.</p>
-<p><strong>Slater's condition</strong>: <span class="arithmatex">\(\exists x \in \operatorname{\mathbf{relint}}D\)</span>, <span class="arithmatex">\(f_i(x) &lt; 0\)</span>, <span class="arithmatex">\(i = 1, 2, \cdots, m\)</span>, <span class="arithmatex">\(Ax = b\)</span> (Strictly feasible point). If it holds for a convex optimization problem, the strong duality holds.</p>
-<p>If some of the inequality constraints are affine, they do not need to hold with strict inequality in the refined Slater's condition.</p>
+<p><strong>Slater's condition</strong>: For a convex optimization problem, i.e. the primal problem of the form in <span class="arithmatex">\(\text{(cop)}\)</span>, strong duality hold, if there exists a strictly feasible point for the non-affine inequality constraints, that is, there exists an <span class="arithmatex">\(x \in \operatorname{\mathbf{relint}}D\)</span> that</p>
+<p class="arithmatex">\[
+\begin{aligned}
+&amp;\begin{cases}
+f_i(x) \le 0, &amp; f_i(x) \text{ is affine},\\
+f_i(x) &lt; 0, &amp; f_i(x) \text{ is not affine},\\
+\end{cases} \quad i = 1, 2, \cdots, m, \\
+&amp;\quad Ax = b.
+\end{aligned}
+\]</p>
+<p>Slater's conditions reduces to feasibility (there exists an feasible point) when the constraints are all linear equalities and inequalities, and <span class="arithmatex">\(\operatorname{\mathbf{dom}}f_0\)</span> is open.</p>
 <p><strong>KKT optimality conditions</strong>: <span class="arithmatex">\(L^*(x) = L(x,\lambda^*, \nu^*)\)</span> has zero derivative at <span class="arithmatex">\(x^*\)</span>, namely</p>
 <p class="arithmatex">\[
 \begin{aligned}
