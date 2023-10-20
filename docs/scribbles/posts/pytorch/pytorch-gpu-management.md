@@ -1,5 +1,14 @@
+---
+date:
+    created: 2022-03-22
+categories:
+    - PyTorch
+---
+
+
 # PyTorch GPU Management
 
+<!-- more -->
 
 ### Check whether CUDA is available
 

@@ -1,4 +1,14 @@
+---
+date:
+    created: 2022-09-20
+categories:
+    - PyTorch
+---
+
+
 # Broadcasting
+
+<!-- more -->
 
 Broadcasting of PyTorch tensors is very similar to that of NumPy arrays.
 

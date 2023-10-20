@@ -1,3 +1,11 @@
+---
+date:
+    created: 2023-04-24
+categories:
+    - Maths
+---
+
+
 # Catalan Number
 
 The Catalan numbers are a sequence of integers named after the mathematician Eugène Charles Catalan.
@@ -7,6 +15,8 @@ The $n$th Catalan number is
 $$
 C_n = \frac{1}{n+1}\binom{2n}{n}, \quad n \ge 0. \tag 1
 $$
+
+<!-- more -->
 
 The fist Catalan numbers are listed below.[^A000108]
 

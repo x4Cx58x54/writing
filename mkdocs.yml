@@ -124,31 +124,22 @@ nav:
       - 惊人的假说: reading-notes/惊人的假说.md
       - 未来简史: reading-notes/未来简史：从智人到智神.md
   - Scribbles:
-    - scribbles/index.md
-    - Automobile:
-      - Wheel Alignment: scribbles/automobile/wheel-alignment.md
-    - CUDA:
-      - CUDA Basics: scribbles/cuda/cuda-basics.md
-    - Maths:
-      - Jacobian Matrix: scribbles/maths/jacobian-matrix.md
-      - Chebyshev Center: scribbles/maths/chebyshev-center.md
-      - Binomial Series, Generalized Binomial Coefficient: scribbles/maths/binomial-series.md
-      - Catalan Number: scribbles/maths/catalan-number.md
-    - Numerical Analysis:
-      - Fast Inverse Square Root, 0x5F3759DF: scribbles/numerical-analysis/fast-inv-sqrt.md
-    - OpenCV:
-      - OpenCV Basics: scribbles/opencv/opencv-basics.md
-    - Python:
-      - Python Type Hints: scribbles/python/python-type-hints.md
-    - PyTorch:
-      - PyTorch GPU Management: scribbles/pytorch/pytorch-gpu-management.md
-      - PyTorch Loss Functions: scribbles/pytorch/pytorch-loss-functions.md
-      - Broadcasting: scribbles/pytorch/broadcasting.md
+      - scribbles/index.md
 
 
 plugins:
   - macros
   - tags
+  - blog:
+      blog_dir: scribbles
+      blog_toc: true
+      post_excerpt: required
+      post_url_format: "{file}"
+      post_readtime: false
+      authors: false
+      archive: true
+      pagination_per_page: 20
+      pagination_url_format: "{page}"
 
 
 extra:

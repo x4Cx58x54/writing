@@ -1,4 +1,14 @@
+---
+date:
+    created: 2022-09-13
+categories:
+    - PyTorch
+---
+
+
 # PyTorch Loss Functions
+
+<!-- more -->
 
 ## Cross entropy loss
 

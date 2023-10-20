@@ -1,4 +1,14 @@
+---
+date:
+    created: 2022-07-06
+categories:
+    - CUDA
+---
+
+
 # CUDA Basics
+
+<!-- more -->
 
 [^cudabasics]: [CUDA C/C++ Basics](https://www.nvidia.com/docs/IO/116711/sc11-cuda-c-basics.pdf)
 

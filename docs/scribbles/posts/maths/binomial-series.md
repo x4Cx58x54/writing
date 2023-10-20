@@ -1,3 +1,11 @@
+---
+date:
+    created: 2023-04-15
+categories:
+    - Maths
+---
+
+
 # Binomial Series, Generalized Binomial Coefficients
 
 The binomial theorem states that for $n\in \mathbb{N}$,
@@ -5,6 +13,8 @@ The binomial theorem states that for $n\in \mathbb{N}$,
 $$
 (x+y)^n = \sum_{k=0}^n\binom{n}{k}x^k y^{n-k},
 $$
+
+<!-- more -->
 
 where the binomial coefficients can be computed by
 

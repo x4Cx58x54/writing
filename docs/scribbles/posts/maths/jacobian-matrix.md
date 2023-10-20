@@ -1,6 +1,14 @@
+---
+date:
+    created: 2021-11-27
+categories:
+    - Maths
+---
+
+
 # Jacobian Matrix
 
-雅可比矩阵描述的是线性空间中变换的导数。以一个二维空间为例：设点 $\boldsymbol{a} = (x_a, y_a)$ 经过变换 $f = (f_x, f_y)$ 后映射到了 $f(\boldsymbol{a}) = \boldsymbol{b} = (x_b, y_b)$ 上，即
+雅可比矩阵描述的是线性空间中变换的导数。<!-- more -->以一个二维空间为例：设点 $\boldsymbol{a} = (x_a, y_a)$ 经过变换 $f = (f_x, f_y)$ 后映射到了 $f(\boldsymbol{a}) = \boldsymbol{b} = (x_b, y_b)$ 上，即
 
 $$
 f_x(x_a, y_a) = x_b,\\

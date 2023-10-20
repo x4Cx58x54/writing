@@ -1,4 +1,14 @@
+---
+date:
+    created: 2023-03-15
+categories:
+    - Numerical Analysis
+---
+
+
 # 快速平方根倒数算法，0x5F3759DF
+
+<!-- more -->
 
 ## Float32 in IEEE 754
 

@@ -1,3 +1,11 @@
+---
+date:
+    created: 2022-05-25
+categories:
+    - Maths
+---
+
+
 # Chebyshev Center
 
 [^chebyshevcenterwikipedia]:  [Chebyshev Center - Wikipedia](https://en.wikipedia.org/wiki/Chebyshev_center)
@@ -5,7 +13,9 @@
 [^wikivertexenumeration]: [Vertex enumeration problem - Wikipedia](https://en.wikipedia.org/wiki/Vertex_enumeration_problem)
 [^scipyhalfspaceintersection]: [scipy.spatial.HalfspaceIntersection](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.HalfspaceIntersection.html)
 
-This starts with another question: what are the corner points of the feasible region of a set of linear inequalities? It is called vertex enumeration problem[^wikivertexenumeration].
+This starts with another question: what are the corner points of the feasible region of a set of linear inequalities? <!-- more -->
+It is called vertex enumeration problem[^wikivertexenumeration].
+
 
 Since we already know the linear inequalities $a_i^\top x \le b_i, ~i = 1, \cdots, m$, It can be easily solved by `scipy.spatial.HalfspaceIntersection`[^scipyhalfspaceintersection], if we specify an interior point of the feasible region.
 

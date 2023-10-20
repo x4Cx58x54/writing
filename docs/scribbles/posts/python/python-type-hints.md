@@ -1,6 +1,16 @@
-# Python Type Hints[^1]
+---
+date:
+    created: 2022-07-21
+categories:
+    - Python
+---
 
-[^1]: [typing — Support for type hints](https://docs.python.org/3/library/typing.html){: target="_blank"}
+
+# Python Type Hints
+
+<!-- more -->
+
+[typing — Support for type hints](https://docs.python.org/3/library/typing.html){: target="_blank"}
 
 Pylance supports type checking, and there is a dedicated type check: mypy.
 
