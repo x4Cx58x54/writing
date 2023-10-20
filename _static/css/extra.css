@@ -58,9 +58,9 @@ a.md-nav__link {
 
 /* Remove "continue reading" in blog view pages */
 article.md-post--excerpt nav.md-post__action:has(a) {
-  display: none;
+  display: none !important;
 }
 
 article.md-post--excerpt {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem !important;
 }
