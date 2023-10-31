@@ -909,6 +909,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convex-optimization-mark-schmidt-2015-mlss" class="md-nav__link">
+    Convex Optimization - Mark Schmidt - 2015 MLSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Convex Optimization - Mark Schmidt - 2015 MLSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smooth-optimization" class="md-nav__link">
+    Smooth Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-smooth-optimization" class="md-nav__link">
+    Non-smooth Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomized-algorithms" class="md-nav__link">
+    Randomized Algorithms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-descent" class="md-nav__link">
+    Coordinate descent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paralleldistributed-optimization" class="md-nav__link">
+    Parallel/Distributed Optimization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3585,6 +3633,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#convex-optimization-mark-schmidt-2015-mlss" class="md-nav__link">
+    Convex Optimization - Mark Schmidt - 2015 MLSS
+  </a>
+  
+    <nav class="md-nav" aria-label="Convex Optimization - Mark Schmidt - 2015 MLSS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smooth-optimization" class="md-nav__link">
+    Smooth Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-smooth-optimization" class="md-nav__link">
+    Non-smooth Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomized-algorithms" class="md-nav__link">
+    Randomized Algorithms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinate-descent" class="md-nav__link">
+    Coordinate descent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paralleldistributed-optimization" class="md-nav__link">
+    Parallel/Distributed Optimization
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3703,7 +3799,7 @@ f_i(x) &lt; 0, &amp; f_i(x) \text{ is not affine},\\
 &amp;\quad Ax = b.
 \end{aligned}
 \]</p>
-<p>Slater's conditions reduces to feasibility (there exists an feasible point) when the constraints are all linear equalities and inequalities, and <span class="arithmatex">\(\operatorname{\mathbf{dom}}f_0\)</span> is open.</p>
+<p>Slater's condition reduces to feasibility (i.e., there exists an feasible point) when the constraints are all linear equalities and inequalities, and <span class="arithmatex">\(\operatorname{\mathbf{dom}}f_0\)</span> is open.</p>
 <p><strong>KKT optimality conditions</strong>: <span class="arithmatex">\(L^*(x) = L(x,\lambda^*, \nu^*)\)</span> has zero derivative at <span class="arithmatex">\(x^*\)</span>, namely</p>
 <p class="arithmatex">\[
 \begin{aligned}
@@ -3716,6 +3812,328 @@ h_i(x^*) = 0&amp; \text{ (primal problem constraints)},\\
 \]</p>
 <p>For any optimization problem with differentiable objective and constraint functions for which strong duality obtains, any primal optimal and dual optimal points must satisfy KKT conditions, that is, KKT conditions are necessary for optimality.</p>
 <p>For any convex optimization problem, any pair of points that satisfy KKT conditions are primal optimal and dual optimal, that is, KKT conditions are sufficient for optimality.</p>
+<h2 id="convex-optimization-mark-schmidt-2015-mlss">Convex Optimization - Mark Schmidt - 2015 MLSS<a class="headerlink" href="#convex-optimization-mark-schmidt-2015-mlss" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.cs.ubc.ca/~schmidtm/Documents/2015_MLSS_ConvexOptimization.pdf">Convex Optimization - Machine Learning Summer School</a></p>
+<p><a href="https://www.cs.ubc.ca/~schmidtm/Courses/540-W19/">CPSC 540 - Machine Learning (January-April, 2019)</a></p>
+<p>Optimization is hard. For a general function, solving <span class="arithmatex">\(\displaystyle\min_{x\in\mathbb{R}^n} f(x)\)</span> can be impossible. For example, <span class="arithmatex">\(f(x)\)</span> is arbitrarily small at some random points. Thus, assumptions need to be made, among which several important ones include:</p>
+<ul>
+<li>convexity</li>
+<li>Lipschitz continuity<ul>
+<li>Real function <span class="arithmatex">\(f(x)\)</span> is said to be Lipschitz-continuous if there exists a constant <span class="arithmatex">\(L &gt; 0\)</span> such that <span class="arithmatex">\(|f(x) - f(y)| \le L\|x-y\|\)</span> holds for all <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span></li>
+<li>Ensures error of <span class="arithmatex">\(\Omega(1/t^{1/n})\)</span> after <span class="arithmatex">\(t\)</span> iterations (very slow)</li>
+</ul>
+</li>
+<li>strong convexity<ul>
+<li><span class="arithmatex">\(f(x)\)</span> is strongly convex iff there exists a constant <span class="arithmatex">\(\mu &gt; 0\)</span> such that <span class="arithmatex">\(\mu I \preceq \nabla^2f(x)\)</span></li>
+</ul>
+</li>
+</ul>
+<h4 id="convergence-rates">Convergence Rates<a class="headerlink" href="#convergence-rates" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Algorithm</th>
+<th style="text-align: center;">Assumptions</th>
+<th style="text-align: center;">Deterministic</th>
+<th style="text-align: center;">Stochastic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Gradient</td>
+<td style="text-align: center;">Convex</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/t)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/\sqrt{t})\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Nesterov</td>
+<td style="text-align: center;">Convex</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/t^2)\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Subgradient</td>
+<td style="text-align: center;">Convex</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/\sqrt{t})\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/\sqrt{t})\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Gradient</td>
+<td style="text-align: center;">Strongly convex</td>
+<td style="text-align: center;"><span class="arithmatex">\(O((1-\mu/L)^t)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/t)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Nestrov</td>
+<td style="text-align: center;">Strongly convex</td>
+<td style="text-align: center;"><span class="arithmatex">\(O((1-\sqrt{\mu/L})^t)\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Subgradient</td>
+<td style="text-align: center;">Strongly convex</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/t)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/t)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Newton</td>
+<td style="text-align: center;">Strongly convex</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\prod \rho_t), \rho_t \to 0\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Gradient</td>
+<td style="text-align: center;">Convex, smoothed to <span class="arithmatex">\(1/\epsilon\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/\sqrt{t})\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Nesterov</td>
+<td style="text-align: center;">Convex, smoothed to <span class="arithmatex">\(1/\epsilon\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1/t)\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="smooth-optimization">Smooth Optimization<a class="headerlink" href="#smooth-optimization" title="Permanent link">&para;</a></h3>
+<h4 id="l2-regularized-logistic-regression">L2-regularized logistic regression<a class="headerlink" href="#l2-regularized-logistic-regression" title="Permanent link">&para;</a></h4>
+<p class="arithmatex">\[
+f(x) = \sum_i (\log(1 + \exp (x^\top a_i)) - b_ix^\top a_i) + \frac{\lambda}{2}\|x\|^2.
+\]</p>
+<p>Properties:</p>
+<ul>
+<li><span class="arithmatex">\(f(x)\)</span> is convex and strongly convex;</li>
+<li>first term is Lipschitz continuous;</li>
+<li>second term is not Lipschitz continuous but its gradient is;</li>
+<li><span class="arithmatex">\(\mu I \preceq \nabla^2f(x) \preceq LI\)</span>.</li>
+</ul>
+<p>From Taylor's theorem, for some <span class="arithmatex">\(z\)</span></p>
+<p class="arithmatex">\[
+f(y) = f(x) + \nabla f(x)^\top (y-x) + \frac{1}{2}(y-x)^\top \nabla^2 f(x) (y-x).
+\]</p>
+<p>Use that <span class="arithmatex">\(\nabla^2f(z) \preceq LI\)</span>,</p>
+<p class="arithmatex">\[
+f(y) \le f(x) + \nabla f(x)^\top (y-x) + \frac{L}{2}\|y-x\|^2
+\]</p>
+<p>where the right-hand side is global quadratic upper bound. To minimize this bound by iterating gradient descent with step size of <span class="arithmatex">\(1/L\)</span></p>
+<p class="arithmatex">\[
+x^+ = x - \frac{1}{L}\nabla f(x),
+\]</p>
+<p>which ensures decrease in each iteration (guaranteed progress)</p>
+<p class="arithmatex">\[
+f(x^+) \le f(x) - \frac{1}{2L}\|\nabla f(x)\|^2.
+\]</p>
+<div class="admonition note">
+<p class="admonition-title">Why step size is <span class="arithmatex">\(1/L\)</span>?</p>
+<p class="arithmatex">\[
+\min_y f(x) + \nabla f(x)^\top (y-x) + \frac{L}{2}\|y-x\|^2
+\]</p>
+<p>This is an unconstrained quadratic program (QP), rewrite the object function into a quadratic function</p>
+<p class="arithmatex">\[
+\|Ay + b\|^2 + C,
+\]</p>
+<p>where <span class="arithmatex">\(A = \sqrt{L/2}\ I\)</span>, <span class="arithmatex">\(b = \displaystyle\frac{Lx + \nabla f(x)}{\sqrt{2L}}\)</span>, and the optimal is</p>
+<p class="arithmatex">\[
+y^* = A^{-1}b = x - \frac{1}{L}f(x).
+\]</p>
+</div>
+<p>Similarly, from strong convexity we have a global lower bound,</p>
+<p class="arithmatex">\[
+f(y) \ge f(x) + \nabla f(x)^\top(y-x) + \frac{\mu}{2} \|y-x\|^2.
+\]</p>
+<p>and minimizing both sides we get the Polyak-Łojasiewicz inequality</p>
+<p class="arithmatex">\[
+f(x^*) \ge f(x) - \frac{1}{2\mu}\|\nabla f(x)\|^2.
+\]</p>
+<p>Iterating by gradient descent under guaranteed progress bound,</p>
+<p class="arithmatex">\[
+f(x^{t+1}) \le f(x^t) - \frac{1}{2L}\|\nabla f(x^t)\|^2,
+\]</p>
+<p>and eliminate the norm using PL inequality,</p>
+<p class="arithmatex">\[
+f(x^{t+1}) \le f(x^t) - \frac{\mu}{L}(f(x^t) - f(x^*)),
+\]</p>
+<p>subtracting <span class="arithmatex">\(f(x^*)\)</span> from both sides,</p>
+<p class="arithmatex">\[
+f(x^{t+1}) - f(x^*) \le \left(1-\frac{\mu}{L}\right)(f(x^k) - f(x^*)).
+\]</p>
+<p>Applying this recursively gives</p>
+<p class="arithmatex">\[
+f(x^t) - f(x^*) \le \left(1-\frac{\mu}{L}\right)^t(f(x^0) - f(x^*)).
+\]</p>
+<p>From PL inequality and guaranteed progress bound we have <span class="arithmatex">\(\mu \le L\)</span>, so this optimization has a <em>linear convergence rate</em>:</p>
+<p class="arithmatex">\[
+f(x^t) - f(x^*) = O(\rho^t), \quad 0 \le \rho &lt; 1.
+\]</p>
+<h4 id="maximum-likelihood-logistic-regression">Maximum likelihood logistic regression<a class="headerlink" href="#maximum-likelihood-logistic-regression" title="Permanent link">&para;</a></h4>
+<p class="arithmatex">\[
+f(x) = \sum_i (\log(1 + \exp (x^\top a_i)) - b_ix^\top a_i).
+\]</p>
+<p>Instead of PL inequality, we only have a weaker constraint of convexity. From the same iteration with guaranteed progress bound:</p>
+<p class="arithmatex">\[
+\|\nabla f(x^t)\|^2 \le 2L(f(x^t) - f(x^{t+1})).
+\]</p>
+<p>Summing each iteration up gives</p>
+<p class="arithmatex">\[
+\sum_{k=1}^t \|\nabla f(x^{k-1})\|^2 \le 2L (f(x^0) - f(x^t))
+\]</p>
+<p>Therefore</p>
+<p class="arithmatex">\[
+\min_{0 \le k &lt; t} \|\nabla f(x^{k-1})\|^2 \le \frac{2L (f(x^0) - f(x^t))}{t},
+\]</p>
+<p>at least one time with <span class="arithmatex">\(\|\nabla f(x^k)\|^2 = O(1/t)\)</span> can be found in <span class="arithmatex">\(t\)</span> iterations, and to achieve the norm below <span class="arithmatex">\(\epsilon\)</span> requires <span class="arithmatex">\(t = O(1/\epsilon)\)</span> iterations. This is already much faster than <span class="arithmatex">\(\Omega(1/t^{1/n})\)</span> for generation Lipschitz functions.</p>
+<h4 id="nesterovs-accelerated-gradient-descent">Nesterov's accelerated gradient descent<a class="headerlink" href="#nesterovs-accelerated-gradient-descent" title="Permanent link">&para;</a></h4>
+<p class="arithmatex">\[
+\begin{aligned}
+x_{t+1} &amp;= y_t - \alpha_t\nabla f(y_t),\\
+y_{t+1} &amp;= x_t + \beta_t (x_{t+1} - x_t).
+\end{aligned}
+\]</p>
+<p>Convergence rate is <span class="arithmatex">\(O(1/t^2)\)</span> if convex, which is optimal.</p>
+<h4 id="newtons-method">Newton's method<a class="headerlink" href="#newtons-method" title="Permanent link">&para;</a></h4>
+<p class="arithmatex">\[
+x^+ = x - \alpha d,
+\]</p>
+<p>where</p>
+<p class="arithmatex">\[
+\nabla^2 f(x)d = \nabla f(x),
+\]</p>
+<p>assuming <span class="arithmatex">\(\nabla^2 f(x) \succ 0\)</span>.</p>
+<p>It is equivalent to minimizing</p>
+<p class="arithmatex">\[
+f(y) \approx f(x) + \nabla f(x)^\top (y-x) + \frac{1}{2\alpha}(y-x)^\top \nabla^2f(x) (y-x),
+\]</p>
+<p><img alt="Newton's method and gradient descent" src="../img/con_op_newton_grad.svg" width="300px" /></p>
+<p>For a Lipschitz continuous and strongly convex <span class="arithmatex">\(f(x)\)</span>, close to <span class="arithmatex">\(x^*\)</span> Newton's method has local superlinear convergence</p>
+<p class="arithmatex">\[
+f(x^{t+1}) - f(x^*) \le \rho_t (f(x^t) - f(x^*)),
+\]</p>
+<p>with <span class="arithmatex">\(\displaystyle\lim_{t\to\infty}\rho_t = 0\)</span>. This rate is very fast, but requires solving Hessian inverse.</p>
+<p>To relieve this heavy computation cost, several methods are proposed:</p>
+<ul>
+<li>Modify the Hessian to be positive-definite;</li>
+<li>Compute the Hessian every few iterations;</li>
+<li>Quasi-Newton: approximate the Hessian using a diagonal and low-rank matrix (BFGS and L-BFGS);</li>
+<li>Estimate the Hessian using small perturbation;</li>
+<li>Barzilai-Borwein</li>
+</ul>
+<h3 id="non-smooth-optimization">Non-smooth Optimization<a class="headerlink" href="#non-smooth-optimization" title="Permanent link">&para;</a></h3>
+<p>The L1 regularization term <span class="arithmatex">\(\lambda\|x\|_1\)</span> is non-differentiable when any <span class="arithmatex">\(x_i = 0\)</span>.</p>
+<h4 id="subgradient">Subgradient<a class="headerlink" href="#subgradient" title="Permanent link">&para;</a></h4>
+<p>For a convex <span class="arithmatex">\(f(x)\)</span> the first order condition states that</p>
+<p class="arithmatex">\[
+f(y) \ge f(x) + \nabla f(x)^\top (y-x),\quad \forall x, y.
+\]</p>
+<p>The subgradient is the generalization of gradient. <span class="arithmatex">\(d\)</span> is a subgradient for convex <span class="arithmatex">\(f\)</span> at <span class="arithmatex">\(x\)</span> if</p>
+<p class="arithmatex">\[
+f(y) \ge f(x) + d^\top (y-x), \quad \forall y.
+\]</p>
+<p>A subgradient is the same as gradient at differentiable points, otherwise there are a set of subgradients, and this set is the subdifferential <span class="arithmatex">\(\partial f(x)\)</span>.</p>
+<p>For example, <span class="arithmatex">\(\partial |x| = [-1, 1]\)</span> at <span class="arithmatex">\(x = 0\)</span>.</p>
+<p>The subgradient descent is</p>
+<p class="arithmatex">\[
+x^+ = x - \alpha d
+\]</p>
+<p>for some <span class="arithmatex">\(d \in \partial f(x)\)</span>. The steepest step is given by the <span class="arithmatex">\(d\)</span> of the smallest norm, this is often hard to compute, but easy for L1 regularization. The non-steepest step may increase the objective and convergence requires <span class="arithmatex">\(\alpha \to 0\)</span>.</p>
+<p>Variants includes averaging the subgradients.</p>
+<h4 id="smoothing">Smoothing<a class="headerlink" href="#smoothing" title="Permanent link">&para;</a></h4>
+<p>Replace the non-smooth <span class="arithmatex">\(f\)</span> with smooth <span class="arithmatex">\(f_\epsilon\)</span>, for example</p>
+<p class="arithmatex">\[
+|x| \approx \sqrt{x^2 + \nu},
+\]</p>
+<p class="arithmatex">\[
+\max(a, b) \approx \log(\exp(a) = \exp(b)).
+\]</p>
+<p>It is faster if using Nesterov's.</p>
+<h4 id="convert-to-constrained-optimization">Convert to constrained optimization<a class="headerlink" href="#convert-to-constrained-optimization" title="Permanent link">&para;</a></h4>
+<p>For example, minimizing <span class="arithmatex">\(f(x) + \lambda\|x\|_1\)</span> is equivalent to</p>
+<p class="arithmatex">\[
+\min_{x^+ \ge 0,\ x^- \ge 0} f(x^+ - x^-) + \lambda \sum_i (x^+_i + x^-_i).
+\]</p>
+<h5 id="gradient-projection">Gradient projection<a class="headerlink" href="#gradient-projection" title="Permanent link">&para;</a></h5>
+<p>Gradient projection chooses the step in the feasible region that is the nearest to unconstrained gradient descent.</p>
+<p class="arithmatex">\[
+x^\mathrm{GD} = x - \alpha \nabla f(x),
+\]</p>
+<p class="arithmatex">\[
+x^+ = \argmin_y \|y - x^\mathrm{GD}\|.
+\]</p>
+<p>Projecting does not change the convergence rate.</p>
+<h4 id="proximal-gradient-method">Proximal gradient method<a class="headerlink" href="#proximal-gradient-method" title="Permanent link">&para;</a></h4>
+<p>Proximal gradient is a generalization of projected gradient, utilizing structure of the object. For problem of the form</p>
+<p class="arithmatex">\[
+\min_x f(x) + r(x),
+\]</p>
+<p>where <span class="arithmatex">\(f\)</span> is smooth but <span class="arithmatex">\(r\)</span> is a non-smooth convex function, apply proximity operator to the iteration</p>
+<p class="arithmatex">\[
+x^\mathrm{GD} = x - \alpha \nabla f(x),
+\]</p>
+<p class="arithmatex">\[
+x^+ = \argmin_y \frac{1}{2}\|y - x^\mathrm{GD}\|^2 + \alpha r(y),
+\]</p>
+<p>which is equivalent to</p>
+<p class="arithmatex">\[
+x^+ = \argmin_y f(x) + \nabla f(x)^\top (y-x) + \frac{1}{2\alpha }\|y-x\|^2 + r(y).
+\]</p>
+<p>The convergence rates are still the same as for minimizing <span class="arithmatex">\(f\)</span>.</p>
+<p>The proximal operator is</p>
+<p class="arithmatex">\[
+\operatorname{prox}_r[y] = \argmin_{x\in\mathbb{R}^p} r(x) + \frac{1}{2}\|x - y\|^2.
+\]</p>
+<h4 id="inexact-proximal-newton">Inexact proximal Newton<a class="headerlink" href="#inexact-proximal-newton" title="Permanent link">&para;</a></h4>
+<p class="arithmatex">\[
+x^+ = \operatorname{prox}_{\alpha r}[x - \alpha H^{-1}\nabla f(x)]_H,
+\]</p>
+<p>with the non-Euclidian proximal operator</p>
+<p class="arithmatex">\[
+\operatorname{prox}_r[y]_H = \argmin_{x\in\mathbb{R}^p} r(x) + \frac{1}{2}\|x - y\|^2_H,
+\]</p>
+<p>where <span class="arithmatex">\(\|x\|_H^2 = x^\top Hx\)</span>.</p>
+<h4 id="dual-method">Dual method<a class="headerlink" href="#dual-method" title="Permanent link">&para;</a></h4>
+<p>Strongly convex problems have smooth duals (e.g. SVM).</p>
+<h3 id="randomized-algorithms">Randomized Algorithms<a class="headerlink" href="#randomized-algorithms" title="Permanent link">&para;</a></h3>
+<h4 id="stochastic-gradient-descent">Stochastic gradient descent<a class="headerlink" href="#stochastic-gradient-descent" title="Permanent link">&para;</a></h4>
+<p>When minimizing <span class="arithmatex">\(f(x) = \frac{1}{N}\sum_{i=1}^N f_i(x)\)</span>, deterministic gradient method by Cauchy in 1847 has <span class="arithmatex">\(O(N)\)</span> iteration cost</p>
+<p class="arithmatex">\[
+x^{t+1} = x^t - \alpha_t \nabla f(x^t) = x^t - \frac{\alpha_t}{N}\sum_{i=1}^N\nabla f_i(x^t).
+\]</p>
+<p>The stochastic gradient descent proposed in 1951 randomly select a sample <span class="arithmatex">\(i(t)\)</span> from <span class="arithmatex">\(\{1, 2, \cdots, N\}\)</span></p>
+<p class="arithmatex">\[
+x^{t+1} = x^t - \alpha_t \nabla f_{i(t)} (x^t),
+\]</p>
+<p>where the stochastic gradient gives unbiased estimate of true gradient. Its iteration cost is independent of <span class="arithmatex">\(N\)</span>.</p>
+<p>Stochastic is as fast as deterministic for non-smooth problems in convergence rate, which means <span class="arithmatex">\(N\)</span> times faster. However, smoothness does not help stochastic methods.</p>
+<h4 id="stochastic-average-gradient">Stochastic average gradient<a class="headerlink" href="#stochastic-average-gradient" title="Permanent link">&para;</a></h4>
+<p>Randomly select <span class="arithmatex">\(i(t)\)</span> from <span class="arithmatex">\(\{1, 2, \cdots, N\}\)</span> and compute <span class="arithmatex">\(\nabla f_{i(t)}(x^t)\)</span>,</p>
+<p class="arithmatex">\[
+x^{t+1} = x^t - \alpha \sum_{i=1}^N y_i^t,
+\]</p>
+<p>where <span class="arithmatex">\(y_i^t = \nabla f_i(x^t)\)</span> from the last <span class="arithmatex">\(t\)</span> where <span class="arithmatex">\(i\)</span> was selected.</p>
+<p>It only computes 1 gradient per iteration, while have a <span class="arithmatex">\(O(\rho^t)\)</span> convergence rate.</p>
+<h3 id="coordinate-descent">Coordinate descent<a class="headerlink" href="#coordinate-descent" title="Permanent link">&para;</a></h3>
+<p>Update one variable at a time</p>
+<p class="arithmatex">\[
+x_j^+ = x_j - \alpha \nabla_j f(x).
+\]</p>
+<p>For strongly convex and <span class="arithmatex">\(L_j\)</span>-Lipschitz continuous functions, the convergence rate is <span class="arithmatex">\(O((1-\mu/L_jD)^t)\)</span>, meaning that it is faster if <span class="arithmatex">\(D\)</span> coordinate descent step has same cost as one gradient step.</p>
+<h3 id="paralleldistributed-optimization">Parallel/Distributed Optimization<a class="headerlink" href="#paralleldistributed-optimization" title="Permanent link">&para;</a></h3>
+<h4 id="asynchronous-computation">Asynchronous computation<a class="headerlink" href="#asynchronous-computation" title="Permanent link">&para;</a></h4>
+<p>SGD without waiting the slowest workers improves efficiency</p>
+<p class="arithmatex">\[
+x^{t+1} = x^t - \alpha \nabla f_k(x^{k-m}).
+\]</p>
+<p>Step size should decrease in proportion to asynchrony.</p>
+<h4 id="parallel-coordinate-descent">Parallel coordinate descent<a class="headerlink" href="#parallel-coordinate-descent" title="Permanent link">&para;</a></h4>
+<p>Each worker only update a coordinate, thus only need to communicate single coordinates</p>
+<p class="arithmatex">\[
+x_j^+ = x_j - \alpha_j \nabla_j f(x).
+\]</p>
+<h4 id="decentralized-gradient-descent">Decentralized gradient descent<a class="headerlink" href="#decentralized-gradient-descent" title="Permanent link">&para;</a></h4>
+<p>Each worker has its own data and parameter vector <span class="arithmatex">\(x\)</span>, without updating a centralized <span class="arithmatex">\(x\)</span>. Each worker <span class="arithmatex">\(c\)</span> only communicates with a limited number of neighbours <span class="arithmatex">\(\operatorname{nei}(c)\)</span></p>
+<p class="arithmatex">\[
+x_c = \frac{1}{|\operatorname{nei}(c)|}\sum_{\operatorname{nei}(c)} x_j - \frac{\alpha_c}{M}\sum_{i=1}^M \nabla f_i(x_c).
+\]</p>
+<p>When all neighbours communicate, it reduces to gradient descent. As the graph becomes sparse, convergence rate decays.</p>
 
 
   
