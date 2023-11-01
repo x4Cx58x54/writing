@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fenwick-tree" class="md-skip">
+        <a href="#fenwick-tree-binary-indexed-tree" class="md-skip">
           Skip to content
         </a>
       
@@ -3510,14 +3510,28 @@
                   
 
 
-<h1 id="fenwick-tree">树状数组 | Fenwick Tree<a class="headerlink" href="#fenwick-tree" title="Permanent link">&para;</a></h1>
-<p>树状数组是一种支持高效单点修改和区段求和两种操作的数据结构。</p>
-<p>树状数组并不直接存储数组中的元素，而是将原有数据进行一定变换后再存入数组。如图所示，数组中每一个元素都代表树上的一个节点，树状数组的该元素存储的是对应节点的子节点之和。或者说，是该节点子树每一节点对应的原数组中的元素之和。如 <code>c4</code> 节点为原数组中 1 至 4 元素之和。</p>
-<p>观察可知，若节点序号 <span class="arithmatex">\(x\)</span> 是 <span class="arithmatex">\(2^n\)</span> （<span class="arithmatex">\(n\)</span> 尽可能大）的倍数，则它的子树管理小于等于 <span class="arithmatex">\(x\)</span> 的连续 <span class="arithmatex">\(n+1\)</span> 个元素，且 <span class="arithmatex">\(n+1\)</span> 正好是 <span class="arithmatex">\(x\)</span> 二进制表示中最右的 1 代表的权值。利用补码的性质，可以直接得到 <span class="arithmatex">\(n+1 = x \operatorname{\&amp;} -x\)</span>，将这个运算记为 <code>lowbit</code>。</p>
+<h1 id="fenwick-tree-binary-indexed-tree">树状数组 | Fenwick Tree | Binary Indexed Tree<a class="headerlink" href="#fenwick-tree-binary-indexed-tree" title="Permanent link">&para;</a></h1>
+<p>树状数组是一种支持高效单点修改和区间求和两种操作的数据结构。</p>
+<p>树状数组并不直接存储数组中的元素，而是将原有数据进行一定变换后再存入数组。如图所示，下方为原数组 <span class="arithmatex">\(a\)</span>，下标用二进制表示。树状数组 <span class="arithmatex">\(c\)</span> 是与原数组大小相同的数组，对应图中圆形结点，这些结点之间的关系可以用类似树的结构表示。具体来说，树状数组中每一结点存储的是其子结点之和，也是以其为根的子树所覆盖的原数组中的元素之和。例如，<span class="arithmatex">\(c_4 = c_2 + c_3 + a_4 = \sum_{i=1}^4 a_i\)</span>。</p>
 <p><img alt="" src="../img/fenwick.svg" width="600px" /></p>
-<p>这样，在原数组某位置 <span class="arithmatex">\(x\)</span> 增加 <span class="arithmatex">\(k\)</span> 时，就需要从 <span class="arithmatex">\(x\)</span> 开始上溯父节点，并加上 <span class="arithmatex">\(k\)</span>。每一次上溯所移动的距离正好就是当前节点序号的 <code>lowbit</code> 值。</p>
-<p>在求取原数组某位置 <span class="arithmatex">\(x\)</span> 的前缀和时，只需要从 <span class="arithmatex">\(x\)</span> 开始向前，求取每一个子树之和。每一次向前移动的距离也是当前节点序号的 <code>lowbit</code> 值。</p>
-<p>如果直接存储，则单点修改的复杂度是 <span class="arithmatex">\(O(1)\)</span>，区间求和的复杂度是 <span class="arithmatex">\(O(n)\)</span>，若使用前缀和数组，则两项指标互换。树状数组的单点修改和区间求和的复杂度都是 <span class="arithmatex">\(O(\log n)\)</span>，很好地平衡了性能。</p>
+<p>若结点序号 <span class="arithmatex">\(x\)</span> 是 <span class="arithmatex">\(2^n\)</span> （<span class="arithmatex">\(n\)</span> 尽可能大）的倍数，则它的子树管理小于等于 <span class="arithmatex">\(x\)</span> 的连续 <span class="arithmatex">\(n+1\)</span> 个元素，且 <span class="arithmatex">\(n+1\)</span> 正好是 <span class="arithmatex">\(x\)</span> 二进制表示中最低位的 1 代表的权值。利用补码的性质，可以直接得到 <span class="arithmatex">\(n+1 = x \operatorname{\&amp;} -x\)</span>，将这个运算记为 <code>lowbit</code>。</p>
+<div class="admonition note">
+<p class="admonition-title">lowbit</p>
+<p>对于 <span class="arithmatex">\(x \in \mathbb{N}\)</span>，<span class="arithmatex">\(\operatorname{lowbit}(x) = x \operatorname{\&amp;} -x\)</span> 为 <span class="arithmatex">\(x\)</span> 二进制表示中最低位的 1 的权值。</p>
+<p><span class="arithmatex">\(x = 0\)</span> 时显然 <span class="arithmatex">\(\operatorname{lowbit}(x) = 0 \operatorname{\&amp;} 0 = 0\)</span>，符合定义。<span class="arithmatex">\(x &gt; 0\)</span> 时，将 <span class="arithmatex">\(x\)</span> 的二进制从低到高拆分为若干位 0、一位 1、以及更高的其余位 <span class="arithmatex">\(x'\)</span>。那么补码表示下的 <span class="arithmatex">\(x\)</span>、<span class="arithmatex">\(\text{\textasciitilde} x\)</span>、<span class="arithmatex">\(-x = \text{\textasciitilde}x+1\)</span> 和 <span class="arithmatex">\(\operatorname{lowbit}(x)\)</span> 分别为</p>
+<p class="arithmatex">\[
+\begin{alignat*}{2}
+x &amp;={}&amp; (x')&amp;10\cdots0, \\
+\text{\textasciitilde}x &amp;=&amp; (\text{\textasciitilde}x')&amp;01\cdots1, \\
+-x &amp;=&amp; (\text{\textasciitilde}x')&amp;10\cdots0, \\
+x \operatorname{\&amp;} -x &amp;=&amp; 0\cdots 0&amp;10\cdots 0
+\end{alignat*}
+\]</p>
+<p>可以看到 <span class="arithmatex">\(\operatorname{lowbit}(x)\)</span> 仅保留了 <span class="arithmatex">\(x\)</span> 最低位的 1，其余位均为 0。</p>
+</div>
+<p>在原数组某位置 <span class="arithmatex">\(x\)</span> 增加 <span class="arithmatex">\(k\)</span> 时，就需要从 <span class="arithmatex">\(x\)</span> 开始上溯每一祖先结点，均加上 <span class="arithmatex">\(k\)</span>。每一次上溯所移动的距离正好就是当前结点序号的 <code>lowbit</code> 值。</p>
+<p>在求取原数组某位置 <span class="arithmatex">\(x\)</span> 的前缀和时，只需要从 <span class="arithmatex">\(x\)</span> 开始向前，求取每一个子树之和。每一次向前移动的距离也是当前结点序号的 <code>lowbit</code> 值。</p>
+<p>普通数组单点修改的复杂度是 <span class="arithmatex">\(O(1)\)</span>，区间求和的复杂度是 <span class="arithmatex">\(O(n)\)</span>。若使用前缀和数组，则两项指标互换。树状数组的单点修改和区间求和的复杂度都是 <span class="arithmatex">\(O(\log n)\)</span>，很好地平衡了性能。</p>
 <p><a href="https://www.luogu.com.cn/problem/P3374" target="_blank">树状数组 1 - 洛谷</a></p>
 <div class="language-c++ highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">fenwick</span><span class="p">[</span><span class="mi">500010</span><span class="p">];</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">lowbit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">pos</span><span class="p">)</span>
@@ -3544,7 +3558,7 @@
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="p">}</span>
 </code></pre></div>
 <p><a href="https://www.luogu.com.cn/problem/P3368" target="_blank">树状数组 2 - 洛谷</a></p>
-<p>如果需要单点取值，区间修改，则可以使用将每一个数据表示为与之前一位的差分，再使用树状数组存储。则单点取值的操作为 <code>sum(x)</code>，区间 <span class="arithmatex">\([x, y)\)</span> 增加 <span class="arithmatex">\(k\)</span> 的操作为 <code>add(x, k), add(y, -k)</code>。在存入差分数组初值时，应计算差分直接存入数组，以降低复杂度。</p>
+<p>如果需要单点取值，区间修改，则可以使用将每一个数据表示为与之前一位的差分，再使用树状数组存储。则单点取值的操作为 <code>sum(x)</code>，区间 <span class="arithmatex">\([x, y)\)</span> 增加 <span class="arithmatex">\(k\)</span> 的操作为 <code>add(x, k), add(y, -k)</code>。</p>
 
 
   
