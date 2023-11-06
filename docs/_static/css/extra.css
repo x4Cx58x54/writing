@@ -64,3 +64,19 @@ article.md-post--excerpt nav.md-post__action:has(a) {
 article.md-post--excerpt {
   margin-bottom: 2rem !important;
 }
+
+/* Admonition hint */
+.md-typeset .admonition.hint,
+.md-typeset details.hint {
+  border-color: #eee
+}
+.md-typeset .hint > .admonition-title,
+.md-typeset .hint > summary {
+  background-color: rgba(0,0,0,0)
+  /* background-color: var(--md-primary-bg-color); */
+}
+.md-typeset .hint > .admonition-title::before,
+.md-typeset .hint > summary::before {
+  background-color: var(--md-accent-fg-color);
+  opacity: 0.25;
+}
