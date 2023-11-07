@@ -4,7 +4,7 @@
 
 $$
 \begin{aligned}
-\mathrm{A}_n^r &= \mathrm{P}_n^r\\
+\mathrm{A}_n^k &= \mathrm{P}_n^k\\
 &=\underbrace{n\cdot(n-1)\cdot(n-2)\cdot\cdot\cdot (n-k+1)}_{k\text{ factors}}\\
 &=\frac{n!}{(n-k)!}
 \end{aligned}
