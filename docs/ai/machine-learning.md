@@ -369,7 +369,7 @@ $$
 P(X^{(j)} = x^{(j)}\mid Y=y) = \frac{n(X^{(j)} = x^{(j)}, Y = y)}{n(Y=y) + \lambda |\mathcal{X}^{(j)}|}.
 $$
 
-#### Gaussian
+#### Gaussian Prior
 
 若 $X$ 服从正态分布，依据最大似然估计可得到
 
@@ -380,6 +380,293 @@ $$
 $$
 \mu_{jy} = \frac{\displaystyle\sum_{Y=y}x^{(j)}}{n(Y=y)} ,\quad \sigma^2_{jy} = \frac{\displaystyle\sum_{Y=y}(x^{(j)}-\mu_{jy})^2}{n(Y=y)}.
 $$
+
+### Support Vector Machines
+
+#### The Linearly Separable Case (Hard Margin)
+
+对于样本集
+
+$$
+\{(x_i, y_i)\mid i = 1, \cdots, N, \ x_i \in \mathbb{R}^n, \ y_i \in \{-1, +1\}\},
+$$
+
+支持向量机使用一个**分离超平面** $H: w^\top x + b = 0$ 将所有样本集分隔在两侧，且使样本点到 $H$ 距离的最小值尽可能大.
+
+特征空间中点 $x_i$ 到超平面 $H$ 的有向距离 $d_i$：任取 $H$ 上一点 $x_H$，则 $x_i-x_H$ 和 $d$ 分别构成直角三角形的一条斜边和直角边，且由于 $d_i$ 的正方向与 $H$ 的法向量 $w$ 一致，有
+
+$$
+d_i = |x_i-x_H|\cos\lang x_i-x_H, w \rang = \frac{w^\top(x_i-x_H)}{\|w\|} = \frac{w^\top x_i +b}{\|w\|}.
+$$
+
+考虑标签 $y_i$ 的影响：处于 $H$ 的法向量 $w$ 指向异侧的样本点到 $H$ 的距离需要取对应 $d_i$ 的相反符号，故有各样本点到分离超平面的几何间隔 (geometric margin)
+
+$$
+\gamma_i = \frac{1}{\|w\|} y_i(w^\top x_i + b).
+$$
+
+支持向量机使得到各样本点到分离超平面的距离尽可能大，即最大化最小的几何间隔：
+
+$$
+\begin{aligned}
+\max_{w, b}~~& \gamma\\
+\operatorname{s.t.}~~& \frac{1}{\|w\|} y_i(w^\top x_i + b) \ge \gamma, \quad i = 1, 2, \cdots, N.
+\end{aligned}
+$$
+
+将几何间隔 $\gamma$ 换元为函数间隔 $\hat\gamma = \gamma\|w\|$，有
+
+$$
+\begin{aligned}
+\max_{w, b}~~& \frac{\hat\gamma}{\|w\|}\\
+\operatorname{s.t.}~~& y_i(w^\top x_i + b) \ge \hat\gamma, \quad i = 1, 2, \cdots, N.
+\end{aligned}
+$$
+
+若线性放缩 $w$ 和 $b$，所得超平面并不会改变，故函数间隔的变化对优化问题没有影响. 为了使函数间隔为 1，令 $\hat{w} = w/\hat{\gamma}$，$\hat{b} = b/\hat{\gamma}$，得到等价的凸二次规划问题：
+
+$$
+\begin{aligned}
+\min_{\hat w, \hat b}~~& \frac{1}{2}\|\hat w\|^2\\
+\operatorname{s.t.}~~& y_i(\hat w^\top x_i + \hat b) - 1 \ge 0, \quad i = 1, 2, \cdots, N.
+\end{aligned}
+$$
+
+此时相当于超平面到各最近样本点的距离绝对值均为 $1/\|\hat w\|$，对应的向量称为支持向量.
+
+由以上优化问题解得 $w^*$ 和 $b^*$，得到最大间隔分离超平面 $w^{*\top}x + b^* = 0$ 和决策函数 $\hat y = f(x) = \operatorname{sign}(w^{*\top}x + b^*)$.
+
+这里将问题转化为对偶问题. 引入拉格朗日乘子 $\alpha \succeq \boldsymbol{0}$，得到优化函数的拉格朗日函数
+
+$$
+L(\hat w, \hat b, \alpha) = \frac{1}{2}\|\hat w\|^2 - \sum_i \alpha_i (y_i (\hat w^\top x_i + \hat b) - 1),
+$$
+
+以及拉格朗日对偶函数
+
+$$
+g(\alpha) = \inf_{\hat w, \hat b}L(\hat w, \hat b, \alpha).
+$$
+
+得到对偶问题
+
+$$
+\begin{aligned}
+\max_\alpha~~& g(\alpha)\\
+\operatorname{s.t.}~~& \alpha \succeq 0.
+\end{aligned}
+$$
+
+原问题目标函数的定义域显然为开集，且各约束函数均为线性，故由退化的 Slater 条件，强对偶性成立，故原问题和对偶问题的目标函数最优值相等. 下面求解对偶问题.
+
+对固定的 $\alpha$，$L(\hat w, \hat b, \alpha)$ 取得下界时，其对 $\hat w$ 和 $\hat b$ 偏导为零：
+
+$$
+\frac{\partial}{\partial \hat w} L(\hat w, \hat b, \alpha) = \hat w - \sum_i \alpha_i y_i x_i = \boldsymbol{0},
+$$
+
+$$
+\frac{\partial}{\partial \hat b} L(\hat w, \hat b, \alpha) = - \sum_i \alpha_i y_i = \boldsymbol{0}.
+$$
+
+以上两式代回 $L(\hat w, \hat b, \alpha)$，得到
+
+$$
+\inf_{\hat w, \hat b}L(\hat w, \hat b, \alpha) = -\frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^\top x_j + \sum_{i=1}^N \alpha_i.
+$$
+
+故对偶问题为
+
+$$
+\begin{aligned}
+\min_\alpha~~& \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^\top x_j - \sum_{i=1}^N \alpha_i\\
+\operatorname{s.t.}~~& \alpha_i \ge 0, \quad i = 1, 2, \cdots, N, \\
+& \sum_{i=1}^N\alpha_i y_i = 0.
+\end{aligned}
+$$
+
+求解最优的 $\alpha^*$，由 $\frac{\partial L}{\partial \hat w} = 0$ 得
+
+$$
+w^* = \sum_i \alpha^*_i y_i x_i,
+$$
+
+且由于 $w^* \neq \boldsymbol{0}$，故必定存在某分量 $\alpha^*_k > 0$.
+
+强对偶性成立意味着最优对偶间隔为 0，即
+
+$$
+\alpha_i^*(y_i(w^{*\top}x_i + b^*) - 1) = 0, \quad i = 1, 2, \cdots, N.
+$$
+
+由 $\frac{\partial L}{\partial b} = 0$，对 $a^*_k$ 有
+
+$$
+b^* = y_k - \sum_i \alpha^*_k y_i x_i^\top x_k.
+$$
+
+由此得到线性可分支持向量机的参数. 以上求解实际上是在应用 KKT 条件.
+
+##### Support Vectors
+
+对 $\alpha^*$ 的各分量，若 $\alpha^*_j = 0$，则最优对偶间隔恒为 0，SVM 的解与样本 $(x_j, y_j)$ 无关，即样本在间隔分类的正确分类一侧.
+
+若 $\alpha^*_j > 0$，同样由最优对偶间隔可知分离超平面到对应样本 $(x_j, y_j)$ 的距离为
+
+$$
+\frac{|w^{*\top}x_i + b|}{\|w^*\|} = \frac{1}{\|w^*\|},
+$$
+
+该距离向量称为支持向量，形成支持向量的样本均处在与分离超平面两侧距离为 $\frac{1}{\|w^*\|}$ 的两平面上，这两个平面称为**间隔边界**.
+
+
+#### The Non-Linearly Separable Case (Soft Margin)
+
+线性不可分意味着以上优化问题无解. 为了使支持向量机能够尽可能地将大部分样本正确分类，而弱化个别样本点的作用，这里引入松弛变量 $\xi_i \ge 0$，作为每一个分到异侧的样本所产生的额外代价. 故约束条件变为
+
+$$
+y_i(\hat w^\top x_i + \hat b) \ge 1 - \xi_i, \quad i = 1, 2, \cdots N,
+$$
+
+$$
+\xi_i \ge 0, \quad i = 1, 2, \cdots, N.
+$$
+
+加上这些代价的优化目标为
+
+$$
+\frac{1}{2}\|\hat w\|^2 + C\sum_{i=1}^{N}\xi_i.
+$$
+
+其中 $C > 0$ 为惩罚参数. 此时优化变量为 $\hat w$、$\hat b$ 和 $\xi$.
+
+引入拉格朗日乘子 $\alpha \succeq \boldsymbol{0}$ 和 $\mu \succeq \boldsymbol{0}$，将问题变换为对偶问题
+
+$$
+\begin{aligned}
+\min_\alpha~~& \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^\top x_j - \sum_{i=1}^N \alpha_i\\
+\operatorname{s.t.}~~& 0 \le \alpha_i \le C, \quad i = 1, 2, \cdots, N, \\
+& \sum_{i=1}^N\alpha_i y_i = 0.
+\end{aligned}
+$$
+
+优化得到最优解 $\alpha^*$，解出 $w^*$，并选取其中满足 $0 < \alpha^*_k < C$ 的分量解出 $b^*$，形式与线性可分的情况相同.
+
+##### Support Vectors
+
+由 KKT 条件的 $\frac{\partial L}{\partial \xi} = \boldsymbol{0}$ 可知 $C - \alpha^* - \mu^* = \boldsymbol{0}$. 根据关于 $\mu$ 的最优对偶间隔 $\mu^*_i\xi_i = 0$ 消去 $\mu^*$ 有
+
+$$
+\xi_i(C - \alpha_i^*) = 0, \quad i = 1, 2, \cdots, N,
+$$
+
+又由关于 $\alpha$ 的最优对偶间隔
+
+$$
+\alpha^*_i(y_i(w^{*\top}x_i + b^*) - 1 + \xi_i) = 0, \quad i = 1, 2, \cdots, N,
+$$
+
+对 $\alpha^*$ 和 $\xi$ 的各分量进行讨论：
+
+* 若 $\alpha^*_i = 0$，该对应样本点和分离超平面参数 $w^*$ 与 $b^*$ 无关，非支持向量，同时支付的代价 $\xi_i = 0$；
+* 若 $0 < \alpha^*_i < C$，同样有 $\xi_i = 0$，该对应样本点到分离超平面的距离为 $\frac{1}{\|w^*\|}$，即处在间隔边界上；
+* 若 $\alpha^*_i = C$，该对应样本点到分离超平面的有向距离为 $\frac{1-\xi_i}{\|w^*\|}$（以从正确分类的一侧到分离超平面的方向为正），该样本点到其类别一侧的间隔边界的距离为 $\frac{\xi_i}{\|w^*\|}$（方向与前者相反）：
+    * 若 $\xi_i = 0$，对应样本点亦处于间隔边界上；
+    * 若 $0 < \xi_i < 1$，该样本分类正确，但其处于分离超平面和间隔边界之间；
+    * 若 $\xi_i = 1$，则该样本处于分离超平面上；
+    * 若 $\xi_i > 1$，则该样本在错分一侧.
+
+#### Hinge Loss Interpretation
+
+折页损失函数定义为
+
+$$
+\mathcal{L}(x) = \max(0, 1-x),
+$$
+
+它是 0-1 损失的上界.
+
+![](https://upload.wikimedia.org/wikipedia/commons/b/b5/Hinge_loss_vs_zero_one_loss.svg){: width=50%}
+
+下面将线性支持向量机转化为用折页损失函数表示的形式.
+
+线性支持向量机的约束条件为
+
+$$
+y_i(\hat w^\top x_i + \hat b) \ge 1 - \xi_i, \quad i = 1, 2, \cdots, N,
+$$
+
+$$
+\xi \ge 0, \quad i = 1, 2, \cdots, N.
+$$
+
+两式合并为
+
+$$
+\xi_i \ge \max(0, 1 - y_i(\hat w^\top x_i + \hat b)) = \mathcal{L}\big[y_i(\hat w^\top x_i + \hat b)\big].
+$$
+
+代回优化目标，得
+
+$$
+\begin{aligned}
+\min_{\hat w, \hat b, \xi}~~& t\\
+\operatorname{s.t.}~~& t \ge\frac{1}{2}\|\hat w\|^2 + C\sum_{i=1}^N\mathcal{L}\big[y_i(\hat w^\top x_i + \hat b)\big].
+\end{aligned}
+$$
+
+即
+
+$$
+\min_{\hat w, \hat b, \xi} \sum_{i=1}^N\mathcal{L}\big[y_i(\hat w^\top x_i + \hat b)\big] + \frac{1}{2C}\|\hat w\|^2.
+$$
+
+前后两项分别为经验风险和结构风险. 当一个样本的的置信度足够高时损失为零，这些样本分布在正确分类一侧，且在间隔边界之外；其余对应非零损失的样本为支持向量.
+
+
+#### The Nonlinear Case (Kernel Functions)
+
+样本的在特征空间中的分布可能并不适合用超平面来区分. 此时需要将原特征空间映射到一个新空间，使得在新空间中样本的分布近似分布在某超平面两侧.
+
+举例来说，若两类样本的分布大致在椭圆 $w_1x_1^2 + w_2x_2^2 + b = 0$ 两侧. 此时定义从 $x$ 所在的原空间 $\mathcal{X}\subset \mathbb{R}^n$ 到新空间 $\mathcal{Z}\subset \mathbb{R}^n$ 的映射
+
+$$
+z = \phi(x) = (x_1^2, x_2^2, \cdots, x_n^2).
+$$
+
+则在新空间 $\mathcal{Z}$ 中，两类样本分布在 $w_1z_1 + w_2z_2 + b$ 两侧，即问题转化为了线性情况.
+
+在经过以上变换后，求解支持向量机对偶问题时，目标函数为
+
+$$
+W(\alpha) = \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j \phi(x_i)^\top \phi(x_j) - \sum_{i=1}^N \alpha_i,
+$$
+
+记 $K(x_i, x_j) = \phi(x_i)^\top \phi(x_j)$，称为核函数. 求解的过程只需要关心 $K$ 的形式，而可略去 $\phi$ 的具体形式.
+
+常用的核函数有
+
+* 线性：$K(x_i, x_j) = x_i^\top x_j$,
+* 多项式：$K(x_i, x_j) = (\gamma x_i^\top x_j + r)^p$,
+* 径向基 (radial basis function)：$K(x_i, x_j) = \exp(-\gamma \|x_i-x_j\|^2 + r)$,
+* Sigmoid：$K(x_i, x_j) = \tanh(\gamma x_i^\top x_j + r)$,
+
+此时决策函数为
+
+$$
+f(x) = \operatorname{sign}\left(\sum_{i=1}^N \alpha^*_iy_iK(x, x_i) + b^*\right),
+$$
+
+其中
+
+$$
+b^* = y_k - \sum_{i=1}^N \alpha_i^*y_iK(x_i, x_k)
+$$
+
+由满足 $0 < \alpha^*_k < C$ 的分量求得.
+
+若对于任意 $x_i \in \mathcal{X}$，$i = 1, 2, \cdots, m$，核函数对应的 Gram 矩阵 $[K(x_i, x_j)]_{m\times m}$ 是半正定的，那么称 $K$ 为正定核，且此时的问题是凸二次规划问题，解一定存在.
+
 
 ## Optimizations
 
