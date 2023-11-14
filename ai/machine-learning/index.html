@@ -1433,6 +1433,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-vector-machines" class="md-nav__link">
+    Support Vector Machines
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3673,6 +3680,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#support-vector-machines" class="md-nav__link">
+    Support Vector Machines
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3973,7 +3987,7 @@ P(Y=y) = \frac{n(Y=y) + \lambda}{N + \lambda n(Y)},
 <p class="arithmatex">\[
 P(X^{(j)} = x^{(j)}\mid Y=y) = \frac{n(X^{(j)} = x^{(j)}, Y = y)}{n(Y=y) + \lambda |\mathcal{X}^{(j)}|}.
 \]</p>
-<h4 id="gaussian">Gaussian<a class="headerlink" href="#gaussian" title="Permanent link">&para;</a></h4>
+<h4 id="gaussian-prior">Gaussian Prior<a class="headerlink" href="#gaussian-prior" title="Permanent link">&para;</a></h4>
 <p>若 <span class="arithmatex">\(X\)</span> 服从正态分布，依据最大似然估计可得到</p>
 <p class="arithmatex">\[
 P(X^{(j)} = x^{(j)}\mid Y=y) = \mathcal{N}(x^{(j)}; \mu_{jy}, \sigma^2_{jy}),
@@ -3981,6 +3995,203 @@ P(X^{(j)} = x^{(j)}\mid Y=y) = \mathcal{N}(x^{(j)}; \mu_{jy}, \sigma^2_{jy}),
 <p class="arithmatex">\[
 \mu_{jy} = \frac{\displaystyle\sum_{Y=y}x^{(j)}}{n(Y=y)} ,\quad \sigma^2_{jy} = \frac{\displaystyle\sum_{Y=y}(x^{(j)}-\mu_{jy})^2}{n(Y=y)}.
 \]</p>
+<h3 id="support-vector-machines">Support Vector Machines<a class="headerlink" href="#support-vector-machines" title="Permanent link">&para;</a></h3>
+<h4 id="the-linearly-separable-case-hard-margin">The Linearly Separable Case (Hard Margin)<a class="headerlink" href="#the-linearly-separable-case-hard-margin" title="Permanent link">&para;</a></h4>
+<p>对于样本集</p>
+<p class="arithmatex">\[
+\{(x_i, y_i)\mid i = 1, \cdots, N, \ x_i \in \mathbb{R}^n, \ y_i \in \{-1, +1\}\},
+\]</p>
+<p>支持向量机使用一个<strong>分离超平面</strong> <span class="arithmatex">\(H: w^\top x + b = 0\)</span> 将所有样本集分隔在两侧，且使样本点到 <span class="arithmatex">\(H\)</span> 距离的最小值尽可能大.</p>
+<p>特征空间中点 <span class="arithmatex">\(x_i\)</span> 到超平面 <span class="arithmatex">\(H\)</span> 的有向距离 <span class="arithmatex">\(d_i\)</span>：任取 <span class="arithmatex">\(H\)</span> 上一点 <span class="arithmatex">\(x_H\)</span>，则 <span class="arithmatex">\(x_i-x_H\)</span> 和 <span class="arithmatex">\(d\)</span> 分别构成直角三角形的一条斜边和直角边，且由于 <span class="arithmatex">\(d_i\)</span> 的正方向与 <span class="arithmatex">\(H\)</span> 的法向量 <span class="arithmatex">\(w\)</span> 一致，有</p>
+<p class="arithmatex">\[
+d_i = |x_i-x_H|\cos\lang x_i-x_H, w \rang = \frac{w^\top(x_i-x_H)}{\|w\|} = \frac{w^\top x_i +b}{\|w\|}.
+\]</p>
+<p>考虑标签 <span class="arithmatex">\(y_i\)</span> 的影响：处于 <span class="arithmatex">\(H\)</span> 的法向量 <span class="arithmatex">\(w\)</span> 指向异侧的样本点到 <span class="arithmatex">\(H\)</span> 的距离需要取对应 <span class="arithmatex">\(d_i\)</span> 的相反符号，故有各样本点到分离超平面的几何间隔 (geometric margin)</p>
+<p class="arithmatex">\[
+\gamma_i = \frac{1}{\|w\|} y_i(w^\top x_i + b).
+\]</p>
+<p>支持向量机使得到各样本点到分离超平面的距离尽可能大，即最大化最小的几何间隔：</p>
+<p class="arithmatex">\[
+\begin{aligned}
+\max_{w, b}~~&amp; \gamma\\
+\operatorname{s.t.}~~&amp; \frac{1}{\|w\|} y_i(w^\top x_i + b) \ge \gamma, \quad i = 1, 2, \cdots, N.
+\end{aligned}
+\]</p>
+<p>将几何间隔 <span class="arithmatex">\(\gamma\)</span> 换元为函数间隔 <span class="arithmatex">\(\hat\gamma = \gamma\|w\|\)</span>，有</p>
+<p class="arithmatex">\[
+\begin{aligned}
+\max_{w, b}~~&amp; \frac{\hat\gamma}{\|w\|}\\
+\operatorname{s.t.}~~&amp; y_i(w^\top x_i + b) \ge \hat\gamma, \quad i = 1, 2, \cdots, N.
+\end{aligned}
+\]</p>
+<p>若线性放缩 <span class="arithmatex">\(w\)</span> 和 <span class="arithmatex">\(b\)</span>，所得超平面并不会改变，故函数间隔的变化对优化问题没有影响. 为了使函数间隔为 1，令 <span class="arithmatex">\(\hat{w} = w/\hat{\gamma}\)</span>，<span class="arithmatex">\(\hat{b} = b/\hat{\gamma}\)</span>，得到等价的凸二次规划问题：</p>
+<p class="arithmatex">\[
+\begin{aligned}
+\min_{\hat w, \hat b}~~&amp; \frac{1}{2}\|\hat w\|^2\\
+\operatorname{s.t.}~~&amp; y_i(\hat w^\top x_i + \hat b) - 1 \ge 0, \quad i = 1, 2, \cdots, N.
+\end{aligned}
+\]</p>
+<p>此时相当于超平面到各最近样本点的距离绝对值均为 <span class="arithmatex">\(1/\|\hat w\|\)</span>，对应的向量称为支持向量.</p>
+<p>由以上优化问题解得 <span class="arithmatex">\(w^*\)</span> 和 <span class="arithmatex">\(b^*\)</span>，得到最大间隔分离超平面 <span class="arithmatex">\(w^{*\top}x + b^* = 0\)</span> 和决策函数 <span class="arithmatex">\(\hat y = f(x) = \operatorname{sign}(w^{*\top}x + b^*)\)</span>.</p>
+<p>这里将问题转化为对偶问题. 引入拉格朗日乘子 <span class="arithmatex">\(\alpha \succeq \boldsymbol{0}\)</span>，得到优化函数的拉格朗日函数</p>
+<p class="arithmatex">\[
+L(\hat w, \hat b, \alpha) = \frac{1}{2}\|\hat w\|^2 - \sum_i \alpha_i (y_i (\hat w^\top x_i + \hat b) - 1),
+\]</p>
+<p>以及拉格朗日对偶函数</p>
+<p class="arithmatex">\[
+g(\alpha) = \inf_{\hat w, \hat b}L(\hat w, \hat b, \alpha).
+\]</p>
+<p>得到对偶问题</p>
+<p class="arithmatex">\[
+\begin{aligned}
+\max_\alpha~~&amp; g(\alpha)\\
+\operatorname{s.t.}~~&amp; \alpha \succeq 0.
+\end{aligned}
+\]</p>
+<p>原问题目标函数的定义域显然为开集，且各约束函数均为线性，故由退化的 Slater 条件，强对偶性成立，故原问题和对偶问题的目标函数最优值相等. 下面求解对偶问题.</p>
+<p>对固定的 <span class="arithmatex">\(\alpha\)</span>，<span class="arithmatex">\(L(\hat w, \hat b, \alpha)\)</span> 取得下界时，其对 <span class="arithmatex">\(\hat w\)</span> 和 <span class="arithmatex">\(\hat b\)</span> 偏导为零：</p>
+<p class="arithmatex">\[
+\frac{\partial}{\partial \hat w} L(\hat w, \hat b, \alpha) = \hat w - \sum_i \alpha_i y_i x_i = \boldsymbol{0},
+\]</p>
+<p class="arithmatex">\[
+\frac{\partial}{\partial \hat b} L(\hat w, \hat b, \alpha) = - \sum_i \alpha_i y_i = \boldsymbol{0}.
+\]</p>
+<p>以上两式代回 <span class="arithmatex">\(L(\hat w, \hat b, \alpha)\)</span>，得到</p>
+<p class="arithmatex">\[
+\inf_{\hat w, \hat b}L(\hat w, \hat b, \alpha) = -\frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^\top x_j + \sum_{i=1}^N \alpha_i.
+\]</p>
+<p>故对偶问题为</p>
+<p class="arithmatex">\[
+\begin{aligned}
+\min_\alpha~~&amp; \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^\top x_j - \sum_{i=1}^N \alpha_i\\
+\operatorname{s.t.}~~&amp; \alpha_i \ge 0, \quad i = 1, 2, \cdots, N, \\
+&amp; \sum_{i=1}^N\alpha_i y_i = 0.
+\end{aligned}
+\]</p>
+<p>求解最优的 <span class="arithmatex">\(\alpha^*\)</span>，由 <span class="arithmatex">\(\frac{\partial L}{\partial \hat w} = 0\)</span> 得</p>
+<p class="arithmatex">\[
+w^* = \sum_i \alpha^*_i y_i x_i,
+\]</p>
+<p>且由于 <span class="arithmatex">\(w^* \neq \boldsymbol{0}\)</span>，故必定存在某分量 <span class="arithmatex">\(\alpha^*_k &gt; 0\)</span>.</p>
+<p>强对偶性成立意味着最优对偶间隔为 0，即</p>
+<p class="arithmatex">\[
+\alpha_i^*(y_i(w^{*\top}x_i + b^*) - 1) = 0, \quad i = 1, 2, \cdots, N.
+\]</p>
+<p>由 <span class="arithmatex">\(\frac{\partial L}{\partial b} = 0\)</span>，对 <span class="arithmatex">\(a^*_k\)</span> 有</p>
+<p class="arithmatex">\[
+b^* = y_k - \sum_i \alpha^*_k y_i x_i^\top x_k.
+\]</p>
+<p>由此得到线性可分支持向量机的参数. 以上求解实际上是在应用 KKT 条件.</p>
+<h5 id="support-vectors">Support Vectors<a class="headerlink" href="#support-vectors" title="Permanent link">&para;</a></h5>
+<p>对 <span class="arithmatex">\(\alpha^*\)</span> 的各分量，若 <span class="arithmatex">\(\alpha^*_j = 0\)</span>，则最优对偶间隔恒为 0，SVM 的解与样本 <span class="arithmatex">\((x_j, y_j)\)</span> 无关，即样本在间隔分类的正确分类一侧.</p>
+<p>若 <span class="arithmatex">\(\alpha^*_j &gt; 0\)</span>，同样由最优对偶间隔可知分离超平面到对应样本 <span class="arithmatex">\((x_j, y_j)\)</span> 的距离为</p>
+<p class="arithmatex">\[
+\frac{|w^{*\top}x_i + b|}{\|w^*\|} = \frac{1}{\|w^*\|},
+\]</p>
+<p>该距离向量称为支持向量，形成支持向量的样本均处在与分离超平面两侧距离为 <span class="arithmatex">\(\frac{1}{\|w^*\|}\)</span> 的两平面上，这两个平面称为<strong>间隔边界</strong>.</p>
+<h4 id="the-non-linearly-separable-case-soft-margin">The Non-Linearly Separable Case (Soft Margin)<a class="headerlink" href="#the-non-linearly-separable-case-soft-margin" title="Permanent link">&para;</a></h4>
+<p>线性不可分意味着以上优化问题无解. 为了使支持向量机能够尽可能地将大部分样本正确分类，而弱化个别样本点的作用，这里引入松弛变量 <span class="arithmatex">\(\xi_i \ge 0\)</span>，作为每一个分到异侧的样本所产生的额外代价. 故约束条件变为</p>
+<p class="arithmatex">\[
+y_i(\hat w^\top x_i + \hat b) \ge 1 - \xi_i, \quad i = 1, 2, \cdots N,
+\]</p>
+<p class="arithmatex">\[
+\xi_i \ge 0, \quad i = 1, 2, \cdots, N.
+\]</p>
+<p>加上这些代价的优化目标为</p>
+<p class="arithmatex">\[
+\frac{1}{2}\|\hat w\|^2 + C\sum_{i=1}^{N}\xi_i.
+\]</p>
+<p>其中 <span class="arithmatex">\(C &gt; 0\)</span> 为惩罚参数. 此时优化变量为 <span class="arithmatex">\(\hat w\)</span>、<span class="arithmatex">\(\hat b\)</span> 和 <span class="arithmatex">\(\xi\)</span>.</p>
+<p>引入拉格朗日乘子 <span class="arithmatex">\(\alpha \succeq \boldsymbol{0}\)</span> 和 <span class="arithmatex">\(\mu \succeq \boldsymbol{0}\)</span>，将问题变换为对偶问题</p>
+<p class="arithmatex">\[
+\begin{aligned}
+\min_\alpha~~&amp; \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^\top x_j - \sum_{i=1}^N \alpha_i\\
+\operatorname{s.t.}~~&amp; 0 \le \alpha_i \le C, \quad i = 1, 2, \cdots, N, \\
+&amp; \sum_{i=1}^N\alpha_i y_i = 0.
+\end{aligned}
+\]</p>
+<p>优化得到最优解 <span class="arithmatex">\(\alpha^*\)</span>，解出 <span class="arithmatex">\(w^*\)</span>，并选取其中满足 <span class="arithmatex">\(0 &lt; \alpha^*_k &lt; C\)</span> 的分量解出 <span class="arithmatex">\(b^*\)</span>，形式与线性可分的情况相同.</p>
+<h5 id="support-vectors_1">Support Vectors<a class="headerlink" href="#support-vectors_1" title="Permanent link">&para;</a></h5>
+<p>由 KKT 条件的 <span class="arithmatex">\(\frac{\partial L}{\partial \xi} = \boldsymbol{0}\)</span> 可知 <span class="arithmatex">\(C - \alpha^* - \mu^* = \boldsymbol{0}\)</span>. 根据关于 <span class="arithmatex">\(\mu\)</span> 的最优对偶间隔 <span class="arithmatex">\(\mu^*_i\xi_i = 0\)</span> 消去 <span class="arithmatex">\(\mu^*\)</span> 有</p>
+<p class="arithmatex">\[
+\xi_i(C - \alpha_i^*) = 0, \quad i = 1, 2, \cdots, N,
+\]</p>
+<p>又由关于 <span class="arithmatex">\(\alpha\)</span> 的最优对偶间隔</p>
+<p class="arithmatex">\[
+\alpha^*_i(y_i(w^{*\top}x_i + b^*) - 1 + \xi_i) = 0, \quad i = 1, 2, \cdots, N,
+\]</p>
+<p>对 <span class="arithmatex">\(\alpha^*\)</span> 和 <span class="arithmatex">\(\xi\)</span> 的各分量进行讨论：</p>
+<ul>
+<li>若 <span class="arithmatex">\(\alpha^*_i = 0\)</span>，该对应样本点和分离超平面参数 <span class="arithmatex">\(w^*\)</span> 与 <span class="arithmatex">\(b^*\)</span> 无关，非支持向量，同时支付的代价 <span class="arithmatex">\(\xi_i = 0\)</span>；</li>
+<li>若 <span class="arithmatex">\(0 &lt; \alpha^*_i &lt; C\)</span>，同样有 <span class="arithmatex">\(\xi_i = 0\)</span>，该对应样本点到分离超平面的距离为 <span class="arithmatex">\(\frac{1}{\|w^*\|}\)</span>，即处在间隔边界上；</li>
+<li>若 <span class="arithmatex">\(\alpha^*_i = C\)</span>，该对应样本点到分离超平面的有向距离为 <span class="arithmatex">\(\frac{1-\xi_i}{\|w^*\|}\)</span>（以从正确分类的一侧到分离超平面的方向为正），该样本点到其类别一侧的间隔边界的距离为 <span class="arithmatex">\(\frac{\xi_i}{\|w^*\|}\)</span>（方向与前者相反）：<ul>
+<li>若 <span class="arithmatex">\(\xi_i = 0\)</span>，对应样本点亦处于间隔边界上；</li>
+<li>若 <span class="arithmatex">\(0 &lt; \xi_i &lt; 1\)</span>，该样本分类正确，但其处于分离超平面和间隔边界之间；</li>
+<li>若 <span class="arithmatex">\(\xi_i = 1\)</span>，则该样本处于分离超平面上；</li>
+<li>若 <span class="arithmatex">\(\xi_i &gt; 1\)</span>，则该样本在错分一侧.</li>
+</ul>
+</li>
+</ul>
+<h4 id="hinge-loss-interpretation">Hinge Loss Interpretation<a class="headerlink" href="#hinge-loss-interpretation" title="Permanent link">&para;</a></h4>
+<p>折页损失函数定义为</p>
+<p class="arithmatex">\[
+\mathcal{L}(x) = \max(0, 1-x),
+\]</p>
+<p>它是 0-1 损失的上界.</p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Hinge_loss_vs_zero_one_loss.svg" width="50%" /></p>
+<p>下面将线性支持向量机转化为用折页损失函数表示的形式.</p>
+<p>线性支持向量机的约束条件为</p>
+<p class="arithmatex">\[
+y_i(\hat w^\top x_i + \hat b) \ge 1 - \xi_i, \quad i = 1, 2, \cdots, N,
+\]</p>
+<p class="arithmatex">\[
+\xi \ge 0, \quad i = 1, 2, \cdots, N.
+\]</p>
+<p>两式合并为</p>
+<p class="arithmatex">\[
+\xi_i \ge \max(0, 1 - y_i(\hat w^\top x_i + \hat b)) = \mathcal{L}\big[y_i(\hat w^\top x_i + \hat b)\big].
+\]</p>
+<p>代回优化目标，得</p>
+<p class="arithmatex">\[
+\begin{aligned}
+\min_{\hat w, \hat b, \xi}~~&amp; t\\
+\operatorname{s.t.}~~&amp; t \ge\frac{1}{2}\|\hat w\|^2 + C\sum_{i=1}^N\mathcal{L}\big[y_i(\hat w^\top x_i + \hat b)\big].
+\end{aligned}
+\]</p>
+<p>即</p>
+<p class="arithmatex">\[
+\min_{\hat w, \hat b, \xi} \sum_{i=1}^N\mathcal{L}\big[y_i(\hat w^\top x_i + \hat b)\big] + \frac{1}{2C}\|\hat w\|^2.
+\]</p>
+<p>前后两项分别为经验风险和结构风险. 当一个样本的的置信度足够高时损失为零，这些样本分布在正确分类一侧，且在间隔边界之外；其余对应非零损失的样本为支持向量.</p>
+<h4 id="the-nonlinear-case-kernel-functions">The Nonlinear Case (Kernel Functions)<a class="headerlink" href="#the-nonlinear-case-kernel-functions" title="Permanent link">&para;</a></h4>
+<p>样本的在特征空间中的分布可能并不适合用超平面来区分. 此时需要将原特征空间映射到一个新空间，使得在新空间中样本的分布近似分布在某超平面两侧.</p>
+<p>举例来说，若两类样本的分布大致在椭圆 <span class="arithmatex">\(w_1x_1^2 + w_2x_2^2 + b = 0\)</span> 两侧. 此时定义从 <span class="arithmatex">\(x\)</span> 所在的原空间 <span class="arithmatex">\(\mathcal{X}\subset \mathbb{R}^n\)</span> 到新空间 <span class="arithmatex">\(\mathcal{Z}\subset \mathbb{R}^n\)</span> 的映射</p>
+<p class="arithmatex">\[
+z = \phi(x) = (x_1^2, x_2^2, \cdots, x_n^2).
+\]</p>
+<p>则在新空间 <span class="arithmatex">\(\mathcal{Z}\)</span> 中，两类样本分布在 <span class="arithmatex">\(w_1z_1 + w_2z_2 + b\)</span> 两侧，即问题转化为了线性情况.</p>
+<p>在经过以上变换后，求解支持向量机对偶问题时，目标函数为</p>
+<p class="arithmatex">\[
+W(\alpha) = \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i \alpha_j y_i y_j \phi(x_i)^\top \phi(x_j) - \sum_{i=1}^N \alpha_i,
+\]</p>
+<p>记 <span class="arithmatex">\(K(x_i, x_j) = \phi(x_i)^\top \phi(x_j)\)</span>，称为核函数. 求解的过程只需要关心 <span class="arithmatex">\(K\)</span> 的形式，而可略去 <span class="arithmatex">\(\phi\)</span> 的具体形式.</p>
+<p>常用的核函数有</p>
+<ul>
+<li>线性：<span class="arithmatex">\(K(x_i, x_j) = x_i^\top x_j\)</span>,</li>
+<li>多项式：<span class="arithmatex">\(K(x_i, x_j) = (\gamma x_i^\top x_j + r)^p\)</span>,</li>
+<li>径向基 (radial basis function)：<span class="arithmatex">\(K(x_i, x_j) = \exp(-\gamma \|x_i-x_j\|^2 + r)\)</span>,</li>
+<li>Sigmoid：<span class="arithmatex">\(K(x_i, x_j) = \tanh(\gamma x_i^\top x_j + r)\)</span>,</li>
+</ul>
+<p>此时决策函数为</p>
+<p class="arithmatex">\[
+f(x) = \operatorname{sign}\left(\sum_{i=1}^N \alpha^*_iy_iK(x, x_i) + b^*\right),
+\]</p>
+<p>其中</p>
+<p class="arithmatex">\[
+b^* = y_k - \sum_{i=1}^N \alpha_i^*y_iK(x_i, x_k)
+\]</p>
+<p>由满足 <span class="arithmatex">\(0 &lt; \alpha^*_k &lt; C\)</span> 的分量求得.</p>
+<p>若对于任意 <span class="arithmatex">\(x_i \in \mathcal{X}\)</span>，<span class="arithmatex">\(i = 1, 2, \cdots, m\)</span>，核函数对应的 Gram 矩阵 <span class="arithmatex">\([K(x_i, x_j)]_{m\times m}\)</span> 是半正定的，那么称 <span class="arithmatex">\(K\)</span> 为正定核，且此时的问题是凸二次规划问题，解一定存在.</p>
 <h2 id="optimizations">Optimizations<a class="headerlink" href="#optimizations" title="Permanent link">&para;</a></h2>
 <h3 id="regularizations">Regularizations<a class="headerlink" href="#regularizations" title="Permanent link">&para;</a></h3>
 <h4 id="l0">L0 正则化<a class="headerlink" href="#l0" title="Permanent link">&para;</a></h4>
