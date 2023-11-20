@@ -132,3 +132,11 @@ TreeNode* maxNode(TreeNode* root) {
         return res;
     }
     ```
+
+## 构造不同的二叉搜索树
+
+[96. 不同的二叉搜索树 - 力扣（LeetCode）](https://leetcode.cn/problems/unique-binary-search-trees/)
+
+递归计算不同根结点取法时左右子树的构造方法数，可得答案为 [Catalan Number](../../scribbles/catalan-number).
+
+[95. 不同的二叉搜索树 II - 力扣（LeetCode）](https://leetcode.cn/problems/unique-binary-search-trees-ii/)
