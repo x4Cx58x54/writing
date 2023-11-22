@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'tomasiser/vim-code-dark'
-Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 let g:lightline = {'colorscheme': 'one',}
@@ -66,11 +65,6 @@ filetype plugin on
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
 
-" YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_auto_trigger = 0  " disable YCM
 
 " Keymaps
 map <F5> :call CompileRun()<CR>

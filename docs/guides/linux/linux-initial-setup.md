@@ -66,7 +66,11 @@ Download zsh-syntax-highlighting plugin.
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-#### 3) Configure Zsh
+#### 3) Install powerlevel10k
+
+[romkatv/powerlevel10k#oh-my-zsh](https://github.com/romkatv/powerlevel10k#oh-my-zsh){:target="_blank"}
+
+#### 4) Configure Zsh
 
 Copy the configuration file [.zshrc](https://raw.githubusercontent.com/x4Cx58x54/writing/master/docs/guides/linux/assets/.zshrc){:target="_blank"} to `~`.
 
